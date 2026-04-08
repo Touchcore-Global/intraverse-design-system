@@ -23,7 +23,7 @@ export const HeroSection = () => {
           200+ Travel Agents Use Intraverse to Sell Flights, Hotels, Tours &amp; Packages From One Dashboard
         </h1>
 
-        <p className="mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-muted-foreground">
+        <p className="mt-8 text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal max-w-3xl mx-auto mb-6" style={{ color: 'rgb(116, 113, 122)' }}>
           Intraverse aggregates flight inventory from GDS systems (Amadeus, Sabre, Galileo), NDC connections,
           consolidators, and other aggregators — plus hotels and tours from leading global suppliers — all from
           a single dashboard. Search inventory, compare prices across suppliers, book, and issue — without
