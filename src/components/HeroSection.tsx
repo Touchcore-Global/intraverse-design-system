@@ -40,6 +40,20 @@ export const HeroSection = () => {
         <p className="mt-4 text-sm text-muted-foreground">
           15-minute demo • No commitment • Free
         </p>
+
+        {/* Video placeholder */}
+        <div className="mt-12 max-w-4xl mx-auto">
+          <div className="relative aspect-video rounded-xl overflow-hidden bg-foreground/90">
+            <div className="absolute inset-0 bg-foreground/60 flex items-center justify-center">
+              <button
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+                aria-label="Play video"
+              >
+                <Play className="w-7 h-7 md:w-8 md:h-8 ml-1" />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
