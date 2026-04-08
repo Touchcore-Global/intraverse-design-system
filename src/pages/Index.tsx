@@ -21,6 +21,7 @@ const Index = () => {
       <div className="h-16" />
 
       <HeroSection />
+      <PartnerScroller />
       <HomeTrustBar />
       <ProblemStatement />
       <ProductShowcase />
