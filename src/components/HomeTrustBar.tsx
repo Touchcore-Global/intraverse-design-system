@@ -12,6 +12,9 @@ export const HomeTrustBar = () => {
   return (
     <section className="py-16 bg-accent">
       <div className="container mx-auto px-4">
+        <h2 className="text-section text-center mb-4">
+          Built for How Travel Is Sold
+        </h2>
         <p className="text-center text-sm md:text-base text-muted-foreground mb-10 max-w-2xl mx-auto">
           Trusted by 200+ travel agents selling flights, hotels, tours &amp; packages across Nigeria
         </p>
