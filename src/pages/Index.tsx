@@ -9,7 +9,7 @@ const Index = () => {
 
       {/* Placeholder hero section to demonstrate the design system */}
       <section className="container mx-auto px-4 py-20 lg:py-32 text-center">
-        <h1 className="text-hero max-w-4xl mx-auto">
+        <h1 className="text-[96px] font-[660] leading-[100px] tracking-[-2.88px] max-w-4xl mx-auto" style={{ color: 'rgb(23, 19, 33)' }}>
           Flights. Hotels. Tours. Packages.
         </h1>
         <p className="mt-6 mb-6 text-[32px] font-normal leading-[36px] tracking-[-0.64px] max-w-2xl mx-auto" style={{ color: 'rgb(116, 113, 122)' }}>
