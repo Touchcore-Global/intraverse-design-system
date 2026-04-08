@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Play } from "lucide-react";
 
 const partners = [
-  "IATA", "Amadeus", "Sabre", "Galileo", "Travelport",
-  "NDC", "Hotelbeds", "Booking.com", "Expedia", "Viator",
+  "Tzopal", "Whogofly", "Wright Gateway", "Lutfu Travels", "Coastline",
+  "Neso", "Leisure Affairs", "Terminal Seven", "Travio", "Blue Paradise",
 ];
 
 export const HeroSection = () => {
