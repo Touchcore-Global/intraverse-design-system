@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
+import { PartnerScroller } from "@/components/PartnerScroller";
 import { HomeTrustBar } from "@/components/HomeTrustBar";
 import { ProblemStatement } from "@/components/ProblemStatement";
 import { ProductShowcase } from "@/components/ProductShowcase";
