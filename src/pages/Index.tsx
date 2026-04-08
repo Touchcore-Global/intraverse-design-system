@@ -12,7 +12,7 @@ const Index = () => {
         <h1 className="text-hero max-w-4xl mx-auto">
           Flights. Hotels. Tours. Packages.
         </h1>
-        <p className="mt-6 text-[48px] max-w-2xl mx-auto">
+        <p className="mt-6 mb-6 text-[32px] font-normal leading-[36px] tracking-[-0.64px] max-w-2xl mx-auto" style={{ color: 'rgb(116, 113, 122)' }}>
           Sell It All From One Platform.
         </p>
       </section>
