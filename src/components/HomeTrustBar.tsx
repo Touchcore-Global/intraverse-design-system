@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const partners = [
   "IATA",
   "Amadeus",
@@ -24,6 +26,11 @@ export const HomeTrustBar = () => {
         >
           Trusted by 200+ travel agents selling flights, hotels, tours &amp; packages across Nigeria
         </p>
+        <div className="flex justify-center mb-10">
+          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
+            Try for Free
+          </Button>
+        </div>
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
           {partners.map((partner) => (
             <div
