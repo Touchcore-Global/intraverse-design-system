@@ -19,7 +19,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] xl:text-[80px] font-[660] leading-[1.1] tracking-tight max-w-5xl mx-auto text-foreground">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[96px] font-[660] leading-[1.1] lg:leading-[100px] tracking-[-2.88px] max-w-5xl mx-auto" style={{ color: 'rgb(23, 19, 33)' }}>
           200+ Travel Agents Use Intraverse to Sell Flights, Hotels, Tours &amp; Packages From One Dashboard
         </h1>
 
