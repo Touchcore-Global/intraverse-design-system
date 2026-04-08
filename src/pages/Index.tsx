@@ -13,7 +13,7 @@ const Index = () => {
           Flights. Hotels. Tours. Packages.
         </h1>
         <p className="mt-6 text-lg max-w-2xl mx-auto">
-          Powering travel agencies, cooperatives, and independent operators with modern SaaS tools built for the African market.
+          Sell It All From One Platform.
         </p>
       </section>
 
