@@ -18,7 +18,10 @@ export const HomeTrustBar = () => {
         >
           Built for How Travel Is Sold
         </h2>
-        <p className="text-center text-sm md:text-base text-muted-foreground mb-10 max-w-2xl mx-auto">
+        <p
+          className="text-center text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal mb-6 max-w-2xl mx-auto"
+          style={{ color: 'rgb(116, 113, 122)' }}
+        >
           Trusted by 200+ travel agents selling flights, hotels, tours &amp; packages across Nigeria
         </p>
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
