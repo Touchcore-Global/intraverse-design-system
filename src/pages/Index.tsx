@@ -12,7 +12,7 @@ const Index = () => {
         <h1 className="text-hero max-w-4xl mx-auto">
           Flights. Hotels. Tours. Packages.
         </h1>
-        <p className="mt-6 text-lg max-w-2xl mx-auto">
+        <p className="mt-6 text-[48px] max-w-2xl mx-auto">
           Sell It All From One Platform.
         </p>
       </section>
