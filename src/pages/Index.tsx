@@ -1,4 +1,6 @@
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
 
 const Index = () => {
   return (
@@ -7,7 +9,7 @@ const Index = () => {
       {/* Spacer for fixed nav */}
       <div className="h-16" />
 
-      {/* Placeholder hero section to demonstrate the design system */}
+      {/* Hero section */}
       <section className="container mx-auto px-4 py-20 lg:py-32 text-center">
         <h1 className="text-[96px] font-[660] leading-[100px] tracking-[-2.88px] max-w-4xl mx-auto" style={{ color: 'rgb(23, 19, 33)' }}>
           Flights. Hotels. Tours. Packages.
@@ -26,6 +28,9 @@ const Index = () => {
           </p>
         </div>
       </section>
+
+      <Footer />
+      <WhatsAppFab />
     </div>
   );
 };
