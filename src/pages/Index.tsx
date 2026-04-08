@@ -10,7 +10,7 @@ const Index = () => {
       {/* Placeholder hero section to demonstrate the design system */}
       <section className="container mx-auto px-4 py-20 lg:py-32 text-center">
         <h1 className="text-hero max-w-4xl mx-auto">
-          The Technology Behind Africa's Next Generation of Travel Businesses
+          Flights. Hotels. Tours. Packages. Sell It All From One Platform.
         </h1>
         <p className="mt-6 text-lg max-w-2xl mx-auto">
           Powering travel agencies, cooperatives, and independent operators with modern SaaS tools built for the African market.
