@@ -31,18 +31,6 @@ export const HomeTrustBar = () => {
             Try for Free
           </Button>
         </div>
-        <div className="flex flex-wrap items-center justify-start gap-6 md:gap-10">
-          {partners.map((partner) => (
-            <div
-              key={partner}
-              className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer px-5 py-3 rounded-lg border border-border bg-background"
-            >
-              <span className="text-sm md:text-base font-semibold text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-                {partner}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
