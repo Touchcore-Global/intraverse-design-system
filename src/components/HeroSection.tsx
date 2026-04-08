@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Play } from "lucide-react";
 
 export const HeroSection = () => {
   return (
