@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
-import { PartnerScroller } from "@/components/PartnerScroller";
 import { HomeTrustBar } from "@/components/HomeTrustBar";
 import { ProblemStatement } from "@/components/ProblemStatement";
 import { ProductShowcase } from "@/components/ProductShowcase";
@@ -21,7 +20,6 @@ const Index = () => {
       <div className="h-16" />
 
       <HeroSection />
-      <PartnerScroller />
       <HomeTrustBar />
       <ProblemStatement />
       <ProductShowcase />
