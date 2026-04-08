@@ -1,16 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from "@/components/Navbar";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen">
+      <Navbar />
+      {/* Spacer for fixed nav */}
+      <div className="h-16" />
+
+      {/* Placeholder hero section to demonstrate the design system */}
+      <section className="container mx-auto px-4 py-20 lg:py-32 text-center">
+        <h1 className="text-hero max-w-4xl mx-auto">
+          The Technology Behind Africa's Next Generation of Travel Businesses
+        </h1>
+        <p className="mt-6 text-lg max-w-2xl mx-auto">
+          Powering travel agencies, cooperatives, and independent operators with modern SaaS tools built for the African market.
+        </p>
+      </section>
+
+      {/* Alternating section demo */}
+      <section className="section-alt py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-section">Design system ready</h2>
+          <p className="mt-4 max-w-xl mx-auto">
+            All brand colors, typography, and component variants are configured. Start building pages.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
