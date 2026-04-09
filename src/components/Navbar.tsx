@@ -8,6 +8,7 @@ const productLinks = [
   { label: "Travx", href: "/travx" },
   { label: "CoopX", href: "/coopx" },
   { label: "Independents", href: "/independents" },
+  { label: "Supplier Engine", href: "/supplier-engine" },
 ];
 
 const navLinks = [
