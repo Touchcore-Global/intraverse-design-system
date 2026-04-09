@@ -1,32 +1,40 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
-const cards = [
+const cards: { icon: LucideIcon; headline: string; subheading: string; content: string }[] = [
   {
+    icon: Globe,
     headline: "Access Global Travel Inventory. Sell Without Limits.",
     subheading: "Unlock flights, hotels, and travel services from multiple suppliers—all in one platform.",
     content: "Stop juggling multiple supplier contracts and limited inventory. Intraverse connects you to global travel content through GDS integrations and trusted partners—giving you access to real-time availability, competitive pricing, and both published and private fares, all in one place.",
   },
   {
+    icon: Ticket,
     headline: "Issue Tickets Anytime. Never Miss a Sale.",
     subheading: "Your business doesn't sleep—your ticketing shouldn't either.",
     content: "Intraverse enables instant ticket issuance around the clock, removing dependency on supplier availability. Automated workflows ensure faster confirmations, helping you secure bookings immediately and deliver a seamless experience to your customers.",
   },
   {
+    icon: Wallet,
     headline: "Sell More Travel. Worry Less About Cash.",
     subheading: "Flexible payment infrastructure designed for modern travel businesses.",
     content: "With wallet-based transactions and seamless payment flows, Intraverse reduces capital constraints and speeds up booking turnaround. Built to support flexible and split payments, it empowers you to grow your business without being limited by cash flow.",
   },
   {
+    icon: Cog,
     headline: "Automate Your Travel Business. Scale Without Stress.",
     subheading: "Eliminate manual processes and run a smarter operation.",
     content: "Intraverse automates core travel operations—from ticketing to booking management—reducing errors and manual workload. This allows you to operate faster, scale efficiently, and focus more on growth than administration.",
   },
   {
+    icon: RefreshCcw,
     headline: "Stay in Control—Even After the Ticket is Issued.",
     subheading: "Manage changes, refunds, and more—without delays.",
     content: "Manage post-ticketing processes with ease, including reissues, refunds, name corrections, and ancillary services. Intraverse gives you the tools to respond quickly to customer needs while maintaining full control over every booking.",
   },
   {
+    icon: Rocket,
     headline: "Start a Travel Business. No Barriers.",
     subheading: "Whether you're an agent or just getting started, Intraverse gives you everything you need.",
     content: "Intraverse removes traditional barriers to entry by providing ready-to-use infrastructure, access to global inventory, and white-label tools. Whether you're an experienced agent or a new entrant, you can start, run, and scale a travel business without needing IATA accreditation or prior experience.",
@@ -45,6 +53,7 @@ export const ProblemStatement = () => {
           {cards.map((card, index) => (
             <Card key={index} className="border border-border bg-card shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6">
+                <card.icon className="h-8 w-8 text-primary mb-4" />
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {card.headline}
                 </h3>
