@@ -26,7 +26,7 @@ export const HowItWorks = () => {
   return (
     <section className="py-20 bg-accent">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-section mb-12 text-[32px] sm:text-[48px] md:text-[60px] lg:text-[80px] leading-tight">Start selling faster today</h2>
+        <h2 className="text-section mb-12 text-[32px] sm:text-[48px] md:text-[60px] leading-tight">Start selling faster today</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
           {steps.map((step) => (
