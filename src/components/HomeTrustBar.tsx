@@ -64,9 +64,38 @@ export const HomeTrustBar = () => {
       });
     };
 
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY.current = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      const rect = section.getBoundingClientRect();
+      const inView = rect.top <= 100 && rect.bottom >= window.innerHeight * 0.5;
+      if (!inView) return;
+
+      const deltaY = touchStartY.current - e.changedTouches[0].clientY;
+      if (Math.abs(deltaY) < 40) return;
+
+      const now = Date.now();
+      if (now - lastScrollTime.current < 600) return;
+
+      const direction = deltaY > 0 ? 1 : -1;
+      setActive((prev) => {
+        const next = prev + direction;
+        if (next < 0 || next >= containers.length) return prev;
+        lastScrollTime.current = now;
+        return next;
+      });
+    };
+
     window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, []);
+    section.addEventListener("touchstart", handleTouchStart, { passive: true });
+    section.addEventListener("touchend", handleTouchEnd, { passive: true });
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      section.removeEventListener("touchstart", handleTouchStart);
+      section.removeEventListener("touchend", handleTouchEnd);
+    };
 
   
 
