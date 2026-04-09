@@ -14,7 +14,7 @@ const productLinks = [
 const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Proof", href: "#proof" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "FAQ", href: "#faq" },
 ];
 
