@@ -35,7 +35,7 @@ const containers = [
 export const HomeTrustBar = () => {
   const [active, setActive] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isLockedRef = useRef(false);
+  
 
   useEffect(() => {
     const section = sectionRef.current;
