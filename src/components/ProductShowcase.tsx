@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { LayoutDashboard, Globe, Building2, Rocket, Wallet, ChevronLeft, ChevronRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const products = [
   {
@@ -43,6 +44,7 @@ export const ProductShowcase = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const isMobile = useIsMobile();
 
   const updateScrollState = () => {
     const el = scrollRef.current;
@@ -65,6 +67,69 @@ export const ProductShowcase = () => {
     const amount = el.clientWidth * 0.6;
     el.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" });
   };
+
+  const renderCard = (product: typeof products[0]) => {
+    const Icon = product.icon;
+    return (
+      <div
+        key={product.label}
+        className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 flex-1"
+      >
+        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+          <Icon className="w-6 h-6 text-primary" />
+        </div>
+        <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
+          {product.label}
+        </span>
+        <h3 className="font-bold text-foreground mb-3 leading-tight text-xl md:text-2xl lg:text-[36px]" style={{ letterSpacing: '-0.5px', lineHeight: '1.2' }}>
+          {product.title}
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+          {product.body}
+        </p>
+        <a
+          href="#"
+          className="mt-4 text-sm font-semibold text-primary hover:underline inline-block"
+        >
+          {product.cta}
+        </a>
+      </div>
+    );
+  };
+
+  // Mobile: simple vertical stack
+  if (isMobile) {
+    return (
+      <section className="py-12 bg-accent">
+        <div className="container mx-auto px-4">
+          <h2
+            className="text-left text-foreground mb-8"
+            style={{
+              fontFamily: '"GitLab Sans", sans-serif',
+              fontSize: '36px',
+              fontWeight: 660,
+              letterSpacing: '-1px',
+              lineHeight: '44px',
+            }}
+          >
+            One Platform - Everything You Need To Sell Travel
+          </h2>
+          <div className="flex flex-col gap-4">
+            {products.map((product) => renderCard(product))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop: two-row horizontal scroll
+  const rows = 2;
+  const grid: (typeof products[0] | null)[][] = Array.from({ length: rows }, () => []);
+  products.forEach((p, i) => {
+    grid[i % rows].push(p);
+  });
+  const maxLen = Math.max(...grid.map(r => r.length));
+  grid.forEach(r => { while (r.length < maxLen) r.push(null); });
 
   return (
     <section className="py-20 bg-accent">
@@ -104,53 +169,16 @@ export const ProductShowcase = () => {
         </div>
 
         <div ref={scrollRef} className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-          <div className="flex flex-wrap gap-6" style={{ width: 'max-content', maxHeight: 'none' }}>
-            {(() => {
-              const rows = 2;
-              const cols = Math.ceil(products.length / rows);
-              const grid: (typeof products[0] | null)[][] = Array.from({ length: rows }, () => []);
-              products.forEach((p, i) => {
-                grid[i % rows].push(p);
-              });
-              // Pad rows to equal length
-              const maxLen = Math.max(...grid.map(r => r.length));
-              grid.forEach(r => { while (r.length < maxLen) r.push(null); });
-
-              return Array.from({ length: maxLen }, (_, colIdx) => (
-                <div key={colIdx} className="flex flex-col gap-6 shrink-0 w-[calc(50vw-80px)] max-w-[500px] min-w-[300px]">
-                  {grid.map((row, rowIdx) => {
-                    const product = row[colIdx];
-                    if (!product) return null;
-                    const Icon = product.icon;
-                    return (
-                      <div
-                        key={product.label}
-                        className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 flex-1"
-                      >
-                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
-                          {product.label}
-                        </span>
-                        <h3 className="font-bold text-foreground mb-3 leading-tight" style={{ fontSize: '36px', letterSpacing: '-0.5px', lineHeight: '1.2' }}>
-                          {product.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                          {product.body}
-                        </p>
-                        <a
-                          href="#"
-                          className="mt-4 text-sm font-semibold text-primary hover:underline inline-block"
-                        >
-                          {product.cta}
-                        </a>
-                      </div>
-                    );
-                  })}
-                </div>
-              ));
-            })()}
+          <div className="flex gap-6" style={{ width: 'max-content' }}>
+            {Array.from({ length: maxLen }, (_, colIdx) => (
+              <div key={colIdx} className="flex flex-col gap-6 shrink-0 w-[calc(50vw-80px)] max-w-[500px] min-w-[300px]">
+                {grid.map((row, rowIdx) => {
+                  const product = row[colIdx];
+                  if (!product) return null;
+                  return renderCard(product);
+                })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
