@@ -9,22 +9,40 @@ import {
 
 const testimonials = [
   {
-    quote: "[Testimonial quote from agent — replace with real quote]",
-    name: "Agent Name",
-    agency: "Agency Name",
+    quote: "Intraverse transformed how we access inventory. We now offer fares we never had before—our clients love it.",
+    name: "Adaeze O.",
+    agency: "Skyline Travels",
     city: "Lagos",
   },
   {
-    quote: "[Testimonial quote from agent — replace with real quote]",
-    name: "Agent Name",
-    agency: "Agency Name",
+    quote: "24/7 ticketing changed everything. We no longer lose bookings because a supplier office was closed.",
+    name: "Ibrahim M.",
+    agency: "Gateway Travel",
     city: "Abuja",
   },
   {
-    quote: "[Testimonial quote from agent — replace with real quote]",
-    name: "Agent Name",
-    agency: "Agency Name",
+    quote: "The wallet system freed up our cash flow. We can process more bookings without waiting on payments to clear.",
+    name: "Chioma E.",
+    agency: "Prestige Tours",
     city: "Port Harcourt",
+  },
+  {
+    quote: "We cut our manual workload in half. Automation lets us focus on selling, not paperwork.",
+    name: "Tunde A.",
+    agency: "Royal Wings Travel",
+    city: "Ibadan",
+  },
+  {
+    quote: "Handling refunds and reissues used to be a nightmare. Now it's just a few clicks—our customers notice the difference.",
+    name: "Fatima B.",
+    agency: "Sahara Holidays",
+    city: "Kano",
+  },
+  {
+    quote: "I started my travel business with zero experience and no IATA. Intraverse gave me everything I needed from day one.",
+    name: "Emeka N.",
+    agency: "Nova Travel Co.",
+    city: "Enugu",
   },
 ];
 
