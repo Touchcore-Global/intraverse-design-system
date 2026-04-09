@@ -1,4 +1,4 @@
-import problemImage from "@/assets/problem-section-image.jpg";
+
 
 export const ProblemStatement = () => {
   return (
