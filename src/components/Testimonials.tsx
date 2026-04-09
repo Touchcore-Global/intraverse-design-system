@@ -57,7 +57,7 @@ export const Testimonials = () => {
           Hear from travel professionals already growing with Intraverse.
         </p>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-xl mx-auto">
           <Carousel opts={{ align: "start", loop: true }} className="w-full">
             <CarouselContent className="-ml-4">
               {testimonials.map((t, i) => (
