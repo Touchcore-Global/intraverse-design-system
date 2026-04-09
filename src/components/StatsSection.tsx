@@ -6,7 +6,7 @@ const stats = [
   { value: "[X]+", label: "Global Suppliers Connected" },
   { value: "48hrs", label: "Average Setup Time" },
   { value: "₦[X]M+", label: "Monthly Transactions" },
-  { value: "99.X%", label: "Platform Uptime" },
+  { value: "99.5%", label: "Platform Uptime" },
 ];
 
 export const StatsSection = () => {
