@@ -1,14 +1,5 @@
 import { Button } from "@/components/ui/button";
-
-const partners = [
-  "IATA",
-  "Amadeus",
-  "Sabre",
-  "Galileo",
-  "NDC Partners",
-  "Hotel Suppliers",
-  "Tour Suppliers",
-];
+import platformDashboard from "@/assets/platform-dashboard.jpg";
 
 export const HomeTrustBar = () => {
   return (
@@ -30,6 +21,31 @@ export const HomeTrustBar = () => {
           <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
             Try for Free
           </Button>
+        </div>
+
+        {/* Two-column explainer + dashboard */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-4">
+          <div>
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4" style={{ color: 'rgb(23, 19, 33)' }}>
+              One Platform. Every Booking.
+            </h3>
+            <p className="text-base md:text-lg leading-relaxed mb-4" style={{ color: 'rgb(116, 113, 122)' }}>
+              Search, compare, and book flights, hotels, and tour packages from multiple global suppliers — all from a single dashboard. No more switching between GDS terminals, NDC portals, and supplier websites.
+            </p>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: 'rgb(116, 113, 122)' }}>
+              Manage customer records, track payments, issue invoices, and monitor your team's performance in real time. Intraverse replaces the ten tools you're juggling today with one that just works.
+            </p>
+          </div>
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src={platformDashboard}
+              alt="Intraverse platform dashboard showing flights, hotels and analytics"
+              className="rounded-2xl shadow-lg w-full max-w-lg"
+              loading="lazy"
+              width={1280}
+              height={800}
+            />
+          </div>
         </div>
       </div>
     </section>
