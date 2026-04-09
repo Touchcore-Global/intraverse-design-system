@@ -21,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/agent-platform" element={<AgentPlatform />} />
           <Route path="/travx" element={<Travx />} />
+          <Route path="/coopx" element={<CoopX />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
