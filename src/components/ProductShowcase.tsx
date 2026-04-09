@@ -133,7 +133,7 @@ export const ProductShowcase = () => {
                         <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
                           {product.label}
                         </span>
-                        <h3 className="text-lg font-bold text-foreground mb-3 leading-snug">
+                        <h3 className="font-bold text-foreground mb-3 leading-tight" style={{ fontSize: '80px', letterSpacing: '-2px', lineHeight: '1.1' }}>
                           {product.title}
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed flex-1">
