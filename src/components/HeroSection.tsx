@@ -24,7 +24,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[96px] font-[660] leading-[1.1] lg:leading-[100px] tracking-[-2.88px] max-w-5xl mx-auto" style={{ color: 'rgb(23, 19, 33)' }}>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[80px] font-[660] leading-[1.1] lg:leading-[88px] tracking-[-2.88px] max-w-5xl mx-auto" style={{ color: 'rgb(23, 19, 33)' }}>
           Flights. Hotels. Tours. Packages.
         </h1>
 
@@ -49,14 +49,16 @@ export const HeroSection = () => {
         {/* Video placeholder */}
         <div className="mt-12 max-w-4xl mx-auto">
           <div className="relative aspect-video rounded-xl overflow-hidden bg-foreground/90">
-            <div className="absolute inset-0 bg-foreground/60 flex items-center justify-center">
-              <button
-                className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
-                aria-label="Play video"
-              >
-                <Play className="w-7 h-7 md:w-8 md:h-8 ml-1" />
-              </button>
-            </div>
+            <video
+              className="w-full h-full object-cover"
+              controls
+              playsInline
+              preload="metadata"
+              poster=""
+            >
+              <source src="https://res.cloudinary.com/demzrmxhz/video/upload/v1762167461/Travx-video_fmbarv.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
 
