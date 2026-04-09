@@ -11,6 +11,7 @@ import Independents from "./pages/Independents.tsx";
 import SupplierEngine from "./pages/SupplierEngine.tsx";
 import About from "./pages/About.tsx";
 import Features from "./pages/Features.tsx";
+import Proof from "./pages/Proof.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/supplier-engine" element={<SupplierEngine />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
+          <Route path="/proof" element={<Proof />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
