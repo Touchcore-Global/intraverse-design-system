@@ -4,7 +4,7 @@ export const ProblemStatement = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 pl-[100px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
           {/* Left side - Explainer text */}
           <div>
             <h2 className="text-left mb-6">
@@ -26,17 +26,6 @@ export const ProblemStatement = () => {
             </p>
           </div>
 
-          {/* Right side - Image */}
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src={problemImage}
-              alt="Intraverse travel agency booking platform dashboard"
-              className="rounded-2xl shadow-lg w-full max-w-lg"
-              loading="lazy"
-              width={800}
-              height={800}
-            />
-          </div>
         </div>
       </div>
     </section>
