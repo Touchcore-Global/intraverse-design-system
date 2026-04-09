@@ -103,7 +103,7 @@ export const ProductShowcase = () => {
           </div>
         </div>
 
-        <div ref={scrollRef} className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-thin">
+        <div ref={scrollRef} className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           <div className="flex gap-6" style={{ width: 'max-content' }}>
             {products.map((product) => {
               const Icon = product.icon;
