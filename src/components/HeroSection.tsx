@@ -29,7 +29,7 @@ export const HeroSection = () => {
         </h1>
 
         <p className="mt-8 text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal max-w-3xl mx-auto mb-6" style={{ color: 'rgb(116, 113, 122)' }}>
-          Sell It All From One Platform.
+          Sell It All From One Platform. One API. One AI Agent.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
