@@ -37,8 +37,8 @@ export function Navbar() {
       >
         <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
           {/* Logo */}
-          <a href="/" className="text-xl font-extrabold tracking-tight text-primary">
-            INTRAVERSE
+          <a href="/" className="flex items-center">
+            <img src={logo} alt="Intraverse" className="h-7" />
           </a>
 
           {/* Desktop links */}
