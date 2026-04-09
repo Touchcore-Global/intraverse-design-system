@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
+import logo from "@/assets/intraverse-logo.svg";
 import { Button } from "@/components/ui/button";
 
 const productLinks = [
