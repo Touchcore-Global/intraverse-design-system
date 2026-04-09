@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -58,7 +59,7 @@ export const Testimonials = () => {
         </p>
 
         <div className="max-w-xl mx-auto">
-          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+          <Carousel opts={{ align: "start", loop: true }} plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]} className="w-full">
             <CarouselContent className="-ml-4">
               {testimonials.map((t, i) => (
                 <CarouselItem key={i} className="pl-4 basis-full">
