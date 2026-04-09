@@ -26,7 +26,7 @@ const Index = () => {
       <ProductShowcase />
       <VideoWalkthrough />
       <HowItWorks />
-      <StatsSection />
+      
       <SecuritySection />
       <FinalCTA />
       <Footer />
