@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { LayoutDashboard, Globe, Building2, Rocket, Wallet, ChevronLeft, ChevronRight } from "lucide-react";
 
 const products = [
@@ -51,6 +51,8 @@ export const ProductShowcase = () => {
     setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
   };
 
+  const [isPaused, setIsPaused] = useState(false);
+
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -58,6 +60,20 @@ export const ProductShowcase = () => {
     el.addEventListener("scroll", updateScrollState);
     return () => el.removeEventListener("scroll", updateScrollState);
   }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      const el = scrollRef.current;
+      if (!el) return;
+      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 1) {
+        el.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        el.scrollBy({ left: 1, behavior: "auto" });
+      }
+    }, 30);
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const scroll = (direction: "left" | "right") => {
     const el = scrollRef.current;
@@ -103,7 +119,7 @@ export const ProductShowcase = () => {
           </div>
         </div>
 
-        <div ref={scrollRef} className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div ref={scrollRef} className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
           <div className="flex gap-6" style={{ width: 'max-content' }}>
             {products.map((product) => {
               const Icon = product.icon;
