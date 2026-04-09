@@ -1,7 +1,7 @@
 import { StatCard } from "@/components/StatCard";
 
 const stats = [
-  { value: "200+", label: "Active Agents" },
+  { value: "400+", label: "Active Agents" },
   { value: "[X,000]+", label: "Bookings Processed" },
   { value: "[X]+", label: "Global Suppliers Connected" },
   { value: "48hrs", label: "Average Setup Time" },
