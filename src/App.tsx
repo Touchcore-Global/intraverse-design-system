@@ -10,6 +10,7 @@ import CoopX from "./pages/CoopX.tsx";
 import Independents from "./pages/Independents.tsx";
 import SupplierEngine from "./pages/SupplierEngine.tsx";
 import About from "./pages/About.tsx";
+import Features from "./pages/Features.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/independents" element={<Independents />} />
           <Route path="/supplier-engine" element={<SupplierEngine />} />
           <Route path="/about" element={<About />} />
+          <Route path="/features" element={<Features />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
