@@ -8,7 +8,7 @@ export const ProblemStatement = () => {
           {/* Left side - Explainer text */}
           <div>
             <h2 className="text-left mb-6">
-              Running a Travel Agency Shouldn't Feel This Hard
+              Built to Meet Industry's Demands
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6 text-base md:text-lg">
               You're juggling GDS terminals for flights, checking NDC portals for better fares, calling
