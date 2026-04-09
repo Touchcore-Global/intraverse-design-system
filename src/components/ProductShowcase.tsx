@@ -1,4 +1,5 @@
-import { LayoutDashboard, Globe, Building2, Rocket, Wallet } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
+import { LayoutDashboard, Globe, Building2, Rocket, Wallet, ChevronLeft, ChevronRight } from "lucide-react";
 
 const products = [
   {
@@ -39,25 +40,72 @@ const products = [
 ];
 
 export const ProductShowcase = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollState = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener("scroll", updateScrollState);
+    return () => el.removeEventListener("scroll", updateScrollState);
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = el.clientWidth * 0.6;
+    el.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" });
+  };
+
   return (
     <section className="py-20 bg-accent">
       <div className="container mx-auto px-4" style={{ paddingLeft: '100px' }}>
-        <h2
-          className="text-left mb-12 max-w-4xl text-foreground"
-          style={{
-            fontFamily: '"GitLab Sans", sans-serif',
-            fontSize: '80px',
-            fontWeight: 660,
-            letterSpacing: '-2.88px',
-            lineHeight: '100px',
-          }}
-        >
-          One Platform - Everything You Need To Sell Travel
-        </h2>
+        <div className="flex items-end justify-between mb-12">
+          <h2
+            className="text-left max-w-4xl text-foreground"
+            style={{
+              fontFamily: '"GitLab Sans", sans-serif',
+              fontSize: '80px',
+              fontWeight: 660,
+              letterSpacing: '-2.88px',
+              lineHeight: '100px',
+            }}
+          >
+            One Platform - Everything You Need To Sell Travel
+          </h2>
 
-        <div className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-thin">
+          <div className="flex gap-2 shrink-0 ml-8">
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5 text-foreground" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5 text-foreground" />
+            </button>
+          </div>
+        </div>
+
+        <div ref={scrollRef} className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-thin">
           <div className="flex gap-6" style={{ width: 'max-content' }}>
-            {products.map((product, index) => {
+            {products.map((product) => {
               const Icon = product.icon;
               return (
                 <div
