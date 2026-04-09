@@ -36,6 +36,7 @@ export const HomeTrustBar = () => {
   const [active, setActive] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const lastScrollTime = useRef(0);
+  const touchStartY = useRef(0);
 
   useEffect(() => {
     const section = sectionRef.current;
