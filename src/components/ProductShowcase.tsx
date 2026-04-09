@@ -104,35 +104,53 @@ export const ProductShowcase = () => {
         </div>
 
         <div ref={scrollRef} className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-          <div className="flex gap-6" style={{ width: 'max-content' }}>
-            {products.map((product) => {
-              const Icon = product.icon;
-              return (
-                <div
-                  key={product.label}
-                  className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 w-[calc(50vw-80px)] max-w-[500px] min-w-[300px] shrink-0"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
-                    {product.label}
-                  </span>
-                  <h3 className="text-lg font-bold text-foreground mb-3 leading-snug">
-                    {product.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                    {product.body}
-                  </p>
-                  <a
-                    href="#"
-                    className="mt-4 text-sm font-semibold text-primary hover:underline inline-block"
-                  >
-                    {product.cta}
-                  </a>
+          <div className="flex flex-wrap gap-6" style={{ width: 'max-content', maxHeight: 'none' }}>
+            {(() => {
+              const rows = 2;
+              const cols = Math.ceil(products.length / rows);
+              const grid: (typeof products[0] | null)[][] = Array.from({ length: rows }, () => []);
+              products.forEach((p, i) => {
+                grid[i % rows].push(p);
+              });
+              // Pad rows to equal length
+              const maxLen = Math.max(...grid.map(r => r.length));
+              grid.forEach(r => { while (r.length < maxLen) r.push(null); });
+
+              return Array.from({ length: maxLen }, (_, colIdx) => (
+                <div key={colIdx} className="flex flex-col gap-6 shrink-0 w-[calc(50vw-80px)] max-w-[500px] min-w-[300px]">
+                  {grid.map((row, rowIdx) => {
+                    const product = row[colIdx];
+                    if (!product) return null;
+                    const Icon = product.icon;
+                    return (
+                      <div
+                        key={product.label}
+                        className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 flex-1"
+                      >
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                          <Icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
+                          {product.label}
+                        </span>
+                        <h3 className="text-lg font-bold text-foreground mb-3 leading-snug">
+                          {product.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                          {product.body}
+                        </p>
+                        <a
+                          href="#"
+                          className="mt-4 text-sm font-semibold text-primary hover:underline inline-block"
+                        >
+                          {product.cta}
+                        </a>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
+              ));
+            })()}
           </div>
         </div>
       </div>
