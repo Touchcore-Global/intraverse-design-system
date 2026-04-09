@@ -118,7 +118,7 @@ export const HomeTrustBar = () => {
               </div>
               <div className="flex justify-center lg:justify-end">
                 <img
-                  src={platformDashboard}
+                  src={c.image}
                   alt={`Intraverse - ${c.title}`}
                   className="rounded-2xl shadow-lg w-full"
                   loading="lazy"
