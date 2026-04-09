@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket } from "lucide-react";
 import { LucideIcon } from "lucide-react";
+import featuresHero from "@/assets/features-hero.svg";
 
 const cards: { icon: LucideIcon; headline: string; subheading: string; content: string }[] = [
   {
