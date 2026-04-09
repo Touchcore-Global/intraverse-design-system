@@ -2,7 +2,13 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Plane, Hotel, Globe, LayoutDashboard, Zap, ShieldCheck } from "lucide-react";
+import { MessageCircle, Plane, Hotel, Globe, LayoutDashboard, Zap, ShieldCheck, Quote } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const features = [
   {
@@ -81,6 +87,29 @@ const stats = [
   { value: "200+", label: "Active Agents" },
   { value: "48hrs", label: "Setup" },
   { value: "[X]%", label: "Faster vs Manual" },
+];
+
+const faqs = [
+  {
+    question: "What flight sources does the platform aggregate?",
+    answer: "The Agent Selling Platform connects to all major GDS systems (Amadeus, Sabre, Galileo), NDC direct connections with airlines, consolidator inventory, and other aggregator feeds. This means every search returns fares from every available source — so you never miss a better price or route option.",
+  },
+  {
+    question: "Can I book hotels and tours alongside flights?",
+    answer: "Yes. The platform integrates hotel inventory from multiple global suppliers and tour/experience packages from leading operators. You can search, compare, and book flights, hotels, and tours from the same dashboard — or bundle them into complete packages for your customers.",
+  },
+  {
+    question: "How does this compare to using a GDS directly?",
+    answer: "A standalone GDS only gives you access to its own inventory. The Agent Selling Platform layers multiple GDS systems, NDC connections, consolidators, and aggregators into a single search. You see more options, find better fares, and book faster — all without switching between systems or learning multiple interfaces.",
+  },
+  {
+    question: "How long does setup take?",
+    answer: "Most agencies are live within 48 hours. Sign up on the platform, follow the guided steps to complete your profile, and our team will help configure your supplier connections and train your staff. There's no lengthy integration process or IT requirements.",
+  },
+  {
+    question: "What does the platform cost?",
+    answer: "Pricing is tailored to your agency's size and booking volume. We offer flexible plans with no long-term contracts. Book a free demo to discuss your needs and get a custom quote — there's no commitment required.",
+  },
 ];
 
 const AgentPlatform = () => {
@@ -183,16 +212,66 @@ const AgentPlatform = () => {
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* TESTIMONIAL */}
       <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="border border-border rounded-xl p-8 md:p-12 bg-card">
+              <Quote className="h-10 w-10 text-primary/20 mb-6" />
+              <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium mb-8">
+                "Before Intraverse, I had four browser tabs open just to search for a single client's flight. Now I run one search and see fares from every source — GDS, NDC, consolidators — side by side. I book faster, I find better prices, and my clients think I'm a genius."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
+                  A
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">Adaeze O.</p>
+                  <p className="text-sm text-muted-foreground">Skyline Travels — Lagos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-accent">
+        <div className="container mx-auto px-4 lg:pl-[100px]">
+          <h2 className="max-w-4xl mb-12">Frequently Asked Questions</h2>
+          <div className="max-w-3xl">
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="border-border">
+                  <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:no-underline py-5">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="py-20 md:py-28 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="max-w-4xl mx-auto">Ready to Sell From One Screen?</h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            See how the Agent Selling Platform can replace your fragmented workflow with a single, powerful dashboard.
+          <h2 className="max-w-4xl mx-auto text-primary-foreground">
+            Ready to Sell More From One Screen?
+          </h2>
+          <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
+            See how the Agent Selling Platform can replace your fragmented workflow with a single, powerful dashboard. Book a free 15-minute demo — no commitment required.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-              Book a Demo
+            <Button
+              variant="outline"
+              size="xl"
+              className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none font-semibold"
+            >
+              Book a Free Demo
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
               <MessageCircle className="h-5 w-5" />
