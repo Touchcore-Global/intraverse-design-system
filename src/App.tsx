@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import AgentPlatform from "./pages/AgentPlatform.tsx";
 import Travx from "./pages/Travx.tsx";
 import CoopX from "./pages/CoopX.tsx";
+import Independents from "./pages/Independents.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/agent-platform" element={<AgentPlatform />} />
           <Route path="/travx" element={<Travx />} />
           <Route path="/coopx" element={<CoopX />} />
+          <Route path="/independents" element={<Independents />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
