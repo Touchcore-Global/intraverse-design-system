@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
