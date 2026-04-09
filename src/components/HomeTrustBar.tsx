@@ -108,7 +108,7 @@ export const HomeTrustBar = () => {
           Built for How Travel Is Sold
         </h2>
         <p
-          className="text-left text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal mb-6 max-w-2xl"
+          className="text-left text-base sm:text-lg md:text-[24px] md:leading-[30px] md:tracking-[-0.48px] font-normal mb-6 max-w-2xl"
           style={{ color: "rgb(116, 113, 122)" }}
         >
           Trusted by 400+ travel agents selling flights, hotels, tours &amp; packages
