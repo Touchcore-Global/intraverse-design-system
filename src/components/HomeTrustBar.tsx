@@ -96,8 +96,7 @@ export const HomeTrustBar = () => {
       section.removeEventListener("touchstart", handleTouchStart);
       section.removeEventListener("touchend", handleTouchEnd);
     };
-
-  
+  }, []);
 
   return (
     <section ref={sectionRef} className="py-16 bg-accent">
