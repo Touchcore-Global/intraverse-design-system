@@ -43,7 +43,7 @@ export const ProductShowcase = () => {
     <section className="py-20 bg-accent">
       <div className="container mx-auto px-4">
         <h2
-          className="text-center mb-12 max-w-4xl mx-auto text-foreground"
+          className="text-left mb-12 max-w-4xl text-foreground"
           style={{
             fontFamily: '"GitLab Sans", sans-serif',
             fontSize: '80px',
