@@ -42,7 +42,16 @@ export const ProductShowcase = () => {
   return (
     <section className="py-20 bg-accent">
       <div className="container mx-auto px-4">
-        <h2 className="text-section text-center mb-12 max-w-4xl mx-auto">
+        <h2
+          className="text-center mb-12 max-w-4xl mx-auto text-white"
+          style={{
+            fontFamily: '"GitLab Sans", sans-serif',
+            fontSize: '80px',
+            fontWeight: 660,
+            letterSpacing: '-2.88px',
+            lineHeight: '100px',
+          }}
+        >
           One Platform - Everything You Need To Sell Travel
         </h2>
 
