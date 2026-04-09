@@ -6,13 +6,13 @@ const steps = [
     number: "1",
     title: "Book a Demo",
     description:
-      "Tell us about your agency. We'll walk you through the platform.",
+      "Tell us about your business. We'll walk you through the platform.",
   },
   {
     number: "2",
     title: "Get Set Up",
     description:
-      "Our team connects your GDS, NDC, and supplier sources, configures your dashboard, and trains your staff. Most agencies are live within 48 hours.",
+      "Sign up on the platform and follow the guided simple steps to complete your profile. Most businesses are live within 24 hours.",
   },
   {
     number: "3",
