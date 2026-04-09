@@ -43,7 +43,7 @@ export const ProductShowcase = () => {
     <section className="py-20 bg-accent">
       <div className="container mx-auto px-4">
         <h2 className="text-section text-center mb-12 max-w-4xl mx-auto">
-          Flights. Hotels. Tours. Packages. Everything Your Agency Needs — One Platform.
+          One Platform - Everything You Need To Sell Travel
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
