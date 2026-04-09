@@ -62,7 +62,7 @@ export const HomeTrustBar = () => {
     return () => window.removeEventListener("wheel", handleWheel);
   }, []);
 
-  const item = containers[active];
+  
 
   return (
     <section ref={sectionRef} className="py-16 bg-accent">
