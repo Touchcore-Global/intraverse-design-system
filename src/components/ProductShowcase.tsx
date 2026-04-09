@@ -55,35 +55,37 @@ export const ProductShowcase = () => {
           One Platform - Everything You Need To Sell Travel
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => {
-            const Icon = product.icon;
-            return (
-              <div
-                key={product.label}
-                className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-primary" />
-                </div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
-                  {product.label}
-                </span>
-                <h3 className="text-lg font-bold text-foreground mb-3 leading-snug">
-                  {product.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                  {product.body}
-                </p>
-                <a
-                  href="#"
-                  className="mt-4 text-sm font-semibold text-primary hover:underline inline-block"
+        <div className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-thin">
+          <div className="flex gap-6" style={{ width: 'max-content' }}>
+            {products.map((product, index) => {
+              const Icon = product.icon;
+              return (
+                <div
+                  key={product.label}
+                  className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 w-[calc(50vw-80px)] max-w-[500px] min-w-[300px] shrink-0"
                 >
-                  {product.cta}
-                </a>
-              </div>
-            );
-          })}
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
+                    {product.label}
+                  </span>
+                  <h3 className="text-lg font-bold text-foreground mb-3 leading-snug">
+                    {product.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                    {product.body}
+                  </p>
+                  <a
+                    href="#"
+                    className="mt-4 text-sm font-semibold text-primary hover:underline inline-block"
+                  >
+                    {product.cta}
+                  </a>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
