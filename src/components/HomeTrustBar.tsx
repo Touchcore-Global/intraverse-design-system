@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import platformDashboard from "@/assets/platform-dashboard.jpg";
+import { Button } from "@/components/ui/button";
 
 const containers = [
   {
@@ -27,20 +27,48 @@ const containers = [
 
 export const HomeTrustBar = () => {
   const [active, setActive] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isLockedRef = useRef(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      const rect = section.getBoundingClientRect();
+      const inView = rect.top <= 100 && rect.bottom >= window.innerHeight * 0.5;
+      if (!inView) return;
+
+      // Determine direction
+      const direction = e.deltaY > 0 ? 1 : -1;
+
+      setActive((prev) => {
+        const next = prev + direction;
+        if (next < 0 || next >= containers.length) return prev;
+        // Only prevent default if we can navigate
+        e.preventDefault();
+        return next;
+      });
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, []);
+
   const item = containers[active];
 
   return (
-    <section className="py-16 bg-accent">
+    <section ref={sectionRef} className="py-16 bg-accent">
       <div className="container mx-auto px-4 pl-[100px]">
         <h2
           className="text-3xl sm:text-4xl md:text-5xl lg:text-[80px] font-[660] leading-[1.1] lg:leading-[88px] tracking-[-2.88px] text-left mb-6"
-          style={{ color: 'rgb(23, 19, 33)' }}
+          style={{ color: "rgb(23, 19, 33)" }}
         >
           Built for How Travel Is Sold
         </h2>
         <p
           className="text-left text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal mb-6 max-w-2xl"
-          style={{ color: 'rgb(116, 113, 122)' }}
+          style={{ color: "rgb(116, 113, 122)" }}
         >
           Trusted by 400+ travel agents selling flights, hotels, tours &amp; packages
         </p>
@@ -50,48 +78,60 @@ export const HomeTrustBar = () => {
           </Button>
         </div>
 
-        {/* Tab navigation */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        {/* Card with overlay crossfade */}
+        <div className="relative bg-background rounded-2xl shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] border border-border/50 overflow-hidden min-h-[400px]">
           {containers.map((c, i) => (
-            <button
+            <div
               key={i}
-              onClick={() => setActive(i)}
-              className={`px-5 py-2.5 rounded-full text-sm md:text-base font-medium transition-all duration-200 ${
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-8 md:p-12 transition-all duration-500 ease-in-out ${
                 i === active
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-background text-muted-foreground hover:bg-muted border border-border/50"
+                  ? "relative opacity-100 translate-y-0"
+                  : "absolute inset-0 opacity-0 translate-y-6 pointer-events-none"
               }`}
             >
-              {c.title}
-            </button>
+              <div>
+                <h3
+                  className="text-2xl md:text-3xl font-semibold mb-4"
+                  style={{ color: "rgb(23, 19, 33)" }}
+                >
+                  {c.title}
+                </h3>
+                <p
+                  className="text-base md:text-lg leading-relaxed mb-4"
+                  style={{ color: "rgb(116, 113, 122)" }}
+                >
+                  {c.p1}
+                </p>
+                <p
+                  className="text-base md:text-lg leading-relaxed"
+                  style={{ color: "rgb(116, 113, 122)" }}
+                >
+                  {c.p2}
+                </p>
+              </div>
+              <div className="flex justify-center lg:justify-end">
+                <img
+                  src={platformDashboard}
+                  alt={`Intraverse - ${c.title}`}
+                  className="rounded-2xl shadow-lg w-full"
+                  loading="lazy"
+                  width={1280}
+                  height={800}
+                />
+              </div>
+            </div>
           ))}
-        </div>
 
-        {/* Active container */}
-        <div
-          key={active}
-          className="animate-fade-in grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-background rounded-2xl p-8 md:p-12 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] border border-border/50"
-        >
-          <div>
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4" style={{ color: 'rgb(23, 19, 33)' }}>
-              {item.title}
-            </h3>
-            <p className="text-base md:text-lg leading-relaxed mb-4" style={{ color: 'rgb(116, 113, 122)' }}>
-              {item.p1}
-            </p>
-            <p className="text-base md:text-lg leading-relaxed" style={{ color: 'rgb(116, 113, 122)' }}>
-              {item.p2}
-            </p>
-          </div>
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src={platformDashboard}
-              alt={`Intraverse - ${item.title}`}
-              className="rounded-2xl shadow-lg w-full"
-              loading="lazy"
-              width={1280}
-              height={800}
-            />
+          {/* Progress dots */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {containers.map((_, i) => (
+              <span
+                key={i}
+                className={`block w-2 h-2 rounded-full transition-all duration-300 ${
+                  i === active ? "bg-primary w-6" : "bg-muted-foreground/30"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>
