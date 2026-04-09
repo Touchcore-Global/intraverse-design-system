@@ -53,6 +53,7 @@ export const ProblemStatement = () => {
           {cards.map((card, index) => (
             <Card key={index} className="border border-border bg-card shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6">
+                <card.icon className="h-8 w-8 text-primary mb-4" />
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {card.headline}
                 </h3>
