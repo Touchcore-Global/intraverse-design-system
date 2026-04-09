@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import platformDashboard from "@/assets/platform-dashboard.jpg";
 import { Button } from "@/components/ui/button";
+import dashboardBooking from "@/assets/dashboard-booking.jpg";
+import dashboardBackoffice from "@/assets/dashboard-backoffice.jpg";
+import dashboardStorefront from "@/assets/dashboard-storefront.jpg";
+import dashboardAnalytics from "@/assets/dashboard-analytics.jpg";
 
 const containers = [
   {
