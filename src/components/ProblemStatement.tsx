@@ -1,71 +1,42 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket } from "lucide-react";
-import { LucideIcon } from "lucide-react";
-
-const cards: { icon: LucideIcon; headline: string; subheading: string; content: string }[] = [
-  {
-    icon: Globe,
-    headline: "Access Global Travel Inventory. Sell Without Limits.",
-    subheading: "Unlock flights, hotels, and travel services from multiple suppliers—all in one platform.",
-    content: "Stop juggling multiple supplier contracts and limited inventory. Intraverse connects you to global travel content through GDS integrations and trusted partners—giving you access to real-time availability, competitive pricing, and both published and private fares, all in one place.",
-  },
-  {
-    icon: Ticket,
-    headline: "Issue Tickets Anytime. Never Miss a Sale.",
-    subheading: "Your business doesn't sleep—your ticketing shouldn't either.",
-    content: "Intraverse enables instant ticket issuance around the clock, removing dependency on supplier availability. Automated workflows ensure faster confirmations, helping you secure bookings immediately and deliver a seamless experience to your customers.",
-  },
-  {
-    icon: Wallet,
-    headline: "Sell More Travel. Worry Less About Cash.",
-    subheading: "Flexible payment infrastructure designed for modern travel businesses.",
-    content: "With wallet-based transactions and seamless payment flows, Intraverse reduces capital constraints and speeds up booking turnaround. Built to support flexible and split payments, it empowers you to grow your business without being limited by cash flow.",
-  },
-  {
-    icon: Cog,
-    headline: "Automate Your Travel Business. Scale Without Stress.",
-    subheading: "Eliminate manual processes and run a smarter operation.",
-    content: "Intraverse automates core travel operations—from ticketing to booking management—reducing errors and manual workload. This allows you to operate faster, scale efficiently, and focus more on growth than administration.",
-  },
-  {
-    icon: RefreshCcw,
-    headline: "Stay in Control—Even After the Ticket is Issued.",
-    subheading: "Manage changes, refunds, and more—without delays.",
-    content: "Manage post-ticketing processes with ease, including reissues, refunds, name corrections, and ancillary services. Intraverse gives you the tools to respond quickly to customer needs while maintaining full control over every booking.",
-  },
-  {
-    icon: Rocket,
-    headline: "Start a Travel Business. No Barriers.",
-    subheading: "Whether you're an agent or just getting started, Intraverse gives you everything you need.",
-    content: "Intraverse removes traditional barriers to entry by providing ready-to-use infrastructure, access to global inventory, and white-label tools. Whether you're an experienced agent or a new entrant, you can start, run, and scale a travel business without needing IATA accreditation or prior experience.",
-  },
-];
+import problemImage from "@/assets/problem-section-image.jpg";
 
 export const ProblemStatement = () => {
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 pl-[100px]">
-        <h2 className="text-left mb-12">
-          Built to Meet Industry's Demands
-        </h2>
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left side - Explainer text */}
+          <div>
+            <h2 className="text-left mb-6">
+              Running a Travel Agency Shouldn't Feel This Hard
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-6 text-base md:text-lg">
+              You're juggling GDS terminals for flights, checking NDC portals for better fares, calling
+              consolidators for group rates, logging into separate platforms for hotels, and sourcing tour
+              packages from suppliers one by one.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6 text-base md:text-lg">
+              Customer records live on spreadsheets, payments are chased
+              on WhatsApp, and you're losing customers to agencies with better websites. Your margins are
+              tight, your team is stretched, and every price change costs you time and money.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
+              You didn't start your agency to fight with ten different systems. You started it to build
+              something. Intraverse brings flights, hotels, and tours from leading global suppliers into one platform — so you can get back to selling.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map((card, index) => (
-            <Card key={index} className="border border-border bg-card shadow-sm hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
-                <card.icon className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {card.headline}
-                </h3>
-                <p className="text-sm font-medium text-primary mb-3">
-                  {card.subheading}
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {card.content}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+          {/* Right side - Image */}
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src={problemImage}
+              alt="Intraverse travel agency booking platform dashboard"
+              className="rounded-2xl shadow-lg w-full max-w-lg"
+              loading="lazy"
+              width={800}
+              height={800}
+            />
+          </div>
         </div>
       </div>
     </section>
