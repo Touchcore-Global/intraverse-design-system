@@ -35,7 +35,7 @@ const containers = [
 export const HomeTrustBar = () => {
   const [active, setActive] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+  const lastScrollTime = useRef(0);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -46,14 +46,19 @@ export const HomeTrustBar = () => {
       const inView = rect.top <= 100 && rect.bottom >= window.innerHeight * 0.5;
       if (!inView) return;
 
-      // Determine direction
+      const now = Date.now();
+      if (now - lastScrollTime.current < 600) {
+        e.preventDefault();
+        return;
+      }
+
       const direction = e.deltaY > 0 ? 1 : -1;
 
       setActive((prev) => {
         const next = prev + direction;
         if (next < 0 || next >= containers.length) return prev;
-        // Only prevent default if we can navigate
         e.preventDefault();
+        lastScrollTime.current = now;
         return next;
       });
     };
