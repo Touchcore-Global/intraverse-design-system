@@ -46,10 +46,6 @@ export const ProblemStatement = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 pl-[100px]">
-        <div className="flex justify-center mb-12">
-          <img src={featuresHero} alt="Intraverse mobile app" className="max-w-xs md:max-w-sm lg:max-w-md h-auto" />
-        </div>
-        <h2 className="text-left mb-12">
           Built to Meet Industry's Demands
         </h2>
 
