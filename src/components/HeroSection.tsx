@@ -25,8 +25,12 @@ export const HeroSection = () => {
 
       <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[80px] font-[660] leading-[1.1] lg:leading-[88px] tracking-[-2.88px] max-w-5xl mx-auto" style={{ color: 'rgb(23, 19, 33)' }}>
-          One Platform for Everything Your Agency Needs
+          Flights. Hotels. Tours. Packages.
         </h1>
+
+        <p className="mt-8 text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal max-w-3xl mx-auto mb-6" style={{ color: 'rgb(116, 113, 122)' }}>
+          Sell It All From One Platform.
+        </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
