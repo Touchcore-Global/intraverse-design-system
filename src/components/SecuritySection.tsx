@@ -18,7 +18,7 @@ const features = [
   },
   {
     icon: Clock,
-    title: "99.X% Uptime",
+    title: "99.5% Uptime",
     description: "Your business runs on availability.",
   },
 ];
