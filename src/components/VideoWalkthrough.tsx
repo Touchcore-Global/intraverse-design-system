@@ -5,7 +5,7 @@ export const VideoWalkthrough = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-section mb-8" style={{ fontSize: '80px', lineHeight: '1.1' }}>
+        <h2 className="text-section mb-8 text-[32px] sm:text-[48px] md:text-[60px] lg:text-[80px] leading-tight">
           See How Agents Book Faster
         </h2>
 
