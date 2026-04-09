@@ -41,7 +41,7 @@ const products = [
 export const ProductShowcase = () => {
   return (
     <section className="py-20 bg-accent">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4" style={{ paddingLeft: '100px' }}>
         <h2
           className="text-left mb-12 max-w-4xl text-foreground"
           style={{
