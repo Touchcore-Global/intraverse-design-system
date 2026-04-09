@@ -24,7 +24,7 @@ export const HomeTrustBar = () => {
         </div>
 
         {/* Two-column explainer + dashboard */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-4 bg-background rounded-2xl p-8 md:p-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-4 bg-background rounded-2xl p-8 md:p-12 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] border border-border/50">
           <div>
             <h3 className="text-2xl md:text-3xl font-semibold mb-4" style={{ color: 'rgb(23, 19, 33)' }}>
               One Platform. Every Booking.
