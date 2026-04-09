@@ -105,8 +105,13 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-foreground font-bold;
-    line-height: 1.2;
+    box-sizing: border-box;
+    color: rgb(23, 19, 33);
+    font-family: "GitLab Sans", sans-serif;
+    font-size: 80px;
+    font-weight: 660;
+    letter-spacing: -2.88px;
+    line-height: 100px;
   }
 }
 
