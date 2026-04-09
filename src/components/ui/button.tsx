@@ -16,7 +16,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Intraverse custom variants
-        hero: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all",
+        hero: "bg-foreground text-background hover:bg-foreground/90 rounded-none font-semibold shadow-lg hover:shadow-xl transition-all",
         whatsapp: "border-2 border-whatsapp text-whatsapp hover:bg-whatsapp hover:text-primary-foreground rounded-full font-semibold transition-all",
       },
       size: {
