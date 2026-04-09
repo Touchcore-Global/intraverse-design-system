@@ -9,6 +9,7 @@ const products = [
     body: "Aggregated flight inventory from GDS, NDC, consolidators, and aggregators. Hotels and tours from leading global suppliers. Compare prices across every source and book in minutes.",
     cta: "Book a Demo →",
     label: "Agent Selling Platform",
+    href: "/agent-platform",
   },
   {
     icon: Globe,
@@ -16,6 +17,7 @@ const products = [
     body: "A fully branded, booking-enabled website for your agency at ₦120,000/month. No developer needed. Your customers search, book, and pay directly.",
     cta: "See Travx →",
     label: "Travx",
+    href: "/travx",
   },
   {
     icon: Building2,
@@ -23,6 +25,7 @@ const products = [
     body: "Approval workflows, policy enforcement, consolidated billing, and full reporting — built for Nigerian corporates managing employee travel.",
     cta: "Book a Demo →",
     label: "CoopX",
+    href: "/coopx",
   },
   {
     icon: Rocket,
@@ -30,6 +33,7 @@ const products = [
     body: "Access real IATA-backed technology. Sell flights, hotels, and tours from global suppliers. Earn commissions on every booking. No experience needed.",
     cta: "Join the Programme →",
     label: "Independents Programme",
+    href: "/independents",
   },
   {
     icon: Wallet,
@@ -37,6 +41,7 @@ const products = [
     body: "Fare Lock and Pay Later options let your customers secure today's fare and pay in instalments. You close the deal. They get their trip.",
     cta: "Learn About Odiopay →",
     label: "Odiopay (BNPL)",
+    href: "/supplier-engine",
   },
 ];
 
@@ -88,7 +93,7 @@ export const ProductShowcase = () => {
           {product.body}
         </p>
         <a
-          href="#"
+          href={product.href}
           className="mt-4 text-sm font-semibold text-primary hover:underline inline-block"
         >
           {product.cta}
