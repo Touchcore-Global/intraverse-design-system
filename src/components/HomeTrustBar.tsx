@@ -48,7 +48,7 @@ export const HomeTrustBar = () => {
       if (!inView) return;
 
       const now = Date.now();
-      if (now - lastScrollTime.current < 600) {
+      if (now - lastScrollTime.current < 1200) {
         e.preventDefault();
         return;
       }
@@ -77,7 +77,7 @@ export const HomeTrustBar = () => {
       if (Math.abs(deltaY) < 40) return;
 
       const now = Date.now();
-      if (now - lastScrollTime.current < 600) return;
+      if (now - lastScrollTime.current < 1200) return;
 
       const direction = deltaY > 0 ? 1 : -1;
       setActive((prev) => {
