@@ -51,6 +51,8 @@ export const ProductShowcase = () => {
     setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
   };
 
+  const [isPaused, setIsPaused] = useState(false);
+
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -58,6 +60,20 @@ export const ProductShowcase = () => {
     el.addEventListener("scroll", updateScrollState);
     return () => el.removeEventListener("scroll", updateScrollState);
   }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      const el = scrollRef.current;
+      if (!el) return;
+      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 1) {
+        el.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        el.scrollBy({ left: 1, behavior: "auto" });
+      }
+    }, 30);
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const scroll = (direction: "left" | "right") => {
     const el = scrollRef.current;
