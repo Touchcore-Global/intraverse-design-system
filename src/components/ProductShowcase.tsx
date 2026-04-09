@@ -93,7 +93,7 @@ export const ProductShowcase = () => {
           {product.body}
         </p>
         <a
-          href="#"
+          href={product.href}
           className="mt-4 text-sm font-semibold text-primary hover:underline inline-block"
         >
           {product.cta}
