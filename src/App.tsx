@@ -8,6 +8,7 @@ import AgentPlatform from "./pages/AgentPlatform.tsx";
 import Travx from "./pages/Travx.tsx";
 import CoopX from "./pages/CoopX.tsx";
 import Independents from "./pages/Independents.tsx";
+import SupplierEngine from "./pages/SupplierEngine.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
