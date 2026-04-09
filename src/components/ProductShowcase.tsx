@@ -81,7 +81,7 @@ export const ProductShowcase = () => {
         <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
           {product.label}
         </span>
-        <h3 className="font-bold text-foreground mb-3 leading-tight text-xl md:text-2xl lg:text-[36px]" style={{ letterSpacing: '-0.5px', lineHeight: '1.2' }}>
+        <h3 className="font-bold text-foreground mb-3 leading-tight">
           {product.title}
         </h3>
         <p className="text-sm text-muted-foreground leading-relaxed flex-1">
@@ -102,16 +102,7 @@ export const ProductShowcase = () => {
     return (
       <section className="py-12 bg-accent">
         <div className="container mx-auto px-4">
-          <h2
-            className="text-left text-foreground mb-8"
-            style={{
-              fontFamily: '"GitLab Sans", sans-serif',
-              fontSize: '36px',
-              fontWeight: 660,
-              letterSpacing: '-1px',
-              lineHeight: '44px',
-            }}
-          >
+          <h2 className="text-left text-foreground mb-8">
             One Platform - Everything You Need To Sell Travel
           </h2>
           <div className="flex flex-col gap-4">
@@ -137,13 +128,6 @@ export const ProductShowcase = () => {
         <div className="flex items-end justify-between mb-12">
           <h2
             className="text-left max-w-4xl text-foreground"
-            style={{
-              fontFamily: '"GitLab Sans", sans-serif',
-              fontSize: '80px',
-              fontWeight: 660,
-              letterSpacing: '-2.88px',
-              lineHeight: '100px',
-            }}
           >
             One Platform - Everything You Need To Sell Travel
           </h2>
