@@ -4,10 +4,10 @@ import logo from "@/assets/intraverse-logo.svg";
 import { Button } from "@/components/ui/button";
 
 const productLinks = [
-  { label: "Agent Platform", href: "#agent-platform" },
-  { label: "Travx", href: "#travx" },
-  { label: "CoopX", href: "#coopx" },
-  { label: "Independents", href: "#independents" },
+  { label: "Agent Platform", href: "/agent-platform" },
+  { label: "Travx", href: "/travx" },
+  { label: "CoopX", href: "/coopx" },
+  { label: "Independents", href: "/independents" },
 ];
 
 const navLinks = [
