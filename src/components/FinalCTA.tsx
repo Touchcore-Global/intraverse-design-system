@@ -8,7 +8,7 @@ export const FinalCTA = () => {
     <section className="py-20 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary-foreground">
-          200+ Agents Chose Intraverse. See Why in 15 Minutes.
+          400+ Agents Chose Intraverse. See Why in 15 Minutes.
         </h2>
         <p className="max-w-2xl mx-auto mb-10 text-primary-foreground/80 text-sm md:text-base">
           Book a 15-minute demo and see how Intraverse can help you sell more flights, hotels, tours,

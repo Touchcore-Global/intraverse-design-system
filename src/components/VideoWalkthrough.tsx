@@ -6,7 +6,7 @@ export const VideoWalkthrough = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-section mb-8">
-          See How 200+ Agents Book Faster — In 90 Seconds
+          See How 400+ Agents Book Faster — In 90 Seconds
         </h2>
 
         {/* Video placeholder */}
