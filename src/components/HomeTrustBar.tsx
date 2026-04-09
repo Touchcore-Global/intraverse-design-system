@@ -40,7 +40,7 @@ export const HomeTrustBar = () => {
             <img
               src={platformDashboard}
               alt="Intraverse platform dashboard showing flights, hotels and analytics"
-              className="rounded-2xl shadow-lg w-full max-w-lg"
+              className="rounded-2xl shadow-lg w-full"
               loading="lazy"
               width={1280}
               height={800}
