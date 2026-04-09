@@ -10,21 +10,25 @@ const containers = [
     title: "One Platform. Every Booking.",
     p1: "Search, compare, and book flights, hotels, and tour packages from multiple global suppliers — all from a single dashboard. No more switching between GDS terminals, NDC portals, and supplier websites.",
     p2: "Manage customer records, track payments, issue invoices, and monitor your team's performance in real time. Intraverse replaces the ten tools you're juggling today with one that just works.",
+    image: dashboardBooking,
   },
   {
     title: "Automate the Back Office",
     p1: "From invoice generation to BSP reconciliation, Intraverse handles the admin tasks that eat into your day. Set up automated payment reminders, generate financial reports, and track commissions effortlessly.",
     p2: "Spend less time on spreadsheets and more time closing deals. Your back office runs itself so your team can focus on what matters — selling travel.",
+    image: dashboardBackoffice,
   },
   {
     title: "Your Own Branded Storefront",
     p1: "Launch a professional, mobile-ready booking website under your own brand — no developers needed. Showcase flights, hotels, and packages with real-time pricing your customers can book directly.",
     p2: "Build credibility and compete with larger agencies online. Customise your storefront with your logo, colours, and domain to create a seamless customer experience.",
+    image: dashboardStorefront,
   },
   {
     title: "Insights That Drive Growth",
     p1: "Track sales performance, monitor booking trends, and identify your top-performing agents with built-in analytics. Real-time dashboards give you full visibility into revenue, margins, and customer behaviour.",
     p2: "Make data-driven decisions with reports you can filter by date, destination, supplier, or agent. Know exactly where your business stands at any moment.",
+    image: dashboardAnalytics,
   },
 ];
 
