@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { Search, MessageCircle, ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Helmet } from "react-helmet-async";
+
 
 /* ────────────────────────────── FAQ DATA ────────────────────────────── */
 
@@ -439,14 +439,11 @@ export default function FAQ() {
 
   return (
     <>
-      <Helmet>
-        <title>FAQ — Intraverse | Travel Technology Questions Answered</title>
-        <meta
-          name="description"
-          content="Find answers to common questions about Intraverse's travel technology products, pricing, security, and support."
-        />
-        <script type="application/ld+json">{JSON.stringify(buildFaqSchema())}</script>
-      </Helmet>
+      {/* JSON-LD FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema()) }}
+      />
 
       <Navbar />
       <main className="pt-16">
