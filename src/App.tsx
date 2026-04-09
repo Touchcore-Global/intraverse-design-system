@@ -25,6 +25,7 @@ const App = () => (
           <Route path="/travx" element={<Travx />} />
           <Route path="/coopx" element={<CoopX />} />
           <Route path="/independents" element={<Independents />} />
+          <Route path="/supplier-engine" element={<SupplierEngine />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
