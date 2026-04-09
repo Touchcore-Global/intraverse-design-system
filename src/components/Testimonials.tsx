@@ -51,12 +51,6 @@ export const Testimonials = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
-          Don't Take Our Word for It
-        </h2>
-        <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          Hear from travel professionals already growing with Intraverse.
-        </p>
 
         <div className="max-w-xl mx-auto">
           <Carousel opts={{ align: "start", loop: true }} plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]} className="w-full">
