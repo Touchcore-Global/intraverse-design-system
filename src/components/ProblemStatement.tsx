@@ -46,6 +46,7 @@ export const ProblemStatement = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 pl-[100px]">
+        <h2 className="text-left mb-12">
           Built to Meet Industry's Demands
         </h2>
 
