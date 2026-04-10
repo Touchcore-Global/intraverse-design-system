@@ -105,7 +105,7 @@ export const HomeTrustBar = () => {
           className="text-3xl sm:text-4xl md:text-[60px] font-[660] leading-[1.1] tracking-[-2px] text-left mb-6"
           style={{ color: "rgb(23, 19, 33)" }}
         >
-          Built for How Travel Is Sold
+          Built for How Travel is Sold
         </h2>
         <p
           className="text-left text-base sm:text-lg md:text-[24px] md:leading-[30px] md:tracking-[-0.48px] font-normal mb-6 max-w-2xl"
