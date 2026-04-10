@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown, MessageCircle, LayoutDashboard, Globe, Building2, Rocket, Wallet } from "lucide-react";
+import { Menu, X, ChevronDown, MessageCircle, LayoutDashboard, Globe, Building2, Rocket, Wallet, BookOpen, FileText, Code } from "lucide-react";
 import logo from "@/assets/intraverse-logo.svg";
 import { Button } from "@/components/ui/button";
 
@@ -9,6 +9,12 @@ const productLinks = [
   { label: "CoopX", href: "/coopx", icon: Building2, description: "Corporate travel management with policy controls" },
   { label: "Independents", href: "/independents", icon: Rocket, description: "Start earning in travel — no agency required" },
   { label: "Supplier Engine", href: "/supplier-engine", icon: Wallet, description: "Fare lock & pay-later options for your customers" },
+];
+
+const resourceLinks = [
+  { label: "Blog", href: "/blog", icon: BookOpen, description: "Insights, guides and travel industry news" },
+  { label: "Documentation", href: "/docs", icon: FileText, description: "Platform guides, setup and how-tos" },
+  { label: "API", href: "/api", icon: Code, description: "Developer docs and integration references" },
 ];
 
 const navLinks = [
@@ -21,6 +27,7 @@ const navLinks = [
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -86,6 +93,43 @@ export function Navbar() {
               )}
             </div>
 
+            {/* Resources mega menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setResourcesOpen(true)}
+              onMouseLeave={() => setResourcesOpen(false)}
+            >
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                Resources
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`} />
+              </button>
+              {resourcesOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[380px] bg-card border border-border rounded-xl shadow-xl p-6 animate-fade-in">
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4 font-semibold">Resources</p>
+                  <div className="flex flex-col gap-2">
+                    {resourceLinks.map((link) => {
+                      const Icon = link.icon;
+                      return (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          className="flex items-start gap-3 rounded-lg p-3 hover:bg-accent transition-colors group"
+                        >
+                          <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                            <Icon className="w-4.5 h-4.5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-foreground">{link.label}</p>
+                            <p className="text-xs text-muted-foreground leading-snug mt-0.5">{link.description}</p>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -134,6 +178,29 @@ export function Navbar() {
             {productsOpen && (
               <div className="pl-4 space-y-1">
                 {productLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="block py-2 text-muted-foreground hover:text-foreground"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {/* Resources accordion */}
+            <button
+              className="flex items-center justify-between w-full py-3 text-lg font-semibold text-foreground"
+              onClick={() => setResourcesOpen(!resourcesOpen)}
+            >
+              Resources
+              <ChevronDown className={`h-5 w-5 transition-transform ${resourcesOpen ? "rotate-180" : ""}`} />
+            </button>
+            {resourcesOpen && (
+              <div className="pl-4 space-y-1">
+                {resourceLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
