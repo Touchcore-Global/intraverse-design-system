@@ -122,7 +122,7 @@ const faqs = [
       "Yes — that's the whole point. Unlike most agency websites that are just digital brochures, Travx connects to Intraverse's live inventory. Your customers search real flights, hotels, and tours, book instantly, and pay online. You get notified and the booking is processed automatically.",
   },
   {
-    question: "What's included in the ₦120,000/month?",
+    question: "What's included in the plan?",
     answer:
       "Everything. Hosting, custom domain, booking engine, payment integration, mobile-responsive design, SEO optimisation, platform updates, and support. There are no hidden fees or setup costs.",
   },
@@ -238,7 +238,7 @@ const Travx = () => {
             around the clock.
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            Building a custom website costs ₦2–5M and takes months of
+            Building a custom website costs a lot and takes months of
             back-and-forth with developers. And most agency websites are just
             digital brochures — they can't actually search inventory, process
             bookings, or accept payments. You end up paying for a site that still
@@ -294,7 +294,7 @@ const Travx = () => {
             </p>
             <div className="brand-card border-2 border-primary p-8 md:p-12">
               <p className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground tracking-tight">
-                ₦120,000
+                $50
                 <span className="text-2xl sm:text-3xl text-muted-foreground font-normal">
                   /month
                 </span>
@@ -340,7 +340,7 @@ const Travx = () => {
               </strong>{" "}
               Every day without a booking-enabled site, potential customers find
               your competitors instead. At just 2–3 lost bookings per month, the
-              revenue you're missing far exceeds ₦120,000. Travx doesn't cost
+              revenue you're missing far exceeds $50. Travx doesn't cost
               you money — it makes you money.
             </p>
           </div>
@@ -463,7 +463,7 @@ const Travx = () => {
             Your Customers Are Searching Online. Are You There?
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Launch your branded, booking-enabled website for ₦120,000/month.
+            Launch your branded, booking-enabled website for $50/month.
             No developers. No delays. Just revenue.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
