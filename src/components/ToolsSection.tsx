@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 
 import toolTrips from "@/assets/tool-trips.jpg";
@@ -75,7 +75,10 @@ export const ToolsSection = () => {
   const [displayIndex, setDisplayIndex] = useState(0);
   const tool = tools[displayIndex];
 
-  const handleSwitch = (i: number) => {
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const swiping = useRef(false);
+
+  const handleSwitch = useCallback((i: number) => {
     if (i === activeIndex) return;
     setVisible(false);
     setActiveIndex(i);
@@ -83,7 +86,37 @@ export const ToolsSection = () => {
       setDisplayIndex(i);
       setVisible(true);
     }, 200);
-  };
+  }, [activeIndex]);
+
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+    swiping.current = false;
+  }, []);
+
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!touchStart.current) return;
+    const dx = e.touches[0].clientX - touchStart.current.x;
+    const dy = e.touches[0].clientY - touchStart.current.y;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+      swiping.current = true;
+    }
+  }, []);
+
+  const onTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (!touchStart.current || !swiping.current) {
+      touchStart.current = null;
+      return;
+    }
+    const dx = e.changedTouches[0].clientX - touchStart.current.x;
+    touchStart.current = null;
+    if (Math.abs(dx) < 40) return;
+    if (dx < 0 && activeIndex < tools.length - 1) {
+      handleSwitch(activeIndex + 1);
+    } else if (dx > 0 && activeIndex > 0) {
+      handleSwitch(activeIndex - 1);
+    }
+  }, [activeIndex, handleSwitch]);
 
 
   return (
@@ -119,7 +152,11 @@ export const ToolsSection = () => {
           </div>
 
           {/* Right: slide content */}
-          <div className={`flex-1 rounded-2xl border border-border bg-card overflow-hidden shadow-sm transition-all duration-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>
+          <div
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+            className={`flex-1 rounded-2xl border border-border bg-card overflow-hidden shadow-sm transition-all duration-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>
             <div className="flex flex-col">
               {/* Screenshot */}
               <div className="bg-muted/30 flex items-center justify-center p-6">
