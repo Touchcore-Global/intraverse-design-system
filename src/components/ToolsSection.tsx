@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import toolTrips from "@/assets/tool-trips.jpg";
 import toolItineraries from "@/assets/tool-itineraries.jpg";
 import toolPayments from "@/assets/tool-payments.jpg";
@@ -73,8 +73,6 @@ export const ToolsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const tool = tools[activeIndex];
 
-  const prev = () => setActiveIndex((i) => (i === 0 ? tools.length - 1 : i - 1));
-  const next = () => setActiveIndex((i) => (i === tools.length - 1 ? 0 : i + 1));
 
   return (
     <section className="py-16 md:py-24 bg-background">
