@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 import toolTrips from "@/assets/tool-trips.jpg";
@@ -105,7 +105,7 @@ export const ToolsSection = () => {
             {tools.map((t, i) => (
               <button
                 key={t.title}
-                onClick={() => setActiveIndex(i)}
+                onClick={() => handleSwitch(i)}
                 className={`flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border text-left whitespace-nowrap md:whitespace-normal ${
                   i === activeIndex
                     ? "bg-primary text-primary-foreground border-primary shadow-md"
@@ -119,7 +119,7 @@ export const ToolsSection = () => {
           </div>
 
           {/* Right: slide content */}
-          <div className="flex-1 rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
+          <div className={`flex-1 rounded-2xl border border-border bg-card overflow-hidden shadow-sm transition-all duration-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>
             <div className="flex flex-col">
               {/* Screenshot */}
               <div className="bg-muted/30 flex items-center justify-center p-6">
