@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import toolTrips from "@/assets/tool-trips.jpg";
+import toolItineraries from "@/assets/tool-itineraries.jpg";
+import toolPayments from "@/assets/tool-payments.jpg";
+import toolInsights from "@/assets/tool-insights.jpg";
+import toolPackages from "@/assets/tool-packages.jpg";
+import toolLinks from "@/assets/tool-links.jpg";
+import toolWorkspace from "@/assets/tool-workspace.jpg";
+import toolTeam from "@/assets/tool-team.jpg";
 
 const tools = [
   {
