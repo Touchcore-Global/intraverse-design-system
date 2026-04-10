@@ -238,7 +238,7 @@ const Independents = () => {
             don't have.
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            And then there's the noise. "Pay ₦50,000 to unlock Diamond Level."
+            And then there's the noise. "Pay $50 to unlock Diamond Level."
             "Recruit 5 people to earn." You've seen enough "travel business
             opportunities" to be skeptical — and you should be. Most of them
             are selling the dream, not the tools. The Independents Programme is
