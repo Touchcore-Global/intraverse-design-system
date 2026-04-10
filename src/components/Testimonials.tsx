@@ -51,7 +51,7 @@ const testimonials = [
 export const Testimonials = () => {
   const { ref, revealClass } = useScrollReveal();
   return (
-    <section className="py-20 section-gradient-warm">
+    <section className="py-20 bg-background">
       <div ref={ref} className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ease-out ${revealClass}`}>
 
         <div className="max-w-xl mx-auto">
