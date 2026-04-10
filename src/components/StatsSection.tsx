@@ -6,7 +6,7 @@ const stats = [
   { value: "[X,000]+", label: "Bookings Processed" },
   { value: "[X]+", label: "Global Suppliers Connected" },
   { value: "48hrs", label: "Average Setup Time" },
-  { value: "₦[X]M+", label: "Monthly Transactions" },
+  
   { value: "99.5%", label: "Platform Uptime" },
 ];
 
