@@ -152,7 +152,11 @@ export const ToolsSection = () => {
           </div>
 
           {/* Right: slide content */}
-          <div className={`flex-1 rounded-2xl border border-border bg-card overflow-hidden shadow-sm transition-all duration-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>
+          <div
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+            className={`flex-1 rounded-2xl border border-border bg-card overflow-hidden shadow-sm transition-all duration-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}>
             <div className="flex flex-col">
               {/* Screenshot */}
               <div className="bg-muted/30 flex items-center justify-center p-6">
