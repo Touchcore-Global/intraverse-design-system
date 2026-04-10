@@ -131,10 +131,15 @@
   }
 
   @media (min-width: 768px) {
-    h1, h2 {
+    h1 {
       font-size: 60px;
       letter-spacing: -2px;
       line-height: 72px;
+    }
+    h2 {
+      font-size: 72px;
+      letter-spacing: -2px;
+      line-height: 80px;
     }
   }
 }
