@@ -59,7 +59,7 @@ export const Testimonials = () => {
             <CarouselContent className="-ml-4">
               {testimonials.map((t, i) => (
                 <CarouselItem key={i} className="pl-4 basis-full">
-                  <div className="border border-border rounded-lg p-6 bg-card hover:shadow-md transition-shadow h-full flex flex-col">
+                  <div className="rounded-lg p-6 bg-card shadow-md hover:shadow-lg transition-shadow h-full flex flex-col">
                     <Quote className="h-6 w-6 text-primary/20 mb-4" />
                     <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
                       "{t.quote}"
