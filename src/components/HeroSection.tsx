@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Play } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const partners = [
   "Tzopal", "Whogofly", "Wright Gateway", "Lutfu Travels", "Coastline",
@@ -7,13 +8,32 @@ const partners = [
 ];
 
 export const HeroSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const blob1Ref = useRef<HTMLDivElement>(null);
+  const blob2Ref = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = sectionRef.current;
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      const scrollY = -rect.top;
+      if (blob1Ref.current) blob1Ref.current.style.transform = `translate(25%, -50%) translateY(${scrollY * 0.15}px)`;
+      if (blob2Ref.current) blob2Ref.current.style.transform = `translate(-25%, 50%) translateY(${scrollY * -0.1}px)`;
+      if (gridRef.current) gridRef.current.style.transform = `translateY(${scrollY * 0.05}px)`;
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden section-gradient-blue">
+    <section ref={sectionRef} className="relative overflow-hidden section-gradient-blue">
       {/* Abstract background pattern */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl -translate-y-1/2 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent blur-3xl translate-y-1/2 -translate-x-1/4" />
-        <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+        <div ref={blob1Ref} className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl -translate-y-1/2 translate-x-1/4 will-change-transform" />
+        <div ref={blob2Ref} className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent blur-3xl translate-y-1/2 -translate-x-1/4 will-change-transform" />
+        <svg ref={gridRef} className="absolute inset-0 w-full h-full opacity-[0.03] will-change-transform" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="hero-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
               <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
