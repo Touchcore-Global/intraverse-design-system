@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import toolTrips from "@/assets/tool-trips.jpg";
 import toolItineraries from "@/assets/tool-itineraries.jpg";
 import toolPayments from "@/assets/tool-payments.jpg";
@@ -73,8 +73,6 @@ export const ToolsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const tool = tools[activeIndex];
 
-  const prev = () => setActiveIndex((i) => (i === 0 ? tools.length - 1 : i - 1));
-  const next = () => setActiveIndex((i) => (i === tools.length - 1 ? 0 : i + 1));
 
   return (
     <section className="py-16 md:py-24 bg-background">
@@ -88,85 +86,63 @@ export const ToolsSection = () => {
           below is included in your plan — no hidden upgrades, no premium tiers, no extra fees.
         </p>
 
-        {/* Tool selector tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {tools.map((t, i) => (
-            <button
-              key={t.title}
-              onClick={() => setActiveIndex(i)}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
-                i === activeIndex
-                  ? "bg-primary text-primary-foreground border-primary shadow-md"
-                  : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
-              }`}
-            >
-              <span className="text-base">{t.emoji}</span>
-              <span className="hidden sm:inline">{t.title}</span>
-            </button>
-          ))}
-        </div>
+        {/* Main layout: tabs on left, content on right */}
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6">
+          {/* Left: pill tabs */}
+          <div className="flex flex-row md:flex-col gap-2 md:w-[260px] shrink-0 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0">
+            {tools.map((t, i) => (
+              <button
+                key={t.title}
+                onClick={() => setActiveIndex(i)}
+                className={`flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border text-left whitespace-nowrap md:whitespace-normal ${
+                  i === activeIndex
+                    ? "bg-primary text-primary-foreground border-primary shadow-md"
+                    : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
+                }`}
+              >
+                <span className="text-lg shrink-0">{t.emoji}</span>
+                <span>{t.title}</span>
+              </button>
+            ))}
+          </div>
 
-        {/* Slide content */}
-        <div className="max-w-5xl mx-auto rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 min-h-[380px]">
-            {/* Left: description */}
-            <div className="flex flex-col justify-center p-8 md:p-12">
-              <span className="text-[48px] mb-4">{tool.emoji}</span>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                {tool.title}
-              </h3>
-              <p className="text-primary italic text-base mb-4">{tool.tagline}</p>
-              <p className="text-muted-foreground text-[15px] leading-relaxed">
-                {tool.body}
-              </p>
-            </div>
-
-            {/* Right: screenshot */}
-            <div className="bg-muted/30 flex items-center justify-center p-8">
-              <div className="w-full rounded-xl border border-border overflow-hidden shadow-lg bg-background">
-                <div className="h-8 bg-muted flex items-center gap-1.5 px-3">
-                  <span className="w-3 h-3 rounded-full bg-destructive/60" />
-                  <span className="w-3 h-3 rounded-full bg-yellow-400/60" />
-                  <span className="w-3 h-3 rounded-full bg-green-400/60" />
+          {/* Right: slide content */}
+          <div className="flex-1 rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
+            <div className="flex flex-col">
+              {/* Screenshot */}
+              <div className="bg-muted/30 flex items-center justify-center p-6">
+                <div className="w-full rounded-xl border border-border overflow-hidden shadow-lg bg-background">
+                  <div className="h-8 bg-muted flex items-center gap-1.5 px-3">
+                    <span className="w-3 h-3 rounded-full bg-destructive/60" />
+                    <span className="w-3 h-3 rounded-full bg-yellow-400/60" />
+                    <span className="w-3 h-3 rounded-full bg-green-400/60" />
+                  </div>
+                  <img
+                    src={tool.image}
+                    alt={`${tool.title} screenshot`}
+                    loading="lazy"
+                    className="w-full aspect-[16/10] object-cover"
+                  />
                 </div>
-                <img
-                  src={tool.image}
-                  alt={`${tool.title} screenshot`}
-                  className="w-full aspect-[16/10] object-cover"
-                />
+              </div>
+
+              {/* Description */}
+              <div className="p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-[32px]">{tool.emoji}</span>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                    {tool.title}
+                  </h3>
+                </div>
+                <p className="text-primary italic text-sm mb-3">{tool.tagline}</p>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">
+                  {tool.body}
+                </p>
               </div>
             </div>
           </div>
-
-          {/* Navigation */}
-          <div className="flex items-center justify-between px-8 py-4 border-t border-border bg-muted/20">
-            <button
-              onClick={prev}
-              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              Previous
-            </button>
-            <div className="flex gap-1.5">
-              {tools.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveIndex(i)}
-                  className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                    i === activeIndex ? "bg-primary w-6" : "bg-border hover:bg-muted-foreground/50"
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={next}
-              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Next
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
         </div>
+
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground text-sm mb-4">
