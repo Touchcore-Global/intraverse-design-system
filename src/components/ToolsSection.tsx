@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback } from "react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 
 import toolTrips from "@/assets/tool-trips.jpg";
@@ -70,6 +71,7 @@ const tools = [
 ];
 
 export const ToolsSection = () => {
+  const { ref: revealRef, revealClass } = useScrollReveal();
   const [activeIndex, setActiveIndex] = useState(0);
   const [visible, setVisible] = useState(true);
   const [displayIndex, setDisplayIndex] = useState(0);
@@ -121,7 +123,7 @@ export const ToolsSection = () => {
 
   return (
     <section className="py-16 md:py-24 section-gradient-blue">
-      <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
+      <div ref={revealRef} className={`container mx-auto px-4 transition-all duration-700 ease-out ${revealClass}`} style={{ maxWidth: "1200px" }}>
         <h2 className="text-[32px] md:text-[48px] font-bold text-foreground text-center mb-4 leading-tight">
           Every Tool You Need to Sell Travel Like a Pro — Included
         </h2>

@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const testimonials = [
   {
@@ -48,9 +49,10 @@ const testimonials = [
 ];
 
 export const Testimonials = () => {
+  const { ref, revealClass } = useScrollReveal();
   return (
     <section className="py-20 section-gradient-warm">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div ref={ref} className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ease-out ${revealClass}`}>
 
         <div className="max-w-xl mx-auto">
           <Carousel opts={{ align: "start", loop: true }} plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]} className="w-full">

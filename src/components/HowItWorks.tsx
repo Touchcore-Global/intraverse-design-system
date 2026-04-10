@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
   {
@@ -23,9 +24,10 @@ const steps = [
 ];
 
 export const HowItWorks = () => {
+  const { ref, revealClass } = useScrollReveal();
   return (
     <section className="py-20 bg-accent">
-      <div className="container mx-auto px-4 text-center">
+      <div ref={ref} className={`container mx-auto px-4 text-center transition-all duration-700 ease-out ${revealClass}`}>
         <h2 className="text-section mb-12 text-[32px] sm:text-[48px] md:text-[60px] leading-tight">Start selling faster today</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">

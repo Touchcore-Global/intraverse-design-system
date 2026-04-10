@@ -1,4 +1,5 @@
 import { Lock, Shield, CreditCard, Clock } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const features = [
   {
@@ -24,9 +25,10 @@ const features = [
 ];
 
 export const SecuritySection = () => {
+  const { ref, revealClass } = useScrollReveal();
   return (
     <section className="py-20 section-gradient-mint">
-      <div className="container mx-auto px-4 text-center">
+      <div ref={ref} className={`container mx-auto px-4 text-center transition-all duration-700 ease-out ${revealClass}`}>
         <h2 className="text-section mb-12">
           Your Money. Your Data. Protected.
         </h2>

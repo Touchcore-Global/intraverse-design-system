@@ -2,11 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { MessageCircle } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export const FinalCTA = () => {
+  const { ref, revealClass } = useScrollReveal();
   return (
     <section className="py-20 bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 text-center">
+      <div ref={ref} className={`container mx-auto px-4 text-center transition-all duration-700 ease-out ${revealClass}`}>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary-foreground">
           400+ Agents Chose Intraverse. See Why in 15 Minutes.
         </h2>
