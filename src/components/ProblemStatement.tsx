@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import featuresHero from "@/assets/features-hero.svg";
-
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const cards: { icon: LucideIcon; headline: string; subheading: string; content: string }[] = [
   {
     icon: Globe,
@@ -43,9 +43,10 @@ const cards: { icon: LucideIcon; headline: string; subheading: string; content: 
 ];
 
 export const ProblemStatement = () => {
+  const { ref, revealClass } = useScrollReveal();
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 md:pl-[100px]">
+      <div ref={ref} className={`container mx-auto px-4 md:pl-[100px] transition-all duration-700 ease-out ${revealClass}`}>
         <h2 className="text-left mb-12">
           Built to Meet Industry's Demands
         </h2>
