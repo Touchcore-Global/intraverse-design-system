@@ -1,5 +1,10 @@
-import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const tools = [
   {
@@ -65,28 +70,31 @@ export const ToolsSection = () => {
           below is included in your plan — no hidden upgrades, no premium tiers, no extra fees.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tools.map((tool) => (
-            <div
-              key={tool.title}
-              className="bg-background border border-border rounded-xl p-7 transition-all duration-300 hover:border-primary hover:-translate-y-1"
-              style={{
-                boxShadow: "none",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 8px 24px rgba(30,97,220,0.10)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-              }}
-            >
-              <span className="text-[40px] block mb-4">{tool.emoji}</span>
-              <h3 className="text-xl font-bold text-foreground mb-1">{tool.title}</h3>
-              <p className="text-primary italic text-sm mb-3">{tool.tagline}</p>
-              <p className="text-muted-foreground text-[15px] leading-relaxed">{tool.body}</p>
-            </div>
-          ))}
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible defaultValue="item-0" className="space-y-3">
+            {tools.map((tool, index) => (
+              <AccordionItem
+                key={tool.title}
+                value={`item-${index}`}
+                className="border border-border rounded-xl px-7 py-1 data-[state=open]:border-primary data-[state=open]:shadow-[0_8px_24px_rgba(30,97,220,0.10)] transition-all duration-300"
+              >
+                <AccordionTrigger className="hover:no-underline gap-4">
+                  <div className="flex items-center gap-4 text-left">
+                    <span className="text-[32px] shrink-0">{tool.emoji}</span>
+                    <div>
+                      <span className="text-xl font-bold text-foreground">{tool.title}</span>
+                      <p className="text-primary italic text-sm mt-0.5">{tool.tagline}</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground text-[15px] leading-relaxed pl-12">
+                    {tool.body}
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
 
         <div className="text-center mt-12">
