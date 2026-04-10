@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ChevronDown, MessageCircle, LayoutDashboard, Globe, Building2, Rocket, Wallet } from "lucide-react";
 import logo from "@/assets/intraverse-logo.svg";
 import { Button } from "@/components/ui/button";
 
 const productLinks = [
-  { label: "Agent Platform", href: "/agent-platform" },
-  { label: "Travx", href: "/travx" },
-  { label: "CoopX", href: "/coopx" },
-  { label: "Independents", href: "/independents" },
-  { label: "Supplier Engine", href: "/supplier-engine" },
+  { label: "Agent Platform", href: "/agent-platform", icon: LayoutDashboard, description: "Search, book and manage all travel from one dashboard" },
+  { label: "Travx", href: "/travx", icon: Globe, description: "Your branded, booking-enabled travel website" },
+  { label: "CoopX", href: "/coopx", icon: Building2, description: "Corporate travel management with policy controls" },
+  { label: "Independents", href: "/independents", icon: Rocket, description: "Start earning in travel — no agency required" },
+  { label: "Supplier Engine", href: "/supplier-engine", icon: Wallet, description: "Fare lock & pay-later options for your customers" },
 ];
 
 const navLinks = [
@@ -44,7 +44,7 @@ export function Navbar() {
 
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-1">
-            {/* Products dropdown */}
+            {/* Products mega menu */}
             <div
               className="relative"
               onMouseEnter={() => setProductsOpen(true)}
@@ -52,19 +52,36 @@ export function Navbar() {
             >
               <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Products
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`} />
               </button>
               {productsOpen && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-card border rounded-lg shadow-lg py-2">
-                  {productLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                    >
-                      {link.label}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[560px] bg-card border border-border rounded-xl shadow-xl p-6 animate-fade-in">
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4 font-semibold">Products</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {productLinks.map((link) => {
+                      const Icon = link.icon;
+                      return (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          className="flex items-start gap-3 rounded-lg p-3 hover:bg-accent transition-colors group"
+                        >
+                          <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                            <Icon className="w-4.5 h-4.5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-foreground">{link.label}</p>
+                            <p className="text-xs text-muted-foreground leading-snug mt-0.5">{link.description}</p>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <a href="/features" className="text-sm font-medium text-primary hover:underline">
+                      View all features →
                     </a>
-                  ))}
+                  </div>
                 </div>
               )}
             </div>
