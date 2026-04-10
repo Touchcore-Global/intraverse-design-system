@@ -198,8 +198,9 @@ export const ToolsSection = () => {
             Every tool. Every plan. Every audience. No upgrades required.
           </p>
           <a href="#demo">
-            <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-              See how these tools work in action → Book a Demo
+            <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] whitespace-normal text-center px-6">
+              <span className="hidden sm:inline">See how these tools work in action → Book a Demo</span>
+              <span className="sm:hidden">Book a Demo → See Tools in Action</span>
             </Button>
           </a>
         </div>
