@@ -81,12 +81,11 @@ const features = [
 ];
 
 const stats = [
-  { value: "[X]+", label: "Flight Sources" },
-  { value: "[X]+", label: "Hotel Suppliers" },
-  { value: "[X]+", label: "Tour Suppliers" },
-  { value: "200+", label: "Active Agents" },
-  { value: "48hrs", label: "Setup" },
-  { value: "[X]%", label: "Faster vs Manual" },
+  { value: "15+", label: "Flight Sources" },
+  { value: "5+", label: "Hotel Suppliers" },
+  { value: "5+", label: "Tour Suppliers" },
+  { value: "400+", label: "Active Agents" },
+  { value: "<24hrs", label: "Setup" },
 ];
 
 const faqs = [
