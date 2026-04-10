@@ -108,9 +108,8 @@ const whoItsFor = [
 ];
 
 const stats = [
-  { value: "[X]%", label: "Average Cost Reduction" },
-  { value: "[X]hrs", label: "Admin Time Saved Monthly" },
-  { value: "[X]", label: "Companies Using CoopX" },
+  { value: "30%", label: "Average Cost Reduction" },
+  { value: "2+hrs", label: "Admin Time Saved Monthly" },
 ];
 
 const faqs = [
@@ -169,7 +168,7 @@ const CoopX = () => {
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
             CoopX gives your company a complete travel management platform —
             booking, approvals, policy enforcement, consolidated billing, and
-            full reporting. Built for Nigerian corporates that are done managing
+            full reporting. Built for African corporates that are done managing
             employee travel on spreadsheets and WhatsApp.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -182,7 +181,7 @@ const CoopX = () => {
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            15-minute demo • No commitment • Built for Nigerian corporates
+            15-minute demo • No commitment • Built for African corporates
           </p>
         </div>
       </section>
