@@ -145,35 +145,6 @@ export const ToolsSection = () => {
           </div>
         </div>
 
-          {/* Navigation */}
-          <div className="flex items-center justify-between px-8 py-4 border-t border-border bg-muted/20">
-            <button
-              onClick={prev}
-              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              Previous
-            </button>
-            <div className="flex gap-1.5">
-              {tools.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveIndex(i)}
-                  className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                    i === activeIndex ? "bg-primary w-6" : "bg-border hover:bg-muted-foreground/50"
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={next}
-              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Next
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground text-sm mb-4">
