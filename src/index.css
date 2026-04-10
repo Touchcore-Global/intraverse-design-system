@@ -198,13 +198,13 @@
     @apply absolute inset-0 pointer-events-none;
     background: linear-gradient(
       105deg,
-      transparent 40%,
-      hsla(0, 0%, 100%, 0.04) 45%,
-      hsla(0, 0%, 100%, 0.08) 50%,
-      hsla(0, 0%, 100%, 0.04) 55%,
-      transparent 60%
+      transparent 30%,
+      hsla(0, 0%, 100%, 0.08) 40%,
+      hsla(0, 0%, 100%, 0.18) 50%,
+      hsla(0, 0%, 100%, 0.08) 60%,
+      transparent 70%
     );
-    animation: shimmer 6s ease-in-out infinite;
+    animation: shimmer 4s ease-in-out infinite;
   }
 
   /* Hero headline sizing */
