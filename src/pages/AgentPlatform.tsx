@@ -103,7 +103,7 @@ const faqs = [
   },
   {
     question: "How long does setup take?",
-    answer: "Most agencies are live within 48 hours. Sign up on the platform, follow the guided steps to complete your profile, and our team will help configure your supplier connections and train your staff. There's no lengthy integration process or IT requirements.",
+    answer: "Most agencies are live within 24 hours. Sign up on the platform, follow the guided steps to complete your profile, and our team will help configure your supplier connections and train your staff. There's no lengthy integration process or IT requirements.",
   },
   {
     question: "What does the platform cost?",
