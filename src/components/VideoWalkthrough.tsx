@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export const VideoWalkthrough = () => {
   return (
-    <section className="py-20 section-gradient-dark text-primary-foreground">
+    <section className="py-20 section-gradient-dark shimmer-overlay text-primary-foreground">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-section mb-8 text-[32px] sm:text-[48px] md:text-[60px] leading-tight !text-primary-foreground">
           See How Agents Book Faster

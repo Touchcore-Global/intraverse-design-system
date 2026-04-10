@@ -11,7 +11,7 @@ const stats = [
 
 export const StatsSection = () => {
   return (
-    <section className="py-20 section-gradient-primary text-primary-foreground">
+    <section className="py-20 section-gradient-primary shimmer-overlay text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
           {stats.map((stat) => (
