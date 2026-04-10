@@ -25,7 +25,7 @@ const features = [
 
 export const SecuritySection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 section-gradient-mint">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-section mb-12">
           Your Money. Your Data. Protected.

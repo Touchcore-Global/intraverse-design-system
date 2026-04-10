@@ -120,7 +120,7 @@ export const ToolsSection = () => {
 
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-16 md:py-24 section-gradient-blue">
       <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
         <h2 className="text-[32px] md:text-[48px] font-bold text-foreground text-center mb-4 leading-tight">
           Every Tool You Need to Sell Travel Like a Pro — Included

@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 
 export const VideoWalkthrough = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 section-gradient-dark text-primary-foreground">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-section mb-8 text-[32px] sm:text-[48px] md:text-[60px] leading-tight">
+        <h2 className="text-section mb-8 text-[32px] sm:text-[48px] md:text-[60px] leading-tight !text-primary-foreground">
           See How Agents Book Faster
         </h2>
 
@@ -21,16 +21,16 @@ export const VideoWalkthrough = () => {
           </div>
         </div>
 
-        <p className="text-muted-foreground max-w-2xl mx-auto mb-8 text-sm md:text-base">
+        <p className="text-primary-foreground/70 max-w-2xl mx-auto mb-8 text-sm md:text-base">
           This is a real booking on the Intraverse platform. No scripts. No staging. Just the tool
           your agency will use every day.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
+          <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90 rounded-none font-semibold">
             Book a Demo to Try It Yourself
           </Button>
-          <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
+          <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground rounded-none font-semibold">
             <MessageCircle className="h-5 w-5" />
             Chat on WhatsApp
           </Button>
