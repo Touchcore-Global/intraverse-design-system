@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import toolTrips from "@/assets/tool-trips.jpg";
+import toolItineraries from "@/assets/tool-itineraries.jpg";
+import toolPayments from "@/assets/tool-payments.jpg";
+import toolInsights from "@/assets/tool-insights.jpg";
+import toolPackages from "@/assets/tool-packages.jpg";
+import toolLinks from "@/assets/tool-links.jpg";
+import toolWorkspace from "@/assets/tool-workspace.jpg";
+import toolTeam from "@/assets/tool-team.jpg";
 
 const tools = [
   {
@@ -8,56 +16,56 @@ const tools = [
     title: "Create & Manage Trips",
     tagline: "Build complete trips in minutes, not hours.",
     body: "Bundle flights, hotels, tours, and transfers into a single trip. Manage everything — dates, pricing, passengers, documents — from one clean workspace.",
-    image: "/placeholder.svg",
+    image: toolTrips,
   },
   {
     emoji: "📱",
     title: "Share Live Itineraries",
     tagline: "Your customers get their trip in real time.",
     body: "Send branded, live-updating itineraries via WhatsApp, email, or link. Flight changes? They see it. Hotel confirmed? They see it. No more PDF chasing.",
-    image: "/placeholder.svg",
+    image: toolItineraries,
   },
   {
     emoji: "💳",
     title: "Get Paid Securely",
     tagline: "Accept card payments and virtual account transfers — instantly.",
     body: "Built-in payment processing via card and virtual account. Your customers pay you directly. Funds hit your wallet in real time. Zero payment headaches.",
-    image: "/placeholder.svg",
+    image: toolPayments,
   },
   {
     emoji: "📊",
     title: "Grow With Real Insights",
     tagline: "Know what's working. Double down on it.",
     body: "Real-time dashboards showing your bookings, revenue, top destinations, customer retention, and conversion rates. Data that actually helps you grow.",
-    image: "/placeholder.svg",
+    image: toolInsights,
   },
   {
     emoji: "📦",
     title: "Create & Sell Your Own Packages",
     tagline: "Turn every customer into a bigger sale.",
     body: "Design custom travel packages — flights + hotels + tours — under your brand. Price them your way. Sell them directly through your Travel Links or website.",
-    image: "/placeholder.svg",
+    image: toolPackages,
   },
   {
     emoji: "🔗",
     title: "Travel Links",
     tagline: "One link. Every trip. Instant bookings.",
     body: "Generate shareable booking links for any trip, package, or deal. Post on WhatsApp, Instagram, or your bio. Customers click, book, and pay. You get the commission.",
-    image: "/placeholder.svg",
+    image: toolLinks,
   },
   {
     emoji: "🏢",
     title: "Setup Workspace",
     tagline: "Your agency's digital HQ.",
     body: "Customise your workspace with your branding, booking preferences, policies, and supplier settings. One place to run everything — built exactly the way you work.",
-    image: "/placeholder.svg",
+    image: toolWorkspace,
   },
   {
     emoji: "👥",
     title: "Manage Team",
     tagline: "Scale without chaos.",
     body: "Add team members with role-based permissions. Track individual performance. Control who can book, approve, and access what. Built for agencies that are growing.",
-    image: "/placeholder.svg",
+    image: toolTeam,
   },
 ];
 
