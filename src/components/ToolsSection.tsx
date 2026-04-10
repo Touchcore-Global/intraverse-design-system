@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 import toolTrips from "@/assets/tool-trips.jpg";
@@ -71,7 +71,19 @@ const tools = [
 
 export const ToolsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const tool = tools[activeIndex];
+  const [visible, setVisible] = useState(true);
+  const [displayIndex, setDisplayIndex] = useState(0);
+  const tool = tools[displayIndex];
+
+  const handleSwitch = (i: number) => {
+    if (i === activeIndex) return;
+    setVisible(false);
+    setActiveIndex(i);
+    setTimeout(() => {
+      setDisplayIndex(i);
+      setVisible(true);
+    }, 200);
+  };
 
 
   return (
