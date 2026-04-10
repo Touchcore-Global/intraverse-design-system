@@ -53,7 +53,7 @@ export const ProblemStatement = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, index) => (
-            <Card key={index} className="border border-border bg-card shadow-sm hover:shadow-md transition-shadow">
+            <Card key={index} className="border-0 bg-card shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <card.icon className="h-8 w-8 text-primary mb-4" />
                 <h3 className="text-lg font-semibold text-foreground mb-2">
