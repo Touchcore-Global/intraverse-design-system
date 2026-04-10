@@ -192,8 +192,7 @@ const Travx = () => {
 
         <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
           <h1 className="max-w-5xl mx-auto">
-            ₦120,000/Month for a Website That Books Flights, Hotels &amp; Tours
-            While You Sleep
+            Get a Website That Books Flights, Hotels &amp; Tours
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
             Travx gives your travel agency a fully branded, booking-enabled
