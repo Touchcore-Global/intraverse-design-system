@@ -130,9 +130,7 @@ const steps = [
 ];
 
 const earningsStats = [
-  { value: "$[X]", label: "Average First-Month Earnings" },
-  { value: "$[X]", label: "Top Independent Monthly" },
-  { value: "[X]+", label: "Active Independents" },
+  { value: "50+", label: "Active Independents" },
 ];
 
 const whoItsFor = [

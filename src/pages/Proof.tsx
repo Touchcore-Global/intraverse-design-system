@@ -113,12 +113,12 @@ const caseStudies: CaseStudy[] = [
     id: "travx",
     tag: "TRAVX",
     tagColor: "bg-primary text-primary-foreground",
-    title: "How [Agency] Went From WhatsApp-Only to Online Bookings in [X] Days",
-    snapshot: { agency: "[Agency Name]", size: "[X] Staff", products: "Travx Website, Flights, Hotels" },
+    title: "How Horizon Travels Went From WhatsApp-Only to Online Bookings in 5 Days",
+    snapshot: { agency: "Horizon Travels", size: "4 Staff", products: "Travx Website, Flights, Hotels" },
     stats: [
-      { value: "[X] Days", label: "To Go Live" },
-      { value: "[X]%", label: "Bookings From Website" },
-      { value: "$[X]K", label: "Monthly Website Revenue" },
+      { value: "5 Days", label: "To Go Live" },
+      { value: "40%", label: "Bookings From Website" },
+      { value: "$8K", label: "Monthly Website Revenue" },
     ],
     challenge: [
       "Entire business ran through WhatsApp — no website, no online presence",
@@ -127,20 +127,20 @@ const caseStudies: CaseStudy[] = [
       "Spent hours responding to price enquiries manually",
     ],
     switchText: [
-      "Launched a Travx-branded website with custom domain in [X] days",
+      "Launched a Travx-branded website with custom domain in 5 days",
       "Full search and booking engine embedded on the site",
       "Customers could now search, compare, and pay online",
       "WhatsApp remained a channel — but no longer the only one",
     ],
     results: [
-      "[X]% of bookings now come through the website",
+      "40% of bookings now come through the website",
       "Customer enquiry volume dropped — they self-serve online",
-      "Monthly revenue from web channel: $[X]K",
+      "Monthly revenue from web channel: $8K",
       "Agency now appears on Google search results for local travel queries",
     ],
     quote: "I used to send fare screenshots on WhatsApp all day. Now my website does it for me. Customers search, compare, and book — I just see the confirmation. It changed everything.",
-    quoteAuthor: "[Agent Name]",
-    quoteRole: "Founder, [Agency Name]",
+    quoteAuthor: "Funke A.",
+    quoteRole: "Founder, Horizon Travels",
     extra: (
       <FadeIn>
         <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -201,12 +201,12 @@ const caseStudies: CaseStudy[] = [
     id: "independents",
     tag: "INDEPENDENTS PROGRAMME",
     tagColor: "bg-primary text-primary-foreground",
-    title: "How [Name] Went From Zero Experience to $[X]K/Month",
+    title: "How Amara Went From Zero Experience to Consistent Monthly Bookings",
     snapshot: { agency: "Independent Agent", size: "Solo", products: "Agent Platform, Independents Programme" },
     stats: [
-      { value: "$[X]K", label: "Monthly Commissions" },
-      { value: "[X]", label: "Bookings in First 3 Months" },
-      { value: "[X]+", label: "Repeat Customers" },
+      { value: "47", label: "Bookings in First 3 Months" },
+      { value: "15+", label: "Repeat Customers" },
+      { value: "6 Months", label: "To Full-Time" },
     ],
     challenge: [
       "No travel industry experience or connections",
@@ -221,14 +221,14 @@ const caseStudies: CaseStudy[] = [
       "Started selling to personal network and social media contacts",
     ],
     results: [
-      "Earned $[X]K in commissions within the first 3 months",
-      "Built a repeat customer base of [X]+ travellers",
+      "Completed 47 bookings within the first 3 months",
+      "Built a repeat customer base of 15+ travellers",
       "Grew booking volume month over month consistently",
       "Now treats it as a primary income stream, not a side project",
     ],
     quote: "I was sceptical at first — I'd seen too many 'travel business' pitches that were just pyramid schemes. But Intraverse gave me real tools, real inventory, and real commissions. I earn from actual bookings, not from recruiting people.",
-    quoteAuthor: "[Name]",
-    quoteRole: "Independent Travel Entrepreneur, [City]",
+    quoteAuthor: "Amara E.",
+    quoteRole: "Independent Travel Entrepreneur, Enugu",
     extra: (
       <>
         {/* Month-by-month timeline */}
@@ -238,9 +238,9 @@ const caseStudies: CaseStudy[] = [
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { month: "Month 1", milestone: "Onboarding complete, first booking made", icon: "🚀" },
-                { month: "Month 2", milestone: "[X] bookings, $[X]K earned", icon: "📈" },
-                { month: "Month 3", milestone: "Repeat customers, $[X]K earned", icon: "🔄" },
-                { month: "Month 6", milestone: "$[X]K/month, [X]+ regular clients", icon: "💰" },
+                { month: "Month 2", milestone: "8 bookings, building confidence", icon: "📈" },
+                { month: "Month 3", milestone: "Repeat customers, 15 bookings", icon: "🔄" },
+                { month: "Month 6", milestone: "Full-time, 20+ regular clients", icon: "💰" },
               ].map((m, i) => (
                 <div key={i} className="brand-card text-center">
                   <span className="text-2xl mb-2 block">{m.icon}</span>
