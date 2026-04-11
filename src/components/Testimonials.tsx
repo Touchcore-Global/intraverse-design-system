@@ -13,7 +13,7 @@ const testimonials = [
   {
     quote: "Intraverse transformed how we access inventory. We now offer fares we never had before—our clients love it.",
     name: "Adaeze O.",
-    agency: "Skyline Travels",
+    agency: "Prestige Tours",
     city: "Lagos",
   },
   {
@@ -25,12 +25,12 @@ const testimonials = [
   {
     quote: "The wallet system freed up our cash flow. We can process more bookings without waiting on payments to clear.",
     name: "Chioma E.",
-    agency: "Prestige Tours",
+    agency: "Horizon Express",
     city: "Port Harcourt",
   },
   {
     quote: "We cut our manual workload in half. Automation lets us focus on selling, not paperwork.",
-    name: "Tunde A.",
+    name: "Olu B.",
     agency: "Royal Wings Travel",
     city: "Ibadan",
   },
@@ -42,7 +42,7 @@ const testimonials = [
   },
   {
     quote: "I started my travel business with zero experience and no IATA. Intraverse gave me everything I needed from day one.",
-    name: "Emeka N.",
+    name: "Amaka N.",
     agency: "Nova Travel Co.",
     city: "Enugu",
   },

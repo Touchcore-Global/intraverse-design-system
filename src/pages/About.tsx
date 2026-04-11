@@ -150,17 +150,17 @@ const milestones = [
 const testimonials = [
   {
     quote: "Intraverse gave us access to inventory we never had before. Our revenue has grown significantly since we started using the platform.",
-    name: "Agency Partner",
+    name: "Folake A.",
     role: "Travel Agency Owner, Lagos",
   },
   {
     quote: "I started as a complete beginner. The Independents Programme gave me real tools and real inventory — not empty promises.",
-    name: "Independent Member",
+    name: "Chukwudi E.",
     role: "Independent Travel Entrepreneur",
   },
   {
     quote: "We finally have visibility into what our team is spending on travel. The approval workflows alone saved us millions in the first quarter.",
-    name: "Corporate Client",
+    name: "Halima S.",
     role: "CFO, Lagos-based Enterprise",
   },
 ];

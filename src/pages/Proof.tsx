@@ -275,14 +275,14 @@ const caseStudies: CaseStudy[] = [
 ];
 
 const testimonials: TestimonialCard[] = [
-  { quote: "Intraverse changed how we operate. We went from juggling three GDS terminals to one platform that does everything.", name: "Tunde A.", role: "CEO", company: "Skyline Travel", city: "Lagos", product: "agent" },
+  { quote: "Intraverse changed how we operate. We went from juggling three GDS terminals to one platform that does everything.", name: "Femi L.", role: "CEO", company: "Meridian Travel", city: "Lagos", product: "agent" },
   { quote: "Our Travx website brought in over $50K in bookings in the first quarter alone. Customers love being able to search and book themselves.", name: "Bisi K.", role: "Director", company: "Apex Tours", city: "Abuja", product: "travx" },
   { quote: "The reporting alone saved us. We can finally see where our travel budget is going and enforce our policy.", name: "Ngozi I.", role: "Finance Manager", company: "Sterling Industries", city: "Lagos", product: "coopx" },
   { quote: "I started with zero knowledge and made my first booking within a week. The training and support are incredible.", name: "Grace O.", role: "Independent Agent", company: "Self-employed", city: "Port Harcourt", product: "independents" },
-  { quote: "Auto-ticketing changed my life. I used to stay up until midnight issuing tickets. Now the system handles it.", name: "Emeka U.", role: "Operations Manager", company: "JetWay Travels", city: "Kano", product: "agent" },
+  { quote: "Auto-ticketing changed my life. I used to stay up until midnight issuing tickets. Now the system handles it.", name: "Uche A.", role: "Operations Manager", company: "JetWay Travels", city: "Kano", product: "agent" },
   { quote: "CoopX gives us complete visibility. No more surprise charges, no more chasing receipts at month end.", name: "Yemi D.", role: "Head of Procurement", company: "Oasis Group", city: "Lagos", product: "coopx" },
   { quote: "My Travx website ranks on Google now. Customers find me online instead of me chasing them on WhatsApp.", name: "Kemi B.", role: "Founder", company: "Wanderlust NG", city: "Ibadan", product: "travx" },
-  { quote: "I earn real commissions from real bookings. This isn't a scam — it's an actual business model that works.", name: "David M.", role: "Independent Entrepreneur", company: "Self-employed", city: "Enugu", product: "independents" },
+  { quote: "I earn real commissions from real bookings. This isn't a scam — it's an actual business model that works.", name: "Dayo M.", role: "Independent Entrepreneur", company: "Self-employed", city: "Enugu", product: "independents" },
   { quote: "The wallet system is seamless. Fund it, book instantly, track everything. No more bank transfer delays.", name: "Samuel F.", role: "Senior Agent", company: "Crown Travels", city: "Benin City", product: "agent" },
 ];
 
