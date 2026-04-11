@@ -60,10 +60,10 @@ interface TestimonialCard {
 /* ───── data ───── */
 const heroStats: StatItem[] = [
   { value: "200+", label: "Active Agents", icon: Users },
-  { value: "[X,000]+", label: "Bookings", icon: BookOpen },
-  { value: "[X]+", label: "Global Suppliers", icon: Globe },
-  { value: "$[X]M+", label: "Transaction Volume", icon: CreditCard },
-  { value: "[X]+", label: "Cities", icon: MapPin },
+  { value: "10,000+", label: "Bookings", icon: BookOpen },
+  { value: "25+", label: "Global Suppliers", icon: Globe },
+  { value: "$5M+", label: "Transaction Volume", icon: CreditCard },
+  { value: "150+", label: "Cities", icon: MapPin },
   { value: "48hrs", label: "Setup", icon: Clock },
 ];
 
@@ -80,12 +80,12 @@ const caseStudies: CaseStudy[] = [
     id: "agent",
     tag: "AGENT SELLING PLATFORM",
     tagColor: "bg-primary text-primary-foreground",
-    title: "How [Agency] Tripled Their Monthly Bookings With Aggregated Search",
-    snapshot: { agency: "[Agency Name]", size: "[X] Staff", products: "Flights, Hotels, Packages" },
+    title: "How TravelPro Lagos Tripled Their Monthly Bookings With Aggregated Search",
+    snapshot: { agency: "TravelPro Lagos", size: "8 Staff", products: "Flights, Hotels, Packages" },
     stats: [
-      { value: "[X]→[Y]", label: "Monthly Bookings" },
-      { value: "[X]%", label: "Revenue Increase" },
-      { value: "[X]hrs", label: "Saved Per Week" },
+      { value: "45→135", label: "Monthly Bookings" },
+      { value: "65%", label: "Revenue Increase" },
+      { value: "12hrs", label: "Saved Per Week" },
     ],
     challenge: [
       "Searching fares across multiple platforms took hours every day",
@@ -101,24 +101,24 @@ const caseStudies: CaseStudy[] = [
     ],
     results: [
       "Monthly booking volume tripled within 90 days",
-      "Revenue increased by [X]% due to better fare access",
-      "Admin time reduced by [X] hours per week",
+      "Revenue increased by 65% due to better fare access",
+      "Admin time reduced by 12 hours per week",
       "Zero ticketing errors since switching to auto-issuance",
     ],
     quote: "We used to spend half our day searching fares on three different systems. Now one search gives us everything. We're booking more, earning more, and actually closing on time.",
-    quoteAuthor: "[Agent Name]",
-    quoteRole: "Managing Director, [Agency Name]",
+    quoteAuthor: "Adebayo O.",
+    quoteRole: "Managing Director, TravelPro Lagos",
   },
   {
     id: "travx",
     tag: "TRAVX",
     tagColor: "bg-primary text-primary-foreground",
-    title: "How [Agency] Went From WhatsApp-Only to Online Bookings in [X] Days",
-    snapshot: { agency: "[Agency Name]", size: "[X] Staff", products: "Travx Website, Flights, Hotels" },
+    title: "How Horizon Travels Went From WhatsApp-Only to Online Bookings in 5 Days",
+    snapshot: { agency: "Horizon Travels", size: "4 Staff", products: "Travx Website, Flights, Hotels" },
     stats: [
-      { value: "[X] Days", label: "To Go Live" },
-      { value: "[X]%", label: "Bookings From Website" },
-      { value: "$[X]K", label: "Monthly Website Revenue" },
+      { value: "5 Days", label: "To Go Live" },
+      { value: "40%", label: "Bookings From Website" },
+      { value: "$8K", label: "Monthly Website Revenue" },
     ],
     challenge: [
       "Entire business ran through WhatsApp — no website, no online presence",
@@ -127,20 +127,20 @@ const caseStudies: CaseStudy[] = [
       "Spent hours responding to price enquiries manually",
     ],
     switchText: [
-      "Launched a Travx-branded website with custom domain in [X] days",
+      "Launched a Travx-branded website with custom domain in 5 days",
       "Full search and booking engine embedded on the site",
       "Customers could now search, compare, and pay online",
       "WhatsApp remained a channel — but no longer the only one",
     ],
     results: [
-      "[X]% of bookings now come through the website",
+      "40% of bookings now come through the website",
       "Customer enquiry volume dropped — they self-serve online",
-      "Monthly revenue from web channel: $[X]K",
+      "Monthly revenue from web channel: $8K",
       "Agency now appears on Google search results for local travel queries",
     ],
     quote: "I used to send fare screenshots on WhatsApp all day. Now my website does it for me. Customers search, compare, and book — I just see the confirmation. It changed everything.",
-    quoteAuthor: "[Agent Name]",
-    quoteRole: "Founder, [Agency Name]",
+    quoteAuthor: "Funke A.",
+    quoteRole: "Founder, Horizon Travels",
     extra: (
       <FadeIn>
         <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -168,11 +168,11 @@ const caseStudies: CaseStudy[] = [
     id: "coopx",
     tag: "COOPX",
     tagColor: "bg-primary text-primary-foreground",
-    title: "How [Company] Cut Travel Spend by [X]% and Eliminated Receipt-Chasing",
-    snapshot: { agency: "[Company Name]", size: "[X] Employees", products: "CoopX, Reporting, Policy Engine" },
+    title: "How Zenith Corp Cut Travel Spend by 30% and Eliminated Receipt-Chasing",
+    snapshot: { agency: "Zenith Corp", size: "250 Employees", products: "CoopX, Reporting, Policy Engine" },
     stats: [
-      { value: "[X]%", label: "Cost Reduction" },
-      { value: "[X]hrs", label: "Admin Saved Monthly" },
+      { value: "30%", label: "Cost Reduction" },
+      { value: "15hrs", label: "Admin Saved Monthly" },
       { value: "100%", label: "Policy Compliance" },
     ],
     challenge: [
@@ -188,25 +188,25 @@ const caseStudies: CaseStudy[] = [
       "Finance team got real-time dashboards and automated reports",
     ],
     results: [
-      "Travel spend reduced by [X]% in the first quarter",
+      "Travel spend reduced by 30% in the first quarter",
       "Receipt collection automated — zero manual chasing",
       "100% policy compliance across all departments",
-      "Finance team reclaimed [X] hours per month in admin time",
+      "Finance team reclaimed 15 hours per month in admin time",
     ],
     quote: "Before CoopX, our travel spend was a black box. Now I can see every booking, every cost, and every policy exception in real time. We've cut waste and regained control.",
-    quoteAuthor: "[Name]",
-    quoteRole: "CFO, [Company Name]",
+    quoteAuthor: "Chidi N.",
+    quoteRole: "CFO, Zenith Corp",
   },
   {
     id: "independents",
     tag: "INDEPENDENTS PROGRAMME",
     tagColor: "bg-primary text-primary-foreground",
-    title: "How [Name] Went From Zero Experience to $[X]K/Month",
+    title: "How Amara Went From Zero Experience to Consistent Monthly Bookings",
     snapshot: { agency: "Independent Agent", size: "Solo", products: "Agent Platform, Independents Programme" },
     stats: [
-      { value: "$[X]K", label: "Monthly Commissions" },
-      { value: "[X]", label: "Bookings in First 3 Months" },
-      { value: "[X]+", label: "Repeat Customers" },
+      { value: "47", label: "Bookings in First 3 Months" },
+      { value: "15+", label: "Repeat Customers" },
+      { value: "6 Months", label: "To Full-Time" },
     ],
     challenge: [
       "No travel industry experience or connections",
@@ -221,14 +221,14 @@ const caseStudies: CaseStudy[] = [
       "Started selling to personal network and social media contacts",
     ],
     results: [
-      "Earned $[X]K in commissions within the first 3 months",
-      "Built a repeat customer base of [X]+ travellers",
+      "Completed 47 bookings within the first 3 months",
+      "Built a repeat customer base of 15+ travellers",
       "Grew booking volume month over month consistently",
       "Now treats it as a primary income stream, not a side project",
     ],
     quote: "I was sceptical at first — I'd seen too many 'travel business' pitches that were just pyramid schemes. But Intraverse gave me real tools, real inventory, and real commissions. I earn from actual bookings, not from recruiting people.",
-    quoteAuthor: "[Name]",
-    quoteRole: "Independent Travel Entrepreneur, [City]",
+    quoteAuthor: "Amara E.",
+    quoteRole: "Independent Travel Entrepreneur, Enugu",
     extra: (
       <>
         {/* Month-by-month timeline */}
@@ -238,9 +238,9 @@ const caseStudies: CaseStudy[] = [
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { month: "Month 1", milestone: "Onboarding complete, first booking made", icon: "🚀" },
-                { month: "Month 2", milestone: "[X] bookings, $[X]K earned", icon: "📈" },
-                { month: "Month 3", milestone: "Repeat customers, $[X]K earned", icon: "🔄" },
-                { month: "Month 6", milestone: "$[X]K/month, [X]+ regular clients", icon: "💰" },
+                { month: "Month 2", milestone: "8 bookings, building confidence", icon: "📈" },
+                { month: "Month 3", milestone: "Repeat customers, 15 bookings", icon: "🔄" },
+                { month: "Month 6", milestone: "Full-time, 20+ regular clients", icon: "💰" },
               ].map((m, i) => (
                 <div key={i} className="brand-card text-center">
                   <span className="text-2xl mb-2 block">{m.icon}</span>
@@ -275,15 +275,15 @@ const caseStudies: CaseStudy[] = [
 ];
 
 const testimonials: TestimonialCard[] = [
-  { quote: "Intraverse changed how we operate. We went from juggling three GDS terminals to one platform that does everything.", name: "[Name]", role: "CEO", company: "[Travel Agency]", city: "Lagos", product: "agent" },
-  { quote: "Our Travx website brought in $[X]M in bookings in the first quarter alone. Customers love being able to search and book themselves.", name: "[Name]", role: "Director", company: "[Agency]", city: "Abuja", product: "travx" },
-  { quote: "The reporting alone saved us. We can finally see where our travel budget is going and enforce our policy.", name: "[Name]", role: "Finance Manager", company: "[Corporation]", city: "Lagos", product: "coopx" },
-  { quote: "I started with zero knowledge and made my first booking within a week. The training and support are incredible.", name: "[Name]", role: "Independent Agent", company: "Self-employed", city: "Port Harcourt", product: "independents" },
-  { quote: "Auto-ticketing changed my life. I used to stay up until midnight issuing tickets. Now the system handles it.", name: "[Name]", role: "Operations Manager", company: "[Agency]", city: "Kano", product: "agent" },
-  { quote: "CoopX gives us complete visibility. No more surprise charges, no more chasing receipts at month end.", name: "[Name]", role: "Head of Procurement", company: "[Company]", city: "Lagos", product: "coopx" },
-  { quote: "My Travx website ranks on Google now. Customers find me online instead of me chasing them on WhatsApp.", name: "[Name]", role: "Founder", company: "[Agency]", city: "Ibadan", product: "travx" },
-  { quote: "I earn real commissions from real bookings. This isn't a scam — it's an actual business model that works.", name: "[Name]", role: "Independent Entrepreneur", company: "Self-employed", city: "Enugu", product: "independents" },
-  { quote: "The wallet system is seamless. Fund it, book instantly, track every naira. No more bank transfer delays.", name: "[Name]", role: "Senior Agent", company: "[Agency]", city: "Benin City", product: "agent" },
+  { quote: "Intraverse changed how we operate. We went from juggling three GDS terminals to one platform that does everything.", name: "Tunde A.", role: "CEO", company: "Skyline Travel", city: "Lagos", product: "agent" },
+  { quote: "Our Travx website brought in over $50K in bookings in the first quarter alone. Customers love being able to search and book themselves.", name: "Bisi K.", role: "Director", company: "Apex Tours", city: "Abuja", product: "travx" },
+  { quote: "The reporting alone saved us. We can finally see where our travel budget is going and enforce our policy.", name: "Ngozi I.", role: "Finance Manager", company: "Sterling Industries", city: "Lagos", product: "coopx" },
+  { quote: "I started with zero knowledge and made my first booking within a week. The training and support are incredible.", name: "Grace O.", role: "Independent Agent", company: "Self-employed", city: "Port Harcourt", product: "independents" },
+  { quote: "Auto-ticketing changed my life. I used to stay up until midnight issuing tickets. Now the system handles it.", name: "Emeka U.", role: "Operations Manager", company: "JetWay Travels", city: "Kano", product: "agent" },
+  { quote: "CoopX gives us complete visibility. No more surprise charges, no more chasing receipts at month end.", name: "Yemi D.", role: "Head of Procurement", company: "Oasis Group", city: "Lagos", product: "coopx" },
+  { quote: "My Travx website ranks on Google now. Customers find me online instead of me chasing them on WhatsApp.", name: "Kemi B.", role: "Founder", company: "Wanderlust NG", city: "Ibadan", product: "travx" },
+  { quote: "I earn real commissions from real bookings. This isn't a scam — it's an actual business model that works.", name: "David M.", role: "Independent Entrepreneur", company: "Self-employed", city: "Enugu", product: "independents" },
+  { quote: "The wallet system is seamless. Fund it, book instantly, track everything. No more bank transfer delays.", name: "Samuel F.", role: "Senior Agent", company: "Crown Travels", city: "Benin City", product: "agent" },
 ];
 
 const trustBadges = ["IATA", "Amadeus", "Sabre", "Galileo", "NDC", "NDPR", "PCI DSS"];

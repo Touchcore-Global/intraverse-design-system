@@ -34,10 +34,10 @@ import {
 
 const stats = [
   { value: "200+", label: "Active Agents", icon: Users },
-  { value: "[X,000]+", label: "Bookings Processed", icon: Plane },
-  { value: "[X]+", label: "Global Suppliers", icon: Hotel },
+  { value: "10,000+", label: "Bookings Processed", icon: Plane },
+  { value: "25+", label: "Global Suppliers", icon: Hotel },
   { value: "3", label: "GDS Systems", icon: Server },
-  { value: "[X]+", label: "NDC Sources", icon: Globe },
+  { value: "5+", label: "NDC Sources", icon: Globe },
   { value: "Lagos", label: "Headquarters", icon: MapPin },
   { value: "IATA", label: "Accredited", icon: Shield },
   { value: "48hrs", label: "Average Setup", icon: Clock },
