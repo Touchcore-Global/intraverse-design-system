@@ -23,6 +23,7 @@ import UseCases from "./pages/UseCases.tsx";
 import Proof from "./pages/Proof.tsx";
 import FAQ from "./pages/FAQ.tsx";
 import Contact from "./pages/Contact.tsx";
+import Login from "./pages/Login.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -35,11 +36,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          {/* Product routes - support both old and new paths */}
           <Route path="/agent-platform" element={<AgentPlatform />} />
+          <Route path="/products/agent-platform" element={<AgentPlatform />} />
           <Route path="/travx" element={<Travx />} />
+          <Route path="/products/travx" element={<Travx />} />
           <Route path="/coopx" element={<CoopX />} />
+          <Route path="/products/coopx" element={<CoopX />} />
           <Route path="/independents" element={<Independents />} />
+          <Route path="/products/independents" element={<Independents />} />
           <Route path="/supplier-engine" element={<SupplierEngine />} />
+          <Route path="/products/supplier-engine" element={<SupplierEngine />} />
+          {/* Audience routes */}
           <Route path="/for/travel-agents" element={<TravelAgents />} />
           <Route path="/for/independents" element={<IndependentsAudience />} />
           <Route path="/who-we-serve" element={<WhoWeServe />} />
@@ -48,12 +56,14 @@ const App = () => (
           <Route path="/for/startups" element={<StartupsAudience />} />
           <Route path="/for/developers" element={<DevelopersAudience />} />
           <Route path="/for/fintechs" element={<FintechsAudience />} />
+          {/* Core pages */}
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
           <Route path="/use-cases" element={<UseCases />} />
           <Route path="/proof" element={<Proof />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
