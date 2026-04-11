@@ -31,7 +31,7 @@ function FadeIn({ children, className = "" }: { children: React.ReactNode; class
 /* ───── types ───── */
 type ProductFilter = "all" | "agent" | "travx" | "coopx" | "independents";
 
-interface StatItem { value: string; label: string; icon: LucideIcon }
+
 interface CaseStudy {
   id: ProductFilter;
   tag: string;
@@ -56,16 +56,6 @@ interface TestimonialCard {
   city: string;
   product: ProductFilter;
 }
-
-/* ───── data ───── */
-const heroStats: StatItem[] = [
-  { value: "200+", label: "Active Agents", icon: Users },
-  { value: "10,000+", label: "Bookings", icon: BookOpen },
-  { value: "25+", label: "Global Suppliers", icon: Globe },
-  { value: "$5M+", label: "Transaction Volume", icon: CreditCard },
-  { value: "150+", label: "Cities", icon: MapPin },
-  { value: "48hrs", label: "Setup", icon: Clock },
-];
 
 const filterTabs: { id: ProductFilter; label: string }[] = [
   { id: "all", label: "All Stories" },
