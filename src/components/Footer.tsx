@@ -1,4 +1,15 @@
 import { MessageCircle } from "lucide-react";
+import iataLogo from "@/assets/iata-logo.png";
+import amadeusLogo from "@/assets/amadeus-logo.png";
+import sabreLogo from "@/assets/sabre-logo.png";
+import travelportLogo from "@/assets/travelport-logo.png";
+
+const footerBadges = [
+  { name: "IATA", logo: iataLogo },
+  { name: "Amadeus", logo: amadeusLogo },
+  { name: "Sabre", logo: sabreLogo },
+  { name: "Galileo by Travelport", logo: travelportLogo },
+];
 
 const footerLinks = {
   Products: [
@@ -51,8 +62,19 @@ export const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom row */}
+        {/* Partner badges */}
         <div className="mt-12 pt-8 border-t border-white/10">
+          <div className="flex flex-wrap items-center justify-center gap-8 mb-8">
+            {footerBadges.map((badge) => (
+              <img
+                key={badge.name}
+                src={badge.logo}
+                alt={`${badge.name} logo`}
+                className="h-8 md:h-10 w-auto object-contain grayscale brightness-200 opacity-50"
+                loading="lazy"
+              />
+            ))}
+          </div>
           <p className="text-[hsl(216,20%,66%)] text-sm text-center">
             © 2026 Intraverse. All rights reserved. | Lagos, Nigeria | IATA Accredited
           </p>
