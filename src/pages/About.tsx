@@ -199,10 +199,10 @@ export default function About() {
       <section className="pt-28 pb-20 md:pt-36 md:pb-28 bg-background">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h1 className="text-foreground mb-6">
-            We Don't Sell Travel. We Build the Technology That Powers the People Who Do.
+            We Don't Just Sell Travel. We Build the Technology That Powers the People Who Do.
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Intraverse is a B2B travel technology company headquartered in Lagos, Nigeria. We build the tools,
+            Intraverse is a B2B travel technology company. We build the tools,
             infrastructure, and platforms that travel agencies, corporate travel managers, and independent travel
             entrepreneurs use to sell flights, hotels, tours, and packages from suppliers around the world.
           </p>
