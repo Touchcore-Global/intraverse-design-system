@@ -62,7 +62,7 @@ const heroStats: StatItem[] = [
   { value: "200+", label: "Active Agents", icon: Users },
   { value: "[X,000]+", label: "Bookings", icon: BookOpen },
   { value: "[X]+", label: "Global Suppliers", icon: Globe },
-  { value: "₦[X]B+", label: "Transaction Volume", icon: CreditCard },
+  { value: "$[X]M+", label: "Transaction Volume", icon: CreditCard },
   { value: "[X]+", label: "Cities", icon: MapPin },
   { value: "48hrs", label: "Setup", icon: Clock },
 ];
@@ -118,7 +118,7 @@ const caseStudies: CaseStudy[] = [
     stats: [
       { value: "[X] Days", label: "To Go Live" },
       { value: "[X]%", label: "Bookings From Website" },
-      { value: "₦[X]K", label: "Monthly Website Revenue" },
+      { value: "$[X]K", label: "Monthly Website Revenue" },
     ],
     challenge: [
       "Entire business ran through WhatsApp — no website, no online presence",
@@ -135,7 +135,7 @@ const caseStudies: CaseStudy[] = [
     results: [
       "[X]% of bookings now come through the website",
       "Customer enquiry volume dropped — they self-serve online",
-      "Monthly revenue from web channel: ₦[X]K",
+      ""Monthly revenue from web channel: $[X]K",",
       "Agency now appears on Google search results for local travel queries",
     ],
     quote: "I used to send fare screenshots on WhatsApp all day. Now my website does it for me. Customers search, compare, and book — I just see the confirmation. It changed everything.",
@@ -201,10 +201,10 @@ const caseStudies: CaseStudy[] = [
     id: "independents",
     tag: "INDEPENDENTS PROGRAMME",
     tagColor: "bg-primary text-primary-foreground",
-    title: "How [Name] Went From Zero Experience to ₦[X]K/Month",
+    title: "title: "How [Name] Went From Zero Experience to $[X]K/Month",",
     snapshot: { agency: "Independent Agent", size: "Solo", products: "Agent Platform, Independents Programme" },
     stats: [
-      { value: "₦[X]K", label: "Monthly Commissions" },
+      { value: "$[X]K", label: "Monthly Commissions" },
       { value: "[X]", label: "Bookings in First 3 Months" },
       { value: "[X]+", label: "Repeat Customers" },
     ],
@@ -221,7 +221,7 @@ const caseStudies: CaseStudy[] = [
       "Started selling to personal network and social media contacts",
     ],
     results: [
-      "Earned ₦[X]K in commissions within the first 3 months",
+      ""Earned $[X]K in commissions within the first 3 months",",
       "Built a repeat customer base of [X]+ travellers",
       "Grew booking volume month over month consistently",
       "Now treats it as a primary income stream, not a side project",
@@ -238,9 +238,9 @@ const caseStudies: CaseStudy[] = [
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { month: "Month 1", milestone: "Onboarding complete, first booking made", icon: "🚀" },
-                { month: "Month 2", milestone: "[X] bookings, ₦[X]K earned", icon: "📈" },
-                { month: "Month 3", milestone: "Repeat customers, ₦[X]K earned", icon: "🔄" },
-                { month: "Month 6", milestone: "₦[X]K/month, [X]+ regular clients", icon: "💰" },
+                { month: "Month 2", milestone: "[X] bookings, $[X]K earned", icon: "📈" },
+                { month: "Month 3", milestone: "Repeat customers, $[X]K earned", icon: "🔄" },
+                { month: "Month 6", milestone: "$[X]K/month, [X]+ regular clients", icon: "💰" },
               ].map((m, i) => (
                 <div key={i} className="brand-card text-center">
                   <span className="text-2xl mb-2 block">{m.icon}</span>
@@ -276,7 +276,7 @@ const caseStudies: CaseStudy[] = [
 
 const testimonials: TestimonialCard[] = [
   { quote: "Intraverse changed how we operate. We went from juggling three GDS terminals to one platform that does everything.", name: "[Name]", role: "CEO", company: "[Travel Agency]", city: "Lagos", product: "agent" },
-  { quote: "Our Travx website brought in ₦[X]M in bookings in the first quarter alone. Customers love being able to search and book themselves.", name: "[Name]", role: "Director", company: "[Agency]", city: "Abuja", product: "travx" },
+  { quote: "{ quote: "Our Travx website brought in $[X]M in bookings in the first quarter alone. Customers love being able to search and book themselves.", name: "[Name]", role: "Director", company: "[Agency]", city: "Abuja", product: "travx" }, in the first quarter alone. Customers love being able to search and book themselves.", name: "[Name]", role: "Director", company: "[Agency]", city: "Abuja", product: "travx" },
   { quote: "The reporting alone saved us. We can finally see where our travel budget is going and enforce our policy.", name: "[Name]", role: "Finance Manager", company: "[Corporation]", city: "Lagos", product: "coopx" },
   { quote: "I started with zero knowledge and made my first booking within a week. The training and support are incredible.", name: "[Name]", role: "Independent Agent", company: "Self-employed", city: "Port Harcourt", product: "independents" },
   { quote: "Auto-ticketing changed my life. I used to stay up until midnight issuing tickets. Now the system handles it.", name: "[Name]", role: "Operations Manager", company: "[Agency]", city: "Kano", product: "agent" },

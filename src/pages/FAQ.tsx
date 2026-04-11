@@ -108,7 +108,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "How much does Travx cost?",
-        a: "Travx is available for ₦120,000 per month. This includes your branded website, hosting, maintenance, booking engine integration, payment processing, and ongoing updates. There are no setup fees and no hidden charges.",
+        a: "Travx is available for $100 per month. This includes your branded website, hosting, maintenance, booking engine integration, payment processing, and ongoing updates. There are no setup fees and no hidden charges.", This includes your branded website, hosting, maintenance, booking engine integration, payment processing, and ongoing updates. There are no setup fees and no hidden charges.",
       },
       {
         q: "Will the website show my brand or Intraverse?",
@@ -264,7 +264,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "How much does Travx cost?",
-        a: "Travx is ₦120,000 per month. This includes your branded website, hosting, booking engine, payment integration, and ongoing maintenance. There are no setup fees or hidden charges.",
+        a: "Travx is $100 per month. This includes your branded website, hosting, booking engine, payment integration, and ongoing maintenance. There are no setup fees or hidden charges.", This includes your branded website, hosting, booking engine, payment integration, and ongoing maintenance. There are no setup fees or hidden charges.",
       },
       {
         q: "How is CoopX priced?",
