@@ -178,7 +178,7 @@ const faqs = [
   },
   {
     q: "Where is Intraverse based?",
-    a: "We're headquartered in Lagos, Nigeria. Our entire platform is designed for the realities of the Nigerian and African travel market — from payment infrastructure to supplier relationships.",
+    a: "We're headquartered in Lagos, Nigeria. With presence in the UK, USA and UAE. Our entire platform is designed for the realities of the African travel market — from payment infrastructure to supplier relationships.",
   },
   {
     q: "Is Intraverse IATA accredited?",
