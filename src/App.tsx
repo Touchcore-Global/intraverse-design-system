@@ -9,6 +9,7 @@ import Travx from "./pages/Travx.tsx";
 import CoopX from "./pages/CoopX.tsx";
 import Independents from "./pages/Independents.tsx";
 import SupplierEngine from "./pages/SupplierEngine.tsx";
+import TravelAgents from "./pages/TravelAgents.tsx";
 import About from "./pages/About.tsx";
 import Features from "./pages/Features.tsx";
 import Proof from "./pages/Proof.tsx";
