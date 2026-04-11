@@ -2,7 +2,11 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import iataLogo from "@/assets/iata-logo.png";
+import amadeusLogo from "@/assets/amadeus-logo.png";
+import sabreLogo from "@/assets/sabre-logo.png";
+import travelportLogo from "@/assets/travelport-logo.png";
+
 import {
   Accordion,
   AccordionContent,
@@ -165,7 +169,12 @@ const testimonials = [
   },
 ];
 
-const accreditations = ["IATA", "Amadeus", "Sabre", "Galileo", "NDPR", "PCI DSS"];
+const accreditations = [
+  { name: "IATA", logo: iataLogo },
+  { name: "Amadeus", logo: amadeusLogo },
+  { name: "Sabre", logo: sabreLogo },
+  { name: "Travelport", logo: travelportLogo },
+];
 
 const faqs = [
   {
@@ -316,7 +325,7 @@ export default function About() {
           <h2 className="text-foreground text-center mb-8">Technology & Accreditations</h2>
           <div className="space-y-6 text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
             <p>
-              Our flight supply architecture aggregates inventory from three GDS systems (Amadeus, Sabre, Galileo),
+              Our flight supply architecture aggregates inventory from three GDS systems (Amadeus, Sabre, Travelport),
               multiple NDC direct connections, consolidator fares, and third-party aggregators — all searchable from a
               single interface.
             </p>
@@ -325,15 +334,19 @@ export default function About() {
               rates across hundreds of thousands of properties worldwide.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            {accreditations.map((name) => (
-              <Badge
-                key={name}
-                variant="secondary"
-                className="px-5 py-2.5 text-sm font-semibold"
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+            {accreditations.map((item) => (
+              <div
+                key={item.name}
+                className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
               >
-                {name}
-              </Badge>
+                <img
+                  src={item.logo}
+                  alt={`${item.name} logo`}
+                  className="h-10 md:h-14 w-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
             ))}
           </div>
         </div>
