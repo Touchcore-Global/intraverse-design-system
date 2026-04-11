@@ -16,7 +16,7 @@ const features = [
     title: "Aggregated Flight Search",
     description: "Search across GDS systems, NDC connections, consolidators, and aggregators simultaneously. One query returns every available fare from every source.",
     bullets: [
-      "Amadeus, Sabre, Travelport — all in one search",
+      "Amadeus, Sabre, Galileo by Travelport — all in one search",
       "NDC direct connections for better fares",
       "Consolidator and aggregator inventory included",
       "Compare prices across all sources instantly",
@@ -91,7 +91,7 @@ const stats = [
 const faqs = [
   {
     question: "What flight sources does the platform aggregate?",
-    answer: "The Agent Selling Platform connects to all major GDS systems (Amadeus, Sabre, Travelport), NDC direct connections with airlines, consolidator inventory, and other aggregator feeds. This means every search returns fares from every available source — so you never miss a better price or route option.",
+    answer: "The Agent Selling Platform connects to all major GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC direct connections with airlines, consolidator inventory, and other aggregator feeds. This means every search returns fares from every available source — so you never miss a better price or route option.",
   },
   {
     question: "Can I book hotels and tours alongside flights?",

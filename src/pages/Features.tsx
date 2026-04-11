@@ -43,7 +43,7 @@ const sections: FeatureSection[] = [
         icon: Plane,
         title: "Aggregated Flight Search",
         benefit: "Every fare from every source in one query",
-        description: "Search across Amadeus, Sabre, Travelport, NDC connections, consolidators, and aggregators simultaneously. One search returns all available fares so you never miss the best price.",
+        description: "Search across Amadeus, Sabre, Galileo by Travelport, NDC connections, consolidators, and aggregators simultaneously. One search returns all available fares so you never miss the best price.",
         bullets: ["GDS + NDC + consolidator results combined", "Real-time availability and pricing", "Fare comparison across all sources", "Filter by airline, stops, time, price"],
       },
       {
