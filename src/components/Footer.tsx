@@ -53,12 +53,23 @@ export const Footer = () => {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith("http") ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
