@@ -35,10 +35,11 @@ const footerLinks = {
     { label: "Contact Us", href: "/contact" },
   ],
   Connect: [
-    { label: "WhatsApp", href: "https://wa.me/message" },
-    { label: "LinkedIn", href: "https://linkedin.com/company/intraverse" },
-    { label: "Twitter", href: "https://twitter.com/intraverse" },
-    { label: "Instagram", href: "https://instagram.com/intraverse" },
+    { label: "WhatsApp", href: "https://wa.me/2349030002629" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/intraversehq/" },
+    { label: "X (Twitter)", href: "https://x.com/IntraverseHQ" },
+    { label: "Instagram", href: "https://www.instagram.com/intraverse.africa" },
+    { label: "Facebook", href: "https://www.facebook.com/intraverse.africa" },
   ],
 };
 
