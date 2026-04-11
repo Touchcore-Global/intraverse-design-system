@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, MessageCircle, LayoutDashboard, Globe, Building2, Rocket, Wallet, BookOpen, FileText, Code, Plane, Landmark, Lightbulb, CodeXml, ArrowRight, Star } from "lucide-react";
+import { Menu, X, ChevronDown, LayoutDashboard, Globe, Building2, Rocket, Wallet, BookOpen, FileText, Code, Plane, Landmark, Lightbulb, CodeXml, ArrowRight, Star } from "lucide-react";
 import logo from "@/assets/intraverse-logo.svg";
 import { Button } from "@/components/ui/button";
 
