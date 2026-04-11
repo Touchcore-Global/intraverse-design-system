@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     q: "How do I get paid?",
-    a: "Commissions are tracked in your dashboard in real-time. Payouts are processed to your Nigerian bank account on a regular schedule. You can see exactly what you've earned and when it will be paid.",
+    a: "Commissions are tracked in your dashboard in real-time. Payouts are processed to your African bank account on a regular schedule. You can see exactly what you've earned and when it will be paid.",
   },
   {
     q: "Can I do this part-time?",
@@ -175,7 +175,7 @@ const IndependentsAudience = () => {
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground p-8 text-center">
                   <div className="w-20 h-20 rounded-full bg-muted-foreground/10 mb-4" />
                   <p className="text-xs uppercase tracking-widest font-medium mb-1">Photo Placeholder</p>
-                  <p className="text-xs">Young Nigerian Independent on phone/laptop, casual setting</p>
+                  <p className="text-xs">Young African Independent on phone/laptop, casual setting</p>
                 </div>
               </div>
             </RevealBlock>

@@ -26,7 +26,7 @@ const audiences = [
   {
     icon: Landmark,
     title: "Corporates",
-    headline: "Enterprise-grade travel management for Nigerian companies.",
+    headline: "Enterprise-grade travel management for African companies.",
     body: "For large corporates with complex travel needs — multi-department approvals, policy enforcement, consolidated billing, and full reporting. Built to handle scale, governance, and compliance.",
     products: "CoopX Enterprise",
     cta: "Explore for Corporates",
