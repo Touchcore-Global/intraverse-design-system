@@ -130,8 +130,8 @@ const steps = [
 ];
 
 const earningsStats = [
-  { value: "₦[X]k", label: "Average First-Month Earnings" },
-  { value: "₦[X]k", label: "Top Independent Monthly" },
+  { value: "$[X]", label: "Average First-Month Earnings" },
+  { value: "$[X]", label: "Top Independent Monthly" },
   { value: "[X]+", label: "Active Independents" },
 ];
 
@@ -140,7 +140,7 @@ const whoItsFor = [
   { icon: Briefcase, text: "Side hustlers who want a legitimate business they can grow" },
   { icon: Users, text: "Stay-at-home parents with a network and time to earn" },
   { icon: Megaphone, text: "Social media creators with an audience that travels" },
-  { icon: Rocket, text: "Aspiring entrepreneurs who want to start a travel business without ₦millions in capital" },
+  { icon: Rocket, text: "Aspiring entrepreneurs who want to start a travel business without significant capital" },
 ];
 
 const faqs = [
