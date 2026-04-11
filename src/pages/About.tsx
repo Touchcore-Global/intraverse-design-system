@@ -247,7 +247,7 @@ export default function About() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-foreground text-center mb-8">
-            We Started With One Question: Why Is It So Hard to Run a Travel Agency in Nigeria?
+            We Started With One Question: Why Is It So Hard to Run a Travel Business in Africa?
           </h2>
           <div className="space-y-6 text-lg text-muted-foreground">
             <p>
