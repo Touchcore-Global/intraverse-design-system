@@ -269,21 +269,32 @@ const Contact = () => {
                 </Button>
               </div>
 
-              {/* Office */}
-              <div className="bg-accent rounded-2xl p-6">
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-primary" />
+              {/* Offices */}
+              <div className="bg-accent rounded-2xl p-6 space-y-5">
+                <h3 className="font-semibold text-foreground text-lg">
+                  Our Offices
+                </h3>
+
+                {[
+                  { city: "Lagos, Nigeria (HQ)", address: "14b Wole Ariyo Street, Lekki Phase 1, Lagos, Nigeria" },
+                  { city: "London, United Kingdom", address: "20 Wenlock Road, London, England, N1 7GU" },
+                  { city: "United States", address: "3116 164th St SW, #1610, Lynnwood, WA, 98087" },
+                  { city: "Dubai, UAE", address: "Al Meydan Rd - Nad Al Sheba - Nadd Al Shiba First - Dubai" },
+                ].map((office) => (
+                  <div key={office.city} className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <MapPin className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-foreground">
+                        {office.city}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {office.address}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-foreground">
-                      Lagos, Nigeria
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      Serving travel businesses across Africa
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
