@@ -13,6 +13,7 @@ import TravelAgents from "./pages/TravelAgents.tsx";
 import IndependentsAudience from "./pages/IndependentsAudience.tsx";
 import WhoWeServe from "./pages/WhoWeServe.tsx";
 import BusinessesPage from "./pages/Businesses.tsx";
+import CorporatesAudience from "./pages/CorporatesAudience.tsx";
 import About from "./pages/About.tsx";
 import Features from "./pages/Features.tsx";
 import Proof from "./pages/Proof.tsx";
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/for/independents" element={<IndependentsAudience />} />
           <Route path="/who-we-serve" element={<WhoWeServe />} />
           <Route path="/for/businesses" element={<BusinessesPage />} />
+          <Route path="/for/corporates" element={<CorporatesAudience />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
           <Route path="/proof" element={<Proof />} />
