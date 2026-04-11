@@ -31,7 +31,7 @@ const features = [
   { icon: ShieldCheck, title: "Policy & Compliance", body: "Enforce cabin class rules, hotel budgets, advance booking windows, and preferred supplier policies automatically. Every exception is logged and flagged." },
   { icon: Coins, title: "Negotiated Rates", body: "Access preferential rates through Intraverse's aggregated buying power — plus the ability to load your own negotiated corporate rates into the platform." },
   { icon: UserCog, title: "Dedicated Account Management", body: "A named account manager who understands your organisation, your travel patterns, and your compliance requirements. Not a chatbot. Not a ticket queue." },
-  { icon: MapPin, title: "Built for Nigeria", body: "Naira-denominated pricing. Lagos-based support team in your time zone. Designed around the realities of Nigerian corporate travel — not retrofitted from a Western TMC." },
+  { icon: MapPin, title: "Built for Africa", body: "Naira-denominated pricing. Lagos-based support team in your time zone. Designed around the realities of African corporate travel — not retrofitted from a Western TMC." },
 ];
 
 const stats = [
@@ -86,10 +86,10 @@ const Corporates = () => {
         <div className="container relative mx-auto px-4 py-24 lg:py-36 text-center" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
             <h1 className="text-3xl sm:text-4xl md:text-[64px] font-[660] leading-[1.1] md:leading-[76px] tracking-[-2px] max-w-5xl mx-auto text-white">
-              Enterprise Travel Management Built for Nigerian Corporates
+              Enterprise Travel Management Built for African Corporates
             </h1>
             <p className="mt-8 text-base sm:text-lg md:text-xl font-normal max-w-3xl mx-auto leading-relaxed text-white/70">
-              For large corporates with complex travel programmes, multi-department approval requirements, and serious governance and compliance needs. CoopX Enterprise scales to your organisation — with the controls, reporting, and dedicated support you expect from enterprise software, built for the realities of the Nigerian market.
+              For large corporates with complex travel programmes, multi-department approval requirements, and serious governance and compliance needs. CoopX Enterprise scales to your organisation — with the controls, reporting, and dedicated support you expect from enterprise software, built for the realities of the African market.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold">
@@ -134,7 +134,7 @@ const Corporates = () => {
             </h2>
             <div className="max-w-3xl mx-auto space-y-5 text-muted-foreground text-sm md:text-base leading-relaxed">
               <p>
-                International TMCs offer polished enterprise solutions — but they're expensive, slow to implement, and built for markets that don't match Nigerian business realities. Pricing in dollars. Support in another time zone. Workflows designed for corporate structures that don't reflect how Nigerian organisations actually operate.
+                International TMCs offer polished enterprise solutions — but they're expensive, slow to implement, and built for markets that don't match African business realities. Pricing in dollars. Support in another time zone. Workflows designed for corporate structures that don't reflect how African organisations actually operate.
               </p>
               <p>
                 Local alternatives often lack the compliance rigour, reporting depth, and approval chain complexity that large corporates require. You end up with a tool that handles bookings but can't handle governance.
@@ -152,7 +152,7 @@ const Corporates = () => {
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
             <h2 className="text-3xl sm:text-4xl md:text-[48px] md:leading-[56px] font-[660] tracking-[-2px] text-center mb-14" style={{ color: "rgb(13, 27, 42)" }}>
-              Enterprise-Grade. Nigerian-Built.
+              Enterprise-Grade. African-Built.
             </h2>
           </RevealBlock>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -224,7 +224,7 @@ const Corporates = () => {
         <div className="container mx-auto px-4 text-center" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-8">
-              Trusted by leading Nigerian corporates
+              Trusted by leading African corporates
             </p>
             <div className="flex flex-wrap items-center justify-center gap-8">
               {Array.from({ length: 5 }).map((_, i) => (

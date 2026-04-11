@@ -106,7 +106,7 @@ const TravelAgents = () => {
               className="text-3xl sm:text-4xl md:text-[80px] font-[660] leading-[1.1] md:leading-[96px] tracking-[-2px] max-w-5xl mx-auto"
               style={{ color: "rgb(23, 19, 33)" }}
             >
-              The Operating System for Modern Nigerian Travel Agents
+              The Operating System for Modern African Travel Agents
             </h1>
             <p
               className="mt-8 text-base sm:text-lg md:text-xl font-normal max-w-3xl mx-auto"

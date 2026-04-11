@@ -221,7 +221,7 @@ const Businesses = () => {
               Take Control of Your Business Travel
             </h2>
             <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-10 text-sm md:text-base">
-              Join growing Nigerian businesses already saving time and money with Intraverse.
+              Join growing African businesses already saving time and money with Intraverse.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]">
