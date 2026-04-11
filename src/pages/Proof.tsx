@@ -201,7 +201,7 @@ const caseStudies: CaseStudy[] = [
     id: "independents",
     tag: "INDEPENDENTS PROGRAMME",
     tagColor: "bg-primary text-primary-foreground",
-    title: "title: "How [Name] Went From Zero Experience to $[X]K/Month",",
+    title: "How [Name] Went From Zero Experience to $[X]K/Month",
     snapshot: { agency: "Independent Agent", size: "Solo", products: "Agent Platform, Independents Programme" },
     stats: [
       { value: "$[X]K", label: "Monthly Commissions" },
@@ -221,7 +221,7 @@ const caseStudies: CaseStudy[] = [
       "Started selling to personal network and social media contacts",
     ],
     results: [
-      ""Earned $[X]K in commissions within the first 3 months",",
+      "Earned $[X]K in commissions within the first 3 months",
       "Built a repeat customer base of [X]+ travellers",
       "Grew booking volume month over month consistently",
       "Now treats it as a primary income stream, not a side project",
@@ -276,7 +276,7 @@ const caseStudies: CaseStudy[] = [
 
 const testimonials: TestimonialCard[] = [
   { quote: "Intraverse changed how we operate. We went from juggling three GDS terminals to one platform that does everything.", name: "[Name]", role: "CEO", company: "[Travel Agency]", city: "Lagos", product: "agent" },
-  { quote: "{ quote: "Our Travx website brought in $[X]M in bookings in the first quarter alone. Customers love being able to search and book themselves.", name: "[Name]", role: "Director", company: "[Agency]", city: "Abuja", product: "travx" }, in the first quarter alone. Customers love being able to search and book themselves.", name: "[Name]", role: "Director", company: "[Agency]", city: "Abuja", product: "travx" },
+  { quote: "Our Travx website brought in $[X]M in bookings in the first quarter alone. Customers love being able to search and book themselves.", name: "[Name]", role: "Director", company: "[Agency]", city: "Abuja", product: "travx" },
   { quote: "The reporting alone saved us. We can finally see where our travel budget is going and enforce our policy.", name: "[Name]", role: "Finance Manager", company: "[Corporation]", city: "Lagos", product: "coopx" },
   { quote: "I started with zero knowledge and made my first booking within a week. The training and support are incredible.", name: "[Name]", role: "Independent Agent", company: "Self-employed", city: "Port Harcourt", product: "independents" },
   { quote: "Auto-ticketing changed my life. I used to stay up until midnight issuing tickets. Now the system handles it.", name: "[Name]", role: "Operations Manager", company: "[Agency]", city: "Kano", product: "agent" },
