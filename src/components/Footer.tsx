@@ -76,7 +76,7 @@ export const Footer = () => {
             ))}
           </div>
           <p className="text-[hsl(216,20%,66%)] text-sm text-center">
-            © 2026 Intraverse. All rights reserved. | Lagos, Nigeria | IATA Accredited
+            © 2026 Intraverse. All rights reserved.
           </p>
         </div>
       </div>
