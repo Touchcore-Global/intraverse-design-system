@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
@@ -154,6 +154,12 @@ function CellValue({ value }: { value: boolean | string }) {
 
 export default function Pricing() {
   const [annual, setAnnual] = useState(false);
+
+  useEffect(() => {
+    document.title = "Pricing | Simple Plans for Every Travel Business | Intraverse";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Start free, upgrade when ready. Transparent pricing for travel agents, independents, agencies, and enterprises. No hidden fees. 14-day free trial.");
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
