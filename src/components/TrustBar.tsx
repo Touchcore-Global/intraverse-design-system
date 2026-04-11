@@ -1,13 +1,13 @@
 import iataLogo from "@/assets/iata-logo.png";
 import amadeusLogo from "@/assets/amadeus-logo.png";
 import sabreLogo from "@/assets/sabre-logo.png";
-import galileoLogo from "@/assets/galileo-logo.png";
+import travelportLogo from "@/assets/travelport-logo.png";
 
 const partners = [
   { name: "IATA", logo: iataLogo },
   { name: "Amadeus", logo: amadeusLogo },
   { name: "Sabre", logo: sabreLogo },
-  { name: "Galileo", logo: galileoLogo },
+  { name: "Travelport", logo: travelportLogo },
 ];
 
 export const TrustBar = () => {
