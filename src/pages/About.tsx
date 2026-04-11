@@ -139,12 +139,12 @@ const audiences = [
 ];
 
 const milestones = [
-  { year: "[Year]", title: "Founded in Lagos", description: "Started with a vision to democratise travel technology for Nigerian agencies." },
-  { year: "[Year]", title: "Agent Platform Launch", description: "First version of the multi-source booking platform goes live with early agency partners." },
-  { year: "[Year]", title: "100 Agents Milestone", description: "Crossed 100 active agents on the platform, validating market demand." },
-  { year: "[Year]", title: "Travx & CoopX Launch", description: "Expanded product suite with branded websites and corporate travel management." },
-  { year: "[Year]", title: "Independents Programme", description: "Opened the platform to independent entrepreneurs, removing traditional barriers to entry." },
-  { year: "2026", title: "200+ Agents & Growing", description: "Serving 200+ agencies across Nigeria with plans to expand across West Africa." },
+  { year: "2024", title: "Founded in Lagos", description: "Started with a vision to democratise travel technology for Africa." },
+  { year: "2024", title: "Agent Platform Launch", description: "First version of the multi-source booking platform goes live with early agency partners." },
+  { year: "2024", title: "IATA Certified & 100 Agents Milestone", description: "Authorized Dev Partner to Amadeus, Sabre, Travelport. Crossed 100 active agents on the platform, validating market demand." },
+  { year: "2025", title: "Travx White-Label Website Launch", description: "Expanded product suite with branded websites and corporate travel management. $1m+ transactions processed." },
+  { year: "2026", title: "CoopX & Independents Programme", description: "Opened the platform to independent entrepreneurs, removing traditional barriers to entry." },
+  { year: "2026", title: "400+ Agents Onboarded & Growing", description: "Partnered with leading GDS to offer website to agents. Serving 400+ agencies across Nigeria with plans to expand across Africa." },
 ];
 
 const testimonials = [
