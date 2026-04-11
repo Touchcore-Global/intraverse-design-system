@@ -124,7 +124,7 @@ export const ToolsSection = () => {
   return (
     <section className="py-16 md:py-24 section-gradient-blue">
       <div ref={revealRef} className={`container mx-auto px-4 transition-all duration-700 ease-out ${revealClass}`} style={{ maxWidth: "1200px" }}>
-        <h2 className="text-[32px] md:text-[48px] font-bold text-foreground text-center mb-4 leading-tight">
+        <h2 className="text-[32px] md:text-[80px] md:leading-[96px] font-bold text-foreground text-center mb-4">
           Every Tool You Need to Sell Travel Like a Pro — Included
         </h2>
         <p className="text-center text-muted-foreground text-lg max-w-[720px] mx-auto mb-12">
