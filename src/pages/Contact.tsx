@@ -15,7 +15,6 @@ import {
   MessageCircle,
   Mail,
   MapPin,
-  Phone,
   Clock,
   Send,
   Calendar,
@@ -260,7 +259,7 @@ const Contact = () => {
                   variant="secondary"
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                   onClick={() => {
-                    const reasonSelect = document.querySelector('[data-radix-select-trigger]');
+                    setFormData((prev) => ({ ...prev, reason: "Book a Demo" }));
                     setFormData((prev) => ({ ...prev, reason: "Book a Demo" }));
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
