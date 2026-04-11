@@ -135,7 +135,7 @@ const caseStudies: CaseStudy[] = [
     results: [
       "[X]% of bookings now come through the website",
       "Customer enquiry volume dropped — they self-serve online",
-      ""Monthly revenue from web channel: $[X]K",",
+      "Monthly revenue from web channel: $[X]K",
       "Agency now appears on Google search results for local travel queries",
     ],
     quote: "I used to send fare screenshots on WhatsApp all day. Now my website does it for me. Customers search, compare, and book — I just see the confirmation. It changed everything.",

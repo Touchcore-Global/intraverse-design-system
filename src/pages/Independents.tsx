@@ -140,7 +140,7 @@ const whoItsFor = [
   { icon: Briefcase, text: "Side hustlers who want a legitimate business they can grow" },
   { icon: Users, text: "Stay-at-home parents with a network and time to earn" },
   { icon: Megaphone, text: "Social media creators with an audience that travels" },
-  { icon: Rocket, text: "Aspiring entrepreneurs who want to start a travel business { icon: Rocket, text: "Aspiring entrepreneurs who want to start a travel business without significant capital" }," },
+  { icon: Rocket, text: "Aspiring entrepreneurs who want to start a travel business without significant capital" },
 ];
 
 const faqs = [

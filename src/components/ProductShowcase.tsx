@@ -14,7 +14,7 @@ const products = [
   {
     icon: Globe,
     title: "Your Brand. Your Website. Bookings While You Sleep.",
-    body: "body: "A fully branded, booking-enabled website for your agency at $100/month. No developer needed. Your customers search, book, and pay directly.", No developer needed. Your customers search, book, and pay directly.",
+    body: "A fully branded, booking-enabled website for your agency at $100/month. No developer needed. Your customers search, book, and pay directly.",
     cta: "See Travx →",
     label: "Travx",
     href: "/travx",
