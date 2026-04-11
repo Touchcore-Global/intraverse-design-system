@@ -69,8 +69,12 @@ export const Footer = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm"
+                        className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm inline-flex items-center gap-2"
                       >
+                        {socialIcons[link.label] && (() => {
+                          const Icon = socialIcons[link.label];
+                          return <Icon className="h-4 w-4" />;
+                        })()}
                         {link.label}
                       </a>
                     ) : (
