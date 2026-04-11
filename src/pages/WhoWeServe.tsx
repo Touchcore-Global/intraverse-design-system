@@ -17,14 +17,6 @@ import {
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-const stats = [
-  { value: "200+", label: "Active Travel Agents" },
-  { value: "50+", label: "Companies on CoopX" },
-  { value: "120+", label: "Active Independents" },
-  { value: "15+", label: "Tech Partners" },
-  { value: "IATA", label: "Accredited" },
-  { value: "Lagos", label: "Headquartered" },
-];
 
 const audiences = [
   {
@@ -201,29 +193,6 @@ const WhoWeServe = () => {
               products. The developers connecting it all together. Intraverse
               powers every one of them. Choose your path below.
             </p>
-          </RevealBlock>
-        </div>
-      </section>
-
-      {/* ── TRUST STATS ── */}
-      <section className="py-12 md:py-16 bg-background">
-        <div
-          className="container mx-auto px-4"
-          style={{ maxWidth: "1200px" }}
-        >
-          <RevealBlock>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-2xl md:text-4xl font-[660] text-primary mb-1">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs md:text-sm text-muted-foreground font-medium">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </RevealBlock>
         </div>
       </section>
