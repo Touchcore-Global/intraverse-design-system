@@ -137,7 +137,7 @@ const AgentPlatform = () => {
             Every Flight, Hotel, and Tour — From Every Source — On One Screen
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            Intraverse's Agent Selling Platform aggregates flight inventory from GDS systems (Amadeus, Sabre, Travelport), NDC connections, consolidators, and other aggregators — plus hotels and tours from leading global suppliers. Search, compare, book, and issue from a single dashboard. IATA-accredited.
+            Intraverse's Agent Selling Platform aggregates flight inventory from GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC connections, consolidators, and other aggregators — plus hotels and tours from leading global suppliers. Search, compare, book, and issue from a single dashboard. IATA-accredited.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
