@@ -18,6 +18,7 @@ import StartupsAudience from "./pages/StartupsAudience.tsx";
 import DevelopersAudience from "./pages/DevelopersAudience.tsx";
 import About from "./pages/About.tsx";
 import Features from "./pages/Features.tsx";
+import UseCases from "./pages/UseCases.tsx";
 import Proof from "./pages/Proof.tsx";
 import FAQ from "./pages/FAQ.tsx";
 import Contact from "./pages/Contact.tsx";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/for/developers" element={<DevelopersAudience />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
+          <Route path="/use-cases" element={<UseCases />} />
           <Route path="/proof" element={<Proof />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
