@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import iataLogo from "@/assets/iata-logo.png";
 import amadeusLogo from "@/assets/amadeus-logo.png";
 import sabreLogo from "@/assets/sabre-logo.png";
@@ -13,27 +13,31 @@ const footerBadges = [
 
 const footerLinks = {
   Products: [
-    { label: "Agent Platform", href: "#" },
-    { label: "Travx", href: "#" },
-    { label: "CoopX", href: "#" },
-    { label: "Independents", href: "#" },
-    { label: "Odiopay", href: "#" },
+    { label: "Agent Platform", href: "/agent-platform" },
+    { label: "Travx", href: "/travx" },
+    { label: "CoopX", href: "/coopx" },
+    { label: "Independents", href: "/independents" },
+    { label: "Supplier Engine", href: "/supplier-engine" },
+  ],
+  "Who We Serve": [
+    { label: "Travel Agents", href: "/for/travel-agents" },
+    { label: "Businesses", href: "/for/businesses" },
+    { label: "Corporates", href: "/for/corporates" },
+    { label: "Independents", href: "/for/independents" },
+    { label: "Startups", href: "/for/startups" },
+    { label: "Developers", href: "/for/developers" },
   ],
   Company: [
-    { label: "About", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#" },
-  ],
-  Resources: [
-    { label: "Blog", href: "#" },
-    { label: "Help Centre", href: "#" },
-    { label: "API Docs", href: "#" },
+    { label: "About", href: "/about" },
+    { label: "Features", href: "/features" },
+    { label: "Proof", href: "/proof" },
+    { label: "FAQ", href: "/faq" },
   ],
   Connect: [
-    { label: "WhatsApp", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "Twitter", href: "#" },
-    { label: "Instagram", href: "#" },
+    { label: "WhatsApp", href: "https://wa.me/message" },
+    { label: "LinkedIn", href: "https://linkedin.com/company/intraverse" },
+    { label: "Twitter", href: "https://twitter.com/intraverse" },
+    { label: "Instagram", href: "https://instagram.com/intraverse" },
   ],
 };
 
@@ -49,12 +53,23 @@ export const Footer = () => {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith("http") ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
