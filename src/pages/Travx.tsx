@@ -54,7 +54,7 @@ const features = [
     icon: Smartphone,
     title: "Mobile-Responsive",
     description:
-      "Built mobile-first for how Nigerians actually browse. Over 80% of your visitors will come from phones — Travx looks and works beautifully on every screen size.",
+      "Built mobile-first for how customers actually browse. Over 80% of your visitors will come from phones — Travx looks and works beautifully on every screen size.",
     bullets: [
       "Mobile-first responsive design",
       "Fast load times on 3G/4G networks",

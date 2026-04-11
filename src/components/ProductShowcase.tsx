@@ -22,7 +22,7 @@ const products = [
   {
     icon: Building2,
     title: "Take Control of Your Company's Travel Spend",
-    body: "Approval workflows, policy enforcement, consolidated billing, and full reporting — built for Nigerian corporates managing employee travel.",
+    body: "Approval workflows, policy enforcement, consolidated billing, and full reporting — built for corporates managing employee travel.",
     cta: "Book a Demo →",
     label: "CoopX",
     href: "/coopx",
