@@ -34,7 +34,7 @@ import {
 
 const stats = [
   { value: "400+", label: "Active Agents", icon: Users },
-  { value: "10,000+", label: "Bookings Processed", icon: Plane },
+  { value: "5,000+", label: "Bookings Processed", icon: Plane },
   { value: "25+", label: "Global Suppliers", icon: Hotel },
   { value: "3", label: "GDS Systems", icon: Server },
   { value: "5+", label: "NDC Sources", icon: Globe },
