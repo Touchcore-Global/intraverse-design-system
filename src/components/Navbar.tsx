@@ -27,8 +27,8 @@ const resourceLinks = [
 ];
 
 const navLinks = [
-  { label: "Features", href: "/features" },
   { label: "Proof", href: "/proof" },
+  { label: "Features", href: "/features" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
 ];
