@@ -3,7 +3,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const stats = [
   { value: "400+", label: "Active Agents" },
-  { value: "10,000+", label: "Bookings Processed" },
+  { value: "5,000+", label: "Bookings Processed" },
   { value: "25+", label: "Global Suppliers Connected" },
   { value: "48hrs", label: "Average Setup Time" },
   
