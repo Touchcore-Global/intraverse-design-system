@@ -7,7 +7,7 @@ const partners = [
   { name: "IATA", logo: iataLogo },
   { name: "Amadeus", logo: amadeusLogo },
   { name: "Sabre", logo: sabreLogo },
-  { name: "Travelport", logo: travelportLogo },
+  { name: "Galileo by Travelport", logo: travelportLogo },
 ];
 
 export const TrustBar = () => {
