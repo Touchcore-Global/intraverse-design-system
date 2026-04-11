@@ -6,7 +6,7 @@ import iataLogo from "@/assets/iata-logo.png";
 import amadeusLogo from "@/assets/amadeus-logo.png";
 import sabreLogo from "@/assets/sabre-logo.png";
 import travelportLogo from "@/assets/travelport-logo.png";
-import { Badge } from "@/components/ui/badge";
+
 import {
   Accordion,
   AccordionContent,
