@@ -5,9 +5,8 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  MessageCircle, Users, BookOpen, Globe, CreditCard, MapPin, Clock,
+  MessageCircle, Users, Globe,
   ArrowRight, Quote, ShieldCheck, Plane, TrendingUp, AlertTriangle,
-  type LucideIcon,
 } from "lucide-react";
 
 /* ───── fade-in on scroll ───── */
@@ -31,7 +30,7 @@ function FadeIn({ children, className = "" }: { children: React.ReactNode; class
 /* ───── types ───── */
 type ProductFilter = "all" | "agent" | "travx" | "coopx" | "independents";
 
-interface StatItem { value: string; label: string; icon: LucideIcon }
+
 interface CaseStudy {
   id: ProductFilter;
   tag: string;
@@ -56,16 +55,6 @@ interface TestimonialCard {
   city: string;
   product: ProductFilter;
 }
-
-/* ───── data ───── */
-const heroStats: StatItem[] = [
-  { value: "200+", label: "Active Agents", icon: Users },
-  { value: "10,000+", label: "Bookings", icon: BookOpen },
-  { value: "25+", label: "Global Suppliers", icon: Globe },
-  { value: "$5M+", label: "Transaction Volume", icon: CreditCard },
-  { value: "150+", label: "Cities", icon: MapPin },
-  { value: "48hrs", label: "Setup", icon: Clock },
-];
 
 const filterTabs: { id: ProductFilter; label: string }[] = [
   { id: "all", label: "All Stories" },
@@ -306,21 +295,6 @@ export default function Proof() {
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Travel agencies, corporate travel teams, and independent entrepreneurs across Nigeria use Intraverse to sell more, earn more, and operate more efficiently. Here are their stories.
           </p>
-        </div>
-      </section>
-
-      {/* STATS BAR */}
-      <section className="bg-foreground py-8">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
-            {heroStats.map((s) => (
-              <div key={s.label} className="flex flex-col items-center gap-1">
-                <s.icon className="h-5 w-5 text-primary mb-1" />
-                <span className="text-2xl md:text-3xl font-bold text-background">{s.value}</span>
-                <span className="text-xs text-background/60 uppercase tracking-wider">{s.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
