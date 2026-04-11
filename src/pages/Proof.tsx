@@ -5,9 +5,8 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  MessageCircle, Users, BookOpen, Globe, CreditCard, MapPin, Clock,
+  MessageCircle, Users, Globe,
   ArrowRight, Quote, ShieldCheck, Plane, TrendingUp, AlertTriangle,
-  type LucideIcon,
 } from "lucide-react";
 
 /* ───── fade-in on scroll ───── */
