@@ -10,6 +10,7 @@ import CoopX from "./pages/CoopX.tsx";
 import Independents from "./pages/Independents.tsx";
 import SupplierEngine from "./pages/SupplierEngine.tsx";
 import TravelAgents from "./pages/TravelAgents.tsx";
+import IndependentsAudience from "./pages/IndependentsAudience.tsx";
 import About from "./pages/About.tsx";
 import Features from "./pages/Features.tsx";
 import Proof from "./pages/Proof.tsx";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/independents" element={<Independents />} />
           <Route path="/supplier-engine" element={<SupplierEngine />} />
           <Route path="/for/travel-agents" element={<TravelAgents />} />
+          <Route path="/for/independents" element={<IndependentsAudience />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
           <Route path="/proof" element={<Proof />} />
