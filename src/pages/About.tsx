@@ -252,7 +252,7 @@ export default function About() {
           <div className="space-y-6 text-lg text-muted-foreground">
             <p>
               In most developed markets, travel agents have access to unified booking platforms, competitive supplier
-              agreements, and modern technology out of the box. In Nigeria, the reality is different. Agents juggle
+              agreements, and modern technology out of the box. In Africa, the reality is different. Agents juggle
               multiple GDS terminals, negotiate supplier relationships individually, and rely on manual processes that
               haven't changed in decades.
             </p>
@@ -262,7 +262,7 @@ export default function About() {
               environment, and the way business actually gets done on the ground.
             </p>
             <p className="text-foreground font-medium">
-              We believe a two-person agency in Ikeja should have access to the same technology as a multinational TMC.
+              We believe a two-person agency in Lagos, Nigeria should have access to the same technology as a multinational TMC.
               That's not a tagline — it's the design principle behind every product we build.
             </p>
           </div>
