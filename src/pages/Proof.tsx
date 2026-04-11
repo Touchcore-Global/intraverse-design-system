@@ -275,7 +275,7 @@ const testimonials: TestimonialCard[] = [
   { quote: "The wallet system is seamless. Fund it, book instantly, track everything. No more bank transfer delays.", name: "Samuel F.", role: "Senior Agent", company: "Crown Travels", city: "Benin City", product: "agent" },
 ];
 
-const trustBadges = ["IATA", "Amadeus", "Sabre", "Galileo", "NDC", "NDPR", "PCI DSS"];
+const trustBadges = ["IATA", "Amadeus", "Sabre", "Travelport", "NDC"];
 
 /* ───── page ───── */
 export default function Proof() {

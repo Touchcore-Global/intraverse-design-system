@@ -70,7 +70,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "What flight sources does Intraverse connect to?",
-        a: "Intraverse connects to three major GDS systems (Amadeus, Sabre, and Galileo), multiple NDC airline connections, consolidator fares, and aggregator feeds. This means you see more fare options, more routing combinations, and more competitive prices than you would on any single GDS terminal.",
+        a: "Intraverse connects to three major GDS systems (Amadeus, Sabre, and Travelport), multiple NDC airline connections, consolidator fares, and aggregator feeds. This means you see more fare options, more routing combinations, and more competitive prices than you would on any single GDS terminal.",
       },
       {
         q: "What about hotel and tour suppliers?",
@@ -310,7 +310,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "How do I know Intraverse is a legitimate company?",
-        a: "Intraverse is a registered company, IATA-accredited, and operates from a physical office in Lagos. We have presence in the UK, USA and UAE. We work with major global travel technology providers including Amadeus, Sabre, and Galileo. You can visit our office, meet our team, and verify our credentials.",
+        a: "Intraverse is a registered company, IATA-accredited, and operates from a physical office in Lagos. We have presence in the UK, USA and UAE. We work with major global travel technology providers including Amadeus, Sabre, and Travelport. You can visit our office, meet our team, and verify our credentials.",
       },
       {
         q: "Can I visit your office?",
