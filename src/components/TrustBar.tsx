@@ -1,4 +1,14 @@
-const partners = ["IATA", "Amadeus", "Sabre", "Galileo"];
+import iataLogo from "@/assets/iata-logo.png";
+import amadeusLogo from "@/assets/amadeus-logo.png";
+import sabreLogo from "@/assets/sabre-logo.png";
+import galileoLogo from "@/assets/galileo-logo.png";
+
+const partners = [
+  { name: "IATA", logo: iataLogo },
+  { name: "Amadeus", logo: amadeusLogo },
+  { name: "Sabre", logo: sabreLogo },
+  { name: "Galileo", logo: galileoLogo },
+];
 
 export const TrustBar = () => {
   return (
@@ -10,12 +20,17 @@ export const TrustBar = () => {
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
           {partners.map((partner) => (
             <div
-              key={partner}
+              key={partner.name}
               className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
             >
-              <span className="text-2xl font-bold text-muted-foreground hover:text-foreground transition-colors">
-                {partner}
-              </span>
+              <img
+                src={partner.logo}
+                alt={`${partner.name} logo`}
+                className="h-10 md:h-12 w-auto object-contain"
+                loading="lazy"
+                width={120}
+                height={48}
+              />
             </div>
           ))}
         </div>
