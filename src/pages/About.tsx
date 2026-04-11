@@ -55,7 +55,7 @@ const values = [
     icon: Handshake,
     title: "Earn Trust, Don't Assume It",
     description:
-      "Trust is the scarcest resource in Nigerian business. We earn it by delivering on promises, being transparent about what we can and can't do, and showing up consistently.",
+      "Trust is the scarcest resource in business. We earn it by delivering on promises, being transparent about what we can and can't do, and showing up consistently.",
   },
   {
     icon: Zap,
@@ -79,7 +79,7 @@ const values = [
     icon: MapPin,
     title: "Built in Lagos, Built for Africa",
     description:
-      "We understand the realities of doing business in Nigeria — the infrastructure gaps, the payment challenges, the regulatory landscape. We build for this context, not around it.",
+      "We understand the realities of doing business in Africa — the infrastructure gaps, the payment challenges, the regulatory landscape. We build for this context, not around it.",
   },
 ];
 
@@ -144,7 +144,7 @@ const milestones = [
   { year: "2024", title: "IATA Certified & 100 Agents Milestone", description: "Authorized Dev Partner to Amadeus, Sabre, Travelport. Crossed 100 active agents on the platform, validating market demand." },
   { year: "2025", title: "Travx White-Label Website Launch", description: "Expanded product suite with branded websites and corporate travel management. $1m+ transactions processed." },
   { year: "2026", title: "CoopX & Independents Programme", description: "Opened the platform to independent entrepreneurs, removing traditional barriers to entry." },
-  { year: "2026", title: "400+ Agents Onboarded & Growing", description: "Partnered with leading GDS to offer website to agents. Serving 400+ agencies across Nigeria with plans to expand across Africa." },
+  { year: "2026", title: "400+ Agents Onboarded & Growing", description: "Partnered with leading GDS to offer website to agents. Serving 400+ agencies with plans to expand across Africa." },
 ];
 
 const testimonials = [
@@ -216,7 +216,7 @@ export default function About() {
             We Give Travel Professionals the Technology to Compete and Win
           </h2>
           <p className="text-muted-foreground text-lg text-center mb-6 max-w-3xl mx-auto">
-            The travel industry in Nigeria is fragmented. Agencies search multiple systems for fares, manage bookings
+            The travel industry in Africa is fragmented. Agencies search multiple systems for fares, manage bookings
             across disconnected tools, and compete against larger players with better supplier relationships. Corporates
             have no visibility into travel spend. Aspiring entrepreneurs are locked out entirely.
           </p>
@@ -408,7 +408,7 @@ export default function About() {
             Join the Team Building the Future of Travel in Africa
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            We're a small, fast-moving team solving real problems for travel professionals across Nigeria. If you
+            We're a small, fast-moving team solving real problems for travel professionals across Africa. If you
             want to build technology that matters — and you're comfortable moving fast in ambiguity — we'd love to
             hear from you.
           </p>
