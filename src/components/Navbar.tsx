@@ -27,9 +27,9 @@ const resourceLinks = [
 ];
 
 const navLinks = [
+  { label: "Use Cases", href: "/use-cases" },
   { label: "Proof", href: "/proof" },
   { label: "Features", href: "/features" },
-  { label: "Use Cases", href: "/use-cases" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
 ];
