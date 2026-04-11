@@ -29,7 +29,7 @@ export const SecuritySection = () => {
   return (
     <section className="py-20 section-gradient-mint">
       <div ref={ref} className={`container mx-auto px-4 text-center transition-all duration-700 ease-out ${revealClass}`}>
-        <h2 className="text-section mb-12">
+        <h2 className="text-3xl sm:text-4xl md:text-[80px] md:leading-[96px] font-[660] tracking-[-2px] mb-12">
           Your Money. Your Data. Protected.
         </h2>
 
