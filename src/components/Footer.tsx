@@ -32,6 +32,7 @@ const footerLinks = {
     { label: "Features", href: "/features" },
     { label: "Proof", href: "/proof" },
     { label: "FAQ", href: "/faq" },
+    { label: "Contact Us", href: "/contact" },
   ],
   Connect: [
     { label: "WhatsApp", href: "https://wa.me/message" },
