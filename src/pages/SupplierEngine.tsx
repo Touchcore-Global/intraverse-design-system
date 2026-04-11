@@ -30,7 +30,7 @@ const steps = [
 ];
 
 const stats = [
-  { value: "200+", label: "Agents in Network" },
+  { value: "400+", label: "Agents in Network" },
   { value: "50+", label: "OIDs at Launch" },
   { value: "15%", label: "Projected Fare Improvement" },
 ];

@@ -33,7 +33,7 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { value: "200+", label: "Active Agents", icon: Users },
+  { value: "400+", label: "Active Agents", icon: Users },
   { value: "10,000+", label: "Bookings Processed", icon: Plane },
   { value: "25+", label: "Global Suppliers", icon: Hotel },
   { value: "3", label: "GDS Systems", icon: Server },
