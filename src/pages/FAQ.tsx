@@ -28,7 +28,7 @@ const categories: FAQCategory[] = [
     questions: [
       {
         q: "What is Intraverse?",
-        a: "Intraverse is a B2B travel technology company headquartered in Lagos, Nigeria. We build the tools, platforms, and infrastructure that travel agencies, corporate travel managers, and independent travel entrepreneurs use to search, book, and sell flights, hotels, tours, and packages from suppliers around the world. We don't sell travel directly to consumers — we power the businesses that do.",
+        a: "Intraverse is a B2B travel technology company headquartered in Lagos, Nigeria, with presence in the UK, USA and UAE. We build the tools, platforms, and infrastructure that travel agencies, corporate travel managers, and independent travel entrepreneurs use to search, book, and sell flights, hotels, tours, and packages from suppliers around the world. We don't sell travel directly to consumers — we power the businesses that do.",
       },
       {
         q: "Is Intraverse a travel agency?",

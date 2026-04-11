@@ -293,7 +293,7 @@ export default function Proof() {
         <div className="container mx-auto px-4 lg:px-8 max-w-4xl text-center">
           <h1 className="text-foreground mb-6">200+ Travel Businesses. Real Results. Here's the Proof.</h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Travel agencies, corporate travel teams, and independent entrepreneurs across Nigeria use Intraverse to sell more, earn more, and operate more efficiently. Here are their stories.
+            Travel agencies, corporate travel teams, and independent entrepreneurs across Africa use Intraverse to sell more, earn more, and operate more efficiently. Here are their stories.
           </p>
         </div>
       </section>

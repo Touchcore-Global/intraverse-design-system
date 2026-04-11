@@ -295,7 +295,7 @@ const sections: FeatureSection[] = [
         icon: Headphones,
         title: "WhatsApp Support",
         benefit: "Chat with a human in under 2 minutes",
-        description: "Our primary support channel is WhatsApp — because that's where Nigerian agents already are. Fast, personal, and no ticket numbers.",
+        description: "Our primary support channel is WhatsApp — because that's where agents already are. Fast, personal, and no ticket numbers.",
         bullets: ["Under 2-minute response time", "Human agents, not bots", "Available during business hours", "Escalation to specialists"],
       },
       {
