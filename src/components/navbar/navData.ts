@@ -1,0 +1,117 @@
+import {
+  Plane, Globe, Building2, Rocket, Wallet, Plug, HardHat,
+  Landmark, Lightbulb, CodeXml, Star, ClipboardList,
+  Zap, Wrench, BarChart3,
+  HelpCircle, BookOpen, FileText,
+  PenLine, Newspaper,
+  Building, Target, Globe2,
+  Briefcase, Handshake,
+  Phone, MessageCircle,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+export interface NavItem {
+  label: string;
+  href: string;
+  icon: LucideIcon;
+  description?: string;
+  popular?: boolean;
+  comingSoon?: boolean;
+}
+
+export interface NavSection {
+  header: string;
+  items: NavItem[];
+}
+
+export const productSections: NavSection[] = [
+  {
+    header: "SELLING & BOOKING",
+    items: [
+      { label: "Agent Selling Platform", href: "/products/agent-platform", icon: Plane, description: "Search, book and manage all travel from one dashboard" },
+      { label: "Travx (White-Label Websites)", href: "/products/travx", icon: Globe, description: "Your branded, booking-enabled travel website" },
+      { label: "CoopX (Corporate Travel)", href: "/products/coopx", icon: Building2, description: "Corporate travel management with policy controls" },
+      { label: "Independents Programme", href: "/products/independents", icon: Rocket, description: "Start earning in travel — no agency required" },
+    ],
+  },
+  {
+    header: "PAYMENTS & INFRASTRUCTURE",
+    items: [
+      { label: "Odiopay (BNPL)", href: "/products/odiopay", icon: Wallet, description: "Buy Now, Pay Later for travel bookings" },
+      { label: "Intraverse API", href: "/products/api", icon: Plug, description: "Embed travel booking into any platform" },
+      { label: "Supplier Engine", href: "/products/supplier-engine", icon: HardHat, description: "Multi-OID fare aggregation system", comingSoon: true },
+    ],
+  },
+];
+
+export const solutionSections: NavSection[] = [
+  {
+    header: "BY AUDIENCE",
+    items: [
+      { label: "Travel Agents", href: "/for/travel-agents", icon: Plane, description: "Tools built for professional travel agencies" },
+      { label: "Travel Independents", href: "/for/independents", icon: Rocket, description: "Start earning in travel — no agency required", popular: true },
+      { label: "Businesses", href: "/for/businesses", icon: Building2, description: "Manage business travel spend efficiently" },
+      { label: "Corporates", href: "/for/corporates", icon: Landmark, description: "Enterprise travel with policy & approval controls" },
+      { label: "Fintechs", href: "/for/fintechs", icon: Landmark, description: "Embed travel as a native revenue stream" },
+      { label: "Tech Startups", href: "/for/startups", icon: Lightbulb, description: "Travel infrastructure for growing companies" },
+      { label: "Developers", href: "/for/developers", icon: CodeXml, description: "APIs and integration tools for builders" },
+    ],
+  },
+  {
+    header: "BY USE CASE",
+    items: [
+      { label: "Browse All Use Cases", href: "/use-cases", icon: ClipboardList, description: "Explore how teams use Intraverse" },
+    ],
+  },
+];
+
+export const resourceSections: NavSection[] = [
+  {
+    header: "LEARN",
+    items: [
+      { label: "Platform Features", href: "/features", icon: Zap, description: "Explore the full feature set" },
+      { label: "Tools", href: "/tools", icon: Wrench, description: "Interactive tools and calculators" },
+      { label: "Case Studies & Proof", href: "/proof", icon: BarChart3, description: "Results from real customers" },
+    ],
+  },
+  {
+    header: "SUPPORT",
+    items: [
+      { label: "FAQ", href: "/faq", icon: HelpCircle, description: "Frequently asked questions" },
+      { label: "Help Centre", href: "/help", icon: BookOpen, description: "Guides, tutorials and support" },
+      { label: "API Documentation", href: "/docs", icon: FileText, description: "Developer docs and references" },
+    ],
+  },
+  {
+    header: "INSIGHTS",
+    items: [
+      { label: "Blog", href: "/blog", icon: PenLine, description: "Insights, guides and industry news" },
+      { label: "News & Press", href: "/news", icon: Newspaper, description: "Latest announcements and press" },
+    ],
+  },
+];
+
+export const companySections: NavSection[] = [
+  {
+    header: "ABOUT",
+    items: [
+      { label: "About Intraverse", href: "/about", icon: Building, description: "Our story and team" },
+      { label: "Our Mission", href: "/about#mission", icon: Target, description: "What drives us" },
+      { label: "Built in Lagos", href: "/about#story", icon: Globe2, description: "Proudly African-built" },
+    ],
+  },
+  {
+    header: "WORK WITH US",
+    items: [
+      { label: "Careers", href: "/careers", icon: Briefcase, description: "Join our team" },
+      { label: "Partnerships", href: "/partnerships", icon: Handshake, description: "Collaborate with us" },
+    ],
+  },
+  {
+    header: "CONTACT",
+    items: [
+      { label: "Contact Us", href: "/contact", icon: Phone, description: "Get in touch" },
+      { label: "WhatsApp", href: "https://wa.me/2348000000000", icon: MessageCircle, description: "Chat with us on WhatsApp" },
+    ],
+  },
+];
