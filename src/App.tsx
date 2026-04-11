@@ -31,6 +31,7 @@ const App = () => (
           <Route path="/coopx" element={<CoopX />} />
           <Route path="/independents" element={<Independents />} />
           <Route path="/supplier-engine" element={<SupplierEngine />} />
+          <Route path="/for/travel-agents" element={<TravelAgents />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
           <Route path="/proof" element={<Proof />} />
