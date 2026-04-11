@@ -58,7 +58,7 @@ const SupplierEngine = () => {
             Access Fares You Could Never Get Alone
           </h1>
           <p className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed">
-            The Supplier Engine is a multi-OID fare aggregation system that lets Nigerian travel agents
+            The Supplier Engine is a multi-OID fare aggregation system that lets travel agents
             share Amadeus Office IDs as supply partners. The result: access to negotiated fares, special
             deals, and pricing that no single agency could unlock on its own.
           </p>
