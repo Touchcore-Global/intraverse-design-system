@@ -70,7 +70,7 @@ export const Footer = () => {
                 key={badge.name}
                 src={badge.logo}
                 alt={`${badge.name} logo`}
-                className="h-8 md:h-10 w-auto object-contain grayscale brightness-200 opacity-50"
+                className="h-6 md:h-8 w-auto object-contain grayscale brightness-200 opacity-60"
                 loading="lazy"
               />
             ))}
