@@ -310,7 +310,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "How do I know Intraverse is a legitimate company?",
-        a: "Intraverse is a registered Nigerian company, IATA-accredited, and operates from a physical office in Lagos. We work with major global travel technology providers including Amadeus, Sabre, and Galileo. You can visit our office, meet our team, and verify our credentials.",
+        a: "Intraverse is a registered company, IATA-accredited, and operates from a physical office in Lagos. We have presence in the UK, USA and UAE. We work with major global travel technology providers including Amadeus, Sabre, and Galileo. You can visit our office, meet our team, and verify our credentials.",
       },
       {
         q: "Can I visit your office?",
@@ -378,7 +378,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "What internet speed do I need?",
-        a: "Intraverse is designed to work on standard Nigerian internet connections. A stable connection of 1 Mbps or higher is sufficient for smooth operation. The platform is optimised for performance, even on slower connections.",
+        a: "Intraverse is designed to work on standard internet connections. A stable connection of 1 Mbps or higher is sufficient for smooth operation. The platform is optimised for performance, even on slower connections.",
       },
       {
         q: "Can multiple staff use the same account?",

@@ -95,7 +95,7 @@ const features = [
       "Full platform access on mobile",
       "No office or physical location needed",
       "Manage your business on your schedule",
-      "Built for how young Nigerians work",
+      "Built for how young Africans work",
     ],
   },
 ];
