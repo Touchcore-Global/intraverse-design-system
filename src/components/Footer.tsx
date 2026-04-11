@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
+import { MessageCircle, Linkedin, Twitter, Instagram, Facebook, type LucideIcon } from "lucide-react";
 import iataLogo from "@/assets/iata-logo.png";
 import amadeusLogo from "@/assets/amadeus-logo.png";
 import sabreLogo from "@/assets/sabre-logo.png";
 import travelportLogo from "@/assets/travelport-logo.png";
+
+const socialIcons: Record<string, LucideIcon> = {
+  WhatsApp: MessageCircle,
+  LinkedIn: Linkedin,
+  "X (Twitter)": Twitter,
+  Instagram: Instagram,
+  Facebook: Facebook,
+};
 
 const footerBadges = [
   { name: "IATA", logo: iataLogo },
@@ -60,8 +69,12 @@ export const Footer = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm"
+                        className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm inline-flex items-center gap-2"
                       >
+                        {socialIcons[link.label] && (() => {
+                          const Icon = socialIcons[link.label];
+                          return <Icon className="h-4 w-4" />;
+                        })()}
                         {link.label}
                       </a>
                     ) : (
