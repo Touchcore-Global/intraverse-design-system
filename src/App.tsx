@@ -20,6 +20,7 @@ import About from "./pages/About.tsx";
 import Features from "./pages/Features.tsx";
 import Proof from "./pages/Proof.tsx";
 import FAQ from "./pages/FAQ.tsx";
+import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/features" element={<Features />} />
           <Route path="/proof" element={<Proof />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
