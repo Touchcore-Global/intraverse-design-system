@@ -16,6 +16,7 @@ import BusinessesPage from "./pages/Businesses.tsx";
 import CorporatesAudience from "./pages/CorporatesAudience.tsx";
 import StartupsAudience from "./pages/StartupsAudience.tsx";
 import DevelopersAudience from "./pages/DevelopersAudience.tsx";
+import FintechsAudience from "./pages/FintechsAudience.tsx";
 import About from "./pages/About.tsx";
 import Features from "./pages/Features.tsx";
 import UseCases from "./pages/UseCases.tsx";
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/for/corporates" element={<CorporatesAudience />} />
           <Route path="/for/startups" element={<StartupsAudience />} />
           <Route path="/for/developers" element={<DevelopersAudience />} />
+          <Route path="/for/fintechs" element={<FintechsAudience />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
           <Route path="/use-cases" element={<UseCases />} />

@@ -54,6 +54,16 @@ const audiences = [
     featured: false,
   },
   {
+    icon: Landmark,
+    title: "Fintechs",
+    headline: "Add travel as a revenue stream — natively, in weeks.",
+    body: "Neobanks, super-apps, and digital wallets use our API to embed travel booking inside their apps. Capture the revenue your users are already spending on flights, hotels, and tours.",
+    products: "Intraverse API + Odiopay BNPL + Partnership Programme",
+    cta: "Explore Fintech Partnerships",
+    href: "/for/fintechs",
+    featured: false,
+  },
+  {
     icon: CodeXml,
     title: "Developers",
     headline: "The travel API that just works — backed by real inventory.",

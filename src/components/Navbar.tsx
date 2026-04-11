@@ -17,6 +17,7 @@ const audienceLinks = [
   { label: "Corporates", href: "/for/corporates", icon: Landmark, description: "Enterprise travel with policy & approval controls", popular: false },
   { label: "Travel Independents", href: "/for/independents", icon: Rocket, description: "Start earning in travel — no agency required", popular: true },
   { label: "Tech Startups", href: "/for/startups", icon: Lightbulb, description: "Travel infrastructure for growing companies", popular: false },
+  { label: "Fintechs", href: "/for/fintechs", icon: Landmark, description: "Embed travel as a native revenue stream", popular: false },
   { label: "Developers", href: "/for/developers", icon: CodeXml, description: "APIs and integration tools for builders", popular: false },
 ];
 

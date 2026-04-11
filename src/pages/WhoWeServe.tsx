@@ -90,6 +90,20 @@ const audiences = [
     featured: false,
   },
   {
+    icon: Landmark,
+    title: "Fintechs",
+    description:
+      "Your users are already spending on travel. Intraverse gives Nigerian fintechs, neobanks, super-apps, and digital wallets a turnkey way to add travel booking as a native revenue stream through one API — with native BNPL via Odiopay.",
+    benefits: [
+      "Embedded travel API for flights, hotels, and tours",
+      "Native BNPL via Odiopay",
+      "Revenue sharing and co-build partnerships",
+    ],
+    cta: "Explore Fintech Partnerships",
+    href: "/for/fintechs",
+    featured: false,
+  },
+  {
     icon: CodeXml,
     title: "Developers",
     description:
