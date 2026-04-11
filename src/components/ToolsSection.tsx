@@ -172,7 +172,7 @@ export const ToolsSection = () => {
                     src={tool.image}
                     alt={`${tool.title} screenshot`}
                     loading="lazy"
-                    className="w-full aspect-[16/10] object-cover"
+                    className="w-full aspect-[16/10] object-contain bg-background"
                   />
                 </div>
               </div>
