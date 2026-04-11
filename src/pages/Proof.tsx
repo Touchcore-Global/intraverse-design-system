@@ -309,21 +309,6 @@ export default function Proof() {
         </div>
       </section>
 
-      {/* STATS BAR */}
-      <section className="bg-foreground py-8">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
-            {heroStats.map((s) => (
-              <div key={s.label} className="flex flex-col items-center gap-1">
-                <s.icon className="h-5 w-5 text-primary mb-1" />
-                <span className="text-2xl md:text-3xl font-bold text-background">{s.value}</span>
-                <span className="text-xs text-background/60 uppercase tracking-wider">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FILTER TABS */}
       <section className="sticky top-16 z-40 bg-background border-b">
         <div className="container mx-auto px-4 lg:px-8">
