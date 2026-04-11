@@ -199,7 +199,7 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="https://wa.me/message"
+                  href="https://wa.me/2349030002629"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 group"
