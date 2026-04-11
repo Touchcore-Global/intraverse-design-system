@@ -207,10 +207,11 @@ export function Navbar() {
             <Button variant="hero" size="default">
               Book a Demo
             </Button>
-            <Button variant="whatsapp" size="default">
-              <MessageCircle className="h-4 w-4" />
-              WhatsApp
-            </Button>
+            <a href="https://intraverse.app/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="default">
+                Login / Register
+              </Button>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -327,10 +328,11 @@ export function Navbar() {
             <Button variant="hero" size="xl" className="w-full">
               Book a Demo
             </Button>
-            <Button variant="whatsapp" size="xl" className="w-full">
-              <MessageCircle className="h-5 w-5" />
-              WhatsApp
-            </Button>
+            <a href="https://intraverse.app/" target="_blank" rel="noopener noreferrer" className="w-full">
+              <Button variant="outline" size="xl" className="w-full">
+                Login / Register
+              </Button>
+            </a>
           </div>
         </div>
       )}
