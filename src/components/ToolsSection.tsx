@@ -2,7 +2,7 @@ import { useState, useRef, useCallback } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 
-import toolTrips from "@/assets/tool-trips.jpg";
+import toolTrips from "@/assets/tool-trips.png";
 import toolItineraries from "@/assets/tool-itineraries.jpg";
 import toolPayments from "@/assets/tool-payments.jpg";
 import toolInsights from "@/assets/tool-insights.jpg";
