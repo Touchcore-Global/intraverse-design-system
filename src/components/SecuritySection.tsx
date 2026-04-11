@@ -9,8 +9,8 @@ const features = [
   },
   {
     icon: Shield,
-    title: "NDPR Compliant",
-    description: "Data protected under Nigeria Data Protection Regulation.",
+    title: "Data Protection Compliant",
+    description: "Your data is protected under international data protection standards.",
   },
   {
     icon: CreditCard,

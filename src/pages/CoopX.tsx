@@ -29,7 +29,7 @@ const features = [
     icon: CheckSquare,
     title: "Approval Workflows",
     description:
-      "Configurable approval chains that match your org structure. Every trip request goes through the right people before a single naira is spent. No more surprise bookings.",
+      "Configurable approval chains that match your org structure. Every trip request goes through the right people before a single dollar is spent. No more surprise bookings.",
     bullets: [
       "Multi-level approval chains (manager → finance → exec)",
       "Policy gates that auto-reject out-of-policy requests",
@@ -104,7 +104,7 @@ const whoItsFor = [
   { icon: Calculator, text: "Finance teams tired of chasing receipts and reconciling travel expenses manually" },
   { icon: UserCog, text: "HR and admin managers handling travel logistics alongside their actual job" },
   { icon: Briefcase, text: "Dedicated travel managers who need better tools and visibility" },
-  { icon: Building, text: "Any Nigerian business that wants to stop losing money on unmanaged travel" },
+  { icon: Building, text: "Any business that wants to stop losing money on unmanaged travel" },
 ];
 
 const stats = [
@@ -136,7 +136,7 @@ const faqs = [
   {
     question: "What size of company is CoopX designed for?",
     answer:
-      "CoopX is built for Nigerian companies with 20 or more employees making regular business trips. Whether you're a mid-size firm with a small admin team handling travel or a large enterprise with a dedicated travel manager, the platform scales to your needs. Pricing is based on usage, so you only pay for what you need.",
+      "CoopX is built for companies with 20 or more employees making regular business trips. Whether you're a mid-size firm with a small admin team handling travel or a large enterprise with a dedicated travel manager, the platform scales to your needs. Pricing is based on usage, so you only pay for what you need.",
   },
 ];
 
