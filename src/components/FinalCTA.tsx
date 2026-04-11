@@ -10,7 +10,7 @@ export const FinalCTA = () => {
     <section className="py-20 bg-primary text-primary-foreground">
       <div ref={ref} className={`container mx-auto px-4 text-center transition-all duration-700 ease-out ${revealClass}`}>
         <h2 className="text-3xl sm:text-4xl md:text-[80px] md:leading-[96px] font-[660] tracking-[-2px] mb-4 text-primary-foreground">
-          400+ Agents Chose Intraverse. See Why in 15 Minutes.
+          Start building faster today
         </h2>
         <p className="max-w-2xl mx-auto mb-10 text-primary-foreground/80 text-sm md:text-base">
           Book a 15-minute demo and see how Intraverse can help you sell more flights, hotels, tours,
