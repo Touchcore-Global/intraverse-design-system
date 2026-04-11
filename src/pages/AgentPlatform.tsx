@@ -16,7 +16,7 @@ const features = [
     title: "Aggregated Flight Search",
     description: "Search across GDS systems, NDC connections, consolidators, and aggregators simultaneously. One query returns every available fare from every source.",
     bullets: [
-      "Amadeus, Sabre, Galileo — all in one search",
+      "Amadeus, Sabre, Travelport — all in one search",
       "NDC direct connections for better fares",
       "Consolidator and aggregator inventory included",
       "Compare prices across all sources instantly",
@@ -91,7 +91,7 @@ const stats = [
 const faqs = [
   {
     question: "What flight sources does the platform aggregate?",
-    answer: "The Agent Selling Platform connects to all major GDS systems (Amadeus, Sabre, Galileo), NDC direct connections with airlines, consolidator inventory, and other aggregator feeds. This means every search returns fares from every available source — so you never miss a better price or route option.",
+    answer: "The Agent Selling Platform connects to all major GDS systems (Amadeus, Sabre, Travelport), NDC direct connections with airlines, consolidator inventory, and other aggregator feeds. This means every search returns fares from every available source — so you never miss a better price or route option.",
   },
   {
     question: "Can I book hotels and tours alongside flights?",
@@ -137,7 +137,7 @@ const AgentPlatform = () => {
             Every Flight, Hotel, and Tour — From Every Source — On One Screen
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            Intraverse's Agent Selling Platform aggregates flight inventory from GDS systems (Amadeus, Sabre, Galileo), NDC connections, consolidators, and other aggregators — plus hotels and tours from leading global suppliers. Search, compare, book, and issue from a single dashboard. IATA-accredited.
+            Intraverse's Agent Selling Platform aggregates flight inventory from GDS systems (Amadeus, Sabre, Travelport), NDC connections, consolidators, and other aggregators — plus hotels and tours from leading global suppliers. Search, compare, book, and issue from a single dashboard. IATA-accredited.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">

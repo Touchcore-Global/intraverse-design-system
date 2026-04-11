@@ -30,7 +30,7 @@ const features = [
     icon: Plane,
     title: "Sell Flights From Every Source",
     description:
-      "Access the same flight inventory that professional agencies use — GDS systems (Amadeus, Sabre, Galileo), NDC direct connections, and consolidator fares. You're not reselling someone else's markup. You're selling real inventory at real prices.",
+      "Access the same flight inventory that professional agencies use — GDS systems (Amadeus, Sabre, Travelport), NDC direct connections, and consolidator fares. You're not reselling someone else's markup. You're selling real inventory at real prices.",
     bullets: [
       "GDS, NDC, and consolidator inventory",
       "Domestic and international flights",
