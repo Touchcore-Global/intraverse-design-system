@@ -462,7 +462,7 @@ export default function About() {
             <Button variant="outline" size="xl" className="bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90">
               Book a Demo
             </Button>
-            <Button variant="outline" size="xl" className="bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90">
+            <Button variant="whatsapp" size="xl">
               <MessageCircle className="h-5 w-5" />
               Chat on WhatsApp
             </Button>

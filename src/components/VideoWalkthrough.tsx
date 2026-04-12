@@ -32,7 +32,7 @@ export const VideoWalkthrough = () => {
           <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90 rounded-none font-semibold">
             Book a Demo to Try It Yourself
           </Button>
-          <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90 rounded-none font-semibold">
+          <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
             <MessageCircle className="h-5 w-5" />
             Chat on WhatsApp
           </Button>
