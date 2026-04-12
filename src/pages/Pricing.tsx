@@ -23,14 +23,32 @@ import {
 import { Link } from "react-router-dom";
 
 /* ------------------------------------------------------------------ */
+/*  Currency helpers                                                    */
+/* ------------------------------------------------------------------ */
+
+const NGN_RATE = 1600; // approximate USD → NGN
+
+function toNaira(usd: number): string {
+  if (usd === 0) return "₦0";
+  return "₦" + (usd * NGN_RATE).toLocaleString();
+}
+
+type Currency = "USD" | "NGN";
+
+function formatPrice(usd: number, currency: Currency): string {
+  if (currency === "USD") return `$${usd}`;
+  return toNaira(usd);
+}
+
+/* ------------------------------------------------------------------ */
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
 const tiers = [
   {
     name: "Starter",
-    monthlyPrice: "$0",
-    annualPrice: "$0",
+    monthlyUsd: 0,
+    annualUsd: 0,
     monthlyPeriod: "/month forever",
     annualPeriod: "/month forever",
     tagline: "For new Independents and small agents testing the waters",
@@ -50,8 +68,8 @@ const tiers = [
   },
   {
     name: "Agency",
-    monthlyPrice: "$20",
-    annualPrice: "$16",
+    monthlyUsd: 20,
+    annualUsd: 16,
     monthlyPeriod: "/month",
     annualPeriod: "/month, billed annually",
     tagline: "For travel agencies of all sizes",
@@ -78,8 +96,8 @@ const tiers = [
   },
   {
     name: "Enterprise",
-    monthlyPrice: "Custom",
-    annualPrice: "Custom",
+    monthlyUsd: null,
+    annualUsd: null,
     monthlyPeriod: "Contact Sales",
     annualPeriod: "Contact Sales",
     tagline:
