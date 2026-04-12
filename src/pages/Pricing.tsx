@@ -268,8 +268,8 @@ export default function Pricing() {
               <Globe className="h-5 w-5 text-primary" />
               <span className="text-sm font-semibold text-primary">Travx</span>
             </div>
-            <span className="text-3xl font-bold">+₦75,000</span>
-            <span className="text-muted-foreground text-sm">/month</span>
+            <span className="text-3xl font-bold">+{annual ? "₦60,000" : "₦75,000"}</span>
+            <span className="text-muted-foreground text-sm">{annual ? "/month, billed annually" : "/month"}</span>
           </div>
 
           <div className="flex-1">
