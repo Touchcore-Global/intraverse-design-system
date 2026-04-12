@@ -1,6 +1,12 @@
 import { Plane, Building2, Landmark, Rocket, Lightbulb, CodeXml, ArrowRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const audiences = [
   {
