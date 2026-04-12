@@ -118,7 +118,7 @@ const faqs = [
   { q: "What happens after my 14-day trial?", a: "After your trial ends, you'll be moved to the Starter plan automatically. No charges, no surprises. Upgrade again anytime to unlock premium features." },
   { q: "Do I need a credit card to start a trial?", a: "No. You can start a 14-day free trial on the Independents or Agency plan without entering any payment information." },
   { q: "Can I switch plans later?", a: "Absolutely. You can upgrade, downgrade, or cancel at any time from your account settings. Changes take effect at the start of your next billing cycle." },
-  { q: "What is Travx and how much does it cost?", a: "Travx is our branded booking website add-on. It costs ₦120,000/month and can be added to any plan. It gives you a fully customisable, booking-enabled website with your own domain." },
+  { q: "What is Travx and how much does it cost?", a: "Travx is our branded booking website add-on. It costs ₦75,000/month and can be added to any plan. It gives you a fully customisable, booking-enabled website with your own domain." },
   { q: "Do you offer annual billing?", a: "Yes — annual billing is available and saves you money compared to monthly plans. Toggle the billing switch at the top of this page to see annual prices." },
   { q: "What payment methods do you accept?", a: "We accept bank transfers, card payments, and mobile money. Enterprise customers can also pay via invoice with net-30 terms." },
   { q: "Is there a setup fee?", a: "No. There are no setup fees, no hidden charges, and no contracts. You pay only for your plan — nothing more." },
