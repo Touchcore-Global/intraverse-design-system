@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Check, ArrowRight, MessageCircle } from "lucide-react";
+import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
 /* ──────── Reusable reveal wrapper ──────── */

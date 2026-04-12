@@ -28,6 +28,7 @@ import Login from "./pages/Login.tsx";
 import Pricing from "./pages/Pricing.tsx";
 import Products from "./pages/Products.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ApiProduct from "./pages/ApiProduct.tsx";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/supplier-engine" element={<SupplierEngine />} />
           <Route path="/products/supplier-engine" element={<SupplierEngine />} />
           <Route path="/products/travel-links" element={<TravelLinksPage />} />
+          <Route path="/products/api" element={<ApiProduct />} />
           {/* Audience routes */}
           <Route path="/for/travel-agents" element={<TravelAgents />} />
           <Route path="/for/independents" element={<IndependentsAudience />} />
