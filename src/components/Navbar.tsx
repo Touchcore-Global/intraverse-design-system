@@ -39,7 +39,7 @@ export function Navbar() {
         <DesktopDropdown
           sections={solutionSections}
           footerLink={{ label: "See All Audiences", href: "/who-we-serve" }}
-          columns={3}
+          columns={2}
         />
       )}
       {activeDropdown === key && key === "resources" && (
