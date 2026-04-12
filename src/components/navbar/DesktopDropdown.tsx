@@ -4,7 +4,7 @@ import type { NavSection } from "./navData";
 interface DesktopDropdownProps {
   sections: NavSection[];
   footerLink?: { label: string; href: string };
-  columns?: 1 | 2;
+  columns?: 1 | 2 | 3;
 }
 
 export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDropdownProps) {
