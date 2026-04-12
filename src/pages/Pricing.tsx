@@ -26,7 +26,7 @@ import {
 /*  Currency helpers                                                    */
 /* ------------------------------------------------------------------ */
 
-const NGN_RATE = 1600; // approximate USD → NGN
+const NGN_RATE = 1500; // approximate USD → NGN
 
 function toNaira(usd: number): string {
   if (usd === 0) return "₦0";
