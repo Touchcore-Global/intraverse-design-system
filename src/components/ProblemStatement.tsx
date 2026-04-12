@@ -1,8 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket } from "lucide-react";
 import { LucideIcon } from "lucide-react";
-import featuresHero from "@/assets/features-hero.svg";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { useIsMobile } from "@/hooks/use-mobile";
+
 const cards: { icon: LucideIcon; headline: string; subheading: string; content: string }[] = [
   {
     icon: Globe,
@@ -42,33 +48,51 @@ const cards: { icon: LucideIcon; headline: string; subheading: string; content: 
   },
 ];
 
+const FeatureCard = ({ card }: { card: typeof cards[0] }) => (
+  <Card className="border-0 bg-card shadow-sm hover:shadow-md transition-shadow h-full">
+    <CardContent className="p-6">
+      <card.icon className="h-8 w-8 text-primary mb-4" />
+      <h3 className="text-lg font-semibold text-foreground mb-2">
+        {card.headline}
+      </h3>
+      <p className="text-sm font-medium text-primary mb-3">
+        {card.subheading}
+      </p>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        {card.content}
+      </p>
+    </CardContent>
+  </Card>
+);
+
 export const ProblemStatement = () => {
   const { ref, revealClass } = useScrollReveal();
+  const isMobile = useIsMobile();
+
   return (
-    <section className="py-20 bg-background">
+    <section className="py-10 md:py-20 bg-background">
       <div ref={ref} className={`container mx-auto px-4 md:pl-[100px] transition-all duration-700 ease-out ${revealClass}`}>
-        <h2 className="text-left mb-12">
+        <h2 className="text-center md:text-left mb-12">
           Built to Meet Industry's Demands
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map((card, index) => (
-            <Card key={index} className="border-0 bg-card shadow-sm hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
-                <card.icon className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {card.headline}
-                </h3>
-                <p className="text-sm font-medium text-primary mb-3">
-                  {card.subheading}
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {card.content}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        {isMobile ? (
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent className="-ml-3">
+              {cards.map((card, index) => (
+                <CarouselItem key={index} className="pl-3 basis-[85%]">
+                  <FeatureCard card={card} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        ) : (
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+            {cards.map((card, index) => (
+              <FeatureCard key={index} card={card} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
