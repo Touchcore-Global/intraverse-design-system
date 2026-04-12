@@ -373,15 +373,19 @@ export default function Pricing() {
             terms.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-background text-foreground hover:bg-background/90 min-h-[48px] px-8 text-base font-semibold rounded-lg">
-              Start Free
-            </Button>
-            <Button
-              variant="outline"
-              className="border-background/40 text-background hover:bg-background/10 min-h-[48px] px-8 text-base font-medium rounded-lg"
-            >
-              Talk to Sales
-            </Button>
+            <a href="https://www.intraverse.app" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-background text-foreground hover:bg-background/90 min-h-[48px] px-8 text-base font-semibold rounded-lg">
+                Start Free
+              </Button>
+            </a>
+            <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                className="border-background/40 text-foreground bg-background hover:bg-background/90 min-h-[48px] px-8 text-base font-medium rounded-lg"
+              >
+                Talk to Sales
+              </Button>
+            </a>
           </div>
         </div>
       </section>
