@@ -99,21 +99,21 @@ export const HomeTrustBar = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 bg-accent">
+    <section ref={sectionRef} className="py-8 md:py-16 bg-accent">
       <div className="container mx-auto px-4 md:pl-[100px]">
         <h2
-          className="text-3xl sm:text-4xl md:text-[80px] md:leading-[96px] font-[660] tracking-[-2px] text-left mb-6"
+          className="text-3xl sm:text-4xl md:text-[80px] md:leading-[96px] font-[660] tracking-[-2px] text-center md:text-left mb-6"
           style={{ color: "rgb(23, 19, 33)" }}
         >
           Built for How Travel is Sold
         </h2>
         <p
-          className="text-left text-base sm:text-lg md:text-[24px] md:leading-[30px] md:tracking-[-0.48px] font-normal mb-6 max-w-2xl"
+          className="text-center md:text-left text-base sm:text-lg md:text-[24px] md:leading-[30px] md:tracking-[-0.48px] font-normal mb-6 max-w-2xl mx-auto md:mx-0"
           style={{ color: "rgb(116, 113, 122)" }}
         >
           Trusted by 200+ travel agents selling flights, hotels, tours &amp; packages
         </p>
-        <div className="flex justify-start mb-10">
+        <div className="flex justify-center md:justify-start mb-10">
           <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
             Try for Free
           </Button>
