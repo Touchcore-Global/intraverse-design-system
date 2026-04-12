@@ -184,7 +184,7 @@ export default function Pricing() {
           you're ready, and never pay for features you don't use. Every plan
           includes our complete toolkit — no premium add-ons, no upgrade traps.
         </p>
-        <div className="flex flex-col sm:flex-row items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <div className="inline-flex items-center gap-3 bg-accent rounded-full px-5 py-2.5">
             <span className={`text-sm font-medium ${!annual ? "text-foreground" : "text-muted-foreground"}`}>Monthly</span>
             <Switch checked={annual} onCheckedChange={setAnnual} />
