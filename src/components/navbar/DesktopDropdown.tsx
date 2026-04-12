@@ -20,7 +20,7 @@ export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDr
         width: dropdownWidth,
       }}
     >
-      <div className={useGrid ? "grid grid-cols-2 gap-x-6" : ""}>
+      <div className={useGrid ? `grid ${gridCols} gap-x-6` : ""}>
         {sections.map((section, sIdx) => (
           <div key={section.header} className={sIdx > 0 && !useGrid ? "mt-4 pt-4 border-t border-border" : sIdx > 0 && useGrid ? "mt-2" : ""}>
             <p className="text-[12px] uppercase tracking-[0.05em] font-bold mb-3" style={{ color: "#94A3B8" }}>
