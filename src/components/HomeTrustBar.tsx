@@ -111,7 +111,7 @@ export const HomeTrustBar = () => {
           className="text-left text-base sm:text-lg md:text-[24px] md:leading-[30px] md:tracking-[-0.48px] font-normal mb-6 max-w-2xl"
           style={{ color: "rgb(116, 113, 122)" }}
         >
-          Trusted by 400+ travel agents selling flights, hotels, tours &amp; packages
+          Trusted by 200+ travel agents selling flights, hotels, tours &amp; packages
         </p>
         <div className="flex justify-start mb-10">
           <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">

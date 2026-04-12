@@ -78,7 +78,7 @@ const features = [
     icon: ShieldCheck,
     title: "IATA-Backed Infrastructure",
     description:
-      "You're selling on a platform used by 400+ professional travel agencies with IATA accreditation. This is real travel infrastructure — not a WhatsApp group or a PDF course.",
+      "You're selling on a platform used by 200+ professional travel agencies with IATA accreditation. This is real travel infrastructure — not a WhatsApp group or a PDF course.",
     bullets: [
       "IATA-accredited platform",
       "BSP settlement for airline ticketing",
@@ -104,7 +104,7 @@ const trustPoints = [
   "You earn money from actual travel bookings — not from recruiting other people.",
   "The platform is IATA-accredited. You can verify this independently.",
   "There is no upline, downline, or multi-level structure. You sell travel. You earn commissions.",
-  "400+ professional travel agencies use the same Intraverse technology you'll be using.",
+  "200+ professional travel agencies use the same Intraverse technology you'll be using.",
   "You will never be asked to pay for \"levels,\" \"packages,\" or \"positions.\" You pay to access tools. You earn by selling travel.",
 ];
 
@@ -201,7 +201,7 @@ const Independents = () => {
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
             The Independents Programme gives you access to the same
-            IATA-accredited travel technology used by 400+ professional
+            IATA-accredited travel technology used by 200+ professional
             agencies. Sell flights from GDS, NDC, and consolidator inventory,
             plus hotels and tours from leading global suppliers. Earn real
             commissions on every booking. No agency required.

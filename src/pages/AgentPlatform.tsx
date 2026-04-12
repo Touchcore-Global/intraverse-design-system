@@ -84,7 +84,7 @@ const stats = [
   { value: "15+", label: "Flight Sources" },
   { value: "5+", label: "Hotel Suppliers" },
   { value: "5+", label: "Tour Suppliers" },
-  { value: "400+", label: "Active Agents" },
+  { value: "200+", label: "Active Agents" },
   { value: "<24hrs", label: "Setup" },
 ];
 
