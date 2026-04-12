@@ -108,12 +108,12 @@ export const HomeTrustBar = () => {
           Built for How Travel is Sold
         </h2>
         <p
-          className="text-left text-base sm:text-lg md:text-[24px] md:leading-[30px] md:tracking-[-0.48px] font-normal mb-6 max-w-2xl"
+          className="text-center md:text-left text-base sm:text-lg md:text-[24px] md:leading-[30px] md:tracking-[-0.48px] font-normal mb-6 max-w-2xl mx-auto md:mx-0"
           style={{ color: "rgb(116, 113, 122)" }}
         >
           Trusted by 200+ travel agents selling flights, hotels, tours &amp; packages
         </p>
-        <div className="flex justify-start mb-10">
+        <div className="flex justify-center md:justify-start mb-10">
           <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
             Try for Free
           </Button>
