@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { LayoutDashboard, Globe, Building2, Rocket, Wallet, ChevronLeft, ChevronRight } from "lucide-react";
+import { LayoutDashboard, Globe, Building2, Rocket, Wallet, Link2, ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const products = [
@@ -34,6 +34,15 @@ const products = [
     cta: "Join the Programme →",
     label: "Independents Programme",
     href: "/independents",
+  },
+  {
+    icon: Link2,
+    title: "Sell Travel Without a Website. Just Share a Link.",
+    body: "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, social media, or email. Your customer clicks, books, and pays — and you earn the commission. No website, no app, no tech skills required.",
+    cta: "Learn About Travel Links →",
+    label: "Travel Links",
+    href: "/products/travel-links",
+    isNew: true,
   },
   {
     icon: Wallet,
