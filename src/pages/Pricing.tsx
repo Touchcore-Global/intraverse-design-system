@@ -291,10 +291,6 @@ export default function Pricing() {
             </div>
           </div>
 
-          <div className="shrink-0 flex flex-col items-center gap-2">
-            <Button variant="outline" className="min-h-[48px] px-8">Add Travx</Button>
-            <p className="text-xs text-muted-foreground">Can be added to any plan</p>
-          </div>
         </div>
       </section>
 
