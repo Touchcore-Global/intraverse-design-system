@@ -42,7 +42,7 @@ const solutions = [
     icon: CreditCard,
     title: "Odiopay",
     body: "Buy Now, Pay Later integration so you can close sales even when your customer can't pay the full fare upfront.",
-    link: "#",
+    link: "/products/odiopay",
     linkText: "Learn more about Odiopay",
   },
   {
