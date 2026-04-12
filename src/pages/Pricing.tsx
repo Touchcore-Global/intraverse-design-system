@@ -20,7 +20,25 @@ import {
   Handshake,
   Globe,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+
+
+/* ------------------------------------------------------------------ */
+/*  Currency helpers                                                    */
+/* ------------------------------------------------------------------ */
+
+const NGN_RATE = 1600; // approximate USD → NGN
+
+function toNaira(usd: number): string {
+  if (usd === 0) return "₦0";
+  return "₦" + (usd * NGN_RATE).toLocaleString();
+}
+
+type Currency = "USD" | "NGN";
+
+function formatPrice(usd: number, currency: Currency): string {
+  if (currency === "USD") return `$${usd}`;
+  return toNaira(usd);
+}
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -29,8 +47,8 @@ import { Link } from "react-router-dom";
 const tiers = [
   {
     name: "Starter",
-    monthlyPrice: "$0",
-    annualPrice: "$0",
+    monthlyUsd: 0,
+    annualUsd: 0,
     monthlyPeriod: "/month forever",
     annualPeriod: "/month forever",
     tagline: "For new Independents and small agents testing the waters",
@@ -50,8 +68,8 @@ const tiers = [
   },
   {
     name: "Agency",
-    monthlyPrice: "$20",
-    annualPrice: "$16",
+    monthlyUsd: 20,
+    annualUsd: 16,
     monthlyPeriod: "/month",
     annualPeriod: "/month, billed annually",
     tagline: "For travel agencies of all sizes",
@@ -78,8 +96,8 @@ const tiers = [
   },
   {
     name: "Enterprise",
-    monthlyPrice: "Custom",
-    annualPrice: "Custom",
+    monthlyUsd: null,
+    annualUsd: null,
     monthlyPeriod: "Contact Sales",
     annualPeriod: "Contact Sales",
     tagline:
@@ -146,6 +164,7 @@ function CellValue({ value }: { value: boolean | string }) {
 
 export default function Pricing() {
   const [annual, setAnnual] = useState(false);
+  const [currency, setCurrency] = useState<Currency>("USD");
 
   useEffect(() => {
     document.title = "Pricing | Simple Plans for Every Travel Business | Intraverse";
@@ -165,12 +184,28 @@ export default function Pricing() {
           you're ready, and never pay for features you don't use. Every plan
           includes our complete toolkit — no premium add-ons, no upgrade traps.
         </p>
-        <div className="inline-flex items-center gap-3 bg-accent rounded-full px-5 py-2.5">
-          <span className={`text-sm font-medium ${!annual ? "text-foreground" : "text-muted-foreground"}`}>Monthly</span>
-          <Switch checked={annual} onCheckedChange={setAnnual} />
-          <span className={`text-sm font-medium ${annual ? "text-foreground" : "text-muted-foreground"}`}>
-            Annual <span className="text-primary font-semibold">(save 20%)</span>
-          </span>
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="inline-flex items-center gap-3 bg-accent rounded-full px-5 py-2.5">
+            <span className={`text-sm font-medium ${!annual ? "text-foreground" : "text-muted-foreground"}`}>Monthly</span>
+            <Switch checked={annual} onCheckedChange={setAnnual} />
+            <span className={`text-sm font-medium ${annual ? "text-foreground" : "text-muted-foreground"}`}>
+              Annual <span className="text-primary font-semibold">(save 20%)</span>
+            </span>
+          </div>
+          <div className="inline-flex items-center gap-1 bg-accent rounded-full p-1">
+            <button
+              onClick={() => setCurrency("USD")}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${currency === "USD" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
+            >
+              USD ($)
+            </button>
+            <button
+              onClick={() => setCurrency("NGN")}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${currency === "NGN" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
+            >
+              NGN (₦)
+            </button>
+          </div>
         </div>
       </section>
 
@@ -196,7 +231,9 @@ export default function Pricing() {
 
                 <h3 className="text-lg font-semibold mb-1">{tier.name}</h3>
                 <div className="mb-1">
-                  <span className="text-3xl font-bold tracking-tight">{annual ? tier.annualPrice : tier.monthlyPrice}</span>
+                  <span className="text-3xl font-bold tracking-tight">
+                    {tier.monthlyUsd === null ? "Custom" : formatPrice(annual ? tier.annualUsd : tier.monthlyUsd, currency)}
+                  </span>
                   <span className="text-sm text-muted-foreground ml-1">{annual ? tier.annualPeriod : tier.monthlyPeriod}</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-6">{tier.tagline}</p>
@@ -268,7 +305,7 @@ export default function Pricing() {
               <Globe className="h-5 w-5 text-primary" />
               <span className="text-sm font-semibold text-primary">Travx</span>
             </div>
-            <span className="text-3xl font-bold">+{annual ? "$40" : "$50"}</span>
+            <span className="text-3xl font-bold">+{formatPrice(annual ? 40 : 50, currency)}</span>
             <span className="text-muted-foreground text-sm">{annual ? "/month, billed annually" : "/month"}</span>
           </div>
 
@@ -291,7 +328,7 @@ export default function Pricing() {
             </div>
           </div>
 
-          <p className="text-xs text-destructive mt-4 md:mt-0 text-center md:text-right">A one-time $1000 setup fee applies*</p>
+          <p className="text-xs text-destructive mt-4 md:mt-0 text-center md:text-right">A one-time {formatPrice(1000, currency)} setup fee applies*</p>
         </div>
       </section>
 
