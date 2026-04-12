@@ -50,8 +50,8 @@ const tiers = [
   },
   {
     name: "Agency",
-    monthlyPrice: "₦30,000",
-    annualPrice: "₦24,000",
+    monthlyPrice: "$20",
+    annualPrice: "$16",
     monthlyPeriod: "/month",
     annualPeriod: "/month, billed annually",
     tagline: "For travel agencies of all sizes",
@@ -268,7 +268,7 @@ export default function Pricing() {
               <Globe className="h-5 w-5 text-primary" />
               <span className="text-sm font-semibold text-primary">Travx</span>
             </div>
-            <span className="text-3xl font-bold">+{annual ? "₦60,000" : "₦75,000"}</span>
+            <span className="text-3xl font-bold">+{annual ? "$40" : "$50"}</span>
             <span className="text-muted-foreground text-sm">{annual ? "/month, billed annually" : "/month"}</span>
           </div>
 
