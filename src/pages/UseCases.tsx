@@ -107,7 +107,7 @@ const useCases: UseCase[] = [
     problem: "Customers love your fares but don't have the full amount upfront. You're losing bookings.",
     solution: "Activate Odiopay BNPL — Fare Lock holds today's price while customers pay in instalments. Pay Later enables post-ticketing repayment. Close every sale.",
     products: ["Odiopay", "Agent Selling Platform"],
-    link: "/for/travel-agents",
+    link: "/products/odiopay",
     categories: ["All", "Travel Agents"],
   },
   {
