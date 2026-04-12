@@ -1,6 +1,12 @@
 import { Plane, Building2, Landmark, Rocket, Lightbulb, CodeXml, ArrowRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const audiences = [
   {
@@ -77,6 +83,45 @@ const audiences = [
 
 export const WhoWeServeSection = () => {
   const { ref, revealClass } = useScrollReveal();
+  const isMobile = useIsMobile();
+
+  const renderCard = (item: typeof audiences[0]) => {
+    const Icon = item.icon;
+    return (
+      <div
+        key={item.title}
+        className={`relative bg-card rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 group h-full ${
+          item.featured
+            ? "border-2 border-primary shadow-md"
+            : "border border-border shadow-sm hover:border-primary hover:shadow-lg"
+        }`}
+        style={{
+          boxShadow: item.featured
+            ? "0 4px 16px rgba(30,97,220,0.12)"
+            : undefined,
+        }}
+      >
+        {item.featured && (
+          <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-[11px] font-bold uppercase tracking-wide">
+            <Star className="w-3 h-3 fill-current" />
+            Most Popular
+          </span>
+        )}
+        <Icon className="w-12 h-12 text-primary mb-5" strokeWidth={1.5} />
+        <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+        <p className="text-sm font-semibold text-foreground/90 mb-3">{item.headline}</p>
+        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{item.body}</p>
+        <p className="text-xs font-medium text-primary mb-5">{item.products}</p>
+        <Link
+          to={item.href}
+          className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:underline"
+        >
+          {item.cta}
+          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+        </Link>
+      </div>
+    );
+  };
 
   return (
     <section className="py-16 md:py-24 bg-[hsl(216,60%,97%)]">
@@ -98,48 +143,21 @@ export const WhoWeServeSection = () => {
           From established travel agencies to corporate finance teams, from individuals starting out to developers building the next big travel product — Intraverse powers them all. Find the path that fits your business.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {audiences.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className={`relative bg-card rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 group ${
-                  item.featured
-                    ? "border-2 border-primary shadow-md"
-                    : "border border-border shadow-sm hover:border-primary hover:shadow-lg"
-                }`}
-                style={{
-                  boxShadow: item.featured
-                    ? "0 4px 16px rgba(30,97,220,0.12)"
-                    : undefined,
-                }}
-              >
-                {item.featured && (
-                  <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-[11px] font-bold uppercase tracking-wide">
-                    <Star className="w-3 h-3 fill-current" />
-                    Most Popular
-                  </span>
-                )}
-
-                <Icon className="w-12 h-12 text-primary mb-5" strokeWidth={1.5} />
-
-                <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm font-semibold text-foreground/90 mb-3">{item.headline}</p>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{item.body}</p>
-                <p className="text-xs font-medium text-primary mb-5">{item.products}</p>
-
-                <Link
-                  to={item.href}
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:underline"
-                >
-                  {item.cta}
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+        {isMobile ? (
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent className="-ml-3">
+              {audiences.map((item) => (
+                <CarouselItem key={item.title} className="pl-3 basis-[85%]">
+                  {renderCard(item)}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {audiences.map((item) => renderCard(item))}
+          </div>
+        )}
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground mb-1">Not sure which path is right for you?</p>
