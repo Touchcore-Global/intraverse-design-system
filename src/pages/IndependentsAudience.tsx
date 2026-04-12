@@ -57,13 +57,13 @@ const trustPoints = [
 ];
 
 const earningsStats = [
-  { value: "₦85K", label: "Average First-Month Earnings" },
-  { value: "₦450K", label: "Top Independent Monthly" },
+  { value: "$500", label: "Average First-Month Earnings" },
+  { value: "$2,800", label: "Top Independent Monthly" },
   { value: "120+", label: "Active Independents" },
 ];
 
 const steps = [
-  { number: "1", title: "Join the Programme", body: "Sign up and get access to the platform. Free to join — start at ₦0 upfront." },
+  { number: "1", title: "Join the Programme", body: "Sign up and get access to the platform. Free to join — start at $0 upfront." },
   { number: "2", title: "Complete Training", body: "We walk you through how to search inventory, create bookings, and manage customers. Most Independents are ready to sell within hours." },
   { number: "3", title: "Start Selling", body: "Share deals with your network, book travel for customers, earn commissions on every completed booking." },
 ];
