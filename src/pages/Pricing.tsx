@@ -262,7 +262,7 @@ export default function Pricing() {
               <Globe className="h-5 w-5 text-primary" />
               <span className="text-sm font-semibold text-primary">Travx</span>
             </div>
-            <span className="text-3xl font-bold">+₦120,000</span>
+            <span className="text-3xl font-bold">+₦75,000</span>
             <span className="text-muted-foreground text-sm">/month</span>
           </div>
 
@@ -303,7 +303,6 @@ export default function Pricing() {
               <tr className="bg-accent">
                 <th className="text-left p-4 font-semibold">Feature</th>
                 <th className="p-4 font-semibold text-center">Starter</th>
-                <th className="p-4 font-semibold text-center">Independents</th>
                 <th className="p-4 font-semibold text-center text-primary">Agency</th>
                 <th className="p-4 font-semibold text-center">Enterprise</th>
               </tr>
@@ -313,7 +312,6 @@ export default function Pricing() {
                 <tr key={row.feature} className={i % 2 === 0 ? "bg-card" : "bg-accent/40"}>
                   <td className="p-4 font-medium">{row.feature}</td>
                   <td className="p-4 text-center"><CellValue value={row.starter} /></td>
-                  <td className="p-4 text-center"><CellValue value={row.independents} /></td>
                   <td className="p-4 text-center"><CellValue value={row.agency} /></td>
                   <td className="p-4 text-center"><CellValue value={row.enterprise} /></td>
                 </tr>
@@ -324,7 +322,7 @@ export default function Pricing() {
 
         {/* Mobile stacked cards */}
         <div className="md:hidden space-y-6">
-          {["Starter", "Independents", "Agency", "Enterprise"].map((plan) => (
+          {["Starter", "Agency", "Enterprise"].map((plan) => (
             <div key={plan} className="rounded-xl border border-border bg-card p-5">
               <h3 className="text-lg font-semibold mb-4">{plan}</h3>
               <div className="space-y-3">
