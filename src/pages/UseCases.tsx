@@ -89,7 +89,7 @@ const useCases: UseCase[] = [
     problem: "You have an Instagram audience interested in travel deals but no way to sell to them at scale.",
     solution: "Generate Travel Links for any deal or package, post on Instagram/WhatsApp/TikTok, and let customers click, book, and pay directly. Track every conversion.",
     products: ["Travel Links", "Independents Programme"],
-    link: "/for/independents",
+    link: "/products/travel-links",
     categories: ["All", "Independents"],
   },
   {
