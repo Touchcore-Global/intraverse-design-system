@@ -321,7 +321,7 @@ const Developers = () => {
             </div>
             <p className="mt-8 text-sm text-white/40">
               Have questions?{" "}
-              <a href="mailto:hello@intraverse.com" className="text-primary hover:underline">hello@intraverse.com</a>
+              <a href="mailto:hello@intraverse.africa" className="text-primary hover:underline">hello@intraverse.africa</a>
               {" "}or{" "}
               <a href="#" className="text-primary hover:underline inline-flex items-center gap-1">
                 <MessageCircle className="w-3.5 h-3.5" />

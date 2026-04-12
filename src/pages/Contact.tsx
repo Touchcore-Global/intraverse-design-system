@@ -182,7 +182,7 @@ const Contact = () => {
                 </h3>
 
                 <a
-                  href="mailto:hello@intraverse.com"
+                  href="mailto:hello@intraverse.africa"
                   className="flex items-start gap-3 group"
                 >
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
@@ -190,7 +190,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                      hello@intraverse.com
+                      hello@intraverse.africa
                     </p>
                     <p className="text-xs text-muted-foreground">
                       General enquiries
