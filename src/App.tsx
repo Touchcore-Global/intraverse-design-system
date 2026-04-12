@@ -26,6 +26,7 @@ import FAQ from "./pages/FAQ.tsx";
 import Contact from "./pages/Contact.tsx";
 import Login from "./pages/Login.tsx";
 import Pricing from "./pages/Pricing.tsx";
+import Products from "./pages/Products.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
