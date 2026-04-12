@@ -219,23 +219,6 @@ const Corporates = () => {
         </div>
       </section>
 
-      {/* Logo Strip */}
-      <section className="py-12 md:py-16 bg-[hsl(216,60%,97%)]">
-        <div className="container mx-auto px-4 text-center" style={{ maxWidth: "1200px" }}>
-          <RevealBlock>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-8">
-              Trusted by leading African corporates
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-8">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div key={i} className="w-28 h-10 rounded bg-muted-foreground/10 flex items-center justify-center">
-                  <span className="text-[10px] text-muted-foreground uppercase tracking-wider">Logo {i + 1}</span>
-                </div>
-              ))}
-            </div>
-          </RevealBlock>
-        </div>
-      </section>
 
       {/* Final CTA + Form */}
       <section className="py-20 md:py-28 bg-primary">
