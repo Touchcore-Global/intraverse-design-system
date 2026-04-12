@@ -29,8 +29,10 @@ import { Link } from "react-router-dom";
 const tiers = [
   {
     name: "Starter",
-    price: "₦0",
-    period: "/month forever",
+    monthlyPrice: "₦0",
+    annualPrice: "₦0",
+    monthlyPeriod: "/month forever",
+    annualPeriod: "/month forever",
     tagline: "For new Independents and small agents testing the waters",
     includes: null,
     features: [
@@ -48,8 +50,10 @@ const tiers = [
   },
   {
     name: "Agency",
-    price: "₦30,000",
-    period: "/month",
+    monthlyPrice: "₦30,000",
+    annualPrice: "₦24,000",
+    monthlyPeriod: "/month",
+    annualPeriod: "/month, billed annually",
     tagline: "For travel agencies of all sizes",
     includes: "Everything in Starter, plus:",
     features: [
@@ -74,8 +78,10 @@ const tiers = [
   },
   {
     name: "Enterprise",
-    price: "Custom",
-    period: "Contact Sales",
+    monthlyPrice: "Custom",
+    annualPrice: "Custom",
+    monthlyPeriod: "Contact Sales",
+    annualPeriod: "Contact Sales",
     tagline:
       "For Corporates, Fintechs, Tech Startups, and large-volume partners",
     includes: null,
@@ -190,8 +196,8 @@ export default function Pricing() {
 
                 <h3 className="text-lg font-semibold mb-1">{tier.name}</h3>
                 <div className="mb-1">
-                  <span className="text-3xl font-bold tracking-tight">{tier.price}</span>
-                  <span className="text-sm text-muted-foreground ml-1">{tier.period}</span>
+                  <span className="text-3xl font-bold tracking-tight">{annual ? tier.annualPrice : tier.monthlyPrice}</span>
+                  <span className="text-sm text-muted-foreground ml-1">{annual ? tier.annualPeriod : tier.monthlyPeriod}</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-6">{tier.tagline}</p>
 
