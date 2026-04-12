@@ -9,6 +9,7 @@ import Travx from "./pages/Travx.tsx";
 import CoopX from "./pages/CoopX.tsx";
 import Independents from "./pages/Independents.tsx";
 import SupplierEngine from "./pages/SupplierEngine.tsx";
+import TravelLinksPage from "./pages/TravelLinks.tsx";
 import TravelAgents from "./pages/TravelAgents.tsx";
 import IndependentsAudience from "./pages/IndependentsAudience.tsx";
 import WhoWeServe from "./pages/WhoWeServe.tsx";
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/products/independents" element={<Independents />} />
           <Route path="/supplier-engine" element={<SupplierEngine />} />
           <Route path="/products/supplier-engine" element={<SupplierEngine />} />
+          <Route path="/products/travel-links" element={<TravelLinksPage />} />
           {/* Audience routes */}
           <Route path="/for/travel-agents" element={<TravelAgents />} />
           <Route path="/for/independents" element={<IndependentsAudience />} />

@@ -326,7 +326,29 @@ const Independents = () => {
       </section>
 
 
-      {/* TESTIMONIAL */}
+      {/* TRAVEL LINKS CALLOUT */}
+      <section className="py-16 md:py-20" style={{ backgroundColor: "#F0F5FC" }}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase text-white mb-4" style={{ backgroundColor: "#16A34A" }}>
+              🆕 New
+            </span>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Sell Travel Without a Website — Just Share a Link
+            </h3>
+            <p className="text-muted-foreground text-base leading-relaxed mb-6">
+              With Travel Links, you can generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, post it on Instagram, or email it to your network. Your customer clicks, books, and pays — and you earn the commission.
+            </p>
+            <a href="/products/travel-links">
+              <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
+                Learn About Travel Links →
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">

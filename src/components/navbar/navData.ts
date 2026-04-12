@@ -1,5 +1,5 @@
 import {
-  Plane, Globe, Building2, Rocket, Wallet, Plug, HardHat,
+  Plane, Globe, Building2, Rocket, Wallet, Plug, HardHat, Link2,
   Landmark, Lightbulb, CodeXml, Star, ClipboardList,
   Zap, Wrench, BarChart3,
   HelpCircle, BookOpen, FileText,
@@ -17,6 +17,7 @@ export interface NavItem {
   description?: string;
   popular?: boolean;
   comingSoon?: boolean;
+  isNew?: boolean;
 }
 
 export interface NavSection {
@@ -32,6 +33,7 @@ export const productSections: NavSection[] = [
       { label: "Travx (White-Label Websites)", href: "/products/travx", icon: Globe, description: "Your branded, booking-enabled travel website" },
       { label: "CoopX (Corporate Travel)", href: "/products/coopx", icon: Building2, description: "Corporate travel management with policy controls" },
       { label: "Independents Programme", href: "/products/independents", icon: Rocket, description: "Start earning in travel — no agency required" },
+      { label: "Travel Links", href: "/products/travel-links", icon: Link2, description: "Sell travel with a shareable link — no website needed", isNew: true },
     ],
   },
   {

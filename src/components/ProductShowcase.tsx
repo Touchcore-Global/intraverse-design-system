@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { LayoutDashboard, Globe, Building2, Rocket, Wallet, ChevronLeft, ChevronRight } from "lucide-react";
+import { LayoutDashboard, Globe, Building2, Rocket, Wallet, Link2, ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const products = [
@@ -34,6 +34,15 @@ const products = [
     cta: "Join the Programme →",
     label: "Independents Programme",
     href: "/independents",
+  },
+  {
+    icon: Link2,
+    title: "Sell Travel Without a Website. Just Share a Link.",
+    body: "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, social media, or email. Your customer clicks, books, and pays — and you earn the commission. No website, no app, no tech skills required.",
+    cta: "Learn About Travel Links →",
+    label: "Travel Links",
+    href: "/products/travel-links",
+    isNew: true,
   },
   {
     icon: Wallet,
@@ -78,8 +87,13 @@ export const ProductShowcase = () => {
     return (
       <div
         key={product.label}
-        className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 flex-1"
+        className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 flex-1 relative"
       >
+        {product.isNew && (
+          <span className="absolute top-4 right-4 inline-flex px-2 py-0.5 rounded-full text-[11px] font-bold uppercase text-white" style={{ backgroundColor: "#16A34A" }}>
+            🆕 New
+          </span>
+        )}
         <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
           <Icon className="w-6 h-6 text-primary" />
         </div>
