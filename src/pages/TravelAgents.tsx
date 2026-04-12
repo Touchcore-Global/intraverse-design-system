@@ -297,8 +297,8 @@ const TravelAgents = () => {
               </Button>
               <Button
                 size="xl"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 cta-responsive min-h-[48px]"
+                variant="whatsapp"
+                className="cta-responsive min-h-[48px]"
               >
                 <MessageCircle className="h-5 w-5" />
                 Chat on WhatsApp

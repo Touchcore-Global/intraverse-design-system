@@ -17,7 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // Intraverse custom variants
         hero: "bg-foreground text-background hover:bg-foreground/90 rounded-none font-semibold shadow-lg hover:shadow-xl transition-all",
-        whatsapp: "bg-foreground text-background hover:bg-foreground/90 rounded-none font-semibold shadow-lg hover:shadow-xl transition-all",
+        whatsapp: "bg-background text-foreground border-2 border-foreground hover:bg-foreground hover:text-background rounded-none font-semibold transition-all",
       },
       size: {
         default: "h-10 px-4 py-2",
