@@ -114,7 +114,7 @@ const useCases: UseCase[] = [
     number: "11",
     title: "Going From WhatsApp-Only to Full Online Agency",
     problem: "You run your business on WhatsApp. You're invisible on Google. Custom websites cost ₦5M and take months.",
-    solution: "Get a Travx white-label website at ₦120,000/month — fully branded, booking-enabled, live in days. Customers find you, book, and pay online.",
+    solution: "Get a Travx white-label website at $50/month — fully branded, booking-enabled, live in days. Customers find you, book, and pay online.",
     products: ["Travx"],
     link: "/for/travel-agents",
     categories: ["All", "Travel Agents"],
