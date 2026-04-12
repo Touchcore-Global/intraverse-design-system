@@ -26,6 +26,7 @@ import FAQ from "./pages/FAQ.tsx";
 import Contact from "./pages/Contact.tsx";
 import Login from "./pages/Login.tsx";
 import Pricing from "./pages/Pricing.tsx";
+import Products from "./pages/Products.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           {/* Product routes - support both old and new paths */}
+          <Route path="/products" element={<Products />} />
           <Route path="/agent-platform" element={<AgentPlatform />} />
           <Route path="/products/agent-platform" element={<AgentPlatform />} />
           <Route path="/travx" element={<Travx />} />
