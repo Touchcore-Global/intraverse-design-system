@@ -47,32 +47,15 @@ const tiers = [
     popular: false,
   },
   {
-    name: "Independents",
-    price: "₦XX,000",
+    name: "Agency",
+    price: "₦30,000",
     period: "/month",
-    tagline: "For active travel independents and side hustlers",
+    tagline: "For travel agencies of all sizes",
     includes: "Everything in Starter, plus:",
     features: [
       "Unlimited bookings",
       "Shareable Travel Links",
       "Custom travel packages",
-      "Commission tracking dashboard",
-      "Priority email support",
-      "Odiopay BNPL integration",
-      "Branded invoices & receipts",
-    ],
-    cta: "Start 14-Day Free Trial",
-    ctaVariant: "outline" as const,
-    note: "No credit card required",
-    popular: false,
-  },
-  {
-    name: "Agency",
-    price: "₦XXX,000",
-    period: "/month",
-    tagline: "For travel agencies of all sizes",
-    includes: "Everything in Independents, plus:",
-    features: [
       "Unlimited team members",
       "Multi-branch reporting",
       "Role-based access control",
@@ -80,6 +63,9 @@ const tiers = [
       "Phone & WhatsApp support",
       "API access (read-only)",
       "Advanced analytics dashboard",
+      "Commission tracking dashboard",
+      "Odiopay BNPL integration",
+      "Branded invoices & receipts",
     ],
     cta: "Start 14-Day Free Trial",
     ctaVariant: "default" as const,
@@ -115,16 +101,16 @@ const tiers = [
 ] as const;
 
 const comparisonRows = [
-  { feature: "Bookings per month", starter: "10", independents: "Unlimited", agency: "Unlimited", enterprise: "Custom" },
-  { feature: "Travel Links", starter: false, independents: true, agency: true, enterprise: true },
-  { feature: "Custom Packages", starter: false, independents: true, agency: true, enterprise: true },
-  { feature: "Team members", starter: "1", independents: "1", agency: "Unlimited", enterprise: "Custom" },
-  { feature: "Multi-branch reporting", starter: false, independents: false, agency: true, enterprise: true },
-  { feature: "Travx website", starter: false, independents: "Add-on", agency: "Add-on", enterprise: "Add-on" },
-  { feature: "Odiopay BNPL", starter: false, independents: true, agency: true, enterprise: true },
-  { feature: "API access", starter: false, independents: false, agency: "Read-only", enterprise: "Full" },
-  { feature: "Support level", starter: "Community", independents: "Email", agency: "Phone & WhatsApp", enterprise: "Dedicated" },
-  { feature: "Account manager", starter: false, independents: false, agency: true, enterprise: true },
+  { feature: "Bookings per month", starter: "10", agency: "Unlimited", enterprise: "Custom" },
+  { feature: "Travel Links", starter: false, agency: true, enterprise: true },
+  { feature: "Custom Packages", starter: false, agency: true, enterprise: true },
+  { feature: "Team members", starter: "1", agency: "Unlimited", enterprise: "Custom" },
+  { feature: "Multi-branch reporting", starter: false, agency: true, enterprise: true },
+  { feature: "Travx website", starter: false, agency: "Add-on", enterprise: "Add-on" },
+  { feature: "Odiopay BNPL", starter: false, agency: true, enterprise: true },
+  { feature: "API access", starter: false, agency: "Read-only", enterprise: "Full" },
+  { feature: "Support level", starter: "Community", agency: "Phone & WhatsApp", enterprise: "Dedicated" },
+  { feature: "Account manager", starter: false, agency: true, enterprise: true },
 ];
 
 const faqs = [
@@ -132,7 +118,7 @@ const faqs = [
   { q: "What happens after my 14-day trial?", a: "After your trial ends, you'll be moved to the Starter plan automatically. No charges, no surprises. Upgrade again anytime to unlock premium features." },
   { q: "Do I need a credit card to start a trial?", a: "No. You can start a 14-day free trial on the Independents or Agency plan without entering any payment information." },
   { q: "Can I switch plans later?", a: "Absolutely. You can upgrade, downgrade, or cancel at any time from your account settings. Changes take effect at the start of your next billing cycle." },
-  { q: "What is Travx and how much does it cost?", a: "Travx is our branded booking website add-on. It costs ₦120,000/month and can be added to any plan. It gives you a fully customisable, booking-enabled website with your own domain." },
+  { q: "What is Travx and how much does it cost?", a: "Travx is our branded booking website add-on. It costs ₦75,000/month and can be added to any plan. It gives you a fully customisable, booking-enabled website with your own domain." },
   { q: "Do you offer annual billing?", a: "Yes — annual billing is available and saves you money compared to monthly plans. Toggle the billing switch at the top of this page to see annual prices." },
   { q: "What payment methods do you accept?", a: "We accept bank transfers, card payments, and mobile money. Enterprise customers can also pay via invoice with net-30 terms." },
   { q: "Is there a setup fee?", a: "No. There are no setup fees, no hidden charges, and no contracts. You pay only for your plan — nothing more." },
@@ -184,7 +170,7 @@ export default function Pricing() {
 
       {/* ── Pricing Cards ── */}
       <section className="max-w-7xl mx-auto px-4 pb-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {tiers.map((tier) => {
             const isPopular = tier.popular;
             return (
@@ -276,7 +262,7 @@ export default function Pricing() {
               <Globe className="h-5 w-5 text-primary" />
               <span className="text-sm font-semibold text-primary">Travx</span>
             </div>
-            <span className="text-3xl font-bold">+₦120,000</span>
+            <span className="text-3xl font-bold">+₦75,000</span>
             <span className="text-muted-foreground text-sm">/month</span>
           </div>
 
@@ -317,7 +303,6 @@ export default function Pricing() {
               <tr className="bg-accent">
                 <th className="text-left p-4 font-semibold">Feature</th>
                 <th className="p-4 font-semibold text-center">Starter</th>
-                <th className="p-4 font-semibold text-center">Independents</th>
                 <th className="p-4 font-semibold text-center text-primary">Agency</th>
                 <th className="p-4 font-semibold text-center">Enterprise</th>
               </tr>
@@ -327,7 +312,6 @@ export default function Pricing() {
                 <tr key={row.feature} className={i % 2 === 0 ? "bg-card" : "bg-accent/40"}>
                   <td className="p-4 font-medium">{row.feature}</td>
                   <td className="p-4 text-center"><CellValue value={row.starter} /></td>
-                  <td className="p-4 text-center"><CellValue value={row.independents} /></td>
                   <td className="p-4 text-center"><CellValue value={row.agency} /></td>
                   <td className="p-4 text-center"><CellValue value={row.enterprise} /></td>
                 </tr>
@@ -338,7 +322,7 @@ export default function Pricing() {
 
         {/* Mobile stacked cards */}
         <div className="md:hidden space-y-6">
-          {["Starter", "Independents", "Agency", "Enterprise"].map((plan) => (
+          {["Starter", "Agency", "Enterprise"].map((plan) => (
             <div key={plan} className="rounded-xl border border-border bg-card p-5">
               <h3 className="text-lg font-semibold mb-4">{plan}</h3>
               <div className="space-y-3">
