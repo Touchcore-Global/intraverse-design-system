@@ -20,7 +20,7 @@ import {
   Handshake,
   Globe,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+
 
 /* ------------------------------------------------------------------ */
 /*  Currency helpers                                                    */
