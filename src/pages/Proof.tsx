@@ -291,7 +291,7 @@ export default function Proof() {
       {/* HERO */}
       <section className="pt-28 pb-12 md:pt-36 md:pb-16 bg-accent">
         <div className="container mx-auto px-4 lg:px-8 max-w-4xl text-center">
-          <h1 className="text-foreground mb-6">400+ Travel Businesses. Real Results. Here's the Proof.</h1>
+          <h1 className="text-foreground mb-6">200+ Travel Businesses. Real Results. Here's the Proof.</h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Travel agencies, corporate travel teams, and independent entrepreneurs across Africa use Intraverse to sell more, earn more, and operate more efficiently. Here are their stories.
           </p>

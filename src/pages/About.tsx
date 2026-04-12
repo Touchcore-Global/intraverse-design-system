@@ -37,7 +37,7 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { value: "400+", label: "Active Agents", icon: Users },
+  { value: "200+", label: "Active Agents", icon: Users },
   { value: "5,000+", label: "Bookings Processed", icon: Plane },
   { value: "25+", label: "Global Suppliers", icon: Hotel },
   { value: "3", label: "GDS Systems", icon: Server },
@@ -148,7 +148,7 @@ const milestones = [
   { year: "2024", title: "IATA Certified & 100 Agents Milestone", description: "Authorized Dev Partner to Amadeus, Sabre, Galileo by Travelport. Crossed 100 active agents on the platform, validating market demand." },
   { year: "2025", title: "Travx White-Label Website Launch", description: "Expanded product suite with branded websites and corporate travel management. $1m+ transactions processed." },
   { year: "2026", title: "CoopX & Independents Programme", description: "Opened the platform to independent entrepreneurs, removing traditional barriers to entry." },
-  { year: "2026", title: "400+ Agents Onboarded & Growing", description: "Partnered with leading GDS to offer website to agents. Serving 400+ agencies with plans to expand across Africa." },
+  { year: "2026", title: "200+ Agents Onboarded & Growing", description: "Partnered with leading GDS to offer website to agents. Serving 200+ agencies with plans to expand across Africa." },
 ];
 
 const testimonials = [

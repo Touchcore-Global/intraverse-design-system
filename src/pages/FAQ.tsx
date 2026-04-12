@@ -44,7 +44,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "How long has Intraverse been operating?",
-        a: "Intraverse has been building travel technology and serving the African travel market for several years. We've grown from a small team with a single product to a full-suite platform powering 400+ travel businesses.",
+        a: "Intraverse has been building travel technology and serving the African travel market for several years. We've grown from a small team with a single product to a full-suite platform powering 200+ travel businesses.",
       },
       {
         q: "What products does Intraverse offer?",

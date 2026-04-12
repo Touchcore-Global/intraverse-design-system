@@ -289,7 +289,7 @@ const TravelAgents = () => {
               Ready to Transform Your Agency?
             </h2>
             <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-10 text-sm md:text-base">
-              Join 400+ travel agents already using Intraverse to sell more, earn more, and work smarter.
+              Join 200+ travel agents already using Intraverse to sell more, earn more, and work smarter.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]">
