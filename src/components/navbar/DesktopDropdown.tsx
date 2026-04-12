@@ -8,14 +8,16 @@ interface DesktopDropdownProps {
 }
 
 export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDropdownProps) {
-  const useGrid = columns === 2 || sections.reduce((acc, s) => acc + s.items.length, 0) > 5;
+  const useGrid = columns >= 2 || sections.reduce((acc, s) => acc + s.items.length, 0) > 5;
+  const gridCols = columns === 3 ? "grid-cols-3" : "grid-cols-2";
+  const dropdownWidth = columns === 3 ? "820px" : useGrid ? "620px" : "380px";
 
   return (
     <div
       className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-popover border border-border rounded-xl p-6 animate-fade-in"
       style={{
         boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
-        width: useGrid ? "620px" : "380px",
+        width: dropdownWidth,
       }}
     >
       <div className={useGrid ? "grid grid-cols-2 gap-x-6" : ""}>
