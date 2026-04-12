@@ -27,7 +27,7 @@ const audiences = [
     benefits: [
       "Aggregated flights from GDS + NDC + consolidators + aggregators",
       "Hotels and tours from leading global suppliers",
-      "White-label website (Travx) at ₦120,000/month",
+      "White-label website (Travx) at $50/month",
     ],
     cta: "Explore for Travel Agents",
     href: "/for/travel-agents",

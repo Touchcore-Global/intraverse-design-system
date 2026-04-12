@@ -34,7 +34,7 @@ const solutions = [
   {
     icon: Globe,
     title: "Travx",
-    body: "A fully branded, booking-enabled website for your agency at ₦120,000/month. No developer needed. Live in days.",
+    body: "A fully branded, booking-enabled website for your agency at $50/month. No developer needed. Live in days.",
     link: "/travx",
     linkText: "Learn more about Travx",
   },
