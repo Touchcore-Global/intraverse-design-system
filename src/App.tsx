@@ -40,6 +40,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           {/* Product routes - support both old and new paths */}
+          <Route path="/products" element={<Products />} />
           <Route path="/agent-platform" element={<AgentPlatform />} />
           <Route path="/products/agent-platform" element={<AgentPlatform />} />
           <Route path="/travx" element={<Travx />} />
