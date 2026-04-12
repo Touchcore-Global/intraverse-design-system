@@ -95,7 +95,7 @@ const Corporates = () => {
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold">
                 Talk to Enterprise Sales
               </Button>
-              <Button size="xl" variant="outline" className="border-white/30 text-white hover:bg-white/10 cta-responsive min-h-[48px]">
+              <Button size="xl" variant="outline" className="bg-white text-foreground border-white hover:bg-white/90 cta-responsive min-h-[48px]">
                 <MessageCircle className="h-5 w-5" />
                 Chat on WhatsApp
               </Button>

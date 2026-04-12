@@ -28,7 +28,7 @@ export const FinalCTA = () => {
           <Button
             variant="outline"
             size="xl"
-            className="cta-responsive min-h-[48px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground rounded-none font-semibold"
+            className="cta-responsive min-h-[48px] bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90 rounded-none font-semibold"
           >
             <MessageCircle className="h-5 w-5" />
             Chat on WhatsApp
