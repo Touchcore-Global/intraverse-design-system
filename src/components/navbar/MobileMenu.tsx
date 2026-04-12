@@ -53,6 +53,11 @@ function MobileAccordion({ title, sections, footerLink, onClose }: MobileAccordi
                       Soon
                     </span>
                   )}
+                  {item.isNew && (
+                    <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-bold uppercase text-white" style={{ backgroundColor: "#16A34A" }}>
+                      New
+                    </span>
+                  )}
                 </a>
               ))}
             </div>

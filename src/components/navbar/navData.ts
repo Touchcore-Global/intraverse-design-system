@@ -33,7 +33,7 @@ export const productSections: NavSection[] = [
       { label: "Travx (White-Label Websites)", href: "/products/travx", icon: Globe, description: "Your branded, booking-enabled travel website" },
       { label: "CoopX (Corporate Travel)", href: "/products/coopx", icon: Building2, description: "Corporate travel management with policy controls" },
       { label: "Independents Programme", href: "/products/independents", icon: Rocket, description: "Start earning in travel — no agency required" },
-      { label: "Travel Links", href: "/products/travel-links", icon: Plug, description: "Sell travel with a shareable link — no website needed", isNew: true },
+      { label: "Travel Links", href: "/products/travel-links", icon: Link2, description: "Sell travel with a shareable link — no website needed", isNew: true },
     ],
   },
   {

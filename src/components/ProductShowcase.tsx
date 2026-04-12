@@ -87,8 +87,13 @@ export const ProductShowcase = () => {
     return (
       <div
         key={product.label}
-        className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 flex-1"
+        className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 flex-1 relative"
       >
+        {product.isNew && (
+          <span className="absolute top-4 right-4 inline-flex px-2 py-0.5 rounded-full text-[11px] font-bold uppercase text-white" style={{ backgroundColor: "#16A34A" }}>
+            🆕 New
+          </span>
+        )}
         <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
           <Icon className="w-6 h-6 text-primary" />
         </div>
