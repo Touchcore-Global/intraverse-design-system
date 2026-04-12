@@ -297,7 +297,7 @@ export default function UseCases() {
               <Button
                 variant="outline"
                 size="xl"
-                className="cta-responsive min-h-[48px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground rounded-none font-semibold"
+                className="cta-responsive min-h-[48px] bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90 rounded-none font-semibold"
                 asChild
               >
                 <a href="https://wa.me/2349030002629?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Intraverse">
