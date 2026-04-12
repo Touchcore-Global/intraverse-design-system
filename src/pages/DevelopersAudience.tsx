@@ -117,8 +117,8 @@ const Developers = () => {
                 RESTful API access to Intraverse's aggregated travel inventory — flights from GDS, NDC, consolidators, and aggregators, plus hotels and tours from leading global suppliers. Comprehensive documentation, sandbox environment, webhook support, and dedicated technical assistance. Built by developers, for developers.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
-                <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold">
-                  View API Docs
+                <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold" asChild>
+                  <a href="/products/api">View API Docs</a>
                 </Button>
                 <Button size="xl" variant="outline" className="border-white/20 text-white hover:bg-white/10 cta-responsive min-h-[48px]">
                   Get Sandbox Access
@@ -312,8 +312,8 @@ const Developers = () => {
               Ready to Build?
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-              <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold">
-                View API Docs
+              <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold" asChild>
+                <a href="/products/api">View API Docs</a>
               </Button>
               <Button size="xl" variant="outline" className="border-white/20 text-white hover:bg-white/10 cta-responsive min-h-[48px]">
                 Get Sandbox Access
