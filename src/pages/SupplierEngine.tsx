@@ -63,13 +63,13 @@ const SupplierEngine = () => {
             deals, and pricing that no single agency could unlock on its own.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="xl" className="cta-responsive min-h-[48px] rounded-full font-semibold">
+            <Button size="xl" className="cta-responsive min-h-[48px] rounded-none font-semibold">
               Join the Waitlist
             </Button>
             <Button
               variant="outline"
               size="xl"
-              className="cta-responsive min-h-[48px] rounded-full font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="cta-responsive min-h-[48px] rounded-none font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
               Get Notified When It Launches
             </Button>
@@ -156,7 +156,7 @@ const SupplierEngine = () => {
                 </Label>
                 <Input id="wl-oid" placeholder="e.g. LOSXX1234" className="mt-1" />
               </div>
-              <Button type="submit" className="w-full min-h-[48px] rounded-full font-semibold">
+              <Button type="submit" className="w-full min-h-[48px] rounded-none font-semibold">
                 Join the Waitlist
               </Button>
             </form>
@@ -193,14 +193,14 @@ const SupplierEngine = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               size="xl"
-              className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-full font-semibold"
+              className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none font-semibold"
             >
               Join the Waitlist
             </Button>
             <Button
               variant="outline"
               size="xl"
-              className="cta-responsive min-h-[48px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-full font-semibold"
+              className="cta-responsive min-h-[48px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-none font-semibold"
             >
               <MessageCircle className="h-5 w-5" />
               Chat on WhatsApp

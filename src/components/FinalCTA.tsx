@@ -21,14 +21,14 @@ export const FinalCTA = () => {
           <Button
             variant="outline"
             size="xl"
-            className="cta-responsive min-h-[48px] bg-primary-foreground text-primary border-primary-foreground hover:bg-primary-foreground/90 hover:text-primary rounded-full font-semibold"
+            className="cta-responsive min-h-[48px] bg-primary-foreground text-primary border-primary-foreground hover:bg-primary-foreground/90 hover:text-primary rounded-none font-semibold"
           >
             Book a Free Demo
           </Button>
           <Button
             variant="outline"
             size="xl"
-            className="cta-responsive min-h-[48px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-full font-semibold"
+            className="cta-responsive min-h-[48px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-none font-semibold"
           >
             <MessageCircle className="h-5 w-5" />
             Chat on WhatsApp
@@ -73,7 +73,7 @@ export const FinalCTA = () => {
             </div>
             <Button
               type="submit"
-              className="w-full min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-full font-semibold"
+              className="w-full min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none font-semibold"
             >
               Request a Demo
             </Button>
