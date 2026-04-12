@@ -29,8 +29,8 @@ import { Link } from "react-router-dom";
 const tiers = [
   {
     name: "Starter",
-    monthlyPrice: "₦0",
-    annualPrice: "₦0",
+    monthlyPrice: "$0",
+    annualPrice: "$0",
     monthlyPeriod: "/month forever",
     annualPeriod: "/month forever",
     tagline: "For new Independents and small agents testing the waters",
