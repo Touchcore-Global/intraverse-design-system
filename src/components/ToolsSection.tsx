@@ -201,10 +201,10 @@ export const ToolsSection = () => {
           <p className="text-muted-foreground text-sm mb-4">
             Every tool. Every plan. Every audience. No upgrades required.
           </p>
-          <a href="#demo">
+          <a href="/tools">
             <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] whitespace-normal text-center px-6">
-              <span className="hidden sm:inline">See how these tools work in action → Book a Demo</span>
-              <span className="sm:hidden">Book a Demo → See Tools in Action</span>
+              <span className="hidden sm:inline">Explore All 8 Tools →</span>
+              <span className="sm:hidden">Explore All Tools →</span>
             </Button>
           </a>
         </div>
