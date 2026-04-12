@@ -9,6 +9,7 @@ import {
   Monitor,
   Globe,
   CreditCard,
+  Link2,
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -43,6 +44,13 @@ const solutions = [
     body: "Buy Now, Pay Later integration so you can close sales even when your customer can't pay the full fare upfront.",
     link: "#",
     linkText: "Learn more about Odiopay",
+  },
+  {
+    icon: Link2,
+    title: "Travel Links",
+    body: "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp or email — your customer clicks, books, and pays. No website needed.",
+    link: "/products/travel-links",
+    linkText: "Learn more about Travel Links",
   },
 ];
 
