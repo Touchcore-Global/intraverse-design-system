@@ -4,6 +4,7 @@ import logo from "@/assets/intraverse-logo.svg";
 import { productSections, solutionSections, resourceSections, companySections } from "./navbar/navData";
 import { DesktopDropdown } from "./navbar/DesktopDropdown";
 import { MobileMenu } from "./navbar/MobileMenu";
+import { Button } from "@/components/ui/button";
 
 type DropdownKey = "products" | "solutions" | "resources" | "company" | null;
 
@@ -87,28 +88,14 @@ export function Navbar() {
           {/* Desktop CTA buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <a href="/contact">
-              <button
-                className="h-10 px-6 text-sm font-semibold rounded-lg transition-colors"
-                style={{ backgroundColor: "#0D1B2A", color: "#FFFFFF" }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1A2B3F")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#0D1B2A")}
-              >
+              <Button variant="hero" size="default" className="h-10 px-6 text-sm">
                 Book a Demo
-              </button>
+              </Button>
             </a>
             <a href="/login">
-              <button
-                className="h-10 px-6 text-sm font-medium rounded-lg transition-colors"
-                style={{
-                  backgroundColor: "transparent",
-                  color: "#0D1B2A",
-                  border: "1px solid #0D1B2A",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#F0F5FC")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
-              >
+              <Button variant="outline" size="default" className="h-10 px-6 text-sm rounded-none border-foreground text-foreground hover:bg-accent">
                 Login / Register
-              </button>
+              </Button>
             </a>
           </div>
 
