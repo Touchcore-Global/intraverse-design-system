@@ -126,12 +126,18 @@ export const ProductShowcase = () => {
     return (
       <section className="py-12 bg-accent">
         <div className="container mx-auto px-4">
-          <h2 className="text-left text-foreground mb-8">
+          <h2 className="text-center text-foreground mb-8">
             One Platform - Everything You Need To Sell Travel
           </h2>
-          <div className="flex flex-col gap-4">
-            {products.map((product) => renderCard(product))}
-          </div>
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent className="-ml-3">
+              {products.map((product) => (
+                <CarouselItem key={product.label} className="pl-3 basis-[85%]">
+                  {renderCard(product)}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
     );
