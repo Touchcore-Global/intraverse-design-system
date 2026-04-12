@@ -291,6 +291,7 @@ export default function Pricing() {
             </div>
           </div>
 
+          <p className="text-xs text-muted-foreground mt-4 md:mt-0 text-center md:text-right">A one-time setup fee applies</p>
         </div>
       </section>
 
