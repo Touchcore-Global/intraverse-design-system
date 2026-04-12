@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronDown, Star } from "lucide-react";
 import type { NavSection } from "./navData";
 import { productSections, solutionSections, resourceSections, companySections } from "./navData";
+import { Button } from "@/components/ui/button";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -117,28 +118,14 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
       {/* Mobile bottom buttons */}
       <div className="px-6 pb-8 space-y-3">
         <a href="/contact" className="block">
-          <button
-            className="w-full h-12 px-6 text-base font-semibold rounded-lg transition-colors"
-            style={{ backgroundColor: "#0D1B2A", color: "#FFFFFF" }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1A2B3F")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#0D1B2A")}
-          >
+          <Button variant="hero" size="xl" className="w-full">
             Book a Demo
-          </button>
+          </Button>
         </a>
         <a href="/login" className="block">
-          <button
-            className="w-full h-12 px-6 text-base font-medium rounded-lg transition-colors"
-            style={{
-              backgroundColor: "transparent",
-              color: "#0D1B2A",
-              border: "1px solid #0D1B2A",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#F0F5FC")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
-          >
+          <Button variant="outline" size="xl" className="w-full rounded-none border-foreground text-foreground hover:bg-accent">
             Login / Register
-          </button>
+          </Button>
         </a>
       </div>
     </div>
