@@ -30,6 +30,7 @@ import Products from "./pages/Products.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import BuiltInLagos from "./pages/BuiltInLagos.tsx";
 import Careers from "./pages/Careers.tsx";
+import Partnerships from "./pages/Partnerships.tsx";
 import ApiProduct from "./pages/ApiProduct.tsx";
 import OdiopayProduct from "./pages/OdiopayProduct.tsx";
 import ToolsPage from "./pages/Tools.tsx";
@@ -73,6 +74,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/about/built-in-lagos" element={<BuiltInLagos />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/partnerships" element={<Partnerships />} />
           <Route path="/features" element={<Features />} />
           <Route path="/use-cases" element={<UseCases />} />
           <Route path="/proof" element={<Proof />} />
