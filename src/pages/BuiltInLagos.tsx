@@ -357,19 +357,19 @@ export default function BuiltInLagos() {
               <div className="space-y-4 text-muted-foreground">
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span>Headquarters address — Lagos, Nigeria</span>
+                  <span>Headquarters — Lagos, Nigeria</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span>Phone number placeholder</span>
+                  <a href="tel:+2349030002629" className="hover:text-foreground transition-colors">+234 903 000 2629</a>
                 </div>
                 <div className="flex items-start gap-3">
                   <MessageCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span>WhatsApp: number placeholder</span>
+                  <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">WhatsApp: +234 903 000 2629</a>
                 </div>
                 <div className="flex items-start gap-3">
                   <Clock className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span>Office hours placeholder</span>
+                  <span>Mon – Fri, 9:00 AM – 4:00 PM (WAT)</span>
                 </div>
               </div>
             </div>
