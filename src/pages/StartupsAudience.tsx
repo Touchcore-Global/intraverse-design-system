@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
@@ -233,6 +234,12 @@ const Startups = () => {
                   <p className="text-sm font-medium text-foreground leading-snug">{step}</p>
                 </div>
               ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Link to="/partnerships" className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:underline">
+                Explore all partnership types
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </RevealBlock>
         </div>

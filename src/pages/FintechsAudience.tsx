@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
@@ -319,12 +320,20 @@ const FintechsAudience = () => {
                 </span>
               ))}
             </div>
-            <a href="#partnership-form">
-              <Button variant="default" className="inline-flex items-center gap-1.5">
-                Become a Founding Partner
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="#partnership-form">
+                <Button variant="default" className="inline-flex items-center gap-1.5">
+                  Become a Founding Partner
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </a>
+              <Link to="/partnerships">
+                <Button variant="outline" className="inline-flex items-center gap-1.5">
+                  Explore All Partnership Types
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
           </RevealBlock>
         </div>
       </section>
