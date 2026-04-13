@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Globe, Wallet, Handshake, Shield, Landmark, Globe2, Wrench, Zap, Search, MapPin, Phone, MessageCircle, Clock } from "lucide-react";
 import { useEffect } from "react";
-import lagosSkyline from "@/assets/lagos-skyline.jpg";
+import lagosSkyline from "@/assets/lagos-skyline.png";
 
 /* ─── Reusable animated wrapper ─── */
 function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
