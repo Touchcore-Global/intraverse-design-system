@@ -104,7 +104,7 @@ export const companySections: NavSection[] = [
     items: [
       { label: "About Intraverse", href: "/about", icon: Building, description: "Our story and team" },
       { label: "Our Mission", href: "/about#mission", icon: Target, description: "What drives us" },
-      { label: "Built in Lagos", href: "/about#story", icon: Globe2, description: "Proudly African-built" },
+      { label: "Built in Lagos", href: "/about/built-in-lagos", icon: Globe2, description: "Proudly African-built" },
     ],
   },
   {
