@@ -425,9 +425,11 @@ export default function About() {
             want to build technology that matters — and you're comfortable moving fast in ambiguity — we'd love to
             hear from you.
           </p>
-          <Button variant="hero" size="xl">
-            View Open Roles
-          </Button>
+          <a href="/careers">
+            <Button variant="hero" size="xl">
+              View Open Roles
+            </Button>
+          </a>
         </div>
       </section>
 
