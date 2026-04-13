@@ -194,6 +194,17 @@ function OpenRolesSection() {
 /* ---------- PAGE ---------- */
 
 export default function Careers() {
+  useEffect(() => {
+    document.title = "Careers | Build Africa's Travel Infrastructure | Intraverse";
+    const setMeta = (name: string, content: string) => {
+      let el = document.querySelector(`meta[property="${name}"]`) || document.querySelector(`meta[name="${name}"]`);
+      if (!el) { el = document.createElement("meta"); (el as HTMLMetaElement).setAttribute(name.startsWith("og:") ? "property" : "name", name); document.head.appendChild(el); }
+      (el as HTMLMetaElement).setAttribute("content", content);
+    };
+    setMeta("description", "Join Intraverse — the Africa-first travel technology company building infrastructure for agents, independents, corporates, and developers across the continent.");
+    setMeta("og:title", "Careers at Intraverse — Join the Team Building Africa's Travel Infrastructure");
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
