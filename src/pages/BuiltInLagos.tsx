@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Globe, Wallet, Handshake, Shield, Landmark, Globe2, Wrench, Zap, Search, MapPin, Phone, MessageCircle, Clock } from "lucide-react";
 import { useEffect } from "react";
+import lagosSkyline from "@/assets/lagos-skyline.jpg";
 
 /* ─── Reusable animated wrapper ─── */
 function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -185,8 +186,8 @@ export default function BuiltInLagos() {
         {/* Hero image placeholder */}
         <Reveal delay={400}>
           <div className="container mx-auto px-4 mt-12 max-w-5xl">
-            <div className="aspect-[16/7] rounded-lg bg-accent border border-border flex items-center justify-center">
-              <p className="text-muted-foreground text-sm">Hero image — Lagos skyline photograph</p>
+            <div className="aspect-[16/7] rounded-lg overflow-hidden">
+              <img src={lagosSkyline} alt="Lagos skyline at golden hour — Victoria Island and Eko Atlantic" width={1920} height={840} className="w-full h-full object-cover" />
             </div>
           </div>
         </Reveal>
