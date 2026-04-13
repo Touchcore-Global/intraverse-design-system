@@ -30,6 +30,7 @@ import Products from "./pages/Products.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import BuiltInLagos from "./pages/BuiltInLagos.tsx";
 import Careers from "./pages/Careers.tsx";
+import Partnerships from "./pages/Partnerships.tsx";
 import ApiProduct from "./pages/ApiProduct.tsx";
 import OdiopayProduct from "./pages/OdiopayProduct.tsx";
 import ToolsPage from "./pages/Tools.tsx";
