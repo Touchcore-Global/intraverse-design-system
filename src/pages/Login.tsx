@@ -48,11 +48,21 @@ export default function Login() {
       });
       window.location.href = REDIRECT_URL;
     } catch (err: any) {
-      toast({
-        title: "Sign In Failed",
-        description: err.message,
-        variant: "destructive",
-      });
+      const msg = (err.message || "").toLowerCase();
+      if (msg.includes("verify") || msg.includes("unverified") || msg.includes("not verified")) {
+        toast({
+          title: "Email Not Verified",
+          description: "Please verify your email to continue.",
+          variant: "destructive",
+        });
+        navigate(`/verify-email?email=${encodeURIComponent(loginEmail)}`);
+      } else {
+        toast({
+          title: "Sign In Failed",
+          description: err.message,
+          variant: "destructive",
+        });
+      }
     } finally {
       setLoginLoading(false);
     }
