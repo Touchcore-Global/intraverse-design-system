@@ -37,6 +37,7 @@ import ToolsPage from "./pages/Tools.tsx";
 import Help from "./pages/Help.tsx";
 import HelpCategoryPage from "./pages/help/HelpCategoryPage.tsx";
 import Docs from "./pages/Docs.tsx";
+import VerifyEmail from "./pages/VerifyEmail.tsx";
 
 const queryClient = new QueryClient();
 
@@ -84,6 +85,7 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/help" element={<Help />} />
           <Route path="/help/:slug" element={<HelpCategoryPage />} />

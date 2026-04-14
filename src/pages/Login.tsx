@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -19,6 +20,7 @@ const REDIRECT_URL = "https://www.intraverse.app/";
 export default function Login() {
   const [tab, setTab] = useState<TabKey>("signin");
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   // Sign in state
   const [loginEmail, setLoginEmail] = useState("");
@@ -78,11 +80,10 @@ export default function Login() {
       });
       toast({
         title: "Account Created!",
-        description: response.message || "Please verify your email and login to continue.",
+        description: response.message || "Please verify your email to continue.",
       });
-      // Switch to sign-in tab after successful registration
-      setTab("signin");
-      setLoginEmail(signUpEmail);
+      // Redirect to email verification page
+      navigate(`/verify-email?email=${encodeURIComponent(signUpEmail)}`);
     } catch (err: any) {
       toast({
         title: "Registration Failed",

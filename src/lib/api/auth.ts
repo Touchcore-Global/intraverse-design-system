@@ -87,3 +87,33 @@ export function getAuthToken(): string | null {
 export function clearAuthToken() {
   localStorage.removeItem("intraverse_token");
 }
+
+export async function verifyEmail(email: string, otp: string): Promise<LoginResponse> {
+  const res = await fetch(
+    `${API_BASE}/account/verifyEmail?email=${encodeURIComponent(email)}&otp=${encodeURIComponent(otp)}`
+  );
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || data.error || "Verification failed. Please check your code.");
+  }
+
+  return data;
+}
+
+export async function resendVerificationOtp(email: string): Promise<{ message: string }> {
+  const res = await fetch(`${API_BASE}/account/resendVerification`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || data.error || "Failed to resend verification code.");
+  }
+
+  return data;
+}
