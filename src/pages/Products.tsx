@@ -235,10 +235,10 @@ export default function Products() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button variant="hero" size="xl" asChild>
-              <a href="https://app.intraverse.africa/register" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+              <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button variant="outline" size="xl" className="rounded-none" asChild>
-              <a href="https://app.intraverse.africa/register" target="_blank" rel="noopener noreferrer">Start Free</a>
+              <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Start Free</a>
             </Button>
           </div>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
@@ -418,10 +418,10 @@ export default function Products() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="xl" className="bg-background text-foreground hover:bg-background/90 rounded-none font-semibold" asChild>
-                <a href="https://app.intraverse.africa/register" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+                <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
               <Button variant="outline" size="xl" className="rounded-none border-background/30 text-background hover:bg-background/10" asChild>
-                <a href="https://app.intraverse.africa/register" target="_blank" rel="noopener noreferrer">Start Free</a>
+                <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Start Free</a>
               </Button>
             </div>
           </RevealBlock>
