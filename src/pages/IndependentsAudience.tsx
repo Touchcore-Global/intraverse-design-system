@@ -169,14 +169,13 @@ const IndependentsAudience = () => {
               </div>
             </RevealBlock>
 
-            {/* Photo placeholder */}
             <RevealBlock className="flex justify-center">
-              <div className="relative w-full max-w-md aspect-[4/5] rounded-2xl bg-muted overflow-hidden border border-border">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground p-8 text-center">
-                  <div className="w-20 h-20 rounded-full bg-muted-foreground/10 mb-4" />
-                  <p className="text-xs uppercase tracking-widest font-medium mb-1">Photo Placeholder</p>
-                  <p className="text-xs">Young African Independent on phone/laptop, casual setting</p>
-                </div>
+              <div className="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-lg">
+                <img
+                  src={independentHeroImg}
+                  alt="Young African independent entrepreneur working on laptop while on a phone call"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </RevealBlock>
           </div>
@@ -330,10 +329,13 @@ const IndependentsAudience = () => {
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
             <div className="max-w-3xl mx-auto text-center">
-              <div className="w-16 h-16 rounded-full bg-muted-foreground/10 border border-border mx-auto mb-2">
-                <div className="w-full h-full flex items-center justify-center text-[10px] text-muted-foreground uppercase tracking-widest">Photo</div>
+              <div className="w-16 h-16 rounded-full overflow-hidden border border-border mx-auto mb-6">
+                <img
+                  src={independentHeroImg}
+                  alt="Independent entrepreneur"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <p className="text-xs text-muted-foreground mb-6 italic">[Photo placeholder — real Independent]</p>
               <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
                 "I was skeptical at first — I'd seen too many 'travel business' schemes. But within my first week I booked three flights for people in my network and earned real commissions. No tricks, no levels, just a proper platform. I wish I'd started sooner."
               </blockquote>
