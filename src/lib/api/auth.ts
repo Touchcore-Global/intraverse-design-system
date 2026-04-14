@@ -118,3 +118,51 @@ export async function resendVerificationOtp(email: string): Promise<{ message: s
 
   return data;
 }
+
+export async function forgotPassword(email: string): Promise<{ message: string }> {
+  const res = await fetch(`${API_BASE}/account/forgotpassword`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data?.data?.error || data.message || data.error || "Failed to send reset code.");
+  }
+
+  return data;
+}
+
+export async function recoverPassword(otp: string, password: string): Promise<{ message: string }> {
+  const res = await fetch(`${API_BASE}/account/recoverPassword`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ otp, password }),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data?.data?.error || data.message || data.error || "Password reset failed.");
+  }
+
+  return data;
+}
+
+export async function resendRecoverOtp(email: string): Promise<{ message: string }> {
+  const res = await fetch(`${API_BASE}/account/resendRecover`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data?.data?.error || data.message || data.error || "Failed to resend reset code.");
+  }
+
+  return data;
+}
