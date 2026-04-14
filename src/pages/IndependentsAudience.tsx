@@ -1,3 +1,4 @@
+import independentHeroImg from "@/assets/independent-hero.png";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
