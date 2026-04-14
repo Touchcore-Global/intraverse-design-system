@@ -14,7 +14,7 @@ const accountTypes = [
   { label: "Affiliate", value: "Affiliate" },
 ];
 
-const REDIRECT_URL = "https://www.intraverse.app";
+const REDIRECT_URL = "https://www.intraverse.app/";
 
 export default function Login() {
   const [tab, setTab] = useState<TabKey>("signin");
