@@ -148,7 +148,7 @@ const steps = [
     title: "Read the Docs",
     body: "Explore the API reference, understand the data model, and plan your integration. Everything you need is documented.",
     cta: "View Documentation →",
-    href: "#",
+    href: "/docs",
   },
   {
     num: 2,
