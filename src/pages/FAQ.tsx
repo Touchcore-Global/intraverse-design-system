@@ -556,6 +556,7 @@ export default function FAQ() {
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-secondary-foreground/60">
               {[
+                { label: "Browse the Help Centre", href: "/help" },
                 { label: "Agent Platform", href: "/agent-platform" },
                 { label: "Travx", href: "/travx" },
                 { label: "CoopX", href: "/coopx" },
