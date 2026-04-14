@@ -49,7 +49,7 @@ export default function Login() {
       window.location.href = REDIRECT_URL;
     } catch (err: any) {
       const msg = (err.message || "").toLowerCase();
-      if (msg.includes("verify") || msg.includes("unverified") || msg.includes("not verified")) {
+      if (msg.includes("verify") || msg.includes("unverified") || msg.includes("not verified") || msg.includes("not active")) {
         toast({
           title: "Email Not Verified",
           description: "Please verify your email to continue.",
