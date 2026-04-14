@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Search, Copy, Check, ExternalLink, ArrowRight } from "lucide-react";
+import { Copy, Check, ExternalLink, ArrowRight } from "lucide-react";
 
 /* ---------- scroll-reveal helper ---------- */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
