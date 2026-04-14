@@ -38,6 +38,7 @@ import Help from "./pages/Help.tsx";
 import HelpCategoryPage from "./pages/help/HelpCategoryPage.tsx";
 import Docs from "./pages/Docs.tsx";
 import VerifyEmail from "./pages/VerifyEmail.tsx";
+import ForgotPassword from "./pages/ForgotPassword.tsx";
 
 const queryClient = new QueryClient();
 
@@ -86,6 +87,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/help" element={<Help />} />
           <Route path="/help/:slug" element={<HelpCategoryPage />} />

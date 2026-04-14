@@ -160,7 +160,7 @@ export default function Login() {
                   />
                 </div>
                 <div className="flex justify-end">
-                  <a href="#" className="text-sm text-primary hover:underline">Forgot password?</a>
+                  <a href="/forgot-password" className="text-sm text-primary hover:underline">Forgot password?</a>
                 </div>
                 <Button type="submit" variant="hero" className="w-full h-11" disabled={loginLoading}>
                   {loginLoading ? "Signing in…" : "Sign In"}
