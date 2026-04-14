@@ -42,6 +42,7 @@ const footerLinks = {
     { label: "Use Cases", href: "/use-cases" },
     { label: "Proof", href: "/proof" },
     { label: "FAQ", href: "/faq" },
+    { label: "Help Centre", href: "/help" },
     { label: "Contact Us", href: "/contact" },
   ],
   Connect: [
