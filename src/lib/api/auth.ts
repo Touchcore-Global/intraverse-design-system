@@ -49,7 +49,8 @@ export async function login(email: string, password: string): Promise<LoginRespo
   const data = await res.json();
 
   if (!res.ok) {
-    throw new Error(data.message || data.error || "Login failed. Please check your credentials.");
+    const errorMsg = data?.data?.error || data.message || data.error || "Login failed. Please check your credentials.";
+    throw new Error(errorMsg);
   }
 
   return data;
