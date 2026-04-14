@@ -35,6 +35,7 @@ import ApiProduct from "./pages/ApiProduct.tsx";
 import OdiopayProduct from "./pages/OdiopayProduct.tsx";
 import ToolsPage from "./pages/Tools.tsx";
 import Help from "./pages/Help.tsx";
+import HelpCategoryPage from "./pages/help/HelpCategoryPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -84,6 +85,7 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/help/:slug" element={<HelpCategoryPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

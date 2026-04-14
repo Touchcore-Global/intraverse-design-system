@@ -20,7 +20,7 @@ const categories = [
   { icon: CreditCard, title: "Payments & Wallet", desc: "Fund your wallet, track payments, and invoices", href: "/help/payments-wallet" },
   { icon: Users, title: "Managing Customers", desc: "Add passengers, manage profiles, and histories", href: "/help/managing-customers" },
   { icon: Settings, title: "Account & Settings", desc: "Update your profile, team, and preferences", href: "/help/account-settings" },
-  { icon: LinkIcon, title: "Travel Links & Packages", desc: "Create shareable links and custom packages", href: "/help/travel-links" },
+  { icon: LinkIcon, title: "Travel Links & Packages", desc: "Create shareable links and custom packages", href: "/help/travel-links-packages" },
   { icon: BarChart3, title: "Reports & Analytics", desc: "Understand your sales, commissions, and data", href: "/help/reports-analytics" },
 ];
 
