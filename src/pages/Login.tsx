@@ -20,6 +20,7 @@ const REDIRECT_URL = "https://www.intraverse.app/";
 export default function Login() {
   const [tab, setTab] = useState<TabKey>("signin");
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   // Sign in state
   const [loginEmail, setLoginEmail] = useState("");
