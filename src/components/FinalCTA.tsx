@@ -21,9 +21,9 @@ export const FinalCTA = () => {
           <Button
             variant="outline"
             size="xl"
-            className="cta-responsive min-h-[48px] bg-primary-foreground text-primary border-primary-foreground hover:bg-primary-foreground/90 hover:text-foreground rounded-none font-semibold"
+            className="cta-responsive min-h-[48px] bg-primary-foreground text-primary border-primary-foreground hover:bg-primary-foreground/90 hover:text-foreground rounded-none font-semibold" asChild
           >
-            Book a Free Demo
+            <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Free Demo</a>
           </Button>
           <Button
             variant="whatsapp"
@@ -73,9 +73,9 @@ export const FinalCTA = () => {
             </div>
             <Button
               type="submit"
-              className="w-full min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none font-semibold"
+              className="w-full min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none font-semibold" asChild
             >
-              Request a Demo
+              <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Request a Demo</a>
             </Button>
           </form>
         </div>

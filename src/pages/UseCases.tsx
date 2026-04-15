@@ -225,8 +225,8 @@ export default function UseCases() {
               From fintech integrations to faith-based pilgrimages, from solo side hustlers to multi-branch agencies — Intraverse powers every kind of travel business in Nigeria. Find the use case that matches yours.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-                Book a Demo
+              <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+                <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
               <Button
                 variant="whatsapp"

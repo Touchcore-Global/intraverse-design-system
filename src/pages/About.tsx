@@ -461,8 +461,8 @@ export default function About() {
             for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="xl" className="bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90">
-              Book a Demo
+            <Button variant="outline" size="xl" className="bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90" asChild>
+              <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button variant="whatsapp" size="xl">
               <MessageCircle className="h-5 w-5" />

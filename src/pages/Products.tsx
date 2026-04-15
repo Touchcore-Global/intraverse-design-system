@@ -235,7 +235,7 @@ export default function Products() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button variant="hero" size="xl" asChild>
-              <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+              <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button variant="outline" size="xl" className="rounded-none" asChild>
               <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Start Free</a>
@@ -418,7 +418,7 @@ export default function Products() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="xl" className="bg-background text-foreground hover:bg-background/90 rounded-none font-semibold" asChild>
-                <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+                <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
               <Button variant="outline" size="xl" className="rounded-none border-background/30 text-background hover:bg-background/10" asChild>
                 <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Start Free</a>

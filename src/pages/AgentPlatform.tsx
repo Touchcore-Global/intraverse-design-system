@@ -140,8 +140,8 @@ const AgentPlatform = () => {
             Intraverse's Agent Selling Platform aggregates flight inventory from GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC connections, consolidators, and other aggregators — plus hotels and tours from leading global suppliers. Search, compare, book, and issue from a single dashboard. IATA-accredited.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-              Book a Demo
+            <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+              <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
               <MessageCircle className="h-5 w-5" />
@@ -268,9 +268,9 @@ const AgentPlatform = () => {
             <Button
               variant="outline"
               size="xl"
-              className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none font-semibold"
+              className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none font-semibold" asChild
             >
-              Book a Free Demo
+              <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Free Demo</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
               <MessageCircle className="h-5 w-5" />
