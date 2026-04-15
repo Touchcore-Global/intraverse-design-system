@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import {
-import { WHATSAPP_URL } from "@/lib/constants";
   Search, MessageCircle, Mail, Phone, Rocket, Plane, Hotel, CreditCard,
   Users, Settings, LinkIcon, BarChart3, Play, ArrowRight, Clock,
 } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 /* ───────────────── DATA ───────────────── */
 
