@@ -13,7 +13,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { DEMO_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 const bulletPoints = [
   "Runs an agency of any size — from solo operators to multi-branch businesses",
@@ -127,9 +127,11 @@ const TravelAgents = () => {
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
                 <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
-              <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
-                <MessageCircle className="h-5 w-5" />
-                Chat on WhatsApp
+              <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Chat on WhatsApp
+                </a>
               </Button>
             </div>
           </RevealBlock>
@@ -300,9 +302,11 @@ const TravelAgents = () => {
                 size="xl"
                 variant="whatsapp"
                 className="cta-responsive min-h-[48px]"
-              >
-                <MessageCircle className="h-5 w-5" />
-                Chat on WhatsApp
+               asChild>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Chat on WhatsApp
+                </a>
               </Button>
             </div>
           </RevealBlock>

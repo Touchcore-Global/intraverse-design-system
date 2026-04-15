@@ -21,6 +21,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 const steps = [
   { icon: Link2, title: "Share OIDs", desc: "Agents opt in to share their Amadeus Office IDs as supply partners within the network." },
@@ -201,9 +202,11 @@ const SupplierEngine = () => {
               variant="whatsapp"
               size="xl"
               className="cta-responsive min-h-[48px]"
-            >
-              <MessageCircle className="h-5 w-5" />
-              Chat on WhatsApp
+             asChild>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-5 w-5" />
+                Chat on WhatsApp
+              </a>
             </Button>
           </div>
         </div>

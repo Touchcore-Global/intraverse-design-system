@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 
 const audiences = [
@@ -320,9 +321,11 @@ const WhoWeServe = () => {
                 variant="whatsapp"
                 size="xl"
                 className="cta-responsive min-h-[48px]"
-              >
-                <MessageCircle className="h-5 w-5" />
-                Chat With Us on WhatsApp
+               asChild>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Chat With Us on WhatsApp
+                </a>
               </Button>
             </div>
           </RevealBlock>

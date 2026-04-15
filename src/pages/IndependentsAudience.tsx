@@ -24,6 +24,7 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import { useState } from "react";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -163,9 +164,11 @@ const IndependentsAudience = () => {
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
                   Join the Independents Programme
                 </Button>
-                <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
-                  <MessageCircle className="h-5 w-5" />
-                  Chat on WhatsApp
+                <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="h-5 w-5" />
+                    Chat on WhatsApp
+                  </a>
                 </Button>
               </div>
             </RevealBlock>
@@ -404,9 +407,11 @@ const IndependentsAudience = () => {
               <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]">
                 Join the Independents Programme
               </Button>
-              <Button size="xl" variant="whatsapp" className="cta-responsive min-h-[48px]">
-                <MessageCircle className="h-5 w-5" />
-                Chat on WhatsApp
+              <Button size="xl" variant="whatsapp" className="cta-responsive min-h-[48px]" asChild>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Chat on WhatsApp
+                </a>
               </Button>
             </div>
           </RevealBlock>

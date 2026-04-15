@@ -16,6 +16,7 @@ import {
   Send,
 } from "lucide-react";
 import { useState } from "react";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 const bulletPoints = [
   "A large corporate with 100+ employees who travel for work?",
@@ -95,9 +96,11 @@ const Corporates = () => {
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold">
                 Talk to Enterprise Sales
               </Button>
-              <Button size="xl" variant="whatsapp" className="cta-responsive min-h-[48px]">
-                <MessageCircle className="h-5 w-5" />
-                Chat on WhatsApp
+              <Button size="xl" variant="whatsapp" className="cta-responsive min-h-[48px]" asChild>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Chat on WhatsApp
+                </a>
               </Button>
             </div>
           </RevealBlock>

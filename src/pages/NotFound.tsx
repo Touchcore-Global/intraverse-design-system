@@ -6,7 +6,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Home, Plane, Users, DollarSign, HelpCircle, MessageCircle, ArrowRight, Navigation } from "lucide-react";
-import { whatsappUrl } from "@/lib/constants";
+import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 
 const quickLinks = [
   { icon: Home, title: "Homepage", desc: "Back to the main page", href: "/" },
@@ -128,9 +128,11 @@ const NotFound = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="xl" className="border-[hsl(var(--whatsapp))] text-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/10">
-              <MessageCircle className="w-5 h-5 mr-1" />
-              Chat on WhatsApp
+            <Button variant="outline" size="xl" className="border-[hsl(var(--whatsapp))] text-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/10" asChild>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5 mr-1" />
+                Chat on WhatsApp
+              </a>
             </Button>
           </a>
         </div>
