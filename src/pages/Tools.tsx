@@ -6,6 +6,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Check, ArrowRight } from "lucide-react";
+import { DEMO_URL } from "@/lib/constants";
 
 /* ──────── Reveal wrapper ──────── */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {

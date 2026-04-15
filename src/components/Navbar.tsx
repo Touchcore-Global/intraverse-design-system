@@ -5,6 +5,7 @@ import { productSections, solutionSections, resourceSections, companySections } 
 import { DesktopDropdown } from "./navbar/DesktopDropdown";
 import { MobileMenu } from "./navbar/MobileMenu";
 import { Button } from "@/components/ui/button";
+import { DEMO_URL } from "@/lib/constants";
 
 type DropdownKey = "products" | "solutions" | "resources" | "company" | null;
 

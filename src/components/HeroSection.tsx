@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Play } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { DEMO_URL } from "@/lib/constants";
 
 const partners = [
   "Tzopal", "Whogofly", "Wright Gateway", "Lutfu Travels", "Coastline",

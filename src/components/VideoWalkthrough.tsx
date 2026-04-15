@@ -1,6 +1,7 @@
 import { Play, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { DEMO_URL } from "@/lib/constants";
 
 export const VideoWalkthrough = () => {
   const { ref, revealClass } = useScrollReveal();

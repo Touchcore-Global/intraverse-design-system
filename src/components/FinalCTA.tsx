@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { MessageCircle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { DEMO_URL } from "@/lib/constants";
 
 export const FinalCTA = () => {
   const { ref, revealClass } = useScrollReveal();

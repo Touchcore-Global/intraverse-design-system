@@ -18,6 +18,7 @@ import {
   Building,
 } from "lucide-react";
 import {
+import { DEMO_URL } from "@/lib/constants";
   Accordion,
   AccordionContent,
   AccordionItem,

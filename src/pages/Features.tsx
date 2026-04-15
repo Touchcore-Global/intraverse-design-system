@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import {
+import { DEMO_URL } from "@/lib/constants";
   MessageCircle, Plane, Hotel, Globe, Ticket,
   LayoutDashboard, CalendarClock, ListChecks, Inbox,
   Wallet, PercentCircle, CreditCard, BadgeDollarSign,

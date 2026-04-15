@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { Search, MessageCircle, ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { DEMO_URL } from "@/lib/constants";
 
 
 /* ────────────────────────────── FAQ DATA ────────────────────────────── */

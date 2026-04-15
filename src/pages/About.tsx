@@ -14,6 +14,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
+import { DEMO_URL } from "@/lib/constants";
   MessageCircle,
   Quote,
   Wrench,

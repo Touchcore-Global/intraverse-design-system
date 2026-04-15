@@ -13,6 +13,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { DEMO_URL } from "@/lib/constants";
 
 const bulletPoints = [
   "Runs an agency of any size — from solo operators to multi-branch businesses",

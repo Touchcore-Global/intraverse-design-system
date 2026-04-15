@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { whatsappUrl } from "@/lib/constants";
+import { whatsappUrl, DEMO_URL } from "@/lib/constants";
 
 type FilterCategory = "All" | "Travel Agents" | "Independents" | "Businesses" | "Fintechs" | "Tech/Developers";
 

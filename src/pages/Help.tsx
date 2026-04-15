@@ -10,7 +10,7 @@ import {
   Search, MessageCircle, Mail, Phone, Rocket, Plane, Hotel, CreditCard,
   Users, Settings, LinkIcon, BarChart3, Play, ArrowRight, Clock,
 } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 /* ───────────────── DATA ───────────────── */
 

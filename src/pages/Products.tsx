@@ -9,6 +9,7 @@ import {
   Check, ArrowRight, Globe2, Shield, Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { DEMO_URL } from "@/lib/constants";
 
 /* ── scroll-reveal helper ── */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {

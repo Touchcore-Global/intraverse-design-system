@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { DEMO_URL } from "@/lib/constants";
 
 const steps = [
   {

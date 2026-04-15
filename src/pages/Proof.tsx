@@ -5,6 +5,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
+import { DEMO_URL } from "@/lib/constants";
   MessageCircle, Users, Globe,
   ArrowRight, Quote, ShieldCheck, Plane, TrendingUp, AlertTriangle,
 } from "lucide-react";
