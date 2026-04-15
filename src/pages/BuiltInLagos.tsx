@@ -405,9 +405,9 @@ export default function BuiltInLagos() {
           </Reveal>
           <Reveal delay={200}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
                 <Button size="xl" className="bg-background text-foreground hover:bg-background/90 rounded-none font-semibold" asChild>
-              <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
                 </Button>
               </a>
               <a href="/products">

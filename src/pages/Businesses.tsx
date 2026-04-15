@@ -77,7 +77,7 @@ const Businesses = () => {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
-                <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
               <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
                 <MessageCircle className="h-5 w-5" />
@@ -225,7 +225,7 @@ const Businesses = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]" asChild>
-                <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo for Your Business</a>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo for Your Business</a>
               </Button>
               <Button size="xl" variant="outline" className="border-white text-white hover:bg-white/10 cta-responsive min-h-[48px]">
                 <MessageCircle className="h-5 w-5" />

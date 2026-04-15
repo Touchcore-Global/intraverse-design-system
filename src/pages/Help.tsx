@@ -288,7 +288,7 @@ export default function Help() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
                 <Button size="xl" className="w-full sm:w-auto bg-background text-foreground hover:bg-background/90 rounded-none font-semibold" asChild>
-                  <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+                  <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
                 </Button>
               </Link>
               <Link to="/contact">

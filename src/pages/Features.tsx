@@ -385,7 +385,7 @@ export default function Features() {
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Intraverse is built for one thing: helping travel professionals sell more flights, hotels, tours, and packages while spending less time on admin.
           </p>
-          <Button variant="hero" size="xl" asChild><a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo to See It Live</a></Button>
+          <Button variant="hero" size="xl" asChild><a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo to See It Live</a></Button>
         </div>
       </section>
 
@@ -466,7 +466,7 @@ export default function Features() {
                   size="xl"
                   className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-0 rounded-none font-semibold" asChild
                 >
-                  <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+                  <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
                 </Button>
               </div>
             </section>
@@ -487,7 +487,7 @@ export default function Features() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none" asChild>
-              <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="border-whatsapp text-whatsapp hover:bg-whatsapp hover:text-primary-foreground rounded-none">
               <MessageCircle className="h-5 w-5" />

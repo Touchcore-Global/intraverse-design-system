@@ -543,7 +543,7 @@ export default function FAQ() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <Button variant="hero" size="xl" className="rounded-none" asChild>
-                <a href="{DEMO_URL}" target="_blank" rel="noopener noreferrer">Book a Free Demo</a>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Free Demo</a>
               </Button>
               <Button
                 variant="whatsapp"
