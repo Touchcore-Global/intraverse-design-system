@@ -1,9 +1,10 @@
 import { MessageCircle } from "lucide-react";
+import { whatsappUrl } from "@/lib/constants";
 
 export const WhatsAppFab = () => {
   return (
     <a
-      href=whatsappUrl("Hi Intraverse, I'd like to learn more about your platform.")
+      href={whatsappUrl("Hi Intraverse, I'd like to learn more about your platform.")}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
