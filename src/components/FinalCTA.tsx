@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { MessageCircle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
@@ -38,50 +36,6 @@ export const FinalCTA = () => {
           </Button>
         </div>
 
-        {/* Demo form */}
-        <div className="max-w-md mx-auto bg-primary-foreground/10 backdrop-blur rounded-xl p-6 md:p-8">
-          <form className="space-y-4 text-left" onSubmit={(e) => e.preventDefault()}>
-            <div>
-              <Label htmlFor="name" className="text-primary-foreground text-sm">Name</Label>
-              <Input
-                id="name"
-                placeholder="Your full name"
-                className="mt-1 bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/50"
-              />
-            </div>
-            <div>
-              <Label htmlFor="agency" className="text-primary-foreground text-sm">Agency Name</Label>
-              <Input
-                id="agency"
-                placeholder="Your agency or company"
-                className="mt-1 bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/50"
-              />
-            </div>
-            <div>
-              <Label htmlFor="phone" className="text-primary-foreground text-sm">Phone Number</Label>
-              <Input
-                id="phone"
-                type="tel"
-                placeholder="+234..."
-                className="mt-1 bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/50"
-              />
-            </div>
-            <div>
-              <Label htmlFor="demo-time" className="text-primary-foreground text-sm">Preferred Demo Time</Label>
-              <Input
-                id="demo-time"
-                placeholder="e.g. Monday 10am WAT"
-                className="mt-1 bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/50"
-              />
-            </div>
-            <Button
-              type="submit"
-              className="w-full min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none font-semibold" asChild
-            >
-              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Request a Demo</a>
-            </Button>
-          </form>
-        </div>
       </div>
     </section>
   );
