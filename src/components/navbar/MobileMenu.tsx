@@ -117,11 +117,9 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
 
       {/* Mobile bottom buttons */}
       <div className="px-6 pb-8 space-y-3">
-        <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
-          <Button variant="hero" size="xl" className="w-full" asChild>
-              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
-          </Button>
-        </a>
+        <Button variant="hero" size="xl" className="w-full" asChild>
+          <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
+        </Button>
         <a href="/login" className="block">
           <Button variant="outline" size="xl" className="w-full rounded-none border-foreground text-foreground hover:bg-accent">
             Login / Register
