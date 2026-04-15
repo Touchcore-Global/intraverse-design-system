@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { DEMO_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 const features = [
   {
@@ -144,9 +144,11 @@ const AgentPlatform = () => {
             <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
               <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
-            <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
-              <MessageCircle className="h-5 w-5" />
-              Chat on WhatsApp
+            <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-5 w-5" />
+                Chat on WhatsApp
+              </a>
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
@@ -273,9 +275,11 @@ const AgentPlatform = () => {
             >
               <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Free Demo</a>
             </Button>
-            <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
-              <MessageCircle className="h-5 w-5" />
-              Chat on WhatsApp
+            <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-5 w-5" />
+                Chat on WhatsApp
+              </a>
             </Button>
           </div>
         </div>

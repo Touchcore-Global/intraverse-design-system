@@ -14,7 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { DEMO_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 const bulletPoints = [
   "A growing SME with 10–100 employees who travel regularly?",
@@ -80,9 +80,11 @@ const Businesses = () => {
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
                 <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
-              <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
-                <MessageCircle className="h-5 w-5" />
-                Chat on WhatsApp
+              <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Chat on WhatsApp
+                </a>
               </Button>
             </div>
           </RevealBlock>
@@ -228,9 +230,11 @@ const Businesses = () => {
               <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]" asChild>
                 <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo for Your Business</a>
               </Button>
-              <Button size="xl" variant="outline" className="border-white text-white hover:bg-white/10 cta-responsive min-h-[48px]">
-                <MessageCircle className="h-5 w-5" />
-                Chat on WhatsApp
+              <Button size="xl" variant="outline" className="border-white text-white hover:bg-white/10 cta-responsive min-h-[48px]" asChild>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Chat on WhatsApp
+                </a>
               </Button>
             </div>
           </RevealBlock>

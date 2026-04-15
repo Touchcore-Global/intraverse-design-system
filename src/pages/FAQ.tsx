@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { Search, MessageCircle, ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { DEMO_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 
 /* ────────────────────────────── FAQ DATA ────────────────────────────── */
@@ -550,9 +550,11 @@ export default function FAQ() {
                 variant="whatsapp"
                 size="xl"
                 className="rounded-none"
-              >
-                <MessageCircle className="h-5 w-5" />
-                Chat on WhatsApp
+               asChild>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Chat on WhatsApp
+                </a>
               </Button>
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-secondary-foreground/60">

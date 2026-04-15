@@ -35,7 +35,7 @@ import {
   Building2,
   Sparkles,
 } from "lucide-react";
-import { DEMO_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 const stats = [
   { value: "200+", label: "Active Agents", icon: Users },
@@ -465,9 +465,11 @@ export default function About() {
             <Button variant="outline" size="xl" className="bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90" asChild>
               <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
-            <Button variant="whatsapp" size="xl">
-              <MessageCircle className="h-5 w-5" />
-              Chat on WhatsApp
+            <Button variant="whatsapp" size="xl" asChild>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-5 w-5" />
+                Chat on WhatsApp
+              </a>
             </Button>
           </div>
         </div>

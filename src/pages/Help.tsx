@@ -103,9 +103,11 @@ export default function Help() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                <Button variant="hero" size="xl" className="w-full sm:w-auto gap-2">
-                  <MessageCircle className="h-5 w-5" />
-                  Chat on WhatsApp
+                <Button variant="hero" size="xl" className="w-full sm:w-auto gap-2" asChild>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="h-5 w-5" />
+                    Chat on WhatsApp
+                  </a>
                 </Button>
               </a>
               <Link to="/contact">
