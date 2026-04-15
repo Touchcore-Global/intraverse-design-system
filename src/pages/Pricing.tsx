@@ -20,7 +20,7 @@ import {
   Handshake,
   Globe,
 } from "lucide-react";
-
+import { WHATSAPP_URL } from "@/lib/constants";
 
 /* ------------------------------------------------------------------ */
 /*  Currency helpers                                                    */
