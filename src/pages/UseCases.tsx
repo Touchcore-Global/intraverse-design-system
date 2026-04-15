@@ -463,7 +463,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
               >
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-                <a href="https://wa.me/2349030002629?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Intraverse">
+                <a href={whatsappUrl("Hi, I'd like to learn more about Intraverse")}>
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                   <MessageCircle className="h-5 w-5" />
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
@@ -597,7 +597,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
               >
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-                <a href="https://wa.me/2349030002629?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Intraverse">
+                <a href={whatsappUrl("Hi, I'd like to learn more about Intraverse")}>
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                   <MessageCircle className="h-5 w-5" />
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";

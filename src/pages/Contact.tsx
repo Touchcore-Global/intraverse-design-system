@@ -391,7 +391,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                 <a
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-                  href="https://wa.me/2349030002629"
+                  href={WHATSAPP_URL}
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                   target="_blank"
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";

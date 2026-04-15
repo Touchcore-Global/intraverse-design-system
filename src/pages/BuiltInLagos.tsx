@@ -725,7 +725,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                   <MessageCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-                  <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">WhatsApp: +234 903 000 2629</a>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">WhatsApp: +234 903 000 2629</a>
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                 </div>
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";

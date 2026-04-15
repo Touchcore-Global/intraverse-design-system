@@ -782,7 +782,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                 {[
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-                  { emoji: "💬", title: "Developer WhatsApp", desc: "Direct access to our technical team. Ask questions, share code snippets, get answers in real time. Business hours: Mon-Fri 9am-6pm WAT.", cta: "Chat Now", href: "https://wa.me/2349030002629?text=Hi%20Intraverse%2C%20I%20have%20a%20question%20about%20the%20API." },
+                  { emoji: "💬", title: "Developer WhatsApp", desc: "Direct access to our technical team. Ask questions, share code snippets, get answers in real time. Business hours: Mon-Fri 9am-6pm WAT.", cta: "Chat Now", href: whatsappUrl("Hi Intraverse, I have a question about the API.") },
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                   { emoji: "📧", title: "Technical Support", desc: "For complex integration questions, architecture guidance, and issues that need deeper investigation. We respond within 4 hours on business days.", cta: "Email Support", href: "mailto:developers@intraverse.africa" },
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";

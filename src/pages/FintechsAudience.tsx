@@ -305,7 +305,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
               </a>
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-              <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                 <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
@@ -727,7 +727,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                 </a>
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-                <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                   <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";

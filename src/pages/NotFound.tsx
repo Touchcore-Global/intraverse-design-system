@@ -241,7 +241,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
           <a
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-            href="https://wa.me/2349030002629?text=Hi%20Intraverse%2C%20I%20landed%20on%20a%20page%20that%20doesn%27t%20exist%20and%20need%20help."
+            href={whatsappUrl("Hi Intraverse, I landed on a page that doesn't exist and need help.")}
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
             target="_blank"
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";

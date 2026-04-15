@@ -196,7 +196,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-              <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                 <Button variant="hero" size="xl" className="w-full sm:w-auto gap-2">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
@@ -280,7 +280,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
               {filtered.length === 0 && (
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-                <p className="col-span-full text-center text-muted-foreground py-8">No topics match your search. Try a different keyword or <a href="https://wa.me/2349030002629" className="text-[hsl(220,76%,49%)] underline" target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.</p>
+                <p className="col-span-full text-center text-muted-foreground py-8">No topics match your search. Try a different keyword or <a href={WHATSAPP_URL} className="text-[hsl(220,76%,49%)] underline" target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.</p>
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
               )}
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
@@ -466,7 +466,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                 <p className="text-sm text-muted-foreground mb-6">Fastest response — usually under 30 minutes during office hours.</p>
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-                <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                   <Button variant="hero" size="default" className="w-full gap-2">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";

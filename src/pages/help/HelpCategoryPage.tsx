@@ -234,7 +234,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                 No articles match your search. Try a different keyword or{" "}
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-                <a href="https://wa.me/2349030002629" className="text-[hsl(220,76%,49%)] underline" target="_blank" rel="noopener noreferrer">
+                <a href={WHATSAPP_URL} className="text-[hsl(220,76%,49%)] underline" target="_blank" rel="noopener noreferrer">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                   message us on WhatsApp
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
@@ -342,7 +342,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-              <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
                 <Button variant="hero" size="xl" className="w-full sm:w-auto gap-2">
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";

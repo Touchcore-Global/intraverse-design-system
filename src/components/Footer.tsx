@@ -89,7 +89,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
   Connect: [
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-    { label: "WhatsApp", href: "https://wa.me/2349030002629" },
+    { label: "WhatsApp", href: WHATSAPP_URL },
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
     { label: "LinkedIn", href: "https://www.linkedin.com/company/intraversehq/" },
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";

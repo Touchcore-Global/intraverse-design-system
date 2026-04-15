@@ -237,7 +237,7 @@ import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
       { label: "Contact Us", href: "/contact", icon: Phone, description: "Get in touch" },
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
-      { label: "WhatsApp", href: "https://wa.me/2349030002629", icon: MessageCircle, description: "Chat with us on WhatsApp" },
+      { label: "WhatsApp", href: WHATSAPP_URL, icon: MessageCircle, description: "Chat with us on WhatsApp" },
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
     ],
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
