@@ -4,7 +4,6 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import {
-import { DEMO_URL } from "@/lib/constants";
   MessageCircle, Plane, Hotel, Globe, Ticket,
   LayoutDashboard, CalendarClock, ListChecks, Inbox,
   Wallet, PercentCircle, CreditCard, BadgeDollarSign,
@@ -16,6 +15,7 @@ import { DEMO_URL } from "@/lib/constants";
   Headphones, Phone, GraduationCap, BookOpen,
   type LucideIcon,
 } from "lucide-react";
+import { DEMO_URL } from "@/lib/constants";
 
 /* ───── types ───── */
 interface FeatureCard {
