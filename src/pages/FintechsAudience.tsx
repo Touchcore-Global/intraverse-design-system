@@ -156,7 +156,7 @@ const FintechsAudience = () => {
                   Talk to Our Partnerships Team
                 </Button>
               </a>
-              <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
                 <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
                   <MessageCircle className="h-5 w-5" />
                   Chat on WhatsApp
@@ -367,7 +367,7 @@ const FintechsAudience = () => {
                     Talk to Our Partnerships Team
                   </Button>
                 </a>
-                <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
                   <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
                     <MessageCircle className="h-5 w-5" />
                     Chat on WhatsApp

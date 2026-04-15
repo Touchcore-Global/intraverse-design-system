@@ -415,7 +415,7 @@ export default function Pricing() {
                 Start Free
               </Button>
             </a>
-            <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 className="border-background/40 text-foreground bg-background hover:bg-background/90 min-h-[48px] px-8 text-base font-medium rounded-lg"

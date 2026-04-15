@@ -371,7 +371,7 @@ export default function OdiopayProduct() {
                 <a href="https://intraverse.app" target="_blank" rel="noopener noreferrer">Activate Odiopay</a>
               </Button>
               <Button variant="whatsapp" size="xl" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary" asChild>
-                <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5" />
                   Talk to Our Team
                 </a>
