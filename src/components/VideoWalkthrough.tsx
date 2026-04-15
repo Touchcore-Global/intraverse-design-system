@@ -1,6 +1,7 @@
 import { Play, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { DEMO_URL } from "@/lib/constants";
 
 export const VideoWalkthrough = () => {
   const { ref, revealClass } = useScrollReveal();
@@ -29,8 +30,8 @@ export const VideoWalkthrough = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90 rounded-none font-semibold">
-            Book a Demo to Try It Yourself
+          <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-primary-foreground text-foreground border-primary-foreground hover:bg-primary-foreground/90 rounded-none font-semibold" asChild>
+            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo to Try It Yourself</a>
           </Button>
           <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
             <MessageCircle className="h-5 w-5" />

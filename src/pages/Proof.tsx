@@ -5,6 +5,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
+import { DEMO_URL } from "@/lib/constants";
   MessageCircle, Users, Globe,
   ArrowRight, Quote, ShieldCheck, Plane, TrendingUp, AlertTriangle,
 } from "lucide-react";
@@ -402,9 +403,11 @@ export default function Proof() {
 
             {/* CTA */}
             <FadeIn className="text-center">
-              <Button variant="hero" size="xl">
-                Want Results Like This? Book a Demo
-                <ArrowRight className="h-4 w-4 ml-2" />
+              <Button variant="hero" size="xl" asChild>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                  Want Results Like This? Book a Demo
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </a>
               </Button>
             </FadeIn>
           </div>
@@ -496,8 +499,8 @@ export default function Proof() {
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none">
-              Book a Demo
+            <Button variant="hero" size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none" asChild>
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="border-whatsapp text-whatsapp hover:bg-whatsapp hover:text-primary-foreground rounded-none">
               <MessageCircle className="h-5 w-5" />

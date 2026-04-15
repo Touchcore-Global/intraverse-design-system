@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { DEMO_URL } from "@/lib/constants";
 
 const steps = [
   {
@@ -47,8 +48,8 @@ export const HowItWorks = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-            Book Your Demo Now
+          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book Your Demo Now</a>
           </Button>
           <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
             <MessageCircle className="h-5 w-5" />

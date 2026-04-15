@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Play } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { DEMO_URL } from "@/lib/constants";
 
 const partners = [
   "Tzopal", "Whogofly", "Wright Gateway", "Lutfu Travels", "Coastline",
@@ -53,8 +54,8 @@ export const HeroSection = () => {
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-            Book a Demo
+          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
           </Button>
           <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
             <MessageCircle className="h-5 w-5" />

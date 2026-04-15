@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Globe, Wallet, Handshake, Shield, Landmark, Globe2, Wrench, Zap, Search, MapPin, Phone, MessageCircle, Clock } from "lucide-react";
 import { useEffect } from "react";
 import lagosSkyline from "@/assets/lagos-skyline.png";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 /* ─── Reusable animated wrapper ─── */
 function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -405,11 +405,9 @@ export default function BuiltInLagos() {
           </Reveal>
           <Reveal delay={200}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="/contact">
-                <Button size="xl" className="bg-background text-foreground hover:bg-background/90 rounded-none font-semibold">
-                  Book a Demo
-                </Button>
-              </a>
+              <Button size="xl" className="bg-background text-foreground hover:bg-background/90 rounded-none font-semibold" asChild>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
+              </Button>
               <a href="/products">
                 <Button size="xl" variant="outline" className="rounded-none border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground/10">
                   Explore Products

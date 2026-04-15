@@ -18,6 +18,7 @@ import {
   Building,
 } from "lucide-react";
 import {
+import { DEMO_URL } from "@/lib/constants";
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -172,8 +173,8 @@ const CoopX = () => {
             employee travel on spreadsheets and WhatsApp.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-              Book a Demo for Your Company
+            <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo for Your Company</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
               <MessageCircle className="h-5 w-5" />
@@ -343,9 +344,9 @@ const CoopX = () => {
             <Button
               variant="outline"
               size="xl"
-              className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none font-semibold"
+              className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none font-semibold" asChild
             >
-              Book a Demo for Your Company
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo for Your Company</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
               <MessageCircle className="h-5 w-5" />

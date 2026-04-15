@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { DEMO_URL } from "@/lib/constants";
 
 const bulletPoints = [
   "A growing SME with 10–100 employees who travel regularly?",
@@ -76,8 +77,8 @@ const Businesses = () => {
               If your team books travel for work, you're a business that needs structure. Intraverse helps growing companies replace ad-hoc booking with a proper travel management process — saving money, saving time, and giving your finance team the visibility it needs.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-                Book a Demo
+              <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
               <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
                 <MessageCircle className="h-5 w-5" />
@@ -224,8 +225,8 @@ const Businesses = () => {
               Join growing African businesses already saving time and money with Intraverse.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]">
-                Book a Demo for Your Business
+              <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]" asChild>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo for Your Business</a>
               </Button>
               <Button size="xl" variant="outline" className="border-white text-white hover:bg-white/10 cta-responsive min-h-[48px]">
                 <MessageCircle className="h-5 w-5" />

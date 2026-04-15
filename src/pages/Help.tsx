@@ -10,7 +10,7 @@ import {
   Search, MessageCircle, Mail, Phone, Rocket, Plane, Hotel, CreditCard,
   Users, Settings, LinkIcon, BarChart3, Play, ArrowRight, Clock,
 } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 /* ───────────────── DATA ───────────────── */
 
@@ -287,8 +287,8 @@ export default function Help() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
-                <Button size="xl" className="w-full sm:w-auto bg-background text-foreground hover:bg-background/90 rounded-none font-semibold">
-                  Book a Demo
+                <Button size="xl" className="w-full sm:w-auto bg-background text-foreground hover:bg-background/90 rounded-none font-semibold" asChild>
+                  <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
                 </Button>
               </Link>
               <Link to="/contact">

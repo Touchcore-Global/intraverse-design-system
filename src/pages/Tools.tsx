@@ -6,6 +6,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Check, ArrowRight } from "lucide-react";
+import { DEMO_URL } from "@/lib/constants";
 
 /* ──────── Reveal wrapper ──────── */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -191,8 +192,8 @@ export default function Tools() {
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
                   Start Free
                 </Button>
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-foreground text-foreground hover:bg-accent">
-                  Book a Demo
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-foreground text-foreground hover:bg-accent" asChild>
+                  <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
                 </Button>
               </div>
             </RevealBlock>
@@ -369,8 +370,8 @@ export default function Tools() {
                 <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-background text-foreground border-background hover:bg-background/90 rounded-none font-semibold">
                   Start Free
                 </Button>
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-background/30 text-background hover:bg-background/10 font-semibold">
-                  Book a Demo
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-background/30 text-background hover:bg-background/10 font-semibold" asChild>
+                  <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
                 </Button>
               </div>
             </RevealBlock>

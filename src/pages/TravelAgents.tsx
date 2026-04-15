@@ -13,6 +13,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { DEMO_URL } from "@/lib/constants";
 
 const bulletPoints = [
   "Runs an agency of any size — from solo operators to multi-branch businesses",
@@ -123,8 +124,8 @@ const TravelAgents = () => {
               Whether you're a two-person agency in Lagos or a multi-branch operation across the country, Intraverse gives you the technology to compete with the biggest players in travel. Aggregated flight inventory, global hotel and tour suppliers, white-label website, and a wallet system — all in one platform.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-                Book a Demo
+              <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
               <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]">
                 <MessageCircle className="h-5 w-5" />
@@ -292,8 +293,8 @@ const TravelAgents = () => {
               Join 200+ travel agents already using Intraverse to sell more, earn more, and work smarter.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]">
-                Book Your Demo
+              <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]" asChild>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book Your Demo</a>
               </Button>
               <Button
                 size="xl"
