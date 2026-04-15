@@ -403,8 +403,10 @@ export default function Proof() {
             {/* CTA */}
             <FadeIn className="text-center">
               <Button variant="hero" size="xl" asChild>
-                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">Want Results Like This? Book a Demo
-                <ArrowRight className="h-4 w-4 ml-2" />
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                  Want Results Like This? Book a Demo
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </a>
               </Button>
             </FadeIn>
           </div>
