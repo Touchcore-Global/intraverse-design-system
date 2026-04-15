@@ -4,12 +4,12 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Plane, Hotel, Globe, LayoutDashboard, Zap, ShieldCheck, Quote } from "lucide-react";
 import {
-import { DEMO_URL } from "@/lib/constants";
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { DEMO_URL } from "@/lib/constants";
 
 const features = [
   {

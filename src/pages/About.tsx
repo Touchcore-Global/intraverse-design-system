@@ -14,7 +14,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-import { DEMO_URL } from "@/lib/constants";
   MessageCircle,
   Quote,
   Wrench,
@@ -36,6 +35,7 @@ import { DEMO_URL } from "@/lib/constants";
   Building2,
   Sparkles,
 } from "lucide-react";
+import { DEMO_URL } from "@/lib/constants";
 
 const stats = [
   { value: "200+", label: "Active Agents", icon: Users },
