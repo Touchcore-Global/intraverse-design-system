@@ -9,6 +9,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Search, ArrowRight, MessageCircle, ChevronRight } from "lucide-react";
 import { getCategoryBySlug, getRelatedCategories } from "./helpCategoryData";
 import NotFound from "@/pages/NotFound";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function HelpCategoryPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -121,7 +122,7 @@ export default function HelpCategoryPage() {
             ) : (
               <p className="text-muted-foreground py-8">
                 No articles match your search. Try a different keyword or{" "}
-                <a href="https://wa.me/2349030002629" className="text-[hsl(220,76%,49%)] underline" target="_blank" rel="noopener noreferrer">
+                <a href={WHATSAPP_URL} className="text-[hsl(220,76%,49%)] underline" target="_blank" rel="noopener noreferrer">
                   message us on WhatsApp
                 </a>.
               </p>
@@ -175,7 +176,7 @@ export default function HelpCategoryPage() {
               Our Lagos-based support team responds via WhatsApp within 2 hours during business days. Reach out — we're happy to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="xl" className="w-full sm:w-auto gap-2">
                   <MessageCircle className="h-5 w-5" />
                   Chat on WhatsApp

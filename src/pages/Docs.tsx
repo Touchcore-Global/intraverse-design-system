@@ -5,6 +5,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Copy, Check, ExternalLink, ArrowRight } from "lucide-react";
+import { whatsappUrl } from "@/lib/constants";
 
 /* ---------- scroll-reveal helper ---------- */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -393,7 +394,7 @@ export default function Docs() {
             <RevealBlock>
               <div className="mt-14 grid md:grid-cols-3 gap-8">
                 {[
-                  { emoji: "💬", title: "Developer WhatsApp", desc: "Direct access to our technical team. Ask questions, share code snippets, get answers in real time. Business hours: Mon-Fri 9am-6pm WAT.", cta: "Chat Now", href: "https://wa.me/2349030002629?text=Hi%20Intraverse%2C%20I%20have%20a%20question%20about%20the%20API." },
+                  { emoji: "💬", title: "Developer WhatsApp", desc: "Direct access to our technical team. Ask questions, share code snippets, get answers in real time. Business hours: Mon-Fri 9am-6pm WAT.", cta: "Chat Now", href: whatsappUrl("Hi Intraverse, I have a question about the API.") },
                   { emoji: "📧", title: "Technical Support", desc: "For complex integration questions, architecture guidance, and issues that need deeper investigation. We respond within 4 hours on business days.", cta: "Email Support", href: "mailto:developers@intraverse.africa" },
                   { emoji: "🐛", title: "Bug Reports", desc: "Found a bug? Report it. We take every bug report seriously and will keep you updated on the fix. Include your request ID for fastest resolution.", cta: "Report a Bug", href: "mailto:developers@intraverse.africa?subject=Bug%20Report" },
                 ].map((c) => (

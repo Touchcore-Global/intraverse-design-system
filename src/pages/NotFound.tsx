@@ -6,6 +6,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Home, Plane, Users, DollarSign, HelpCircle, MessageCircle, ArrowRight, Navigation } from "lucide-react";
+import { whatsappUrl } from "@/lib/constants";
 
 const quickLinks = [
   { icon: Home, title: "Homepage", desc: "Back to the main page", href: "/" },
@@ -123,7 +124,7 @@ const NotFound = () => {
             Still can't find what you're looking for? Chat with us on WhatsApp and we'll point you in the right direction. Our Lagos-based team responds within 2 hours during business days.
           </p>
           <a
-            href="https://wa.me/2349030002629?text=Hi%20Intraverse%2C%20I%20landed%20on%20a%20page%20that%20doesn%27t%20exist%20and%20need%20help."
+            href={whatsappUrl("Hi Intraverse, I landed on a page that doesn't exist and need help.")}
             target="_blank"
             rel="noopener noreferrer"
           >

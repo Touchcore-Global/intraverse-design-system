@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { whatsappUrl } from "@/lib/constants";
 
 type FilterCategory = "All" | "Travel Agents" | "Independents" | "Businesses" | "Fintechs" | "Tech/Developers";
 
@@ -233,7 +234,7 @@ export default function UseCases() {
                 className="cta-responsive min-h-[48px]"
                 asChild
               >
-                <a href="https://wa.me/2349030002629?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Intraverse">
+                <a href={whatsappUrl("Hi, I'd like to learn more about Intraverse")}>
                   <MessageCircle className="h-5 w-5" />
                   Chat on WhatsApp
                 </a>
@@ -300,7 +301,7 @@ export default function UseCases() {
                 className="cta-responsive min-h-[48px]"
                 asChild
               >
-                <a href="https://wa.me/2349030002629?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Intraverse">
+                <a href={whatsappUrl("Hi, I'd like to learn more about Intraverse")}>
                   <MessageCircle className="h-5 w-5" />
                   Chat on WhatsApp
                 </a>

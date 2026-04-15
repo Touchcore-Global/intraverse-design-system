@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 /* ───────── DATA ───────── */
 
@@ -509,7 +510,7 @@ const Partnerships = () => {
                 asChild
               >
                 <a
-                  href="https://wa.me/2349030002629"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -6,6 +6,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Globe, Wallet, Handshake, Shield, Landmark, Globe2, Wrench, Zap, Search, MapPin, Phone, MessageCircle, Clock } from "lucide-react";
 import { useEffect } from "react";
 import lagosSkyline from "@/assets/lagos-skyline.png";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 /* ─── Reusable animated wrapper ─── */
 function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -365,7 +366,7 @@ export default function BuiltInLagos() {
                 </div>
                 <div className="flex items-start gap-3">
                   <MessageCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">WhatsApp: +234 903 000 2629</a>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">WhatsApp: +234 903 000 2629</a>
                 </div>
                 <div className="flex items-start gap-3">
                   <Clock className="h-5 w-5 text-primary mt-0.5 shrink-0" />

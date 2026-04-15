@@ -4,6 +4,7 @@ import iataLogo from "@/assets/iata-logo.png";
 import amadeusLogo from "@/assets/amadeus-logo.png";
 import sabreLogo from "@/assets/sabre-logo.png";
 import travelportLogo from "@/assets/travelport-logo.png";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 const socialIcons: Record<string, LucideIcon> = {
   WhatsApp: MessageCircle,
@@ -46,7 +47,7 @@ const footerLinks = {
     { label: "Contact Us", href: "/contact" },
   ],
   Connect: [
-    { label: "WhatsApp", href: "https://wa.me/2349030002629" },
+    { label: "WhatsApp", href: WHATSAPP_URL },
     { label: "LinkedIn", href: "https://www.linkedin.com/company/intraversehq/" },
     { label: "X (Twitter)", href: "https://x.com/IntraverseHQ" },
     { label: "Instagram", href: "https://www.instagram.com/intraverse.africa" },

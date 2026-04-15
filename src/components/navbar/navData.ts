@@ -9,6 +9,7 @@ import {
   Phone, MessageCircle,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export interface NavItem {
   label: string;
@@ -118,7 +119,7 @@ export const companySections: NavSection[] = [
     header: "CONTACT",
     items: [
       { label: "Contact Us", href: "/contact", icon: Phone, description: "Get in touch" },
-      { label: "WhatsApp", href: "https://wa.me/2349030002629", icon: MessageCircle, description: "Chat with us on WhatsApp" },
+      { label: "WhatsApp", href: WHATSAPP_URL, icon: MessageCircle, description: "Chat with us on WhatsApp" },
     ],
   },
 ];

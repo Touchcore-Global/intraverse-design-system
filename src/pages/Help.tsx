@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import {
+import { WHATSAPP_URL } from "@/lib/constants";
   Search, MessageCircle, Mail, Phone, Rocket, Plane, Hotel, CreditCard,
   Users, Settings, LinkIcon, BarChart3, Play, ArrowRight, Clock,
 } from "lucide-react";
@@ -101,7 +102,7 @@ export default function Help() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="xl" className="w-full sm:w-auto gap-2">
                   <MessageCircle className="h-5 w-5" />
                   Chat on WhatsApp
@@ -143,7 +144,7 @@ export default function Help() {
                 );
               })}
               {filtered.length === 0 && (
-                <p className="col-span-full text-center text-muted-foreground py-8">No topics match your search. Try a different keyword or <a href="https://wa.me/2349030002629" className="text-[hsl(220,76%,49%)] underline" target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.</p>
+                <p className="col-span-full text-center text-muted-foreground py-8">No topics match your search. Try a different keyword or <a href={WHATSAPP_URL} className="text-[hsl(220,76%,49%)] underline" target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.</p>
               )}
             </div>
           </div>
@@ -236,7 +237,7 @@ export default function Help() {
                 <MessageCircle className="h-10 w-10 text-[hsl(142,70%,45%)] mx-auto mb-4" />
                 <h3 className="text-lg font-bold text-foreground mb-2">WhatsApp Support</h3>
                 <p className="text-sm text-muted-foreground mb-6">Fastest response — usually under 30 minutes during office hours.</p>
-                <a href="https://wa.me/2349030002629" target="_blank" rel="noopener noreferrer">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <Button variant="hero" size="default" className="w-full gap-2">
                     <MessageCircle className="h-4 w-4" />
                     Message Us on WhatsApp

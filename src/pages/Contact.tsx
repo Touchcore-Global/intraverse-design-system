@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 const contactReasons = [
   "Book a Demo",
@@ -199,7 +200,7 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="https://wa.me/2349030002629"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 group"
