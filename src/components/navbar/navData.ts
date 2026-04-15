@@ -118,7 +118,7 @@ export const companySections: NavSection[] = [
     header: "CONTACT",
     items: [
       { label: "Contact Us", href: "/contact", icon: Phone, description: "Get in touch" },
-      { label: "WhatsApp", href: "https://wa.me/2348000000000", icon: MessageCircle, description: "Chat with us on WhatsApp" },
+      { label: "WhatsApp", href: "https://wa.me/2349030002629", icon: MessageCircle, description: "Chat with us on WhatsApp" },
     ],
   },
 ];
