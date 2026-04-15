@@ -11,7 +11,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-import { WHATSAPP_URL } from "@/lib/constants";
   Check,
   X as XIcon,
   Star,
@@ -21,7 +20,7 @@ import { WHATSAPP_URL } from "@/lib/constants";
   Handshake,
   Globe,
 } from "lucide-react";
-
+import { WHATSAPP_URL } from "@/lib/constants";
 
 /* ------------------------------------------------------------------ */
 /*  Currency helpers                                                    */

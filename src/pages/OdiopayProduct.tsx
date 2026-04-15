@@ -7,12 +7,12 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Link } from "react-router-dom";
 import { Check, ArrowRight, MessageCircle } from "lucide-react";
 import {
-import { WHATSAPP_URL } from "@/lib/constants";
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 /* ── scroll-reveal helper ── */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
