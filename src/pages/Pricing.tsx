@@ -11,7 +11,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-import { WHATSAPP_URL } from "@/lib/constants";
   Check,
   X as XIcon,
   Star,
