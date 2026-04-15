@@ -1,4 +1,4 @@
-const API_BASE = "https://dev.intraversewebservices.com/api/main/v1";
+const API_BASE = "https://intraversewebservices.com/api/main/v1";
 
 export interface LoginResponse {
   message: string;
@@ -40,7 +40,7 @@ export interface SignUpPayload {
 }
 
 export async function login(email: string, password: string): Promise<LoginResponse> {
-  const res = await fetch(`${API_BASE}/account/login?populate=detail`, {
+  const res = await fetch(`${API_BASE}/account/login?populate=detail&populate=roles`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
