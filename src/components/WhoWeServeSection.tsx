@@ -131,7 +131,7 @@ export const WhoWeServeSection = () => {
         style={{ maxWidth: "1200px" }}
       >
         <h2
-          className="text-[32px] md:text-[48px] font-[660] leading-tight tracking-[-2px] text-center mb-4"
+          className="text-[32px] md:text-[80px] font-[660] md:leading-[96px] leading-tight tracking-[-2px] text-center mb-4"
           style={{ color: "rgb(13, 27, 42)" }}
         >
           Built for Everyone Who Sells, Buys, or Builds Travel
