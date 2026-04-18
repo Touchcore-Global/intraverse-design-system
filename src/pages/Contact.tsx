@@ -257,16 +257,18 @@ const Contact = () => {
                   </li>
                 </ul>
                 <Button
+                  asChild
                   variant="secondary"
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                  onClick={() => {
-                    setFormData((prev) => ({ ...prev, reason: "Book a Demo" }));
-                    setFormData((prev) => ({ ...prev, reason: "Book a Demo" }));
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
                 >
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Book a Demo
+                  <a
+                    href="https://business.intraverse.app/bookings/demo#/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Book a Demo
+                  </a>
                 </Button>
               </div>
 
