@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
+import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { Callout } from "@/components/docs/Callout";
 
 const toc = [
@@ -45,14 +46,17 @@ export default function DocsQuickstart() {
 
       <DocsSection id="step-2" title="Step 2 — Get an Access Token">
         <p>Exchange your client credentials for a short-lived bearer token using OAuth 2.0 client credentials grant.</p>
-        <CodeBlock
-          label="HTTP"
-          code={`POST https://sandbox.api.intraverse.com/v1/auth/token
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=client_credentials
-&client_id=YOUR_CLIENT_ID
-&client_secret=YOUR_CLIENT_SECRET`}
+        <MultiLangCodeBlock
+          samples={buildHttpSamples({
+            method: "POST",
+            url: "https://sandbox.api.intraverse.com/v1/auth/token",
+            auth: false,
+            form: {
+              grant_type: "client_credentials",
+              client_id: "YOUR_CLIENT_ID",
+              client_secret: "YOUR_CLIENT_SECRET",
+            },
+          })}
         />
         <CodeBlock
           label="JSON"
@@ -69,19 +73,18 @@ grant_type=client_credentials
 
       <DocsSection id="step-3" title="Step 3 — Search for Flights">
         <p>Send a flight search across aggregated GDS, NDC, and consolidator inventory.</p>
-        <CodeBlock
-          label="HTTP"
-          code={`POST https://sandbox.api.intraverse.com/v1/flights/search
-Authorization: Bearer YOUR_ACCESS_TOKEN
-Content-Type: application/json
-
-{
-  "origin": "LOS",
-  "destination": "DXB",
-  "departure_date": "2026-06-15",
-  "passengers": { "adults": 1 },
-  "cabin_class": "economy"
-}`}
+        <MultiLangCodeBlock
+          samples={buildHttpSamples({
+            method: "POST",
+            url: "https://sandbox.api.intraverse.com/v1/flights/search",
+            body: {
+              origin: "LOS",
+              destination: "DXB",
+              departure_date: "2026-06-15",
+              passengers: { adults: 1 },
+              cabin_class: "economy",
+            },
+          })}
         />
         <CodeBlock
           label="JSON"
@@ -109,29 +112,28 @@ Content-Type: application/json
 
       <DocsSection id="step-4" title="Step 4 — Book a Flight">
         <p>Use the <InlineCode>offer_id</InlineCode> from your search to create a booking.</p>
-        <CodeBlock
-          label="HTTP"
-          code={`POST https://sandbox.api.intraverse.com/v1/bookings
-Authorization: Bearer YOUR_ACCESS_TOKEN
-Content-Type: application/json
-
-{
-  "offer_id": "offer_xyz789",
-  "passengers": [
-    {
-      "first_name": "Chinedu",
-      "last_name": "Ike",
-      "date_of_birth": "1990-01-15",
-      "passport_number": "A12345678",
-      "passport_expiry": "2030-01-15",
-      "nationality": "NG"
-    }
-  ],
-  "contact": {
-    "email": "customer@example.com",
-    "phone": "+2348012345678"
-  }
-}`}
+        <MultiLangCodeBlock
+          samples={buildHttpSamples({
+            method: "POST",
+            url: "https://sandbox.api.intraverse.com/v1/bookings",
+            body: {
+              offer_id: "offer_xyz789",
+              passengers: [
+                {
+                  first_name: "Chinedu",
+                  last_name: "Ike",
+                  date_of_birth: "1990-01-15",
+                  passport_number: "A12345678",
+                  passport_expiry: "2030-01-15",
+                  nationality: "NG",
+                },
+              ],
+              contact: {
+                email: "customer@example.com",
+                phone: "+2348012345678",
+              },
+            },
+          })}
         />
         <CodeBlock
           label="JSON"

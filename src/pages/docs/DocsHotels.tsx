@@ -1,5 +1,6 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
+import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
 import { ParamsTable } from "@/components/docs/ParamsTable";
 
@@ -48,16 +49,18 @@ export default function DocsHotels() {
             { name: "radius_km", type: "number", description: "Search radius from coordinate centre" },
           ]}
         />
-        <CodeBlock
-          label="HTTP"
-          code={`POST /v1/hotels/search
-{
-  "destination": "Lagos",
-  "check_in": "2026-07-01",
-  "check_out": "2026-07-04",
-  "guests": { "adults": 2 },
-  "rooms": 1
-}`}
+        <MultiLangCodeBlock
+          samples={buildHttpSamples({
+            method: "POST",
+            url: "https://sandbox.api.intraverse.com/v1/hotels/search",
+            body: {
+              destination: "Lagos",
+              check_in: "2026-07-01",
+              check_out: "2026-07-04",
+              guests: { adults: 2 },
+              rooms: 1,
+            },
+          })}
         />
 
         <EndpointHeading method="GET" path="/v1/hotels/{hotel_id}" />
