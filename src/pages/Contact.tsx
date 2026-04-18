@@ -20,8 +20,18 @@ import {
   Calendar,
 } from "lucide-react";
 import { useState } from "react";
+import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { supabase } from "@/integrations/supabase/client";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Please enter a valid email").max(255),
+  company: z.string().trim().max(200).optional().or(z.literal("")),
+  reason: z.string().trim().min(1, "Please select a topic").max(100),
+  message: z.string().trim().min(1, "Message is required").max(5000, "Message must be less than 5000 characters"),
+});
 
 const contactReasons = [
   "API & Integration Support",
@@ -40,13 +50,85 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", company: "", reason: "", message: "" });
+
+    const parsed = contactSchema.safeParse(formData);
+    if (!parsed.success) {
+      toast({
+        title: "Please check your details",
+        description: parsed.error.errors[0]?.message ?? "Some fields are invalid.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const id = crypto.randomUUID();
+      const submittedAt = new Date().toUTCString();
+
+      const { error: insertError } = await supabase
+        .from("contact_submissions")
+        .insert({
+          id,
+          name: parsed.data.name,
+          email: parsed.data.email,
+          company: parsed.data.company || null,
+          reason: parsed.data.reason,
+          message: parsed.data.message,
+        });
+
+      if (insertError) throw insertError;
+
+      // Fire emails in parallel — don't block the user on email queue
+      await Promise.all([
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "contact-notification",
+            recipientEmail: "support@intraverse.africa",
+            idempotencyKey: `contact-notify-${id}`,
+            templateData: {
+              name: parsed.data.name,
+              email: parsed.data.email,
+              company: parsed.data.company || undefined,
+              reason: parsed.data.reason,
+              message: parsed.data.message,
+              submittedAt,
+            },
+          },
+        }),
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "contact-confirmation",
+            recipientEmail: parsed.data.email,
+            idempotencyKey: `contact-confirm-${id}`,
+            templateData: {
+              name: parsed.data.name,
+              reason: parsed.data.reason,
+              message: parsed.data.message,
+            },
+          },
+        }),
+      ]);
+
+      toast({
+        title: "Message sent!",
+        description: "We've received your message and emailed you a confirmation.",
+      });
+      setFormData({ name: "", email: "", company: "", reason: "", message: "" });
+    } catch (err) {
+      console.error("Contact form submission failed", err);
+      toast({
+        title: "Something went wrong",
+        description: "We couldn't send your message. Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
