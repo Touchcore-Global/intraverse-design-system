@@ -40,6 +40,10 @@ const contactReasons = [
   "General Enquiry",
 ];
 
+const MIN_TIME_ON_PAGE_MS = 3000;
+const MIN_INTERVAL_BETWEEN_SUBMITS_MS = 30_000;
+const LAST_SUBMIT_KEY = "intraverse:contact:last-submit";
+
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -49,11 +53,53 @@ const Contact = () => {
     reason: "",
     message: "",
   });
+  // Honeypot — must remain empty. Bots tend to fill every field.
+  const [website, setWebsite] = useState("");
+  const mountedAtRef = useRef<number>(Date.now());
 
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot tripped — silently pretend success.
+    if (website.trim() !== "") {
+      toast({
+        title: "Message sent!",
+        description: "We've received your message and emailed you a confirmation.",
+      });
+      setFormData({ name: "", email: "", company: "", reason: "", message: "" });
+      return;
+    }
+
+    // Min time-on-page check
+    const elapsed = Date.now() - mountedAtRef.current;
+    if (elapsed < MIN_TIME_ON_PAGE_MS) {
+      toast({
+        title: "Hold on a moment",
+        description: "Please take a moment to review your message before sending.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Per-browser throttle
+    try {
+      const lastRaw = localStorage.getItem(LAST_SUBMIT_KEY);
+      const last = lastRaw ? Number(lastRaw) : 0;
+      const sinceLast = Date.now() - last;
+      if (last && sinceLast < MIN_INTERVAL_BETWEEN_SUBMITS_MS) {
+        const wait = Math.ceil((MIN_INTERVAL_BETWEEN_SUBMITS_MS - sinceLast) / 1000);
+        toast({
+          title: "Please wait",
+          description: `You can send another message in ${wait}s.`,
+          variant: "destructive",
+        });
+        return;
+      }
+    } catch {
+      // localStorage unavailable — proceed
+    }
 
     const parsed = contactSchema.safeParse(formData);
     if (!parsed.success) {
