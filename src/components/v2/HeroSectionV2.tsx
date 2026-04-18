@@ -1,0 +1,148 @@
+import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+
+const partners = [
+  "Tzopal", "Whogofly", "Wright Gateway", "Lutfu Travels", "Coastline",
+  "Neso", "Leisure Affairs", "Terminal Seven", "Travio", "Blue Paradise",
+];
+
+export const HeroSectionV2 = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const blob1Ref = useRef<HTMLDivElement>(null);
+  const blob2Ref = useRef<HTMLDivElement>(null);
+  const blob3Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = sectionRef.current;
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      const scrollY = -rect.top;
+      if (blob1Ref.current) blob1Ref.current.style.transform = `translate(25%, -50%) translateY(${scrollY * 0.15}px)`;
+      if (blob2Ref.current) blob2Ref.current.style.transform = `translate(-25%, 50%) translateY(${scrollY * -0.1}px)`;
+      if (blob3Ref.current) blob3Ref.current.style.transform = `translate(-50%, -50%) translateY(${scrollY * 0.08}px)`;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, hsl(280 90% 96%) 0%, hsl(220 95% 94%) 25%, hsl(190 90% 93%) 50%, hsl(330 90% 95%) 75%, hsl(35 95% 94%) 100%)",
+        backgroundSize: "200% 200%",
+        animation: "gradient-shift 12s ease infinite",
+      }}
+    >
+      {/* Vibrant blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          ref={blob1Ref}
+          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 will-change-transform opacity-50"
+          style={{ background: "radial-gradient(circle, hsl(280 90% 65%) 0%, transparent 70%)" }}
+        />
+        <div
+          ref={blob2Ref}
+          className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 will-change-transform opacity-50"
+          style={{ background: "radial-gradient(circle, hsl(190 95% 55%) 0%, transparent 70%)" }}
+        />
+        <div
+          ref={blob3Ref}
+          className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full blur-3xl will-change-transform opacity-40"
+          style={{ background: "radial-gradient(circle, hsl(35 95% 60%) 0%, transparent 70%)" }}
+        />
+      </div>
+
+      <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
+        <span className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-white" style={{ background: "linear-gradient(90deg, hsl(280 90% 55%), hsl(330 90% 55%))" }}>
+          ✨ One platform · Global inventory
+        </span>
+
+        <h1
+          className="text-3xl sm:text-4xl md:text-[80px] font-[660] leading-[1.1] md:leading-[96px] tracking-[-2px] max-w-5xl mx-auto"
+          style={{
+            backgroundImage:
+              "linear-gradient(120deg, hsl(280 90% 35%) 0%, hsl(220 95% 45%) 35%, hsl(190 95% 40%) 65%, hsl(330 90% 45%) 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          Flights. Hotels. Tours. Packages.
+        </h1>
+
+        <p
+          className="mt-8 text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal max-w-3xl mx-auto mb-6"
+          style={{ color: "rgb(60, 50, 90)" }}
+        >
+          Sell it all from one AI powered platform, on your own website and via API. Easily.
+        </p>
+
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button
+            size="xl"
+            className="cta-responsive min-h-[48px] text-white border-0 rounded-none font-semibold shadow-lg hover:shadow-xl transition-shadow"
+            style={{ background: "linear-gradient(90deg, hsl(280 90% 55%) 0%, hsl(220 95% 55%) 50%, hsl(190 95% 50%) 100%)" }}
+            asChild
+          >
+            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
+          </Button>
+          <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="h-5 w-5" />
+              Chat on WhatsApp
+            </a>
+          </Button>
+        </div>
+
+        <p className="mt-4 text-sm" style={{ color: "rgb(90, 80, 120)" }}>
+          15-minute demo • No commitment • Free
+        </p>
+
+        {/* Video */}
+        <div className="mt-12 max-w-4xl mx-auto">
+          <div
+            className="relative aspect-video rounded-2xl overflow-hidden p-[2px]"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(280 90% 60%), hsl(220 95% 55%), hsl(190 95% 50%), hsl(330 90% 60%))",
+            }}
+          >
+            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-foreground/90">
+              <video className="w-full h-full object-cover" controls playsInline preload="metadata">
+                <source src="https://res.cloudinary.com/demzrmxhz/video/upload/v1762167461/Travx-video_fmbarv.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+
+        {/* Partner scroller */}
+        <div className="mt-12 overflow-hidden">
+          <p className="text-center text-xs uppercase tracking-widest mb-6" style={{ color: "rgb(90, 80, 120)" }}>
+            Trusted by leading travel brands
+          </p>
+          <div className="relative">
+            <div className="flex animate-scroll-left w-max gap-8 hover:[animation-play-state:paused]">
+              {[...partners, ...partners].map((partner, i) => (
+                <div
+                  key={`${partner}-${i}`}
+                  className="flex-shrink-0 px-6 py-3 rounded-lg bg-white/70 backdrop-blur border border-white/80 shadow-sm"
+                >
+                  <span className="text-sm font-semibold whitespace-nowrap" style={{ color: "rgb(60, 50, 90)" }}>
+                    {partner}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
