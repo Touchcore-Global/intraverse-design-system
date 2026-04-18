@@ -245,15 +245,22 @@ export function DocsLayout({
                     On this page
                   </p>
                   <nav className="flex flex-col gap-1.5 border-l border-border">
-                    {toc.map((t) => (
-                      <a
-                        key={t.id}
-                        href={`#${t.id}`}
-                        className="-ml-px pl-3 py-1 border-l-2 border-transparent text-sm text-muted-foreground hover:text-foreground hover:border-[hsl(var(--brand-blue))] transition-colors"
-                      >
-                        {t.label}
-                      </a>
-                    ))}
+                    {toc.map((t) => {
+                      const active = activeId === t.id;
+                      return (
+                        <a
+                          key={t.id}
+                          href={`#${t.id}`}
+                          className={`-ml-px pl-3 py-1 border-l-2 text-sm transition-colors ${
+                            active
+                              ? "border-[hsl(var(--brand-blue))] text-[hsl(var(--brand-blue))] font-medium"
+                              : "border-transparent text-muted-foreground hover:text-foreground hover:border-[hsl(var(--brand-blue))]"
+                          }`}
+                        >
+                          {t.label}
+                        </a>
+                      );
+                    })}
                   </nav>
                 </div>
               )}
