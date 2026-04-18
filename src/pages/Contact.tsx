@@ -248,9 +248,9 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full sm:w-auto">
+                <Button type="submit" size="lg" disabled={submitting} className="w-full sm:w-auto">
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {submitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </div>
