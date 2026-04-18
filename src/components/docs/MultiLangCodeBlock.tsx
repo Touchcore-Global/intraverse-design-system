@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Copy, Check } from "lucide-react";
+import { highlight } from "@/lib/docs/highlight";
 
 export type DocLang = "curl" | "node" | "python" | "php";
 
@@ -56,6 +57,7 @@ export function MultiLangCodeBlock({ samples }: MultiLangCodeBlockProps) {
   };
 
   const code = samples[lang];
+  const html = useMemo(() => highlight(code, lang), [code, lang]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
@@ -64,7 +66,7 @@ export function MultiLangCodeBlock({ samples }: MultiLangCodeBlockProps) {
   };
 
   return (
-    <div className="relative my-6 rounded-lg overflow-hidden bg-[#1A1A2E] border border-white/5">
+    <div className="relative my-6 rounded-lg overflow-hidden bg-[#1A1A2E] border border-white/5 docs-code">
       <div className="flex items-center justify-between border-b border-white/5 bg-black/30">
         <div className="flex items-center" role="tablist" aria-label="Code language">
           {LANG_ORDER.map((l) => {
@@ -97,11 +99,10 @@ export function MultiLangCodeBlock({ samples }: MultiLangCodeBlockProps) {
       </div>
       <pre className="p-6 overflow-x-auto text-sm leading-relaxed">
         <code
-          className="font-mono text-white/90 whitespace-pre"
+          className={`font-mono text-white/90 whitespace-pre language-${lang}`}
           style={{ fontFamily: "'Fira Code', 'Courier New', ui-monospace, monospace" }}
-        >
-          {code}
-        </code>
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </pre>
     </div>
   );

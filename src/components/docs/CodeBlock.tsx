@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Copy, Check } from "lucide-react";
+import { highlight } from "@/lib/docs/highlight";
 
 interface CodeBlockProps {
   code: string;
@@ -9,6 +10,7 @@ interface CodeBlockProps {
 
 export function CodeBlock({ code, language = "bash", label }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
+  const html = useMemo(() => highlight(code, language), [code, language]);
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
@@ -16,7 +18,7 @@ export function CodeBlock({ code, language = "bash", label }: CodeBlockProps) {
   };
 
   return (
-    <div className="relative my-6 rounded-lg overflow-hidden bg-[#1A1A2E] border border-white/5">
+    <div className="relative my-6 rounded-lg overflow-hidden bg-[#1A1A2E] border border-white/5 docs-code">
       <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-black/30">
         <span className="text-[11px] font-mono uppercase tracking-wider text-white/40">
           {label ?? language}
@@ -32,11 +34,10 @@ export function CodeBlock({ code, language = "bash", label }: CodeBlockProps) {
       </div>
       <pre className="p-6 overflow-x-auto text-sm leading-relaxed">
         <code
-          className="font-mono text-white/90"
+          className={`font-mono text-white/90 language-${language}`}
           style={{ fontFamily: "'Fira Code', 'Courier New', ui-monospace, monospace" }}
-        >
-          {code}
-        </code>
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </pre>
     </div>
   );
