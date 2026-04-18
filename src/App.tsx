@@ -37,6 +37,14 @@ import ToolsPage from "./pages/Tools.tsx";
 import Help from "./pages/Help.tsx";
 import HelpCategoryPage from "./pages/help/HelpCategoryPage.tsx";
 import Docs from "./pages/Docs.tsx";
+import DocsQuickstart from "./pages/docs/DocsQuickstart.tsx";
+import DocsAuthentication from "./pages/docs/DocsAuthentication.tsx";
+import DocsFlights from "./pages/docs/DocsFlights.tsx";
+import DocsHotels from "./pages/docs/DocsHotels.tsx";
+import DocsTours from "./pages/docs/DocsTours.tsx";
+import DocsWebhooks from "./pages/docs/DocsWebhooks.tsx";
+import DocsPayments from "./pages/docs/DocsPayments.tsx";
+import DocsReference from "./pages/docs/DocsReference.tsx";
 import VerifyEmail from "./pages/VerifyEmail.tsx";
 import ForgotPassword from "./pages/ForgotPassword.tsx";
 
@@ -92,6 +100,14 @@ const App = () => (
           <Route path="/help" element={<Help />} />
           <Route path="/help/:slug" element={<HelpCategoryPage />} />
           <Route path="/docs" element={<Docs />} />
+          <Route path="/docs/quickstart" element={<DocsQuickstart />} />
+          <Route path="/docs/authentication" element={<DocsAuthentication />} />
+          <Route path="/docs/flights" element={<DocsFlights />} />
+          <Route path="/docs/hotels" element={<DocsHotels />} />
+          <Route path="/docs/tours" element={<DocsTours />} />
+          <Route path="/docs/webhooks" element={<DocsWebhooks />} />
+          <Route path="/docs/payments" element={<DocsPayments />} />
+          <Route path="/docs/reference" element={<DocsReference />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
