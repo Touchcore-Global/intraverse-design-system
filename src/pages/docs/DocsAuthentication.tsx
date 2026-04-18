@@ -1,5 +1,6 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
+import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { Callout } from "@/components/docs/Callout";
 
 const toc = [
@@ -56,15 +57,18 @@ export default function DocsAuthentication() {
       </DocsSection>
 
       <DocsSection id="request" title="Token Request">
-        <CodeBlock
-          label="HTTP"
-          code={`POST https://sandbox.api.intraverse.com/v1/auth/token
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=client_credentials
-&client_id=YOUR_CLIENT_ID
-&client_secret=YOUR_CLIENT_SECRET
-&scope=flights:search flights:book`}
+        <MultiLangCodeBlock
+          samples={buildHttpSamples({
+            method: "POST",
+            url: "https://sandbox.api.intraverse.com/v1/auth/token",
+            auth: false,
+            form: {
+              grant_type: "client_credentials",
+              client_id: "YOUR_CLIENT_ID",
+              client_secret: "YOUR_CLIENT_SECRET",
+              scope: "flights:search flights:book",
+            },
+          })}
         />
       </DocsSection>
 

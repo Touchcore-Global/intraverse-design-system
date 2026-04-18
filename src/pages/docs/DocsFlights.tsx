@@ -1,5 +1,6 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
+import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
 import { ParamsTable } from "@/components/docs/ParamsTable";
 import { ArrowRight } from "lucide-react";
@@ -50,16 +51,18 @@ export default function DocsFlights() {
             { name: "direct_only", type: "boolean", description: "Restrict to non-stop itineraries" },
           ]}
         />
-        <CodeBlock
-          label="HTTP"
-          code={`POST /v1/flights/search
-{
-  "origin": "LOS",
-  "destination": "DXB",
-  "departure_date": "2026-06-15",
-  "passengers": { "adults": 1 },
-  "cabin_class": "economy"
-}`}
+        <MultiLangCodeBlock
+          samples={buildHttpSamples({
+            method: "POST",
+            url: "https://sandbox.api.intraverse.com/v1/flights/search",
+            body: {
+              origin: "LOS",
+              destination: "DXB",
+              departure_date: "2026-06-15",
+              passengers: { adults: 1 },
+              cabin_class: "economy",
+            },
+          })}
         />
         <CodeBlock
           label="JSON"
