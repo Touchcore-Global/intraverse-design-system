@@ -19,7 +19,7 @@ import {
   Send,
   Calendar,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { WHATSAPP_URL } from "@/lib/constants";
