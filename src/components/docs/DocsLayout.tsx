@@ -30,8 +30,32 @@ export function DocsLayout({
   const location = useLocation();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [feedback, setFeedback] = useState<"up" | "down" | null>(null);
+  const [activeId, setActiveId] = useState<string>("");
   const { prev, next } = getNeighbors(slug);
   const current = docCategories.find((c) => c.slug === slug);
+
+  useEffect(() => {
+    if (toc.length === 0) return;
+    const elements = toc
+      .map((t) => document.getElementById(t.id))
+      .filter((el): el is HTMLElement => !!el);
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) {
+          setActiveId(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-96px 0px -70% 0px", threshold: 0 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [toc, slug]);
 
   useEffect(() => {
     document.title = metaTitle ?? `${current?.title ?? "Docs"} | API Docs | Intraverse`;
