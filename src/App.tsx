@@ -59,8 +59,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/v2" element={<IndexV2 />} />
+          <Route path="/" element={<IndexV2 />} />
+          <Route path="/v1" element={<Index />} />
           {/* Product routes - support both old and new paths */}
           <Route path="/products" element={<Products />} />
           <Route path="/agent-platform" element={<AgentPlatform />} />
