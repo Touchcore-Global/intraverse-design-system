@@ -59,7 +59,7 @@ const Contact = () => {
     if (!parsed.success) {
       toast({
         title: "Please check your details",
-        description: parsed.error.errors[0]?.message ?? "Some fields are invalid.",
+        description: parsed.error.issues[0]?.message ?? "Some fields are invalid.",
         variant: "destructive",
       });
       return;
