@@ -1,0 +1,169 @@
+import * as React from 'npm:react@18.3.1'
+import {
+  Body,
+  Container,
+  Head,
+  Heading,
+  Html,
+  Preview,
+  Section,
+  Text,
+} from 'npm:@react-email/components@0.0.22'
+import type { TemplateEntry } from './registry.ts'
+
+interface ContactNotificationProps {
+  name?: string
+  email?: string
+  company?: string
+  reason?: string
+  message?: string
+  submittedAt?: string
+}
+
+const ContactNotificationEmail = ({
+  name,
+  email,
+  company,
+  reason,
+  message,
+  submittedAt,
+}: ContactNotificationProps) => (
+  <Html lang="en" dir="ltr">
+    <Head />
+    <Preview>
+      New contact form submission{name ? ` from ${name}` : ''}
+    </Preview>
+    <Body style={main}>
+      <Container style={container}>
+        <Section style={brandBar} />
+        <Heading style={h1}>New contact form submission</Heading>
+        <Text style={text}>
+          You have received a new enquiry from the Intraverse website.
+        </Text>
+
+        <Section style={detailsBox}>
+          {name && (
+            <Text style={row}>
+              <strong style={label}>Name:</strong> {name}
+            </Text>
+          )}
+          {email && (
+            <Text style={row}>
+              <strong style={label}>Email:</strong> {email}
+            </Text>
+          )}
+          {company && (
+            <Text style={row}>
+              <strong style={label}>Company:</strong> {company}
+            </Text>
+          )}
+          {reason && (
+            <Text style={row}>
+              <strong style={label}>Reason:</strong> {reason}
+            </Text>
+          )}
+          {submittedAt && (
+            <Text style={row}>
+              <strong style={label}>Submitted:</strong> {submittedAt}
+            </Text>
+          )}
+        </Section>
+
+        {message && (
+          <Section style={messageBox}>
+            <Text style={messageLabel}>Message</Text>
+            <Text style={messageText}>{message}</Text>
+          </Section>
+        )}
+
+        <Text style={footer}>
+          Reply directly to this email to respond to {name || 'the sender'}.
+        </Text>
+      </Container>
+    </Body>
+  </Html>
+)
+
+export const template = {
+  component: ContactNotificationEmail,
+  subject: (data: Record<string, any>) =>
+    `New contact form submission${data?.name ? ` — ${data.name}` : ''}`,
+  displayName: 'Contact form team notification',
+  to: 'support@intraverse.africa',
+  previewData: {
+    name: 'Adaeze Okeke',
+    email: 'adaeze@example.com',
+    company: 'Skyline Travel',
+    reason: 'API & Integration Support',
+    message: 'I would like to learn more about the flights API.',
+    submittedAt: 'Fri, 18 Apr 2026 09:12 UTC',
+  },
+} satisfies TemplateEntry
+
+const main = {
+  backgroundColor: '#ffffff',
+  fontFamily: "'Inter', Arial, sans-serif",
+}
+const container = {
+  maxWidth: '600px',
+  margin: '0 auto',
+  padding: '32px 24px',
+}
+const brandBar = {
+  height: '4px',
+  backgroundColor: '#1E61DC',
+  marginBottom: '28px',
+}
+const h1 = {
+  fontSize: '22px',
+  fontWeight: 700,
+  color: '#0D1B2A',
+  margin: '0 0 12px',
+}
+const text = {
+  fontSize: '14px',
+  color: '#3a4a5d',
+  lineHeight: '1.6',
+  margin: '0 0 22px',
+}
+const detailsBox = {
+  backgroundColor: '#F0F5FC',
+  borderRadius: '8px',
+  padding: '16px 18px',
+  margin: '0 0 18px',
+}
+const row = {
+  fontSize: '14px',
+  color: '#0D1B2A',
+  lineHeight: '1.5',
+  margin: '0 0 6px',
+}
+const label = {
+  color: '#1E61DC',
+}
+const messageBox = {
+  border: '1px solid #e1e8f2',
+  borderRadius: '8px',
+  padding: '16px 18px',
+  margin: '0 0 22px',
+}
+const messageLabel = {
+  fontSize: '12px',
+  textTransform: 'uppercase' as const,
+  letterSpacing: '0.06em',
+  color: '#1E61DC',
+  fontWeight: 600,
+  margin: '0 0 8px',
+}
+const messageText = {
+  fontSize: '14px',
+  color: '#0D1B2A',
+  lineHeight: '1.6',
+  whiteSpace: 'pre-wrap' as const,
+  margin: 0,
+}
+const footer = {
+  fontSize: '12px',
+  color: '#6b7280',
+  margin: '8px 0 0',
+}

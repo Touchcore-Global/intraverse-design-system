@@ -47,6 +47,7 @@ import DocsPayments from "./pages/docs/DocsPayments.tsx";
 import DocsReference from "./pages/docs/DocsReference.tsx";
 import VerifyEmail from "./pages/VerifyEmail.tsx";
 import ForgotPassword from "./pages/ForgotPassword.tsx";
+import Unsubscribe from "./pages/Unsubscribe.tsx";
 
 const queryClient = new QueryClient();
 
@@ -108,6 +109,7 @@ const App = () => (
           <Route path="/docs/webhooks" element={<DocsWebhooks />} />
           <Route path="/docs/payments" element={<DocsPayments />} />
           <Route path="/docs/reference" element={<DocsReference />} />
+          <Route path="/unsubscribe" element={<Unsubscribe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
