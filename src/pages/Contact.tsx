@@ -24,7 +24,6 @@ import { useToast } from "@/hooks/use-toast";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const contactReasons = [
-  "Book a Demo",
   "API & Integration Support",
   "Partnership Enquiry",
   "Pricing & Plans",
