@@ -52,6 +52,9 @@
     --ring: 220 78% 49%;
     --radius: 0.5rem;
 
+    /* Brand blue alias used by docs/dev pages */
+    --brand-blue: 220 78% 49%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 220 78% 49%;
