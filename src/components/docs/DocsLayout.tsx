@@ -30,8 +30,32 @@ export function DocsLayout({
   const location = useLocation();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [feedback, setFeedback] = useState<"up" | "down" | null>(null);
+  const [activeId, setActiveId] = useState<string>("");
   const { prev, next } = getNeighbors(slug);
   const current = docCategories.find((c) => c.slug === slug);
+
+  useEffect(() => {
+    if (toc.length === 0) return;
+    const elements = toc
+      .map((t) => document.getElementById(t.id))
+      .filter((el): el is HTMLElement => !!el);
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) {
+          setActiveId(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-96px 0px -70% 0px", threshold: 0 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [toc, slug]);
 
   useEffect(() => {
     document.title = metaTitle ?? `${current?.title ?? "Docs"} | API Docs | Intraverse`;
@@ -221,15 +245,22 @@ export function DocsLayout({
                     On this page
                   </p>
                   <nav className="flex flex-col gap-1.5 border-l border-border">
-                    {toc.map((t) => (
-                      <a
-                        key={t.id}
-                        href={`#${t.id}`}
-                        className="-ml-px pl-3 py-1 border-l-2 border-transparent text-sm text-muted-foreground hover:text-foreground hover:border-[hsl(var(--brand-blue))] transition-colors"
-                      >
-                        {t.label}
-                      </a>
-                    ))}
+                    {toc.map((t) => {
+                      const active = activeId === t.id;
+                      return (
+                        <a
+                          key={t.id}
+                          href={`#${t.id}`}
+                          className={`-ml-px pl-3 py-1 border-l-2 text-sm transition-colors ${
+                            active
+                              ? "border-[hsl(var(--brand-blue))] text-[hsl(var(--brand-blue))] font-medium"
+                              : "border-transparent text-muted-foreground hover:text-foreground hover:border-[hsl(var(--brand-blue))]"
+                          }`}
+                        >
+                          {t.label}
+                        </a>
+                      );
+                    })}
                   </nav>
                 </div>
               )}
