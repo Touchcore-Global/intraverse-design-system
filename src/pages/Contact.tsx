@@ -19,7 +19,7 @@ import {
   Send,
   Calendar,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { WHATSAPP_URL } from "@/lib/constants";
@@ -160,6 +160,12 @@ const Contact = () => {
         }),
       ]);
 
+      try {
+        localStorage.setItem(LAST_SUBMIT_KEY, String(Date.now()));
+      } catch {
+        // ignore
+      }
+
       toast({
         title: "Message sent!",
         description: "We've received your message and emailed you a confirmation.",
@@ -212,6 +218,24 @@ const Contact = () => {
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Honeypot — hidden from users, visible to bots */}
+                <div
+                  aria-hidden="true"
+                  className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
+                >
+                  <label htmlFor="website-url">
+                    Website (leave this empty)
+                  </label>
+                  <input
+                    id="website-url"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">
