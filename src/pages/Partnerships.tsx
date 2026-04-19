@@ -660,9 +660,10 @@ const Partnerships = () => {
               <Button
                 type="submit"
                 size="lg"
+                disabled={submitting}
                 className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90 px-8 flex-1 sm:flex-none"
               >
-                Send Partnership Inquiry
+                {submitting ? "Sending..." : "Send Partnership Inquiry"}
               </Button>
               <Button
                 type="button"
