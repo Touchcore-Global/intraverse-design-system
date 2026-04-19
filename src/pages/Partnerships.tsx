@@ -402,7 +402,7 @@ const Partnerships = () => {
       >
         <div className={`max-w-4xl mx-auto px-6 transition-all duration-700 ${ctaSection.revealClass}`}>
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white">
               Ready to Build Together?
             </h2>
             <p className="text-base md:text-lg opacity-80 max-w-2xl mx-auto leading-relaxed">
