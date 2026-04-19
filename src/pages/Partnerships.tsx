@@ -229,7 +229,7 @@ const Partnerships = () => {
             <Button
               size="lg"
               variant="outline"
-              className="rounded-none border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10 px-8 text-base"
+              className="rounded-none border-white bg-white text-black hover:bg-white/90 px-8 text-base"
               onClick={() => scrollToSection("partnership-types")}
             >
               Explore Partnership Types
