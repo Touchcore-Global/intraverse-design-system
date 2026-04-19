@@ -559,6 +559,22 @@ const Partnerships = () => {
           </div>
 
           <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {/* Honeypot — hidden from users, visible to bots */}
+            <div
+              aria-hidden="true"
+              className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden sm:col-span-2"
+            >
+              <label htmlFor="partner-website-url">Website (leave this empty)</label>
+              <input
+                id="partner-website-url"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+              />
+            </div>
             <div className="space-y-2">
               <Label htmlFor="name" className="text-background/70 text-sm">Name</Label>
               <Input
