@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { DEMO_URL } from "@/lib/constants";
+import { MessageCircle } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 const partners = [
   "Tzopal", "Whogofly", "Wright Gateway", "Lutfu Travels", "Coastline",
@@ -7,109 +9,99 @@ const partners = [
 ];
 
 export const HeroSectionV2 = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const blob1Ref = useRef<HTMLDivElement>(null);
+  const blob2Ref = useRef<HTMLDivElement>(null);
+  const blob3Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = sectionRef.current;
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      const scrollY = -rect.top;
+      if (blob1Ref.current) blob1Ref.current.style.transform = `translate(25%, -50%) translateY(${scrollY * 0.15}px)`;
+      if (blob2Ref.current) blob2Ref.current.style.transform = `translate(-25%, 50%) translateY(${scrollY * -0.1}px)`;
+      if (blob3Ref.current) blob3Ref.current.style.transform = `translate(-50%, -50%) translateY(${scrollY * 0.08}px)`;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-white">
-      {/* Subtle abstract geometric pattern in light blue */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-100"
-        style={{
-          background:
-            "radial-gradient(circle at 15% 20%, #F0F5FC 0%, transparent 45%), radial-gradient(circle at 85% 80%, #F0F5FC 0%, transparent 45%)",
-        }}
-      />
-      <svg
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse">
-            <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#F0F5FC" strokeWidth="1" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hero-grid)" />
-      </svg>
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, hsl(280 90% 96%) 0%, hsl(220 95% 94%) 25%, hsl(190 90% 93%) 50%, hsl(330 90% 95%) 75%, hsl(35 95% 94%) 100%)",
+        backgroundSize: "200% 200%",
+        animation: "gradient-shift 12s ease infinite",
+      }}
+    >
+      {/* Vibrant blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          ref={blob1Ref}
+          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 will-change-transform opacity-50"
+          style={{ background: "radial-gradient(circle, hsl(280 90% 65%) 0%, transparent 70%)" }}
+        />
+        <div
+          ref={blob2Ref}
+          className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 will-change-transform opacity-50"
+          style={{ background: "radial-gradient(circle, hsl(190 95% 55%) 0%, transparent 70%)" }}
+        />
+        <div
+          ref={blob3Ref}
+          className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full blur-3xl will-change-transform opacity-40"
+          style={{ background: "radial-gradient(circle, hsl(35 95% 60%) 0%, transparent 70%)" }}
+        />
+      </div>
 
       <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
-        {/* Tagline */}
-        <p
-          className="mb-6 font-semibold uppercase"
-          style={{
-            color: "#1E61DC",
-            fontSize: "18px",
-            letterSpacing: "0.05em",
-          }}
-        >
-          Finally, real travel infrastructure for Africa.
-        </p>
+        <span className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-white" style={{ background: "linear-gradient(90deg, hsl(280 90% 55%), hsl(330 90% 55%))" }}>
+          ✨ One platform · Global inventory
+        </span>
 
-        {/* Headline */}
         <h1
-          className="mx-auto font-bold leading-[1.1] text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px]"
+          className="text-3xl sm:text-4xl md:text-[80px] font-[660] leading-[1.1] md:leading-[96px] tracking-[-2px] max-w-5xl mx-auto"
           style={{
-            color: "#0D1B2A",
-            maxWidth: "800px",
+            backgroundImage:
+              "linear-gradient(120deg, hsl(280 90% 35%) 0%, hsl(220 95% 45%) 35%, hsl(190 95% 40%) 65%, hsl(330 90% 45%) 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
           }}
         >
-          The Platform Behind Africa's Next Generation of Travel Businesses
+          Flights. Hotels. Tours. Packages.
         </h1>
 
-        {/* Subheadline */}
         <p
-          className="mx-auto mt-6 text-[16px] md:text-[18px]"
-          style={{
-            color: "#5A6A7A",
-            maxWidth: "680px",
-            lineHeight: 1.7,
-          }}
+          className="mt-8 text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal max-w-3xl mx-auto mb-6"
+          style={{ color: "rgb(60, 50, 90)" }}
         >
-          Intraverse gives travel agents, independents, corporates, fintechs, and
-          developers the tools to sell flights, hotels, tours, and packages from
-          global suppliers — all from one IATA-accredited platform. Built in Lagos.
-          Powering travel businesses across the continent.
+          Sell it all from one AI powered platform, on your own website and via API. Easily.
         </p>
 
-        {/* CTAs */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="xl"
-            className="min-h-[48px] text-white border-0 font-semibold shadow-md hover:shadow-lg transition-shadow"
-            style={{
-              background: "#0D1B2A",
-              borderRadius: "8px",
-              padding: "14px 28px",
-            }}
+            className="cta-responsive min-h-[48px] text-white border-0 rounded-none font-semibold shadow-lg hover:shadow-xl transition-shadow"
+            style={{ background: "linear-gradient(90deg, hsl(280 90% 55%) 0%, hsl(220 95% 55%) 50%, hsl(190 95% 50%) 100%)" }}
             asChild
           >
-            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
-              Book a Demo
-            </a>
+            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
           </Button>
-          <Button
-            size="xl"
-            variant="outline"
-            className="min-h-[48px] font-semibold bg-white hover:bg-[#F0F5FC]"
-            style={{
-              color: "#0D1B2A",
-              border: "2px solid #0D1B2A",
-              borderRadius: "8px",
-              padding: "14px 28px",
-            }}
-            asChild
-          >
-            <a href="https://intraverse.app/signup" target="_blank" rel="noopener noreferrer">
-              Start Free
+          <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="h-5 w-5" />
+              Chat on WhatsApp
             </a>
           </Button>
         </div>
 
-        {/* Trust line */}
-        <p
-          className="mt-6"
-          style={{ color: "#94A3B8", fontSize: "14px" }}
-        >
-          IATA-accredited • 200+ active agents • Free starter plan • No credit card required
+        <p className="mt-4 text-sm" style={{ color: "rgb(90, 80, 120)" }}>
+          15-minute demo • No commitment • Free
         </p>
 
         {/* Video */}
@@ -132,7 +124,7 @@ export const HeroSectionV2 = () => {
 
         {/* Partner scroller */}
         <div className="mt-12 overflow-hidden">
-          <p className="text-center text-xs uppercase tracking-widest mb-6" style={{ color: "#5A6A7A" }}>
+          <p className="text-center text-xs uppercase tracking-widest mb-6" style={{ color: "rgb(90, 80, 120)" }}>
             Trusted by leading travel brands
           </p>
           <div className="relative">
@@ -140,9 +132,9 @@ export const HeroSectionV2 = () => {
               {[...partners, ...partners].map((partner, i) => (
                 <div
                   key={`${partner}-${i}`}
-                  className="flex-shrink-0 px-6 py-3 rounded-lg bg-white border border-[#F0F5FC] shadow-sm"
+                  className="flex-shrink-0 px-6 py-3 rounded-lg bg-white/70 backdrop-blur border border-white/80 shadow-sm"
                 >
-                  <span className="text-sm font-semibold whitespace-nowrap" style={{ color: "#0D1B2A" }}>
+                  <span className="text-sm font-semibold whitespace-nowrap" style={{ color: "rgb(60, 50, 90)" }}>
                     {partner}
                   </span>
                 </div>
