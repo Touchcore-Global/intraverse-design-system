@@ -29,7 +29,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden section-gradient-blue">
+    <section ref={sectionRef} className="relative overflow-hidden bg-background">
       {/* Abstract background pattern */}
       <div className="absolute inset-0 pointer-events-none">
         <div ref={blob1Ref} className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl -translate-y-1/2 translate-x-1/4 will-change-transform" />
