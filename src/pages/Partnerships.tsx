@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
@@ -132,6 +134,27 @@ const notFit = [
 
 /* ───────── COMPONENT ───────── */
 
+const partnerSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  company: z.string().trim().min(1, "Company is required").max(100),
+  role: z.string().trim().max(100).optional().or(z.literal("")),
+  email: z.string().trim().email("Please enter a valid email").max(255),
+  partnershipType: z.string().trim().max(50).optional().or(z.literal("")),
+  message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+});
+
+const PARTNER_MIN_TIME_ON_PAGE_MS = 3000;
+const PARTNER_MIN_INTERVAL_BETWEEN_SUBMITS_MS = 30_000;
+const PARTNER_LAST_SUBMIT_KEY = "intraverse:partner:last-submit";
+
+const partnershipTypeLabels: Record<string, string> = {
+  fintech: "Fintech",
+  "tech-startup": "Tech Startup",
+  supplier: "Supplier",
+  distribution: "Distribution / Ecosystem",
+  other: "Other",
+};
+
 const Partnerships = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -142,6 +165,10 @@ const Partnerships = () => {
     partnershipType: "",
     message: "",
   });
+  // Honeypot — must remain empty. Bots tend to fill every field.
+  const [website, setWebsite] = useState("");
+  const mountedAtRef = useRef<number>(Date.now());
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     document.title = "Partnerships | Build African Travel Together | Intraverse";
@@ -181,13 +208,132 @@ const Partnerships = () => {
   const fitSection = useScrollReveal();
   const ctaSection = useScrollReveal();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Partnership inquiry sent!",
-      description: "We'll get back to you within 5 business days.",
-    });
-    setFormData({ name: "", company: "", role: "", email: "", partnershipType: "", message: "" });
+
+    // Honeypot trip — pretend success silently
+    if (website.trim() !== "") {
+      toast({
+        title: "Partnership inquiry sent!",
+        description: "We'll get back to you within 5 business days.",
+      });
+      setFormData({ name: "", company: "", role: "", email: "", partnershipType: "", message: "" });
+      return;
+    }
+
+    const elapsed = Date.now() - mountedAtRef.current;
+    if (elapsed < PARTNER_MIN_TIME_ON_PAGE_MS) {
+      toast({
+        title: "Hold on a moment",
+        description: "Please take a moment to review your inquiry before sending.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const lastRaw = localStorage.getItem(PARTNER_LAST_SUBMIT_KEY);
+      const last = lastRaw ? Number(lastRaw) : 0;
+      const sinceLast = Date.now() - last;
+      if (last && sinceLast < PARTNER_MIN_INTERVAL_BETWEEN_SUBMITS_MS) {
+        const wait = Math.ceil((PARTNER_MIN_INTERVAL_BETWEEN_SUBMITS_MS - sinceLast) / 1000);
+        toast({
+          title: "Please wait",
+          description: `You can send another inquiry in ${wait}s.`,
+          variant: "destructive",
+        });
+        return;
+      }
+    } catch {
+      // localStorage unavailable — proceed
+    }
+
+    const parsed = partnerSchema.safeParse(formData);
+    if (!parsed.success) {
+      toast({
+        title: "Please check your details",
+        description: parsed.error.issues[0]?.message ?? "Some fields are invalid.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const partnershipTypeLabel = parsed.data.partnershipType
+      ? partnershipTypeLabels[parsed.data.partnershipType] ?? parsed.data.partnershipType
+      : undefined;
+
+    setSubmitting(true);
+    try {
+      const id = crypto.randomUUID();
+      const submittedAt = new Date().toUTCString();
+
+      const { error: insertError } = await supabase
+        .from("partner_submissions")
+        .insert({
+          id,
+          name: parsed.data.name,
+          company: parsed.data.company,
+          role: parsed.data.role || null,
+          email: parsed.data.email,
+          partnership_type: parsed.data.partnershipType || null,
+          message: parsed.data.message,
+        });
+
+      if (insertError) throw insertError;
+
+      await Promise.all([
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "partner-notification",
+            recipientEmail: "support@intraverse.africa",
+            idempotencyKey: `partner-notify-${id}`,
+            templateData: {
+              name: parsed.data.name,
+              email: parsed.data.email,
+              company: parsed.data.company,
+              role: parsed.data.role || undefined,
+              partnershipType: partnershipTypeLabel,
+              message: parsed.data.message,
+              submittedAt,
+            },
+          },
+        }),
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "partner-confirmation",
+            recipientEmail: parsed.data.email,
+            idempotencyKey: `partner-confirm-${id}`,
+            templateData: {
+              name: parsed.data.name,
+              company: parsed.data.company,
+              partnershipType: partnershipTypeLabel,
+              message: parsed.data.message,
+            },
+          },
+        }),
+      ]);
+
+      try {
+        localStorage.setItem(PARTNER_LAST_SUBMIT_KEY, String(Date.now()));
+      } catch {
+        // ignore
+      }
+
+      toast({
+        title: "Partnership inquiry sent!",
+        description: "We've received your inquiry and emailed you a confirmation. We'll get back within 5 business days.",
+      });
+      setFormData({ name: "", company: "", role: "", email: "", partnershipType: "", message: "" });
+    } catch (err) {
+      console.error("Partnership inquiry submission failed", err);
+      toast({
+        title: "Something went wrong",
+        description: "We couldn't send your inquiry. Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const scrollToSection = (id: string) => {
@@ -413,6 +559,22 @@ const Partnerships = () => {
           </div>
 
           <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {/* Honeypot — hidden from users, visible to bots */}
+            <div
+              aria-hidden="true"
+              className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden sm:col-span-2"
+            >
+              <label htmlFor="partner-website-url">Website (leave this empty)</label>
+              <input
+                id="partner-website-url"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+              />
+            </div>
             <div className="space-y-2">
               <Label htmlFor="name" className="text-background/70 text-sm">Name</Label>
               <Input
@@ -498,9 +660,10 @@ const Partnerships = () => {
               <Button
                 type="submit"
                 size="lg"
+                disabled={submitting}
                 className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90 px-8 flex-1 sm:flex-none"
               >
-                Send Partnership Inquiry
+                {submitting ? "Sending..." : "Send Partnership Inquiry"}
               </Button>
               <Button
                 type="button"
