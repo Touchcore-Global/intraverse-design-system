@@ -212,7 +212,7 @@ const Partnerships = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white">
             Build the Future of African Travel — Together
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto mb-10 leading-relaxed opacity-80">
+          <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed">
             Intraverse partners with fintechs, tech startups, suppliers, distribution partners, and
             ecosystem players to power travel businesses across the continent. If you're building
             something that touches travel — or want to add travel to what you're already building —
