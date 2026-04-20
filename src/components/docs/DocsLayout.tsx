@@ -183,7 +183,7 @@ export function DocsLayout({
                       aria-label="Helpful"
                       className={`p-2 rounded-md border transition-colors ${
                         feedback === "up"
-                          ? "border-[hsl(var(--brand-blue))] bg-[#F0F5FC] text-[hsl(var(--brand-blue))]"
+                          ? "border-[hsl(var(--brand-blue))] bg-accent text-[hsl(var(--brand-blue))]"
                           : "border-border text-muted-foreground hover:text-foreground"
                       }`}
                     >

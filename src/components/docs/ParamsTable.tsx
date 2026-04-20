@@ -10,7 +10,7 @@ export function ParamsTable({ params }: { params: Param[] }) {
     <div className="my-6 overflow-x-auto rounded-lg border border-border">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-[#F3F4F6] text-left">
+          <tr className="bg-muted text-left">
             <th className="px-4 py-2.5 font-semibold text-foreground">Name</th>
             <th className="px-4 py-2.5 font-semibold text-foreground">Type</th>
             <th className="px-4 py-2.5 font-semibold text-foreground">Required</th>
@@ -19,7 +19,7 @@ export function ParamsTable({ params }: { params: Param[] }) {
         </thead>
         <tbody>
           {params.map((p, i) => (
-            <tr key={p.name} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
+            <tr key={p.name} className={i % 2 === 0 ? "bg-white" : "bg-muted/50"}>
               <td className="px-4 py-2.5 align-top">
                 <code
                   className="font-mono text-[13px] text-foreground"

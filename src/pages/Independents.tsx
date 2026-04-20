@@ -330,10 +330,10 @@ const Independents = () => {
 
 
       {/* TRAVEL LINKS CALLOUT */}
-      <section className="py-16 md:py-20" style={{ backgroundColor: "#F0F5FC" }}>
+      <section className="py-16 md:py-20" style={{ backgroundColor: "hsl(var(--accent))" }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase text-white mb-4" style={{ backgroundColor: "#16A34A" }}>
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase text-white mb-4" style={{ backgroundColor: "var(--iv-teal-500)" }}>
               🆕 New
             </span>
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">

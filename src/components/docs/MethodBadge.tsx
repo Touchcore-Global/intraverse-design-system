@@ -1,10 +1,10 @@
 type Method = "GET" | "POST" | "PATCH" | "DELETE" | "PUT";
 
 const colors: Record<Method, string> = {
-  POST: "bg-[#1E61DC]",
-  GET: "bg-[#16A34A]",
-  PATCH: "bg-[#EAB308]",
-  DELETE: "bg-[#DC2626]",
+  POST: "bg-brand",
+  GET: "bg-iv-teal-500",
+  PATCH: "bg-iv-orange-500",
+  DELETE: "bg-destructive",
   PUT: "bg-purple-600",
 };
 

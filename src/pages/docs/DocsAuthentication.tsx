@@ -101,14 +101,14 @@ export default function DocsAuthentication() {
         <div className="my-6 overflow-x-auto rounded-lg border border-border">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-[#F3F4F6] text-left">
+              <tr className="bg-muted text-left">
                 <th className="px-4 py-2.5 font-semibold text-foreground">Scope</th>
                 <th className="px-4 py-2.5 font-semibold text-foreground">Description</th>
               </tr>
             </thead>
             <tbody>
               {scopes.map(([s, d], i) => (
-                <tr key={s} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
+                <tr key={s} className={i % 2 === 0 ? "bg-white" : "bg-muted/50"}>
                   <td className="px-4 py-2.5 align-top">
                     <code className="font-mono text-[13px] text-foreground">{s}</code>
                   </td>
@@ -135,7 +135,7 @@ export default function DocsAuthentication() {
         <div className="my-6 overflow-x-auto rounded-lg border border-border">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-[#F3F4F6] text-left">
+              <tr className="bg-muted text-left">
                 <th className="px-4 py-2.5 font-semibold text-foreground">Environment</th>
                 <th className="px-4 py-2.5 font-semibold text-foreground">Base URL</th>
                 <th className="px-4 py-2.5 font-semibold text-foreground">Credentials</th>
@@ -147,7 +147,7 @@ export default function DocsAuthentication() {
                 <td className="px-4 py-2.5"><code className="font-mono text-[13px]">https://sandbox.api.intraverse.com/v1/</code></td>
                 <td className="px-4 py-2.5 text-muted-foreground">Issued instantly on signup</td>
               </tr>
-              <tr className="bg-[#F9FAFB]">
+              <tr className="bg-muted/50">
                 <td className="px-4 py-2.5">Production</td>
                 <td className="px-4 py-2.5"><code className="font-mono text-[13px]">https://api.intraverse.com/v1/</code></td>
                 <td className="px-4 py-2.5 text-muted-foreground">Issued after onboarding</td>

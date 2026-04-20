@@ -189,7 +189,7 @@ export default function ApiProduct() {
       <Navbar />
       <main className="pt-16">
         {/* ═══ HERO ═══ */}
-        <section className="relative overflow-hidden" style={{ backgroundColor: "#0D1B2A" }}>
+        <section className="relative overflow-hidden" style={{ backgroundColor: "hsl(var(--secondary))" }}>
           {/* Grid pattern overlay */}
           <div
             className="absolute inset-0 opacity-[0.07]"
@@ -237,7 +237,7 @@ export default function ApiProduct() {
         </section>
 
         {/* ═══ SECTION 2 — CORE CAPABILITIES ═══ */}
-        <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
+        <section className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--accent))" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
               <h2 className="text-foreground text-center mb-16">
@@ -249,7 +249,7 @@ export default function ApiProduct() {
                 <RevealBlock key={card.title}>
                   <div className="bg-background rounded-lg border border-border p-8 h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <span className="text-[40px] leading-none block mb-4">{card.emoji}</span>
-                    <h3 className="text-[22px] font-bold mb-3" style={{ color: "#0D1B2A" }}>
+                    <h3 className="text-[22px] font-bold mb-3" style={{ color: "hsl(var(--secondary))" }}>
                       {card.title}
                     </h3>
                     <p className="text-[15px] text-muted-foreground leading-relaxed">
@@ -288,7 +288,7 @@ export default function ApiProduct() {
         </section>
 
         {/* ═══ SECTION 4 — CODE EXAMPLE ═══ */}
-        <section className="py-16 md:py-24" style={{ backgroundColor: "#0D1B2A" }}>
+        <section className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--secondary))" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "900px" }}>
             <RevealBlock>
               <h2 className="text-white text-center mb-6">
@@ -301,7 +301,7 @@ export default function ApiProduct() {
             <RevealBlock>
               <div
                 className="rounded-lg p-6 md:p-8 overflow-x-auto"
-                style={{ backgroundColor: "#1A1A2E" }}
+                style={{ backgroundColor: "hsl(var(--secondary))" }}
               >
                 <pre className="font-mono text-sm md:text-base leading-relaxed whitespace-pre text-white/90">
                   <code dangerouslySetInnerHTML={{ __html: formatCode(codeExample) }} />
@@ -320,7 +320,7 @@ export default function ApiProduct() {
         </section>
 
         {/* ═══ SECTION 5 — TECH SPECS ═══ */}
-        <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
+        <section className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--accent))" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "900px" }}>
             <RevealBlock>
               <h2 className="text-foreground text-center mb-12">
@@ -366,7 +366,7 @@ export default function ApiProduct() {
         </section>
 
         {/* ═══ SECTION 7 — PRICING MODEL ═══ */}
-        <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
+        <section className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--accent))" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
               <h2 className="text-foreground text-center mb-6">
@@ -451,7 +451,7 @@ export default function ApiProduct() {
         </section>
 
         {/* ═══ SECTION 9 — CO-BUILD PARTNERSHIPS ═══ */}
-        <section className="py-16 md:py-24" style={{ backgroundColor: "#0D1B2A" }}>
+        <section className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--secondary))" }}>
           <div className="container mx-auto px-4 text-center" style={{ maxWidth: "800px" }}>
             <RevealBlock>
               <h2 className="text-white mb-6">
