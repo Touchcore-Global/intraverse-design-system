@@ -231,7 +231,7 @@ export default function Pricing() {
 
                 <h3 className="text-lg font-semibold mb-1">{tier.name}</h3>
                 <div className="mb-1">
-                  <span className="font-mono font-bold text-3xl tracking-tight">
+                  <span className="text-3xl font-bold tracking-tight">
                     {tier.monthlyUsd === null ? "Custom" : formatPrice(annual ? tier.annualUsd : tier.monthlyUsd, currency)}
                   </span>
                   <span className="text-sm text-muted-foreground ml-1">{annual ? tier.annualPeriod : tier.monthlyPeriod}</span>
@@ -305,7 +305,7 @@ export default function Pricing() {
               <Globe className="h-5 w-5 text-primary" />
               <span className="text-sm font-semibold text-primary">Travx</span>
             </div>
-            <span className="font-mono font-bold text-3xl">+{formatPrice(annual ? 40 : 50, currency)}</span>
+            <span className="text-3xl font-bold">+{formatPrice(annual ? 40 : 50, currency)}</span>
             <span className="text-muted-foreground text-sm">{annual ? "/month, billed annually" : "/month"}</span>
           </div>
 

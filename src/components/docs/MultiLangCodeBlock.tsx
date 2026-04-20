@@ -100,6 +100,7 @@ export function MultiLangCodeBlock({ samples }: MultiLangCodeBlockProps) {
       <pre className="p-6 overflow-x-auto text-sm leading-relaxed">
         <code
           className={`font-mono text-white/90 whitespace-pre language-${lang}`}
+          style={{ fontFamily: "'Fira Code', 'Courier New', ui-monospace, monospace" }}
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </pre>

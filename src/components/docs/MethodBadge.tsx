@@ -22,7 +22,10 @@ export function EndpointHeading({ method, path, id }: { method: Method; path: st
   return (
     <div id={id} className="flex flex-wrap items-center gap-2 mt-8 mb-3 scroll-mt-24">
       <MethodBadge method={method} />
-      <code className="font-mono font-semibold text-sm text-foreground">
+      <code
+        className="font-mono text-sm text-foreground"
+        style={{ fontFamily: "'Fira Code', 'Courier New', ui-monospace, monospace" }}
+      >
         {path}
       </code>
     </div>

@@ -21,7 +21,10 @@ export function ParamsTable({ params }: { params: Param[] }) {
           {params.map((p, i) => (
             <tr key={p.name} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
               <td className="px-4 py-2.5 align-top">
-                <code className="font-mono text-[13px] text-foreground">
+                <code
+                  className="font-mono text-[13px] text-foreground"
+                  style={{ fontFamily: "'Fira Code', 'Courier New', ui-monospace, monospace" }}
+                >
                   {p.name}
                 </code>
               </td>
