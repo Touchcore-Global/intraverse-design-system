@@ -220,7 +220,7 @@ export default function Docs() {
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold rounded-none" asChild>
                 <a href="/contact">Get Sandbox Access</a>
               </Button>
-              <Button size="xl" variant="outline" className="border-white/30 text-white hover:bg-white/10 cta-responsive min-h-[48px] rounded-none" asChild>
+              <Button size="xl" className="bg-transparent border border-white/40 text-white hover:bg-white/10 cta-responsive min-h-[48px] rounded-none" asChild>
                 <a href="/docs/quickstart">Quick Start Guide</a>
               </Button>
             </div>
@@ -440,10 +440,10 @@ export default function Docs() {
               Get free sandbox access, read the quick start guide, and make your first API call in under 10 minutes. No credit card. No sales call. Just an API key and the freedom to build.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="xl" className="bg-background text-foreground hover:bg-background/90 cta-responsive min-h-[48px] rounded-none font-semibold" asChild>
+              <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] rounded-none font-semibold" asChild>
                 <a href="/contact">Get Sandbox Access</a>
               </Button>
-              <Button size="xl" variant="outline" className="border-background/30 text-background hover:bg-background/10 cta-responsive min-h-[48px] rounded-none" asChild>
+              <Button size="xl" className="bg-transparent border border-white/40 text-white hover:bg-white/10 cta-responsive min-h-[48px] rounded-none" asChild>
                 <a href="/docs/quickstart">Read the Quick Start</a>
               </Button>
             </div>
