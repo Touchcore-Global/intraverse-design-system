@@ -17,6 +17,31 @@ export default {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
+        // Raw Intraverse brand palette (use sparingly; prefer semantic tokens)
+        iv: {
+          blue: { 100: "#E4EDFB", 400: "#4A83E6", 500: "#1E61DC", 600: "#1852BC" },
+          navy: { 500: "#1F4A95", 700: "#132F6B", 900: "#091F4A" },
+          teal: { 100: "#D6F7EE", 500: "#00D4AA", 600: "#00B894" },
+          orange: { 100: "#FFE8D6", 500: "#FF7A1A", 600: "#E8680D" },
+          gray: { 100: "#F3F5F9", 300: "#CBD2DC", 500: "#8C929D", 700: "#4A5568", 900: "#1F2430" },
+          charcoal: "#171321",
+        },
+        brand: {
+          DEFAULT: "#1E61DC",
+          hover: "#1852BC",
+        },
+        navy: {
+          DEFAULT: "#091F4A",
+          700: "#132F6B",
+        },
+        teal: {
+          DEFAULT: "#00D4AA",
+          600: "#00B894",
+        },
+        orange: {
+          DEFAULT: "#FF7A1A",
+          600: "#E8680D",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
