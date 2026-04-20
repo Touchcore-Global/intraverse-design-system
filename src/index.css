@@ -1,98 +1,184 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.cdnfonts.com/css/gitlab-sans');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   Intraverse Design System
+   Tokens are exposed both as raw brand vars (--iv-*) and as
+   HSL semantic tokens consumed by Tailwind (background, primary,
+   muted, etc.) so existing components automatically inherit the
+   refreshed palette.
+   ============================================================ */
+
 @layer base {
   :root {
-    /* Intraverse Brand Design System */
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    /* ---- Brand raw colours (hex, for gradients & utilities) ---- */
+    --iv-blue-500: #1E61DC;
+    --iv-blue-600: #1852BC;
+    --iv-blue-400: #4A83E6;
+    --iv-blue-100: #E4EDFB;
 
-    /* Primary brand blue: #1E61DC */
-    --primary: 220 78% 49%;
+    --iv-navy-900: #091F4A;
+    --iv-navy-700: #132F6B;
+    --iv-navy-500: #1F4A95;
+
+    --iv-teal-500: #00D4AA;
+    --iv-teal-600: #00B894;
+    --iv-teal-100: #D6F7EE;
+
+    --iv-orange-500: #FF7A1A;
+    --iv-orange-600: #E8680D;
+    --iv-orange-100: #FFE8D6;
+
+    --iv-charcoal: #171321;
+    --iv-gray-900: #1F2430;
+    --iv-gray-700: #4A5568;
+    --iv-gray-500: #8C929D;
+    --iv-gray-300: #CBD2DC;
+    --iv-gray-100: #F3F5F9;
+    --iv-white: #FFFFFF;
+
+    /* ---- Gradients ---- */
+    --gradient-hero: linear-gradient(135deg, #1E61DC 0%, #00D4AA 100%);
+    --gradient-cta: linear-gradient(135deg, #FF7A1A 0%, #1E61DC 100%);
+    --gradient-surface-dark: linear-gradient(180deg, #091F4A 0%, #132F6B 100%);
+
+    /* ---- Typography ---- */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', Menlo, 'DejaVu Sans Mono', 'Liberation Mono', Consolas, 'Ubuntu Mono', 'Courier New', monospace;
+
+    --fs-display: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+    --fs-h1: clamp(2rem, 3vw + 1rem, 3rem);
+    --fs-h2: clamp(1.5rem, 2vw + 0.75rem, 2.25rem);
+    --fs-h3: 1.5rem;
+    --fs-h4: 1.25rem;
+    --fs-body-lg: 1.125rem;
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+    --fs-xs: 0.75rem;
+
+    --lh-display: 1.05;
+    --lh-heading: 1.10;
+    --lh-body: 1.35;
+    --ls-tight: -0.045em;
+    --ls-sub: -0.02em;
+
+    /* ---- Spacing / radii / motion ---- */
+    --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+    --space-4: 1rem;    --space-5: 1.5rem; --space-6: 2rem;
+    --space-7: 3rem;    --space-8: 4rem;   --space-9: 6rem; --space-10: 8rem;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 20px;
+    --radius-full: 9999px;
+
+    --shadow-sm: 0 1px 2px rgba(9,31,74,0.06), 0 1px 3px rgba(9,31,74,0.08);
+    --shadow-md: 0 4px 6px rgba(9,31,74,0.06), 0 10px 15px rgba(9,31,74,0.08);
+    --shadow-lg: 0 10px 25px rgba(9,31,74,0.10), 0 20px 40px rgba(9,31,74,0.12);
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-fast: 150ms;
+    --duration-base: 250ms;
+    --duration-slow: 400ms;
+
+    --container-max: 1200px;
+    --container-pad: clamp(1rem, 4vw, 2.5rem);
+
+    /* ============================================================
+       HSL semantic tokens (consumed by Tailwind via tailwind.config)
+       These mirror the brand palette above so existing utility
+       classes like bg-primary, text-foreground, bg-muted, border
+       inherit the new design system automatically.
+       ============================================================ */
+
+    /* Brand primary blue #1E61DC */
+    --primary: 220 75% 49%;
     --primary-foreground: 0 0% 100%;
 
-    /* Dark navy: #0D1B2A */
-    --foreground: 213 55% 11%;
-    --card-foreground: 213 55% 11%;
-    --popover-foreground: 213 55% 11%;
+    /* Charcoal text #171321 */
+    --foreground: 257 24% 11%;
+    --card-foreground: 257 24% 11%;
+    --popover-foreground: 257 24% 11%;
 
-    /* White background */
+    /* White surfaces */
     --background: 0 0% 100%;
     --card: 0 0% 100%;
     --popover: 0 0% 100%;
 
-    /* Accent light blue: #F0F5FC */
-    --accent: 216 67% 96%;
-    --accent-foreground: 213 55% 11%;
+    /* Subtle gray surface #F3F5F9 */
+    --accent: 220 24% 96%;
+    --accent-foreground: 257 24% 11%;
 
-    /* Secondary - dark navy for dark sections */
-    --secondary: 213 55% 11%;
+    /* Dark navy #091F4A for "dark" sections */
+    --secondary: 218 79% 16%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted / body text grey: #5A6A7A */
-    --muted: 216 67% 96%;
-    --muted-foreground: 212 16% 42%;
+    /* Muted body text #4A5568 on subtle bg #F3F5F9 */
+    --muted: 220 24% 96%;
+    --muted-foreground: 218 17% 35%;
 
-    /* Success green: #16A34A */
-    --success: 142 72% 36%;
+    /* Teal #00D4AA */
+    --success: 167 100% 42%;
     --success-foreground: 0 0% 100%;
 
-    /* Destructive red: #DC2626 */
+    /* Orange accent #FF7A1A — exposed as destructive replacement-friendly token kept red */
     --destructive: 0 84% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* WhatsApp green: #25D366 */
+    /* WhatsApp green */
     --whatsapp: 142 68% 49%;
 
-    --border: 216 30% 90%;
-    --input: 216 30% 90%;
-    --ring: 220 78% 49%;
+    /* Borders #CBD2DC subtle / #E5E9F0 */
+    --border: 220 19% 90%;
+    --input: 220 19% 90%;
+    --ring: 220 75% 49%;
     --radius: 0.5rem;
 
-    /* Brand blue alias used by docs/dev pages */
-    --brand-blue: 220 78% 49%;
+    --brand-blue: 220 75% 49%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 220 78% 49%;
+    --sidebar-foreground: 218 17% 35%;
+    --sidebar-primary: 220 75% 49%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 216 67% 96%;
-    --sidebar-accent-foreground: 213 55% 11%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 220 78% 49%;
+    --sidebar-accent: 220 24% 96%;
+    --sidebar-accent-foreground: 257 24% 11%;
+    --sidebar-border: 220 19% 90%;
+    --sidebar-ring: 220 75% 49%;
   }
 
   .dark {
-    --background: 213 55% 11%;
+    --background: 218 79% 16%;
     --foreground: 0 0% 95%;
-    --card: 213 45% 14%;
+    --card: 218 70% 20%;
     --card-foreground: 0 0% 95%;
-    --popover: 213 45% 14%;
+    --popover: 218 70% 20%;
     --popover-foreground: 0 0% 95%;
-    --primary: 220 78% 55%;
+    --primary: 220 75% 55%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 213 35% 20%;
+    --secondary: 218 60% 25%;
     --secondary-foreground: 0 0% 95%;
-    --muted: 213 35% 20%;
-    --muted-foreground: 212 16% 65%;
-    --accent: 213 35% 20%;
+    --muted: 218 60% 25%;
+    --muted-foreground: 218 17% 70%;
+    --accent: 218 60% 25%;
     --accent-foreground: 0 0% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 213 35% 20%;
-    --input: 213 35% 20%;
-    --ring: 220 78% 55%;
-    --sidebar-background: 213 55% 8%;
+    --border: 218 60% 25%;
+    --input: 218 60% 25%;
+    --ring: 220 75% 55%;
+    --sidebar-background: 218 79% 12%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 220 78% 55%;
+    --sidebar-primary: 220 75% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 213 35% 15%;
+    --sidebar-accent: 218 60% 20%;
     --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 213 35% 20%;
-    --sidebar-ring: 220 78% 55%;
+    --sidebar-border: 218 60% 25%;
+    --sidebar-ring: 220 75% 55%;
   }
 }
 
@@ -102,92 +188,112 @@
   }
 
   body {
-    @apply bg-background text-muted-foreground font-sans antialiased;
-    font-size: 16px;
-    line-height: 1.6;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    text-rendering: optimizeLegibility;
   }
 
-  h1, h2 {
-    box-sizing: border-box;
-    color: rgb(23, 19, 33);
-    font-family: "GitLab Sans", sans-serif;
-    font-size: 32px;
-    font-weight: 660;
-    letter-spacing: -1px;
-    line-height: 38px;
-  }
-
-  h3, h4, h5, h6 {
-    color: rgb(23, 19, 33);
-    font-family: "GitLab Sans", sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    color: hsl(var(--foreground));
     font-weight: 700;
-    font-size: 18px !important;
-    line-height: 24px !important;
+    letter-spacing: var(--ls-tight);
+    line-height: var(--lh-heading);
+    margin: 0 0 var(--space-4) 0;
   }
 
-  @media (min-width: 640px) {
-    h1, h2 {
-      font-size: 48px;
-      letter-spacing: -1.5px;
-      line-height: 54px;
-    }
+  h1 { font-size: var(--fs-h1); line-height: var(--lh-display); }
+  h2 { font-size: var(--fs-h2); }
+  h3 { font-size: var(--fs-h3); }
+  h4 { font-size: var(--fs-h4); font-weight: 600; }
+
+  p { max-width: 65ch; }
+
+  code, kbd, pre, samp {
+    font-family: var(--font-mono);
+    font-size: 0.9375em;
   }
 
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 80px;
-      letter-spacing: -2px;
-      line-height: 96px;
-    }
-    h2 {
-      font-size: 80px;
-      letter-spacing: -2px;
-      line-height: 96px;
-    }
+  code {
+    padding: 0.15em 0.4em;
+    background: var(--iv-gray-100);
+    border-radius: var(--radius-sm);
+    color: var(--iv-navy-900);
   }
 }
 
 @layer components {
-  /* Section alternating backgrounds */
-  .section-alt {
-    @apply bg-accent;
+  /* Display & lead text */
+  .display {
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+    letter-spacing: var(--ls-tight);
+    font-weight: 700;
   }
 
-  /* Animated gradient backgrounds */
+  .lead {
+    font-size: var(--fs-body-lg);
+    line-height: 1.5;
+    letter-spacing: var(--ls-sub);
+    color: hsl(var(--muted-foreground));
+    max-width: 60ch;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--iv-blue-500);
+    margin-bottom: var(--space-3);
+  }
+
+  .gradient-text {
+    background: var(--gradient-cta);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Section variants */
+  .section-alt { @apply bg-accent; }
+
   .section-gradient-dark {
-    background: linear-gradient(135deg, hsl(213 55% 11%) 0%, hsl(220 60% 18%) 25%, hsl(230 50% 15%) 50%, hsl(220 60% 18%) 75%, hsl(213 55% 11%) 100%);
+    background: var(--gradient-surface-dark);
     background-size: 200% 200%;
     animation: gradient-shift 8s ease infinite;
   }
 
   .section-gradient-blue {
-    background: linear-gradient(135deg, hsl(216 67% 96%) 0%, hsl(220 78% 94%) 25%, hsl(210 60% 95%) 50%, hsl(220 78% 94%) 75%, hsl(216 67% 96%) 100%);
+    background: linear-gradient(135deg, #E4EDFB 0%, #F3F5F9 50%, #E4EDFB 100%);
     background-size: 200% 200%;
     animation: gradient-shift 10s ease infinite;
   }
 
   .section-gradient-warm {
-    background: linear-gradient(135deg, hsl(30 80% 97%) 0%, hsl(16 70% 96%) 25%, hsl(340 60% 97%) 50%, hsl(30 80% 97%) 75%, hsl(16 70% 96%) 100%);
+    background: linear-gradient(135deg, #FFE8D6 0%, #FFF4E8 50%, #FFE8D6 100%);
     background-size: 200% 200%;
     animation: gradient-shift 12s ease infinite;
   }
 
   .section-gradient-primary {
-    background: linear-gradient(135deg, hsl(220 78% 49%) 0%, hsl(240 60% 55%) 25%, hsl(220 78% 52%) 50%, hsl(240 60% 55%) 75%, hsl(220 78% 49%) 100%);
+    background: var(--gradient-hero);
     background-size: 200% 200%;
     animation: gradient-shift 8s ease infinite;
   }
 
   .section-gradient-mint {
-    background: linear-gradient(135deg, hsl(160 40% 96%) 0%, hsl(180 35% 95%) 25%, hsl(200 40% 96%) 50%, hsl(180 35% 95%) 75%, hsl(160 40% 96%) 100%);
+    background: linear-gradient(135deg, #D6F7EE 0%, #EAFBF5 50%, #D6F7EE 100%);
     background-size: 200% 200%;
     animation: gradient-shift 10s ease infinite;
   }
 
-  /* Shimmer overlay — add as a child pseudo-element */
-  .shimmer-overlay {
-    @apply relative overflow-hidden;
-  }
+  /* Shimmer */
+  .shimmer-overlay { @apply relative overflow-hidden; }
   .shimmer-overlay::after {
     content: '';
     @apply absolute inset-0 pointer-events-none;
@@ -202,34 +308,57 @@
     animation: shimmer 4s ease-in-out infinite;
   }
 
-  /* Hero headline sizing */
+  /* Hero/section sizing */
   .text-hero {
-    @apply text-3xl sm:text-4xl md:text-[60px] font-extrabold;
-    line-height: 1.1;
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+    letter-spacing: var(--ls-tight);
+    font-weight: 700;
   }
 
-  /* Section headline sizing */
   .text-section {
-    @apply text-2xl sm:text-3xl md:text-4xl font-bold;
-    line-height: 1.2;
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    letter-spacing: var(--ls-tight);
+    font-weight: 700;
   }
 
-  /* Brand card */
   .brand-card {
     @apply bg-card rounded-xl p-6 md:p-8;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-sm);
   }
 
-  /* Full-width CTA buttons on mobile */
+  /* Stat card accent */
+  .stat-card {
+    border-left: 3px solid var(--iv-teal-500);
+  }
+
   @media (max-width: 640px) {
-    .cta-responsive {
-      @apply w-full;
-    }
+    .cta-responsive { @apply w-full; }
   }
 }
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ===== Prism syntax highlighting (dark docs theme) ===== */
