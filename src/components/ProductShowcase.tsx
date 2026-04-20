@@ -95,7 +95,7 @@ export const ProductShowcase = () => {
         className="brand-card flex flex-col hover:shadow-lg transition-shadow duration-300 flex-1 relative"
       >
         {product.isNew && (
-          <span className="absolute top-4 right-4 inline-flex px-2 py-0.5 rounded-full text-[11px] font-bold uppercase text-white" style={{ backgroundColor: "#16A34A" }}>
+          <span className="absolute top-4 right-4 inline-flex px-2 py-0.5 rounded-full text-[11px] font-bold uppercase text-white" style={{ backgroundColor: "var(--iv-teal-500)" }}>
             🆕 New
           </span>
         )}

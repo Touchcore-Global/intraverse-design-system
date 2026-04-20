@@ -231,7 +231,7 @@ export default function Tools() {
         </section>
 
         {/* ═══ SECTION 2 — THE TOOLS ═══ */}
-        <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
+        <section className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--accent))" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
               <h2 className="text-foreground text-center mb-16">
@@ -243,10 +243,10 @@ export default function Tools() {
                 <RevealBlock key={tool.title}>
                   <div className="bg-background rounded-2xl border border-border p-8 h-full flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300 hover:border-primary">
                     <span className="text-[40px] leading-none block mb-4">{tool.emoji}</span>
-                    <h3 className="text-2xl font-bold mb-2" style={{ color: "#0D1B2A" }}>
+                    <h3 className="text-2xl font-bold mb-2" style={{ color: "hsl(var(--secondary))" }}>
                       {tool.title}
                     </h3>
-                    <p className="text-base italic mb-3" style={{ color: "#1E61DC" }}>
+                    <p className="text-base italic mb-3" style={{ color: "hsl(var(--primary))" }}>
                       {tool.tagline}
                     </p>
                     <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
@@ -307,7 +307,7 @@ export default function Tools() {
         </section>
 
         {/* ═══ SECTION 4 — BUILT FOR EVERY AUDIENCE ═══ */}
-        <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
+        <section className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--accent))" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
               <h2 className="text-foreground text-center mb-6">

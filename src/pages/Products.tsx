@@ -172,7 +172,7 @@ const audiences = [
 function Badge({ type }: { type: "new" | "coming-soon" }) {
   if (type === "new") {
     return (
-      <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide text-white" style={{ backgroundColor: "#16A34A" }}>
+      <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide text-white" style={{ backgroundColor: "var(--iv-teal-500)" }}>
         🆕 New
       </span>
     );

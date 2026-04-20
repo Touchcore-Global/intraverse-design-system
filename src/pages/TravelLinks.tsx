@@ -135,7 +135,7 @@ const TravelLinks = () => {
 
         <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase text-white mb-6" style={{ backgroundColor: "#16A34A" }}>
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase text-white mb-6" style={{ backgroundColor: "var(--iv-teal-500)" }}>
               🆕 New Product
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-[64px] md:leading-[72px] font-[660] tracking-[-2px] max-w-5xl mx-auto" style={{ color: "rgb(23, 19, 33)" }}>
@@ -224,7 +224,7 @@ const TravelLinks = () => {
       </section>
 
       {/* SECTION 3 — WHY TRAVEL LINKS WORK */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
+      <section className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--accent))" }}>
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
             <h2 className="text-3xl sm:text-4xl md:text-[48px] md:leading-[56px] font-[660] tracking-[-2px] text-center mb-16" style={{ color: "rgb(13, 27, 42)" }}>
@@ -371,7 +371,7 @@ const TravelLinks = () => {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-20 md:py-28" style={{ backgroundColor: "#0D1B2A" }}>
+      <section className="py-20 md:py-28" style={{ backgroundColor: "hsl(var(--secondary))" }}>
         <div className="container mx-auto px-4 text-center" style={{ maxWidth: "900px" }}>
           <RevealBlock>
             <h2 className="text-3xl sm:text-4xl md:text-[48px] md:leading-[56px] font-[660] tracking-[-2px] text-white mb-6">
