@@ -219,7 +219,7 @@ export default function Tools() {
                   <span
                     key={pill}
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium text-foreground"
-                    style={{ backgroundColor: "#EBF2FF" }}
+                    style={{ backgroundColor: "hsl(var(--accent))" }}
                   >
                     <Check className="w-4 h-4 text-green-600 shrink-0" />
                     {pill}

@@ -32,7 +32,7 @@ function MobileAccordion({ title, sections, footerLink, onClose }: MobileAccordi
         <div className="pl-4 pb-2">
           {sections.map((section) => (
             <div key={section.header} className="mb-3">
-              <p className="text-[11px] uppercase tracking-[0.05em] font-bold mb-1.5" style={{ color: "#94A3B8" }}>
+              <p className="text-[11px] uppercase tracking-[0.05em] font-bold mb-1.5" style={{ color: "hsl(var(--muted-foreground))" }}>
                 {section.header}
               </p>
               {section.items.map((item) => (

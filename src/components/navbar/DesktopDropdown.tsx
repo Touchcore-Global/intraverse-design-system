@@ -21,7 +21,7 @@ export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDr
       <div className={useGrid ? "grid grid-cols-2 gap-x-6" : ""}>
         {sections.map((section, sIdx) => (
           <div key={section.header} className={sIdx > 0 && !useGrid ? "mt-4 pt-4 border-t border-border" : sIdx > 0 && useGrid ? "mt-2" : ""}>
-            <p className="text-[12px] uppercase tracking-[0.05em] font-bold mb-3" style={{ color: "#94A3B8" }}>
+            <p className="text-[12px] uppercase tracking-[0.05em] font-bold mb-3" style={{ color: "hsl(var(--muted-foreground))" }}>
               {section.header}
             </p>
             <div className="flex flex-col gap-0.5">

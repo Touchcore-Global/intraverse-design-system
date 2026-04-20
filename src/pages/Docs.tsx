@@ -314,7 +314,7 @@ export default function Docs() {
                 </div>
 
                 {/* Response */}
-                <div className="relative bg-[#141425] rounded-b-lg p-5 border-t border-white/5 overflow-x-auto">
+                <div className="relative bg-iv-navy-900 rounded-b-lg p-5 border-t border-white/5 overflow-x-auto">
                   <p className="text-xs text-white/30 font-mono mb-3 uppercase tracking-wider">Response</p>
                   <CopyButton text={codeSamples[activeTab].response} />
                   <pre className="text-sm text-blue-300 font-mono whitespace-pre leading-relaxed">{codeSamples[activeTab].response}</pre>

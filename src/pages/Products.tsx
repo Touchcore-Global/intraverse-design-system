@@ -178,7 +178,7 @@ function Badge({ type }: { type: "new" | "coming-soon" }) {
     );
   }
   return (
-    <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide text-white" style={{ backgroundColor: "#D97706" }}>
+    <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide text-white" style={{ backgroundColor: "var(--iv-orange-600)" }}>
       🚧 Coming Soon
     </span>
   );
