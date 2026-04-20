@@ -177,7 +177,7 @@ export const WhoWeServeSectionV2 = () => {
         style={{ maxWidth: "1200px" }}
       >
         <h2
-          className="text-[32px] md:text-[80px] font-[660] md:leading-[96px] leading-tight tracking-[-2px] text-center mb-4"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-center mb-4"
           style={{
             background: "linear-gradient(135deg, hsl(220 95% 35%), hsl(280 80% 45%), hsl(330 85% 50%))",
             WebkitBackgroundClip: "text",
