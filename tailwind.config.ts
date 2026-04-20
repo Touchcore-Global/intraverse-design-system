@@ -14,7 +14,18 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: [
+          "'GitLab Mono'",
+          "Menlo",
+          "'DejaVu Sans Mono'",
+          "'Liberation Mono'",
+          "Consolas",
+          "'Ubuntu Mono'",
+          "'Courier New'",
+          "'andale mono'",
+          "'lucida console'",
+          "monospace",
+        ],
         mono: [
           "'GitLab Mono'",
           "Menlo",
