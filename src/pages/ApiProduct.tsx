@@ -211,7 +211,7 @@ export default function ApiProduct() {
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90 shadow-lg">
                   Read the Docs
                 </Button>
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-white/30 text-white hover:bg-white/10">
+                <Button size="xl" className="cta-responsive min-h-[48px] rounded-none bg-transparent border border-white/40 text-white hover:bg-white/10">
                   Get Sandbox Access
                 </Button>
               </div>
@@ -483,10 +483,10 @@ export default function ApiProduct() {
                 Get free sandbox access in two minutes. Start building your travel product today. No credit card. No sales call. Just an API key and the freedom to build.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-background text-foreground border-background hover:bg-background/90 rounded-none font-semibold">
+                <Button size="xl" className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90 rounded-none font-semibold">
                   Get Sandbox Access
                 </Button>
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-background/30 text-background hover:bg-background/10 font-semibold">
+                <Button size="xl" className="cta-responsive min-h-[48px] rounded-none bg-transparent border border-white/40 text-white hover:bg-white/10 font-semibold">
                   Read the Docs
                 </Button>
               </div>
