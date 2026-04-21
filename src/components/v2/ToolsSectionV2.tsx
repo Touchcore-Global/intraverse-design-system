@@ -180,12 +180,12 @@ export const ToolsSectionV2 = () => {
             <div className="rounded-2xl bg-card overflow-hidden h-full">
               <div className="flex flex-col">
                 <div className="bg-background">
-                  <div className="w-full aspect-[16/10] overflow-hidden">
+                  <div className="w-full aspect-[16/10] overflow-hidden flex items-center justify-center">
                     <img
                       src={tool.image}
                       alt={`${tool.title} screenshot`}
                       loading="lazy"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
