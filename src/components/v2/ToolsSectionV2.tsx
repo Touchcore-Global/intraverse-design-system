@@ -187,12 +187,7 @@ export const ToolsSectionV2 = () => {
                       <span className="w-3 h-3 rounded-full bg-green-400/60" />
                     </div>
                     <div className="flex items-center justify-center aspect-[16/10] bg-background">
-                      <img
-                        src={tool.image}
-                        alt={`${tool.title} screenshot`}
-                        loading="lazy"
-                        className="max-w-full max-h-full object-contain"
-                      />
+                      {/* Image removed */}
                     </div>
                   </div>
                 </div>
