@@ -34,8 +34,7 @@ export function CodeBlock({ code, language = "bash", label }: CodeBlockProps) {
       </div>
       <pre className="p-6 overflow-x-auto text-sm leading-relaxed">
         <code
-          className={`font-mono text-white/90 language-${language}`}
-          style={{ fontFamily: "'Fira Code', 'Courier New', ui-monospace, monospace" }}
+          className="font-mono text-white/90 language-${language}"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </pre>
