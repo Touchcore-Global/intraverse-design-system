@@ -176,14 +176,7 @@ export const WhoWeServeSectionV2 = () => {
         className={`container mx-auto px-4 transition-all duration-700 ease-out ${revealClass} relative`}
         style={{ maxWidth: "1200px" }}
       >
-        <h2
-          className="text-[32px] md:text-[80px] font-[660] md:leading-[96px] leading-tight tracking-[-2px] text-center mb-4"
-          style={{
-            background: "linear-gradient(135deg, hsl(220 95% 35%), hsl(280 80% 45%), hsl(330 85% 50%))",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
+        <h2 className="text-[32px] md:text-[80px] font-[660] md:leading-[96px] leading-tight tracking-[-2px] text-center mb-4 text-black">
           Built for Everyone Who Sells, Buys, or Builds Travel
         </h2>
         <p className="text-center text-base md:text-lg max-w-[700px] mx-auto mb-10 md:mb-14 text-muted-foreground">
