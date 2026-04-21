@@ -2,7 +2,7 @@ import { useState, useRef, useCallback } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 
-import toolTrips from "@/assets/tool-trips.png";
+import toolTrips from "@/assets/tool-trips-web.svg";
 import toolItineraries from "@/assets/tool-itineraries.png";
 import toolPayments from "@/assets/tool-payments.jpg";
 import toolInsights from "@/assets/tool-insights.jpg";
@@ -182,7 +182,12 @@ export const ToolsSectionV2 = () => {
                 <div className="flex items-center justify-center p-6" style={{ background: tool.gradient }}>
                   <div className="w-full rounded-xl border border-border overflow-hidden shadow-lg bg-background">
                     <div className="flex items-center justify-center aspect-[16/10] bg-background">
-                      {/* Image removed */}
+                      <img
+                        src={tool.image}
+                        alt={`${tool.title} screenshot`}
+                        loading="lazy"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                   </div>
                 </div>
