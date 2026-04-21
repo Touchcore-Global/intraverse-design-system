@@ -7,7 +7,7 @@ import toolItineraries from "@/assets/tool-itineraries-web.svg";
 import toolPayments from "@/assets/tool-payments-web.svg";
 import toolInsights from "@/assets/tool-insights-web.svg";
 import toolPackages from "@/assets/tool-packages-web.svg";
-import toolLinks from "@/assets/tool-links.jpg";
+import toolLinks from "@/assets/tool-links-web.svg";
 import toolWorkspace from "@/assets/tool-workspace.jpg";
 import toolTeam from "@/assets/tool-team.jpg";
 
