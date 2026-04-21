@@ -86,15 +86,7 @@ export const ProblemStatementV2 = () => {
   return (
     <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background">
       <div ref={ref} className={`container mx-auto px-4 md:pl-[100px] transition-all duration-700 ease-out ${revealClass}`}>
-        <h2
-          className="text-center md:text-left mb-12"
-          style={{
-            backgroundImage: "linear-gradient(120deg, hsl(280 90% 40%), hsl(220 95% 45%), hsl(190 95% 40%))",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}
-        >
+        <h2 className="text-center md:text-left mb-12 text-black">
           Built to Meet Industry's Demands
         </h2>
 
