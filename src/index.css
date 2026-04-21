@@ -9,9 +9,10 @@
 
 @layer base {
   :root {
-    /* Intraverse Brand Design System */
+/* Intraverse Brand Design System */
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
     --font-mono: 'GitLab Mono', 'Menlo', 'DejaVu Sans Mono', 'Liberation Mono', 'Consolas', 'Ubuntu Mono', 'Courier New', 'andale mono', 'lucida console', monospace;
+    --font-ubuntu: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
 
     /* Primary brand blue: #1E61DC */
     --primary: 220 78% 49%;
