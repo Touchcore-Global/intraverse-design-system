@@ -4,8 +4,7 @@ import logo from "@/assets/intraverse-logo.svg";
 import { productSections, solutionSections, resourceSections, companySections } from "./navbar/navData";
 import { DesktopDropdown } from "./navbar/DesktopDropdown";
 import { MobileMenu } from "./navbar/MobileMenu";
-import { Button } from "@/components/ui/button";
-import { DEMO_URL } from "@/lib/constants";
+import { NavbarCTAs } from "./navbar/NavbarCTAs";
 
 type DropdownKey = "products" | "solutions" | "resources" | "company" | null;
 
