@@ -2,14 +2,14 @@ import { useState, useRef, useCallback } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 
-import toolTrips from "@/assets/tool-trips.png";
-import toolItineraries from "@/assets/tool-itineraries.png";
-import toolPayments from "@/assets/tool-payments.jpg";
-import toolInsights from "@/assets/tool-insights.jpg";
-import toolPackages from "@/assets/tool-packages.jpg";
-import toolLinks from "@/assets/tool-links.jpg";
-import toolWorkspace from "@/assets/tool-workspace.jpg";
-import toolTeam from "@/assets/tool-team.jpg";
+import toolTrips from "@/assets/tools/create-and-manage-trips.svg";
+import toolItineraries from "@/assets/tools/share-live-itineraries.svg";
+import toolPayments from "@/assets/tools/get-paid-securely.svg";
+import toolInsights from "@/assets/tools/grow-with-real-insights.svg";
+import toolPackages from "@/assets/tools/create-and-sell-packages.svg";
+import toolLinks from "@/assets/tools/travel-links.svg";
+import toolWorkspace from "@/assets/tools/setup-workspace.svg";
+import toolTeam from "@/assets/tools/manage-team.svg";
 
 const tools = [
   {
