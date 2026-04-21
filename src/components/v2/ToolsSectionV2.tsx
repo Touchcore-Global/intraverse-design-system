@@ -181,6 +181,11 @@ export const ToolsSectionV2 = () => {
               <div className="flex flex-col">
                 <div className="flex items-center justify-center p-6" style={{ background: tool.gradient }}>
                   <div className="w-full rounded-xl border border-border overflow-hidden shadow-lg bg-background">
+                    <div className="h-8 bg-muted flex items-center gap-1.5 px-3">
+                      <span className="w-3 h-3 rounded-full bg-destructive/60" />
+                      <span className="w-3 h-3 rounded-full bg-yellow-400/60" />
+                      <span className="w-3 h-3 rounded-full bg-green-400/60" />
+                    </div>
                     <div className="flex items-center justify-center aspect-[16/10] bg-background">
                       <img
                         src={tool.image}
