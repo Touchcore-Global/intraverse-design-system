@@ -39,7 +39,7 @@ export const HeroSectionV2 = () => {
           ✨ One platform · Global inventory
         </span>
 
-        <h1 className="text-[80px] font-[825] leading-[96px] tracking-[-2px] max-w-5xl mx-auto text-black font-ubuntu">
+        <h1 className="text-[100px] font-[825] leading-[112px] tracking-[-3px] max-w-5xl mx-auto text-black font-ubuntu">
           Flights. Hotels. Tours. Packages.
         </h1>
 
