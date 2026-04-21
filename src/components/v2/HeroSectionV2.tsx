@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
 import { useEffect, useRef } from "react";
-import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { DEMO_URL } from "@/lib/constants";
 
 const partners = [
   "Tzopal", "Whogofly", "Wright Gateway", "Lutfu Travels", "Coastline",
@@ -59,10 +58,9 @@ export const HeroSectionV2 = () => {
           >
             <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
           </Button>
-          <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="h-5 w-5" />
-              Chat on WhatsApp
+          <Button size="xl" className="cta-responsive min-h-[48px] bg-black hover:bg-black/90 text-white border-0 rounded-none font-semibold" asChild>
+            <a href="/products">
+              Learn More
             </a>
           </Button>
         </div>
