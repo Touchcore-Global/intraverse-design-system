@@ -179,16 +179,14 @@ export const ToolsSectionV2 = () => {
           >
             <div className="rounded-2xl bg-card overflow-hidden h-full">
               <div className="flex flex-col">
-                <div className="flex items-center justify-center p-6" style={{ background: tool.gradient }}>
-                  <div className="w-full rounded-xl border border-border overflow-hidden shadow-lg bg-background">
-                    <div className="flex items-center justify-center aspect-[16/10] bg-background">
-                      <img
-                        src={tool.image}
-                        alt={`${tool.title} screenshot`}
-                        loading="lazy"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
+                <div className="bg-background">
+                  <div className="w-full aspect-[16/10] overflow-hidden">
+                    <img
+                      src={tool.image}
+                      alt={`${tool.title} screenshot`}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
 
