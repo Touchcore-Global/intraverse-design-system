@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
 import { useEffect, useRef } from "react";
-import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { DEMO_URL } from "@/lib/constants";
 
 const partners = [
   "Tzopal", "Whogofly", "Wright Gateway", "Lutfu Travels", "Coastline",
