@@ -14,11 +14,13 @@ interface NavbarCTAsProps {
  */
 export function NavbarCTAs({ layout = "compact", onClick }: NavbarCTAsProps) {
   const isFull = layout === "full";
-  const size = isFull ? "xl" : "default";
+  const size = "default" as const;
   const wrapperClass = isFull
-    ? "flex flex-col gap-3 w-full"
+    ? "flex flex-col gap-2 w-full"
     : "flex items-center gap-3";
-  const btnClass = isFull ? "w-full" : "h-10 px-6 text-sm";
+  const btnClass = isFull
+    ? "w-full h-11 text-sm sm:h-12 sm:text-base"
+    : "h-10 px-6 text-sm";
 
   return (
     <div className={wrapperClass}>
