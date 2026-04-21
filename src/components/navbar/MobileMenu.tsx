@@ -2,8 +2,7 @@ import { useState } from "react";
 import { ChevronDown, Star } from "lucide-react";
 import type { NavSection } from "./navData";
 import { productSections, solutionSections, resourceSections, companySections } from "./navData";
-import { Button } from "@/components/ui/button";
-import { DEMO_URL } from "@/lib/constants";
+import { NavbarCTAs } from "./NavbarCTAs";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -117,15 +116,8 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
       </div>
 
       {/* Mobile bottom buttons */}
-      <div className="px-6 pb-8 space-y-3">
-        <Button variant="hero" size="xl" className="w-full" asChild>
-          <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
-        </Button>
-        <a href="/login" className="block">
-          <Button variant="outline" size="xl" className="w-full rounded-none border-foreground text-foreground hover:bg-accent">
-            Login / Register
-          </Button>
-        </a>
+      <div className="px-6 pb-8">
+        <NavbarCTAs layout="full" onClick={onClose} />
       </div>
     </div>
   );
