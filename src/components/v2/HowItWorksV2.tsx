@@ -51,14 +51,7 @@ export const HowItWorksV2 = () => {
       />
 
       <div ref={ref} className={`container mx-auto px-4 text-center transition-all duration-700 ease-out ${revealClass} relative`}>
-        <h2
-          className="mb-12 text-[32px] sm:text-[48px] md:text-[60px] leading-tight font-bold"
-          style={{
-            background: "linear-gradient(135deg, hsl(220 95% 35%), hsl(280 80% 45%), hsl(330 85% 50%))",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
+        <h2 className="mb-12 text-[32px] sm:text-[48px] md:text-[60px] leading-tight font-bold text-black">
           Start selling faster today
         </h2>
 
