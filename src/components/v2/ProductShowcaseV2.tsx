@@ -187,15 +187,7 @@ export const ProductShowcaseV2 = () => {
     >
       <div className="container mx-auto px-4" style={{ paddingLeft: "100px" }}>
         <div className="flex items-end justify-between mb-12">
-          <h2
-            className="text-left max-w-4xl"
-            style={{
-              backgroundImage: "linear-gradient(120deg, hsl(280 90% 40%), hsl(220 95% 45%), hsl(190 95% 40%))",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+          <h2 className="text-left max-w-4xl text-black">
             One Platform - Everything You Need To Sell Travel
           </h2>
 
