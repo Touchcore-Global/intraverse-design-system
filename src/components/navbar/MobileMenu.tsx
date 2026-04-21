@@ -2,8 +2,7 @@ import { useState } from "react";
 import { ChevronDown, Star } from "lucide-react";
 import type { NavSection } from "./navData";
 import { productSections, solutionSections, resourceSections, companySections } from "./navData";
-import { Button } from "@/components/ui/button";
-import { DEMO_URL } from "@/lib/constants";
+import { NavbarCTAs } from "./NavbarCTAs";
 
 interface MobileMenuProps {
   onClose: () => void;
