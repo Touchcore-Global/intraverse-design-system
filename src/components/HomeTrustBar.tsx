@@ -154,10 +154,10 @@ export const HomeTrustBar = () => {
                 <img
                   src={c.image}
                   alt={`Intraverse - ${c.title}`}
-                  className="rounded-2xl shadow-lg w-full"
+                  className="rounded-2xl shadow-lg w-full max-w-[75%]"
                   loading="lazy"
-                  width={1280}
-                  height={800}
+                  width={960}
+                  height={600}
                 />
               </div>
             </div>
