@@ -170,7 +170,7 @@
   h1, h2 {
     box-sizing: border-box;
     color: rgb(23, 19, 33);
-    font-family: "GitLab Sans", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     font-size: 32px;
     font-weight: 660;
     letter-spacing: -1px;
@@ -179,7 +179,7 @@
 
   h3, h4, h5, h6 {
     color: rgb(23, 19, 33);
-    font-family: "GitLab Sans", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     font-weight: 700;
     font-size: 18px !important;
     line-height: 24px !important;
