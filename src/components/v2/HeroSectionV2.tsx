@@ -63,16 +63,7 @@ export const HeroSectionV2 = () => {
           ✨ One platform · Global inventory
         </span>
 
-        <h1
-          className="text-3xl sm:text-4xl md:text-[80px] font-[660] leading-[1.1] md:leading-[96px] tracking-[-2px] max-w-5xl mx-auto"
-          style={{
-            backgroundImage:
-              "linear-gradient(120deg, hsl(280 90% 35%) 0%, hsl(220 95% 45%) 35%, hsl(190 95% 40%) 65%, hsl(330 90% 45%) 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}
-        >
+        <h1 className="text-3xl sm:text-4xl md:text-[80px] font-[660] leading-[1.1] md:leading-[96px] tracking-[-2px] max-w-5xl mx-auto text-black">
           Flights. Hotels. Tours. Packages.
         </h1>
 
