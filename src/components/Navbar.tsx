@@ -86,15 +86,8 @@ export function Navbar() {
           </div>
 
           {/* Desktop CTA buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button variant="hero" size="default" className="h-10 px-6 text-sm" asChild>
-              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
-            </Button>
-            <a href="/login">
-              <Button variant="outline" size="default" className="h-10 px-6 text-sm rounded-none border-foreground text-foreground hover:bg-accent">
-                Login / Register
-              </Button>
-            </a>
+          <div className="hidden lg:flex items-center">
+            <NavbarCTAs layout="compact" />
           </div>
 
           {/* Mobile hamburger */}
