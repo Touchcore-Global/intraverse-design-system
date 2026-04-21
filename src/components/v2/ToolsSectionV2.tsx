@@ -3,7 +3,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 
 import toolTrips from "@/assets/tool-trips-web.svg";
-import toolItineraries from "@/assets/tool-itineraries.png";
+import toolItineraries from "@/assets/tool-itineraries-web.svg";
 import toolPayments from "@/assets/tool-payments.jpg";
 import toolInsights from "@/assets/tool-insights.jpg";
 import toolPackages from "@/assets/tool-packages.jpg";
