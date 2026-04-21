@@ -151,7 +151,7 @@ const AgentPlatform = () => {
               </a>
             </Button>
           </div>
-          <p className="mt-4 text-sm text-muted-foreground">
+          <p className="mt-4 text-sm text-muted-foreground text-center">
             15-minute demo • No commitment • Free
           </p>
         </div>
