@@ -100,7 +100,7 @@ export default function DocsWebhooks() {
                 <table className="w-full text-sm">
                   <tbody>
                     {g.events.map(([name, desc], i) => (
-                      <tr key={name} className={i % 2 === 0 ? "bg-white" : "bg-muted/50"}>
+                      <tr key={name} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
                         <td className="px-4 py-2.5 align-top w-[260px]">
                           <code className="font-mono text-[13px] text-foreground">{name}</code>
                         </td>
@@ -163,7 +163,7 @@ function verifyWebhook(payload, signature, secret) {
         <div className="not-prose my-6 flex flex-wrap items-center gap-2">
           {["1 min", "5 min", "30 min", "2 hrs", "24 hrs"].map((t, i, arr) => (
             <div key={t} className="flex items-center gap-2">
-              <div className="px-3 py-1.5 rounded-md bg-accent border border-border text-xs font-medium text-foreground">
+              <div className="px-3 py-1.5 rounded-md bg-[#F0F5FC] border border-border text-xs font-medium text-foreground">
                 {t}
               </div>
               {i < arr.length - 1 && <span className="text-muted-foreground">→</span>}

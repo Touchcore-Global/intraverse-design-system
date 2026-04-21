@@ -32,7 +32,7 @@ function MobileAccordion({ title, sections, footerLink, onClose }: MobileAccordi
         <div className="pl-4 pb-2">
           {sections.map((section) => (
             <div key={section.header} className="mb-3">
-              <p className="text-[11px] uppercase tracking-[0.05em] font-bold mb-1.5" style={{ color: "hsl(var(--muted-foreground))" }}>
+              <p className="text-[11px] uppercase tracking-[0.05em] font-bold mb-1.5" style={{ color: "#94A3B8" }}>
                 {section.header}
               </p>
               {section.items.map((item) => (
@@ -46,7 +46,7 @@ function MobileAccordion({ title, sections, footerLink, onClose }: MobileAccordi
                 >
                   {item.label}
                   {item.popular && (
-                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[11px] font-bold text-white" style={{ backgroundColor: "hsl(var(--primary))" }}>
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[11px] font-bold text-white" style={{ backgroundColor: "#1E61DC" }}>
                       <Star className="w-2.5 h-2.5 fill-current" /> Popular
                     </span>
                   )}
@@ -56,7 +56,7 @@ function MobileAccordion({ title, sections, footerLink, onClose }: MobileAccordi
                     </span>
                   )}
                   {item.isNew && (
-                    <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-bold uppercase text-white" style={{ backgroundColor: "var(--iv-teal-500)" }}>
+                    <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-bold uppercase text-white" style={{ backgroundColor: "#16A34A" }}>
                       New
                     </span>
                   )}

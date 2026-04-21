@@ -208,7 +208,7 @@ export default function Docs() {
       <main className="flex-1 pt-16">
 
         {/* ===== HERO ===== */}
-        <section className="relative bg-iv-navy-900 overflow-hidden">
+        <section className="relative bg-[#0D1B2A] overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
           <div className="container mx-auto px-4 lg:px-8 py-20 md:py-28 relative z-10 text-center">
             <p className="text-sm font-semibold tracking-widest text-[hsl(var(--brand-blue))] mb-4">API DOCUMENTATION</p>
@@ -220,7 +220,7 @@ export default function Docs() {
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold rounded-none" asChild>
                 <a href="/contact">Get Sandbox Access</a>
               </Button>
-              <Button size="xl" className="bg-transparent border border-white/40 text-white hover:bg-white/10 cta-responsive min-h-[48px] rounded-none" asChild>
+              <Button size="xl" variant="outline" className="border-white/30 text-white hover:bg-white/10 cta-responsive min-h-[48px] rounded-none" asChild>
                 <a href="/docs/quickstart">Quick Start Guide</a>
               </Button>
             </div>
@@ -259,7 +259,7 @@ export default function Docs() {
         </section>
 
         {/* ===== SECTION 2 — DOC CATEGORIES ===== */}
-        <section className="py-20 md:py-24 bg-accent">
+        <section className="py-20 md:py-24 bg-[#F0F5FC]">
           <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center">Explore the Documentation</h2>
@@ -283,7 +283,7 @@ export default function Docs() {
         </section>
 
         {/* ===== SECTION 3 — CODE EXAMPLES ===== */}
-        <section className="py-20 md:py-24 bg-iv-navy-900">
+        <section className="py-20 md:py-24 bg-[#0D1B2A]">
           <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-white text-center">See It in Action</h2>
@@ -299,7 +299,7 @@ export default function Docs() {
                     <button
                       key={lang}
                       onClick={() => setActiveTab(lang)}
-                      className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-colors whitespace-nowrap ${activeTab === lang ? "bg-iv-navy-900 text-white" : "text-white/40 hover:text-white/70"}`}
+                      className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-colors whitespace-nowrap ${activeTab === lang ? "bg-[#1A1A2E] text-white" : "text-white/40 hover:text-white/70"}`}
                     >
                       {lang}
                     </button>
@@ -307,14 +307,14 @@ export default function Docs() {
                 </div>
 
                 {/* Request */}
-                <div className="relative bg-iv-navy-900 rounded-t-lg p-5 overflow-x-auto">
+                <div className="relative bg-[#1A1A2E] rounded-t-lg p-5 overflow-x-auto">
                   <p className="text-xs text-white/30 font-mono mb-3 uppercase tracking-wider">Request</p>
                   <CopyButton text={codeSamples[activeTab].request} />
                   <pre className="text-sm text-green-400 font-mono whitespace-pre leading-relaxed">{codeSamples[activeTab].request}</pre>
                 </div>
 
                 {/* Response */}
-                <div className="relative bg-iv-navy-900 rounded-b-lg p-5 border-t border-white/5 overflow-x-auto">
+                <div className="relative bg-[#141425] rounded-b-lg p-5 border-t border-white/5 overflow-x-auto">
                   <p className="text-xs text-white/30 font-mono mb-3 uppercase tracking-wider">Response</p>
                   <CopyButton text={codeSamples[activeTab].response} />
                   <pre className="text-sm text-blue-300 font-mono whitespace-pre leading-relaxed">{codeSamples[activeTab].response}</pre>
@@ -362,7 +362,7 @@ export default function Docs() {
         </section>
 
         {/* ===== SECTION 5 — ADDITIONAL RESOURCES ===== */}
-        <section className="py-20 md:py-24 bg-accent">
+        <section className="py-20 md:py-24 bg-[#F0F5FC]">
           <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center">Everything Else You'll Need</h2>
@@ -413,7 +413,7 @@ export default function Docs() {
         </section>
 
         {/* ===== SECTION 7 — PARTNERSHIP CTA ===== */}
-        <section className="py-20 md:py-24 bg-accent">
+        <section className="py-20 md:py-24 bg-[#F0F5FC]">
           <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">Building Something Big?</h2>
@@ -440,10 +440,10 @@ export default function Docs() {
               Get free sandbox access, read the quick start guide, and make your first API call in under 10 minutes. No credit card. No sales call. Just an API key and the freedom to build.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] rounded-none font-semibold" asChild>
+              <Button size="xl" className="bg-background text-foreground hover:bg-background/90 cta-responsive min-h-[48px] rounded-none font-semibold" asChild>
                 <a href="/contact">Get Sandbox Access</a>
               </Button>
-              <Button size="xl" className="bg-transparent border border-white/40 text-white hover:bg-white/10 cta-responsive min-h-[48px] rounded-none" asChild>
+              <Button size="xl" variant="outline" className="border-background/30 text-background hover:bg-background/10 cta-responsive min-h-[48px] rounded-none" asChild>
                 <a href="/docs/quickstart">Read the Quick Start</a>
               </Button>
             </div>

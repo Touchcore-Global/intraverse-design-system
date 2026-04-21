@@ -66,7 +66,7 @@ export function MultiLangCodeBlock({ samples }: MultiLangCodeBlockProps) {
   };
 
   return (
-    <div className="relative my-6 rounded-lg overflow-hidden bg-iv-navy-900 border border-white/5 docs-code">
+    <div className="relative my-6 rounded-lg overflow-hidden bg-[#1A1A2E] border border-white/5 docs-code">
       <div className="flex items-center justify-between border-b border-white/5 bg-black/30">
         <div className="flex items-center" role="tablist" aria-label="Code language">
           {LANG_ORDER.map((l) => {

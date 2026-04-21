@@ -132,7 +132,7 @@ export default function DocsReference() {
         <div className="my-6 overflow-x-auto rounded-lg border border-border">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-muted text-left">
+              <tr className="bg-[#F3F4F6] text-left">
                 <th className="px-4 py-2.5 font-semibold text-foreground">Environment</th>
                 <th className="px-4 py-2.5 font-semibold text-foreground">URL</th>
               </tr>
@@ -142,7 +142,7 @@ export default function DocsReference() {
                 <td className="px-4 py-2.5">Sandbox</td>
                 <td className="px-4 py-2.5"><code className="font-mono text-[13px]">https://sandbox.api.intraverse.com/v1/</code></td>
               </tr>
-              <tr className="bg-muted/50">
+              <tr className="bg-[#F9FAFB]">
                 <td className="px-4 py-2.5">Production</td>
                 <td className="px-4 py-2.5"><code className="font-mono text-[13px]">https://api.intraverse.com/v1/</code></td>
               </tr>
@@ -197,7 +197,7 @@ export default function DocsReference() {
                 <table className="w-full text-sm">
                   <tbody>
                     {g.endpoints.map((e, i) => (
-                      <tr key={`${e.method}-${e.path}`} className={i % 2 === 0 ? "bg-white" : "bg-muted/50"}>
+                      <tr key={`${e.method}-${e.path}`} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
                         <td className="px-4 py-2.5 align-top w-20"><MethodBadge method={e.method} /></td>
                         <td className="px-4 py-2.5 align-top">
                           <code className="font-mono text-[13px] text-foreground whitespace-nowrap">{e.path}</code>
@@ -234,7 +234,7 @@ export default function DocsReference() {
         <div className="my-6 overflow-x-auto rounded-lg border border-border">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-muted text-left">
+              <tr className="bg-[#F3F4F6] text-left">
                 <th className="px-4 py-2.5 font-semibold text-foreground">Environment</th>
                 <th className="px-4 py-2.5 font-semibold text-foreground">Limit</th>
               </tr>
@@ -244,7 +244,7 @@ export default function DocsReference() {
                 <td className="px-4 py-2.5">Sandbox</td>
                 <td className="px-4 py-2.5 text-muted-foreground">100 requests / minute</td>
               </tr>
-              <tr className="bg-muted/50">
+              <tr className="bg-[#F9FAFB]">
                 <td className="px-4 py-2.5">Production</td>
                 <td className="px-4 py-2.5 text-muted-foreground">Varies by plan</td>
               </tr>
@@ -263,7 +263,7 @@ export default function DocsReference() {
         <div className="my-6 overflow-x-auto rounded-lg border border-border">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-muted text-left">
+              <tr className="bg-[#F3F4F6] text-left">
                 <th className="px-4 py-2.5 font-semibold text-foreground">Code</th>
                 <th className="px-4 py-2.5 font-semibold text-foreground">Description</th>
                 <th className="px-4 py-2.5 font-semibold text-foreground">Action</th>
@@ -271,7 +271,7 @@ export default function DocsReference() {
             </thead>
             <tbody>
               {errorCodes.map(([code, desc, action], i) => (
-                <tr key={code} className={i % 2 === 0 ? "bg-white" : "bg-muted/50"}>
+                <tr key={code} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
                   <td className="px-4 py-2.5 align-top">
                     <code className="font-mono text-[13px] text-foreground whitespace-nowrap">{code}</code>
                   </td>

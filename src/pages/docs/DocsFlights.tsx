@@ -137,7 +137,7 @@ export default function DocsFlights() {
       </DocsSection>
 
       <DocsSection id="flow" title="Booking Flow">
-        <div className="not-prose flex items-center flex-wrap gap-3 my-6 p-5 rounded-lg bg-accent border border-border">
+        <div className="not-prose flex items-center flex-wrap gap-3 my-6 p-5 rounded-lg bg-[#F0F5FC] border border-border">
           {["Search", "Select Offer", "Get Details", "Create Booking", "Issue Ticket"].map((s, i, arr) => (
             <div key={s} className="flex items-center gap-3">
               <div className="px-3 py-2 rounded-md bg-white border border-border text-sm font-medium text-foreground">

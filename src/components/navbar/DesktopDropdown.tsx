@@ -21,7 +21,7 @@ export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDr
       <div className={useGrid ? "grid grid-cols-2 gap-x-6" : ""}>
         {sections.map((section, sIdx) => (
           <div key={section.header} className={sIdx > 0 && !useGrid ? "mt-4 pt-4 border-t border-border" : sIdx > 0 && useGrid ? "mt-2" : ""}>
-            <p className="text-[12px] uppercase tracking-[0.05em] font-bold mb-3" style={{ color: "hsl(var(--muted-foreground))" }}>
+            <p className="text-[12px] uppercase tracking-[0.05em] font-bold mb-3" style={{ color: "#94A3B8" }}>
               {section.header}
             </p>
             <div className="flex flex-col gap-0.5">
@@ -34,14 +34,14 @@ export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDr
                     target={item.href.startsWith("http") ? "_blank" : undefined}
                     rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="flex items-center gap-3 rounded-lg p-2.5 transition-colors group"
-                    style={{ color: "hsl(var(--secondary))" }}
+                    style={{ color: "#0D1B2A" }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = "hsl(var(--accent))";
-                      e.currentTarget.style.color = "hsl(var(--primary))";
+                      e.currentTarget.style.backgroundColor = "#F0F5FC";
+                      e.currentTarget.style.color = "#1E61DC";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.backgroundColor = "transparent";
-                      e.currentTarget.style.color = "hsl(var(--secondary))";
+                      e.currentTarget.style.color = "#0D1B2A";
                     }}
                   >
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
@@ -51,7 +51,7 @@ export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDr
                       <div className="flex items-center gap-2">
                         <p className="text-sm font-semibold leading-tight">{item.label}</p>
                         {item.popular && (
-                          <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[11px] font-bold text-white" style={{ backgroundColor: "hsl(var(--primary))" }}>
+                          <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[11px] font-bold text-white" style={{ backgroundColor: "#1E61DC" }}>
                             <Star className="w-2.5 h-2.5 fill-current" /> Popular
                           </span>
                         )}
@@ -61,7 +61,7 @@ export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDr
                           </span>
                         )}
                         {item.isNew && (
-                          <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-bold uppercase text-white" style={{ backgroundColor: "var(--iv-teal-500)" }}>
+                          <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-bold uppercase text-white" style={{ backgroundColor: "#16A34A" }}>
                             New
                           </span>
                         )}

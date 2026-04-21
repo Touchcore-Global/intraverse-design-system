@@ -100,7 +100,7 @@ export const HeroSectionV2 = () => {
           </Button>
         </div>
 
-        <p className="mt-4 text-sm text-center" style={{ color: "rgb(90, 80, 120)" }}>
+        <p className="mt-4 text-sm" style={{ color: "rgb(90, 80, 120)" }}>
           15-minute demo • No commitment • Free
         </p>
 

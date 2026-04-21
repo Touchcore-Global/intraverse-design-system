@@ -18,7 +18,7 @@ export function CodeBlock({ code, language = "bash", label }: CodeBlockProps) {
   };
 
   return (
-    <div className="relative my-6 rounded-lg overflow-hidden bg-iv-navy-900 border border-white/5 docs-code">
+    <div className="relative my-6 rounded-lg overflow-hidden bg-[#1A1A2E] border border-white/5 docs-code">
       <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-black/30">
         <span className="text-[11px] font-mono uppercase tracking-wider text-white/40">
           {label ?? language}
@@ -45,7 +45,7 @@ export function CodeBlock({ code, language = "bash", label }: CodeBlockProps) {
 
 export function InlineCode({ children }: { children: React.ReactNode }) {
   return (
-    <code className="px-1.5 py-0.5 rounded text-[0.875em] font-mono bg-muted text-foreground">
+    <code className="px-1.5 py-0.5 rounded text-[0.875em] font-mono bg-[#F0F2F5] text-foreground">
       {children}
     </code>
   );

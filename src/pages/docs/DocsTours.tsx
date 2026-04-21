@@ -105,7 +105,7 @@ export default function DocsTours() {
           {categories.map((c) => (
             <code
               key={c}
-              className="px-2.5 py-1 rounded bg-muted font-mono text-[13px] text-foreground"
+              className="px-2.5 py-1 rounded bg-[#F0F2F5] font-mono text-[13px] text-foreground"
             >
               {c}
             </code>

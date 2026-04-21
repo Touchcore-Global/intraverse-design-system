@@ -129,7 +129,7 @@ const FintechsAudience = () => {
       <div className="h-16" />
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(218 60% 25%) 50%, hsl(var(--secondary)) 100%)" }}>
+      <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #1B2D45 50%, #0D1B2A 100%)" }}>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" style={{ background: "rgba(30, 97, 220, 0.08)" }} />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" style={{ background: "rgba(30, 97, 220, 0.05)" }} />
@@ -342,7 +342,7 @@ const FintechsAudience = () => {
       </section>
 
       {/* ── FINAL CTA + FORM ── */}
-      <section id="partnership-form" className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(218 60% 25%) 50%, hsl(var(--secondary)) 100%)" }}>
+      <section id="partnership-form" className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #1B2D45 50%, #0D1B2A 100%)" }}>
         <div className="absolute inset-0 pointer-events-none">
           <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
             <defs>
