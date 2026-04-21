@@ -31,32 +31,8 @@ export const HeroSectionV2 = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(135deg, hsl(280 90% 96%) 0%, hsl(220 95% 94%) 25%, hsl(190 90% 93%) 50%, hsl(330 90% 95%) 75%, hsl(35 95% 94%) 100%)",
-        backgroundSize: "200% 200%",
-        animation: "gradient-shift 12s ease infinite",
-      }}
+      className="relative overflow-hidden bg-white"
     >
-      {/* Vibrant blobs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div
-          ref={blob1Ref}
-          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 will-change-transform opacity-50"
-          style={{ background: "radial-gradient(circle, hsl(280 90% 65%) 0%, transparent 70%)" }}
-        />
-        <div
-          ref={blob2Ref}
-          className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 will-change-transform opacity-50"
-          style={{ background: "radial-gradient(circle, hsl(190 95% 55%) 0%, transparent 70%)" }}
-        />
-        <div
-          ref={blob3Ref}
-          className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full blur-3xl will-change-transform opacity-40"
-          style={{ background: "radial-gradient(circle, hsl(35 95% 60%) 0%, transparent 70%)" }}
-        />
-      </div>
 
       <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
         <span className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-white" style={{ background: "linear-gradient(90deg, hsl(280 90% 55%), hsl(330 90% 55%))" }}>
