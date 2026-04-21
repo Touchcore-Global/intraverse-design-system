@@ -47,14 +47,7 @@ export const SecuritySectionV2 = () => {
       />
 
       <div ref={ref} className={`container mx-auto px-4 text-center transition-all duration-700 ease-out ${revealClass} relative`}>
-        <h2
-          className="text-3xl sm:text-4xl md:text-[80px] md:leading-[96px] font-[660] tracking-[-2px] mb-12"
-          style={{
-            background: "linear-gradient(135deg, hsl(160 75% 30%), hsl(190 85% 35%), hsl(220 95% 40%))",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
+        <h2 className="text-3xl sm:text-4xl md:text-[80px] md:leading-[96px] font-[660] tracking-[-2px] mb-12 text-black">
           Your Money. Your Data. Protected.
         </h2>
 
