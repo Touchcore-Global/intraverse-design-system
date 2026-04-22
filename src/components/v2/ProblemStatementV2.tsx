@@ -98,19 +98,25 @@ export const ProblemStatementV2 = () => {
     };
   }, [api]);
 
+  // Match the site-wide `container` left edge: padding of 2rem, max-width 1400px (centered at 2xl).
+  // This keeps the carousel start aligned with the rest of the grid at every viewport width.
+  const gutterStyle = {
+    "--carousel-gutter": "max(1rem, calc((100vw - 1400px) / 2 + 2rem))",
+  } as React.CSSProperties;
+
   return (
-    <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background">
+    <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background" style={gutterStyle}>
       <div ref={ref} className={`transition-all duration-700 ease-out ${revealClass}`}>
-        <h2 className="text-center md:text-left mb-12 text-black px-4 md:pl-[100px]">
+        <h2 className="text-center md:text-left mb-12 text-black px-4 md:px-0 md:pl-[var(--carousel-gutter)]">
           Built to Meet Industry's<br />Demands
         </h2>
 
         <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full">
-          <CarouselContent className="ml-0 pl-4 md:pl-[100px] pr-4 md:pr-12">
+          <CarouselContent className="ml-0 pl-4 md:pl-0 md:[&]:pl-[var(--carousel-gutter)] pr-4 md:pr-[var(--carousel-gutter)]">
             {cards.map((card, index) => (
               <CarouselItem
                 key={index}
-                className={isMobile ? "pl-3 basis-[85%]" : "pl-6 basis-1/2"}
+                className={isMobile ? "pl-3 basis-[85%]" : "pl-6 basis-[calc(50%-var(--carousel-gutter)/2)]"}
               >
                 <FeatureCard card={card} />
               </CarouselItem>
@@ -118,8 +124,10 @@ export const ProblemStatementV2 = () => {
           </CarouselContent>
           {!isMobile && (
             <>
-              {canScrollPrev && <CarouselPrevious className="left-4" />}
-              <CarouselNext className="right-4" />
+              {canScrollPrev && (
+                <CarouselPrevious className="left-[calc(var(--carousel-gutter)-2.5rem)]" />
+              )}
+              <CarouselNext className="right-[calc(var(--carousel-gutter)-2.5rem)]" />
             </>
           )}
         </Carousel>
