@@ -125,11 +125,17 @@ const App = () => (
           {/* Blog */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
+          {/* News & Press */}
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:slug" element={<NewsArticle />} />
           {/* Admin */}
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/blog" element={<AdminBlogList />} />
           <Route path="/admin/blog/new" element={<AdminBlogEditor />} />
           <Route path="/admin/blog/:id" element={<AdminBlogEditor />} />
+          <Route path="/admin/news" element={<AdminNewsList />} />
+          <Route path="/admin/news/new" element={<AdminNewsEditor />} />
+          <Route path="/admin/news/:id" element={<AdminNewsEditor />} />
           <Route path="/admin/users" element={<AdminUsers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

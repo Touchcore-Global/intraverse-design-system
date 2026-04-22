@@ -42,6 +42,8 @@ const footerLinks = {
     { label: "Features", href: "/features" },
     { label: "Use Cases", href: "/use-cases" },
     { label: "Proof", href: "/proof" },
+    { label: "Blog", href: "/blog" },
+    { label: "News & Press", href: "/news" },
     { label: "FAQ", href: "/faq" },
     { label: "Help Centre", href: "/help" },
     { label: "Contact Us", href: "/contact" },
