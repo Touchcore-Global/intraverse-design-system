@@ -54,6 +54,7 @@ import BlogArticle from "./pages/BlogArticle.tsx";
 import AdminLogin from "./pages/admin/AdminLogin.tsx";
 import AdminBlogList from "./pages/admin/AdminBlogList.tsx";
 import AdminBlogEditor from "./pages/admin/AdminBlogEditor.tsx";
+import AdminUsers from "./pages/admin/AdminUsers.tsx";
 
 const queryClient = new QueryClient();
 
