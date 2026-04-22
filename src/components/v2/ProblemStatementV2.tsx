@@ -3,7 +3,7 @@ import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket, LucideIcon } from "luci
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 
 type CardData = {
   icon: LucideIcon;
