@@ -16,10 +16,42 @@ export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [adminExists, setAdminExists] = useState<boolean | null>(null);
+  const [claiming, setClaiming] = useState(false);
 
   useEffect(() => {
     if (!loading && session && isAdmin) navigate("/admin/blog", { replace: true });
   }, [session, isAdmin, loading, navigate]);
+
+  useEffect(() => {
+    if (!session || isAdmin) return;
+    supabase.rpc("admin_exists").then(({ data }) => setAdminExists(!!data));
+  }, [session, isAdmin]);
+
+  const handleClaimAdmin = async () => {
+    setClaiming(true);
+    const { data, error } = await supabase.rpc("claim_first_admin");
+    setClaiming(false);
+    if (error) {
+      toast({ title: "Could not claim admin", description: error.message, variant: "destructive" });
+      return;
+    }
+    if (data === true) {
+      toast({ title: "You're now an admin", description: "Redirecting..." });
+      setTimeout(() => navigate("/admin/blog", { replace: true }), 600);
+    } else {
+      toast({
+        title: "Admin already exists",
+        description: "An existing admin must grant you access.",
+        variant: "destructive",
+      });
+      setAdminExists(true);
+    }
+  };
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+  };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
