@@ -272,6 +272,102 @@ export type Database = {
         }
         Relationships: []
       }
+      news_events: {
+        Row: {
+          created_at: string
+          details_url: string | null
+          display_order: number
+          event_date: string
+          id: string
+          is_active: boolean
+          location: string | null
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          details_url?: string | null
+          display_order?: number
+          event_date: string
+          id?: string
+          is_active?: boolean
+          location?: string | null
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          details_url?: string | null
+          display_order?: number
+          event_date?: string
+          id?: string
+          is_active?: boolean
+          location?: string | null
+          name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      news_items: {
+        Row: {
+          body: string
+          category: Database["public"]["Enums"]["news_category"]
+          created_at: string
+          excerpt: string
+          featured_image: string | null
+          id: string
+          is_featured: boolean
+          press_kit_relevant: boolean
+          published_at: string | null
+          slug: string
+          source: string | null
+          source_url: string | null
+          status: string
+          tags: string[]
+          title: string
+          updated_at: string
+          view_count: number
+        }
+        Insert: {
+          body?: string
+          category: Database["public"]["Enums"]["news_category"]
+          created_at?: string
+          excerpt: string
+          featured_image?: string | null
+          id?: string
+          is_featured?: boolean
+          press_kit_relevant?: boolean
+          published_at?: string | null
+          slug: string
+          source?: string | null
+          source_url?: string | null
+          status?: string
+          tags?: string[]
+          title: string
+          updated_at?: string
+          view_count?: number
+        }
+        Update: {
+          body?: string
+          category?: Database["public"]["Enums"]["news_category"]
+          created_at?: string
+          excerpt?: string
+          featured_image?: string | null
+          id?: string
+          is_featured?: boolean
+          press_kit_relevant?: boolean
+          published_at?: string | null
+          slug?: string
+          source?: string | null
+          source_url?: string | null
+          status?: string
+          tags?: string[]
+          title?: string
+          updated_at?: string
+          view_count?: number
+        }
+        Relationships: []
+      }
       partner_submissions: {
         Row: {
           company: string
@@ -408,6 +504,7 @@ export type Database = {
         Args: { article_slug: string }
         Returns: undefined
       }
+      increment_news_views: { Args: { news_slug: string }; Returns: undefined }
       list_admin_users: {
         Args: never
         Returns: {
@@ -438,6 +535,12 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "editor" | "user"
+      news_category:
+        | "press-releases"
+        | "media-coverage"
+        | "events"
+        | "milestones"
+        | "announcements"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -566,6 +669,13 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "editor", "user"],
+      news_category: [
+        "press-releases",
+        "media-coverage",
+        "events",
+        "milestones",
+        "announcements",
+      ],
     },
   },
 } as const
