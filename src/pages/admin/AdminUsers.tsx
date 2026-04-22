@@ -159,6 +159,12 @@ export default function AdminUsers() {
           )}
         </Card>
       </main>
+
+      <AdminUserDetailDrawer
+        userId={selectedUserId}
+        open={!!selectedUserId}
+        onOpenChange={(open) => !open && setSelectedUserId(null)}
+      />
     </div>
   );
 }
