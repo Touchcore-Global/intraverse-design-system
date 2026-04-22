@@ -396,6 +396,7 @@ export type Database = {
         Returns: number
       }
       get_admin_user_detail: { Args: { target_user_id: string }; Returns: Json }
+      grant_admin_by_email: { Args: { target_email: string }; Returns: Json }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -433,6 +434,7 @@ export type Database = {
           read_ct: number
         }[]
       }
+      revoke_admin: { Args: { target_user_id: string }; Returns: Json }
     }
     Enums: {
       app_role: "admin" | "editor" | "user"
