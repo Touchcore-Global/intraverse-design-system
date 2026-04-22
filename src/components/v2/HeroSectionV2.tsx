@@ -33,7 +33,7 @@ export const HeroSectionV2 = () => {
       className="relative overflow-hidden bg-white"
     >
 
-      <div className="container relative mx-auto px-4 py-14 lg:py-24 text-center">
+      <div className="container relative mx-auto px-4 pt-[45px] pb-14 lg:pt-[77px] lg:pb-24 text-center">
         <span className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-white" style={{ background: "linear-gradient(90deg, hsl(280 90% 55%), hsl(330 90% 55%))" }}>
           ✨ One platform · Global inventory
         </span>
