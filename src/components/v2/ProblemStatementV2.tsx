@@ -100,13 +100,13 @@ export const ProblemStatementV2 = () => {
 
   return (
     <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background">
-      <div ref={ref} className={`container mx-auto px-4 md:pl-[100px] transition-all duration-700 ease-out ${revealClass}`}>
-        <h2 className="text-center md:text-left mb-12 text-black">
+      <div ref={ref} className={`transition-all duration-700 ease-out ${revealClass}`}>
+        <h2 className="text-center md:text-left mb-12 text-black px-4 md:pl-[100px]">
           Built to Meet Industry's Demands
         </h2>
 
-        <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full md:px-12">
-          <CarouselContent className="-ml-3 md:-ml-6">
+        <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full">
+          <CarouselContent className="ml-0 pl-4 md:pl-[100px] pr-4 md:pr-12">
             {cards.map((card, index) => (
               <CarouselItem
                 key={index}
@@ -118,8 +118,8 @@ export const ProblemStatementV2 = () => {
           </CarouselContent>
           {!isMobile && (
             <>
-              {canScrollPrev && <CarouselPrevious className="-left-2" />}
-              <CarouselNext className="-right-2" />
+              {canScrollPrev && <CarouselPrevious className="left-4" />}
+              <CarouselNext className="right-4" />
             </>
           )}
         </Carousel>
