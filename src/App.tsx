@@ -54,6 +54,7 @@ import BlogArticle from "./pages/BlogArticle.tsx";
 import AdminLogin from "./pages/admin/AdminLogin.tsx";
 import AdminBlogList from "./pages/admin/AdminBlogList.tsx";
 import AdminBlogEditor from "./pages/admin/AdminBlogEditor.tsx";
+import AdminUsers from "./pages/admin/AdminUsers.tsx";
 
 const queryClient = new QueryClient();
 
@@ -125,6 +126,7 @@ const App = () => (
           <Route path="/admin/blog" element={<AdminBlogList />} />
           <Route path="/admin/blog/new" element={<AdminBlogEditor />} />
           <Route path="/admin/blog/:id" element={<AdminBlogEditor />} />
+          <Route path="/admin/users" element={<AdminUsers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

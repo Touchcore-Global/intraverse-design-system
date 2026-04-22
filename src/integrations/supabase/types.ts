@@ -406,6 +406,15 @@ export type Database = {
         Args: { article_slug: string }
         Returns: undefined
       }
+      list_admin_users: {
+        Args: never
+        Returns: {
+          email: string
+          granted_at: string
+          user_created_at: string
+          user_id: string
+        }[]
+      }
       move_to_dlq: {
         Args: {
           dlq_name: string
