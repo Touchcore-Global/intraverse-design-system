@@ -69,7 +69,7 @@ export default function AdminLogin() {
         </CardHeader>
         <CardContent>
           {session && !isAdmin && !loading && (
-            <div className="mb-4 p-3 rounded border border-amber-300 bg-amber-50 text-sm text-amber-900">
+            <div className="mb-4 p-3 rounded border border-border bg-muted text-sm text-foreground">
               You're signed in as <strong>{session.user.email}</strong> but don't have admin access. Ask an
               existing admin to grant you the role, or insert a row in <code>user_roles</code> with your
               user id and role <code>admin</code>.
