@@ -126,9 +126,128 @@ function RevealBlock({ children, className = "" }: { children: React.ReactNode; 
 }
 
 const FintechsAudience = () => {
+  const { toast } = useToast();
   const [form, setForm] = useState({ name: "", company: "", role: "", email: "", phone: "", message: "" });
+  const [website, setWebsite] = useState(""); // honeypot
+  const [submitting, setSubmitting] = useState(false);
+  const mountedAtRef = useRef<number>(Date.now());
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (website.trim() !== "") {
+      toast({ title: "Request sent!", description: "We've received your request and will be in touch shortly." });
+      setForm({ name: "", company: "", role: "", email: "", phone: "", message: "" });
+      return;
+    }
+
+    if (Date.now() - mountedAtRef.current < FINTECH_MIN_TIME_ON_PAGE_MS) {
+      toast({ title: "Hold on a moment", description: "Please take a moment to review your request before sending.", variant: "destructive" });
+      return;
+    }
+
+    try {
+      const lastRaw = localStorage.getItem(FINTECH_LAST_SUBMIT_KEY);
+      const last = lastRaw ? Number(lastRaw) : 0;
+      const sinceLast = Date.now() - last;
+      if (last && sinceLast < FINTECH_MIN_INTERVAL_BETWEEN_SUBMITS_MS) {
+        const wait = Math.ceil((FINTECH_MIN_INTERVAL_BETWEEN_SUBMITS_MS - sinceLast) / 1000);
+        toast({ title: "Please wait", description: `You can send another request in ${wait}s.`, variant: "destructive" });
+        return;
+      }
+    } catch {
+      // ignore
+    }
+
+    const parsed = fintechPartnerSchema.safeParse(form);
+    if (!parsed.success) {
+      toast({
+        title: "Please check your details",
+        description: parsed.error.issues[0]?.message ?? "Some fields are invalid.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const messageWithPhone = parsed.data.phone
+      ? `${parsed.data.message}\n\nPhone: ${parsed.data.phone}`
+      : parsed.data.message;
+    const partnershipTypeLabel = "Fintech / Embedded Travel";
+
+    setSubmitting(true);
+    try {
+      const id = crypto.randomUUID();
+      const submittedAt = new Date().toUTCString();
+
+      const { error: insertError } = await supabase.from("partner_submissions").insert({
+        id,
+        name: parsed.data.name,
+        company: parsed.data.company,
+        role: parsed.data.role || null,
+        email: parsed.data.email,
+        partnership_type: "fintech",
+        message: messageWithPhone,
+      });
+
+      if (insertError) throw insertError;
+
+      await Promise.all([
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "partner-notification",
+            recipientEmail: "support@intraverse.africa",
+            idempotencyKey: `partner-notify-${id}`,
+            templateData: {
+              name: parsed.data.name,
+              email: parsed.data.email,
+              company: parsed.data.company,
+              role: parsed.data.role || undefined,
+              partnershipType: partnershipTypeLabel,
+              message: messageWithPhone,
+              submittedAt,
+            },
+          },
+        }),
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "partner-confirmation",
+            recipientEmail: parsed.data.email,
+            idempotencyKey: `partner-confirm-${id}`,
+            templateData: {
+              name: parsed.data.name,
+              company: parsed.data.company,
+              partnershipType: partnershipTypeLabel,
+              message: messageWithPhone,
+            },
+          },
+        }),
+      ]);
+
+      try {
+        localStorage.setItem(FINTECH_LAST_SUBMIT_KEY, String(Date.now()));
+      } catch {
+        // ignore
+      }
+
+      toast({
+        title: "Request sent!",
+        description: "We've received your request and emailed you a confirmation. Our partnerships team will be in touch shortly.",
+      });
+      setForm({ name: "", company: "", role: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      console.error("Fintech partnership form submission failed", err);
+      toast({
+        title: "Something went wrong",
+        description: "We couldn't send your request. Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   useEffect(() => {
