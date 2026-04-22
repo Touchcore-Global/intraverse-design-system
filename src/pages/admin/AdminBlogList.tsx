@@ -86,6 +86,17 @@ export default function AdminBlogList() {
         </div>
       </header>
 
+      <div className="bg-background border-b border-border">
+        <div className="container mx-auto px-4 py-2 flex gap-1 text-sm">
+          <Link to="/admin/blog" className="px-3 py-1.5 rounded-md bg-primary/10 text-primary font-medium">
+            Articles
+          </Link>
+          <Link to="/admin/users" className="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted">
+            Admin Users
+          </Link>
+        </div>
+      </div>
+
       <main className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold">Articles</h2>
