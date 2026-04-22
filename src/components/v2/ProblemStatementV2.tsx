@@ -98,10 +98,11 @@ export const ProblemStatementV2 = () => {
     };
   }, [api]);
 
-  // Match the site-wide `container` left edge: padding of 2rem, max-width 1400px (centered at 2xl).
-  // This keeps the carousel start aligned with the rest of the grid at every viewport width.
+  // Match the site-wide `container` left edge: padding 2rem, max-width 1400px (centered at 2xl).
+  // Mobile: 1rem to match `px-4` used elsewhere.
   const gutterStyle = {
     "--carousel-gutter": "max(1rem, calc((100vw - 1400px) / 2 + 2rem))",
+    "--carousel-gutter-md": "max(2rem, calc((100vw - 1400px) / 2 + 2rem))",
   } as CSSProperties;
 
   return (
