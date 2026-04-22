@@ -100,38 +100,62 @@ export default function AdminLogin() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {session && !isAdmin && !loading && (
-            <div className="mb-4 p-3 rounded border border-border bg-muted text-sm text-foreground">
-              You're signed in as <strong>{session.user.email}</strong> but don't have admin access. Ask an
-              existing admin to grant you the role, or insert a row in <code>user_roles</code> with your
-              user id and role <code>admin</code>.
+          {session && !isAdmin && !loading ? (
+            <div className="space-y-4">
+              <div className="p-3 rounded border border-border bg-muted text-sm text-foreground">
+                Signed in as <strong>{session.user.email}</strong>.
+              </div>
+              {adminExists === null ? (
+                <p className="text-sm text-muted-foreground text-center">Checking access...</p>
+              ) : adminExists === false ? (
+                <>
+                  <div className="p-4 rounded border border-primary/30 bg-primary/5">
+                    <p className="font-medium text-foreground mb-1">Set up your admin account</p>
+                    <p className="text-sm text-muted-foreground">
+                      No admin exists yet. Claim the admin role for this account to manage the blog. This
+                      one-time bootstrap is disabled once an admin is set.
+                    </p>
+                  </div>
+                  <Button onClick={handleClaimAdmin} disabled={claiming} className="w-full">
+                    {claiming ? "Promoting..." : "Make me admin"}
+                  </Button>
+                </>
+              ) : (
+                <div className="p-3 rounded border border-border bg-muted text-sm text-foreground">
+                  This account doesn't have admin access. Ask an existing admin to grant you the role.
+                </div>
+              )}
+              <Button variant="outline" onClick={handleSignOut} className="w-full">
+                Sign out
+              </Button>
             </div>
+          ) : (
+            <Tabs defaultValue="signin">
+              <TabsList className="grid grid-cols-2 mb-4">
+                <TabsTrigger value="signin">Sign In</TabsTrigger>
+                <TabsTrigger value="signup">Sign Up</TabsTrigger>
+              </TabsList>
+              <TabsContent value="signin">
+                <form onSubmit={handleLogin} className="space-y-4">
+                  <Input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <Input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <Button type="submit" disabled={submitting} className="w-full">
+                    {submitting ? "Signing in..." : "Sign In"}
+                  </Button>
+                </form>
+              </TabsContent>
+              <TabsContent value="signup">
+                <form onSubmit={handleSignup} className="space-y-4">
+                  <Input placeholder="Display name" required value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+                  <Input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <Input type="password" placeholder="Password (min 6 chars)" required minLength={6} value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <Button type="submit" disabled={submitting} className="w-full">
+                    {submitting ? "Creating..." : "Sign Up"}
+                  </Button>
+                </form>
+              </TabsContent>
+            </Tabs>
           )}
-          <Tabs defaultValue="signin">
-            <TabsList className="grid grid-cols-2 mb-4">
-              <TabsTrigger value="signin">Sign In</TabsTrigger>
-              <TabsTrigger value="signup">Sign Up</TabsTrigger>
-            </TabsList>
-            <TabsContent value="signin">
-              <form onSubmit={handleLogin} className="space-y-4">
-                <Input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-                <Input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-                <Button type="submit" disabled={submitting} className="w-full">
-                  {submitting ? "Signing in..." : "Sign In"}
-                </Button>
-              </form>
-            </TabsContent>
-            <TabsContent value="signup">
-              <form onSubmit={handleSignup} className="space-y-4">
-                <Input placeholder="Display name" required value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
-                <Input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-                <Input type="password" placeholder="Password (min 6 chars)" required minLength={6} value={password} onChange={(e) => setPassword(e.target.value)} />
-                <Button type="submit" disabled={submitting} className="w-full">
-                  {submitting ? "Creating..." : "Sign Up"}
-                </Button>
-              </form>
-            </TabsContent>
-          </Tabs>
           <div className="mt-4 text-center">
             <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary">
               ← Back to Blog
