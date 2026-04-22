@@ -50,7 +50,7 @@ export default function AdminUsers() {
 
   useEffect(() => {
     if (loading) return;
-    if (!session || !isAdmin) navigate("/admin", { replace: true });
+    if (!session || !isAdmin) navigate("/admin/login", { replace: true });
   }, [session, isAdmin, loading, navigate]);
 
   const loadUsers = async () => {
@@ -70,7 +70,7 @@ export default function AdminUsers() {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    navigate("/admin");
+    navigate("/admin/login");
   };
 
   const handleGrant = async (e: React.FormEvent) => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 import { useAdminAuth } from "@/hooks/use-admin";
@@ -11,6 +11,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectTo = (location.state as { from?: string } | null)?.from || "/admin/blog";
   const { session, isAdmin, loading } = useAdminAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,8 +22,8 @@ export default function AdminLogin() {
   const [claiming, setClaiming] = useState(false);
 
   useEffect(() => {
-    if (!loading && session && isAdmin) navigate("/admin/blog", { replace: true });
-  }, [session, isAdmin, loading, navigate]);
+    if (!loading && session && isAdmin) navigate(redirectTo, { replace: true });
+  }, [session, isAdmin, loading, navigate, redirectTo]);
 
   useEffect(() => {
     if (!session || isAdmin) return;
@@ -38,7 +40,7 @@ export default function AdminLogin() {
     }
     if (data === true) {
       toast({ title: "You're now an admin", description: "Redirecting..." });
-      setTimeout(() => navigate("/admin/blog", { replace: true }), 600);
+      setTimeout(() => navigate(redirectTo, { replace: true }), 600);
     } else {
       toast({
         title: "Admin already exists",
@@ -72,7 +74,7 @@ export default function AdminLogin() {
       email,
       password,
       options: {
-        emailRedirectTo: `${window.location.origin}/admin`,
+        emailRedirectTo: `${window.location.origin}/admin/login`,
         data: { display_name: displayName },
       },
     });

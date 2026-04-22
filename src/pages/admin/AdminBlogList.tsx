@@ -28,8 +28,7 @@ export default function AdminBlogList() {
 
   useEffect(() => {
     if (loading) return;
-    if (!session) navigate("/admin", { replace: true });
-    else if (!isAdmin) navigate("/admin", { replace: true });
+    if (!session || !isAdmin) navigate("/admin/login", { replace: true });
   }, [session, isAdmin, loading, navigate]);
 
   useEffect(() => {
@@ -57,7 +56,7 @@ export default function AdminBlogList() {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    navigate("/admin");
+    navigate("/admin/login");
   };
 
   if (loading || !isAdmin) return null;

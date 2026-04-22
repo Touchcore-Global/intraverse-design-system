@@ -55,6 +55,7 @@ import AdminLogin from "./pages/admin/AdminLogin.tsx";
 import AdminBlogList from "./pages/admin/AdminBlogList.tsx";
 import AdminBlogEditor from "./pages/admin/AdminBlogEditor.tsx";
 import AdminUsers from "./pages/admin/AdminUsers.tsx";
+import { RequireAdmin } from "./components/admin/RequireAdmin.tsx";
 
 const queryClient = new QueryClient();
 
@@ -122,11 +123,12 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
           {/* Admin */}
-          <Route path="/admin" element={<AdminLogin />} />
-          <Route path="/admin/blog" element={<AdminBlogList />} />
-          <Route path="/admin/blog/new" element={<AdminBlogEditor />} />
-          <Route path="/admin/blog/:id" element={<AdminBlogEditor />} />
-          <Route path="/admin/users" element={<AdminUsers />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<RequireAdmin><AdminBlogList /></RequireAdmin>} />
+          <Route path="/admin/blog" element={<RequireAdmin><AdminBlogList /></RequireAdmin>} />
+          <Route path="/admin/blog/new" element={<RequireAdmin><AdminBlogEditor /></RequireAdmin>} />
+          <Route path="/admin/blog/:id" element={<RequireAdmin><AdminBlogEditor /></RequireAdmin>} />
+          <Route path="/admin/users" element={<RequireAdmin><AdminUsers /></RequireAdmin>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
