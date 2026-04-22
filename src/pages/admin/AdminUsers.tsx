@@ -7,6 +7,7 @@ import { useAdminAuth } from "@/hooks/use-admin";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
+import { AdminUserDetailDrawer } from "@/components/admin/AdminUserDetailDrawer";
 
 interface AdminUser {
   user_id: string;
@@ -30,6 +31,7 @@ export default function AdminUsers() {
   const navigate = useNavigate();
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [fetching, setFetching] = useState(true);
+  const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
 
   useEffect(() => {
     if (loading) return;
@@ -130,7 +132,11 @@ export default function AdminUsers() {
                 {users.map((u) => {
                   const isYou = u.user_id === session?.user.id;
                   return (
-                    <tr key={u.user_id} className="border-t border-border hover:bg-muted/30">
+                    <tr
+                      key={u.user_id}
+                      onClick={() => setSelectedUserId(u.user_id)}
+                      className="border-t border-border hover:bg-muted/30 cursor-pointer"
+                    >
                       <td className="p-3">
                         <div className="font-medium text-foreground flex items-center gap-2">
                           {u.email}
@@ -153,6 +159,12 @@ export default function AdminUsers() {
           )}
         </Card>
       </main>
+
+      <AdminUserDetailDrawer
+        userId={selectedUserId}
+        open={!!selectedUserId}
+        onOpenChange={(open) => !open && setSelectedUserId(null)}
+      />
     </div>
   );
 }
