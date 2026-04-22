@@ -66,15 +66,15 @@ const cards: CardData[] = [
 
 const FeatureCard = ({ card }: { card: CardData }) => (
   <Card className="border-0 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full overflow-hidden" style={{ background: card.gradient }}>
-    <CardContent className="p-6">
-      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 shadow-md" style={{ background: card.iconBg }}>
-        <card.icon className="h-6 w-6 text-white" />
+    <CardContent className="p-8 md:p-10">
+      <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-md" style={{ background: card.iconBg }}>
+        <card.icon className="h-8 w-8 text-white" />
       </div>
-      <h3 className="text-lg font-semibold text-foreground mb-2">{card.headline}</h3>
-      <p className="text-sm font-medium mb-3" style={{ color: "hsl(280 60% 35%)" }}>
+      <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3">{card.headline}</h3>
+      <p className="text-base font-medium mb-4" style={{ color: "hsl(280 60% 35%)" }}>
         {card.subheading}
       </p>
-      <p className="text-sm text-muted-foreground leading-relaxed">{card.content}</p>
+      <p className="text-base text-muted-foreground leading-relaxed">{card.content}</p>
     </CardContent>
   </Card>
 );
