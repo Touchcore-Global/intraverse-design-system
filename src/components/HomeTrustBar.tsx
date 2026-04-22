@@ -102,8 +102,14 @@ export const HomeTrustBar = () => {
     <section ref={sectionRef} className="py-8 md:py-16 bg-accent">
       <div className="container mx-auto px-4 md:pl-[100px]">
         <h2
-          className="text-3xl sm:text-4xl md:text-[80px] md:leading-[96px] font-[660] tracking-[-2px] text-center md:text-left mb-6"
-          style={{ color: "rgb(23, 19, 33)" }}
+          className="text-center md:text-left mb-6"
+          style={{
+            color: "rgb(23, 19, 33)",
+            fontSize: "6rem",
+            fontWeight: 660,
+            letterSpacing: "-0.03em",
+            lineHeight: 1.0416666667,
+          }}
         >
           Built for How Travel is Sold
         </h2>
