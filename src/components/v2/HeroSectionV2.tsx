@@ -46,7 +46,7 @@ export const HeroSectionV2 = () => {
           className="mt-8 text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal max-w-3xl mx-auto mb-6"
           style={{ color: "rgb(60, 50, 90)" }}
         >
-          Sell it all from one AI powered platform, on your own website and via API. Easily.
+          Sell it all from one AI powered platform. Easily.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
