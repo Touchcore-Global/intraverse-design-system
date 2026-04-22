@@ -78,18 +78,22 @@ export function AdminUserDetailDrawer({ userId, open, onOpenChange }: Props) {
       setDetail(null);
       return;
     }
+    let cancelled = false;
     setLoading(true);
-    supabase
-      .rpc("get_admin_user_detail", { target_user_id: userId })
-      .then(({ data, error }) => {
-        if (error) {
-          toast({ title: "Failed to load user", description: error.message, variant: "destructive" });
-          onOpenChange(false);
-        } else {
-          setDetail(data as unknown as AdminUserDetail);
-        }
-      })
-      .finally(() => setLoading(false));
+    (async () => {
+      const { data, error } = await supabase.rpc("get_admin_user_detail", { target_user_id: userId });
+      if (cancelled) return;
+      if (error) {
+        toast({ title: "Failed to load user", description: error.message, variant: "destructive" });
+        onOpenChange(false);
+      } else {
+        setDetail(data as unknown as AdminUserDetail);
+      }
+      setLoading(false);
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [open, userId, onOpenChange]);
 
   return (
