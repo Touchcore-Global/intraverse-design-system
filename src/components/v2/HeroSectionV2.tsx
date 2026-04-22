@@ -40,8 +40,14 @@ export const HeroSectionV2 = () => {
         </h1>
 
         <p
-          className="mt-6 lg:mt-8 text-base sm:text-lg md:text-2xl lg:text-[32px] lg:leading-[36px] lg:tracking-[-0.64px] font-normal max-w-3xl mx-auto"
-          style={{ color: "rgb(60, 50, 90)" }}
+          className="mt-6 lg:mt-8 font-normal max-w-3xl mx-auto"
+          style={{
+            color: "#74717a",
+            fontSize: "2rem",
+            fontWeight: 400,
+            letterSpacing: "-0.02em",
+            lineHeight: 1.125,
+          }}
         >
           Sell it all from one AI powered platform. Easily.
         </p>
