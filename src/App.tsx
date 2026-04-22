@@ -59,8 +59,6 @@ import News from "./pages/News.tsx";
 import NewsArticle from "./pages/NewsArticle.tsx";
 import AdminNewsList from "./pages/admin/AdminNewsList.tsx";
 import AdminNewsEditor from "./pages/admin/AdminNewsEditor.tsx";
-import { HelmetProvider } from "react-helmet-async";
-import { RequireAdmin } from "./components/admin/RequireAdmin.tsx";
 
 const queryClient = new QueryClient();
 
