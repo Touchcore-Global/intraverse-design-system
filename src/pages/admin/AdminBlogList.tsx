@@ -87,9 +87,12 @@ export default function AdminBlogList() {
       </header>
 
       <div className="bg-background border-b border-border">
-        <div className="container mx-auto px-4 py-2 flex gap-1 text-sm">
+        <div className="container mx-auto px-4 py-2 flex gap-1 text-sm overflow-x-auto">
           <Link to="/admin/blog" className="px-3 py-1.5 rounded-md bg-primary/10 text-primary font-medium">
             Articles
+          </Link>
+          <Link to="/admin/news" className="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted">
+            News
           </Link>
           <Link to="/admin/users" className="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted">
             Admin Users
