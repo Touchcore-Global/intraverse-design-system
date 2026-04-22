@@ -35,7 +35,15 @@ export const HeroSectionV2 = () => {
 
       <div className="container relative mx-auto px-4 pt-16 pb-16 lg:pt-28 lg:pb-24 text-center">
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[100px] font-[825] leading-[1.1] lg:leading-[112px] tracking-[-1px] lg:tracking-[-3px] max-w-5xl mx-auto text-black font-ubuntu">
+        <h1
+          className="max-w-5xl mx-auto text-black font-ubuntu"
+          style={{
+            fontSize: "6rem",
+            fontWeight: 660,
+            letterSpacing: "-0.03em",
+            lineHeight: 1.0416666667,
+          }}
+        >
           Flights. Hotels. Tours. Packages.
         </h1>
 
