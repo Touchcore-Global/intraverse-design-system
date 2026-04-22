@@ -1,8 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket, LucideIcon } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useEffect, useState } from "react";
 
 type CardData = {
   icon: LucideIcon;
@@ -82,6 +83,20 @@ const FeatureCard = ({ card }: { card: CardData }) => (
 export const ProblemStatementV2 = () => {
   const { ref, revealClass } = useScrollReveal();
   const isMobile = useIsMobile();
+  const [api, setApi] = useState<CarouselApi>();
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+
+  useEffect(() => {
+    if (!api) return;
+    const update = () => setCanScrollPrev(api.canScrollPrev());
+    update();
+    api.on("select", update);
+    api.on("reInit", update);
+    return () => {
+      api.off("select", update);
+      api.off("reInit", update);
+    };
+  }, [api]);
 
   return (
     <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background">
@@ -90,7 +105,7 @@ export const ProblemStatementV2 = () => {
           Built to Meet Industry's Demands
         </h2>
 
-        <Carousel opts={{ align: "start", loop: true }} className="w-full md:px-12">
+        <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full md:px-12">
           <CarouselContent className="-ml-3 md:-ml-6">
             {cards.map((card, index) => (
               <CarouselItem
@@ -103,7 +118,7 @@ export const ProblemStatementV2 = () => {
           </CarouselContent>
           {!isMobile && (
             <>
-              <CarouselPrevious className="-left-2" />
+              {canScrollPrev && <CarouselPrevious className="-left-2" />}
               <CarouselNext className="-right-2" />
             </>
           )}
