@@ -47,7 +47,7 @@ export default function AdminBlogEditor() {
   const [fetching, setFetching] = useState(!isNew);
 
   useEffect(() => {
-    if (!loading && !isAdmin) navigate("/admin/login", { replace: true });
+    if (!loading && !isAdmin) navigate("/admin", { replace: true });
   }, [isAdmin, loading, navigate]);
 
   useEffect(() => {

@@ -55,7 +55,10 @@ import AdminLogin from "./pages/admin/AdminLogin.tsx";
 import AdminBlogList from "./pages/admin/AdminBlogList.tsx";
 import AdminBlogEditor from "./pages/admin/AdminBlogEditor.tsx";
 import AdminUsers from "./pages/admin/AdminUsers.tsx";
-import { RequireAdmin } from "./components/admin/RequireAdmin.tsx";
+import News from "./pages/News.tsx";
+import NewsArticle from "./pages/NewsArticle.tsx";
+import AdminNewsList from "./pages/admin/AdminNewsList.tsx";
+import AdminNewsEditor from "./pages/admin/AdminNewsEditor.tsx";
 
 const queryClient = new QueryClient();
 
@@ -122,13 +125,18 @@ const App = () => (
           {/* Blog */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
+          {/* News & Press */}
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:slug" element={<NewsArticle />} />
           {/* Admin */}
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin" element={<RequireAdmin><AdminBlogList /></RequireAdmin>} />
-          <Route path="/admin/blog" element={<RequireAdmin><AdminBlogList /></RequireAdmin>} />
-          <Route path="/admin/blog/new" element={<RequireAdmin><AdminBlogEditor /></RequireAdmin>} />
-          <Route path="/admin/blog/:id" element={<RequireAdmin><AdminBlogEditor /></RequireAdmin>} />
-          <Route path="/admin/users" element={<RequireAdmin><AdminUsers /></RequireAdmin>} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/blog" element={<AdminBlogList />} />
+          <Route path="/admin/blog/new" element={<AdminBlogEditor />} />
+          <Route path="/admin/blog/:id" element={<AdminBlogEditor />} />
+          <Route path="/admin/news" element={<AdminNewsList />} />
+          <Route path="/admin/news/new" element={<AdminNewsEditor />} />
+          <Route path="/admin/news/:id" element={<AdminNewsEditor />} />
+          <Route path="/admin/users" element={<AdminUsers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
