@@ -28,8 +28,24 @@ import {
   DollarSign,
   Star,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { z } from "zod";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+
+const fintechPartnerSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  company: z.string().trim().min(1, "Company is required").max(100),
+  role: z.string().trim().max(100).optional().or(z.literal("")),
+  email: z.string().trim().email("Please enter a valid email").max(255),
+  phone: z.string().trim().max(50).optional().or(z.literal("")),
+  message: z.string().trim().min(1, "Message is required").max(1000),
+});
+
+const FINTECH_MIN_TIME_ON_PAGE_MS = 3000;
+const FINTECH_MIN_INTERVAL_BETWEEN_SUBMITS_MS = 30_000;
+const FINTECH_LAST_SUBMIT_KEY = "intraverse:fintech-partner:last-submit";
 
 /* ── WHO THIS IS FOR ── */
 const whoCards = [
