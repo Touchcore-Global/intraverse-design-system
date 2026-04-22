@@ -31,6 +31,7 @@ export default function AdminUsers() {
   const navigate = useNavigate();
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [fetching, setFetching] = useState(true);
+  const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
 
   useEffect(() => {
     if (loading) return;
