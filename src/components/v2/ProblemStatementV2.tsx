@@ -112,7 +112,7 @@ export const ProblemStatementV2 = () => {
         </h2>
 
         <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full">
-          <CarouselContent className="ml-0 pl-4 md:pl-0 md:[&]:pl-[var(--carousel-gutter)] pr-4 md:pr-[var(--carousel-gutter)]">
+          <CarouselContent className="ml-0 pl-4 pr-4 md:pl-[var(--carousel-gutter)] md:pr-[var(--carousel-gutter)]">
             {cards.map((card, index) => (
               <CarouselItem
                 key={index}
