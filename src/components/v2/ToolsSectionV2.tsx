@@ -26,7 +26,7 @@ const tools = [
     title: "Share Live Itineraries",
     tagline: "Your customers get their trip in real time.",
     body: "Send branded, live-updating itineraries via WhatsApp, email, or link. Flight changes? They see it. Hotel confirmed? They see it. No more PDF chasing.",
-    image: toolItinerariesMobile,
+    image: toolItinerariesDesktop,
     imageDesktop: toolItinerariesDesktop,
     gradient: "linear-gradient(135deg, hsl(280 80% 60%), hsl(330 85% 60%))",
   },
