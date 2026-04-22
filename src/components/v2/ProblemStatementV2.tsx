@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket, LucideIcon } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 type CardData = {
@@ -90,23 +90,24 @@ export const ProblemStatementV2 = () => {
           Built to Meet Industry's Demands
         </h2>
 
-        {isMobile ? (
-          <Carousel opts={{ align: "start", loop: true }} className="w-full">
-            <CarouselContent className="-ml-3">
-              {cards.map((card, index) => (
-                <CarouselItem key={index} className="pl-3 basis-[85%]">
-                  <FeatureCard card={card} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-        ) : (
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <Carousel opts={{ align: "start", loop: true }} className="w-full md:px-12">
+          <CarouselContent className="-ml-3 md:-ml-6">
             {cards.map((card, index) => (
-              <FeatureCard key={index} card={card} />
+              <CarouselItem
+                key={index}
+                className={isMobile ? "pl-3 basis-[85%]" : "pl-6 basis-1/2"}
+              >
+                <FeatureCard card={card} />
+              </CarouselItem>
             ))}
-          </div>
-        )}
+          </CarouselContent>
+          {!isMobile && (
+            <>
+              <CarouselPrevious className="-left-2" />
+              <CarouselNext className="-right-2" />
+            </>
+          )}
+        </Carousel>
       </div>
     </section>
   );
