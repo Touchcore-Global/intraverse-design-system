@@ -102,7 +102,7 @@ export const ProblemStatementV2 = () => {
   // This keeps the carousel start aligned with the rest of the grid at every viewport width.
   const gutterStyle = {
     "--carousel-gutter": "max(1rem, calc((100vw - 1400px) / 2 + 2rem))",
-  } as React.CSSProperties;
+  } as CSSProperties;
 
   return (
     <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background" style={gutterStyle}>
