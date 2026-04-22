@@ -49,6 +49,11 @@ import DocsReference from "./pages/docs/DocsReference.tsx";
 import VerifyEmail from "./pages/VerifyEmail.tsx";
 import ForgotPassword from "./pages/ForgotPassword.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogArticle from "./pages/BlogArticle.tsx";
+import AdminLogin from "./pages/admin/AdminLogin.tsx";
+import AdminBlogList from "./pages/admin/AdminBlogList.tsx";
+import AdminBlogEditor from "./pages/admin/AdminBlogEditor.tsx";
 
 const queryClient = new QueryClient();
 
@@ -112,6 +117,14 @@ const App = () => (
           <Route path="/docs/payments" element={<DocsPayments />} />
           <Route path="/docs/reference" element={<DocsReference />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
+          {/* Blog */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogArticle />} />
+          {/* Admin */}
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/blog" element={<AdminBlogList />} />
+          <Route path="/admin/blog/new" element={<AdminBlogEditor />} />
+          <Route path="/admin/blog/:id" element={<AdminBlogEditor />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
