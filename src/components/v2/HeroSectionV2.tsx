@@ -57,11 +57,6 @@ export const HeroSectionV2 = () => {
           >
             <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
           </Button>
-          <Button size="xl" className="cta-responsive min-h-[48px] bg-black hover:bg-black/90 text-white border-0 rounded-none font-semibold" asChild>
-            <a href="/products">
-              Learn More
-            </a>
-          </Button>
         </div>
 
         <p className="mt-4 text-sm" style={{ color: "rgb(90, 80, 120)" }}>
