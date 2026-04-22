@@ -108,7 +108,15 @@ export const ProblemStatementV2 = () => {
   return (
     <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background" style={gutterStyle}>
       <div ref={ref} className={`transition-all duration-700 ease-out ${revealClass}`}>
-        <h2 className="text-center md:text-left mb-12 text-black px-4 md:px-0 md:pl-[var(--carousel-gutter-md)]">
+        <h2
+          className="text-center md:text-left mb-12 text-black px-4 md:px-0 md:pl-[var(--carousel-gutter-md)]"
+          style={{
+            fontSize: "6rem",
+            fontWeight: 660,
+            letterSpacing: "-0.03em",
+            lineHeight: 1.0416666667,
+          }}
+        >
           Built to Meet Industry's<br />Demands
         </h2>
 
