@@ -1,8 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket, LucideIcon } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useEffect, useState } from "react";
 
 type CardData = {
   icon: LucideIcon;
