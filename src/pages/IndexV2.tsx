@@ -12,25 +12,28 @@ import { SecuritySectionV2 } from "@/components/v2/SecuritySectionV2";
 import { FinalCTAV2 } from "@/components/v2/FinalCTAV2";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { RevealSection } from "@/components/RevealSection";
 
 const IndexV2 = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <div className="h-16" />
 
+      {/* Hero stays static — above the fold, no entry transition needed */}
       <HeroSectionV2 />
-      <HomeTrustBar />
-      <ProblemStatementV2 />
-      <Testimonials />
-      <ProductShowcaseV2 />
-      <WhoWeServeSectionV2 />
-      <ToolsSectionV2 />
-      <VideoWalkthrough />
-      <HowItWorksV2 />
 
-      <SecuritySectionV2 />
-      <FinalCTAV2 />
+      <RevealSection variant="fade"><HomeTrustBar /></RevealSection>
+      <RevealSection variant="fade-up"><ProblemStatementV2 /></RevealSection>
+      <RevealSection variant="fade-up"><Testimonials /></RevealSection>
+      <RevealSection variant="scale"><ProductShowcaseV2 /></RevealSection>
+      <RevealSection variant="fade-up"><WhoWeServeSectionV2 /></RevealSection>
+      <RevealSection variant="fade-up"><ToolsSectionV2 /></RevealSection>
+      <RevealSection variant="scale"><VideoWalkthrough /></RevealSection>
+      <RevealSection variant="fade-up"><HowItWorksV2 /></RevealSection>
+      <RevealSection variant="fade-up"><SecuritySectionV2 /></RevealSection>
+      <RevealSection variant="scale"><FinalCTAV2 /></RevealSection>
+
       <Footer />
       <WhatsAppFab />
     </div>
