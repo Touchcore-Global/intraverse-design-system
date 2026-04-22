@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import toolTrips from "@/assets/tool-trips-web.png";
 import toolItinerariesMobile from "@/assets/tool-itineraries-web.png";
 import toolItinerariesDesktop from "@/assets/tool-itineraries-desktop.png";
-import toolPayments from "@/assets/tool-payments-web.svg";
+import toolPayments from "@/assets/tool-payments-web.png";
 import toolInsights from "@/assets/tool-insights-web.svg";
 import toolPackages from "@/assets/tool-packages-web.svg";
 import toolLinks from "@/assets/tool-links-web.svg";
