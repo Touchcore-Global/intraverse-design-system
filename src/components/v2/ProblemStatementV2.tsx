@@ -3,7 +3,7 @@ import { Globe, Ticket, Wallet, Cog, RefreshCcw, Rocket, LucideIcon } from "luci
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 
 type CardData = {
   icon: LucideIcon;
@@ -98,15 +98,22 @@ export const ProblemStatementV2 = () => {
     };
   }, [api]);
 
+  // Match the site-wide `container` left edge: padding 2rem, max-width 1400px (centered at 2xl).
+  // Mobile: 1rem to match `px-4` used elsewhere.
+  const gutterStyle = {
+    "--carousel-gutter": "max(1rem, calc((100vw - 1400px) / 2 + 2rem))",
+    "--carousel-gutter-md": "max(2rem, calc((100vw - 1400px) / 2 + 2rem))",
+  } as CSSProperties;
+
   return (
-    <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background">
+    <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background" style={gutterStyle}>
       <div ref={ref} className={`transition-all duration-700 ease-out ${revealClass}`}>
-        <h2 className="text-center md:text-left mb-12 text-black px-4 md:pl-[100px]">
+        <h2 className="text-center md:text-left mb-12 text-black px-4 md:px-0 md:pl-[var(--carousel-gutter-md)]">
           Built to Meet Industry's<br />Demands
         </h2>
 
         <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full">
-          <CarouselContent className="ml-0 pl-4 md:pl-[100px] pr-4 md:pr-12">
+          <CarouselContent className="ml-0 pl-4 pr-4 md:pl-[var(--carousel-gutter-md)] md:pr-[var(--carousel-gutter-md)]">
             {cards.map((card, index) => (
               <CarouselItem
                 key={index}
@@ -118,8 +125,10 @@ export const ProblemStatementV2 = () => {
           </CarouselContent>
           {!isMobile && (
             <>
-              {canScrollPrev && <CarouselPrevious className="left-4" />}
-              <CarouselNext className="right-4" />
+              {canScrollPrev && (
+                <CarouselPrevious className="left-[calc(var(--carousel-gutter-md)-2.5rem)]" />
+              )}
+              <CarouselNext className="right-[calc(var(--carousel-gutter-md)-2.5rem)]" />
             </>
           )}
         </Carousel>
