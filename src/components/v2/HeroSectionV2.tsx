@@ -33,20 +33,20 @@ export const HeroSectionV2 = () => {
       className="relative overflow-hidden bg-white"
     >
 
-      <div className="container relative mx-auto px-4 pt-[45px] pb-14 lg:pt-[77px] lg:pb-24 text-center">
+      <div className="container relative mx-auto px-4 pt-16 pb-16 lg:pt-28 lg:pb-24 text-center">
 
-        <h1 className="text-[100px] font-[825] leading-[112px] tracking-[-3px] max-w-5xl mx-auto text-black font-ubuntu">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[100px] font-[825] leading-[1.1] lg:leading-[112px] tracking-[-1px] lg:tracking-[-3px] max-w-5xl mx-auto text-black font-ubuntu">
           Flights. Hotels. Tours. Packages.
         </h1>
 
         <p
-          className="mt-8 text-base sm:text-lg md:text-[32px] md:leading-[36px] md:tracking-[-0.64px] font-normal max-w-3xl mx-auto mb-6"
+          className="mt-6 lg:mt-8 text-base sm:text-lg md:text-2xl lg:text-[32px] lg:leading-[36px] lg:tracking-[-0.64px] font-normal max-w-3xl mx-auto"
           style={{ color: "rgb(60, 50, 90)" }}
         >
           Sell it all from one AI powered platform. Easily.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="xl"
             className="cta-responsive min-h-[48px] bg-black hover:bg-black/90 text-white border-0 rounded-none font-semibold shadow-lg hover:shadow-xl transition-shadow"
@@ -56,9 +56,8 @@ export const HeroSectionV2 = () => {
           </Button>
         </div>
 
-
         {/* Video */}
-        <div className="mt-12 max-w-4xl mx-auto">
+        <div className="mt-14 lg:mt-16 max-w-4xl mx-auto">
           <div
             className="relative aspect-video rounded-2xl overflow-hidden p-[2px]"
             style={{
