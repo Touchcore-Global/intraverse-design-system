@@ -108,12 +108,12 @@ export const ProblemStatementV2 = () => {
   return (
     <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background" style={gutterStyle}>
       <div ref={ref} className={`transition-all duration-700 ease-out ${revealClass}`}>
-        <h2 className="text-center md:text-left mb-12 text-black px-4 md:px-0 md:pl-[var(--carousel-gutter)]">
+        <h2 className="text-center md:text-left mb-12 text-black px-4 md:px-0 md:pl-[var(--carousel-gutter-md)]">
           Built to Meet Industry's<br />Demands
         </h2>
 
         <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full">
-          <CarouselContent className="ml-0 pl-4 pr-4 md:pl-[var(--carousel-gutter)] md:pr-[var(--carousel-gutter)]">
+          <CarouselContent className="ml-0 pl-4 pr-4 md:pl-[var(--carousel-gutter-md)] md:pr-[var(--carousel-gutter-md)]">
             {cards.map((card, index) => (
               <CarouselItem
                 key={index}
@@ -126,9 +126,9 @@ export const ProblemStatementV2 = () => {
           {!isMobile && (
             <>
               {canScrollPrev && (
-                <CarouselPrevious className="left-[calc(var(--carousel-gutter)-2.5rem)]" />
+                <CarouselPrevious className="left-[calc(var(--carousel-gutter-md)-2.5rem)]" />
               )}
-              <CarouselNext className="right-[calc(var(--carousel-gutter)-2.5rem)]" />
+              <CarouselNext className="right-[calc(var(--carousel-gutter-md)-2.5rem)]" />
             </>
           )}
         </Carousel>
