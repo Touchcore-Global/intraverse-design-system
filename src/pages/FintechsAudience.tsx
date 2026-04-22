@@ -520,20 +520,33 @@ const FintechsAudience = () => {
             <RevealBlock>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
                 <h3 className="text-xl font-bold text-white mb-6">Request Partnership Discovery Call</h3>
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  {/* Honeypot */}
+                  <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
+                    <label htmlFor="fintech-website-url">Website (leave this empty)</label>
+                    <input
+                      id="fintech-website-url"
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={website}
+                      onChange={(e) => setWebsite(e.target.value)}
+                    />
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Input name="name" placeholder="Name" value={form.name} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-                    <Input name="company" placeholder="Company" value={form.company} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+                    <Input required name="name" placeholder="Name" value={form.name} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+                    <Input required name="company" placeholder="Company" value={form.company} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Input name="role" placeholder="Role" value={form.role} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-                    <Input name="email" placeholder="Email" type="email" value={form.email} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+                    <Input required name="email" placeholder="Email" type="email" value={form.email} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
                   </div>
                   <Input name="phone" placeholder="Phone" type="tel" value={form.phone} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-                  <Textarea name="message" placeholder="Tell us about your fintech and your timeline" value={form.message} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 min-h-[100px]" />
-                  <Button type="submit" variant="hero" className="w-full min-h-[48px]">
+                  <Textarea required name="message" placeholder="Tell us about your fintech and your timeline" value={form.message} onChange={handleChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 min-h-[100px]" />
+                  <Button type="submit" variant="hero" disabled={submitting} className="w-full min-h-[48px]">
                     <Send className="w-4 h-4 mr-2" />
-                    Request Partnership Discovery Call
+                    {submitting ? "Sending..." : "Request Partnership Discovery Call"}
                   </Button>
                 </form>
               </div>
