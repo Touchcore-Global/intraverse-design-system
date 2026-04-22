@@ -34,9 +34,6 @@ export const HeroSectionV2 = () => {
     >
 
       <div className="container relative mx-auto px-4 pt-[45px] pb-14 lg:pt-[77px] lg:pb-24 text-center">
-        <span className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-white" style={{ background: "linear-gradient(90deg, hsl(280 90% 55%), hsl(330 90% 55%))" }}>
-          ✨ One platform · Global inventory
-        </span>
 
         <h1 className="text-[100px] font-[825] leading-[112px] tracking-[-3px] max-w-5xl mx-auto text-black font-ubuntu">
           Flights. Hotels. Tours. Packages.
