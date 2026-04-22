@@ -3,7 +3,8 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 
 import toolTrips from "@/assets/tool-trips-web.svg";
-import toolItineraries from "@/assets/tool-itineraries-web.png";
+import toolItinerariesMobile from "@/assets/tool-itineraries-web.png";
+import toolItinerariesDesktop from "@/assets/tool-itineraries-desktop.png";
 import toolPayments from "@/assets/tool-payments-web.svg";
 import toolInsights from "@/assets/tool-insights-web.svg";
 import toolPackages from "@/assets/tool-packages-web.svg";
@@ -25,7 +26,8 @@ const tools = [
     title: "Share Live Itineraries",
     tagline: "Your customers get their trip in real time.",
     body: "Send branded, live-updating itineraries via WhatsApp, email, or link. Flight changes? They see it. Hotel confirmed? They see it. No more PDF chasing.",
-    image: toolItineraries,
+    image: toolItinerariesMobile,
+    imageDesktop: toolItinerariesDesktop,
     gradient: "linear-gradient(135deg, hsl(280 80% 60%), hsl(330 85% 60%))",
   },
   {
@@ -181,12 +183,17 @@ export const ToolsSectionV2 = () => {
               <div className="flex flex-col">
                 <div className="bg-background">
                   <div className="w-full aspect-[16/10] overflow-hidden flex items-center justify-center">
-                    <img
-                      src={tool.image}
-                      alt={`${tool.title} screenshot`}
-                      loading="lazy"
-                      className="w-full h-full object-contain"
-                    />
+                    <picture className="w-full h-full">
+                      {(tool as any).imageDesktop && (
+                        <source media="(min-width: 768px)" srcSet={(tool as any).imageDesktop} />
+                      )}
+                      <img
+                        src={tool.image}
+                        alt={`${tool.title} screenshot`}
+                        loading="lazy"
+                        className="w-full h-full object-contain"
+                      />
+                    </picture>
                   </div>
                 </div>
 
