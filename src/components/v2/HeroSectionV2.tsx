@@ -67,7 +67,7 @@ export const HeroSectionV2 = () => {
             }}
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden bg-foreground/90">
-              <video className="w-full h-full object-cover" controls playsInline preload="metadata">
+              <video className="w-full h-full object-cover" autoPlay muted loop playsInline preload="metadata">
                 <source src="https://res.cloudinary.com/demzrmxhz/video/upload/v1762167461/Travx-video_fmbarv.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
