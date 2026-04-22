@@ -52,8 +52,7 @@ export const HeroSectionV2 = () => {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="xl"
-            className="cta-responsive min-h-[48px] text-white border-0 rounded-none font-semibold shadow-lg hover:shadow-xl transition-shadow"
-            style={{ background: "linear-gradient(90deg, hsl(280 90% 55%) 0%, hsl(220 95% 55%) 50%, hsl(190 95% 50%) 100%)" }}
+            className="cta-responsive min-h-[48px] bg-black hover:bg-black/90 text-white border-0 rounded-none font-semibold shadow-lg hover:shadow-xl transition-shadow"
             asChild
           >
             <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
