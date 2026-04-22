@@ -59,9 +59,6 @@ export const HeroSectionV2 = () => {
           </Button>
         </div>
 
-        <p className="mt-4 text-sm" style={{ color: "rgb(90, 80, 120)" }}>
-          15-minute demo • No commitment • Free
-        </p>
 
         {/* Video */}
         <div className="mt-12 max-w-4xl mx-auto">
