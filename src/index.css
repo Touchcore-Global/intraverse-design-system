@@ -178,8 +178,8 @@
     color: rgb(23, 19, 33);
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
-    font-size: 18px !important;
-    line-height: 24px !important;
+    font-size: 18px;
+    line-height: 24px;
   }
 
   @media (min-width: 640px) {
