@@ -55,7 +55,7 @@ export function PressKitSection() {
         {/* Boilerplate */}
         <div className="bg-background border border-border rounded-md p-6">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="font-bold text-foreground">About Intraverse</h3>
+            <h3 className="h3-global text-foreground">About Intraverse</h3>
             <Button variant="ghost" size="sm" onClick={handleCopy}>
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               {copied ? "Copied" : "Copy Boilerplate"}

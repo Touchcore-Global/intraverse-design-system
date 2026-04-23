@@ -151,7 +151,7 @@ function UseCaseCard({ useCase }: { useCase: UseCase }) {
         <span className="text-sm font-bold text-primary-foreground">{useCase.number}</span>
       </div>
 
-      <h3 className="text-xl md:text-2xl font-bold text-foreground mb-5 leading-tight">
+      <h3 className="h3-global text-foreground mb-5">
         {useCase.title}
       </h3>
 

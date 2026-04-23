@@ -243,7 +243,7 @@ export default function Tools() {
                 <RevealBlock key={tool.title}>
                   <div className="bg-background rounded-2xl border border-border p-8 h-full flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300 hover:border-primary">
                     <span className="text-[40px] leading-none block mb-4">{tool.emoji}</span>
-                    <h3 className="text-2xl font-bold mb-2" style={{ color: "#0D1B2A" }}>
+                    <h3 className="h3-global mb-2" style={{ color: "#0D1B2A" }}>
                       {tool.title}
                     </h3>
                     <p className="text-base italic mb-3" style={{ color: "#1E61DC" }}>
@@ -327,7 +327,7 @@ export default function Tools() {
                     <div className="flex items-start justify-between">
                       <div>
                         <span className="text-[36px] leading-none block mb-4">{card.emoji}</span>
-                        <h3 className="text-lg font-bold text-foreground mb-2">{card.title}</h3>
+                        <h3 className="h3-global text-foreground mb-2">{card.title}</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">{card.body}</p>
                       </div>
                       <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary shrink-0 mt-1 transition-colors" />

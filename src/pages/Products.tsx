@@ -193,7 +193,7 @@ function ProductCardComponent({ product }: { product: ProductCard }) {
       <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4">
         <Icon className="w-6 h-6 text-primary" />
       </div>
-      <h3 className="text-xl font-bold text-foreground mb-1">{product.title}</h3>
+      <h3 className="h3-global text-foreground mb-1">{product.title}</h3>
       <p className="text-sm italic text-primary mb-3">{product.tagline}</p>
       <p className="text-[15px] text-muted-foreground mb-4 flex-grow">{product.description}</p>
       <ul className="space-y-2 mb-6">
@@ -270,7 +270,7 @@ export default function Products() {
                     <div className="w-14 h-14 mx-auto rounded-full bg-accent flex items-center justify-center mb-4">
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="font-bold text-foreground mb-1">{vp.title}</h3>
+                    <h3 className="h3-global text-foreground mb-1">{vp.title}</h3>
                     <p className="text-sm text-muted-foreground">{vp.desc}</p>
                   </div>
                 );

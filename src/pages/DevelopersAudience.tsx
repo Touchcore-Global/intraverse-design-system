@@ -201,7 +201,7 @@ const Developers = () => {
                     <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="text-base font-bold text-foreground mb-2">{cap.title}</h3>
+                    <h3 className="h3-global text-foreground mb-2">{cap.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{cap.body}</p>
                   </div>
                 </RevealBlock>
@@ -272,7 +272,7 @@ const Developers = () => {
             {pricingTiers.map((tier) => (
               <RevealBlock key={tier.name}>
                 <div className={`bg-card rounded-2xl p-8 md:p-10 h-full text-center transition-all duration-300 hover:-translate-y-1 ${tier.highlight ? "border-2 border-primary shadow-md" : "border border-border shadow-sm"}`}>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{tier.name}</h3>
+                  <h3 className="h3-global text-foreground mb-2">{tier.name}</h3>
                   <p className="text-3xl md:text-4xl font-[660] text-primary mb-3">{tier.price}</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">{tier.desc}</p>
                 </div>
@@ -295,7 +295,7 @@ const Developers = () => {
                   <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold mx-auto mb-4 font-mono">
                     {step.n}
                   </div>
-                  <h3 className="text-base font-bold text-foreground mb-2">{step.title}</h3>
+                  <h3 className="h3-global text-foreground mb-2">{step.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{step.body}</p>
                 </div>
               ))}

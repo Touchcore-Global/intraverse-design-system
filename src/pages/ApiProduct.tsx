@@ -249,7 +249,7 @@ export default function ApiProduct() {
                 <RevealBlock key={card.title}>
                   <div className="bg-background rounded-lg border border-border p-8 h-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <span className="text-[40px] leading-none block mb-4">{card.emoji}</span>
-                    <h3 className="text-[22px] font-bold mb-3" style={{ color: "#0D1B2A" }}>
+                    <h3 className="h3-global text-[22px] mb-3" style={{ color: "#0D1B2A" }}>
                       {card.title}
                     </h3>
                     <p className="text-[15px] text-muted-foreground leading-relaxed">
@@ -278,7 +278,7 @@ export default function ApiProduct() {
                 <RevealBlock key={d.title}>
                   <div className="p-8 rounded-lg border border-border bg-background h-full">
                     <span className="text-[36px] leading-none block mb-4">{d.emoji}</span>
-                    <h3 className="text-lg font-bold text-foreground mb-2">{d.title}</h3>
+                    <h3 className="h3-global text-foreground mb-2">{d.title}</h3>
                     <p className="text-[15px] text-muted-foreground leading-relaxed">{d.body}</p>
                   </div>
                 </RevealBlock>
@@ -353,7 +353,7 @@ export default function ApiProduct() {
                 <RevealBlock key={uc.title}>
                   <div className="bg-background rounded-lg border border-border p-8 h-full flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <span className="text-[40px] leading-none block mb-4">{uc.emoji}</span>
-                    <h3 className="text-lg font-bold text-foreground mb-3">{uc.title}</h3>
+                    <h3 className="h3-global text-foreground mb-3">{uc.title}</h3>
                     <p className="text-[15px] text-muted-foreground leading-relaxed mb-4 flex-1">{uc.body}</p>
                     <Link to={uc.link} className="text-primary font-medium text-sm hover:underline">
                       {uc.linkLabel}
@@ -438,7 +438,7 @@ export default function ApiProduct() {
                     <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-5">
                       {step.num}
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
+                    <h3 className="h3-global text-foreground mb-2">{step.title}</h3>
                     <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{step.body}</p>
                     <Link to={step.href} className="text-primary text-sm font-medium hover:underline">
                       {step.cta}

@@ -68,7 +68,7 @@ export const SecuritySectionV2 = () => {
                     <Icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground mb-1">{f.title}</h3>
+                    <h3 className="h3-global text-foreground mb-1">{f.title}</h3>
                     <p className="text-sm text-muted-foreground">{f.description}</p>
                   </div>
                 </div>

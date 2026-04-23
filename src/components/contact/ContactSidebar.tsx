@@ -6,7 +6,7 @@ export const ContactSidebar = () => (
   <div className="lg:col-span-2 space-y-6">
     {/* Quick contact cards */}
     <div className="bg-accent rounded-2xl p-6 space-y-5">
-      <h3 className="font-semibold text-foreground text-lg">Quick Contact</h3>
+      <h3 className="h3-global text-foreground">Quick Contact</h3>
 
       <a href="mailto:hello@intraverse.africa" className="flex items-start gap-3 group">
         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
@@ -50,7 +50,7 @@ export const ContactSidebar = () => (
 
     {/* Book a demo CTA */}
     <div className="bg-foreground text-background rounded-2xl p-6">
-      <h3 className="font-semibold text-lg mb-2">Want a Live Demo?</h3>
+      <h3 className="h3-global mb-2">Want a Live Demo?</h3>
       <p className="text-sm text-background/70 mb-4">
         See Intraverse in action. We'll walk you through the platform tailored to your business needs.
       </p>
@@ -86,7 +86,7 @@ export const ContactSidebar = () => (
 
     {/* Offices */}
     <div className="bg-accent rounded-2xl p-6 space-y-5">
-      <h3 className="font-semibold text-foreground text-lg">Headquarters</h3>
+      <h3 className="h3-global text-foreground">Headquarters</h3>
 
       <div className="flex items-start gap-3">
         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">

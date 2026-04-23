@@ -87,7 +87,7 @@ const NotFound = () => {
                 className="group bg-background rounded-xl border border-border p-6 hover:border-primary hover:shadow-md transition-all hover:-translate-y-0.5"
               >
                 <link.icon className="w-8 h-8 text-primary mb-3" strokeWidth={1.5} />
-                <h3 className="font-semibold text-secondary text-lg mb-1">{link.title}</h3>
+                <h3 className="h3-global text-secondary mb-1">{link.title}</h3>
                 <p className="text-muted-foreground text-sm mb-3">{link.desc}</p>
                 <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Visit <ArrowRight className="w-3.5 h-3.5" />

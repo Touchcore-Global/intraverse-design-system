@@ -156,7 +156,7 @@ const Businesses = () => {
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-foreground mb-2">{feat.title}</h3>
+                        <h3 className="h3-global text-foreground mb-2">{feat.title}</h3>
                         <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{feat.body}</p>
                       </div>
                     </div>

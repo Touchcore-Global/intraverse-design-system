@@ -266,7 +266,7 @@ const Travx = () => {
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <feature.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold">{feature.title}</h3>
+                  <h3 className="h3-global">{feature.title}</h3>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   {feature.description}
@@ -364,7 +364,7 @@ const Travx = () => {
               <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">
                 Before
               </p>
-              <h3 className="text-xl font-bold text-foreground mb-6">
+              <h3 className="h3-global text-foreground mb-6">
                 WhatsApp-Only Agency
               </h3>
               <ul className="space-y-4">
@@ -387,7 +387,7 @@ const Travx = () => {
               <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
                 After
               </p>
-              <h3 className="text-xl font-bold text-foreground mb-6">
+              <h3 className="h3-global text-foreground mb-6">
                 Your Travx Website
               </h3>
               <ul className="space-y-4">

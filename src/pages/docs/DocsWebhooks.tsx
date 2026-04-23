@@ -93,7 +93,7 @@ export default function DocsWebhooks() {
         <div className="my-4 space-y-6">
           {eventGroups.map((g) => (
             <div key={g.title}>
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2" style={{ fontSize: "13px" }}>
+              <h3 className="h3-global text-foreground uppercase mb-2" style={{ fontSize: "13px" }}>
                 {g.title}
               </h3>
               <div className="overflow-x-auto rounded-lg border border-border">

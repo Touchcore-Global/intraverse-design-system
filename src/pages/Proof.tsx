@@ -374,7 +374,7 @@ export default function Proof() {
                 { heading: "The Results", items: cs.results, icon: "🟢" },
               ].map((section) => (
                 <FadeIn key={section.heading}>
-                  <h3 className="text-xl font-bold text-foreground mb-4">{section.heading}</h3>
+                  <h3 className="h3-global text-foreground mb-4">{section.heading}</h3>
                   <ul className="space-y-2">
                     {section.items.map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-muted-foreground">

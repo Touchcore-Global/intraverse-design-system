@@ -105,7 +105,7 @@ export const ProductShowcase = () => {
         <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
           {product.label}
         </span>
-        <h3 className="font-bold text-foreground mb-3 leading-tight">
+        <h3 className="h3-global text-foreground mb-3">
           {product.title}
         </h3>
         <p className="text-sm text-muted-foreground leading-relaxed flex-1">

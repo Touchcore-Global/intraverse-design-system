@@ -52,7 +52,7 @@ const FeatureCard = ({ card }: { card: typeof cards[0] }) => (
   <Card className="border-0 bg-card shadow-sm hover:shadow-md transition-shadow h-full">
     <CardContent className="p-6">
       <card.icon className="h-8 w-8 text-primary mb-4" />
-      <h3 className="text-lg font-semibold text-foreground mb-2">
+      <h3 className="h3-global text-foreground mb-2">
         {card.headline}
       </h3>
       <p className="text-sm font-medium text-primary mb-3">

@@ -431,7 +431,7 @@ export default function Features() {
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <card.icon className="h-5 w-5 text-primary" />
                         </div>
-                        <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
+                        <h3 className="h3-global text-foreground">{card.title}</h3>
                       </div>
                       <p className="text-sm italic text-primary font-medium mb-3">{card.benefit}</p>
                       <p className="text-muted-foreground text-sm mb-4">{card.description}</p>

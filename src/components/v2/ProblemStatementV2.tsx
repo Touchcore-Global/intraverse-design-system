@@ -71,7 +71,7 @@ const FeatureCard = ({ card }: { card: CardData }) => (
       <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-md" style={{ background: card.iconBg }}>
         <card.icon className="h-8 w-8 text-white" />
       </div>
-      <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3">{card.headline}</h3>
+      <h3 className="h3-global text-foreground mb-3">{card.headline}</h3>
       <p className="text-base font-medium mb-4" style={{ color: "hsl(280 60% 35%)" }}>
         {card.subheading}
       </p>
