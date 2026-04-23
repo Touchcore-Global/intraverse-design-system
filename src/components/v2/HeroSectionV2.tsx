@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Play } from "lucide-react";
 import { DEMO_URL } from "@/lib/constants";
 
 const partners = [
@@ -12,6 +13,18 @@ export const HeroSectionV2 = () => {
   const blob1Ref = useRef<HTMLDivElement>(null);
   const blob2Ref = useRef<HTMLDivElement>(null);
   const blob3Ref = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.controls = true;
+    v.currentTime = 0;
+    v.play();
+    setIsPlaying(true);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,10 +93,30 @@ export const HeroSectionV2 = () => {
             }}
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden bg-foreground/90">
-              <video className="w-full h-full object-cover" autoPlay muted loop playsInline preload="metadata">
+              <video
+                ref={videoRef}
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              >
                 <source src="https://res.cloudinary.com/demzrmxhz/video/upload/v1762167461/Travx-video_fmbarv.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              {!isPlaying && (
+                <button
+                  type="button"
+                  onClick={handlePlay}
+                  aria-label="Play video with sound"
+                  className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors group"
+                >
+                  <span className="flex items-center justify-center w-20 h-20 rounded-full bg-white/95 shadow-2xl group-hover:scale-110 transition-transform">
+                    <Play className="w-8 h-8 text-black fill-black ml-1" />
+                  </span>
+                </button>
+              )}
             </div>
           </div>
         </div>
