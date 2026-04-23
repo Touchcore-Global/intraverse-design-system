@@ -150,7 +150,7 @@ export const HomeTrustBar = () => {
                   className="mb-4 font-bold"
                   style={{
                     color: "rgb(23, 19, 33)",
-                    fontSize: "4.21875rem",
+                    fontSize: "8.4375rem",
                     letterSpacing: "-0.02em",
                     lineHeight: 1.05,
                   }}
