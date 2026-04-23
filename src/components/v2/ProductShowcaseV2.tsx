@@ -133,7 +133,7 @@ export const ProductShowcaseV2 = () => {
           <span className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: product.accent }}>
             {product.label}
           </span>
-          <h3 className="font-bold text-foreground mb-3 leading-tight">{product.title}</h3>
+          <h3 className="mb-3">{product.title}</h3>
           <p className="text-sm text-muted-foreground leading-relaxed flex-1">{product.body}</p>
           <a href={product.href} className="mt-4 text-sm font-semibold hover:underline inline-block" style={{ color: product.accent }}>
             {product.cta}
