@@ -6,6 +6,7 @@ import dashboardStorefront from "@/assets/dashboard-storefront.jpg";
 import dashboardAnalytics from "@/assets/dashboard-analytics.jpg";
 import homeTrustPhone from "@/assets/home-trust-phone.png";
 import homeTrustShareItinerary from "@/assets/home-trust-share-itinerary.png";
+import backofficeNew from "@/assets/home-trust-backoffice-2.png";
 
 const containers = [
   {
@@ -18,7 +19,7 @@ const containers = [
     title: "Automate the Back Office",
     p1: "From invoice generation to BSP reconciliation, Intraverse handles the admin tasks that eat into your day. Set up automated payment reminders, generate financial reports, and track commissions effortlessly.",
     p2: "Spend less time on spreadsheets and more time closing deals. Your back office runs itself so your team can focus on what matters — selling travel.",
-    image: homeTrustShareItinerary,
+    image: backofficeNew,
   },
   {
     title: "Your Own Branded Storefront",
