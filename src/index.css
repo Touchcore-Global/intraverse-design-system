@@ -177,9 +177,10 @@
   h3, h4, h5, h6 {
     color: rgb(23, 19, 33);
     font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 2.5rem;
+    font-weight: 660;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
   }
 
   @media (min-width: 640px) {
