@@ -147,11 +147,9 @@ export const HomeTrustBar = () => {
             >
               <div className="lg:col-span-7 lg:mr-5 lg:pr-[200px]">
                 <h3
-                  className="mb-4"
+                  className="mb-4 text-lg font-bold"
                   style={{
                     color: "rgb(23, 19, 33)",
-                    fontSize: "4rem",
-                    fontWeight: 660,
                     letterSpacing: "-0.02em",
                     lineHeight: 1.05,
                   }}
