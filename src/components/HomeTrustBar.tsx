@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import dashboardBooking from "@/assets/features-hero.svg";
-import dashboardBackoffice from "@/assets/dashboard-backoffice.jpg";
+import dashboardBackoffice from "@/assets/home-trust-backoffice.png";
 import dashboardStorefront from "@/assets/dashboard-storefront.jpg";
 import dashboardAnalytics from "@/assets/dashboard-analytics.jpg";
 import homeTrustPhone from "@/assets/home-trust-phone.png";
