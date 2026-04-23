@@ -64,7 +64,7 @@ export const HeroSectionV2 = () => {
       className="relative overflow-hidden bg-white"
     >
 
-      <div className="container relative mx-auto px-4 pt-[200px] text-center">
+      <div className="container relative mx-auto px-4 pt-[100px] text-center">
 
         <h1
           className="max-w-5xl mx-auto text-black font-ubuntu"
