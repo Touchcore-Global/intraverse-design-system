@@ -4,6 +4,7 @@ import dashboardBooking from "@/assets/features-hero.svg";
 import dashboardBackoffice from "@/assets/dashboard-backoffice.jpg";
 import dashboardStorefront from "@/assets/dashboard-storefront.jpg";
 import dashboardAnalytics from "@/assets/dashboard-analytics.jpg";
+import homeTrustPhone from "@/assets/home-trust-phone.png";
 
 const containers = [
   {
@@ -162,7 +163,14 @@ export const HomeTrustBar = () => {
                   {c.p2}
                 </p>
               </div>
-              <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[200px]" />
+              <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[200px] overflow-hidden">
+                <img
+                  src={homeTrustPhone}
+                  alt={c.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           ))}
 
