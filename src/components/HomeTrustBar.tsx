@@ -164,7 +164,7 @@ export const HomeTrustBar = () => {
                   {c.p2}
                 </p>
               </div>
-              <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[190px] h-[95%] overflow-hidden flex items-center justify-center scale-[1.771875]">
+              <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[190px] h-[105%] overflow-hidden flex items-center justify-center scale-[1.771875]">
                 <img
                   src={c.image}
                   alt={c.title}
