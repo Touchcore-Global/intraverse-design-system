@@ -136,13 +136,13 @@ export const HomeTrustBar = () => {
           {containers.map((c, i) => (
             <div
               key={i}
-              className={`p-8 md:p-12 transition-all duration-500 ease-in-out ${
+              className={`grid grid-cols-1 lg:grid-cols-10 gap-8 p-8 md:p-12 transition-all duration-500 ease-in-out ${
                 i === active
                   ? "relative opacity-100 translate-y-0"
                   : "absolute inset-0 opacity-0 translate-y-6 pointer-events-none"
               }`}
             >
-              <div>
+              <div className="lg:col-span-7">
                 <h3
                   className="text-2xl md:text-3xl font-semibold mb-4"
                   style={{ color: "rgb(23, 19, 33)" }}
@@ -162,6 +162,7 @@ export const HomeTrustBar = () => {
                   {c.p2}
                 </p>
               </div>
+              <div className="lg:col-span-3" />
             </div>
           ))}
 
