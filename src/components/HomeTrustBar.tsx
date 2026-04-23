@@ -144,7 +144,7 @@ export const HomeTrustBar = () => {
                   : "absolute inset-0 opacity-0 translate-y-6 pointer-events-none"
               }`}
             >
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-5">
                 <h3
                   className="text-2xl md:text-3xl font-semibold mb-4"
                   style={{ color: "rgb(23, 19, 33)" }}
@@ -164,7 +164,7 @@ export const HomeTrustBar = () => {
                   {c.p2}
                 </p>
               </div>
-              <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[200px] overflow-hidden flex items-center justify-center scale-[1.771875]">
+              <div className="lg:col-span-5 w-full rounded-xl bg-black min-h-[200px] overflow-hidden flex items-center justify-center scale-[1.771875]">
                 <img
                   src={c.image}
                   alt={c.title}
