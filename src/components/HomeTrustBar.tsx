@@ -149,18 +149,20 @@ export const HomeTrustBar = () => {
                 >
                   {c.title}
                 </h3>
-                <p
-                  className="text-base md:text-lg leading-relaxed mb-4"
-                  style={{ color: "rgb(116, 113, 122)" }}
-                >
-                  {c.p1}
-                </p>
-                <p
-                  className="text-base md:text-lg leading-relaxed"
-                  style={{ color: "rgb(116, 113, 122)" }}
-                >
-                  {c.p2}
-                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <p
+                    className="text-base md:text-lg leading-relaxed"
+                    style={{ color: "rgb(116, 113, 122)" }}
+                  >
+                    {c.p1}
+                  </p>
+                  <p
+                    className="text-base md:text-lg leading-relaxed"
+                    style={{ color: "rgb(116, 113, 122)" }}
+                  >
+                    {c.p2}
+                  </p>
+                </div>
               </div>
               <div className="flex justify-center lg:justify-end">
                 <img
