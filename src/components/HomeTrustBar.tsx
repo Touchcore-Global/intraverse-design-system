@@ -166,7 +166,7 @@ export const HomeTrustBar = () => {
               </div>
               <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[200px] overflow-hidden">
                 <img
-                  src={homeTrustPhone}
+                  src={c.image}
                   alt={c.title}
                   className="w-full h-full object-cover"
                   loading="lazy"
