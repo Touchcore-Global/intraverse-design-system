@@ -140,16 +140,16 @@ export const HeroSectionV2 = () => {
         </div>
 
         {/* Partner scroller */}
-        <div className="mt-12 overflow-hidden">
-          <p className="text-center text-xs uppercase tracking-widest mb-6" style={{ color: "rgb(90, 80, 120)" }}>
+        <div className="mt-16 lg:mt-20 -mx-4 px-4 py-10 lg:py-12 overflow-hidden bg-[#F0F5FC] rounded-2xl">
+          <p className="text-center text-xs uppercase tracking-[0.2em] font-semibold mb-8 text-primary">
             Trusted by leading travel brands
           </p>
           <div className="relative">
-            <div className="flex animate-scroll-left w-max gap-12 items-center hover:[animation-play-state:paused]">
+            <div className="flex animate-scroll-left w-max gap-16 lg:gap-20 items-center hover:[animation-play-state:paused]">
               {[...partners, ...partners].map((partner, i) => (
                 <div
                   key={`${partner.name}-${i}`}
-                  className="flex-shrink-0 flex items-center justify-center h-16 px-4"
+                  className="flex-shrink-0 flex items-center justify-center h-12 lg:h-14 px-2"
                 >
                   <img
                     src={partner.logo}
@@ -157,7 +157,7 @@ export const HeroSectionV2 = () => {
                     loading="lazy"
                     width={512}
                     height={512}
-                    className="h-full w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-full w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 [filter:brightness(0)_saturate(100%)_invert(9%)_sepia(29%)_saturate(2476%)_hue-rotate(190deg)_brightness(94%)_contrast(94%)]"
                   />
                 </div>
               ))}
