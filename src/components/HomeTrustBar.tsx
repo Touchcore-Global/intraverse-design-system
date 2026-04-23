@@ -136,7 +136,7 @@ export const HomeTrustBar = () => {
           {containers.map((c, i) => (
             <div
               key={i}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-8 md:p-12 transition-all duration-500 ease-in-out ${
+              className={`p-8 md:p-12 transition-all duration-500 ease-in-out ${
                 i === active
                   ? "relative opacity-100 translate-y-0"
                   : "absolute inset-0 opacity-0 translate-y-6 pointer-events-none"
@@ -161,16 +161,6 @@ export const HomeTrustBar = () => {
                 >
                   {c.p2}
                 </p>
-              </div>
-              <div className="flex justify-center lg:justify-end">
-                <img
-                  src={c.image}
-                  alt={`Intraverse - ${c.title}`}
-                  className="rounded-2xl shadow-lg w-full max-w-[75%]"
-                  loading="lazy"
-                  width={960}
-                  height={600}
-                />
               </div>
             </div>
           ))}
