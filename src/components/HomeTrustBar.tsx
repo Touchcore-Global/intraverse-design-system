@@ -162,7 +162,7 @@ export const HomeTrustBar = () => {
                   {c.p2}
                 </p>
               </div>
-              <div className="lg:col-span-3" />
+              <div className="lg:col-span-3 rounded-xl bg-muted/50 border border-border/50 p-6 md:p-8 min-h-[200px]" />
             </div>
           ))}
 
