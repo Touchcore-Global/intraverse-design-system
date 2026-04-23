@@ -12,13 +12,13 @@ const containers = [
     title: "One Platform. Every Booking.",
     p1: "Search, compare, and book flights, hotels, and tour packages from multiple global suppliers — all from a single dashboard. No more switching between GDS terminals, NDC portals, and supplier websites.",
     p2: "Manage customer records, track payments, issue invoices, and monitor your team's performance in real time. Intraverse replaces the ten tools you're juggling today with one that just works.",
-    image: homeTrustShareItinerary,
+    image: dashboardBackoffice,
   },
   {
     title: "Automate the Back Office",
     p1: "From invoice generation to BSP reconciliation, Intraverse handles the admin tasks that eat into your day. Set up automated payment reminders, generate financial reports, and track commissions effortlessly.",
     p2: "Spend less time on spreadsheets and more time closing deals. Your back office runs itself so your team can focus on what matters — selling travel.",
-    image: dashboardBackoffice,
+    image: homeTrustShareItinerary,
   },
   {
     title: "Your Own Branded Storefront",
