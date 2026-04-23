@@ -140,7 +140,7 @@ export const HeroSectionV2 = () => {
         </div>
 
         {/* Partner scroller */}
-        <div className="mt-16 lg:mt-20 -mx-4 px-4 py-10 lg:py-12 overflow-hidden bg-[#F0F5FC] rounded-2xl">
+        <div className="mt-16 lg:mt-20 -mx-4 px-4 py-10 lg:py-12 overflow-hidden bg-white rounded-2xl">
           <p className="text-center text-xs uppercase tracking-[0.2em] font-semibold mb-8 text-primary">
             Trusted by leading travel brands
           </p>
