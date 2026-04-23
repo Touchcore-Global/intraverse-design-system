@@ -214,7 +214,7 @@ const TravelLinks = () => {
                   <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-5">
                     <span className="text-2xl font-bold text-primary-foreground">{step.number}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-3">{step.title}</h3>
+                  <h3 className="h3-global text-foreground mb-3">{step.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
               </RevealBlock>
@@ -241,7 +241,7 @@ const TravelLinks = () => {
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-3">{benefit.title}</h3>
+                    <h3 className="h3-global text-foreground mb-3">{benefit.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
                   </div>
                 </RevealBlock>
@@ -269,7 +269,7 @@ const TravelLinks = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-3">{audience.title}</h3>
+                    <h3 className="h3-global text-foreground mb-3">{audience.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{audience.description}</p>
                   </div>
                 </RevealBlock>
@@ -341,7 +341,7 @@ const TravelLinks = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-3">{scenario.title}</h3>
+                    <h3 className="h3-global text-foreground mb-3">{scenario.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{scenario.description}</p>
                   </div>
                 </RevealBlock>

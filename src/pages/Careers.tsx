@@ -106,7 +106,7 @@ function CultureSection() {
           {values.map((v, i) => (
             <div key={i} className="brand-card p-6 rounded-xl hover:shadow-lg transition-shadow">
               <v.icon className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold text-foreground mb-2">{v.title}</h3>
+              <h3 className="h3-global text-foreground mb-2">{v.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{v.description}</p>
             </div>
           ))}
@@ -168,7 +168,7 @@ function OpenRolesSection() {
               className="flex items-center justify-between p-5 brand-card rounded-xl hover:shadow-lg transition-all group"
             >
               <div>
-                <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{role.title}</h3>
+                <h3 className="h3-global text-foreground group-hover:text-primary transition-colors">{role.title}</h3>
                 <p className="text-sm text-muted-foreground mt-1">
                   {role.team} · {role.location} · {role.type}
                 </p>

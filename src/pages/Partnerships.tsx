@@ -405,7 +405,7 @@ const Partnerships = () => {
                 className="p-8 rounded-none border border-border bg-card hover:shadow-lg transition-shadow"
               >
                 <item.icon className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                <h3 className="h3-global text-foreground mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
@@ -430,7 +430,7 @@ const Partnerships = () => {
                 className="p-8 bg-card border border-border rounded-none hover:shadow-xl hover:border-primary transition-all group"
               >
                 <pt.icon className="h-8 w-8 text-primary mb-4" />
-                <h3 className="text-lg font-bold text-foreground mb-3">{pt.title}</h3>
+                <h3 className="h3-global text-foreground mb-3">{pt.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   {pt.description}
                 </p>
@@ -478,7 +478,7 @@ const Partnerships = () => {
                     <ChevronRight className="absolute top-1/2 -right-[calc(50%+12px)] -translate-y-1/2 h-5 w-5 text-primary/40" />
                   )}
                 </div>
-                <h3 className="text-sm font-bold text-foreground mt-4 mb-1">{step.title}</h3>
+                <h3 className="h3-global text-foreground mt-4 mb-1">{step.title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed max-w-[180px]">
                   {step.description}
                 </p>
@@ -494,7 +494,7 @@ const Partnerships = () => {
                   {step.num}
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-foreground mb-1">{step.title}</h3>
+                  <h3 className="h3-global text-foreground mb-1">{step.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
@@ -514,7 +514,7 @@ const Partnerships = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Good fit */}
             <div className="p-8 bg-card border border-border rounded-none">
-              <h3 className="text-lg font-bold text-foreground mb-6">A Strong Fit Looks Like…</h3>
+              <h3 className="h3-global text-foreground mb-6">A Strong Fit Looks Like…</h3>
               <ul className="space-y-4">
                 {goodFit.map((item, i) => (
                   <li key={i} className="flex gap-3 items-start">
@@ -526,7 +526,7 @@ const Partnerships = () => {
             </div>
             {/* Not fit */}
             <div className="p-8 bg-card border border-border rounded-none">
-              <h3 className="text-lg font-bold text-foreground mb-6">Probably Not a Fit If…</h3>
+              <h3 className="h3-global text-foreground mb-6">Probably Not a Fit If…</h3>
               <ul className="space-y-4">
                 {notFit.map((item, i) => (
                   <li key={i} className="flex gap-3 items-start">

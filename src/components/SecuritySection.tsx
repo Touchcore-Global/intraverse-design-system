@@ -42,7 +42,7 @@ export const SecuritySection = () => {
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-foreground mb-1">{f.title}</h3>
+                  <h3 className="h3-global text-foreground mb-1">{f.title}</h3>
                   <p className="text-sm text-muted-foreground">{f.description}</p>
                 </div>
               </div>

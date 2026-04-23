@@ -186,7 +186,7 @@ export default function OdiopayProduct() {
             <RevealBlock>
               <div className="border border-border rounded-2xl p-8 md:p-10 h-full hover:border-primary hover:shadow-lg transition-all duration-300">
                 <span className="text-5xl mb-4 block">🔒</span>
-                <h3 className="text-2xl font-bold mb-1">Fare Lock</h3>
+                <h3 className="h3-global mb-1">Fare Lock</h3>
                 <p className="text-primary italic mb-6">Lock today's price. Pay over time.</p>
                 <div className="space-y-4 text-muted-foreground">
                   <div>
@@ -209,7 +209,7 @@ export default function OdiopayProduct() {
             <RevealBlock>
               <div className="border border-border rounded-2xl p-8 md:p-10 h-full hover:border-primary hover:shadow-lg transition-all duration-300">
                 <span className="text-5xl mb-4 block">💳</span>
-                <h3 className="text-2xl font-bold mb-1">Pay Later</h3>
+                <h3 className="h3-global mb-1">Pay Later</h3>
                 <p className="text-primary italic mb-6">Travel now. Pay back after.</p>
                 <div className="space-y-4 text-muted-foreground">
                   <div>
@@ -246,7 +246,7 @@ export default function OdiopayProduct() {
               <RevealBlock key={card.title}>
                 <div className="bg-background border border-border rounded-2xl p-8 h-full hover:shadow-lg transition-all duration-300">
                   <span className="text-4xl mb-4 block">{card.emoji}</span>
-                  <h3 className="text-xl font-bold mb-2">{card.title}</h3>
+                  <h3 className="h3-global mb-2">{card.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{card.body}</p>
                 </div>
               </RevealBlock>
@@ -272,7 +272,7 @@ export default function OdiopayProduct() {
                   <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
                     {step.num}
                   </div>
-                  <h3 className="text-lg font-bold mb-2">{step.title}</h3>
+                  <h3 className="h3-global mb-2">{step.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{step.body}</p>
                   {i < customerSteps.length - 1 && (
                     <ArrowRight className="hidden lg:block absolute top-7 -right-4 w-5 h-5 text-muted-foreground/50" />
@@ -299,7 +299,7 @@ export default function OdiopayProduct() {
               <RevealBlock key={card.title}>
                 <Link to={card.href} className="block border border-border bg-background rounded-2xl p-8 hover:border-primary hover:shadow-lg transition-all duration-300 group h-full">
                   <span className="text-4xl mb-4 block">{card.emoji}</span>
-                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+                  <h3 className="h3-global mb-2 flex items-center gap-2">
                     {card.title}
                     <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>

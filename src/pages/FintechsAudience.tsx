@@ -371,7 +371,7 @@ const FintechsAudience = () => {
                 <RevealBlock key={item.title}>
                   <div className="bg-card border border-border rounded-xl p-8 h-full hover:border-primary/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <Icon className="w-10 h-10 text-primary mb-5" strokeWidth={1.5} />
-                    <h3 className="text-lg font-bold text-foreground mb-3">{item.title}</h3>
+                    <h3 className="h3-global text-foreground mb-3">{item.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
                   </div>
                 </RevealBlock>
@@ -399,7 +399,7 @@ const FintechsAudience = () => {
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-foreground mb-1">{item.title}</h3>
+                      <h3 className="h3-global text-foreground mb-1">{item.title}</h3>
                       <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{item.body}</p>
                     </div>
                   </div>
@@ -428,7 +428,7 @@ const FintechsAudience = () => {
                   <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold mb-5">
                     {item.step}
                   </div>
-                  <h3 className="text-base font-bold text-foreground mb-2">{item.title}</h3>
+                  <h3 className="h3-global text-foreground mb-2">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
                 </div>
               </RevealBlock>
@@ -519,7 +519,7 @@ const FintechsAudience = () => {
             {/* Right: Form */}
             <RevealBlock>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-white mb-6">Request Partnership Discovery Call</h3>
+                <h3 className="h3-global text-white mb-6">Request Partnership Discovery Call</h3>
                 <form className="space-y-4" onSubmit={handleSubmit}>
                   {/* Honeypot */}
                   <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">

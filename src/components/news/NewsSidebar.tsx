@@ -13,7 +13,7 @@ export function NewsSidebar({ latest, events }: Props) {
     <aside className="space-y-8 sticky top-24">
       {/* Latest */}
       <section>
-        <h3 className="text-base font-bold text-foreground mb-4">Latest</h3>
+        <h3 className="h3-global text-foreground mb-4">Latest</h3>
         <ol className="space-y-3">
           {latest.map((n, i) => (
             <li key={n.id} className="flex gap-3">
@@ -36,7 +36,7 @@ export function NewsSidebar({ latest, events }: Props) {
 
       {/* Events */}
       <section>
-        <h3 className="text-base font-bold text-foreground mb-4">Where to Find Us</h3>
+        <h3 className="h3-global text-foreground mb-4">Where to Find Us</h3>
         {events.length === 0 ? (
           <p className="text-sm text-muted-foreground">
             No upcoming events.{" "}
@@ -77,7 +77,7 @@ export function NewsSidebar({ latest, events }: Props) {
 
       {/* Press contact */}
       <section className="bg-muted/40 border border-border rounded-md p-4">
-        <h3 className="text-base font-bold text-foreground mb-2">Press &amp; Media</h3>
+        <h3 className="h3-global text-foreground mb-2">Press &amp; Media</h3>
         <p className="text-xs text-muted-foreground mb-3">
           For interviews, comments, and media kits:
         </p>
@@ -102,7 +102,7 @@ export function NewsSidebar({ latest, events }: Props) {
 
       {/* Follow */}
       <section>
-        <h3 className="text-base font-bold text-foreground mb-3">Follow</h3>
+        <h3 className="h3-global text-foreground mb-3">Follow</h3>
         <div className="flex gap-2">
           <a
             href="https://www.linkedin.com/company/intraversehq/"

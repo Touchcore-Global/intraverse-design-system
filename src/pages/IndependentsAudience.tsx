@@ -252,7 +252,7 @@ const IndependentsAudience = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-2">{feat.title}</h3>
+                    <h3 className="h3-global text-foreground mb-2">{feat.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{feat.body}</p>
                   </div>
                 </RevealBlock>
@@ -367,7 +367,7 @@ const IndependentsAudience = () => {
                     <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-5">
                       {step.number}
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-3">{step.title}</h3>
+                    <h3 className="h3-global text-foreground mb-3">{step.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{step.body}</p>
                   </div>
                 );

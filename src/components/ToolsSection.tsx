@@ -183,7 +183,7 @@ export const ToolsSection = () => {
               <div className="p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-[32px]">{tool.emoji}</span>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                  <h3 className="h3-global text-foreground">
                     {tool.title}
                   </h3>
                 </div>

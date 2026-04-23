@@ -201,7 +201,7 @@ export const ToolsSectionV2 = () => {
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-[32px]">{tool.emoji}</span>
                     <h3
-                      className="text-xl md:text-2xl font-bold"
+                      className="h3-global"
                       style={{
                         background: tool.gradient,
                         WebkitBackgroundClip: "text",

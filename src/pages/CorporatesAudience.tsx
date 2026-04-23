@@ -167,7 +167,7 @@ const Corporates = () => {
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{feat.title}</h3>
+                    <h3 className="h3-global text-foreground mb-3">{feat.title}</h3>
                     <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{feat.body}</p>
                   </div>
                 </RevealBlock>
@@ -211,7 +211,7 @@ const Corporates = () => {
                       {item.step}
                     </div>
                     <div className="pt-2">
-                      <h3 className="text-lg font-bold text-foreground mb-1">{item.title}</h3>
+                      <h3 className="h3-global text-foreground mb-1">{item.title}</h3>
                       <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{item.body}</p>
                     </div>
                   </div>

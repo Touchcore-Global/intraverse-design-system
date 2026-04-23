@@ -229,7 +229,7 @@ export default function Pricing() {
                   </span>
                 )}
 
-                <h3 className="text-lg font-semibold mb-1">{tier.name}</h3>
+                <h3 className="h3-global mb-1">{tier.name}</h3>
                 <div className="mb-1">
                   <span className="text-3xl font-bold tracking-tight">
                     {tier.monthlyUsd === null ? "Custom" : formatPrice(annual ? tier.annualUsd : tier.monthlyUsd, currency)}
@@ -364,7 +364,7 @@ export default function Pricing() {
         <div className="md:hidden space-y-6">
           {["Starter", "Agency", "Enterprise"].map((plan) => (
             <div key={plan} className="rounded-xl border border-border bg-card p-5">
-              <h3 className="text-lg font-semibold mb-4">{plan}</h3>
+              <h3 className="h3-global mb-4">{plan}</h3>
               <div className="space-y-3">
                 {comparisonRows.map((row) => {
                   const val = row[plan.toLowerCase() as keyof typeof row];

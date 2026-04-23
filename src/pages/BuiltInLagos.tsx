@@ -240,7 +240,7 @@ export default function BuiltInLagos() {
               <Reveal key={block.title} delay={i * 80}>
                 <div className="bg-background border border-border rounded-lg p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <block.icon className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-bold text-foreground mb-3">{block.title}</h3>
+                  <h3 className="h3-global text-foreground mb-3">{block.title}</h3>
                   <p className="text-[15px] text-muted-foreground leading-relaxed">{block.description}</p>
                 </div>
               </Reveal>
@@ -331,7 +331,7 @@ export default function BuiltInLagos() {
               <Reveal key={block.title} delay={i * 80}>
                 <div className="bg-background border border-border rounded-lg p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <block.icon className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-bold text-foreground mb-3">{block.title}</h3>
+                  <h3 className="h3-global text-foreground mb-3">{block.title}</h3>
                   <p className="text-[15px] text-muted-foreground leading-relaxed">{block.description}</p>
                 </div>
               </Reveal>

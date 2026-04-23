@@ -138,7 +138,7 @@ export default function Help() {
                     className="group bg-background rounded-xl p-8 border border-border hover:border-[hsl(220,76%,49%)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                   >
                     <Icon className="h-10 w-10 text-[hsl(220,76%,49%)] mb-4" />
-                    <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-[hsl(220,76%,49%)] transition-colors">
+                    <h3 className="h3-global text-foreground mb-1 group-hover:text-[hsl(220,76%,49%)] transition-colors">
                       {cat.title}
                     </h3>
                     <p className="text-sm text-muted-foreground">{cat.desc}</p>
@@ -207,7 +207,7 @@ export default function Help() {
                     </span>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-foreground">{v.title}</h3>
+                    <h3 className="h3-global text-foreground">{v.title}</h3>
                   </div>
                 </div>
               ))}
@@ -237,7 +237,7 @@ export default function Help() {
               {/* WhatsApp */}
               <div className="bg-background rounded-xl border border-border p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <MessageCircle className="h-10 w-10 text-[hsl(142,70%,45%)] mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-foreground mb-2">WhatsApp Support</h3>
+                <h3 className="h3-global text-foreground mb-2">WhatsApp Support</h3>
                 <p className="text-sm text-muted-foreground mb-6">Fastest response — usually under 30 minutes during office hours.</p>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <Button variant="hero" size="default" className="w-full gap-2">
@@ -249,7 +249,7 @@ export default function Help() {
               {/* Email */}
               <div className="bg-background rounded-xl border border-border p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <Mail className="h-10 w-10 text-[hsl(220,76%,49%)] mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-foreground mb-2">Email Support</h3>
+                <h3 className="h3-global text-foreground mb-2">Email Support</h3>
                 <p className="text-sm text-muted-foreground mb-6">Detailed inquiries — we respond within 24 hours on weekdays.</p>
                 <a href="mailto:support@intraverse.com">
                   <Button variant="outline" size="default" className="w-full rounded-none border-foreground text-foreground hover:bg-accent">
@@ -260,7 +260,7 @@ export default function Help() {
               {/* Phone */}
               <div className="bg-background rounded-xl border border-border p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <Phone className="h-10 w-10 text-[hsl(220,76%,49%)] mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-foreground mb-2">Phone Support</h3>
+                <h3 className="h3-global text-foreground mb-2">Phone Support</h3>
                 <p className="text-sm text-muted-foreground mb-6">Speak with a human — available during business hours WAT.</p>
                 <a href="tel:+2349030002629">
                   <Button variant="outline" size="default" className="w-full rounded-none border-foreground text-foreground hover:bg-accent">

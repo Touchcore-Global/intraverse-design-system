@@ -260,7 +260,7 @@ const Independents = () => {
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <feature.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold">{feature.title}</h3>
+                  <h3 className="h3-global">{feature.title}</h3>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   {feature.description}
@@ -286,7 +286,7 @@ const Independents = () => {
             <div className="border-l-4 border-destructive bg-card rounded-r-xl p-8 md:p-12 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <AlertTriangle className="h-7 w-7 text-destructive flex-shrink-0" />
-                <h3 className="text-2xl font-bold text-foreground">
+                <h3 className="h3-global text-foreground">
                   Let's Be Direct: This Is Not a Scam
                 </h3>
               </div>
@@ -318,7 +318,7 @@ const Independents = () => {
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <span className="text-lg font-bold text-primary">{s.step}</span>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{s.title}</h3>
+                <h3 className="h3-global text-foreground mb-3">{s.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {s.description}
                 </p>
@@ -336,7 +336,7 @@ const Independents = () => {
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase text-white mb-4" style={{ backgroundColor: "#16A34A" }}>
               🆕 New
             </span>
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            <h3 className="h3-global text-foreground mb-4">
               Sell Travel Without a Website — Just Share a Link
             </h3>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">

@@ -190,7 +190,7 @@ export default function DocsReference() {
         <div className="my-4 space-y-6">
           {groups.map((g) => (
             <div key={g.title}>
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-2" style={{ fontSize: "13px" }}>
+              <h3 className="h3-global text-foreground uppercase mb-2" style={{ fontSize: "13px" }}>
                 {g.title} <span className="text-muted-foreground font-normal normal-case">({g.endpoints.length})</span>
               </h3>
               <div className="overflow-x-auto rounded-lg border border-border">

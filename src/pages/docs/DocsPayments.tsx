@@ -50,7 +50,7 @@ export default function DocsPayments() {
         <div className="not-prose grid md:grid-cols-3 gap-4 my-6">
           {models.map((m) => (
             <div key={m.title} className="p-5 border border-border rounded-lg bg-card">
-              <h3 className="font-semibold text-foreground" style={{ fontSize: "16px" }}>{m.title}</h3>
+              <h3 className="h3-global text-foreground" style={{ fontSize: "16px" }}>{m.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
               <p className="mt-3 text-xs text-muted-foreground">
                 <span className="font-semibold text-foreground">Best for:</span> {m.best}

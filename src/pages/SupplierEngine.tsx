@@ -106,7 +106,7 @@ const SupplierEngine = () => {
                   <step.icon className="h-7 w-7 text-primary" />
                 </div>
                 <div className="text-xs font-semibold text-primary mb-2">Step {i + 1}</div>
-                <h3 className="text-lg font-bold mb-2 text-foreground">{step.title}</h3>
+                <h3 className="h3-global mb-2 text-foreground">{step.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}

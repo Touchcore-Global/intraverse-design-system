@@ -37,7 +37,7 @@ export const HowItWorks = () => {
               <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4">
                 {step.number}
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
+              <h3 className="h3-global text-foreground mb-2">
                 {step.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

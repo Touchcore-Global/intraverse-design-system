@@ -246,7 +246,7 @@ export default function Docs() {
                 ].map((s) => (
                   <div key={s.num} className="border border-border rounded-xl p-8 hover:border-[hsl(var(--brand-blue))] transition-colors">
                     <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(var(--brand-blue))] text-white font-bold text-lg">{s.num}</span>
-                    <h3 className="mt-5 text-xl font-bold text-foreground">{s.title}</h3>
+                    <h3 className="h3-global mt-5 text-foreground">{s.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                     <a href={s.href} className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[hsl(var(--brand-blue))] hover:underline">
                       {s.cta} <ArrowRight className="w-3.5 h-3.5" />
@@ -272,7 +272,7 @@ export default function Docs() {
                 {docCategories.map((c) => (
                   <a key={c.title} href={c.href} className="group bg-background rounded-xl p-6 border border-border hover:border-[hsl(var(--brand-blue))] hover:-translate-y-0.5 transition-all">
                     <span className="text-3xl">{c.emoji}</span>
-                    <h3 className="mt-3 text-lg font-bold text-foreground group-hover:text-[hsl(var(--brand-blue))] transition-colors">{c.title}</h3>
+                    <h3 className="h3-global mt-3 text-foreground group-hover:text-[hsl(var(--brand-blue))] transition-colors">{c.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{c.desc}</p>
                     <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-[hsl(var(--brand-blue))]">Browse <ArrowRight className="w-3 h-3" /></span>
                   </a>
@@ -347,7 +347,7 @@ export default function Docs() {
                 {sdks.map((sdk) => (
                   <div key={sdk.name} className="border border-border rounded-xl p-6 hover:border-[hsl(var(--brand-blue))] transition-colors">
                     <span className="text-3xl">{sdk.emoji}</span>
-                    <h3 className="mt-3 text-lg font-bold text-foreground">{sdk.name}</h3>
+                    <h3 className="h3-global mt-3 text-foreground">{sdk.name}</h3>
                     <code className="mt-2 block text-xs bg-muted text-muted-foreground px-3 py-2 rounded font-mono">{sdk.install}</code>
                     <p className="mt-3 text-xs text-muted-foreground">{sdk.version}</p>
                     <div className="mt-3 flex gap-3">
@@ -372,7 +372,7 @@ export default function Docs() {
                 {resources.map((r) => (
                   <a key={r.title} href={r.href} className="group bg-background rounded-xl p-6 border border-border hover:border-[hsl(var(--brand-blue))] hover:-translate-y-0.5 transition-all">
                     <span className="text-2xl">{r.emoji}</span>
-                    <h3 className="mt-3 text-base font-bold text-foreground group-hover:text-[hsl(var(--brand-blue))] transition-colors">{r.title}</h3>
+                    <h3 className="h3-global mt-3 text-foreground group-hover:text-[hsl(var(--brand-blue))] transition-colors">{r.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
                     <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-[hsl(var(--brand-blue))]">→</span>
                   </a>
@@ -400,7 +400,7 @@ export default function Docs() {
                 ].map((c) => (
                   <div key={c.title} className="border border-border rounded-xl p-8 text-center">
                     <span className="text-4xl">{c.emoji}</span>
-                    <h3 className="mt-4 text-xl font-bold text-foreground">{c.title}</h3>
+                    <h3 className="h3-global mt-4 text-foreground">{c.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
                     <Button variant="outline" size="default" className="mt-5 rounded-none" asChild>
                       <a href={c.href}>{c.cta}</a>

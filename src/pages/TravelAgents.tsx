@@ -208,7 +208,7 @@ const TravelAgents = () => {
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">{sol.title}</h3>
+                      <h3 className="h3-global text-foreground mb-2">{sol.title}</h3>
                       <p className="text-sm md:text-base text-muted-foreground mb-4 leading-relaxed">{sol.body}</p>
                       <Link
                         to={sol.link}
@@ -275,7 +275,7 @@ const TravelAgents = () => {
                   <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold mx-auto mb-4">
                     {step.number}
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
+                  <h3 className="h3-global text-foreground mb-2">{step.title}</h3>
                   <p className="text-sm text-muted-foreground">{step.body}</p>
                 </div>
               ))}

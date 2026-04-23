@@ -149,7 +149,7 @@ export default function HelpCategoryPage() {
                     className="group bg-background rounded-xl p-8 border border-border hover:border-[hsl(220,76%,49%)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center"
                   >
                     <RelIcon className="h-10 w-10 text-[hsl(220,76%,49%)] mx-auto mb-4" />
-                    <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-[hsl(220,76%,49%)] transition-colors">
+                    <h3 className="h3-global text-foreground mb-1 group-hover:text-[hsl(220,76%,49%)] transition-colors">
                       {rel.title}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-4">{rel.heroSub.split(".")[0]}.</p>

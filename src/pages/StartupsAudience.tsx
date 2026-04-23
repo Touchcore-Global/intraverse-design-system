@@ -183,7 +183,7 @@ const Startups = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{feat.title}</h3>
+                    <h3 className="h3-global text-foreground mb-3">{feat.title}</h3>
                     <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{feat.body}</p>
                   </div>
                 </RevealBlock>
@@ -211,7 +211,7 @@ const Startups = () => {
                   <div className="w-12 h-12 rounded-lg bg-muted-foreground/10 flex items-center justify-center mb-5">
                     <span className="text-[10px] text-muted-foreground font-bold uppercase">{cs.name.slice(0, 2)}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{cs.name}</h3>
+                  <h3 className="h3-global text-foreground mb-2">{cs.name}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">{cs.desc}</p>
                   <p className="text-xs font-semibold text-primary">{cs.outcome}</p>
                 </div>

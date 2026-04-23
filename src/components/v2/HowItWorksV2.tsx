@@ -67,7 +67,7 @@ export const HowItWorksV2 = () => {
               >
                 {step.number}
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
+              <h3 className="h3-global text-foreground mb-2">
                 {step.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

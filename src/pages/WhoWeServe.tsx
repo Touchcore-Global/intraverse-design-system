@@ -254,7 +254,7 @@ const WhoWeServe = () => {
                       strokeWidth={1.5}
                     />
 
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                    <h3 className="h3-global text-foreground mb-3">
                       {item.title}
                     </h3>
 

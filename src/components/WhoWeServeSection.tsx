@@ -108,7 +108,7 @@ export const WhoWeServeSection = () => {
           </span>
         )}
         <Icon className="w-12 h-12 text-primary mb-5" strokeWidth={1.5} />
-        <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+        <h3 className="h3-global text-foreground mb-2">{item.title}</h3>
         <p className="text-sm font-semibold text-foreground/90 mb-3">{item.headline}</p>
         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{item.body}</p>
         <p className="text-xs font-medium text-primary mb-5">{item.products}</p>

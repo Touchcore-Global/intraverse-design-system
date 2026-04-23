@@ -65,7 +65,7 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-white font-semibold text-lg mb-4">{category}</h3>
+              <h3 className="h3-global text-white mb-4">{category}</h3>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>

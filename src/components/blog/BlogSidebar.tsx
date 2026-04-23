@@ -31,7 +31,7 @@ export function BlogSidebar({ popular, categories, categoryCounts, activeCategor
     <aside className="space-y-8 lg:sticky lg:top-24 self-start">
       {/* Popular */}
       <div className="bg-card border border-border rounded-lg p-6">
-        <h3 className="font-bold text-lg mb-4 text-foreground">Most Read</h3>
+        <h3 className="h3-global mb-4 text-foreground">Most Read</h3>
         <ol className="space-y-4">
           {popular.length === 0 && (
             <li className="text-sm text-muted-foreground">No articles yet.</li>
@@ -52,7 +52,7 @@ export function BlogSidebar({ popular, categories, categoryCounts, activeCategor
 
       {/* Categories */}
       <div className="bg-card border border-border rounded-lg p-6">
-        <h3 className="font-bold text-lg mb-4 text-foreground">Categories</h3>
+        <h3 className="h3-global mb-4 text-foreground">Categories</h3>
         <ul className="space-y-2">
           {categories.map((c) => (
             <li key={c.id}>
@@ -74,7 +74,7 @@ export function BlogSidebar({ popular, categories, categoryCounts, activeCategor
 
       {/* Newsletter */}
       <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
-        <h3 className="font-bold text-lg mb-2 text-foreground">Get Insights in Your Inbox</h3>
+        <h3 className="h3-global mb-2 text-foreground">Get Insights in Your Inbox</h3>
         <p className="text-sm text-muted-foreground mb-4">One email per week. No spam.</p>
         <form onSubmit={handleSubscribe} className="space-y-3">
           <Input
@@ -94,7 +94,7 @@ export function BlogSidebar({ popular, categories, categoryCounts, activeCategor
 
       {/* Follow */}
       <div className="bg-card border border-border rounded-lg p-6">
-        <h3 className="font-bold text-lg mb-4 text-foreground">Follow Us</h3>
+        <h3 className="h3-global mb-4 text-foreground">Follow Us</h3>
         <div className="flex gap-3">
           {[
             { Icon: Linkedin, href: "https://linkedin.com/company/intraverse", label: "LinkedIn" },

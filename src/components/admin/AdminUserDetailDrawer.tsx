@@ -138,7 +138,7 @@ export function AdminUserDetailDrawer({ userId, open, onOpenChange }: Props) {
 
             {/* Profile fields */}
             <section className="space-y-3">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+              <h3 className="h3-global uppercase text-muted-foreground flex items-center gap-2">
                 <UserIcon className="h-3.5 w-3.5" /> Profile
               </h3>
               <dl className="grid grid-cols-[140px_1fr] gap-y-2 gap-x-3 text-sm">
@@ -179,7 +179,7 @@ export function AdminUserDetailDrawer({ userId, open, onOpenChange }: Props) {
 
             {/* Blog activity */}
             <section className="space-y-3">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+              <h3 className="h3-global uppercase text-muted-foreground flex items-center gap-2">
                 <FileText className="h-3.5 w-3.5" /> Blog Activity
               </h3>
 
@@ -264,7 +264,7 @@ export function AdminUserDetailDrawer({ userId, open, onOpenChange }: Props) {
 
             {/* Role grants */}
             <section className="space-y-3">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
+              <h3 className="h3-global uppercase text-muted-foreground">
                 Roles
               </h3>
               <ul className="text-sm divide-y divide-border border border-border rounded-md overflow-hidden">

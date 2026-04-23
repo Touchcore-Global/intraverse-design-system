@@ -55,7 +55,7 @@ function renderBody(content: string) {
     } else if (/^###\s+/.test(line)) {
       flush();
       blocks.push(
-        <h3 key={i} className="text-xl font-bold mt-8 mb-3 text-foreground">
+        <h3 key={i} className="h3-global mt-8 mb-3 text-foreground">
           {line.replace(/^###\s+/, "")}
         </h3>,
       );

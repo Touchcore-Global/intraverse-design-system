@@ -31,7 +31,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
           </span>
           <span className="text-xs text-muted-foreground">{formatNewsDate(item.published_at)}</span>
         </div>
-        <h3 className="text-base font-bold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+        <h3 className="h3-global text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
           {item.title}
         </h3>
         <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{item.excerpt}</p>

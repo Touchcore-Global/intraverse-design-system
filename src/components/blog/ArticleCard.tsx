@@ -35,7 +35,7 @@ export function ArticleCard({ article }: Props) {
             {article.category.name}
           </span>
         )}
-        <h3 className="font-bold text-lg leading-snug text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+        <h3 className="h3-global text-foreground line-clamp-2 group-hover:text-primary transition-colors">
           {article.title}
         </h3>
         <p className="text-sm text-muted-foreground line-clamp-2">{article.excerpt}</p>
