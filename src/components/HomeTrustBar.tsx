@@ -5,6 +5,7 @@ import dashboardBackoffice from "@/assets/dashboard-backoffice.jpg";
 import dashboardStorefront from "@/assets/dashboard-storefront.jpg";
 import dashboardAnalytics from "@/assets/dashboard-analytics.jpg";
 import homeTrustPhone from "@/assets/home-trust-phone.png";
+import homeTrustShareItinerary from "@/assets/home-trust-share-itinerary.png";
 
 const containers = [
   {
