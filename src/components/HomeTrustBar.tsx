@@ -5,13 +5,14 @@ import dashboardBackoffice from "@/assets/dashboard-backoffice.jpg";
 import dashboardStorefront from "@/assets/dashboard-storefront.jpg";
 import dashboardAnalytics from "@/assets/dashboard-analytics.jpg";
 import homeTrustPhone from "@/assets/home-trust-phone.png";
+import homeTrustShareItinerary from "@/assets/home-trust-share-itinerary.png";
 
 const containers = [
   {
     title: "One Platform. Every Booking.",
     p1: "Search, compare, and book flights, hotels, and tour packages from multiple global suppliers — all from a single dashboard. No more switching between GDS terminals, NDC portals, and supplier websites.",
     p2: "Manage customer records, track payments, issue invoices, and monitor your team's performance in real time. Intraverse replaces the ten tools you're juggling today with one that just works.",
-    image: dashboardBooking,
+    image: homeTrustShareItinerary,
   },
   {
     title: "Automate the Back Office",
@@ -165,7 +166,7 @@ export const HomeTrustBar = () => {
               </div>
               <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[200px] overflow-hidden">
                 <img
-                  src={homeTrustPhone}
+                  src={c.image}
                   alt={c.title}
                   className="w-full h-full object-cover"
                   loading="lazy"
