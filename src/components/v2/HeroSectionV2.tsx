@@ -140,7 +140,7 @@ export const HeroSectionV2 = () => {
         </div>
 
         {/* Partner scroller */}
-        <div className="mt-16 lg:mt-20 -mx-4 px-4 overflow-hidden">
+        <div className="mt-16 lg:mt-20 -mx-4 overflow-hidden">
           <p className="text-center text-xs uppercase tracking-[0.2em] font-semibold mb-10 text-primary">
             Trusted by leading travel brands
           </p>
