@@ -209,7 +209,7 @@
   /* Enforced global h3 typography. Use this class on every h3 to override Tailwind utilities. */
   .h3-global {
     font-family: "Ubuntu", sans-serif !important;
-    font-size: 2rem !important;
+    font-size: 2.5rem !important;
     font-weight: 660 !important;
     letter-spacing: -0.02em !important;
     line-height: 1.05 !important;
