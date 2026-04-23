@@ -144,7 +144,7 @@ export const HomeTrustBar = () => {
                   : "absolute inset-0 opacity-0 translate-y-6 pointer-events-none"
               }`}
             >
-              <div className="lg:col-span-7 lg:mr-5">
+              <div className="lg:col-span-7 lg:mr-5 lg:pr-[200px]">
                 <h3
                   className="text-2xl md:text-3xl font-semibold mb-4"
                   style={{ color: "rgb(23, 19, 33)" }}
