@@ -130,7 +130,7 @@ export const HeroSectionV2 = () => {
                   aria-label="Play video with sound"
                   className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors group"
                 >
-                  <span className="flex items-center justify-center w-20 h-20 rounded-full bg-white/95 shadow-2xl group-hover:scale-110 transition-transform">
+                  <span className="flex items-center justify-center w-[100px] h-[100px] rounded-full bg-white/95 shadow-2xl group-hover:scale-110 transition-transform">
                     <Play className="w-8 h-8 text-black fill-black ml-1" />
                   </span>
                 </button>
