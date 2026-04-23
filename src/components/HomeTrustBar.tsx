@@ -164,11 +164,11 @@ export const HomeTrustBar = () => {
                   {c.p2}
                 </p>
               </div>
-              <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[200px] overflow-hidden">
+              <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[200px] overflow-hidden flex items-center justify-center">
                 <img
                   src={c.image}
                   alt={c.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover scale-150"
                   loading="lazy"
                 />
               </div>
