@@ -2,10 +2,28 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { DEMO_URL } from "@/lib/constants";
+import tzopalLogo from "@/assets/partners/tzopal.png";
+import whogoflyLogo from "@/assets/partners/whogofly.png";
+import wrightGatewayLogo from "@/assets/partners/wright-gateway.png";
+import lutfuTravelsLogo from "@/assets/partners/lutfu-travels.png";
+import coastlineLogo from "@/assets/partners/coastline.png";
+import nesoLogo from "@/assets/partners/neso.png";
+import leisureAffairsLogo from "@/assets/partners/leisure-affairs.png";
+import terminalSevenLogo from "@/assets/partners/terminal-seven.png";
+import travioLogo from "@/assets/partners/travio.png";
+import blueParadiseLogo from "@/assets/partners/blue-paradise.png";
 
 const partners = [
-  "Tzopal", "Whogofly", "Wright Gateway", "Lutfu Travels", "Coastline",
-  "Neso", "Leisure Affairs", "Terminal Seven", "Travio", "Blue Paradise",
+  { name: "Tzopal", logo: tzopalLogo },
+  { name: "Whogofly", logo: whogoflyLogo },
+  { name: "Wright Gateway", logo: wrightGatewayLogo },
+  { name: "Lutfu Travels", logo: lutfuTravelsLogo },
+  { name: "Coastline", logo: coastlineLogo },
+  { name: "Neso", logo: nesoLogo },
+  { name: "Leisure Affairs", logo: leisureAffairsLogo },
+  { name: "Terminal Seven", logo: terminalSevenLogo },
+  { name: "Travio", logo: travioLogo },
+  { name: "Blue Paradise", logo: blueParadiseLogo },
 ];
 
 export const HeroSectionV2 = () => {
@@ -127,15 +145,20 @@ export const HeroSectionV2 = () => {
             Trusted by leading travel brands
           </p>
           <div className="relative">
-            <div className="flex animate-scroll-left w-max gap-8 hover:[animation-play-state:paused]">
+            <div className="flex animate-scroll-left w-max gap-12 items-center hover:[animation-play-state:paused]">
               {[...partners, ...partners].map((partner, i) => (
                 <div
-                  key={`${partner}-${i}`}
-                  className="flex-shrink-0 px-6 py-3 rounded-lg bg-white/70 backdrop-blur border border-white/80 shadow-sm"
+                  key={`${partner.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center h-16 px-4"
                 >
-                  <span className="text-sm font-semibold whitespace-nowrap" style={{ color: "rgb(60, 50, 90)" }}>
-                    {partner}
-                  </span>
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                    className="h-full w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
                 </div>
               ))}
             </div>
