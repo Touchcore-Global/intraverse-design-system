@@ -64,7 +64,7 @@ export const Testimonials = () => {
                     <p className="text-[2rem] font-normal tracking-[-0.02em] leading-[1.125] text-muted-foreground mb-6 flex-1">
                       "{t.quote}"
                     </p>
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold text-sm">
+                    <div className="flex items-center gap-3 mt-auto">
                         {t.name.charAt(0)}
                       </div>
                       <div>
