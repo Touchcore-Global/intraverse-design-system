@@ -62,7 +62,8 @@ export const Testimonials = () => {
                   <div className="rounded-lg p-6 bg-card shadow-md hover:shadow-lg transition-shadow h-full flex flex-col">
                     <Quote className="h-6 w-6 text-primary/20 mb-4" />
                     <p className="text-[2rem] font-normal tracking-[-0.02em] leading-[1.125] text-muted-foreground mb-6 flex-1">
-                    <div className="flex items-center gap-3 mt-auto">
+                      "{t.quote}"
+                    </p>
                       <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold text-sm">
                         {t.name.charAt(0)}
                       </div>
