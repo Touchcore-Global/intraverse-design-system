@@ -61,7 +61,7 @@ export const Testimonials = () => {
                 <CarouselItem key={i} className="pl-4 basis-full">
                   <div className="rounded-lg p-6 bg-card shadow-md hover:shadow-lg transition-shadow h-full flex flex-col">
                     <Quote className="h-6 w-6 text-primary/20 mb-4" />
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+                    <p className="text-[2rem] font-normal tracking-[-0.02em] leading-[1.125] text-muted-foreground mb-6 flex-1">
                       "{t.quote}"
                     </p>
                     <div className="flex items-center gap-3 mt-auto">
