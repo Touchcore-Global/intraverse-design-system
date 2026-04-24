@@ -75,7 +75,7 @@ export const HeroSectionV2 = () => {
             lineHeight: 1.0416666667,
           }}
         >
-          Sell travel. Skip the chaos.
+          Sell travel easily. Skip the chaos.
         </h1>
 
         <p
