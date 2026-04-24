@@ -99,7 +99,7 @@ export const HeroSectionV2 = () => {
             className="cta-responsive min-h-[48px] bg-black hover:bg-black/90 text-white border-0 rounded-none font-semibold shadow-lg hover:shadow-xl transition-shadow"
             asChild
           >
-            <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Start Now</a>
+            <a href="https://intraverse.app/register?view=register" target="_blank" rel="noopener noreferrer">Start Now</a>
           </Button>
           <Button
             size="xl"
