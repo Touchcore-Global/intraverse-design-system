@@ -177,7 +177,7 @@ export const WhoWeServeSectionV2 = () => {
         style={{ maxWidth: "1200px" }}
       >
         <h2 className="text-[32px] md:text-[80px] font-[660] md:leading-[96px] leading-tight tracking-[-2px] text-center mb-4 text-black">
-          Built for Everyone Who Sells, Buys, or Builds Travel
+          One travel platform for everyone
         </h2>
         <p className="text-center text-base md:text-lg max-w-[700px] mx-auto mb-10 md:mb-14 text-muted-foreground">
           From established travel agencies to corporate finance teams, from individuals starting out to developers building the next big travel product — Intraverse powers them all. Find the path that fits your business.
