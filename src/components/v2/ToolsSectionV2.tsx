@@ -142,7 +142,7 @@ export const ToolsSectionV2 = () => {
     >
       <div ref={revealRef} className={`container mx-auto px-4 transition-all duration-700 ease-out ${revealClass} relative`} style={{ maxWidth: "1200px" }}>
         <h2 className="text-[32px] md:text-[80px] md:leading-[96px] font-bold text-center mb-4 text-black">
-          Every Tool You Need to Sell Travel Like a Pro — Included
+          Sell Travel Like a Pro - Instantly
         </h2>
         <p className="text-center text-muted-foreground text-lg max-w-[720px] mx-auto mb-12">
           Intraverse isn't just a booking platform. It's a complete toolkit for running and growing
