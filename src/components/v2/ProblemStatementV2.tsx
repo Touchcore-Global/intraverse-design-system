@@ -125,7 +125,7 @@ export const ProblemStatementV2 = () => {
             {cards.map((card, index) => (
               <CarouselItem
                 key={index}
-                className={isMobile ? "pl-3 basis-[85%]" : "pl-6 basis-1/2"}
+                className={isMobile ? "pl-3 basis-[85%]" : "pl-6 basis-1/6"}
               >
                 <FeatureCard card={card} />
               </CarouselItem>
