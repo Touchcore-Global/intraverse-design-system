@@ -183,21 +183,18 @@ export const WhoWeServeSectionV2 = () => {
           From established travel agencies to corporate finance teams, from individuals starting out to developers building the next big travel product — Intraverse powers them all. Find the path that fits your business.
         </p>
 
-        {isMobile ? (
-          <Carousel opts={{ align: "start", loop: true }} className="w-full">
-            <CarouselContent className="-ml-3">
-              {audiences.map((item) => (
-                <CarouselItem key={item.title} className="pl-3 basis-[85%]">
-                  {renderCard(item)}
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {audiences.map((item) => renderCard(item))}
-          </div>
-        )}
+        <Carousel opts={{ align: "start", loop: false }} className="w-full">
+          <CarouselContent className="-ml-3">
+            {audiences.map((item) => (
+              <CarouselItem
+                key={item.title}
+                className="pl-3 basis-[85%] sm:basis-[55%] md:basis-[45%] lg:basis-[33.333%]"
+              >
+                {renderCard(item)}
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground mb-1">Not sure which path is right for you?</p>
