@@ -90,7 +90,7 @@ export const HeroSectionV2 = () => {
             lineHeight: 1.125,
           }}
         >
-          Sell it all from one AI powered platform. Easily.
+          Any business—from startups to enterprises—can sell travel with Intraverse
         </p>
 
         <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
