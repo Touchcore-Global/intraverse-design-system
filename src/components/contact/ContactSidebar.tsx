@@ -86,31 +86,26 @@ export const ContactSidebar = () => (
 
     {/* Offices */}
     <div className="bg-accent rounded-2xl p-6 space-y-5">
-      <h3 className="h3-global text-foreground">Headquarters</h3>
+      <h3 className="h3-global text-foreground">Registered Locations</h3>
 
-      <div className="flex items-start gap-3">
-        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-          <MapPin className="w-5 h-5 text-primary" />
-        </div>
-        <div>
-          <p className="text-sm font-medium text-foreground">Lagos, Nigeria (HQ)</p>
-          <p className="text-xs text-muted-foreground">
-            14b Wole Ariyo Street, Lekki Phase 1, Lagos, Nigeria
-          </p>
-        </div>
-      </div>
-
-      <div className="pt-2 border-t border-border">
-        <p className="text-sm font-semibold text-foreground mb-3">Registered Locations</p>
-        {["London, United Kingdom", "Delaware, United States", "Dubai, UAE"].map((location) => (
-          <div key={location} className="flex items-center gap-3 mb-2 last:mb-0">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-              <MapPin className="w-5 h-5 text-primary" />
-            </div>
-            <p className="text-sm font-medium text-foreground">{location}</p>
+      {[
+        { label: "Lagos, Nigeria (HQ)", detail: "14b Wole Ariyo Street, Lekki Phase 1, Lagos, Nigeria" },
+        { label: "London, United Kingdom" },
+        { label: "Delaware, United States" },
+        { label: "Dubai, UAE" },
+      ].map((loc) => (
+        <div key={loc.label} className="flex items-start gap-3">
+          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+            <MapPin className="w-5 h-5 text-primary" />
           </div>
-        ))}
-      </div>
+          <div>
+            <p className="text-sm font-medium text-foreground">{loc.label}</p>
+            {loc.detail && (
+              <p className="text-xs text-muted-foreground">{loc.detail}</p>
+            )}
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 );
