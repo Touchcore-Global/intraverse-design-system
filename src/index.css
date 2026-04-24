@@ -177,7 +177,7 @@
   h3, h4, h5, h6 {
     color: rgb(23, 19, 33);
     font-family: "Ubuntu", sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 660;
     letter-spacing: -0.02em;
     line-height: 1.05;
@@ -209,7 +209,7 @@
   /* Enforced global h3 typography. Use this class on every h3 to override Tailwind utilities. */
   .h3-global {
     font-family: "Ubuntu", sans-serif !important;
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
     font-weight: 660 !important;
     letter-spacing: -0.02em !important;
     line-height: 1.05 !important;
