@@ -161,8 +161,10 @@ const IndependentsAudience = () => {
                 Whether you're a graduate looking for income, a side hustler stacking revenue streams, a stay-at-home parent with a strong network, or someone with a community ready to book travel — the Intraverse Independents Programme gives you the tools, the inventory, and the IATA-backed infrastructure to start earning. No agency required. No experience needed. No capital upfront.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
-                <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-                  Join the Independents Programme
+                <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+                  <a href="/for/independents/interest" target="_blank" rel="noopener noreferrer">
+                    Join the Independents Programme
+                  </a>
                 </Button>
                 <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
@@ -404,8 +406,10 @@ const IndependentsAudience = () => {
               Join the Independents Programme and start selling flights, hotels, and tours from global suppliers. No agency needed. No experience required. Just real technology, real inventory, and real commissions.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]">
-                Join the Independents Programme
+              <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]" asChild>
+                <a href="/for/independents/interest" target="_blank" rel="noopener noreferrer">
+                  Join the Independents Programme
+                </a>
               </Button>
               <Button size="xl" variant="whatsapp" className="cta-responsive min-h-[48px]" asChild>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
