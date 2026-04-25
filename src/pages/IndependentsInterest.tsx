@@ -13,6 +13,12 @@ import { CheckCircle2 } from "lucide-react";
 const interestSchema = z.object({
   first_name: z.string().trim().min(1, "First name is required").max(100),
   last_name: z.string().trim().min(1, "Last name is required").max(100),
+  email: z
+    .string()
+    .trim()
+    .min(1, "Email is required")
+    .max(255, "Email is too long")
+    .email("Enter a valid email address"),
   phone_number: z
     .string()
     .trim()
@@ -33,6 +39,7 @@ const IndependentsInterest = () => {
   const [form, setForm] = useState({
     first_name: "",
     last_name: "",
+    email: "",
     phone_number: "",
     details: "",
   });
@@ -56,12 +63,13 @@ const IndependentsInterest = () => {
     }
 
     setSubmitting(true);
+    const id = crypto.randomUUID();
     const { error } = await supabase
       .from("independents_interest")
-      .insert(parsed.data);
-    setSubmitting(false);
+      .insert({ ...parsed.data, id });
 
     if (error) {
+      setSubmitting(false);
       toast({
         title: "Submission failed",
         description: "Please try again in a moment.",
@@ -70,6 +78,37 @@ const IndependentsInterest = () => {
       return;
     }
 
+    // Fire-and-forget confirmation + internal notification emails
+    const submittedAt = new Date().toUTCString();
+    const fullName = `${parsed.data.first_name} ${parsed.data.last_name}`.trim();
+
+    void supabase.functions.invoke("send-transactional-email", {
+      body: {
+        templateName: "independents-interest-confirmation",
+        recipientEmail: parsed.data.email,
+        idempotencyKey: `independents-confirm-${id}`,
+        templateData: { name: parsed.data.first_name },
+      },
+    });
+
+    void supabase.functions.invoke("send-transactional-email", {
+      body: {
+        templateName: "independents-interest-notification",
+        recipientEmail: "support@intraverse.africa",
+        idempotencyKey: `independents-notify-${id}`,
+        templateData: {
+          firstName: parsed.data.first_name,
+          lastName: parsed.data.last_name,
+          fullName,
+          email: parsed.data.email,
+          phoneNumber: parsed.data.phone_number,
+          details: parsed.data.details,
+          submittedAt,
+        },
+      },
+    });
+
+    setSubmitting(false);
     setSubmitted(true);
     toast({
       title: "Thank you!",
@@ -138,6 +177,22 @@ const IndependentsInterest = () => {
                       <p className="text-sm text-destructive">{errors.last_name}</p>
                     )}
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email *</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    value={form.email}
+                    onChange={(e) => handleChange("email", e.target.value)}
+                    maxLength={255}
+                    required
+                  />
+                  {errors.email && (
+                    <p className="text-sm text-destructive">{errors.email}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
