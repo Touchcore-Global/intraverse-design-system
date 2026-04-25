@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Copy, Check, ExternalLink, ArrowRight } from "lucide-react";
 import { whatsappUrl } from "@/lib/constants";
+import { POSTMAN_COLLECTION_URL } from "@/components/docs/DocsPostmanLink";
 
 /* ---------- scroll-reveal helper ---------- */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -154,7 +155,7 @@ const sdks = [
   { emoji: "🟢", name: "Node.js SDK", install: "npm install @intraverse/node", version: "v1.0.0 • MIT", github: "#", docs: "/docs/quickstart" },
   { emoji: "🐍", name: "Python SDK", install: "pip install intraverse", version: "v1.0.0 • MIT", github: "#", docs: "/docs/quickstart" },
   { emoji: "🐘", name: "PHP SDK", install: "composer require intraverse/api", version: "v1.0.0 • MIT", github: "#", docs: "/docs/quickstart" },
-  { emoji: "📦", name: "Postman Collection", install: "Download →", version: "Updated weekly", github: "#", docs: "#" },
+  { emoji: "📦", name: "Postman Collection", install: "Open in Postman →", version: "Updated weekly", github: POSTMAN_COLLECTION_URL, docs: POSTMAN_COLLECTION_URL },
 ];
 
 /* ---------- additional resources ---------- */
