@@ -173,6 +173,13 @@ const IndependentsInterest = () => {
       },
     });
 
+    // Record successful submission timestamp for client-side rate limiting.
+    try {
+      localStorage.setItem(RATE_LIMIT_KEY, String(Date.now()));
+    } catch {
+      // ignore storage errors
+    }
+
     setSubmitting(false);
     setSubmitted(true);
     toast({
