@@ -2,14 +2,17 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+// @ts-expect-error - plain .mjs script, no type declarations
 import { checkPostmanUrls } from "./scripts/check-postman-url.mjs";
+
+type PostmanViolation = { file: string; url: string; reason?: string };
 
 // Build-time guard: fail the build if any docs page hard-codes a Postman URL.
 function postmanUrlGuard() {
   return {
     name: "postman-url-guard",
-    buildStart() {
-      const violations = checkPostmanUrls();
+    buildStart(this: { error: (msg: string) => never }) {
+      const violations = checkPostmanUrls() as PostmanViolation[];
       if (violations.length > 0) {
         const lines = violations
           .map(
