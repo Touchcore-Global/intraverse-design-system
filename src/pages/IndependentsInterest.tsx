@@ -8,7 +8,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, MessageCircle } from "lucide-react";
+import {
+  formatNigeriaPhoneInput,
+  isValidNigeriaPhone,
+  toE164Nigeria,
+} from "@/lib/phone";
 
 const interestSchema = z.object({
   first_name: z.string().trim().min(1, "First name is required").max(100),
@@ -22,15 +27,26 @@ const interestSchema = z.object({
   phone_number: z
     .string()
     .trim()
-    .min(5, "Phone number is required")
-    .max(50)
-    .regex(/^[+0-9()\-\s]+$/, "Enter a valid phone number"),
+    .min(1, "Phone number is required")
+    .transform((val, ctx) => {
+      const e164 = toE164Nigeria(val);
+      if (!e164) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message:
+            "Enter a valid Nigerian mobile number (e.g. 0803 123 4567).",
+        });
+        return z.NEVER;
+      }
+      return e164;
+    }),
   details: z
     .string()
     .trim()
     .min(10, "Please share a few details (min 10 chars)")
     .max(2000),
 });
+
 
 const IndependentsInterest = () => {
   const { toast } = useToast();
@@ -196,18 +212,47 @@ const IndependentsInterest = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone_number">Phone Number *</Label>
+                  <Label htmlFor="phone_number">
+                    Phone Number (WhatsApp) *
+                  </Label>
                   <Input
                     id="phone_number"
                     type="tel"
-                    placeholder="+234 800 000 0000"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    placeholder="0803 123 4567"
                     value={form.phone_number}
-                    onChange={(e) => handleChange("phone_number", e.target.value)}
-                    maxLength={50}
+                    onChange={(e) =>
+                      handleChange(
+                        "phone_number",
+                        formatNigeriaPhoneInput(e.target.value),
+                      )
+                    }
+                    maxLength={20}
+                    aria-invalid={!!errors.phone_number}
+                    aria-describedby="phone_number_hint"
                     required
                   />
-                  {errors.phone_number && (
-                    <p className="text-sm text-destructive">{errors.phone_number}</p>
+                  {errors.phone_number ? (
+                    <p className="text-sm text-destructive">
+                      {errors.phone_number}
+                    </p>
+                  ) : isValidNigeriaPhone(form.phone_number) ? (
+                    <p
+                      id="phone_number_hint"
+                      className="text-sm text-primary flex items-center gap-1.5"
+                    >
+                      <MessageCircle className="h-3.5 w-3.5" />
+                      WhatsApp-ready: {toE164Nigeria(form.phone_number)}
+                    </p>
+                  ) : (
+                    <p
+                      id="phone_number_hint"
+                      className="text-sm text-muted-foreground"
+                    >
+                      Use your WhatsApp number — Nigerian format, e.g.
+                      0803 123 4567 or +234 803 123 4567.
+                    </p>
                   )}
                 </div>
 
