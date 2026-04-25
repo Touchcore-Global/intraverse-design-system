@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { trackEvent, CTA_EVENTS } from "@/lib/analytics";
 
 export const FinalCTAV2 = () => {
   const { ref, revealClass } = useScrollReveal();
@@ -35,10 +36,22 @@ export const FinalCTAV2 = () => {
             className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90 rounded-none font-semibold border-0 shadow-lg"
             asChild
           >
-            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Free Demo</a>
+            <a
+              href={DEMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent(CTA_EVENTS.demoClick, { location: "final_cta", page: "index_v2" })}
+            >
+              Book a Free Demo
+            </a>
           </Button>
           <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent(CTA_EVENTS.whatsappClick, { location: "final_cta", page: "index_v2" })}
+            >
               <MessageCircle className="h-5 w-5" />
               Chat on WhatsApp
             </a>
