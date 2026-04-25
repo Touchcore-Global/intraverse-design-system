@@ -2,6 +2,31 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+// @ts-expect-error - plain .mjs script, no type declarations
+import { checkPostmanUrls } from "./scripts/check-postman-url.mjs";
+
+type PostmanViolation = { file: string; url: string; reason?: string };
+
+// Build-time guard: fail the build if any docs page hard-codes a Postman URL.
+function postmanUrlGuard() {
+  return {
+    name: "postman-url-guard",
+    buildStart(this: { error: (msg: string) => never }) {
+      const violations = checkPostmanUrls() as PostmanViolation[];
+      if (violations.length > 0) {
+        const lines = violations
+          .map(
+            (v) =>
+              `  • ${v.file}\n      ${v.url}${v.reason ? `\n      ${v.reason}` : ""}`,
+          )
+          .join("\n");
+        this.error(
+          `Outdated/hard-coded Postman URL detected in docs. Use <DocsPostmanLink> from @/components/docs/DocsPostmanLink.\n${lines}`,
+        );
+      }
+    },
+  };
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -12,7 +37,11 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(),
+    postmanUrlGuard(),
+    mode === "development" && componentTagger(),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
