@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Copy, Check, ExternalLink, ArrowRight } from "lucide-react";
 import { whatsappUrl } from "@/lib/constants";
+import { POSTMAN_COLLECTION_URL } from "@/components/docs/DocsPostmanLink";
 
 /* ---------- scroll-reveal helper ---------- */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -154,7 +155,7 @@ const sdks = [
   { emoji: "🟢", name: "Node.js SDK", install: "npm install @intraverse/node", version: "v1.0.0 • MIT", github: "#", docs: "/docs/quickstart" },
   { emoji: "🐍", name: "Python SDK", install: "pip install intraverse", version: "v1.0.0 • MIT", github: "#", docs: "/docs/quickstart" },
   { emoji: "🐘", name: "PHP SDK", install: "composer require intraverse/api", version: "v1.0.0 • MIT", github: "#", docs: "/docs/quickstart" },
-  { emoji: "📦", name: "Postman Collection", install: "Download →", version: "Updated weekly", github: "#", docs: "#" },
+  { emoji: "📦", name: "Postman Collection", install: "Open in Postman →", version: "Updated weekly", github: POSTMAN_COLLECTION_URL, docs: POSTMAN_COLLECTION_URL },
 ];
 
 /* ---------- additional resources ---------- */
@@ -351,8 +352,20 @@ export default function Docs() {
                     <code className="mt-2 block text-xs bg-muted text-muted-foreground px-3 py-2 rounded font-mono">{sdk.install}</code>
                     <p className="mt-3 text-xs text-muted-foreground">{sdk.version}</p>
                     <div className="mt-3 flex gap-3">
-                      <a href={sdk.github} className="text-xs font-medium text-[hsl(var(--brand-blue))] hover:underline flex items-center gap-1">GitHub <ExternalLink className="w-3 h-3" /></a>
-                      <a href={sdk.docs} className="text-xs font-medium text-[hsl(var(--brand-blue))] hover:underline">Docs</a>
+                      <a
+                        href={sdk.github}
+                        {...(sdk.github.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="text-xs font-medium text-[hsl(var(--brand-blue))] hover:underline flex items-center gap-1"
+                      >
+                        {sdk.github === POSTMAN_COLLECTION_URL ? "Open" : "GitHub"} <ExternalLink className="w-3 h-3" />
+                      </a>
+                      <a
+                        href={sdk.docs}
+                        {...(sdk.docs.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="text-xs font-medium text-[hsl(var(--brand-blue))] hover:underline"
+                      >
+                        Docs
+                      </a>
                     </div>
                   </div>
                 ))}
