@@ -56,6 +56,7 @@ import AdminLogin from "./pages/admin/AdminLogin.tsx";
 import AdminBlogList from "./pages/admin/AdminBlogList.tsx";
 import AdminBlogEditor from "./pages/admin/AdminBlogEditor.tsx";
 import AdminUsers from "./pages/admin/AdminUsers.tsx";
+import AdminIndependentsInterest from "./pages/admin/AdminIndependentsInterest.tsx";
 import News from "./pages/News.tsx";
 import NewsArticle from "./pages/NewsArticle.tsx";
 import AdminNewsList from "./pages/admin/AdminNewsList.tsx";
@@ -139,6 +140,7 @@ const App = () => (
           <Route path="/admin/news/new" element={<AdminNewsEditor />} />
           <Route path="/admin/news/:id" element={<AdminNewsEditor />} />
           <Route path="/admin/users" element={<AdminUsers />} />
+          <Route path="/admin/independents-interest" element={<AdminIndependentsInterest />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

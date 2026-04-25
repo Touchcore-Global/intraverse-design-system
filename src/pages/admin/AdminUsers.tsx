@@ -89,6 +89,12 @@ export default function AdminUsers() {
             Articles
           </Link>
           <Link
+            to="/admin/independents-interest"
+            className="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted"
+          >
+            Independents Interest
+          </Link>
+          <Link
             to="/admin/users"
             className="px-3 py-1.5 rounded-md bg-primary/10 text-primary font-medium"
           >
