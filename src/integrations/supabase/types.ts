@@ -272,6 +272,33 @@ export type Database = {
         }
         Relationships: []
       }
+      independents_interest: {
+        Row: {
+          created_at: string
+          details: string
+          first_name: string
+          id: string
+          last_name: string
+          phone_number: string
+        }
+        Insert: {
+          created_at?: string
+          details: string
+          first_name: string
+          id?: string
+          last_name: string
+          phone_number: string
+        }
+        Update: {
+          created_at?: string
+          details?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          phone_number?: string
+        }
+        Relationships: []
+      }
       news_events: {
         Row: {
           created_at: string
