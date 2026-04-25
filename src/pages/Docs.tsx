@@ -352,8 +352,20 @@ export default function Docs() {
                     <code className="mt-2 block text-xs bg-muted text-muted-foreground px-3 py-2 rounded font-mono">{sdk.install}</code>
                     <p className="mt-3 text-xs text-muted-foreground">{sdk.version}</p>
                     <div className="mt-3 flex gap-3">
-                      <a href={sdk.github} className="text-xs font-medium text-[hsl(var(--brand-blue))] hover:underline flex items-center gap-1">GitHub <ExternalLink className="w-3 h-3" /></a>
-                      <a href={sdk.docs} className="text-xs font-medium text-[hsl(var(--brand-blue))] hover:underline">Docs</a>
+                      <a
+                        href={sdk.github}
+                        {...(sdk.github.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="text-xs font-medium text-[hsl(var(--brand-blue))] hover:underline flex items-center gap-1"
+                      >
+                        {sdk.github === POSTMAN_COLLECTION_URL ? "Open" : "GitHub"} <ExternalLink className="w-3 h-3" />
+                      </a>
+                      <a
+                        href={sdk.docs}
+                        {...(sdk.docs.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="text-xs font-medium text-[hsl(var(--brand-blue))] hover:underline"
+                      >
+                        Docs
+                      </a>
                     </div>
                   </div>
                 ))}
