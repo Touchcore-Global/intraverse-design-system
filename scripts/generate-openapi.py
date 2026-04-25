@@ -111,8 +111,21 @@ def safe_json_loads(s: str):
     no_line = re.sub(r"//[^\n\r]*", "", s)
     no_block = re.sub(r"/\*.*?\*/", "", no_line, flags=re.DOTALL)
     candidates.append(no_block)
+    # Replace Postman variables ({{var}}) with quoted placeholder strings.
+    # If the variable already sits inside quotes, just strip the braces.
+    var_replaced = re.sub(
+        r'"\{\{([^}]+)\}\}"',
+        lambda m: json.dumps(f"<{m.group(1)}>"),
+        no_block,
+    )
+    var_replaced = re.sub(
+        r"\{\{([^}]+)\}\}",
+        lambda m: json.dumps(f"<{m.group(1)}>"),
+        var_replaced,
+    )
+    candidates.append(var_replaced)
     # Strip trailing commas
-    candidates.append(re.sub(r",\s*([}\]])", r"\1", no_block))
+    candidates.append(re.sub(r",\s*([}\]])", r"\1", var_replaced))
     for c in candidates:
         try:
             return json.loads(c)
