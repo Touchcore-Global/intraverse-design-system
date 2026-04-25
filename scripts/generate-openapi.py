@@ -106,15 +106,37 @@ def infer_schema(value):
 def safe_json_loads(s: str):
     if not s or not s.strip():
         return None
-    try:
-        return json.loads(s)
-    except (json.JSONDecodeError, ValueError):
-        # Many Postman bodies use trailing commas / comments. Try a loose parse.
-        cleaned = re.sub(r",\s*([}\]])", r"\1", s)
+    candidates = [s]
+    # Strip // line comments and /* ... */ block comments (JSON5-ish)
+    no_line = re.sub(r"//[^\n\r]*", "", s)
+    no_block = re.sub(r"/\*.*?\*/", "", no_line, flags=re.DOTALL)
+    candidates.append(no_block)
+    # Strip trailing commas
+    candidates.append(re.sub(r",\s*([}\]])", r"\1", no_block))
+    for c in candidates:
         try:
-            return json.loads(cleaned)
-        except Exception:
-            return None
+            return json.loads(c)
+        except (json.JSONDecodeError, ValueError):
+            continue
+    return None
+
+
+# Cap saved response examples to keep the spec downloadable.
+MAX_RESPONSE_BYTES = 8 * 1024  # 8KB per example
+
+
+def truncate_example(example):
+    """Trim large arrays / strings inside a JSON response example."""
+    if isinstance(example, list):
+        if len(example) > 2:
+            return [truncate_example(example[0]), "... (truncated; see Postman collection for full payload)"]
+        return [truncate_example(v) for v in example]
+    if isinstance(example, dict):
+        return {k: truncate_example(v) for k, v in example.items()}
+    if isinstance(example, str) and len(example) > 500:
+        return example[:500] + "... (truncated)"
+    return example
+
 
 
 def operation_id(method: str, path: str) -> str:
