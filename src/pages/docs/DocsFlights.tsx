@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { DocsPostmanLink } from "@/components/docs/DocsPostmanLink";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
@@ -267,15 +268,7 @@ export default function DocsFlights() {
 
       <DocsSection id="errors" title="Errors">
         <Callout variant="info">
-          Refer to the{" "}
-          <a
-            href="https://documenter.getpostman.com/view/17671608/2s9Yyqhgtj"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[hsl(var(--brand-blue))] hover:underline"
-          >
-            Postman collection
-          </a>{" "}
+          Refer to the <DocsPostmanLink>Postman collection</DocsPostmanLink>{" "}
           for current error response formats. Errors are returned as JSON with
           a relevant HTTP status code (<InlineCode>4xx</InlineCode> for client
           errors, <InlineCode>5xx</InlineCode> for upstream/supplier

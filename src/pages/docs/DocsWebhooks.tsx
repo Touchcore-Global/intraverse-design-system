@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { DocsPostmanLink } from "@/components/docs/DocsPostmanLink";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { Callout } from "@/components/docs/Callout";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
@@ -125,14 +126,7 @@ export default function DocsWebhooks() {
         <p>
           Each delivery posts a JSON body to your URL containing the event
           name and the resource it relates to. Refer to the{" "}
-          <a
-            href="https://documenter.getpostman.com/view/17671608/2s9Yyqhgtj"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[hsl(var(--brand-blue))] hover:underline"
-          >
-            Postman collection
-          </a>{" "}
+          <DocsPostmanLink>Postman collection</DocsPostmanLink>{" "}
           for the latest payload schema.
         </p>
       </DocsSection>
