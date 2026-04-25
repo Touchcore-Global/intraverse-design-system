@@ -80,9 +80,14 @@ const IndependentsInterest = () => {
 
     setSubmitting(true);
     const id = crypto.randomUUID();
-    const { error } = await supabase
-      .from("independents_interest")
-      .insert({ ...parsed.data, id });
+    const { error } = await supabase.from("independents_interest").insert({
+      id,
+      first_name: parsed.data.first_name,
+      last_name: parsed.data.last_name,
+      email: parsed.data.email,
+      phone_number: parsed.data.phone_number,
+      details: parsed.data.details,
+    });
 
     if (error) {
       setSubmitting(false);
