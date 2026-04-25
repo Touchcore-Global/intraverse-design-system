@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { DocsPostmanLink } from "@/components/docs/DocsPostmanLink";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
