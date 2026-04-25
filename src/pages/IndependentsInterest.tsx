@@ -1,0 +1,195 @@
+import { useState } from "react";
+import { z } from "zod";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { CheckCircle2 } from "lucide-react";
+
+const interestSchema = z.object({
+  first_name: z.string().trim().min(1, "First name is required").max(100),
+  last_name: z.string().trim().min(1, "Last name is required").max(100),
+  phone_number: z
+    .string()
+    .trim()
+    .min(5, "Phone number is required")
+    .max(50)
+    .regex(/^[+0-9()\-\s]+$/, "Enter a valid phone number"),
+  details: z
+    .string()
+    .trim()
+    .min(10, "Please share a few details (min 10 chars)")
+    .max(2000),
+});
+
+const IndependentsInterest = () => {
+  const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    first_name: "",
+    last_name: "",
+    phone_number: "",
+    details: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const handleChange = (field: keyof typeof form, value: string) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrors({});
+    const parsed = interestSchema.safeParse(form);
+    if (!parsed.success) {
+      const fieldErrors: Record<string, string> = {};
+      parsed.error.issues.forEach((issue) => {
+        if (issue.path[0]) fieldErrors[issue.path[0] as string] = issue.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
+    setSubmitting(true);
+    const { error } = await supabase
+      .from("independents_interest")
+      .insert(parsed.data);
+    setSubmitting(false);
+
+    if (error) {
+      toast({
+        title: "Submission failed",
+        description: "Please try again in a moment.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setSubmitted(true);
+    toast({
+      title: "Thank you!",
+      description: "We've received your interest and will be in touch soon.",
+    });
+  };
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navbar />
+
+      <main className="flex-1 py-16 md:py-24">
+        <div className="container mx-auto px-4 max-w-2xl">
+          {submitted ? (
+            <div className="text-center py-12">
+              <CheckCircle2 className="h-16 w-16 mx-auto text-primary mb-6" />
+              <h1 className="text-3xl md:text-4xl font-[660] tracking-[-1px] mb-4">
+                You're on the list
+              </h1>
+              <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+                Thanks for your interest in the Intraverse Independents
+                Programme. Our team will reach out shortly with next steps.
+              </p>
+              <Button variant="outline" asChild>
+                <a href="/for/independents">Back to Independents</a>
+              </Button>
+            </div>
+          ) : (
+            <>
+              <div className="mb-10">
+                <h1 className="text-3xl md:text-[40px] md:leading-[48px] font-[660] tracking-[-1.5px] mb-4">
+                  Express Your Interest
+                </h1>
+                <p className="text-muted-foreground text-base md:text-lg">
+                  Join the Intraverse Independents Programme. Share a few
+                  details and our team will get in touch with onboarding
+                  instructions.
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="first_name">First Name *</Label>
+                    <Input
+                      id="first_name"
+                      value={form.first_name}
+                      onChange={(e) => handleChange("first_name", e.target.value)}
+                      maxLength={100}
+                      required
+                    />
+                    {errors.first_name && (
+                      <p className="text-sm text-destructive">{errors.first_name}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="last_name">Last Name *</Label>
+                    <Input
+                      id="last_name"
+                      value={form.last_name}
+                      onChange={(e) => handleChange("last_name", e.target.value)}
+                      maxLength={100}
+                      required
+                    />
+                    {errors.last_name && (
+                      <p className="text-sm text-destructive">{errors.last_name}</p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="phone_number">Phone Number *</Label>
+                  <Input
+                    id="phone_number"
+                    type="tel"
+                    placeholder="+234 800 000 0000"
+                    value={form.phone_number}
+                    onChange={(e) => handleChange("phone_number", e.target.value)}
+                    maxLength={50}
+                    required
+                  />
+                  {errors.phone_number && (
+                    <p className="text-sm text-destructive">{errors.phone_number}</p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="details">Details *</Label>
+                  <Textarea
+                    id="details"
+                    placeholder="Tell us about yourself, your network, and why you'd like to join."
+                    value={form.details}
+                    onChange={(e) => handleChange("details", e.target.value)}
+                    maxLength={2000}
+                    rows={6}
+                    required
+                  />
+                  {errors.details && (
+                    <p className="text-sm text-destructive">{errors.details}</p>
+                  )}
+                </div>
+
+                <Button
+                  type="submit"
+                  variant="hero"
+                  size="xl"
+                  className="w-full sm:w-auto"
+                  disabled={submitting}
+                >
+                  {submitting ? "Submitting..." : "Submit Interest"}
+                </Button>
+              </form>
+            </>
+          )}
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default IndependentsInterest;
