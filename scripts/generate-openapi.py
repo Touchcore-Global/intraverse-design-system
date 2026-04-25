@@ -265,9 +265,10 @@ def build_responses(item):
         example = safe_json_loads(body_text)
         content = {}
         if example is not None:
+            trimmed = truncate_example(example)
             content["application/json"] = {
-                "schema": infer_schema(example),
-                "example": example,
+                "schema": infer_schema(trimmed),
+                "example": trimmed,
             }
         elif body_text:
             content["text/plain"] = {
