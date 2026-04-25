@@ -94,6 +94,9 @@ export default function AdminBlogList() {
           <Link to="/admin/news" className="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted">
             News
           </Link>
+          <Link to="/admin/independents-interest" className="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted">
+            Independents Interest
+          </Link>
           <Link to="/admin/users" className="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted">
             Admin Users
           </Link>
