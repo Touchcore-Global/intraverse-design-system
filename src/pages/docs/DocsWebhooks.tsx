@@ -126,7 +126,7 @@ export default function DocsWebhooks() {
           Each delivery posts a JSON body to your URL containing the event
           name and the resource it relates to. Refer to the{" "}
           <a
-            href="https://documenter.getpostman.com/view/21013764/2sA3XPChtq"
+            href="https://documenter.getpostman.com/view/17671608/2s9Yyqhgtj"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[hsl(var(--brand-blue))] hover:underline"
