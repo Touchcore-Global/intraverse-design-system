@@ -2843,6 +2843,484 @@ paths:
                     bookingRequirements:
                       emailAddressRequired: true
                       mobilePhoneNumberRequired: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                supplier:
+                  type: string
+                  example: Amadeus
+                offers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: '1'
+                      directions:
+                        type: array
+                        items:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              segmentRef:
+                                type: string
+                                example: '5'
+                              airline:
+                                type: object
+                                properties:
+                                  image:
+                                    type: object
+                                    properties:
+                                      url:
+                                        type: string
+                                        example: https://pics.avs.io/200/200/LH@2x.png
+                                      description:
+                                        type: string
+                                        example: LUFTHANSA
+                                  marketing:
+                                    type: string
+                                    example: LH
+                                  operating:
+                                    type: string
+                                    example: LH
+                              aircraftType:
+                                type: string
+                                example: AIRBUS A340-300
+                              seatAvailability:
+                                type: integer
+                                example: 9
+                              flightNumber:
+                                type: string
+                                example: '569'
+                              cabinClass:
+                                type: string
+                                example: ECONOMY
+                              bookingClass:
+                                type: string
+                                example: T
+                              departure:
+                                type: object
+                                properties:
+                                  time:
+                                    type: string
+                                    example: '23:55'
+                                  date:
+                                    type: string
+                                    example: Jan 03 2024
+                                  terminal:
+                                    type: string
+                                    example: I
+                                  location:
+                                    type: string
+                                    example: LOS
+                              arrival:
+                                type: object
+                                properties:
+                                  time:
+                                    type: string
+                                    example: 06:25
+                                  date:
+                                    type: string
+                                    example: Jan 04 2024
+                                  terminal:
+                                    type: string
+                                    example: '1'
+                                  location:
+                                    type: string
+                                    example: FRA
+                              duration:
+                                type: string
+                                example: PT6H30M
+                              numberOfStops:
+                                type: integer
+                                example: 0
+                              baggage:
+                                type: string
+                                example: 1 pc
+                              amenities:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    description:
+                                      type: string
+                                      example: CATERING ON EUROPE FLTS
+                                    isChargeable:
+                                      type: boolean
+                                      example: true
+                                    amenityType:
+                                      type: string
+                                      example: MEAL
+                                    amenityProvider:
+                                      type: object
+                                      properties:
+                                        name:
+                                          type: string
+                                          example: BrandedFare
+                      pricingInformation:
+                        type: object
+                        properties:
+                          price:
+                            type: object
+                            properties:
+                              basePrice:
+                                type: string
+                                example: NGN 1,113,321
+                              totalPrice:
+                                type: string
+                                example: NGN 2,322,891
+                              taxes:
+                                type: string
+                                example: NGN 0
+                          passengerFares:
+                            type: object
+                            properties:
+                              adult:
+                                type: object
+                                properties:
+                                  totalPrice:
+                                    type: string
+                                    example: NGN 1,313,801
+                                  basePrice:
+                                    type: string
+                                    example: NGN 636,360
+                                  taxes:
+                                    type: string
+                                    example: NGN 0
+                                  passengerCount:
+                                    type: integer
+                                    example: 1
+                              child:
+                                type: object
+                                properties:
+                                  totalPrice:
+                                    type: string
+                                    example: NGN 1,009,090
+                                  basePrice:
+                                    type: string
+                                    example: NGN 476,961
+                                  taxes:
+                                    type: string
+                                    example: NGN 0
+                                  passengerCount:
+                                    type: integer
+                                    example: 1
+                      destinations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            from:
+                              type: string
+                              example: LOS
+                            to:
+                              type: string
+                              example: LHR
+                            departure:
+                              type: object
+                              properties:
+                                date:
+                                  type: string
+                                  example: '2024-01-03'
+                                  format: date
+                      supplier:
+                        type: string
+                        example: Amadeus
+                promoCodes:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      airline:
+                        type: string
+                        example: VS
+                      code:
+                        type: string
+                        example: '123456'
+            example:
+              supplier: Amadeus
+              offers:
+              - id: '1'
+                directions:
+                - - segmentRef: '5'
+                    airline:
+                      image:
+                        url: https://pics.avs.io/200/200/LH@2x.png
+                        description: LUFTHANSA
+                      marketing: LH
+                      operating: LH
+                    aircraftType: AIRBUS A340-300
+                    seatAvailability: 9
+                    flightNumber: '569'
+                    cabinClass: ECONOMY
+                    bookingClass: T
+                    departure:
+                      time: '23:55'
+                      date: Jan 03 2024
+                      terminal: I
+                      location: LOS
+                    arrival:
+                      time: 06:25
+                      date: Jan 04 2024
+                      terminal: '1'
+                      location: FRA
+                    duration: PT6H30M
+                    numberOfStops: 0
+                    baggage: 1 pc
+                    amenities:
+                    - description: CATERING ON EUROPE FLTS
+                      isChargeable: true
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CATERING ON INTERCONT FLTS
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: STANDARD SEAT RESERVATION
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: MILEAGE ACCRUAL
+                      isChargeable: false
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: UPGRADE ELIGIBILITY
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: PREFERRED SEAT RESERVATION
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHANGE BEFORE DEPARTURE
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                  - segmentRef: '6'
+                    airline:
+                      image:
+                        url: https://pics.avs.io/200/200/LH@2x.png
+                        description: LUFTHANSA
+                      marketing: LH
+                      operating: LH
+                    aircraftType: AIRBUS A320NEO
+                    seatAvailability: 9
+                    flightNumber: '900'
+                    cabinClass: ECONOMY
+                    bookingClass: T
+                    departure:
+                      time: 08:00
+                      date: Jan 04 2024
+                      terminal: '1'
+                      location: FRA
+                    arrival:
+                      time: 08:45
+                      date: Jan 04 2024
+                      terminal: '2'
+                      location: LHR
+                    duration: PT1H45M
+                    numberOfStops: 0
+                    baggage: 1 pc
+                    amenities:
+                    - description: CATERING ON EUROPE FLTS
+                      isChargeable: true
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CATERING ON INTERCONT FLTS
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: STANDARD SEAT RESERVATION
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: MILEAGE ACCRUAL
+                      isChargeable: false
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: UPGRADE ELIGIBILITY
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: PREFERRED SEAT RESERVATION
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHANGE BEFORE DEPARTURE
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                - - segmentRef: '23'
+                    airline:
+                      image:
+                        url: https://pics.avs.io/200/200/LH@2x.png
+                        description: LUFTHANSA
+                      marketing: LH
+                      operating: LH
+                    aircraftType: AIRBUS A320
+                    seatAvailability: 9
+                    flightNumber: '4641'
+                    cabinClass: ECONOMY
+                    bookingClass: T
+                    departure:
+                      time: 08:00
+                      date: Jan 10 2024
+                      terminal: '2'
+                      location: LHR
+                    arrival:
+                      time: '10:00'
+                      date: Jan 10 2024
+                      terminal: '1'
+                      location: FRA
+                    duration: PT1H
+                    numberOfStops: 0
+                    baggage: 1 pc
+                    amenities:
+                    - description: CATERING ON EUROPE FLTS
+                      isChargeable: true
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CATERING ON INTERCONT FLTS
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: STANDARD SEAT RESERVATION
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: MILEAGE ACCRUAL
+                      isChargeable: false
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: UPGRADE ELIGIBILITY
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: PREFERRED SEAT RESERVATION
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHANGE BEFORE DEPARTURE
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                  - segmentRef: '24'
+                    airline:
+                      image:
+                        url: https://pics.avs.io/200/200/LH@2x.png
+                        description: LUFTHANSA
+                      marketing: LH
+                      operating: LH
+                    aircraftType: AIRBUS A340-300
+                    seatAvailability: 9
+                    flightNumber: '568'
+                    cabinClass: ECONOMY
+                    bookingClass: T
+                    departure:
+                      time: '11:10'
+                      date: Jan 10 2024
+                      terminal: '1'
+                      location: FRA
+                    arrival:
+                      time: '17:45'
+                      date: Jan 10 2024
+                      terminal: I
+                      location: LOS
+                    duration: PT6H35M
+                    numberOfStops: 0
+                    baggage: 1 pc
+                    amenities:
+                    - description: CATERING ON EUROPE FLTS
+                      isChargeable: true
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CATERING ON INTERCONT FLTS
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: STANDARD SEAT RESERVATION
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: MILEAGE ACCRUAL
+                      isChargeable: false
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: UPGRADE ELIGIBILITY
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: PREFERRED SEAT RESERVATION
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHANGE BEFORE DEPARTURE
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                pricingInformation:
+                  price:
+                    basePrice: NGN 1,113,321
+                    totalPrice: NGN 2,322,891
+                    taxes: NGN 0
+                  passengerFares:
+                    adult:
+                      totalPrice: NGN 1,313,801
+                      basePrice: NGN 636,360
+                      taxes: NGN 0
+                      passengerCount: 1
+                    child:
+                      totalPrice: NGN 1,009,090
+                      basePrice: NGN 476,961
+                      taxes: NGN 0
+                      passengerCount: 1
+                destinations:
+                - from: LOS
+                  to: LHR
+                  departure:
+                    date: '2024-01-03'
+                - from: LHR
+                  to: LOS
+                  departure:
+                    date: '2024-01-10'
+                supplier: Amadeus
+              promoCodes:
+              - airline: VS
+                code: '123456'
   /product/v1/flight/brandedFares:
     post:
       tags:
@@ -4163,6 +4641,531 @@ paths:
                   - travelerId: '2'
                     value: 136
                 - '... (truncated; see Postman collection for full payload)'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                supplier:
+                  type: string
+                  example: Amadeus
+                offers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: '1'
+                      directions:
+                        type: array
+                        items:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              segmentRef:
+                                type: string
+                                example: '1'
+                              airline:
+                                type: object
+                                properties:
+                                  image:
+                                    type: object
+                                    properties:
+                                      url:
+                                        type: string
+                                        example: https://pics.avs.io/200/200/AF@2x.png
+                                      description:
+                                        type: string
+                                        example: AIR FRANCE
+                                  marketing:
+                                    type: string
+                                    example: AF
+                                  operating:
+                                    type: string
+                                    example: KL
+                              aircraftType:
+                                type: string
+                                example: AIRBUS A330-200
+                              seatAvailability:
+                                type: integer
+                                example: 9
+                              flightNumber:
+                                type: string
+                                example: '5479'
+                              cabinClass:
+                                type: string
+                                example: ECONOMY
+                              bookingClass:
+                                type: string
+                                example: N
+                              departure:
+                                type: object
+                                properties:
+                                  time:
+                                    type: string
+                                    example: '23:05'
+                                  date:
+                                    type: string
+                                    example: Feb 03 2024
+                                  terminal:
+                                    type: string
+                                    example: I
+                                  location:
+                                    type: string
+                                    example: LOS
+                                  airport:
+                                    type: string
+                                    example: Murtala Muhammed International Airport
+                                  city:
+                                    type: string
+                                    example: Lagos
+                              arrival:
+                                type: object
+                                properties:
+                                  time:
+                                    type: string
+                                    example: 05:50
+                                  date:
+                                    type: string
+                                    example: Feb 04 2024
+                                  location:
+                                    type: string
+                                    example: AMS
+                                  airport:
+                                    type: string
+                                    example: Amsterdam Airport Schiphol
+                                  city:
+                                    type: string
+                                    example: Amsterdam
+                              duration:
+                                type: string
+                                example: PT6H45M
+                              numberOfStops:
+                                type: integer
+                                example: 0
+                              baggage:
+                                type: string
+                                example: 1 pc
+                              amenities:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    description:
+                                      type: string
+                                      example: SNACK
+                                    isChargeable:
+                                      type: boolean
+                                      example: false
+                                    amenityType:
+                                      type: string
+                                      example: MEAL
+                                    amenityProvider:
+                                      type: object
+                                      properties:
+                                        name:
+                                          type: string
+                                          example: BrandedFare
+                      pricingInformation:
+                        type: object
+                        properties:
+                          price:
+                            type: object
+                            properties:
+                              basePrice:
+                                type: string
+                                example: NGN 341,539
+                              totalPrice:
+                                type: string
+                                example: NGN 1,800,512
+                              taxes:
+                                type: string
+                                example: NGN 0
+                          passengerFares:
+                            type: object
+                            properties:
+                              adult:
+                                type: object
+                                properties:
+                                  totalPrice:
+                                    type: string
+                                    example: NGN 994,334
+                                  basePrice:
+                                    type: string
+                                    example: NGN 193,539
+                                  taxes:
+                                    type: string
+                                    example: NGN 0
+                                  passengerCount:
+                                    type: integer
+                                    example: 1
+                              child:
+                                type: object
+                                properties:
+                                  totalPrice:
+                                    type: string
+                                    example: NGN 806,178
+                                  basePrice:
+                                    type: string
+                                    example: NGN 148,000
+                                  taxes:
+                                    type: string
+                                    example: NGN 0
+                                  passengerCount:
+                                    type: integer
+                                    example: 1
+                      destinations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            from:
+                              type: string
+                              example: LOS
+                            to:
+                              type: string
+                              example: LHR
+                            departure:
+                              type: object
+                              properties:
+                                date:
+                                  type: string
+                                  example: '2024-02-03'
+                                  format: date
+                      supplier:
+                        type: string
+                        example: Amadeus
+            example:
+              supplier: Amadeus
+              offers:
+              - id: '1'
+                directions:
+                - - segmentRef: '1'
+                    airline:
+                      image:
+                        url: https://pics.avs.io/200/200/AF@2x.png
+                        description: AIR FRANCE
+                      marketing: AF
+                      operating: KL
+                    aircraftType: AIRBUS A330-200
+                    seatAvailability: 9
+                    flightNumber: '5479'
+                    cabinClass: ECONOMY
+                    bookingClass: N
+                    departure:
+                      time: '23:05'
+                      date: Feb 03 2024
+                      terminal: I
+                      location: LOS
+                      airport: Murtala Muhammed International Airport
+                      city: Lagos
+                    arrival:
+                      time: 05:50
+                      date: Feb 04 2024
+                      location: AMS
+                      airport: Amsterdam Airport Schiphol
+                      city: Amsterdam
+                    duration: PT6H45M
+                    numberOfStops: 0
+                    baggage: 1 pc
+                    amenities:
+                    - description: SNACK
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: BEVERAGE
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: MEAL
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHOICE OF STANDARD SEAT
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: UPGRADE ELIGIBILITY
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHANGEABLE TICKET
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                  - segmentRef: '2'
+                    airline:
+                      image:
+                        url: https://pics.avs.io/200/200/AF@2x.png
+                        description: AIR FRANCE
+                      marketing: AF
+                      operating: KL
+                    aircraftType: BOEING 737-800 (WINGLETS)
+                    seatAvailability: 9
+                    flightNumber: '8223'
+                    cabinClass: ECONOMY
+                    bookingClass: L
+                    departure:
+                      time: 06:50
+                      date: Feb 04 2024
+                      location: AMS
+                      airport: Amsterdam Airport Schiphol
+                      city: Amsterdam
+                    arrival:
+                      time: 08:10
+                      date: Feb 04 2024
+                      terminal: 2F
+                      location: CDG
+                      airport: Charles de Gaulle International Airport
+                      city: Paris
+                    duration: PT1H20M
+                    numberOfStops: 0
+                    baggage: 1 pc
+                    amenities:
+                    - description: SNACK
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: BEVERAGE
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: MEAL
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHOICE OF STANDARD SEAT
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: UPGRADE ELIGIBILITY
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHANGEABLE TICKET
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                  - segmentRef: '3'
+                    airline:
+                      image:
+                        url: https://pics.avs.io/200/200/AF@2x.png
+                        description: AIR FRANCE
+                      marketing: AF
+                      operating: AF
+                    aircraftType: AIRBUS A321
+                    seatAvailability: 9
+                    flightNumber: '1580'
+                    cabinClass: ECONOMY
+                    bookingClass: L
+                    departure:
+                      time: '10:00'
+                      date: Feb 04 2024
+                      terminal: 2E
+                      location: CDG
+                      airport: Charles de Gaulle International Airport
+                      city: Paris
+                    arrival:
+                      time: '10:30'
+                      date: Feb 04 2024
+                      terminal: '4'
+                      location: LHR
+                      airport: London Heathrow Airport
+                      city: London
+                    duration: PT1H30M
+                    numberOfStops: 0
+                    baggage: 1 pc
+                    amenities:
+                    - description: SNACK
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: BEVERAGE
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: MEAL
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHOICE OF STANDARD SEAT
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: UPGRADE ELIGIBILITY
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHANGEABLE TICKET
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                - - segmentRef: '39'
+                    airline:
+                      image:
+                        url: https://pics.avs.io/200/200/KL@2x.png
+                        description: KLM ROYAL DUTCH AIRLINES
+                      marketing: KL
+                      operating: KL
+                    aircraftType: EMBRAER 195 E2
+                    seatAvailability: 9
+                    flightNumber: '1030'
+                    cabinClass: ECONOMY
+                    bookingClass: L
+                    departure:
+                      time: '17:50'
+                      date: Feb 10 2024
+                      terminal: '4'
+                      location: LHR
+                      airport: London Heathrow Airport
+                      city: London
+                    arrival:
+                      time: '20:10'
+                      date: Feb 10 2024
+                      location: AMS
+                      airport: Amsterdam Airport Schiphol
+                      city: Amsterdam
+                    duration: PT1H20M
+                    numberOfStops: 0
+                    baggage: 1 pc
+                    amenities:
+                    - description: SNACK
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: BEVERAGE
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: MEAL
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHOICE OF STANDARD SEAT
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: UPGRADE ELIGIBILITY
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHANGEABLE TICKET
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                  - segmentRef: '40'
+                    airline:
+                      image:
+                        url: https://pics.avs.io/200/200/KL@2x.png
+                        description: KLM ROYAL DUTCH AIRLINES
+                      marketing: KL
+                      operating: KL
+                    aircraftType: AIRBUS A330-200
+                    seatAvailability: 9
+                    flightNumber: '587'
+                    cabinClass: ECONOMY
+                    bookingClass: N
+                    departure:
+                      time: '13:50'
+                      date: Feb 11 2024
+                      location: AMS
+                      airport: Amsterdam Airport Schiphol
+                      city: Amsterdam
+                    arrival:
+                      time: '20:35'
+                      date: Feb 11 2024
+                      terminal: I
+                      location: LOS
+                      airport: Murtala Muhammed International Airport
+                      city: Lagos
+                    duration: PT6H45M
+                    numberOfStops: 0
+                    baggage: 1 pc
+                    amenities:
+                    - description: SNACK
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: BEVERAGE
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: MEAL
+                      isChargeable: false
+                      amenityType: MEAL
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHOICE OF STANDARD SEAT
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: UPGRADE ELIGIBILITY
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                    - description: CHANGEABLE TICKET
+                      isChargeable: true
+                      amenityType: BRANDED_FARES
+                      amenityProvider:
+                        name: BrandedFare
+                pricingInformation:
+                  price:
+                    basePrice: NGN 341,539
+                    totalPrice: NGN 1,800,512
+                    taxes: NGN 0
+                  passengerFares:
+                    adult:
+                      totalPrice: NGN 994,334
+                      basePrice: NGN 193,539
+                      taxes: NGN 0
+                      passengerCount: 1
+                    child:
+                      totalPrice: NGN 806,178
+                      basePrice: NGN 148,000
+                      taxes: NGN 0
+                      passengerCount: 1
+                destinations:
+                - from: LOS
+                  to: LHR
+                  departure:
+                    date: '2024-02-03'
+                - from: LHR
+                  to: LOS
+                  departure:
+                    date: '2024-02-10'
+                supplier: Amadeus
   /product/v1/flight/cityCodes/{searchString}:
     get:
       tags:
@@ -6021,6 +7024,30 @@ paths:
                     authorization_url: https://checkout.paystack.com/kxogghzpkttzga2
                     access_code: kxogghzpkttzga2
                     reference: TR-ea55ee9ce53f40d3ef145340
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                flightBookingId:
+                  type: string
+                  example: 661d86e3c8a0a57dc145c06a
+                paymentMode:
+                  type: string
+                  example: Card
+                callback:
+                  type: string
+                  example: http://localhost:3000
+                deductCommission:
+                  type: boolean
+                  example: false
+            example:
+              flightBookingId: 661d86e3c8a0a57dc145c06a
+              paymentMode: Card
+              callback: http://localhost:3000
+              deductCommission: false
   /product/v1/ticket/queue:
     post:
       tags:
