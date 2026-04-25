@@ -204,9 +204,14 @@ const IndependentsInterest = () => {
                 Thanks for your interest in the Intraverse Independents
                 Programme. Our team will reach out shortly with next steps.
               </p>
-              <Button variant="outline" asChild>
-                <a href="/for/independents">Back to Independents</a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button variant="hero" asChild>
+                  <a href="/for/independents">Explore the Programme</a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a href="/">Back to Home</a>
+                </Button>
+              </div>
             </div>
           ) : (
             <>
