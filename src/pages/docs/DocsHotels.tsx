@@ -3,6 +3,7 @@ import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
 import { ParamsTable } from "@/components/docs/ParamsTable";
+import { Callout } from "@/components/docs/Callout";
 
 const toc = [
   { id: "overview", label: "Overview" },
@@ -21,6 +22,14 @@ export default function DocsHotels() {
       subtitle="Search, compare, and book hotel inventory from multiple global suppliers through a single API. Consistent response format, real-time availability, and instant confirmation."
       toc={toc}
     >
+      <Callout variant="warning" title="Coming Soon — Hotels API">
+        The Hotels API is currently under development and not yet available
+        in the public Postman collection. Hotel inventory is accessible
+        through the Intraverse dashboard UI today, but programmatic API
+        access is coming soon. The endpoints below describe the{" "}
+        <strong>planned</strong> contract — actual paths, parameters, and
+        response shapes will be confirmed when the API launches.
+      </Callout>
       <DocsSection id="overview" title="Overview">
         <p>
           The Hotels API queries multiple global suppliers in parallel, deduplicates results by property, and returns the best rate per

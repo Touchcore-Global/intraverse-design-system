@@ -2,6 +2,7 @@ import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
 import { ParamsTable } from "@/components/docs/ParamsTable";
+import { Callout } from "@/components/docs/Callout";
 
 const toc = [
   { id: "overview", label: "Overview" },
@@ -25,6 +26,14 @@ export default function DocsTours() {
       subtitle="Access curated tour and activity inventory from international suppliers. Search by destination, category, and date. Book standalone or bundle with flights and hotels for complete travel packages."
       toc={toc}
     >
+      <Callout variant="warning" title="Coming Soon — Tours API">
+        The Tours API is currently under development and not yet available
+        in the public Postman collection. Tour inventory is accessible
+        through the Intraverse dashboard UI today, but programmatic API
+        access is coming soon. The endpoints below describe the{" "}
+        <strong>planned</strong> contract — actual paths, parameters, and
+        response shapes will be confirmed when the API launches.
+      </Callout>
       <DocsSection id="overview" title="Overview">
         <p>
           The Tours API exposes inventory from leading global activity providers — from city walking tours to multi-day adventures — all

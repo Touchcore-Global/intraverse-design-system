@@ -3,16 +3,24 @@ import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
 import { ParamsTable } from "@/components/docs/ParamsTable";
+import { Callout } from "@/components/docs/Callout";
 import { ArrowRight } from "lucide-react";
+
+const SANDBOX = "https://dev.intraversewebservices.com/api";
 
 const toc = [
   { id: "overview", label: "Overview" },
-  { id: "endpoints", label: "Endpoints" },
-  { id: "response-format", label: "Response Format" },
-  { id: "best-practices", label: "Search Best Practices" },
+  { id: "search", label: "Search" },
+  { id: "pricing", label: "Pricing & Fares" },
+  { id: "lookups", label: "City & Airport Lookups" },
+  { id: "booking", label: "Booking" },
+  { id: "post-booking", label: "Post-Booking" },
+  { id: "import-rebook", label: "Import & Rebook" },
+  { id: "manage", label: "Manage Booking" },
+  { id: "agent-flex", label: "Agent Markup" },
+  { id: "share", label: "Share & Itinerary" },
   { id: "flow", label: "Booking Flow" },
-  { id: "price", label: "Price Guarantee" },
-  { id: "errors", label: "Common Errors" },
+  { id: "errors", label: "Errors" },
 ];
 
 export default function DocsFlights() {
@@ -25,120 +33,228 @@ export default function DocsFlights() {
     >
       <DocsSection id="overview" title="Overview">
         <p>
-          The Flights API aggregates inventory from GDS, NDC, consolidators, and direct supplier connections into a single, normalised
-          response format. You don't need to negotiate with each source separately or learn each schema — Intraverse abstracts the
-          heterogeneity behind one consistent contract.
+          The Flights API aggregates inventory from GDS, NDC, consolidators,
+          and direct supplier connections into a single, normalised response
+          format. You don't need to negotiate with each source separately or
+          learn each schema — Intraverse abstracts the heterogeneity behind
+          one consistent contract.
         </p>
         <p>
-          Every offer carries a <InlineCode>source</InlineCode> field so you know where it came from, but the structure of the offer is
-          identical regardless of source. That makes it easy to display, sort, filter, and book without source-specific code paths.
+          All endpoints below are relative to the sandbox base URL{" "}
+          <InlineCode>{SANDBOX}</InlineCode>.
         </p>
       </DocsSection>
 
-      <DocsSection id="endpoints" title="Endpoints">
-        <EndpointHeading method="POST" path="/v1/flights/search" id="ep-search" />
-        <p>Search aggregated flight inventory across all configured sources.</p>
+      <DocsSection id="search" title="Search">
+        <EndpointHeading method="POST" path="/product/v2/flight/search" id="ep-search-v2" />
+        <p>
+          The recommended search endpoint. Queries every available source
+          automatically — no need to specify suppliers.
+        </p>
         <ParamsTable
           params={[
-            { name: "origin", type: "string", required: true, description: "IATA airport code (e.g. LOS)" },
-            { name: "destination", type: "string", required: true, description: "IATA airport code (e.g. DXB)" },
-            { name: "departure_date", type: "string", required: true, description: "ISO 8601 date (YYYY-MM-DD)" },
-            { name: "passengers", type: "object", required: true, description: "{ adults, children, infants }" },
-            { name: "return_date", type: "string", description: "ISO date for return leg" },
-            { name: "cabin_class", type: "string", description: "economy | premium_economy | business | first" },
-            { name: "max_results", type: "integer", description: "Default 50, max 200" },
-            { name: "preferred_airlines", type: "string[]", description: "IATA airline codes to prioritise" },
-            { name: "direct_only", type: "boolean", description: "Restrict to non-stop itineraries" },
+            { name: "originDestinations", type: "object[]", required: true, description: "Array of legs. Each: { from (IATA), to (IATA), departure: { date: YYYY-MM-DD } }" },
+            { name: "passengers", type: "object", required: true, description: "{ adult, child, infant } counts" },
+            { name: "cabinClass", type: "string[]", required: true, description: 'Any of "Economy", "PremiumEconomy", "Business", "First"' },
+            { name: "maxSolutions", type: "integer", description: "Optional — cap the number of returned offers" },
           ]}
         />
         <MultiLangCodeBlock
           samples={buildHttpSamples({
             method: "POST",
-            url: "https://sandbox.api.intraverse.com/v1/flights/search",
+            url: `${SANDBOX}/product/v2/flight/search`,
             body: {
-              origin: "LOS",
-              destination: "DXB",
-              departure_date: "2026-06-15",
-              passengers: { adults: 1 },
-              cabin_class: "economy",
+              originDestinations: [
+                { from: "LOS", to: "LHR", departure: { date: "2026-07-09" } },
+                { from: "LHR", to: "LOS", departure: { date: "2026-07-20" } },
+              ],
+              passengers: { adult: 1 },
+              cabinClass: ["Economy"],
             },
           })}
         />
+
+        <EndpointHeading method="POST" path="/product/v1/flight/search" id="ep-search-v1" />
+        <p>
+          Legacy v1 search. Same body as v2 but{" "}
+          <strong>requires a <InlineCode>supplier</InlineCode> array</strong>{" "}
+          specifying which inventory sources to query — useful when you want
+          fine-grained control.
+        </p>
         <CodeBlock
           label="JSON"
           code={`{
-  "search_id": "srch_abc123",
-  "currency": "NGN",
-  "results_count": 12,
-  "results": [ /* offer objects */ ]
+  "supplier": ["AmadeusOne", "TravXTwo"],
+  "originDestinations": [ /* ... */ ],
+  "passengers": { "adult": 1 },
+  "cabinClass": ["Economy"]
 }`}
         />
+      </DocsSection>
 
-        <EndpointHeading method="GET" path="/v1/flights/offers/{offer_id}" id="ep-offer" />
-        <p>Fetch full details for a single offer, including baggage, fare rules summary, and refundability.</p>
+      <DocsSection id="pricing" title="Pricing, Branded Fares & Seat Maps">
+        <p>
+          After search, take the <InlineCode>supplier</InlineCode> string and
+          one of the <InlineCode>offers</InlineCode> from the response and
+          pass them to any of the endpoints below.
+        </p>
 
-        <EndpointHeading method="POST" path="/v1/bookings" id="ep-book" />
-        <p>Create a new booking from a selected offer.</p>
+        <EndpointHeading method="POST" path="/product/v1/flight/pricing" id="ep-pricing" />
+        <p>Confirm and re-price an offer immediately before booking.</p>
+        <CodeBlock label="JSON" code={`{ "supplier": "supplier_string", "offers": [offer_object] }`} />
+
+        <EndpointHeading method="POST" path="/product/v1/flight/brandedFares" id="ep-branded" />
+        <p>Fetch branded fare upgrade options for an offer.</p>
+        <CodeBlock label="JSON" code={`{ "supplier": "supplier_string", "offers": [offer_object] }`} />
+
+        <EndpointHeading method="POST" path="/product/v1/flight/seatmap" id="ep-seatmap" />
+        <p>Retrieve seat map and seat-level pricing for the selected offer.</p>
+        <CodeBlock label="JSON" code={`{ "supplier": "supplier_string", "offers": [offer_object] }`} />
+
+        <EndpointHeading method="POST" path="/product/v1/flight/formattedFareRules" id="ep-rules" />
+        <p>Get human-readable fare rules for a specific booking and segments.</p>
+        <CodeBlock label="JSON" code={`{ "flightBookingId": "booking_id", "segments": [/* ... */] }`} />
+
+        <EndpointHeading method="POST" path="/product/v1/flight/alternativeCheapestListings" id="ep-alts" />
+        <p>Surface alternative, cheaper itineraries close to the searched dates.</p>
+      </DocsSection>
+
+      <DocsSection id="lookups" title="City & Airport Lookups">
+        <EndpointHeading method="GET" path="/product/v1/flight/cityCodes/:searchString" id="ep-citycodes" />
+        <p>Search for city codes by name (e.g. <InlineCode>/cityCodes/lagos</InlineCode>).</p>
+
+        <EndpointHeading method="GET" path="/product/v1/flight/airportCodes/:searchString" id="ep-airportcodes" />
+        <p>Search for airport IATA codes by name or city.</p>
+      </DocsSection>
+
+      <DocsSection id="booking" title="Booking">
+        <EndpointHeading method="POST" path="/product/v1/book" id="ep-book" />
+        <p>Create a flight booking. Passenger type uses airline codes: <InlineCode>"ADT"</InlineCode> (adult), <InlineCode>"CHD"</InlineCode> (child), <InlineCode>"INF"</InlineCode> (infant).</p>
         <ParamsTable
           params={[
-            { name: "offer_id", type: "string", required: true, description: "ID of the offer being booked" },
-            { name: "passengers", type: "object[]", required: true, description: "Passenger details (first name, last name, DOB, passport)" },
-            { name: "contact", type: "object", required: true, description: "{ email, phone } for the booking" },
+            { name: "supplier", type: "string", required: true, description: "Supplier string from the search response" },
+            { name: "offers", type: "object[]", required: true, description: "Array containing the selected offer object(s)" },
+            { name: "travelersInfo", type: "object[]", required: true, description: "Traveler details (name, DOB, gender, type, phone, email)" },
           ]}
         />
+        <MultiLangCodeBlock
+          samples={buildHttpSamples({
+            method: "POST",
+            url: `${SANDBOX}/product/v1/book`,
+            body: {
+              supplier: "supplier_from_search_result",
+              offers: [{ /* offer object from search results */ }],
+              travelersInfo: [
+                {
+                  firstName: "Chinedu",
+                  middleName: "Ike",
+                  lastName: "Doe",
+                  birthDate: "1990-11-24",
+                  gender: "Male",
+                  type: "ADT",
+                  phone: [{ countryCode: "234", location: "NG", number: "8012345678" }],
+                  email: "customer@example.com",
+                },
+              ],
+            },
+          })}
+        />
 
-        <EndpointHeading method="POST" path="/v1/bookings/{booking_id}/issue" id="ep-issue" />
-        <p>Issue the ticket for a confirmed booking. Required before the airline considers the seat ticketed.</p>
+        <EndpointHeading method="GET" path="/product/v1/book?populate[]=flightBooking" id="ep-list" />
+        <p>List all bookings for the current account.</p>
 
-        <EndpointHeading method="GET" path="/v1/bookings/{booking_id}" id="ep-get" />
-        <p>Retrieve booking status, passenger info, ticket numbers, and payment state.</p>
+        <EndpointHeading method="GET" path="/product/v1/book/:id?populate=flightBooking" id="ep-get-one" />
+        <p>Retrieve a single booking by ID with the full flight booking populated.</p>
 
-        <EndpointHeading method="POST" path="/v1/bookings/{booking_id}/modify" id="ep-modify" />
-        <p>Modify a booking — date change, name correction, or itinerary update — subject to fare rules.</p>
-
-        <EndpointHeading method="POST" path="/v1/bookings/{booking_id}/cancel" id="ep-cancel" />
-        <p>Cancel the booking and trigger any applicable refund flow.</p>
-
-        <EndpointHeading method="GET" path="/v1/flights/offers/{offer_id}/rules" id="ep-rules" />
-        <p>Get full fare rules: refundability, change fees, baggage, mileage accrual.</p>
+        <EndpointHeading method="POST" path="/product/v1/book/getFlightBookingByRef" id="ep-get-by-ref" />
+        <p>Look up a booking by its reference and the lead passenger's last name.</p>
+        <CodeBlock label="JSON" code={`{ "ref": "BK-AY7IAUT3", "lastName": "Miller" }`} />
       </DocsSection>
 
-      <DocsSection id="response-format" title="Response Format">
-        <p>Every offer returned from any source uses this shape:</p>
+      <DocsSection id="post-booking" title="Post-Booking Actions">
+        <EndpointHeading method="PATCH" path="/product/v1/book/cancelBooking" id="ep-cancel" />
+        <CodeBlock label="JSON" code={`{ "flightBookingId": "booking_id" }`} />
+
+        <EndpointHeading method="PATCH" path="/product/v1/book/holdFlightBooking/:flightBookingId" id="ep-hold" />
+        <p>Place a temporary hold on a booking before issuing the ticket.</p>
+
+        <EndpointHeading method="PATCH" path="/product/v1/book/selfTicket/:flightBookingId" id="ep-self-ticket" />
+        <p>Self-issue the ticket for a held booking.</p>
+
+        <EndpointHeading method="POST" path="/product/v1/refund/booking" id="ep-refund" />
+        <p>Cancel and refund an issued booking, subject to fare rules.</p>
+        <CodeBlock label="JSON" code={`{ "flightBookingId": "booking_id" }`} />
+
+        <EndpointHeading method="GET" path="/product/v1/book/refresh/:flightBookingId" id="ep-refresh" />
+        <p>Refresh the order from the supplier (sync latest status).</p>
+      </DocsSection>
+
+      <DocsSection id="import-rebook" title="Import & Rebook">
+        <EndpointHeading method="POST" path="/product/v1/book/importBooking" id="ep-import" />
+        <p>
+          Import an existing PNR or order from a supplier into your Intraverse
+          account. Supported supplier values:{" "}
+          <InlineCode>"MyAmadeus"</InlineCode>,{" "}
+          <InlineCode>"MyAmadeusSoap"</InlineCode>,{" "}
+          <InlineCode>"MyTravelport"</InlineCode>,{" "}
+          <InlineCode>"MySabre"</InlineCode>.
+        </p>
+        <CodeBlock label="JSON" code={`{ "supplier": "MyAmadeus", "pnrOrOrderId": "PNR_STRING" }`} />
+
+        <EndpointHeading method="PATCH" path="/product/v1/book/rebook" id="ep-rebook" />
+        <CodeBlock label="JSON" code={`{ "flightBookingId": "...", "offer": offer_object, "acceptPriceChange": true }`} />
+
+        <EndpointHeading method="PATCH" path="/product/v1/book/autoRebook" id="ep-auto-rebook" />
+        <CodeBlock label="JSON" code={`{ "flightBookingId": "...", "acceptPriceChange": true }`} />
+      </DocsSection>
+
+      <DocsSection id="manage" title="Manage Booking — Post-Booking Modifications">
+        <p>All endpoints below are <InlineCode>PATCH</InlineCode> requests under <InlineCode>/product/v1/updateBooking/</InlineCode>.</p>
+        <ul className="list-disc list-inside space-y-1.5">
+          <li><InlineCode>/addSeat</InlineCode> — add a seat selection</li>
+          <li><InlineCode>/addSSR</InlineCode> — add a Special Service Request</li>
+          <li><InlineCode>/addDocuments</InlineCode> — attach passport / ID documents</li>
+          <li><InlineCode>/addFrequentFlyer</InlineCode> — attach a frequent flyer number</li>
+          <li><InlineCode>/travelerInfo</InlineCode> — update traveler details</li>
+          <li><InlineCode>/addRemark</InlineCode> — add a free-form remark to the PNR</li>
+          <li><InlineCode>/queuePnr</InlineCode> — queue the PNR for an agent</li>
+          <li><InlineCode>/transferPnr</InlineCode> — transfer the PNR to another office</li>
+        </ul>
+      </DocsSection>
+
+      <DocsSection id="agent-flex" title="Agent Flex Markup">
+        <EndpointHeading method="PATCH" path="/product/v1/book/setAgentFlexPrice" id="ep-flex" />
+        <p>Apply an agent markup or discount to the booking.</p>
         <CodeBlock
           label="JSON"
           code={`{
-  "offer_id": "offer_xyz789",
-  "source": "amadeus",
-  "airline": "Emirates",
-  "flight_number": "EK786",
-  "total_price": 485000,
-  "currency": "NGN",
-  "departure": "2026-06-15T23:55:00+01:00",
-  "arrival": "2026-06-16T09:45:00+04:00",
-  "duration_minutes": 470,
-  "stops": 0,
-  "cabin_class": "economy",
-  "refundable": true,
-  "baggage": { "checked": "30kg", "cabin": "7kg" },
-  "expires_at": "2026-06-15T00:30:00Z"
+  "flightBookingId": "...",
+  "agentFlexPriceAmount": 20000,
+  "agentFlexPricingType": "Markup",
+  "agentFlexPricingMethod": "Fixed"
 }`}
         />
       </DocsSection>
 
-      <DocsSection id="best-practices" title="Search Best Practices">
-        <ul className="list-disc list-inside space-y-2">
-          <li>Always pass <InlineCode>cabin_class</InlineCode> — defaulting to economy when the user wants business inflates results.</li>
-          <li>Use <InlineCode>direct_only</InlineCode> for short-haul where most travellers prefer non-stops.</li>
-          <li>Cap <InlineCode>max_results</InlineCode> to what your UI can display. Larger values increase latency.</li>
-          <li>Cache search results by <InlineCode>search_id</InlineCode> for up to 5 minutes — don't re-search on every page render.</li>
-          <li>For round trips, send <InlineCode>return_date</InlineCode> in the same call rather than two one-way searches.</li>
-        </ul>
+      <DocsSection id="share" title="Share Booking & Itinerary">
+        <EndpointHeading method="POST" path="/product/v1/book/shareBooking" id="ep-share" />
+        <CodeBlock
+          label="JSON"
+          code={`{
+  "flightBookingId": "...",
+  "share": [
+    { "shareToEmail": "guest@example.com", "shareToName": "Guest", "includePrice": true }
+  ]
+}`}
+        />
+
+        <EndpointHeading method="POST" path="/notification/v1/sendMail/itineraryPdf" id="ep-itinerary" />
+        <p>Send the booking itinerary as a PDF attachment by email.</p>
       </DocsSection>
 
       <DocsSection id="flow" title="Booking Flow">
         <div className="not-prose flex items-center flex-wrap gap-3 my-6 p-5 rounded-lg bg-[#F0F5FC] border border-border">
-          {["Search", "Select Offer", "Get Details", "Create Booking", "Issue Ticket"].map((s, i, arr) => (
+          {["Search", "Re-price", "Book", "Hold or Self-Ticket", "Manage / Refund"].map((s, i, arr) => (
             <div key={s} className="flex items-center gap-3">
               <div className="px-3 py-2 rounded-md bg-white border border-border text-sm font-medium text-foreground">
                 {s}
@@ -149,22 +265,23 @@ export default function DocsFlights() {
         </div>
       </DocsSection>
 
-      <DocsSection id="price" title="Price Guarantee">
-        <p>
-          Search results return <strong>indicative</strong> pricing. Actual price is confirmed at booking time. If the price changes between
-          search and book, the booking response includes <InlineCode>price_changed: true</InlineCode> and the new <InlineCode>total_price</InlineCode>.
-          Your integration should always reconfirm the price with the user before charging.
-        </p>
-      </DocsSection>
-
-      <DocsSection id="errors" title="Common Errors">
-        <ul className="space-y-3">
-          <li><InlineCode>OFFER_EXPIRED</InlineCode> — Offer is no longer bookable. Re-run search.</li>
-          <li><InlineCode>INSUFFICIENT_FUNDS</InlineCode> — Wallet balance can't cover booking. Top up via <InlineCode>/v1/wallet/fund</InlineCode>.</li>
-          <li><InlineCode>PASSENGER_DATA_INVALID</InlineCode> — Passport, name, or DOB validation failed. Check the <InlineCode>errors</InlineCode> array.</li>
-          <li><InlineCode>TICKETING_FAILED</InlineCode> — Airline rejected ticketing. Often transient — retry once after 30 seconds.</li>
-          <li><InlineCode>FARE_RULES_VIOLATED</InlineCode> — Modification or cancellation conflicts with the fare rules.</li>
-        </ul>
+      <DocsSection id="errors" title="Errors">
+        <Callout variant="info">
+          Refer to the{" "}
+          <a
+            href="https://documenter.getpostman.com/view/21013764/2sA3XPChtq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[hsl(var(--brand-blue))] hover:underline"
+          >
+            Postman collection
+          </a>{" "}
+          for current error response formats. Errors are returned as JSON with
+          a relevant HTTP status code (<InlineCode>4xx</InlineCode> for client
+          errors, <InlineCode>5xx</InlineCode> for upstream/supplier
+          failures). Re-price an offer immediately before booking to avoid
+          stale-price errors.
+        </Callout>
       </DocsSection>
     </DocsLayout>
   );
