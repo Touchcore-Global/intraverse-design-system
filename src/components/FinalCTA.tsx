@@ -27,6 +27,8 @@ export const FinalCTA = () => {
               href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
+              data-cta="book_demo"
+              data-page="index"
               onClick={() => trackEvent(CTA_EVENTS.demoClick, { location: "final_cta", page: "index" })}
             >
               Book a Free Demo
@@ -41,6 +43,8 @@ export const FinalCTA = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              data-cta="whatsapp"
+              data-page="index"
               onClick={() => trackEvent(CTA_EVENTS.whatsappClick, { location: "final_cta", page: "index" })}
             >
               <MessageCircle className="h-5 w-5" />
