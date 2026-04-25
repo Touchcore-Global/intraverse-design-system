@@ -6611,6 +6611,196 @@
               }
             }
           }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "supplier": {
+                    "type": "string",
+                    "example": "<supplier>"
+                  },
+                  "offers": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "example": "<flightOfferPrice>"
+                    }
+                  },
+                  "travelersInfo": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "lastName": {
+                          "type": "string",
+                          "example": "Jon"
+                        },
+                        "firstName": {
+                          "type": "string",
+                          "example": "Doe"
+                        },
+                        "birthDate": {
+                          "type": "string",
+                          "example": "1990-11-24",
+                          "format": "date"
+                        },
+                        "gender": {
+                          "type": "string",
+                          "example": "Male"
+                        },
+                        "type": {
+                          "type": "string",
+                          "example": "ADT"
+                        },
+                        "phone": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "countryCode": {
+                                "type": "string",
+                                "example": "251"
+                              },
+                              "location": {
+                                "type": "string",
+                                "example": "ET"
+                              },
+                              "number": {
+                                "type": "string",
+                                "example": "1234567890"
+                              }
+                            }
+                          }
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "jonDoe@yopmail.com"
+                        },
+                        "document": {
+                          "type": "object",
+                          "properties": {
+                            "documentType": {
+                              "type": "string",
+                              "example": "Passport"
+                            },
+                            "birthPlace": {
+                              "type": "string",
+                              "example": "ET"
+                            },
+                            "issuanceLocation": {
+                              "type": "string",
+                              "example": "ET"
+                            },
+                            "issuanceDate": {
+                              "type": "string",
+                              "example": "2022-11-24",
+                              "format": "date"
+                            },
+                            "number": {
+                              "type": "string",
+                              "example": "00000000"
+                            },
+                            "expiryDate": {
+                              "type": "string",
+                              "example": "2026-11-24",
+                              "format": "date"
+                            },
+                            "issuanceCountry": {
+                              "type": "string",
+                              "example": "ET"
+                            },
+                            "validityCountry": {
+                              "type": "string",
+                              "example": "ET"
+                            },
+                            "nationality": {
+                              "type": "string",
+                              "example": "ET"
+                            },
+                            "holder": {
+                              "type": "boolean",
+                              "example": true
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "acceptPriceChange": {
+                    "type": "boolean",
+                    "example": true
+                  }
+                }
+              },
+              "example": {
+                "supplier": "<supplier>",
+                "offers": [
+                  "<flightOfferPrice>"
+                ],
+                "travelersInfo": [
+                  {
+                    "lastName": "Jon",
+                    "firstName": "Doe",
+                    "birthDate": "1990-11-24",
+                    "gender": "Male",
+                    "type": "ADT",
+                    "phone": [
+                      {
+                        "countryCode": "251",
+                        "location": "ET",
+                        "number": "1234567890"
+                      }
+                    ],
+                    "email": "jonDoe@yopmail.com",
+                    "document": {
+                      "documentType": "Passport",
+                      "birthPlace": "ET",
+                      "issuanceLocation": "ET",
+                      "issuanceDate": "2022-11-24",
+                      "number": "00000000",
+                      "expiryDate": "2026-11-24",
+                      "issuanceCountry": "ET",
+                      "validityCountry": "ET",
+                      "nationality": "ET",
+                      "holder": true
+                    }
+                  },
+                  {
+                    "lastName": "Baby",
+                    "firstName": "Doe",
+                    "birthDate": "2018-11-24",
+                    "gender": "Male",
+                    "type": "CNN",
+                    "phone": [
+                      {
+                        "countryCode": "251",
+                        "location": "ET",
+                        "number": "1234567890"
+                      }
+                    ],
+                    "email": "jonDoe@yopmail.com",
+                    "document": {
+                      "documentType": "Passport",
+                      "birthPlace": "ET",
+                      "issuanceLocation": "ET",
+                      "issuanceDate": "2022-11-24",
+                      "number": "00000001",
+                      "expiryDate": "2026-11-24",
+                      "issuanceCountry": "ET",
+                      "validityCountry": "ET",
+                      "nationality": "ET",
+                      "holder": true
+                    }
+                  }
+                ],
+                "acceptPriceChange": true
+              }
+            }
+          }
         }
       },
       "get": {
