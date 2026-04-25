@@ -103,20 +103,54 @@ def infer_schema(value):
     return {}
 
 
+def _strip_json_comments(s: str) -> str:
+    """Remove // line comments and /* */ block comments while preserving strings."""
+    out = []
+    i = 0
+    n = len(s)
+    in_string = False
+    while i < n:
+        ch = s[i]
+        if in_string:
+            out.append(ch)
+            if ch == "\\" and i + 1 < n:
+                out.append(s[i + 1])
+                i += 2
+                continue
+            if ch == '"':
+                in_string = False
+            i += 1
+            continue
+        if ch == '"':
+            in_string = True
+            out.append(ch)
+            i += 1
+            continue
+        if ch == "/" and i + 1 < n and s[i + 1] == "/":
+            # line comment
+            j = s.find("\n", i)
+            i = n if j == -1 else j
+            continue
+        if ch == "/" and i + 1 < n and s[i + 1] == "*":
+            j = s.find("*/", i + 2)
+            i = n if j == -1 else j + 2
+            continue
+        out.append(ch)
+        i += 1
+    return "".join(out)
+
+
 def safe_json_loads(s: str):
     if not s or not s.strip():
         return None
     candidates = [s]
-    # Strip // line comments and /* ... */ block comments (JSON5-ish)
-    no_line = re.sub(r"//[^\n\r]*", "", s)
-    no_block = re.sub(r"/\*.*?\*/", "", no_line, flags=re.DOTALL)
-    candidates.append(no_block)
-    # Replace Postman variables ({{var}}) with quoted placeholder strings.
-    # If the variable already sits inside quotes, just strip the braces.
+    no_comments = _strip_json_comments(s)
+    candidates.append(no_comments)
+    # Replace Postman variables ({{var}}) with placeholder strings.
     var_replaced = re.sub(
         r'"\{\{([^}]+)\}\}"',
         lambda m: json.dumps(f"<{m.group(1)}>"),
-        no_block,
+        no_comments,
     )
     var_replaced = re.sub(
         r"\{\{([^}]+)\}\}",
