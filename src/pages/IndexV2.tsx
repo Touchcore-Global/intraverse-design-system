@@ -5,7 +5,7 @@ import { ProblemStatementV2 } from "@/components/v2/ProblemStatementV2";
 import { ProductShowcaseV2 } from "@/components/v2/ProductShowcaseV2";
 import { WhoWeServeSectionV2 } from "@/components/v2/WhoWeServeSectionV2";
 import { ToolsSectionV2 } from "@/components/v2/ToolsSectionV2";
-import { VideoWalkthrough } from "@/components/VideoWalkthrough";
+
 import { HowItWorksV2 } from "@/components/v2/HowItWorksV2";
 import { Testimonials } from "@/components/Testimonials";
 import { SecuritySectionV2 } from "@/components/v2/SecuritySectionV2";
@@ -29,7 +29,7 @@ const IndexV2 = () => {
       <RevealSection variant="scale"><ProductShowcaseV2 /></RevealSection>
       <RevealSection variant="fade-up"><WhoWeServeSectionV2 /></RevealSection>
       <RevealSection variant="fade-up"><ToolsSectionV2 /></RevealSection>
-      <RevealSection variant="scale"><VideoWalkthrough /></RevealSection>
+      
       <RevealSection variant="fade-up"><HowItWorksV2 /></RevealSection>
       <RevealSection variant="fade-up"><SecuritySectionV2 /></RevealSection>
       <RevealSection variant="scale"><FinalCTAV2 /></RevealSection>
