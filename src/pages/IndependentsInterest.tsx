@@ -48,6 +48,11 @@ const interestSchema = z.object({
 });
 
 
+// Spam protection
+const RATE_LIMIT_KEY = "independents_interest_last_submit";
+const RATE_LIMIT_MS = 60 * 1000; // 1 submission per minute per browser
+const MIN_FILL_TIME_MS = 3000; // forms filled in <3s are almost certainly bots
+
 const IndependentsInterest = () => {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
@@ -59,6 +64,10 @@ const IndependentsInterest = () => {
     phone_number: "",
     details: "",
   });
+  // Honeypot — should always remain empty for real users (hidden from view).
+  const [website, setWebsite] = useState("");
+  // Track when the form was first rendered to detect instant submissions.
+  const [mountedAt] = useState(() => Date.now());
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleChange = (field: keyof typeof form, value: string) => {
@@ -68,6 +77,40 @@ const IndependentsInterest = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
+
+    // Honeypot tripped — bot filled a hidden field. Pretend success silently.
+    if (website.trim() !== "") {
+      setSubmitted(true);
+      return;
+    }
+
+    // Bot heuristic: form submitted faster than a human could type.
+    if (Date.now() - mountedAt < MIN_FILL_TIME_MS) {
+      toast({
+        title: "Please take a moment",
+        description: "The form was submitted too quickly. Please try again.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Client-side rate limit (per browser).
+    try {
+      const last = Number(localStorage.getItem(RATE_LIMIT_KEY) || 0);
+      const elapsed = Date.now() - last;
+      if (last && elapsed < RATE_LIMIT_MS) {
+        const wait = Math.ceil((RATE_LIMIT_MS - elapsed) / 1000);
+        toast({
+          title: "Slow down a bit",
+          description: `Please wait ${wait}s before submitting again.`,
+          variant: "destructive",
+        });
+        return;
+      }
+    } catch {
+      // localStorage unavailable — proceed without client-side rate limiting.
+    }
+
     const parsed = interestSchema.safeParse(form);
     if (!parsed.success) {
       const fieldErrors: Record<string, string> = {};
@@ -77,6 +120,7 @@ const IndependentsInterest = () => {
       setErrors(fieldErrors);
       return;
     }
+
 
     setSubmitting(true);
     const id = crypto.randomUUID();
