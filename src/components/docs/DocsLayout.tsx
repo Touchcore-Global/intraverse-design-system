@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronRight, Menu, X, ThumbsUp, ThumbsDown, ArrowLeft, ArrowRight } from "lucide-react";
+import { ChevronRight, Menu, X, ThumbsUp, ThumbsDown, ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { docCategories, getNeighbors } from "./docsNav";
+import { POSTMAN_COLLECTION_URL } from "./DocsPostmanLink";
 
 export type TocItem = { id: string; label: string };
 
@@ -204,6 +205,15 @@ export function DocsLayout({
                       <span className="text-xs text-muted-foreground">Thanks for the feedback.</span>
                     )}
                   </div>
+                  <a
+                    href={POSTMAN_COLLECTION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border text-sm font-medium text-foreground hover:border-[hsl(var(--brand-blue))] hover:text-[hsl(var(--brand-blue))] transition-colors"
+                  >
+                    Open Postman collection
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-3">
