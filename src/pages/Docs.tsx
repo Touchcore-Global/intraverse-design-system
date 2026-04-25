@@ -160,7 +160,7 @@ const sdks = [
 
 /* ---------- additional resources ---------- */
 const resources = [
-  { emoji: "📋", title: "OpenAPI Specification", desc: "Download the full OpenAPI 3.0 spec for code generation, client validation, and internal tooling. Always reflects the latest production version.", href: "#" },
+  { emoji: "📋", title: "OpenAPI Specification", desc: "Download the full OpenAPI 3.0 spec (YAML or JSON) for code generation, client validation, and internal tooling. Generated from the live Postman collection.", href: "/openapi.yaml" },
   { emoji: "🧪", title: "Sandbox Environment", desc: "A full-featured sandbox that mirrors production — real endpoints, realistic responses, and test booking flows. No real tickets issued, no real money moved.", href: "#" },
   { emoji: "📝", title: "Changelog", desc: "Every API change, deprecation, and new feature — documented in one place. Subscribe via webhook to get notified of changes that affect your integration.", href: "#" },
   { emoji: "🚨", title: "Error Reference", desc: "Complete list of error codes, what they mean, and how to handle them. Includes retry guidance and common troubleshooting steps.", href: "#" },
