@@ -403,66 +403,39 @@ openapi["components"] = {
 with open(OUT_JSON, "w") as f:
     json.dump(openapi, f, indent=2)
 
-# ---------- write YAML (minimal, dependency-free) ------------------------
-def to_yaml(value, indent=0):
-    pad = "  " * indent
-    if isinstance(value, dict):
-        if not value:
-            return "{}"
-        lines = []
-        for k, v in value.items():
-            key = str(k)
-            if re.match(r"^[A-Za-z0-9_./{}-]+$", key) is None:
-                key = json.dumps(key)
-            if isinstance(v, (dict, list)) and v:
-                lines.append(f"{pad}{key}:")
-                lines.append(to_yaml(v, indent + 1))
-            else:
-                lines.append(f"{pad}{key}: {scalar(v)}")
-        return "\n".join(lines)
-    if isinstance(value, list):
-        if not value:
-            return "[]"
-        lines = []
-        for v in value:
-            if isinstance(v, (dict, list)) and v:
-                rendered = to_yaml(v, indent + 1).lstrip()
-                # First line gets the dash; subsequent lines keep their indent
-                first, *rest = rendered.split("\n", 1)
-                lines.append(f"{pad}- {first}")
-                if rest:
-                    lines.append(rest[0])
-            else:
-                lines.append(f"{pad}- {scalar(v)}")
-        return "\n".join(lines)
-    return f"{pad}{scalar(value)}"
+# ---------- write YAML ---------------------------------------------------
+try:
+    import yaml  # type: ignore
+except ImportError:
+    print("ERROR: PyYAML required. Install with: pip install pyyaml", file=sys.stderr)
+    sys.exit(1)
 
 
-def scalar(v):
-    if v is None:
-        return "null"
-    if isinstance(v, bool):
-        return "true" if v else "false"
-    if isinstance(v, (int, float)):
-        return json.dumps(v)
-    if isinstance(v, str):
-        # Use block scalar for multi-line, otherwise JSON-quote (safe for YAML)
-        if "\n" in v:
-            indent = "  "
-            body = "\n".join(indent + line for line in v.split("\n"))
-            return "|-\n" + body
-        return json.dumps(v, ensure_ascii=False)
-    if isinstance(v, (dict, list)):
-        return json.dumps(v, ensure_ascii=False)
-    return json.dumps(str(v))
+# Preserve insertion order in YAML output
+class _OrderedDumper(yaml.SafeDumper):
+    pass
 
+
+def _dict_repr(dumper, data):
+    return dumper.represent_mapping("tag:yaml.org,2002:map", data.items())
+
+
+_OrderedDumper.add_representer(OrderedDict, _dict_repr)
+_OrderedDumper.add_representer(dict, _dict_repr)
 
 with open(OUT_YAML, "w") as f:
     f.write("# Intraverse API — OpenAPI 3.0 specification\n")
     f.write("# Generated from the official Postman collection.\n")
     f.write("# Source: https://documenter.getpostman.com/view/17671608/2s9Yyqhgtj\n")
-    f.write(to_yaml(openapi))
-    f.write("\n")
+    yaml.dump(
+        openapi,
+        f,
+        Dumper=_OrderedDumper,
+        sort_keys=False,
+        default_flow_style=False,
+        allow_unicode=True,
+        width=100,
+    )
 
 # ---------- summary ------------------------------------------------------
 total_ops = sum(len(v) for v in paths.values())
