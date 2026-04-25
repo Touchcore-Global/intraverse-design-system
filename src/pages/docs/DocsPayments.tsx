@@ -194,15 +194,7 @@ export default function DocsPayments() {
 
       <DocsSection id="errors" title="Errors">
         <Callout variant="info">
-          Refer to the{" "}
-          <a
-            href="https://documenter.getpostman.com/view/17671608/2s9Yyqhgtj"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[hsl(var(--brand-blue))] hover:underline"
-          >
-            Postman collection
-          </a>{" "}
+          Refer to the <DocsPostmanLink>Postman collection</DocsPostmanLink>{" "}
           for current error response formats. Error responses include HTTP
           status codes and JSON error messages.
         </Callout>
