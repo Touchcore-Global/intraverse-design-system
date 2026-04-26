@@ -120,8 +120,8 @@ const Developers = () => {
                 <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold" asChild>
                   <a href="/docs">View API Docs</a>
                 </Button>
-                <Button size="xl" variant="outline" className="border-white/20 text-white hover:bg-white/10 cta-responsive min-h-[48px]">
-                  Get Sandbox Access
+                <Button size="xl" variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white cta-responsive min-h-[48px] rounded-none" asChild>
+                  <a href="/contact">Get Sandbox Access</a>
                 </Button>
               </div>
             </RevealBlock>
@@ -315,8 +315,8 @@ const Developers = () => {
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold" asChild>
                 <a href="/products/api">View API Docs</a>
               </Button>
-              <Button size="xl" variant="outline" className="border-white/20 text-white hover:bg-white/10 cta-responsive min-h-[48px]">
-                Get Sandbox Access
+              <Button size="xl" variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white cta-responsive min-h-[48px] rounded-none" asChild>
+                <a href="/contact">Get Sandbox Access</a>
               </Button>
             </div>
             <p className="mt-8 text-sm text-white/40">

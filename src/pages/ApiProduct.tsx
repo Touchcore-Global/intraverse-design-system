@@ -208,11 +208,11 @@ export default function ApiProduct() {
                 The Intraverse API gives developers, fintechs, and tech startups programmatic access to aggregated travel inventory — flights from GDS, NDC, consolidators, and aggregators, plus hotels and tours from leading global suppliers. Skip years of supplier negotiations and IATA accreditation. Build travel into your product in weeks, not years.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90 shadow-lg">
-                  Read the Docs
+                <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90 shadow-lg" asChild>
+                  <a href="/docs">Read the Docs</a>
                 </Button>
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-white/30 text-white hover:bg-white/10">
-                  Get Sandbox Access
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-white/30 text-white hover:bg-white/10 hover:text-white" asChild>
+                  <a href="/contact">Get Sandbox Access</a>
                 </Button>
               </div>
               <p className="font-mono text-xs sm:text-sm text-white/50 tracking-wide">
@@ -384,8 +384,8 @@ export default function ApiProduct() {
                   <p className="text-3xl font-bold text-foreground mb-1">Free Sandbox</p>
                   <p className="text-sm text-muted-foreground mb-6">Full API access in sandbox mode. Test with real inventory structures and realistic data. No time limit.</p>
                   <div className="mt-auto">
-                    <Button variant="hero" size="xl" className="w-full min-h-[48px]">
-                      Get Sandbox Access
+                    <Button variant="hero" size="xl" className="w-full min-h-[48px]" asChild>
+                      <a href="/contact">Get Sandbox Access</a>
                     </Button>
                   </div>
                 </div>
@@ -483,11 +483,11 @@ export default function ApiProduct() {
                 Get free sandbox access in two minutes. Start building your travel product today. No credit card. No sales call. Just an API key and the freedom to build.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-background text-foreground border-background hover:bg-background/90 rounded-none font-semibold">
-                  Get Sandbox Access
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-background text-foreground border-background hover:bg-background/90 hover:text-foreground rounded-none font-semibold" asChild>
+                  <a href="/contact">Get Sandbox Access</a>
                 </Button>
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-background/30 text-background hover:bg-background/10 font-semibold">
-                  Read the Docs
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-background/30 text-background hover:bg-background/10 hover:text-background font-semibold" asChild>
+                  <a href="/docs">Read the Docs</a>
                 </Button>
               </div>
             </RevealBlock>
