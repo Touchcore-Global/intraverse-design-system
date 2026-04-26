@@ -263,10 +263,15 @@ const Startups = () => {
               <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px] font-semibold mb-4">
                 Talk to Our Partnerships Team
               </Button>
-              <p className="text-primary-foreground/60 text-sm flex items-center gap-2">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/60 text-sm flex items-center gap-2 hover:text-primary-foreground transition-colors w-fit"
+              >
                 <MessageCircle className="w-4 h-4" />
                 Or chat with us on WhatsApp
-              </p>
+              </a>
             </RevealBlock>
 
             <RevealBlock>
