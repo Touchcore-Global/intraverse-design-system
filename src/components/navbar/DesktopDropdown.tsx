@@ -34,6 +34,19 @@ export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDr
                     href={item.href}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
                     rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    data-cta={item.trackingId}
+                    data-nav-section={section.header}
+                    onClick={() => {
+                      if (item.trackingId) {
+                        trackEvent(CTA_EVENTS.navProductClick, {
+                          cta: item.trackingId,
+                          label: item.label,
+                          href: item.href,
+                          location: "navbar_products_dropdown",
+                          section: section.header,
+                        });
+                      }
+                    }}
                     className="flex items-center gap-3 rounded-lg p-2.5 transition-colors group"
                     style={{ color: "#0D1B2A" }}
                     onMouseEnter={(e) => {
