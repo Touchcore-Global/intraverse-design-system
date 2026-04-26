@@ -13,6 +13,7 @@ import { SecuritySection } from "@/components/SecuritySection";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { MobileHome } from "@/components/mobile/MobileHome";
 
 const Index = () => {
   return (
@@ -21,19 +22,25 @@ const Index = () => {
       {/* Spacer for fixed nav */}
       <div className="h-16" />
 
-      <HeroSection />
-      <HomeTrustBar />
-      <ProblemStatement />
-      <Testimonials />
-      <ProductShowcase />
-      <WhoWeServeSection />
-      <ToolsSection />
-      <HowItWorks />
-      
-      <SecuritySection />
-      <FinalCTA />
-      <Footer />
-      <WhatsAppFab />
+      {/* Mobile-only redesigned homepage */}
+      <MobileHome />
+
+      {/* Desktop / tablet (≥md) homepage — unchanged */}
+      <div className="hidden md:block">
+        <HeroSection />
+        <HomeTrustBar />
+        <ProblemStatement />
+        <Testimonials />
+        <ProductShowcase />
+        <WhoWeServeSection />
+        <ToolsSection />
+        <HowItWorks />
+
+        <SecuritySection />
+        <FinalCTA />
+        <Footer />
+        <WhatsAppFab />
+      </div>
     </div>
   );
 };
