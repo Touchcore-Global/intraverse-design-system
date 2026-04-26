@@ -263,23 +263,7 @@ const CoopX = () => {
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-3xl sm:text-4xl font-bold text-primary-foreground">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-sm text-secondary-foreground/70">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* STATS — removed */}
 
       {/* TESTIMONIAL */}
       <section className="py-20 bg-background">
