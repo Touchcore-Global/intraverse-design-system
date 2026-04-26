@@ -31,7 +31,7 @@ const IndexV2 = () => {
       <RevealSection variant="fade-up"><ToolsSectionV2 /></RevealSection>
       
       <RevealSection variant="fade-up"><HowItWorksV2 /></RevealSection>
-      <RevealSection variant="fade-up"><SecuritySectionV2 /></RevealSection>
+      {/* <RevealSection variant="fade-up"><SecuritySectionV2 /></RevealSection> — hidden per request */}
       <RevealSection variant="scale"><FinalCTAV2 /></RevealSection>
 
       <Footer />
