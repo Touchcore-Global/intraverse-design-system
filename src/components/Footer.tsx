@@ -105,7 +105,7 @@ export const Footer = () => {
                 key={badge.name}
                 src={badge.logo}
                 alt={`${badge.name} logo`}
-                className="h-[17px] md:h-[22px] w-auto object-contain grayscale brightness-200 opacity-60"
+                className="h-[17px] md:h-[22px] w-auto object-contain"
                 loading="lazy"
               />
             ))}
