@@ -61,6 +61,7 @@ import News from "./pages/News.tsx";
 import NewsArticle from "./pages/NewsArticle.tsx";
 import AdminNewsList from "./pages/admin/AdminNewsList.tsx";
 import AdminNewsEditor from "./pages/admin/AdminNewsEditor.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
 
@@ -70,6 +71,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<IndexV2 />} />
           <Route path="/v1" element={<Index />} />
