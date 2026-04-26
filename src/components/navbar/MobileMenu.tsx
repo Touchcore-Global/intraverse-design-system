@@ -3,6 +3,7 @@ import { ChevronDown, Star } from "lucide-react";
 import type { NavSection } from "./navData";
 import { productSections, solutionSections, resourceSections, companySections } from "./navData";
 import { NavbarCTAs } from "./NavbarCTAs";
+import { trackEvent, CTA_EVENTS } from "@/lib/analytics";
 
 interface MobileMenuProps {
   onClose: () => void;
