@@ -456,7 +456,7 @@ export default function Docs() {
               <Button size="xl" className="bg-background text-foreground hover:bg-background/90 cta-responsive min-h-[48px] rounded-none font-semibold" asChild>
                 <a href="/contact">Get Sandbox Access</a>
               </Button>
-              <Button size="xl" variant="outline" className="border-background/30 text-background hover:bg-background/10 cta-responsive min-h-[48px] rounded-none" asChild>
+              <Button size="xl" variant="outline" className="bg-background text-foreground border-background hover:bg-foreground hover:text-background cta-responsive min-h-[48px] rounded-none font-semibold" asChild>
                 <a href="/docs/quickstart">Read the Quick Start</a>
               </Button>
             </div>
