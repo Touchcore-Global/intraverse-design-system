@@ -191,7 +191,7 @@ export const ProductShowcaseV2 = () => {
             Every tool you need to sell travel easily
           </h2>
 
-          <div className="flex gap-2 shrink-0 ml-8">
+          <div className="flex gap-2 shrink-0 md:ml-8">
             <button
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
