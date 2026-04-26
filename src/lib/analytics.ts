@@ -40,4 +40,5 @@ export function trackEvent(eventName: string, params: EventParams = {}) {
 export const CTA_EVENTS = {
   demoClick: "cta_book_demo_click",
   whatsappClick: "cta_whatsapp_click",
+  navProductClick: "nav_product_cta_click",
 } as const;

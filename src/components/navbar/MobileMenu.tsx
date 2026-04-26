@@ -3,6 +3,7 @@ import { ChevronDown, Star } from "lucide-react";
 import type { NavSection } from "./navData";
 import { productSections, solutionSections, resourceSections, companySections } from "./navData";
 import { NavbarCTAs } from "./NavbarCTAs";
+import { trackEvent, CTA_EVENTS } from "@/lib/analytics";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -40,8 +41,21 @@ function MobileAccordion({ title, sections, footerLink, onClose }: MobileAccordi
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  data-cta={item.trackingId}
+                  data-nav-section={section.header}
                   className="flex items-center gap-2 py-2 text-muted-foreground hover:text-foreground"
-                  onClick={onClose}
+                  onClick={() => {
+                    if (item.trackingId) {
+                      trackEvent(CTA_EVENTS.navProductClick, {
+                        cta: item.trackingId,
+                        label: item.label,
+                        href: item.href,
+                        location: "navbar_mobile_products",
+                        section: section.header,
+                      });
+                    }
+                    onClose();
+                  }}
                 >
                   {item.label}
                   {item.popular && (
