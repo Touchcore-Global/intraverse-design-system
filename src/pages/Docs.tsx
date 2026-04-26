@@ -326,7 +326,7 @@ export default function Docs() {
                 The response returns aggregated results from multiple sources — GDS, NDC, and consolidator inventory — normalised into a clean, consistent JSON structure.
               </p>
               <div className="mt-6 text-center">
-                <Button size="xl" variant="outline" className="border-white/30 text-white hover:bg-white/10 cta-responsive min-h-[48px] rounded-none" asChild>
+                <Button size="xl" variant="outline" className="bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground cta-responsive min-h-[48px] rounded-none" asChild>
                   <a href="/docs/reference">View Full Documentation <ArrowRight className="w-4 h-4 ml-1" /></a>
                 </Button>
               </div>
