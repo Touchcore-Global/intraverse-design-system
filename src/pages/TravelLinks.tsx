@@ -387,7 +387,7 @@ const TravelLinks = () => {
                 </Button>
               </a>
               <a href="/contact">
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] border-white text-white hover:bg-white/10">
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground">
                   Talk to Sales
                 </Button>
               </a>
