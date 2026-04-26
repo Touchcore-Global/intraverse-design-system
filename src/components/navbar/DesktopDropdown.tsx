@@ -109,6 +109,7 @@ export function DesktopDropdown({ sections, footerLink, columns = 1, align = "ce
           </a>
         </div>
       )}
+      </div>
     </div>
   );
 }
