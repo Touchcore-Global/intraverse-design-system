@@ -99,7 +99,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "scroll-left": "scroll-left 20s linear infinite",
+        "scroll-left": "scroll-left 60s linear infinite",
         "gradient-shift": "gradient-shift 8s ease infinite",
         shimmer: "shimmer 6s ease-in-out infinite",
       },
