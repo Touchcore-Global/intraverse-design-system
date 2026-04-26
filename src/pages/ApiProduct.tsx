@@ -464,7 +464,7 @@ export default function ApiProduct() {
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90">
                   Talk to Our Partnerships Team
                 </Button>
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-white/30 text-white hover:bg-white/10">
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground">
                   Read the Partnership Guide
                 </Button>
               </div>
