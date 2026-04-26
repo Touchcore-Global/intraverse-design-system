@@ -85,6 +85,7 @@ export const Footer = () => {
                     ) : (
                       <Link
                         to={link.href}
+                        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                         className="text-[hsl(216,20%,66%)] hover:text-white transition-colors text-sm"
                       >
                         {link.label}
