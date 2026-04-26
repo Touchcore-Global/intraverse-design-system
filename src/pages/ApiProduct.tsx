@@ -311,7 +311,7 @@ export default function ApiProduct() {
                 This returns aggregated results from Amadeus, Sabre, Travelport, NDC channels, and connected consolidators — all normalised into a single, consistent response format. No XML. No legacy protocols. Just clean JSON.
               </p>
               <div className="text-center mt-8">
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-white/30 text-white hover:bg-white/10">
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground">
                   View Full Documentation →
                 </Button>
               </div>
