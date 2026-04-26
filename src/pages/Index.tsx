@@ -10,7 +10,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { StatsSection } from "@/components/StatsSection";
 import { Testimonials } from "@/components/Testimonials";
 import { SecuritySection } from "@/components/SecuritySection";
-import { FinalCTA } from "@/components/FinalCTA";
+
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { MobileHome } from "@/components/mobile/MobileHome";
@@ -36,8 +36,6 @@ const Index = () => {
         <ToolsSection />
         <HowItWorks />
 
-        {/* <SecuritySection /> — hidden per request */}
-        <FinalCTA />
         <Footer />
         <WhatsAppFab />
       </div>

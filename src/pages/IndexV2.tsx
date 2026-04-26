@@ -9,7 +9,7 @@ import { ToolsSectionV2 } from "@/components/v2/ToolsSectionV2";
 import { HowItWorksV2 } from "@/components/v2/HowItWorksV2";
 import { Testimonials } from "@/components/Testimonials";
 import { SecuritySectionV2 } from "@/components/v2/SecuritySectionV2";
-import { FinalCTAV2 } from "@/components/v2/FinalCTAV2";
+
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { RevealSection } from "@/components/RevealSection";
@@ -32,8 +32,6 @@ const IndexV2 = () => {
       
       <RevealSection variant="fade-up"><HowItWorksV2 /></RevealSection>
       {/* <RevealSection variant="fade-up"><SecuritySectionV2 /></RevealSection> — hidden per request */}
-      <RevealSection variant="scale"><FinalCTAV2 /></RevealSection>
-
       <Footer />
       <WhatsAppFab />
     </div>
