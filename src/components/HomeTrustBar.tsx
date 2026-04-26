@@ -105,10 +105,10 @@ export const HomeTrustBar = () => {
     <section ref={sectionRef} className="py-8 md:py-16 bg-white">
       <div className="container mx-auto px-4 md:pl-[100px]">
         <h2
-          className="text-center md:text-left mb-6"
+          className="text-center md:text-left mb-4 md:mb-6"
           style={{
             color: "rgb(23, 19, 33)",
-            fontSize: "6rem",
+            fontSize: "clamp(2.25rem, 10vw, 6rem)",
             fontWeight: 660,
             letterSpacing: "-0.03em",
             lineHeight: 1.0416666667,
@@ -120,10 +120,10 @@ export const HomeTrustBar = () => {
           className="text-center md:text-left font-normal mb-6 max-w-2xl mx-auto md:mx-0"
           style={{
             color: "#74717a",
-            fontSize: "2rem",
+            fontSize: "clamp(1.125rem, 3.5vw, 2rem)",
             fontWeight: 400,
             letterSpacing: "-0.02em",
-            lineHeight: 1.125,
+            lineHeight: 1.2,
           }}
         >
           Trusted by 200+ travel agents selling flights, hotels, tours &amp; packages
