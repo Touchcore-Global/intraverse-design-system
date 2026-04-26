@@ -370,7 +370,7 @@ export default function Tools() {
                 <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-background text-foreground border-background hover:bg-background/90 rounded-none font-semibold">
                   Start Free
                 </Button>
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-background/30 text-background hover:bg-background/10 font-semibold" asChild>
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none bg-background text-foreground border-background hover:bg-foreground hover:text-background font-semibold" asChild>
                   <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
                 </Button>
               </div>

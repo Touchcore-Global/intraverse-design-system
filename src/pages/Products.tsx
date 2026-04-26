@@ -421,7 +421,7 @@ export default function Products() {
               <Button size="xl" className="bg-background text-foreground hover:bg-background/90 rounded-none font-semibold" asChild>
                 <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
-              <Button variant="outline" size="xl" className="rounded-none border-background/30 text-background hover:bg-background/10" asChild>
+              <Button variant="outline" size="xl" className="rounded-none bg-background text-foreground border-background hover:bg-foreground hover:text-background font-semibold" asChild>
                 <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Start Free</a>
               </Button>
             </div>
