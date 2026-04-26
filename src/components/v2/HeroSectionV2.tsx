@@ -171,11 +171,11 @@ export const HeroSectionV2 = () => {
             Trusted by leading travel brands
           </p>
           <div className="relative">
-            <div className="flex animate-scroll-left w-max gap-20 lg:gap-28 items-center hover:[animation-play-state:paused]">
+            <div className="flex animate-scroll-left w-max gap-8 sm:gap-12 lg:gap-16 items-center hover:[animation-play-state:paused]">
               {[...partners, ...partners].map((partner, i) => (
                 <div
                   key={`${partner.name}-${i}`}
-                  className="flex-shrink-0 flex items-center justify-center h-24 lg:h-28 px-2"
+                  className="flex-shrink-0 flex items-center justify-center h-20 sm:h-24 lg:h-28 w-36 sm:w-44 lg:w-52 px-3"
                 >
                   <img
                     src={partner.logo}
@@ -183,7 +183,7 @@ export const HeroSectionV2 = () => {
                     loading="lazy"
                     width={512}
                     height={512}
-                    className="h-full w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 [filter:brightness(0)_saturate(100%)_invert(9%)_sepia(29%)_saturate(2476%)_hue-rotate(190deg)_brightness(94%)_contrast(94%)]"
+                    className="max-h-full max-w-full w-auto h-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 [filter:brightness(0)_saturate(100%)_invert(9%)_sepia(29%)_saturate(2476%)_hue-rotate(190deg)_brightness(94%)_contrast(94%)]"
                   />
                 </div>
               ))}
