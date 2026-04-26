@@ -185,13 +185,13 @@ export const ProductShowcaseV2 = () => {
         animation: "gradient-shift 14s ease infinite",
       }}
     >
-      <div className="container mx-auto px-4" style={{ paddingLeft: "100px" }}>
-        <div className="flex items-end justify-between mb-12">
+      <div className="container mx-auto px-4 md:pl-[100px]">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 md:mb-12">
           <h2 className="text-left max-w-4xl text-black">
             Every tool you need to sell travel easily
           </h2>
 
-          <div className="flex gap-2 shrink-0 ml-8">
+          <div className="flex gap-2 shrink-0 md:ml-8">
             <button
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
