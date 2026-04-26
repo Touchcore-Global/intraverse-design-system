@@ -9,15 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        // Default: black text by default, invert to white on hover (dark bg)
+        default: "bg-primary text-foreground hover:bg-primary hover:text-white",
+        destructive: "bg-destructive text-foreground hover:bg-destructive hover:text-white",
+        outline: "border border-input bg-background text-foreground hover:bg-accent hover:text-foreground",
+        secondary: "bg-secondary text-foreground hover:bg-secondary/80 hover:text-foreground",
+        ghost: "text-foreground hover:bg-accent hover:text-foreground",
+        link: "text-foreground underline-offset-4 hover:underline",
         // Intraverse custom variants
-        hero: "bg-foreground text-background hover:bg-foreground/90 rounded-none font-semibold shadow-lg hover:shadow-xl transition-all",
-        whatsapp: "bg-background text-[hsl(var(--whatsapp))] border-2 border-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))] hover:text-white rounded-none font-semibold transition-all",
+        // Hero: black text on light bg, invert to white on hover (dark bg)
+        hero: "bg-white text-foreground hover:bg-foreground hover:text-white rounded-none font-semibold shadow-lg hover:shadow-xl transition-all",
+        whatsapp: "bg-background text-foreground border-2 border-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))] hover:text-white rounded-none font-semibold transition-all",
       },
       size: {
         default: "h-10 px-4 py-2",
