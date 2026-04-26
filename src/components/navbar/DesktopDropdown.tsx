@@ -6,19 +6,30 @@ interface DesktopDropdownProps {
   sections: NavSection[];
   footerLink?: { label: string; href: string };
   columns?: 1 | 2;
+  /** Horizontal alignment relative to the trigger button. Prevents off-screen clipping for edge items. */
+  align?: "left" | "center" | "right";
 }
 
-export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDropdownProps) {
+export function DesktopDropdown({ sections, footerLink, columns = 1, align = "center" }: DesktopDropdownProps) {
   const useGrid = columns === 2 || sections.reduce((acc, s) => acc + s.items.length, 0) > 5;
+
+  const alignmentClass =
+    align === "left"
+      ? "left-0"
+      : align === "right"
+        ? "right-0"
+        : "left-1/2 -translate-x-1/2";
 
   return (
     <div
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-popover border border-border rounded-xl p-6 animate-fade-in"
-      style={{
-        boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
-        width: useGrid ? "620px" : "380px",
-      }}
+      className={`absolute top-full ${alignmentClass} pt-2 animate-fade-in`}
+      style={{ width: useGrid ? "620px" : "380px" }}
     >
+      {/* Invisible hover bridge so cursor can travel from trigger to panel without closing */}
+      <div
+        className="bg-popover border border-border rounded-xl p-6"
+        style={{ boxShadow: "0 8px 24px rgba(0,0,0,0.08)" }}
+      >
       <div className={useGrid ? "grid grid-cols-2 gap-x-6" : ""}>
         {sections.map((section, sIdx) => (
           <div key={section.header} className={sIdx > 0 && !useGrid ? "mt-4 pt-4 border-t border-border" : sIdx > 0 && useGrid ? "mt-2" : ""}>
@@ -98,6 +109,7 @@ export function DesktopDropdown({ sections, footerLink, columns = 1 }: DesktopDr
           </a>
         </div>
       )}
+      </div>
     </div>
   );
 }
