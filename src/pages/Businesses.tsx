@@ -230,7 +230,7 @@ const Businesses = () => {
               <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]" asChild>
                 <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo for Your Business</a>
               </Button>
-              <Button size="xl" variant="outline" className="border-white text-white hover:bg-white/10 cta-responsive min-h-[48px]" asChild>
+              <Button size="xl" variant="outline" className="bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground cta-responsive min-h-[48px]" asChild>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="h-5 w-5" />
                   Chat on WhatsApp
