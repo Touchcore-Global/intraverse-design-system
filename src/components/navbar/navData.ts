@@ -19,6 +19,8 @@ export interface NavItem {
   popular?: boolean;
   comingSoon?: boolean;
   isNew?: boolean;
+  /** Stable analytics id. When set, clicks fire `nav_product_cta_click`. */
+  trackingId?: string;
 }
 
 export interface NavSection {
