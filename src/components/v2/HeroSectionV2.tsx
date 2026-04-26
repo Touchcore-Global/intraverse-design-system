@@ -64,12 +64,12 @@ export const HeroSectionV2 = () => {
       className="relative overflow-hidden bg-white"
     >
 
-      <div className="container relative mx-auto px-4 pt-[100px] text-center">
+      <div className="container relative mx-auto px-4 pt-16 md:pt-[100px] text-center">
 
         <h1
           className="max-w-5xl mx-auto text-black font-ubuntu"
           style={{
-            fontSize: "6rem",
+            fontSize: "clamp(2.25rem, 10vw, 6rem)",
             fontWeight: 660,
             letterSpacing: "-0.03em",
             lineHeight: 1.0416666667,
@@ -81,13 +81,13 @@ export const HeroSectionV2 = () => {
         </h1>
 
         <p
-          className="mt-6 lg:mt-8 font-normal max-w-3xl mx-auto"
+          className="mt-6 lg:mt-8 font-normal max-w-3xl mx-auto px-2"
           style={{
             color: "#74717a",
-            fontSize: "2rem",
+            fontSize: "clamp(1rem, 3.5vw, 2rem)",
             fontWeight: 400,
             letterSpacing: "-0.02em",
-            lineHeight: 1.125,
+            lineHeight: 1.25,
           }}
         >
           Any business can sell travel with Intraverse. Search, book, and manage flights, stays, tours and extras.
