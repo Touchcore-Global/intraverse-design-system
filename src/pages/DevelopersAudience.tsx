@@ -315,7 +315,7 @@ const Developers = () => {
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold" asChild>
                 <a href="/products/api">View API Docs</a>
               </Button>
-              <Button size="xl" variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white cta-responsive min-h-[48px] rounded-none" asChild>
+              <Button size="xl" variant="outline" className="bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground cta-responsive min-h-[48px] rounded-none" asChild>
                 <a href="/contact">Get Sandbox Access</a>
               </Button>
             </div>
