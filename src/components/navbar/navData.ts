@@ -32,10 +32,10 @@ export const productSections: NavSection[] = [
   {
     header: "SELLING & BOOKING",
     items: [
-      { label: "Agent Selling Platform", href: "/products/agent-platform", icon: Plane, description: "Search, book and manage all travel from one dashboard" },
-      { label: "Travx (White-Label Websites)", href: "/products/travx", icon: Globe, description: "Your branded, booking-enabled travel website" },
-      { label: "CoopX (Corporate Travel)", href: "/products/coopx", icon: Building2, description: "Corporate travel management with policy controls" },
-      { label: "Independents Programme", href: "/products/independents", icon: Rocket, description: "Start earning in travel — no agency required" },
+      { label: "Agent Selling Platform", href: "/products/agent-platform", icon: Plane, description: "Search, book and manage all travel from one dashboard", trackingId: "agent_platform" },
+      { label: "Travx (White-Label Websites)", href: "/products/travx", icon: Globe, description: "Your branded, booking-enabled travel website", trackingId: "travx" },
+      { label: "CoopX (Corporate Travel)", href: "/products/coopx", icon: Building2, description: "Corporate travel management with policy controls", trackingId: "coopx" },
+      { label: "Independents Programme", href: "/products/independents", icon: Rocket, description: "Start earning in travel — no agency required", trackingId: "independents" },
       { label: "Travel Links", href: "/products/travel-links", icon: Link2, description: "Sell travel with a shareable link — no website needed", isNew: true },
     ],
   },
