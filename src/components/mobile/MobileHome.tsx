@@ -348,46 +348,6 @@ export const MobileHome = () => {
         </div>
       </section>
 
-      {/* ================= FINAL CTA ================= */}
-      <section className="px-5 pt-16 pb-20 bg-primary text-primary-foreground text-center">
-        <h2
-          className="font-[660] mb-4 text-primary-foreground"
-          style={{ fontSize: "clamp(2.25rem, 10vw, 3.25rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
-        >
-          Start selling travel faster today.
-        </h2>
-        <p className="text-primary-foreground/80 text-[15px] leading-snug max-w-md mx-auto mb-8">
-          Book a 15-minute demo. See how Intraverse helps you sell more flights, hotels, tours and packages — all from one platform.
-        </p>
-
-        <div className="flex flex-col gap-3">
-          <a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cta="book_demo"
-            data-page="mobile_home"
-            onClick={() => onDemoClick("final_cta")}
-            className="inline-flex items-center justify-center h-14 px-6 rounded-full bg-primary-foreground text-primary font-semibold text-[15px] active:scale-[0.98] transition-transform"
-          >
-            Book a free demo
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </a>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cta="whatsapp"
-            data-page="mobile_home"
-            onClick={() => onWaClick("final_cta")}
-            className="inline-flex items-center justify-center h-14 px-6 rounded-full bg-white/10 text-primary-foreground font-semibold text-[15px] border border-primary-foreground/20 active:scale-[0.98] transition-transform"
-          >
-            <MessageCircle className="mr-2 h-4 w-4" />
-            Chat on WhatsApp
-          </a>
-        </div>
-      </section>
-
       <Footer />
 
       {/* Spacer so sticky bar never overlaps footer content */}
