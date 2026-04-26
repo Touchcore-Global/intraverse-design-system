@@ -211,7 +211,7 @@ export default function ApiProduct() {
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90 shadow-lg" asChild>
                   <a href="/docs">Read the Docs</a>
                 </Button>
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-white/30 text-black hover:bg-white/10 hover:text-black" asChild>
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground" asChild>
                   <a href="/contact">Get Sandbox Access</a>
                 </Button>
               </div>
