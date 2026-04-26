@@ -2,28 +2,44 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { DEMO_URL } from "@/lib/constants";
-import tzopalLogo from "@/assets/partners/tzopal.png";
 import whogoflyLogo from "@/assets/partners/whogofly.png";
-import wrightGatewayLogo from "@/assets/partners/wright-gateway.png";
-import lutfuTravelsLogo from "@/assets/partners/lutfu-travels.png";
-import coastlineLogo from "@/assets/partners/coastline.png";
+import tzopalLogo from "@/assets/partners/tzopal.png";
 import nesoLogo from "@/assets/partners/neso.png";
-import leisureAffairsLogo from "@/assets/partners/leisure-affairs.png";
-import terminalSevenLogo from "@/assets/partners/terminal-seven.png";
+import lutfuTravelsLogo from "@/assets/partners/lutfu-travels.png";
 import travioLogo from "@/assets/partners/travio.png";
-import blueParadiseLogo from "@/assets/partners/blue-paradise.png";
+import wrightGatewayLogo from "@/assets/partners/wright-gateway.png";
+import coastlineLogo from "@/assets/partners/coastline.png";
+import skyrythmLogo from "@/assets/partners/skyrythm.png";
+import travolaLogo from "@/assets/partners/travola.png";
+import bereethLogo from "@/assets/partners/bereeth.png";
+import iygramLogo from "@/assets/partners/iygram.png";
+import starcraftLogo from "@/assets/partners/starcraft.png";
+import globalIkeematLogo from "@/assets/partners/global-ikeemat.png";
+import paracleteLogo from "@/assets/partners/paraclete.png";
+import hermexLogo from "@/assets/partners/hermex.png";
+import tgmLogo from "@/assets/partners/tgm.png";
+import crystalgritLogo from "@/assets/partners/crystalgrit.png";
+import yankeeConsultLogo from "@/assets/partners/yankee-consult.png";
 
 const partners = [
-  { name: "Tzopal", logo: tzopalLogo },
   { name: "Whogofly", logo: whogoflyLogo },
-  { name: "Wright Gateway", logo: wrightGatewayLogo },
-  { name: "Lutfu Travels", logo: lutfuTravelsLogo },
-  { name: "Coastline", logo: coastlineLogo },
+  { name: "Tzopal", logo: tzopalLogo },
   { name: "Neso", logo: nesoLogo },
-  { name: "Leisure Affairs", logo: leisureAffairsLogo },
-  { name: "Terminal Seven", logo: terminalSevenLogo },
+  { name: "Lutfu", logo: lutfuTravelsLogo },
   { name: "Travio", logo: travioLogo },
-  { name: "Blue Paradise", logo: blueParadiseLogo },
+  { name: "Wright Gateway", logo: wrightGatewayLogo },
+  { name: "Coastline", logo: coastlineLogo },
+  { name: "SkyRythm", logo: skyrythmLogo },
+  { name: "Travola", logo: travolaLogo },
+  { name: "Bereeth", logo: bereethLogo },
+  { name: "Iygram", logo: iygramLogo },
+  { name: "Starcraft", logo: starcraftLogo },
+  { name: "Global Ikeemat", logo: globalIkeematLogo },
+  { name: "Paraclete", logo: paracleteLogo },
+  { name: "Hermex", logo: hermexLogo },
+  { name: "TGM", logo: tgmLogo },
+  { name: "CrystalGrit", logo: crystalgritLogo },
+  { name: "Yankee Consult", logo: yankeeConsultLogo },
 ];
 
 export const HeroSectionV2 = () => {
