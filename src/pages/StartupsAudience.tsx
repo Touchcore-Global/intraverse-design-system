@@ -193,7 +193,7 @@ const Startups = () => {
         </div>
       </section>
 
-      {/* Use Cases */}
+      {/* Use Cases — hidden
       <section className="py-20 md:py-28 bg-[hsl(216,60%,97%)]">
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
@@ -220,6 +220,7 @@ const Startups = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Partnership Process */}
       <section className="py-20 md:py-28 bg-background">
