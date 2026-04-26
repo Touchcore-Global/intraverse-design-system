@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import type { NavSection } from "./navData";
+import { trackEvent, CTA_EVENTS } from "@/lib/analytics";
 
 interface DesktopDropdownProps {
   sections: NavSection[];
