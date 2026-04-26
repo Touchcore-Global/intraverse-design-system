@@ -91,6 +91,7 @@ export function NavbarCTAs({
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-wa-source="mobile-menu"
                 onClick={onClick}
               >
                 <MessageCircle className="h-5 w-5" />
