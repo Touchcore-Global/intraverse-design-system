@@ -36,7 +36,7 @@ const Index = () => {
         <ToolsSection />
         <HowItWorks />
 
-        <SecuritySection />
+        {/* <SecuritySection /> — hidden per request */}
         <FinalCTA />
         <Footer />
         <WhatsAppFab />
