@@ -300,7 +300,6 @@ export function MegaMenuV3({
               </p>
               <div className="flex flex-col">
                 {section.items.map((item) => {
-                  const Icon = item.icon;
                   return (
                     <a
                       key={item.label}
@@ -308,11 +307,8 @@ export function MegaMenuV3({
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       onClick={() => track(item, section.header)}
-                      className="group flex items-start gap-3 rounded-lg p-2 -mx-2 transition-colors hover:bg-muted/60"
+                      className="group flex items-start rounded-lg p-2 -mx-2 transition-colors hover:bg-muted/60"
                     >
-                      <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary/15 transition-colors">
-                        <Icon className="w-4 h-4 text-primary" />
-                      </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-1.5 flex-wrap">
                           <p className="text-[13px] font-semibold leading-tight text-foreground group-hover:text-primary transition-colors">
