@@ -10,6 +10,12 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import usecaseFlights from "@/assets/nav/usecase-flights.jpg";
+import usecaseEmbed from "@/assets/nav/usecase-embed.jpg";
+import usecaseCorporate from "@/assets/nav/usecase-corporate.jpg";
+import usecaseIndependent from "@/assets/nav/usecase-independent.jpg";
+import usecaseBnpl from "@/assets/nav/usecase-bnpl.jpg";
+import usecaseAll from "@/assets/nav/usecase-all.jpg";
 
 export interface NavItem {
   label: string;
