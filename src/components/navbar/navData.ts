@@ -16,6 +16,8 @@ import usecaseCorporate from "@/assets/nav/usecase-corporate.jpg";
 import usecaseIndependent from "@/assets/nav/usecase-independent.jpg";
 import usecaseBnpl from "@/assets/nav/usecase-bnpl.jpg";
 import usecaseAll from "@/assets/nav/usecase-all.jpg";
+import sectionSelling from "@/assets/nav/section-selling.jpg";
+import sectionPayments from "@/assets/nav/section-payments.jpg";
 
 export interface NavItem {
   label: string;
@@ -34,11 +36,14 @@ export interface NavItem {
 export interface NavSection {
   header: string;
   items: NavItem[];
+  /** Optional banner image rendered above the section's items in the default mega menu. */
+  image?: string;
 }
 
 export const productSections: NavSection[] = [
   {
     header: "SELLING & BOOKING",
+    image: sectionSelling,
     items: [
       { label: "Agent Selling Platform", href: "/products/agent-platform", icon: Plane, description: "Search, book and manage all travel from one dashboard", trackingId: "agent_platform" },
       { label: "Travx (White-Label Websites)", href: "/products/travx", icon: Globe, description: "Your branded, booking-enabled travel website", trackingId: "travx" },
@@ -49,6 +54,7 @@ export const productSections: NavSection[] = [
   },
   {
     header: "PAYMENTS & INFRASTRUCTURE",
+    image: sectionPayments,
     items: [
       { label: "Odiopay (BNPL)", href: "/products/odiopay", icon: Wallet, description: "Buy Now, Pay Later for travel bookings" },
       { label: "Intraverse API", href: "/products/api", icon: Plug, description: "Embed travel booking into any platform" },

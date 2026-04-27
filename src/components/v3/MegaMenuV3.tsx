@@ -282,6 +282,16 @@ export function MegaMenuV3({
         <div className="col-span-7 xl:col-span-8 p-5 lg:p-6 grid grid-cols-2 gap-x-5 lg:gap-x-6 gap-y-4">
           {sections.map((section) => (
             <div key={section.header} className="min-w-0">
+              {section.image && (
+                <div className="aspect-[16/9] w-full overflow-hidden rounded-lg mb-3 bg-muted">
+                  <img
+                    src={section.image}
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
               <p
                 className="text-[11px] uppercase tracking-[0.08em] font-bold mb-2"
                 style={{ color: "#94A3B8" }}
