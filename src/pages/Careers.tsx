@@ -212,16 +212,20 @@ function OpenRolesSection() {
 
             <div className="text-center mt-12">
               <p className="text-muted-foreground mb-4">Don't see a fit? We'd still love to hear from you.</p>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-foreground text-foreground hover:bg-accent">
-                  <Briefcase className="h-4 w-4 mr-2" />
-                  Send a General Application
-                </Button>
-              </Link>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-foreground text-foreground hover:bg-accent"
+                onClick={() => setApplicationOpen(true)}
+              >
+                <Briefcase className="h-4 w-4 mr-2" />
+                Send a General Application
+              </Button>
             </div>
           </>
         )}
       </div>
+      <GeneralApplicationDialog open={applicationOpen} onOpenChange={setApplicationOpen} />
     </section>
   );
 }
