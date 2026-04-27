@@ -74,7 +74,7 @@ function HeroSection() {
             </Button>
           </a>
           <a href="#culture">
-            <Button variant="outline" size="xl" className="border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10">
+            <Button variant="outline" size="xl" className="border-secondary-foreground/30 text-black hover:bg-secondary-foreground/10">
               Learn About Our Culture
             </Button>
           </a>
