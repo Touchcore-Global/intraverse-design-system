@@ -84,6 +84,14 @@ export function MegaMenuV3({
                         <p className="text-[13px] text-muted-foreground mt-2 leading-snug">
                           Discover the most common ways teams put Intraverse to work — from selling flights online to embedding travel in your own product.
                         </p>
+                        {footerLink && (
+                          <a
+                            href={footerLink.href}
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all mt-3"
+                          >
+                            {footerLink.label} <ArrowRight className="w-4 h-4" />
+                          </a>
+                        )}
                       </div>
                       {featuredCases.map((item) => (
                         <a
