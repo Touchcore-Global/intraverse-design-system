@@ -129,8 +129,10 @@ export const HomeTrustBar = () => {
           Trusted by 200+ travel agents selling flights, hotels, tours &amp; packages
         </p>
         <div className="flex justify-center md:justify-start mb-10">
-          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-            Try for Free
+          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+            <a href="https://intraverse.app" target="_blank" rel="noopener noreferrer">
+              Try for Free
+            </a>
           </Button>
         </div>
 
