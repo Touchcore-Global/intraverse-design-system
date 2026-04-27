@@ -15,20 +15,20 @@ const IndexV3 = () => {
       <NavbarV3 />
       <div className="h-16" />
 
-      {/* Hero — bold AI/SaaS-style above the fold (logos strip already inside hero) */}
+      {/* Hero - bold AI/SaaS-style above the fold (logos strip already inside hero) */}
       <HeroSectionV2 />
 
-      {/* Feature grid — Jasper-style "everything in one platform" */}
+      {/* Feature grid - Jasper-style "everything in one platform" */}
       <RevealSection variant="fade-up">
         <FeatureGridV3 />
       </RevealSection>
 
-      {/* Slider — Jasper-style use-case carousel */}
+      {/* Slider - Jasper-style use-case carousel */}
       <RevealSection variant="fade-up">
         <SliderSectionV3 />
       </RevealSection>
 
-      {/* Social proof — big stats on dark band */}
+      {/* Social proof - big stats on dark band */}
       <RevealSection variant="fade-up">
         <ProofSectionV3 />
       </RevealSection>

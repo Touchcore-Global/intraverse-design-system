@@ -20,7 +20,7 @@ const toc = [
 
 const scopes: [string, string][] = [
   ["Full", "Read and write access to all endpoints permitted by your account."],
-  ["ReadOnly", "Read-only access — search, list, and inspect resources without making changes."],
+  ["ReadOnly", "Read-only access - search, list, and inspect resources without making changes."],
 ];
 
 export default function DocsAuthentication() {
@@ -38,14 +38,14 @@ export default function DocsAuthentication() {
           your API key's <InlineCode>clientId</InlineCode> and{" "}
           <InlineCode>clientSecret</InlineCode> for a short-lived bearer token,
           and include that token on every subsequent request. This is a
-          server-to-server flow — your <InlineCode>clientSecret</InlineCode>{" "}
+          server-to-server flow - your <InlineCode>clientSecret</InlineCode>{" "}
           should never be exposed to a browser or mobile client.
         </p>
       </DocsSection>
 
       <DocsSection id="credentials" title="Account & API Keys">
         <p>
-          You'll need an Intraverse account first — sign up at{" "}
+          You'll need an Intraverse account first - sign up at{" "}
           <a href="https://www.intraverse.app/register" className="text-[hsl(var(--brand-blue))] hover:underline">
             intraverse.app/register
           </a>
@@ -80,7 +80,7 @@ export default function DocsAuthentication() {
         />
         <p>
           The response returns a <InlineCode>clientId</InlineCode> and{" "}
-          <InlineCode>clientSecret</InlineCode>. Store both immediately — the
+          <InlineCode>clientSecret</InlineCode>. Store both immediately - the
           secret cannot be retrieved later.
         </p>
       </DocsSection>
@@ -119,7 +119,7 @@ export default function DocsAuthentication() {
       <DocsSection id="refresh" title="Token Refresh Strategy">
         <p>
           Tokens are valid for the duration returned in{" "}
-          <InlineCode>expiresIn</InlineCode> (seconds — typically 60 minutes).
+          <InlineCode>expiresIn</InlineCode> (seconds - typically 60 minutes).
           Cache the token in memory or a fast store (Redis, Memcached) and
           refresh proactively when fewer than 5 minutes remain. Do not request
           a new token for every API call.
@@ -156,7 +156,7 @@ export default function DocsAuthentication() {
 
       <DocsSection id="security" title="Security Best Practices">
         <ul className="list-disc list-inside space-y-2">
-          <li>Store <InlineCode>clientSecret</InlineCode> in an encrypted secrets manager — never in code or config files.</li>
+          <li>Store <InlineCode>clientSecret</InlineCode> in an encrypted secrets manager - never in code or config files.</li>
           <li>Always use HTTPS. The API rejects plain HTTP requests.</li>
           <li>Rotate API keys regularly, and immediately if compromise is suspected.</li>
           <li>Use a separate API key per environment and per integration so you can revoke a single key without disrupting others.</li>
@@ -179,7 +179,7 @@ export default function DocsAuthentication() {
               <tr className="bg-white">
                 <td className="px-4 py-2.5">Sandbox</td>
                 <td className="px-4 py-2.5"><code className="font-mono text-[13px]">{SANDBOX}</code></td>
-                <td className="px-4 py-2.5 text-muted-foreground">Available now — sign up to create a key</td>
+                <td className="px-4 py-2.5 text-muted-foreground">Available now - sign up to create a key</td>
               </tr>
               <tr className="bg-[#F9FAFB]">
                 <td className="px-4 py-2.5">Production</td>
@@ -193,9 +193,9 @@ export default function DocsAuthentication() {
 
       <DocsSection id="errors" title="Common Errors">
         <ul className="space-y-3">
-          <li><InlineCode>401 Unauthorized</InlineCode> — Token expired or missing. Re-issue a token via <InlineCode>/main/v1/apikey/token</InlineCode>.</li>
-          <li><InlineCode>403 Forbidden</InlineCode> — The API key's scope does not allow this action (e.g. a <InlineCode>ReadOnly</InlineCode> key calling a write endpoint).</li>
-          <li><InlineCode>429 Too Many Requests</InlineCode> — Rate limit hit. Cache and reuse tokens until expiry.</li>
+          <li><InlineCode>401 Unauthorized</InlineCode> - Token expired or missing. Re-issue a token via <InlineCode>/main/v1/apikey/token</InlineCode>.</li>
+          <li><InlineCode>403 Forbidden</InlineCode> - The API key's scope does not allow this action (e.g. a <InlineCode>ReadOnly</InlineCode> key calling a write endpoint).</li>
+          <li><InlineCode>429 Too Many Requests</InlineCode> - Rate limit hit. Cache and reuse tokens until expiry.</li>
         </ul>
       </DocsSection>
     </DocsLayout>

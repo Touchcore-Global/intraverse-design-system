@@ -22,12 +22,12 @@ export default function DocsHotels() {
       subtitle="Search, compare, and book hotel inventory from multiple global suppliers through a single API. Consistent response format, real-time availability, and instant confirmation."
       toc={toc}
     >
-      <Callout variant="warning" title="Coming Soon — Hotels API">
+      <Callout variant="warning" title="Coming Soon - Hotels API">
         The Hotels API is currently under development and not yet available
         in the public Postman collection. Hotel inventory is accessible
         through the Intraverse dashboard UI today, but programmatic API
         access is coming soon. The endpoints below describe the{" "}
-        <strong>planned</strong> contract — actual paths, parameters, and
+        <strong>planned</strong> contract - actual paths, parameters, and
         response shapes will be confirmed when the API launches.
       </Callout>
       <DocsSection id="overview" title="Overview">
@@ -158,10 +158,10 @@ export default function DocsHotels() {
 
       <DocsSection id="errors" title="Common Errors">
         <ul className="space-y-3">
-          <li><InlineCode>NO_AVAILABILITY</InlineCode> — No rooms available for the requested dates and guest config.</li>
-          <li><InlineCode>RATE_EXPIRED</InlineCode> — Rate is no longer bookable. Re-fetch rooms.</li>
-          <li><InlineCode>GUEST_DATA_INVALID</InlineCode> — Guest details failed validation.</li>
-          <li><InlineCode>CANCELLATION_NOT_ALLOWED</InlineCode> — Cancellation window has passed or rate is non-refundable.</li>
+          <li><InlineCode>NO_AVAILABILITY</InlineCode> - No rooms available for the requested dates and guest config.</li>
+          <li><InlineCode>RATE_EXPIRED</InlineCode> - Rate is no longer bookable. Re-fetch rooms.</li>
+          <li><InlineCode>GUEST_DATA_INVALID</InlineCode> - Guest details failed validation.</li>
+          <li><InlineCode>CANCELLATION_NOT_ALLOWED</InlineCode> - Cancellation window has passed or rate is non-refundable.</li>
         </ul>
       </DocsSection>
     </DocsLayout>

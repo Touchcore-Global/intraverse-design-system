@@ -20,7 +20,7 @@ const IndexV2 = () => {
       <Navbar />
       <div className="h-16" />
 
-      {/* Hero stays static — above the fold, no entry transition needed */}
+      {/* Hero stays static - above the fold, no entry transition needed */}
       <HeroSectionV2 />
 
       <RevealSection variant="fade"><HomeTrustBar /></RevealSection>
@@ -31,7 +31,7 @@ const IndexV2 = () => {
       <RevealSection variant="fade-up"><ToolsSectionV2 /></RevealSection>
       
       <RevealSection variant="fade-up"><HowItWorksV2 /></RevealSection>
-      {/* <RevealSection variant="fade-up"><SecuritySectionV2 /></RevealSection> — hidden per request */}
+      {/* <RevealSection variant="fade-up"><SecuritySectionV2 /></RevealSection> - hidden per request */}
       <Footer />
       <WhatsAppFab />
     </div>

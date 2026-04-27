@@ -26,7 +26,7 @@ export default function DocsPayments() {
     <DocsLayout
       slug="payments"
       title="Process Payments and Settle Travel"
-      subtitle="Wallet management, ticket payment, payouts, saved cards, and virtual accounts — built for the realities of African payment rails."
+      subtitle="Wallet management, ticket payment, payouts, saved cards, and virtual accounts - built for the realities of African payment rails."
       toc={toc}
     >
       <DocsSection id="overview" title="Overview">
@@ -102,7 +102,7 @@ export default function DocsPayments() {
         />
 
         <EndpointHeading method="POST" path="/payment/v2/transaction/agentTicket" id="ep-pay-ticket-v2" />
-        <p>v2 of the ticket payment flow — recommended for new integrations.</p>
+        <p>v2 of the ticket payment flow - recommended for new integrations.</p>
         <CodeBlock
           label="JSON"
           code={`{

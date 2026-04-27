@@ -161,8 +161,8 @@ const sdks = [
 /* ---------- additional resources ---------- */
 const resources = [
   { emoji: "📋", title: "OpenAPI Specification", desc: "Download the full OpenAPI 3.0 spec (YAML or JSON) for code generation, client validation, and internal tooling. Generated from the live Postman collection.", href: "/openapi.yaml" },
-  { emoji: "🧪", title: "Sandbox Environment", desc: "A full-featured sandbox that mirrors production — real endpoints, realistic responses, and test booking flows. No real tickets issued, no real money moved.", href: "#" },
-  { emoji: "📝", title: "Changelog", desc: "Every API change, deprecation, and new feature — documented in one place. Subscribe via webhook to get notified of changes that affect your integration.", href: "#" },
+  { emoji: "🧪", title: "Sandbox Environment", desc: "A full-featured sandbox that mirrors production - real endpoints, realistic responses, and test booking flows. No real tickets issued, no real money moved.", href: "#" },
+  { emoji: "📝", title: "Changelog", desc: "Every API change, deprecation, and new feature - documented in one place. Subscribe via webhook to get notified of changes that affect your integration.", href: "#" },
   { emoji: "🚨", title: "Error Reference", desc: "Complete list of error codes, what they mean, and how to handle them. Includes retry guidance and common troubleshooting steps.", href: "#" },
   { emoji: "📊", title: "Rate Limits", desc: "Current rate limits by endpoint tier, how to check remaining quota via headers, and how to request higher limits for production workloads.", href: "#" },
   { emoji: "🔄", title: "Versioning & Deprecation", desc: "How we version the API, our deprecation policy (minimum 6 months notice), and how to migrate between versions safely.", href: "#" },
@@ -199,7 +199,7 @@ export default function Docs() {
       el.setAttribute("content", content);
     };
     meta("description", "Comprehensive API documentation for developers building on Intraverse. REST API, OAuth 2.0, free sandbox, SDKs for Node, Python, and PHP. Start building in 5 minutes.");
-    meta("og:title", "Intraverse API Documentation — Build Travel Into Your Product");
+    meta("og:title", "Intraverse API Documentation - Build Travel Into Your Product");
     meta("og:description", "Aggregated travel inventory through one REST API. Free sandbox, modern docs, official SDKs, and dedicated developer support. Get started in minutes.");
   }, []);
 
@@ -229,13 +229,13 @@ export default function Docs() {
           </div>
         </section>
 
-        {/* ===== SECTION 1 — QUICK START ===== */}
+        {/* ===== SECTION 1 - QUICK START ===== */}
         <section className="py-20 md:py-24 bg-background">
           <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center">Start Building in 5 Minutes</h2>
               <p className="mt-4 text-muted-foreground text-center max-w-2xl mx-auto">
-                Three steps. No sales calls. No waiting for approval. Create an account, authenticate, and make your first API call — all in a single sitting.
+                Three steps. No sales calls. No waiting for approval. Create an account, authenticate, and make your first API call - all in a single sitting.
               </p>
             </RevealBlock>
             <RevealBlock>
@@ -243,7 +243,7 @@ export default function Docs() {
                 {[
                   { num: 1, title: "Sign Up", desc: "Create a free Intraverse account. No credit card required. You'll get sandbox API credentials immediately.", cta: "Create Account", href: "https://www.intraverse.app/register" },
                   { num: 2, title: "Authenticate", desc: "Use your API key with OAuth 2.0 Bearer tokens. Every request is authenticated and encrypted end-to-end.", cta: "Read Auth Guide", href: "/docs/authentication" },
-                  { num: 3, title: "Make Your First Call", desc: "Search flights, hotels, or tours. Get real responses from aggregated inventory. Test in sandbox — go live when you're ready.", cta: "Try It Now", href: "/docs/quickstart" },
+                  { num: 3, title: "Make Your First Call", desc: "Search flights, hotels, or tours. Get real responses from aggregated inventory. Test in sandbox - go live when you're ready.", cta: "Try It Now", href: "/docs/quickstart" },
                 ].map((s) => (
                   <div key={s.num} className="border border-border rounded-xl p-8 hover:border-[hsl(var(--brand-blue))] transition-colors">
                     <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(var(--brand-blue))] text-white font-bold text-lg">{s.num}</span>
@@ -259,13 +259,13 @@ export default function Docs() {
           </div>
         </section>
 
-        {/* ===== SECTION 2 — DOC CATEGORIES ===== */}
+        {/* ===== SECTION 2 - DOC CATEGORIES ===== */}
         <section className="py-20 md:py-24 bg-[#F0F5FC]">
           <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center">Explore the Documentation</h2>
               <p className="mt-4 text-muted-foreground text-center max-w-2xl mx-auto">
-                Every endpoint, webhook event, and data model — documented with examples. Choose a section to dive in.
+                Every endpoint, webhook event, and data model - documented with examples. Choose a section to dive in.
               </p>
             </RevealBlock>
             <RevealBlock>
@@ -283,13 +283,13 @@ export default function Docs() {
           </div>
         </section>
 
-        {/* ===== SECTION 3 — CODE EXAMPLES ===== */}
+        {/* ===== SECTION 3 - CODE EXAMPLES ===== */}
         <section className="py-20 md:py-24 bg-[#0D1B2A]">
           <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-white text-center">See It in Action</h2>
               <p className="mt-4 text-white/50 text-center max-w-2xl mx-auto">
-                A real flight search request and response. Copy it, paste it, run it. That's it — you're searching aggregated inventory from GDS, NDC, and consolidator sources.
+                A real flight search request and response. Copy it, paste it, run it. That's it - you're searching aggregated inventory from GDS, NDC, and consolidator sources.
               </p>
             </RevealBlock>
             <RevealBlock>
@@ -323,7 +323,7 @@ export default function Docs() {
               </div>
 
               <p className="mt-8 text-white/40 text-sm text-center max-w-2xl mx-auto">
-                The response returns aggregated results from multiple sources — GDS, NDC, and consolidator inventory — normalised into a clean, consistent JSON structure.
+                The response returns aggregated results from multiple sources - GDS, NDC, and consolidator inventory - normalised into a clean, consistent JSON structure.
               </p>
               <div className="mt-6 text-center">
                 <Button size="xl" variant="outline" className="bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground cta-responsive min-h-[48px] rounded-none" asChild>
@@ -334,7 +334,7 @@ export default function Docs() {
           </div>
         </section>
 
-        {/* ===== SECTION 4 — SDKs ===== */}
+        {/* ===== SECTION 4 - SDKs ===== */}
         <section className="py-20 md:py-24 bg-background">
           <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
             <RevealBlock>
@@ -374,7 +374,7 @@ export default function Docs() {
           </div>
         </section>
 
-        {/* ===== SECTION 5 — ADDITIONAL RESOURCES ===== */}
+        {/* ===== SECTION 5 - ADDITIONAL RESOURCES ===== */}
         <section className="py-20 md:py-24 bg-[#F0F5FC]">
           <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
             <RevealBlock>
@@ -395,13 +395,13 @@ export default function Docs() {
           </div>
         </section>
 
-        {/* ===== SECTION 6 — DEVELOPER SUPPORT ===== */}
+        {/* ===== SECTION 6 - DEVELOPER SUPPORT ===== */}
         <section className="py-20 md:py-24 bg-background">
           <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center">Stuck? We're Here to Help.</h2>
               <p className="mt-4 text-muted-foreground text-center max-w-2xl mx-auto">
-                We've all been stuck on an integration at 2am. Our developer support team has been there too — and they'll help you get unstuck. Real developers answering real questions, not a chatbot trained on outdated docs.
+                We've all been stuck on an integration at 2am. Our developer support team has been there too - and they'll help you get unstuck. Real developers answering real questions, not a chatbot trained on outdated docs.
               </p>
             </RevealBlock>
             <RevealBlock>
@@ -425,13 +425,13 @@ export default function Docs() {
           </div>
         </section>
 
-        {/* ===== SECTION 7 — PARTNERSHIP CTA ===== */}
+        {/* ===== SECTION 7 - PARTNERSHIP CTA ===== */}
         <section className="py-20 md:py-24 bg-[#F0F5FC]">
           <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">Building Something Big?</h2>
               <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-                If you're building a product that touches travel — a super-app, a fintech, a corporate platform — we want to talk. Our partnerships team works with companies that are embedding Intraverse at scale.
+                If you're building a product that touches travel - a super-app, a fintech, a corporate platform - we want to talk. Our partnerships team works with companies that are embedding Intraverse at scale.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>

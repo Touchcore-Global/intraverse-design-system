@@ -125,7 +125,7 @@ export default function DocsReference() {
     <DocsLayout
       slug="reference"
       title="Complete Endpoint Reference"
-      subtitle="Every endpoint, every parameter, every response field — documented with examples and live testing."
+      subtitle="Every endpoint, every parameter, every response field - documented with examples and live testing."
       toc={toc}
     >
       <DocsSection id="base-urls" title="Base URLs">
@@ -253,9 +253,9 @@ export default function DocsReference() {
         </div>
         <p>Every response includes:</p>
         <ul className="list-disc list-inside space-y-1">
-          <li><InlineCode>X-RateLimit-Limit</InlineCode> — request quota for the window</li>
-          <li><InlineCode>X-RateLimit-Remaining</InlineCode> — requests left in the window</li>
-          <li><InlineCode>X-RateLimit-Reset</InlineCode> — Unix timestamp when the window resets</li>
+          <li><InlineCode>X-RateLimit-Limit</InlineCode> - request quota for the window</li>
+          <li><InlineCode>X-RateLimit-Remaining</InlineCode> - requests left in the window</li>
+          <li><InlineCode>X-RateLimit-Reset</InlineCode> - Unix timestamp when the window resets</li>
         </ul>
       </DocsSection>
 

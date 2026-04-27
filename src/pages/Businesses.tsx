@@ -29,7 +29,7 @@ const features = [
   { icon: ClipboardList, title: "Policy Enforcement", body: "Set rules for cabin class, hotel rating, and maximum spend. CoopX enforces them automatically." },
   { icon: Coins, title: "Consolidated Billing", body: "One invoice covering all company travel. Full breakdown by employee, department, or destination." },
   { icon: Users, title: "Self-Service Booking", body: "Employees book within policy from a self-service portal. No more emailing admin." },
-  { icon: BarChart3, title: "Real-Time Visibility", body: "See exactly what your company is spending on travel — today, this week, this month.", fullWidth: true },
+  { icon: BarChart3, title: "Real-Time Visibility", body: "See exactly what your company is spending on travel - today, this week, this month.", fullWidth: true },
 ];
 
 const stats = [
@@ -74,7 +74,7 @@ const Businesses = () => {
               Stop Managing Business Travel on WhatsApp and Spreadsheets
             </h1>
             <p className="mt-8 text-base sm:text-lg md:text-xl font-normal max-w-3xl mx-auto leading-relaxed" style={{ color: "rgb(116, 113, 122)" }}>
-              If your team books travel for work, you're a business that needs structure. Intraverse helps growing companies replace ad-hoc booking with a proper travel management process — saving money, saving time, and giving your finance team the visibility it needs.
+              If your team books travel for work, you're a business that needs structure. Intraverse helps growing companies replace ad-hoc booking with a proper travel management process - saving money, saving time, and giving your finance team the visibility it needs.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
@@ -124,7 +124,7 @@ const Businesses = () => {
             </h2>
             <div className="max-w-3xl mx-auto space-y-5 text-muted-foreground text-sm md:text-base leading-relaxed">
               <p>
-                Employees are booking through personal contacts, random travel agents, and WhatsApp groups. Receipts arrive in Slack messages, email forwards, or not at all. Nobody knows what the company is actually spending on travel until the quarterly review — and by then, the budget is already blown.
+                Employees are booking through personal contacts, random travel agents, and WhatsApp groups. Receipts arrive in Slack messages, email forwards, or not at all. Nobody knows what the company is actually spending on travel until the quarterly review - and by then, the budget is already blown.
               </p>
               <p>
                 There's no travel policy, or if there is, no way to enforce it. First-class flights get booked when economy was approved. Hotel budgets vary wildly by who's booking. Reimbursement requests pile up and finance spends hours reconciling expenses that should have been managed from the start.
@@ -194,7 +194,7 @@ const Businesses = () => {
                 "Before Intraverse, our travel spend was a black hole. Employees booked however they wanted, receipts came in weeks later, and I had no idea what we were actually spending. Now every booking goes through an approval flow, everything is on one invoice, and I can see our travel spend in real time. It's saved us at least 12 hours a month in admin alone."
               </blockquote>
               <p className="text-sm text-muted-foreground font-medium">
-                — Funke A., Head of Operations, Lagos
+                - Funke A., Head of Operations, Lagos
               </p>
             </div>
           </RevealBlock>
@@ -206,7 +206,7 @@ const Businesses = () => {
         <div className="container mx-auto px-4 text-center" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
             <p className="text-muted-foreground text-sm md:text-base mb-3">
-              Powered by <span className="font-semibold text-foreground">CoopX</span> — corporate travel management built for SMEs
+              Powered by <span className="font-semibold text-foreground">CoopX</span> - corporate travel management built for SMEs
             </p>
             <Link to="/coopx" className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:underline">
               Learn more about CoopX

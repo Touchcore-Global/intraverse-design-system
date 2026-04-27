@@ -26,17 +26,17 @@ export default function DocsTours() {
       subtitle="Access curated tour and activity inventory from international suppliers. Search by destination, category, and date. Book standalone or bundle with flights and hotels for complete travel packages."
       toc={toc}
     >
-      <Callout variant="warning" title="Coming Soon — Tours API">
+      <Callout variant="warning" title="Coming Soon - Tours API">
         The Tours API is currently under development and not yet available
         in the public Postman collection. Tour inventory is accessible
         through the Intraverse dashboard UI today, but programmatic API
         access is coming soon. The endpoints below describe the{" "}
-        <strong>planned</strong> contract — actual paths, parameters, and
+        <strong>planned</strong> contract - actual paths, parameters, and
         response shapes will be confirmed when the API launches.
       </Callout>
       <DocsSection id="overview" title="Overview">
         <p>
-          The Tours API exposes inventory from leading global activity providers — from city walking tours to multi-day adventures — all
+          The Tours API exposes inventory from leading global activity providers - from city walking tours to multi-day adventures - all
           through one consistent contract. Tours can be booked standalone or composed into packages with flights and hotels via the
           Packages API.
         </p>
@@ -144,9 +144,9 @@ export default function DocsTours() {
 
       <DocsSection id="errors" title="Common Errors">
         <ul className="space-y-3">
-          <li><InlineCode>TOUR_UNAVAILABLE</InlineCode> — Tour not running on the requested date.</li>
-          <li><InlineCode>TIMESLOT_FULL</InlineCode> — Selected timeslot has no remaining capacity. Choose another.</li>
-          <li><InlineCode>MINIMUM_PARTICIPANTS</InlineCode> — Tour requires more participants than booked.</li>
+          <li><InlineCode>TOUR_UNAVAILABLE</InlineCode> - Tour not running on the requested date.</li>
+          <li><InlineCode>TIMESLOT_FULL</InlineCode> - Selected timeslot has no remaining capacity. Choose another.</li>
+          <li><InlineCode>MINIMUM_PARTICIPANTS</InlineCode> - Tour requires more participants than booked.</li>
         </ul>
       </DocsSection>
     </DocsLayout>

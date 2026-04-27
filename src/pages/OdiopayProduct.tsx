@@ -40,7 +40,7 @@ const benefitCards = [
   {
     emoji: "🛡️",
     title: "Zero Credit Risk",
-    body: "You don't carry any credit risk. Odiopay takes on the repayment risk entirely. If a customer defaults, that's between them and Odiopay — your commission and booking remain unaffected.",
+    body: "You don't carry any credit risk. Odiopay takes on the repayment risk entirely. If a customer defaults, that's between them and Odiopay - your commission and booking remain unaffected.",
   },
   {
     emoji: "🎯",
@@ -58,7 +58,7 @@ const customerSteps = [
   {
     num: 2,
     title: "They Pick a Plan",
-    body: "They choose the instalment plan that suits them — weekly, bi-weekly, or monthly — and see exactly what they'll pay.",
+    body: "They choose the instalment plan that suits them - weekly, bi-weekly, or monthly - and see exactly what they'll pay.",
   },
   {
     num: 3,
@@ -75,7 +75,7 @@ const customerSteps = [
 const audienceCards = [
   { emoji: "✈️", title: "Travel Agents", body: "Close more sales by offering BNPL at the point of booking. Turn 'I can't afford it' into 'Let me lock that fare.'", href: "/for/travel-agents" },
   { emoji: "🚀", title: "Travel Independents", body: "Offer professional payment flexibility to your personal network without needing any financial infrastructure.", href: "/for/independents" },
-  { emoji: "🏢", title: "Businesses", body: "Give employees flexible travel payment options for business trips — especially useful for SMEs managing cash flow.", href: "/for/businesses" },
+  { emoji: "🏢", title: "Businesses", body: "Give employees flexible travel payment options for business trips - especially useful for SMEs managing cash flow.", href: "/for/businesses" },
   { emoji: "🏦", title: "Fintechs", body: "Embed Odiopay's BNPL alongside the Intraverse API to offer travel financing natively inside your fintech app.", href: "/for/fintechs" },
 ];
 
@@ -94,7 +94,7 @@ const faqs = [
   },
   {
     q: "Do I earn commission on BNPL bookings?",
-    a: "Yes — full commission. Odiopay bookings are treated like any other booking on the Intraverse platform. Your commission is calculated on the full fare value, not on the instalment amount. Whether the customer pays upfront or over time, you earn the same.",
+    a: "Yes - full commission. Odiopay bookings are treated like any other booking on the Intraverse platform. Your commission is calculated on the full fare value, not on the instalment amount. Whether the customer pays upfront or over time, you earn the same.",
   },
   {
     q: "Do I carry any credit risk?",
@@ -102,7 +102,7 @@ const faqs = [
   },
   {
     q: "Is Odiopay available on all Intraverse plans?",
-    a: "Yes. Odiopay integration is available on every Intraverse plan — Starter, Agency, and Enterprise. There are no additional fees to activate it.",
+    a: "Yes. Odiopay integration is available on every Intraverse plan - Starter, Agency, and Enterprise. There are no additional fees to activate it.",
   },
   {
     q: "Does Odiopay work for all booking types?",
@@ -120,7 +120,7 @@ export default function OdiopayProduct() {
   useEffect(() => {
     document.title = "Odiopay BNPL | Buy Now, Pay Later for Travel | Intraverse";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Close more travel sales with Odiopay BNPL. Two flexible options — Fare Lock and Pay Later — integrated into your Intraverse dashboard. Earn full commission. Zero credit risk.");
+    if (meta) meta.setAttribute("content", "Close more travel sales with Odiopay BNPL. Two flexible options - Fare Lock and Pay Later - integrated into your Intraverse dashboard. Earn full commission. Zero credit risk.");
   }, []);
 
   return (
@@ -156,22 +156,22 @@ export default function OdiopayProduct() {
         </div>
       </section>
 
-      {/* ── SECTION 1 — THE PROBLEM ── */}
+      {/* ── SECTION 1 - THE PROBLEM ── */}
       <section className="py-20 md:py-28 bg-accent">
         <div className="max-w-4xl mx-auto px-6">
           <RevealBlock>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Every Travel Agent Knows This Story</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              A customer finds the perfect fare. They're excited. You've done the work — searched suppliers, compared prices, built the itinerary. Then comes the pause: "Can I pay half now and the rest next week?" or "I love it, but I can't afford the full amount today."
+              A customer finds the perfect fare. They're excited. You've done the work - searched suppliers, compared prices, built the itinerary. Then comes the pause: "Can I pay half now and the rest next week?" or "I love it, but I can't afford the full amount today."
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              You both know the fare might change. But you can't hold it without full payment. And just like that, the sale slips away. Not because the customer didn't want to travel — but because they couldn't pay everything upfront. That's the problem Odiopay solves.
+              You both know the fare might change. But you can't hold it without full payment. And just like that, the sale slips away. Not because the customer didn't want to travel - but because they couldn't pay everything upfront. That's the problem Odiopay solves.
             </p>
           </RevealBlock>
         </div>
       </section>
 
-      {/* ── SECTION 2 — HOW IT WORKS ── */}
+      {/* ── SECTION 2 - HOW IT WORKS ── */}
       <section id="how-it-works" className="py-20 md:py-28 bg-background scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6">
           <RevealBlock>
@@ -191,7 +191,7 @@ export default function OdiopayProduct() {
                 <div className="space-y-4 text-muted-foreground">
                   <div>
                     <p className="font-semibold text-foreground mb-1">How it works:</p>
-                    <p>Your customer pays a small deposit to lock in the current fare. They then have a set window — typically 7-14 days — to complete the full payment. The fare is guaranteed at the locked price, even if the airline changes it.</p>
+                    <p>Your customer pays a small deposit to lock in the current fare. They then have a set window - typically 7-14 days - to complete the full payment. The fare is guaranteed at the locked price, even if the airline changes it.</p>
                   </div>
                   <div>
                     <p className="font-semibold text-foreground mb-1">Best for:</p>
@@ -231,7 +231,7 @@ export default function OdiopayProduct() {
         </div>
       </section>
 
-      {/* ── SECTION 3 — WHAT IT MEANS FOR YOU ── */}
+      {/* ── SECTION 3 - WHAT IT MEANS FOR YOU ── */}
       <section className="py-20 md:py-28 bg-accent">
         <div className="max-w-6xl mx-auto px-6">
           <RevealBlock>
@@ -255,7 +255,7 @@ export default function OdiopayProduct() {
         </div>
       </section>
 
-      {/* ── SECTION 4 — CUSTOMER EXPERIENCE ── */}
+      {/* ── SECTION 4 - CUSTOMER EXPERIENCE ── */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <RevealBlock>
@@ -284,7 +284,7 @@ export default function OdiopayProduct() {
         </div>
       </section>
 
-      {/* ── SECTION 5 — WHO USES ODIOPAY ── */}
+      {/* ── SECTION 5 - WHO USES ODIOPAY ── */}
       <section className="py-20 md:py-28 bg-accent">
         <div className="max-w-6xl mx-auto px-6">
           <RevealBlock>
@@ -311,7 +311,7 @@ export default function OdiopayProduct() {
         </div>
       </section>
 
-      {/* ── SECTION 6 — PRICING & ACTIVATION ── */}
+      {/* ── SECTION 6 - PRICING & ACTIVATION ── */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <RevealBlock>
@@ -336,7 +336,7 @@ export default function OdiopayProduct() {
         </div>
       </section>
 
-      {/* ── SECTION 7 — FAQ ── */}
+      {/* ── SECTION 7 - FAQ ── */}
       <section className="py-20 md:py-28 bg-accent">
         <div className="max-w-3xl mx-auto px-6">
           <RevealBlock>

@@ -42,7 +42,7 @@ const features = [
     icon: ClipboardList,
     title: "Travel Policy Enforcement",
     description:
-      "Set rules once — the platform enforces them automatically. Cabin class limits, hotel rate caps, advance booking requirements, and per-diem budgets. No exceptions unless approved.",
+      "Set rules once - the platform enforces them automatically. Cabin class limits, hotel rate caps, advance booking requirements, and per-diem budgets. No exceptions unless approved.",
     bullets: [
       "Automatic cabin class restrictions by role",
       "Hotel rate caps by city and employee level",
@@ -66,7 +66,7 @@ const features = [
     icon: Plane,
     title: "Best Available Fares",
     description:
-      "Powered by Intraverse's aggregated inventory — GDS, NDC, consolidators, and more. Your employees get the best prices without you negotiating airline-by-airline.",
+      "Powered by Intraverse's aggregated inventory - GDS, NDC, consolidators, and more. Your employees get the best prices without you negotiating airline-by-airline.",
     bullets: [
       "Multi-source fare comparison for every search",
       "Automatic lowest-fare recommendations",
@@ -78,7 +78,7 @@ const features = [
     icon: Users,
     title: "Employee Self-Service",
     description:
-      "Employees search and book within policy — no admin bottleneck. The platform guides them to compliant options and routes approvals automatically.",
+      "Employees search and book within policy - no admin bottleneck. The platform guides them to compliant options and routes approvals automatically.",
     bullets: [
       "Intuitive booking interface for non-travel staff",
       "Policy-compliant options highlighted automatically",
@@ -90,7 +90,7 @@ const features = [
     icon: BarChart3,
     title: "Real-Time Spend Visibility",
     description:
-      "Live dashboards showing exactly what your company is spending on travel — right now. No waiting until month-end to discover budget overruns.",
+      "Live dashboards showing exactly what your company is spending on travel - right now. No waiting until month-end to discover budget overruns.",
     bullets: [
       "Live spend tracking by department and employee",
       "Budget vs. actual dashboards",
@@ -117,12 +117,12 @@ const faqs = [
   {
     question: "How does CoopX enforce our travel policy?",
     answer:
-      "You configure your travel policy rules in the platform — cabin class limits by employee level, hotel rate caps by city, advance booking requirements, preferred suppliers, and per-diem budgets. When an employee searches for travel, only policy-compliant options are shown by default. Out-of-policy requests can be blocked entirely or routed through an exception approval workflow with a full audit trail.",
+      "You configure your travel policy rules in the platform - cabin class limits by employee level, hotel rate caps by city, advance booking requirements, preferred suppliers, and per-diem budgets. When an employee searches for travel, only policy-compliant options are shown by default. Out-of-policy requests can be blocked entirely or routed through an exception approval workflow with a full audit trail.",
   },
   {
     question: "Can we customise the approval workflow for different departments?",
     answer:
-      "Yes. Approval chains are fully configurable by department, trip type, or spend threshold. A domestic trip might need only a line manager's approval, while an international business-class booking might require department head, finance, and executive sign-off. You set the rules — the platform enforces them.",
+      "Yes. Approval chains are fully configurable by department, trip type, or spend threshold. A domestic trip might need only a line manager's approval, while an international business-class booking might require department head, finance, and executive sign-off. You set the rules - the platform enforces them.",
   },
   {
     question: "How does billing and invoicing work?",
@@ -167,7 +167,7 @@ const CoopX = () => {
             Your Company's Travel. Managed Properly. Finally.
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            CoopX gives your company a complete travel management platform —
+            CoopX gives your company a complete travel management platform -
             booking, approvals, policy enforcement, consolidated billing, and
             full reporting. Built for African corporates that are done managing
             employee travel on spreadsheets and WhatsApp.
@@ -196,9 +196,9 @@ const CoopX = () => {
             Your Company Is Bleeding Money on Unmanaged Travel
           </h2>
           <p className="mt-8 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            There's no approval workflow — so anyone books anything. There's no
-            policy enforcement — so economy becomes business class. There's no
-            visibility — so finance discovers the damage at month-end. Your admin
+            There's no approval workflow - so anyone books anything. There's no
+            policy enforcement - so economy becomes business class. There's no
+            visibility - so finance discovers the damage at month-end. Your admin
             team spends days chasing receipts, reconciling expenses, and
             explaining overruns that could have been prevented.
           </p>
@@ -206,7 +206,7 @@ const CoopX = () => {
             Meanwhile, the company is paying above-market rates because nobody
             has time to compare fares properly. The CEO wants a travel report and
             gets a cobbled-together spreadsheet three weeks later. Every
-            stakeholder is frustrated — finance, HR, the travellers themselves,
+            stakeholder is frustrated - finance, HR, the travellers themselves,
             and leadership. There has to be a better way.
           </p>
         </div>
@@ -216,7 +216,7 @@ const CoopX = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 lg:pl-[100px]">
           <h2 className="max-w-4xl mb-16">
-            Control, Visibility, and Savings — Built In
+            Control, Visibility, and Savings - Built In
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl">
             {features.map((feature) => (
@@ -263,7 +263,7 @@ const CoopX = () => {
         </div>
       </section>
 
-      {/* STATS — removed */}
+      {/* STATS - removed */}
 
       {/* TESTIMONIAL */}
       <section className="py-20 bg-background">
@@ -273,7 +273,7 @@ const CoopX = () => {
               <Quote className="h-10 w-10 text-primary/20 mb-6" />
               <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium mb-8">
                 "We used to find out about travel budget overruns at the end of
-                the month — by then the damage was done. With CoopX, I see
+                the month - by then the damage was done. With CoopX, I see
                 exactly what we're spending in real time. Approvals are
                 automatic, policy is enforced before booking, and our quarterly
                 travel costs dropped by 30%. I wish we'd started sooner."
@@ -285,7 +285,7 @@ const CoopX = () => {
                 <div>
                   <p className="font-semibold text-foreground">Olumide K.</p>
                   <p className="text-sm text-muted-foreground">
-                    CFO, Meridian Industries — Lagos
+                    CFO, Meridian Industries - Lagos
                   </p>
                 </div>
               </div>
@@ -323,7 +323,7 @@ const CoopX = () => {
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
             See how CoopX gives your finance team visibility, your employees
-            self-service, and your company real savings. Book a free demo —
+            self-service, and your company real savings. Book a free demo -
             no commitment required.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

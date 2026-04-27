@@ -139,7 +139,7 @@ export default function AdminBlogList() {
                       <div className="text-xs text-muted-foreground">/{a.slug}</div>
                     </td>
                     <td className="p-3 hidden md:table-cell text-muted-foreground">
-                      {a.category?.name ?? "—"}
+                      {a.category?.name ?? "-"}
                     </td>
                     <td className="p-3">
                       <span

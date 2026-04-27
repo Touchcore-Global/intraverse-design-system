@@ -66,7 +66,7 @@ const values = [
     icon: Zap,
     title: "Speed Is Respect",
     description:
-      "When an agent's customer is waiting for a fare, every minute matters. We build fast, respond fast, and ship fast — because slow is disrespectful to the people who depend on us.",
+      "When an agent's customer is waiting for a fare, every minute matters. We build fast, respond fast, and ship fast - because slow is disrespectful to the people who depend on us.",
   },
   {
     icon: Globe,
@@ -84,7 +84,7 @@ const values = [
     icon: MapPin,
     title: "Built in Lagos, Built for Africa",
     description:
-      "We understand the realities of doing business in Africa — the infrastructure gaps, the payment challenges, the regulatory landscape. We build for this context, not around it.",
+      "We understand the realities of doing business in Africa - the infrastructure gaps, the payment challenges, the regulatory landscape. We build for this context, not around it.",
   },
 ];
 
@@ -159,7 +159,7 @@ const testimonials = [
     role: "Travel Agency Owner, Lagos",
   },
   {
-    quote: "I started as a complete beginner. The Independents Programme gave me real tools and real inventory — not empty promises.",
+    quote: "I started as a complete beginner. The Independents Programme gave me real tools and real inventory - not empty promises.",
     name: "Chukwudi E.",
     role: "Independent Travel Entrepreneur",
   },
@@ -188,7 +188,7 @@ const faqs = [
   },
   {
     q: "Where is Intraverse based?",
-    a: "We're headquartered in Lagos, Nigeria. With presence in the UK, USA and UAE. Our entire platform is designed for the realities of the African travel market — from payment infrastructure to supplier relationships.",
+    a: "We're headquartered in Lagos, Nigeria. With presence in the UK, USA and UAE. Our entire platform is designed for the realities of the African travel market - from payment infrastructure to supplier relationships.",
   },
   {
     q: "Is Intraverse IATA accredited?",
@@ -232,7 +232,7 @@ export default function About() {
           </p>
           <p className="text-muted-foreground text-lg text-center mb-12 max-w-3xl mx-auto">
             Intraverse solves this by consolidating inventory from GDS, NDC, and consolidator sources into a single
-            platform — then wrapping it with the tools professionals need to sell, manage, and grow.
+            platform - then wrapping it with the tools professionals need to sell, manage, and grow.
           </p>
 
           <div className="space-y-4 max-w-2xl mx-auto">
@@ -268,12 +268,12 @@ export default function About() {
             </p>
             <p>
               We built Intraverse from Lagos because we understood these challenges firsthand. Every feature we ship is
-              designed for local realities — the payment infrastructure, the supplier landscape, the regulatory
+              designed for local realities - the payment infrastructure, the supplier landscape, the regulatory
               environment, and the way business actually gets done on the ground.
             </p>
             <p className="text-foreground font-medium">
               We believe a two-person agency in Lagos, Nigeria should have access to the same technology as a multinational TMC.
-              That's not a tagline — it's the design principle behind every product we build.
+              That's not a tagline - it's the design principle behind every product we build.
             </p>
           </div>
         </div>
@@ -327,7 +327,7 @@ export default function About() {
           <div className="space-y-6 text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
             <p>
               Our flight supply architecture aggregates inventory from three GDS systems (Amadeus, Sabre, Galileo by Travelport),
-              multiple NDC direct connections, consolidator fares, and third-party aggregators — all searchable from a
+              multiple NDC direct connections, consolidator fares, and third-party aggregators - all searchable from a
               single interface.
             </p>
             <p>
@@ -423,7 +423,7 @@ export default function About() {
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             We're a small, fast-moving team solving real problems for travel professionals across Africa. If you
-            want to build technology that matters — and you're comfortable moving fast in ambiguity — we'd love to
+            want to build technology that matters - and you're comfortable moving fast in ambiguity - we'd love to
             hear from you.
           </p>
           <a href="/careers">
@@ -458,7 +458,7 @@ export default function About() {
             Now You Know Who We Are. Let Us Show You What We Can Do.
           </h2>
           <p className="text-primary-foreground/80 text-lg mb-8">
-            Whether you're an agency, a corporate, or an aspiring entrepreneur — there's an Intraverse product built
+            Whether you're an agency, a corporate, or an aspiring entrepreneur - there's an Intraverse product built
             for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

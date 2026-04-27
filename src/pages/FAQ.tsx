@@ -29,7 +29,7 @@ const categories: FAQCategory[] = [
     questions: [
       {
         q: "What is Intraverse?",
-        a: "Intraverse is a B2B travel technology company headquartered in Lagos, Nigeria, with presence in the UK, USA and UAE. We build the tools, platforms, and infrastructure that travel agencies, corporate travel managers, and independent travel entrepreneurs use to search, book, and sell flights, hotels, tours, and packages from suppliers around the world. We don't sell travel directly to consumers — we power the businesses that do.",
+        a: "Intraverse is a B2B travel technology company headquartered in Lagos, Nigeria, with presence in the UK, USA and UAE. We build the tools, platforms, and infrastructure that travel agencies, corporate travel managers, and independent travel entrepreneurs use to search, book, and sell flights, hotels, tours, and packages from suppliers around the world. We don't sell travel directly to consumers - we power the businesses that do.",
       },
       {
         q: "Is Intraverse a travel agency?",
@@ -37,11 +37,11 @@ const categories: FAQCategory[] = [
       },
       {
         q: "Is Intraverse IATA-accredited?",
-        a: "Yes. Intraverse is fully IATA-accredited and operates under its own IATA license. This means every ticket issued through our platform is backed by a legitimate, verified accreditation — giving our agents the credibility and trust they need when dealing with airlines, suppliers, and customers.",
+        a: "Yes. Intraverse is fully IATA-accredited and operates under its own IATA license. This means every ticket issued through our platform is backed by a legitimate, verified accreditation - giving our agents the credibility and trust they need when dealing with airlines, suppliers, and customers.",
       },
       {
         q: "Where is Intraverse based?",
-        a: "We're headquartered in Lagos, Nigeria. With presence in the UK, USA and UAE. Our entire platform is designed for the realities of the African travel market — from payment infrastructure to supplier relationships.",
+        a: "We're headquartered in Lagos, Nigeria. With presence in the UK, USA and UAE. Our entire platform is designed for the realities of the African travel market - from payment infrastructure to supplier relationships.",
       },
       {
         q: "How long has Intraverse been operating?",
@@ -49,15 +49,15 @@ const categories: FAQCategory[] = [
       },
       {
         q: "What products does Intraverse offer?",
-        a: "Intraverse offers a suite of products designed for different segments of the travel industry:\n\n• Agent Selling Platform — aggregated flight, hotel, and tour inventory for travel agencies\n• Travx — branded booking websites for travel businesses\n• CoopX — corporate travel management for companies\n• Independents Programme — a platform for aspiring travel entrepreneurs\n• Odiopay — Buy Now Pay Later and Fare Lock for travel\n• Supplier Engine — multi-OID fare aggregation (coming soon)",
+        a: "Intraverse offers a suite of products designed for different segments of the travel industry:\n\n• Agent Selling Platform - aggregated flight, hotel, and tour inventory for travel agencies\n• Travx - branded booking websites for travel businesses\n• CoopX - corporate travel management for companies\n• Independents Programme - a platform for aspiring travel entrepreneurs\n• Odiopay - Buy Now Pay Later and Fare Lock for travel\n• Supplier Engine - multi-OID fare aggregation (coming soon)",
       },
       {
         q: "Who can use Intraverse?",
-        a: "Intraverse is built for travel professionals — whether you're an established IATA-accredited agency, a growing non-IATA agency, a corporate travel manager, or someone looking to start a travel business from scratch. If you sell travel or want to sell travel, we have a product for you.",
+        a: "Intraverse is built for travel professionals - whether you're an established IATA-accredited agency, a growing non-IATA agency, a corporate travel manager, or someone looking to start a travel business from scratch. If you sell travel or want to sell travel, we have a product for you.",
       },
       {
         q: "Can I try before committing?",
-        a: "Yes. We offer free demos where you can see the full platform in action. Our team will walk you through every feature, answer your questions, and help you understand exactly how Intraverse fits into your business. There's no pressure and no obligation — just book a demo and see for yourself.",
+        a: "Yes. We offer free demos where you can see the full platform in action. Our team will walk you through every feature, answer your questions, and help you understand exactly how Intraverse fits into your business. There's no pressure and no obligation - just book a demo and see for yourself.",
       },
     ],
   },
@@ -67,7 +67,7 @@ const categories: FAQCategory[] = [
     questions: [
       {
         q: "What can I sell on the Agent Platform?",
-        a: "You can search, compare, and book flights, hotels, tours, and packages — all from a single dashboard. Our platform aggregates inventory from multiple GDS systems, NDC connections, consolidators, and global hotel and tour suppliers, giving you access to thousands of options across hundreds of airlines and suppliers.",
+        a: "You can search, compare, and book flights, hotels, tours, and packages - all from a single dashboard. Our platform aggregates inventory from multiple GDS systems, NDC connections, consolidators, and global hotel and tour suppliers, giving you access to thousands of options across hundreds of airlines and suppliers.",
       },
       {
         q: "What flight sources does Intraverse connect to?",
@@ -75,11 +75,11 @@ const categories: FAQCategory[] = [
       },
       {
         q: "What about hotel and tour suppliers?",
-        a: "We integrate with leading global hotel suppliers and tour operators, giving you access to hundreds of thousands of properties and experiences worldwide. You can search, compare, and book hotels and tours directly from the platform — no need to log into separate supplier portals.",
+        a: "We integrate with leading global hotel suppliers and tour operators, giving you access to hundreds of thousands of properties and experiences worldwide. You can search, compare, and book hotels and tours directly from the platform - no need to log into separate supplier portals.",
       },
       {
         q: "How is this different from a GDS terminal?",
-        a: "A traditional GDS terminal shows you fares from one source. Intraverse aggregates fares from multiple GDS systems, NDC connections, and consolidators — all in one search. You see more options, compare prices instantly, and book in fewer clicks. Plus, our interface is modern and intuitive — no cryptic GDS commands required.",
+        a: "A traditional GDS terminal shows you fares from one source. Intraverse aggregates fares from multiple GDS systems, NDC connections, and consolidators - all in one search. You see more options, compare prices instantly, and book in fewer clicks. Plus, our interface is modern and intuitive - no cryptic GDS commands required.",
       },
       {
         q: "Can I issue tickets directly from the platform?",
@@ -105,7 +105,7 @@ const categories: FAQCategory[] = [
     questions: [
       {
         q: "What is Travx?",
-        a: "Travx is a subscription-based product that gives travel agencies their own branded booking website. Your customers can search flights, hotels, and tours, make bookings, and pay online — all on a website that carries your brand, your logo, and your domain. It's like having your own online travel agency without building anything from scratch.",
+        a: "Travx is a subscription-based product that gives travel agencies their own branded booking website. Your customers can search flights, hotels, and tours, make bookings, and pay online - all on a website that carries your brand, your logo, and your domain. It's like having your own online travel agency without building anything from scratch.",
       },
       {
         q: "How much does Travx cost?",
@@ -113,11 +113,11 @@ const categories: FAQCategory[] = [
       },
       {
         q: "Will the website show my brand or Intraverse?",
-        a: "Your brand. Travx websites are fully white-labelled — your logo, your colours, your domain name. Your customers will see your brand throughout the booking experience. Intraverse operates entirely in the background.",
+        a: "Your brand. Travx websites are fully white-labelled - your logo, your colours, your domain name. Your customers will see your brand throughout the booking experience. Intraverse operates entirely in the background.",
       },
       {
         q: "Can customers book and pay directly on my website?",
-        a: "Yes. Travx websites come with a full booking engine and integrated payment processing. Your customers can search for flights, hotels, and tours, select their options, and pay securely — all without leaving your website.",
+        a: "Yes. Travx websites come with a full booking engine and integrated payment processing. Your customers can search for flights, hotels, and tours, select their options, and pay securely - all without leaving your website.",
       },
       {
         q: "Do I need technical skills to use Travx?",
@@ -129,7 +129,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "Is the website mobile-friendly?",
-        a: "Yes. Every Travx website is fully responsive and optimised for mobile devices. Your customers can browse, search, and book from any smartphone or tablet — which is critical in a market where most web traffic comes from mobile devices.",
+        a: "Yes. Every Travx website is fully responsive and optimised for mobile devices. Your customers can browse, search, and book from any smartphone or tablet - which is critical in a market where most web traffic comes from mobile devices.",
       },
       {
         q: "Can I cancel my Travx subscription?",
@@ -143,11 +143,11 @@ const categories: FAQCategory[] = [
     questions: [
       {
         q: "What is CoopX?",
-        a: "CoopX is Intraverse's corporate travel management platform. It gives companies a single dashboard to manage all business travel — flights, hotels, and ground transport — with built-in approval workflows, policy enforcement, real-time reporting, and cost controls. It replaces the chaos of email chains, WhatsApp threads, and manual reconciliation.",
+        a: "CoopX is Intraverse's corporate travel management platform. It gives companies a single dashboard to manage all business travel - flights, hotels, and ground transport - with built-in approval workflows, policy enforcement, real-time reporting, and cost controls. It replaces the chaos of email chains, WhatsApp threads, and manual reconciliation.",
       },
       {
         q: "Is CoopX only for large companies?",
-        a: "No. CoopX is designed for companies of all sizes — from startups with 10 employees to enterprises with thousands. Whether you have 5 travellers or 500, CoopX gives you the same visibility, control, and efficiency. We offer flexible plans that scale with your needs.",
+        a: "No. CoopX is designed for companies of all sizes - from startups with 10 employees to enterprises with thousands. Whether you have 5 travellers or 500, CoopX gives you the same visibility, control, and efficiency. We offer flexible plans that scale with your needs.",
       },
       {
         q: "Can employees self-book their own travel?",
@@ -155,11 +155,11 @@ const categories: FAQCategory[] = [
       },
       {
         q: "What travel products are available through CoopX?",
-        a: "CoopX provides access to the same aggregated inventory as the Agent Selling Platform — flights from multiple GDS systems and NDC connections, hotels from global suppliers, and ground transport options. Your employees get competitive options, and your company gets centralised billing and reporting.",
+        a: "CoopX provides access to the same aggregated inventory as the Agent Selling Platform - flights from multiple GDS systems and NDC connections, hotels from global suppliers, and ground transport options. Your employees get competitive options, and your company gets centralised billing and reporting.",
       },
       {
         q: "How does the approval workflow work?",
-        a: "You define the rules — who can book, what they can book, spending limits, and who approves. When an employee makes a booking request, it's routed to the appropriate approver (manager, finance, HR) based on your policy. Approvers can approve or reject from their dashboard or via email notification.",
+        a: "You define the rules - who can book, what they can book, spending limits, and who approves. When an employee makes a booking request, it's routed to the appropriate approver (manager, finance, HR) based on your policy. Approvers can approve or reject from their dashboard or via email notification.",
       },
       {
         q: "How does billing work?",
@@ -171,7 +171,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "How is CoopX priced?",
-        a: "CoopX pricing is tailored to your company's size and travel volume. We offer flexible plans with transparent pricing — no hidden fees, no per-booking surcharges. Contact our team for a customised quote based on your needs.",
+        a: "CoopX pricing is tailored to your company's size and travel volume. We offer flexible plans with transparent pricing - no hidden fees, no per-booking surcharges. Contact our team for a customised quote based on your needs.",
       },
     ],
   },
@@ -181,11 +181,11 @@ const categories: FAQCategory[] = [
     questions: [
       {
         q: "What is the Independents Programme?",
-        a: "The Independents Programme is Intraverse's platform for aspiring travel entrepreneurs. It gives you access to the same technology, inventory, and IATA accreditation that established agencies use — without needing your own IATA license, office, or prior experience. You sell travel, earn commissions, and build your own client base using professional tools.",
+        a: "The Independents Programme is Intraverse's platform for aspiring travel entrepreneurs. It gives you access to the same technology, inventory, and IATA accreditation that established agencies use - without needing your own IATA license, office, or prior experience. You sell travel, earn commissions, and build your own client base using professional tools.",
       },
       {
         q: "Is this a scam or MLM scheme?",
-        a: "No. Absolutely not. Let us be direct: The Independents Programme is not a pyramid scheme, not multi-level marketing, and not a get-rich-quick programme. Here's what makes us different:\n\n• You earn money by selling real travel products (flights, hotels, tours) to real customers — not by recruiting other people.\n• There is no recruitment requirement. Your income comes from bookings, not from signing others up.\n• You are selling legitimate, IATA-accredited travel products through a licensed platform.\n• Every booking generates a real ticket, a real itinerary, and a real commission.\n• We are a registered, IATA-accredited technology company with a physical office in Lagos.\n\nIf anyone tells you they can guarantee you millions overnight, that's a scam. We don't make those promises. What we do offer is a legitimate platform, real tools, and the opportunity to build a travel business with effort and dedication.",
+        a: "No. Absolutely not. Let us be direct: The Independents Programme is not a pyramid scheme, not multi-level marketing, and not a get-rich-quick programme. Here's what makes us different:\n\n• You earn money by selling real travel products (flights, hotels, tours) to real customers - not by recruiting other people.\n• There is no recruitment requirement. Your income comes from bookings, not from signing others up.\n• You are selling legitimate, IATA-accredited travel products through a licensed platform.\n• Every booking generates a real ticket, a real itinerary, and a real commission.\n• We are a registered, IATA-accredited technology company with a physical office in Lagos.\n\nIf anyone tells you they can guarantee you millions overnight, that's a scam. We don't make those promises. What we do offer is a legitimate platform, real tools, and the opportunity to build a travel business with effort and dedication.",
       },
       {
         q: "Do I need travel experience to join?",
@@ -193,11 +193,11 @@ const categories: FAQCategory[] = [
       },
       {
         q: "What can I sell as an Independent?",
-        a: "You can sell flights, hotels, tours, and travel packages — the same inventory available to established travel agencies on our platform. You have access to multiple GDS systems, NDC connections, and global hotel and tour suppliers.",
+        a: "You can sell flights, hotels, tours, and travel packages - the same inventory available to established travel agencies on our platform. You have access to multiple GDS systems, NDC connections, and global hotel and tour suppliers.",
       },
       {
         q: "How much can I earn?",
-        a: "Your earnings depend on your effort, your client base, and the types of bookings you make. Commissions vary by product type and supplier. Some independents earn a modest side income; others build it into a full-time business. We don't guarantee specific income levels — your results depend on your work.",
+        a: "Your earnings depend on your effort, your client base, and the types of bookings you make. Commissions vary by product type and supplier. Some independents earn a modest side income; others build it into a full-time business. We don't guarantee specific income levels - your results depend on your work.",
       },
       {
         q: "How do I get paid?",
@@ -205,7 +205,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "Is there a cost to join?",
-        a: "There is a modest onboarding fee that covers your account setup, training materials, and platform access. This is a one-time investment — not a recurring charge. We keep the barrier to entry low because we want to make this accessible to as many aspiring entrepreneurs as possible.",
+        a: "There is a modest onboarding fee that covers your account setup, training materials, and platform access. This is a one-time investment - not a recurring charge. We keep the barrier to entry low because we want to make this accessible to as many aspiring entrepreneurs as possible.",
       },
       {
         q: "Can I do this as a side hustle?",
@@ -213,11 +213,11 @@ const categories: FAQCategory[] = [
       },
       {
         q: "Who is the Independents Programme for?",
-        a: "It's for anyone who wants to earn income by selling travel — students, professionals looking for a side hustle, stay-at-home parents, retirees, or anyone with an entrepreneurial mindset. If you're willing to learn, put in the work, and build relationships with customers, this programme is for you.",
+        a: "It's for anyone who wants to earn income by selling travel - students, professionals looking for a side hustle, stay-at-home parents, retirees, or anyone with an entrepreneurial mindset. If you're willing to learn, put in the work, and build relationships with customers, this programme is for you.",
       },
       {
         q: "How is this different from other travel business programmes?",
-        a: "Most programmes give you a link and leave you to figure it out. Intraverse gives you:\n\n• Access to professional-grade technology (not a basic affiliate portal)\n• Real IATA-accredited ticket issuance\n• Aggregated inventory from multiple suppliers\n• Training and onboarding support\n• A dashboard to manage bookings, customers, and commissions\n• Ongoing platform updates and new features\n\nYou're not just getting a referral link — you're getting a real business platform.",
+        a: "Most programmes give you a link and leave you to figure it out. Intraverse gives you:\n\n• Access to professional-grade technology (not a basic affiliate portal)\n• Real IATA-accredited ticket issuance\n• Aggregated inventory from multiple suppliers\n• Training and onboarding support\n• A dashboard to manage bookings, customers, and commissions\n• Ongoing platform updates and new features\n\nYou're not just getting a referral link - you're getting a real business platform.",
       },
     ],
   },
@@ -231,7 +231,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "Is Odiopay part of Intraverse?",
-        a: "Yes. Odiopay is a product built and operated by Intraverse. It's fully integrated into the Agent Selling Platform, so agents can offer Fare Lock and Pay Later options directly from their booking workflow — no separate system or third-party integration required.",
+        a: "Yes. Odiopay is a product built and operated by Intraverse. It's fully integrated into the Agent Selling Platform, so agents can offer Fare Lock and Pay Later options directly from their booking workflow - no separate system or third-party integration required.",
       },
       {
         q: "How does Fare Lock work?",
@@ -243,7 +243,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "Do agents earn commission on BNPL bookings?",
-        a: "Yes. Agents earn their full commission on every booking, regardless of whether the customer pays upfront or uses Pay Later. Odiopay handles the instalment collection — the agent gets paid as normal.",
+        a: "Yes. Agents earn their full commission on every booking, regardless of whether the customer pays upfront or uses Pay Later. Odiopay handles the instalment collection - the agent gets paid as normal.",
       },
       {
         q: "How do I activate Odiopay?",
@@ -273,7 +273,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "How much does the Independents Programme cost?",
-        a: "There is a one-time onboarding fee that covers setup, training, and platform access. Contact our team for current pricing. There are no recurring subscription fees — you earn commissions on every booking you make.",
+        a: "There is a one-time onboarding fee that covers setup, training, and platform access. Contact our team for current pricing. There are no recurring subscription fees - you earn commissions on every booking you make.",
       },
       {
         q: "How does the wallet system work?",
@@ -329,7 +329,7 @@ const categories: FAQCategory[] = [
     questions: [
       {
         q: "How can I contact support?",
-        a: "You can reach our support team via WhatsApp (fastest), phone, or email. WhatsApp is our primary support channel — most queries are responded to within minutes during business hours.",
+        a: "You can reach our support team via WhatsApp (fastest), phone, or email. WhatsApp is our primary support channel - most queries are responded to within minutes during business hours.",
       },
       {
         q: "What are your support hours?",
@@ -337,7 +337,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "What does the onboarding process look like?",
-        a: "Onboarding includes account setup, wallet configuration, platform training, and your first guided booking. Our onboarding team walks you through everything step by step — most agents are fully set up and confident within 48 hours.",
+        a: "Onboarding includes account setup, wallet configuration, platform training, and your first guided booking. Our onboarding team walks you through everything step by step - most agents are fully set up and confident within 48 hours.",
       },
       {
         q: "Is there training available?",
@@ -363,15 +363,15 @@ const categories: FAQCategory[] = [
     questions: [
       {
         q: "What browsers are supported?",
-        a: "Intraverse works on all modern browsers — Chrome, Firefox, Safari, and Edge. We recommend using the latest version of Chrome for the best experience.",
+        a: "Intraverse works on all modern browsers - Chrome, Firefox, Safari, and Edge. We recommend using the latest version of Chrome for the best experience.",
       },
       {
         q: "Is there a mobile app?",
-        a: "The Intraverse platform is fully responsive and works on any mobile browser. We're also developing dedicated mobile apps for iOS and Android — stay tuned for updates.",
+        a: "The Intraverse platform is fully responsive and works on any mobile browser. We're also developing dedicated mobile apps for iOS and Android - stay tuned for updates.",
       },
       {
         q: "Do you offer API access?",
-        a: "Yes. We offer API access for partners and agencies that need to integrate Intraverse inventory or booking capabilities into their own systems. API access is available on request — contact our technical team for documentation and onboarding.",
+        a: "Yes. We offer API access for partners and agencies that need to integrate Intraverse inventory or booking capabilities into their own systems. API access is available on request - contact our technical team for documentation and onboarding.",
       },
       {
         q: "Can I integrate Intraverse with my existing tools?",

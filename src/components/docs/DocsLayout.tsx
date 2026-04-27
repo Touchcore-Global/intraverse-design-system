@@ -82,7 +82,7 @@ export function DocsLayout({
       <main className="flex-1 pt-16">
         <div className="container mx-auto px-4 lg:px-8 py-8 lg:py-12">
           <div className="lg:grid lg:grid-cols-[240px_minmax(0,1fr)_200px] lg:gap-10">
-            {/* Sidebar — desktop */}
+            {/* Sidebar - desktop */}
             <aside className="hidden lg:block">
               <div className="sticky top-24">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
@@ -247,7 +247,7 @@ export function DocsLayout({
               </div>
             </article>
 
-            {/* Right TOC — desktop only */}
+            {/* Right TOC - desktop only */}
             <aside className="hidden lg:block">
               {toc.length > 0 && (
                 <div className="sticky top-24">

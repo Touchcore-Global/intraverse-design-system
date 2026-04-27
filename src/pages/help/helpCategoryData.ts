@@ -68,7 +68,7 @@ export const helpCategories: HelpCategoryData[] = [
     title: "Hotels & Tours",
     icon: Hotel,
     heroHeadline: "Hotels and Tours From Global Suppliers",
-    heroSub: "Search, book, and manage hotel and tour inventory from leading global suppliers — all from your Intraverse dashboard.",
+    heroSub: "Search, book, and manage hotel and tour inventory from leading global suppliers - all from your Intraverse dashboard.",
     articles: [
       { title: "Searching for hotels by destination", slug: "search-hotels" },
       { title: "Understanding hotel star ratings and reviews", slug: "hotel-ratings" },

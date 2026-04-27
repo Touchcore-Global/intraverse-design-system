@@ -62,9 +62,9 @@ export function MegaMenuV3({
           className="bg-popover border border-border rounded-2xl overflow-hidden"
           style={{ boxShadow: "0 20px 50px -10px rgba(13,27,42,0.15)" }}
         >
-          {/* By Audience — horizontal chip row (rendered second, below use cases) */}
+          {/* By Audience - horizontal chip row (rendered second, below use cases) */}
 
-          {/* By Use Case — horizontal image card grid */}
+          {/* By Use Case - horizontal image card grid */}
           {useCases && (
             <div className={`p-5 lg:p-6 ${audiences ? "border-b border-border" : ""}`}>
               {(() => {
@@ -82,7 +82,7 @@ export function MegaMenuV3({
                           {useCases.header}
                         </p>
                         <p className="text-[13px] text-muted-foreground mt-2 leading-snug">
-                          Discover the most common ways teams put Intraverse to work — from selling flights online to embedding travel in your own product.
+                          Discover the most common ways teams put Intraverse to work - from selling flights online to embedding travel in your own product.
                         </p>
                         {footerLink && (
                           <a
@@ -153,7 +153,7 @@ export function MegaMenuV3({
             </div>
           )}
 
-          {/* By Audience — horizontal chip row (rendered after use cases) */}
+          {/* By Audience - horizontal chip row (rendered after use cases) */}
           {audiences && (
             <div className="p-5 lg:p-6">
               {(() => {
@@ -171,7 +171,7 @@ export function MegaMenuV3({
                           {audiences.header}
                         </p>
                         <p className="text-[13px] text-muted-foreground mt-2 leading-snug">
-                          Built for the people who move travel forward — pick the audience that fits you to see tailored solutions.
+                          Built for the people who move travel forward - pick the audience that fits you to see tailored solutions.
                         </p>
                       </div>
                       {featuredAud.map((item) => {
@@ -245,7 +245,7 @@ export function MegaMenuV3({
         className="bg-popover border border-border rounded-2xl overflow-hidden grid grid-cols-12"
         style={{ boxShadow: "0 20px 50px -10px rgba(13,27,42,0.15)" }}
       >
-        {/* Left: featured visual card — fixed proportions so portrait stays framed */}
+        {/* Left: featured visual card - fixed proportions so portrait stays framed */}
         <a
           href={featured.href}
           className="col-span-5 xl:col-span-4 relative group min-h-[320px] lg:min-h-[340px] text-white overflow-hidden bg-[#0D1B2A]"

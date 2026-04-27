@@ -138,14 +138,14 @@ const comparisonRows = [
 ];
 
 const faqs = [
-  { q: "Can I start for free?", a: "Yes — the Starter plan is completely free, forever. You can search and book flights, manage passengers, and access the knowledge base without paying anything." },
+  { q: "Can I start for free?", a: "Yes - the Starter plan is completely free, forever. You can search and book flights, manage passengers, and access the knowledge base without paying anything." },
   { q: "What happens after my 14-day trial?", a: "After your trial ends, you'll be moved to the Starter plan automatically. No charges, no surprises. Upgrade again anytime to unlock premium features." },
   { q: "Do I need a credit card to start a trial?", a: "No. You can start a 14-day free trial on the Independents or Agency plan without entering any payment information." },
   { q: "Can I switch plans later?", a: "Absolutely. You can upgrade, downgrade, or cancel at any time from your account settings. Changes take effect at the start of your next billing cycle." },
   { q: "What is Travx and how much does it cost?", a: "Travx is our branded booking website add-on. It costs $50/month and can be added to any plan. It gives you a fully customisable, booking-enabled website with your own domain." },
-  { q: "Do you offer annual billing?", a: "Yes — annual billing is available and saves you money compared to monthly plans. Toggle the billing switch at the top of this page to see annual prices." },
+  { q: "Do you offer annual billing?", a: "Yes - annual billing is available and saves you money compared to monthly plans. Toggle the billing switch at the top of this page to see annual prices." },
   { q: "What payment methods do you accept?", a: "We accept bank transfers, card payments, and mobile money. Enterprise customers can also pay via invoice with net-30 terms." },
-  { q: "Is there a setup fee?", a: "No. There are no setup fees, no hidden charges, and no contracts. You pay only for your plan — nothing more." },
+  { q: "Is there a setup fee?", a: "No. There are no setup fees, no hidden charges, and no contracts. You pay only for your plan - nothing more." },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -182,7 +182,7 @@ export default function Pricing() {
         <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
           Pick the plan that fits how you sell travel. Start free, upgrade when
           you're ready, and never pay for features you don't use. Every plan
-          includes our complete toolkit — no premium add-ons, no upgrade traps.
+          includes our complete toolkit - no premium add-ons, no upgrade traps.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <div className="inline-flex items-center gap-3 bg-accent rounded-full px-5 py-2.5">
@@ -405,7 +405,7 @@ export default function Pricing() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-background mb-4">Start Free. Upgrade When You're Ready.</h2>
           <p className="text-background/70 text-lg mb-10 leading-relaxed">
-            Every Intraverse plan starts with full access — no credit card
+            Every Intraverse plan starts with full access - no credit card
             required. Build your travel business at your own pace, on your own
             terms.
           </p>

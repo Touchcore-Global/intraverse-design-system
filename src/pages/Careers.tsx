@@ -12,12 +12,12 @@ import {
 /* ---------- DATA ---------- */
 
 const values = [
-  { icon: Rocket, title: "Move Fast, Ship Often", description: "We bias toward action. Small team, big impact — every commit counts." },
+  { icon: Rocket, title: "Move Fast, Ship Often", description: "We bias toward action. Small team, big impact - every commit counts." },
   { icon: Users, title: "Customer-Obsessed", description: "We build for the agents, independents, and developers who rely on us daily." },
-  { icon: Heart, title: "Own It End-to-End", description: "Everyone owns outcomes. No hand-offs into the void — see it through." },
+  { icon: Heart, title: "Own It End-to-End", description: "Everyone owns outcomes. No hand-offs into the void - see it through." },
   { icon: Globe, title: "Africa-First, Global Standard", description: "We build from Lagos for the continent, at world-class quality." },
   { icon: Zap, title: "Default to Transparency", description: "Open books, honest feedback, clear context. Trust scales better than control." },
-  { icon: GraduationCap, title: "Always Learning", description: "We invest in growth — yours and ours. Curiosity is a core trait here." },
+  { icon: GraduationCap, title: "Always Learning", description: "We invest in growth - yours and ours. Curiosity is a core trait here." },
 ];
 
 const perks = [
@@ -64,7 +64,7 @@ function HeroSection() {
         </h1>
 
         <p className="text-lg md:text-xl text-secondary-foreground/70 max-w-3xl mx-auto mb-10 leading-relaxed">
-          We're an Africa-first travel technology company headquartered in Lagos, building the platform that travel agents, independents, corporates, fintechs, and developers across the continent will rely on for decades. If you want your work to shape how an entire industry operates — across an entire continent — this is the place to do it.
+          We're an Africa-first travel technology company headquartered in Lagos, building the platform that travel agents, independents, corporates, fintechs, and developers across the continent will rely on for decades. If you want your work to shape how an entire industry operates - across an entire continent - this is the place to do it.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -156,7 +156,7 @@ function OpenRolesSection() {
             Current Openings
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We're hiring across engineering, product, and operations. If you don't see a role that fits, reach out anyway — we're always looking for exceptional people.
+            We're hiring across engineering, product, and operations. If you don't see a role that fits, reach out anyway - we're always looking for exceptional people.
           </p>
         </div>
 
@@ -202,8 +202,8 @@ export default function Careers() {
       if (!el) { el = document.createElement("meta"); (el as HTMLMetaElement).setAttribute(name.startsWith("og:") ? "property" : "name", name); document.head.appendChild(el); }
       (el as HTMLMetaElement).setAttribute("content", content);
     };
-    setMeta("description", "Join Intraverse — the Africa-first travel technology company building infrastructure for agents, independents, corporates, and developers across the continent.");
-    setMeta("og:title", "Careers at Intraverse — Join the Team Building Africa's Travel Infrastructure");
+    setMeta("description", "Join Intraverse - the Africa-first travel technology company building infrastructure for agents, independents, corporates, and developers across the continent.");
+    setMeta("og:title", "Careers at Intraverse - Join the Team Building Africa's Travel Infrastructure");
   }, []);
 
   return (

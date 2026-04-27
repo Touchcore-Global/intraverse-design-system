@@ -31,7 +31,7 @@ const features = [
     icon: Palette,
     title: "Your Brand, Your Domain",
     description:
-      "Fully white-labelled with your agency's logo, colours, and custom domain. Your customers see your brand — not ours. It's your website, powered by Intraverse behind the scenes.",
+      "Fully white-labelled with your agency's logo, colours, and custom domain. Your customers see your brand - not ours. It's your website, powered by Intraverse behind the scenes.",
     bullets: [
       "Custom domain (e.g. book.youragency.com)",
       "Your logo, brand colours, and fonts",
@@ -43,7 +43,7 @@ const features = [
     icon: Plane,
     title: "Integrated Booking Engine",
     description:
-      "Connected directly to Intraverse's aggregated inventory. Your customers search real-time flights, hotels, and tours — and book instantly. No copy-paste. No manual processing.",
+      "Connected directly to Intraverse's aggregated inventory. Your customers search real-time flights, hotels, and tours - and book instantly. No copy-paste. No manual processing.",
     bullets: [
       "Real-time flight search from GDS + NDC + consolidators",
       "Hotel and tour inventory included",
@@ -55,7 +55,7 @@ const features = [
     icon: Smartphone,
     title: "Mobile-Responsive",
     description:
-      "Built mobile-first for how customers actually browse. Over 80% of your visitors will come from phones — Travx looks and works beautifully on every screen size.",
+      "Built mobile-first for how customers actually browse. Over 80% of your visitors will come from phones - Travx looks and works beautifully on every screen size.",
     bullets: [
       "Mobile-first responsive design",
       "Fast load times on 3G/4G networks",
@@ -67,7 +67,7 @@ const features = [
     icon: CreditCard,
     title: "Online Payments",
     description:
-      "Accept payments directly on your website. Customers pay with cards, bank transfers, or USSD — no more chasing payments over WhatsApp or waiting for bank alerts.",
+      "Accept payments directly on your website. Customers pay with cards, bank transfers, or USSD - no more chasing payments over WhatsApp or waiting for bank alerts.",
     bullets: [
       "Card payments (Visa, Mastercard)",
       "Bank transfer and USSD support",
@@ -81,7 +81,7 @@ const features = [
     description:
       "No developers needed. No months of back-and-forth. Choose a template, add your branding, and go live. Most agencies launch their Travx site within a week.",
     bullets: [
-      "Template-based setup — no coding required",
+      "Template-based setup - no coding required",
       "Guided onboarding process",
       "Content upload assistance available",
       "Live within 5-7 business days",
@@ -120,7 +120,7 @@ const faqs = [
   {
     question: "Can my customers actually book and pay on the website?",
     answer:
-      "Yes — that's the whole point. Unlike most agency websites that are just digital brochures, Travx connects to Intraverse's live inventory. Your customers search real flights, hotels, and tours, book instantly, and pay online. You get notified and the booking is processed automatically.",
+      "Yes - that's the whole point. Unlike most agency websites that are just digital brochures, Travx connects to Intraverse's live inventory. Your customers search real flights, hotels, and tours, book instantly, and pay online. You get notified and the booking is processed automatically.",
   },
   {
     question: "What's included in the plan?",
@@ -135,7 +135,7 @@ const faqs = [
   {
     question: "How long does it take to go live?",
     answer:
-      "Most agencies launch within 5-7 business days. Once you sign up, you'll go through a guided setup process — choose your template, upload your branding, and review your site. We handle the technical deployment.",
+      "Most agencies launch within 5-7 business days. Once you sign up, you'll go through a guided setup process - choose your template, upload your branding, and review your site. We handle the technical deployment.",
   },
 ];
 
@@ -197,7 +197,7 @@ const Travx = () => {
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
             Travx gives your travel agency a fully branded, booking-enabled
-            website — without hiring a developer or waiting months for delivery.
+            website - without hiring a developer or waiting months for delivery.
             Your customers search flights, hotels, and tours, book directly, and
             pay online. You get a professional digital presence that generates
             revenue 24/7.
@@ -235,7 +235,7 @@ const Travx = () => {
           </h2>
           <p className="mt-8 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
             Right now, your agency is invisible online. When a potential customer
-            searches "flights to London from Lagos," they find your competitors —
+            searches "flights to London from Lagos," they find your competitors -
             the ones with websites. You're relying on word-of-mouth and WhatsApp
             forwards while agencies with an online presence capture bookings
             around the clock.
@@ -243,7 +243,7 @@ const Travx = () => {
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
             Building a custom website costs a lot and takes months of
             back-and-forth with developers. And most agency websites are just
-            digital brochures — they can't actually search inventory, process
+            digital brochures - they can't actually search inventory, process
             bookings, or accept payments. You end up paying for a site that still
             requires you to do everything manually.
           </p>
@@ -346,7 +346,7 @@ const Travx = () => {
               Every day without a booking-enabled site, potential customers find
               your competitors instead. At just 2–3 lost bookings per month, the
               revenue you're missing far exceeds $50. Travx doesn't cost
-              you money — it makes you money.
+              you money - it makes you money.
             </p>
           </div>
         </div>
@@ -427,7 +427,7 @@ const Travx = () => {
                 <div>
                   <p className="font-semibold text-foreground">Tunde A.</p>
                   <p className="text-sm text-muted-foreground">
-                    Royal Wings Travel — Ibadan
+                    Royal Wings Travel - Ibadan
                   </p>
                 </div>
               </div>

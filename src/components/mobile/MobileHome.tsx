@@ -22,7 +22,7 @@ import { trackEvent, CTA_EVENTS } from "@/lib/analytics";
 import { Footer } from "@/components/Footer";
 
 /**
- * MobileHome — Apple-style mobile-only homepage.
+ * MobileHome - Apple-style mobile-only homepage.
  * Renders only on small screens (controlled from src/pages/Index.tsx).
  * Sections: Hero, Products, Who we serve, Testimonials, Final CTA, Footer.
  * Plus a sticky bottom CTA bar.
@@ -33,7 +33,7 @@ const products = [
     icon: LayoutDashboard,
     eyebrow: "Agent Selling Platform",
     title: "Every flight. Every hotel. One dashboard.",
-    body: "Aggregated GDS, NDC, consolidator and aggregator inventory — compare and book in minutes.",
+    body: "Aggregated GDS, NDC, consolidator and aggregator inventory - compare and book in minutes.",
     href: "/agent-platform",
     cta: "Book a demo",
     tone: "dark",
@@ -69,7 +69,7 @@ const products = [
     icon: Link2,
     eyebrow: "Travel Links",
     title: "Sell travel without a website. Just share a link.",
-    body: "Generate a shareable booking link for any flight, hotel or package — they click, book, pay.",
+    body: "Generate a shareable booking link for any flight, hotel or package - they click, book, pay.",
     href: "/products/travel-links",
     cta: "Learn more",
     tone: "dark",
@@ -92,8 +92,8 @@ const audiences = [
   { icon: Landmark, title: "Corporates", body: "Enterprise-grade travel management for African companies.", href: "/for/corporates" },
   { icon: Rocket, title: "Independents", body: "Earn from travel. No agency. No experience needed.", href: "/for/independents", featured: true },
   { icon: Lightbulb, title: "Tech Startups", body: "Build your travel product on Intraverse infrastructure.", href: "/for/startups" },
-  { icon: Landmark, title: "Fintechs", body: "Add travel as a revenue stream — natively, in weeks.", href: "/for/fintechs" },
-  { icon: CodeXml, title: "Developers", body: "The travel API that just works — backed by real inventory.", href: "/for/developers" },
+  { icon: Landmark, title: "Fintechs", body: "Add travel as a revenue stream - natively, in weeks.", href: "/for/fintechs" },
+  { icon: CodeXml, title: "Developers", body: "The travel API that just works - backed by real inventory.", href: "/for/developers" },
 ];
 
 const testimonials = [
@@ -147,7 +147,7 @@ export const MobileHome = () => {
           </h1>
 
           <p className="mt-6 text-[17px] leading-snug text-white/70 max-w-[28ch]">
-            One AI-powered platform to sell every kind of travel — your brand, your way.
+            One AI-powered platform to sell every kind of travel - your brand, your way.
           </p>
 
           <div className="mt-8 flex flex-col gap-3">
@@ -186,7 +186,7 @@ export const MobileHome = () => {
         </div>
       </section>
 
-      {/* ================= PRODUCTS — full-bleed snap stack ================= */}
+      {/* ================= PRODUCTS - full-bleed snap stack ================= */}
       <section className="bg-background">
         <header className="px-5 pt-14 pb-6">
           <p className="text-[11px] uppercase tracking-[0.22em] text-primary mb-3">The platform</p>
@@ -308,7 +308,7 @@ export const MobileHome = () => {
         </Link>
       </section>
 
-      {/* ================= TESTIMONIALS — dark editorial ================= */}
+      {/* ================= TESTIMONIALS - dark editorial ================= */}
       <section className="bg-[#0b0b0f] text-white px-5 pt-14 pb-16">
         <p className="text-[11px] uppercase tracking-[0.22em] text-white/60 mb-3">Loved by agents</p>
         <h2
@@ -340,7 +340,7 @@ export const MobileHome = () => {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">{t.name}</p>
-                  <p className="text-xs text-white/60">{t.agency} — {t.city}</p>
+                  <p className="text-xs text-white/60">{t.agency} - {t.city}</p>
                 </div>
               </figcaption>
             </figure>

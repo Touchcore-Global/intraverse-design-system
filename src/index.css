@@ -252,7 +252,7 @@
     animation: gradient-shift 10s ease infinite;
   }
 
-  /* Shimmer overlay — add as a child pseudo-element */
+  /* Shimmer overlay - add as a child pseudo-element */
   .shimmer-overlay {
     @apply relative overflow-hidden;
   }

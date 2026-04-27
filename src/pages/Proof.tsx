@@ -111,7 +111,7 @@ const caseStudies: CaseStudy[] = [
       { value: "$8K", label: "Monthly Website Revenue" },
     ],
     challenge: [
-      "Entire business ran through WhatsApp — no website, no online presence",
+      "Entire business ran through WhatsApp - no website, no online presence",
       "Customers couldn't search or book independently",
       "Looked unprofessional compared to larger competitors",
       "Spent hours responding to price enquiries manually",
@@ -120,15 +120,15 @@ const caseStudies: CaseStudy[] = [
       "Launched a Travx-branded website with custom domain in 5 days",
       "Full search and booking engine embedded on the site",
       "Customers could now search, compare, and pay online",
-      "WhatsApp remained a channel — but no longer the only one",
+      "WhatsApp remained a channel - but no longer the only one",
     ],
     results: [
       "40% of bookings now come through the website",
-      "Customer enquiry volume dropped — they self-serve online",
+      "Customer enquiry volume dropped - they self-serve online",
       "Monthly revenue from web channel: $8K",
       "Agency now appears on Google search results for local travel queries",
     ],
-    quote: "I used to send fare screenshots on WhatsApp all day. Now my website does it for me. Customers search, compare, and book — I just see the confirmation. It changed everything.",
+    quote: "I used to send fare screenshots on WhatsApp all day. Now my website does it for me. Customers search, compare, and book - I just see the confirmation. It changed everything.",
     quoteAuthor: "Funke A.",
     quoteRole: "Founder, Horizon Travels",
     extra: (
@@ -143,7 +143,7 @@ const caseStudies: CaseStudy[] = [
             </div>
           </div>
           <div className="brand-card text-center border-2 border-primary/20">
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">After — Travx</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">After - Travx</p>
             <div className="bg-accent rounded-lg p-8 flex flex-col items-center gap-3">
               <Globe className="h-12 w-12 text-primary" />
               <p className="text-sm text-foreground font-medium">Professional branded travel website</p>
@@ -173,13 +173,13 @@ const caseStudies: CaseStudy[] = [
     ],
     switchText: [
       "Deployed CoopX across all departments with role-based access",
-      "Configured travel policy rules — class, budget limits, advance booking requirements",
+      "Configured travel policy rules - class, budget limits, advance booking requirements",
       "Centralised all bookings through a single managed platform",
       "Finance team got real-time dashboards and automated reports",
     ],
     results: [
       "Travel spend reduced by 30% in the first quarter",
-      "Receipt collection automated — zero manual chasing",
+      "Receipt collection automated - zero manual chasing",
       "100% policy compliance across all departments",
       "Finance team reclaimed 15 hours per month in admin time",
     ],
@@ -201,7 +201,7 @@ const caseStudies: CaseStudy[] = [
     challenge: [
       "No travel industry experience or connections",
       "Wanted to build a side business but didn't know where to start",
-      "Suspicious of 'travel business' offers — too many looked like scams",
+      "Suspicious of 'travel business' offers - too many looked like scams",
       "Needed a real product to sell, not a recruitment pitch",
     ],
     switchText: [
@@ -216,7 +216,7 @@ const caseStudies: CaseStudy[] = [
       "Grew booking volume month over month consistently",
       "Now treats it as a primary income stream, not a side project",
     ],
-    quote: "I was sceptical at first — I'd seen too many 'travel business' pitches that were just pyramid schemes. But Intraverse gave me real tools, real inventory, and real commissions. I earn from actual bookings, not from recruiting people.",
+    quote: "I was sceptical at first - I'd seen too many 'travel business' pitches that were just pyramid schemes. But Intraverse gave me real tools, real inventory, and real commissions. I earn from actual bookings, not from recruiting people.",
     quoteAuthor: "Amara E.",
     quoteRole: "Independent Travel Entrepreneur, Enugu",
     extra: (
@@ -250,7 +250,7 @@ const caseStudies: CaseStudy[] = [
               <div>
                 <h4 className="font-bold text-foreground mb-2">This Is Not a Get-Rich-Quick Scheme</h4>
                 <p className="text-sm text-muted-foreground mb-3">
-                  The Independents Programme is a real business model — you earn commissions by selling real travel products (flights, hotels, packages) to real customers. There are no sign-up fees disguised as "starter packs," no recruitment bonuses, and no multi-level commissions.
+                  The Independents Programme is a real business model - you earn commissions by selling real travel products (flights, hotels, packages) to real customers. There are no sign-up fees disguised as "starter packs," no recruitment bonuses, and no multi-level commissions.
                 </p>
                 <p className="text-xs text-muted-foreground italic">
                   <strong>Earnings Disclaimer:</strong> Results vary based on individual effort, market conditions, and time invested. The figures shown are based on actual agent performance but are not guaranteed. Your results depend on your work.
@@ -272,7 +272,7 @@ const testimonials: TestimonialCard[] = [
   { quote: "Auto-ticketing changed my life. I used to stay up until midnight issuing tickets. Now the system handles it.", name: "Uche A.", role: "Operations Manager", company: "JetWay Travels", city: "Kano", product: "agent" },
   { quote: "CoopX gives us complete visibility. No more surprise charges, no more chasing receipts at month end.", name: "Yemi D.", role: "Head of Procurement", company: "Oasis Group", city: "Lagos", product: "coopx" },
   { quote: "My Travx website ranks on Google now. Customers find me online instead of me chasing them on WhatsApp.", name: "Kemi B.", role: "Founder", company: "Wanderlust NG", city: "Ibadan", product: "travx" },
-  { quote: "I earn real commissions from real bookings. This isn't a scam — it's an actual business model that works.", name: "Dayo M.", role: "Independent Entrepreneur", company: "Self-employed", city: "Enugu", product: "independents" },
+  { quote: "I earn real commissions from real bookings. This isn't a scam - it's an actual business model that works.", name: "Dayo M.", role: "Independent Entrepreneur", company: "Self-employed", city: "Enugu", product: "independents" },
   { quote: "The wallet system is seamless. Fund it, book instantly, track everything. No more bank transfer delays.", name: "Samuel F.", role: "Senior Agent", company: "Crown Travels", city: "Benin City", product: "agent" },
 ];
 
@@ -393,7 +393,7 @@ export default function Proof() {
                 <Quote className="h-8 w-8 text-primary/30 mb-3" />
                 <p className="text-lg md:text-xl text-foreground italic leading-relaxed mb-4">"{cs.quote}"</p>
                 <footer className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-foreground">{cs.quoteAuthor}</span> — {cs.quoteRole}
+                  <span className="font-semibold text-foreground">{cs.quoteAuthor}</span> - {cs.quoteRole}
                 </footer>
               </blockquote>
             </FadeIn>
@@ -480,7 +480,7 @@ export default function Proof() {
             </span>
           </h2>
           <p className="text-background/70 mb-10 text-lg">
-            Whether you're an established agency, a corporate travel buyer, or starting from scratch — we have a product built for you.
+            Whether you're an established agency, a corporate travel buyer, or starting from scratch - we have a product built for you.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
             {[

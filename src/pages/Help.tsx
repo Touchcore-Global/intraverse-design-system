@@ -27,7 +27,7 @@ const categories = [
 
 const popularArticles = [
   { title: "How to fund your Intraverse wallet", read: "3 min read", href: "/help/fund-wallet" },
-  { title: "Issuing your first flight ticket — step by step", read: "5 min read", href: "/help/first-ticket" },
+  { title: "Issuing your first flight ticket - step by step", read: "5 min read", href: "/help/first-ticket" },
   { title: "Understanding fare classes and baggage rules", read: "4 min read", href: "/help/fare-classes" },
   { title: "How to void or refund a ticket", read: "3 min read", href: "/help/void-refund" },
   { title: "Setting up Travel Links for social media selling", read: "4 min read", href: "/help/travel-links-setup" },
@@ -58,7 +58,7 @@ export default function Help() {
     };
     setMeta("description", "Find help articles, video tutorials, and direct support for Intraverse. Search our knowledge base or chat with our Lagos-based support team on WhatsApp.");
     setMeta("og:title", "Intraverse Help Centre");
-    setMeta("og:description", "Self-serve guides, video tutorials, and human support — all in one place. Fast answers from a real team based in Lagos.");
+    setMeta("og:description", "Self-serve guides, video tutorials, and human support - all in one place. Fast answers from a real team based in Lagos.");
   }, []);
 
   const hero = useScrollReveal();
@@ -86,7 +86,7 @@ export default function Help() {
               How Can We Help You Today?
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Find answers, learn how to use Intraverse, and get the support you need — fast. Search our knowledge base, browse by category, or message us directly on WhatsApp.
+              Find answers, learn how to use Intraverse, and get the support you need - fast. Search our knowledge base, browse by category, or message us directly on WhatsApp.
             </p>
 
             {/* Search bar */}
@@ -119,7 +119,7 @@ export default function Help() {
           </div>
         </section>
 
-        {/* ── SECTION 1 — BROWSE BY CATEGORY ── */}
+        {/* ── SECTION 1 - BROWSE BY CATEGORY ── */}
         <section className="py-20 md:py-24" style={{ backgroundColor: "hsl(214, 100%, 97%)" }}>
           <div
             ref={catSection.ref}
@@ -152,7 +152,7 @@ export default function Help() {
           </div>
         </section>
 
-        {/* ── SECTION 2 — POPULAR ARTICLES ── */}
+        {/* ── SECTION 2 - POPULAR ARTICLES ── */}
         <section className="py-20 md:py-24 bg-background">
           <div
             ref={articlesSection.ref}
@@ -182,7 +182,7 @@ export default function Help() {
           </div>
         </section>
 
-        {/* ── SECTION 3 — VIDEO TUTORIALS ── */}
+        {/* ── SECTION 3 - VIDEO TUTORIALS ── */}
         <section className="py-20 md:py-24" style={{ backgroundColor: "hsl(214, 100%, 97%)" }}>
           <div
             ref={videoSection.ref}
@@ -192,7 +192,7 @@ export default function Help() {
               Learn by Watching
             </h2>
             <p className="text-lg text-muted-foreground text-center mb-14 max-w-2xl mx-auto">
-              Short, practical videos that walk you through the platform — from your first login to advanced features.
+              Short, practical videos that walk you through the platform - from your first login to advanced features.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {videos.map(v => (
@@ -221,7 +221,7 @@ export default function Help() {
           </div>
         </section>
 
-        {/* ── SECTION 4 — TALK TO A HUMAN ── */}
+        {/* ── SECTION 4 - TALK TO A HUMAN ── */}
         <section className="py-20 md:py-24 bg-background">
           <div
             ref={humanSection.ref}
@@ -238,7 +238,7 @@ export default function Help() {
               <div className="bg-background rounded-xl border border-border p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <MessageCircle className="h-10 w-10 text-[hsl(142,70%,45%)] mx-auto mb-4" />
                 <h3 className="h3-global text-foreground mb-2">WhatsApp Support</h3>
-                <p className="text-sm text-muted-foreground mb-6">Fastest response — usually under 30 minutes during office hours.</p>
+                <p className="text-sm text-muted-foreground mb-6">Fastest response - usually under 30 minutes during office hours.</p>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <Button variant="hero" size="default" className="w-full gap-2">
                     <MessageCircle className="h-4 w-4" />
@@ -250,7 +250,7 @@ export default function Help() {
               <div className="bg-background rounded-xl border border-border p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <Mail className="h-10 w-10 text-[hsl(220,76%,49%)] mx-auto mb-4" />
                 <h3 className="h3-global text-foreground mb-2">Email Support</h3>
-                <p className="text-sm text-muted-foreground mb-6">Detailed inquiries — we respond within 24 hours on weekdays.</p>
+                <p className="text-sm text-muted-foreground mb-6">Detailed inquiries - we respond within 24 hours on weekdays.</p>
                 <a href="mailto:support@intraverse.com">
                   <Button variant="outline" size="default" className="w-full rounded-none border-foreground text-foreground hover:bg-accent">
                     Email support@intraverse.com
@@ -261,7 +261,7 @@ export default function Help() {
               <div className="bg-background rounded-xl border border-border p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <Phone className="h-10 w-10 text-[hsl(220,76%,49%)] mx-auto mb-4" />
                 <h3 className="h3-global text-foreground mb-2">Phone Support</h3>
-                <p className="text-sm text-muted-foreground mb-6">Speak with a human — available during business hours WAT.</p>
+                <p className="text-sm text-muted-foreground mb-6">Speak with a human - available during business hours WAT.</p>
                 <a href="tel:+2349030002629">
                   <Button variant="outline" size="default" className="w-full rounded-none border-foreground text-foreground hover:bg-accent">
                     Call +234 903 000 2629

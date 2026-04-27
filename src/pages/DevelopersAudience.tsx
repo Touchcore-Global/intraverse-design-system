@@ -25,7 +25,7 @@ const bullets = [
 ];
 
 const capabilities = [
-  { icon: Plane, title: "Flight Search & Booking", body: "Search aggregated inventory from GDS, NDC, consolidators, and aggregators. Book, hold, and ticket — all through a single endpoint." },
+  { icon: Plane, title: "Flight Search & Booking", body: "Search aggregated inventory from GDS, NDC, consolidators, and aggregators. Book, hold, and ticket - all through a single endpoint." },
   { icon: Hotel, title: "Hotel Search & Booking", body: "Search and book hotels from leading global suppliers. Filter by location, star rating, price, and availability." },
   { icon: Globe, title: "Tours & Packages", body: "Access tours and travel packages from international suppliers. Bundle with flights and hotels for higher-value bookings." },
   { icon: Radio, title: "Webhooks", body: "Real-time booking status updates via signed webhooks. No polling required. Configure per-event or catch-all." },
@@ -114,7 +114,7 @@ const Developers = () => {
                 The Travel API That Just Works
               </h1>
               <p className="mt-6 text-base sm:text-lg font-normal leading-relaxed text-white/55">
-                RESTful API access to Intraverse's aggregated travel inventory — flights from GDS, NDC, consolidators, and aggregators, plus hotels and tours from leading global suppliers. Comprehensive documentation, sandbox environment, webhook support, and dedicated technical assistance. Built by developers, for developers.
+                RESTful API access to Intraverse's aggregated travel inventory - flights from GDS, NDC, consolidators, and aggregators, plus hotels and tours from leading global suppliers. Comprehensive documentation, sandbox environment, webhook support, and dedicated technical assistance. Built by developers, for developers.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
                 <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold" asChild>

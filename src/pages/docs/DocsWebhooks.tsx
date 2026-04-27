@@ -93,7 +93,7 @@ export default function DocsWebhooks() {
         <EndpointHeading method="GET" path="/main/v1/webhook/events" id="ep-events" />
         <p>
           Use this endpoint to fetch the current list of available webhook
-          events. New events may be added over time — always query this
+          events. New events may be added over time - always query this
           endpoint for the latest list rather than hard-coding event names.
         </p>
         <p className="mt-4">Known events at the time of writing:</p>
@@ -145,8 +145,8 @@ export default function DocsWebhooks() {
 
       <DocsSection id="best-practices" title="Best Practices">
         <ul className="list-disc list-inside space-y-2">
-          <li>Process webhooks asynchronously — return <InlineCode>200 OK</InlineCode> immediately, then enqueue work.</li>
-          <li>Treat deliveries as at-least-once — deduplicate using a stable ID from the payload.</li>
+          <li>Process webhooks asynchronously - return <InlineCode>200 OK</InlineCode> immediately, then enqueue work.</li>
+          <li>Treat deliveries as at-least-once - deduplicate using a stable ID from the payload.</li>
           <li>Use HTTPS endpoints only.</li>
           <li>Use a queue (SQS, Redis, etc.) so traffic spikes don't drop events.</li>
           <li>Monitor delivery success rates and alert on consecutive failures.</li>

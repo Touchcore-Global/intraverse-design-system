@@ -40,7 +40,7 @@ export function NavbarCTAs({
     ? "w-full h-11 text-sm sm:h-12 sm:text-base"
     : "h-10 px-6 text-sm";
 
-  // Demo CTA — render as <button> when loading/disabled so we can show state,
+  // Demo CTA - render as <button> when loading/disabled so we can show state,
   // otherwise use an <a> for native external-link semantics.
   const demoButton =
     demoLoading || disabled ? (

@@ -11,7 +11,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const testimonials = [
   {
-    quote: "Intraverse transformed how we access inventory. We now offer fares we never had before—our clients love it.",
+    quote: "Intraverse transformed how we access inventory. We now offer fares we never had before-our clients love it.",
     name: "Adaeze O.",
     agency: "Prestige Tours",
     city: "Lagos",
@@ -35,7 +35,7 @@ const testimonials = [
     city: "Ibadan",
   },
   {
-    quote: "Handling refunds and reissues used to be a nightmare. Now it's just a few clicks—our customers notice the difference.",
+    quote: "Handling refunds and reissues used to be a nightmare. Now it's just a few clicks-our customers notice the difference.",
     name: "Fatima B.",
     agency: "Sahara Holidays",
     city: "Kano",
@@ -71,7 +71,7 @@ export const Testimonials = () => {
                       <div>
                         <p className="text-sm font-semibold text-foreground">{t.name}</p>
                         <p className="text-xs text-muted-foreground">
-                          {t.agency} — {t.city}
+                          {t.agency} - {t.city}
                         </p>
                       </div>
                     </div>

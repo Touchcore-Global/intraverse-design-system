@@ -64,7 +64,7 @@ const IndependentsInterest = () => {
     phone_number: "",
     details: "",
   });
-  // Honeypot — should always remain empty for real users (hidden from view).
+  // Honeypot - should always remain empty for real users (hidden from view).
   const [website, setWebsite] = useState("");
   // Track when the form was first rendered to detect instant submissions.
   const [mountedAt] = useState(() => Date.now());
@@ -78,7 +78,7 @@ const IndependentsInterest = () => {
     e.preventDefault();
     setErrors({});
 
-    // Honeypot tripped — bot filled a hidden field. Pretend success silently.
+    // Honeypot tripped - bot filled a hidden field. Pretend success silently.
     if (website.trim() !== "") {
       setSubmitted(true);
       return;
@@ -108,7 +108,7 @@ const IndependentsInterest = () => {
         return;
       }
     } catch {
-      // localStorage unavailable — proceed without client-side rate limiting.
+      // localStorage unavailable - proceed without client-side rate limiting.
     }
 
     const parsed = interestSchema.safeParse(form);
@@ -227,7 +227,7 @@ const IndependentsInterest = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                {/* Honeypot — hidden from real users; bots tend to fill every field. */}
+                {/* Honeypot - hidden from real users; bots tend to fill every field. */}
                 <div
                   aria-hidden="true"
                   style={{
@@ -335,7 +335,7 @@ const IndependentsInterest = () => {
                       id="phone_number_hint"
                       className="text-sm text-muted-foreground"
                     >
-                      Use your WhatsApp number — Nigerian format, e.g.
+                      Use your WhatsApp number - Nigerian format, e.g.
                       0803 123 4567 or +234 803 123 4567.
                     </p>
                   )}

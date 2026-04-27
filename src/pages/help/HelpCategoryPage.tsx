@@ -31,7 +31,7 @@ export default function HelpCategoryPage() {
       el.setAttribute("content", content);
     };
     setMeta("description", `${category.heroSub.split(".")[0]}. Browse articles, watch tutorials, and get support from our Lagos-based team.`);
-    setMeta("og:title", `${category.title} — Intraverse Help Centre`);
+    setMeta("og:title", `${category.title} - Intraverse Help Centre`);
     window.scrollTo(0, 0);
   }, [category]);
 
@@ -173,7 +173,7 @@ export default function HelpCategoryPage() {
               Can't Find What You're Looking For?
             </h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Our Lagos-based support team responds via WhatsApp within 2 hours during business days. Reach out — we're happy to help.
+              Our Lagos-based support team responds via WhatsApp within 2 hours during business days. Reach out - we're happy to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">

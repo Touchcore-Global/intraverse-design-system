@@ -13,13 +13,13 @@ const cards: { icon: LucideIcon; headline: string; subheading: string; content: 
   {
     icon: Globe,
     headline: "Access Global Travel Inventory. Sell Without Limits.",
-    subheading: "Unlock flights, hotels, and travel services from multiple suppliers—all in one platform.",
-    content: "Stop juggling multiple supplier contracts and limited inventory. Intraverse connects you to global travel content through GDS integrations and trusted partners—giving you access to real-time availability, competitive pricing, and both published and private fares, all in one place.",
+    subheading: "Unlock flights, hotels, and travel services from multiple suppliers-all in one platform.",
+    content: "Stop juggling multiple supplier contracts and limited inventory. Intraverse connects you to global travel content through GDS integrations and trusted partners-giving you access to real-time availability, competitive pricing, and both published and private fares, all in one place.",
   },
   {
     icon: Ticket,
     headline: "Issue Tickets Anytime. Never Miss a Sale.",
-    subheading: "Your business doesn't sleep—your ticketing shouldn't either.",
+    subheading: "Your business doesn't sleep-your ticketing shouldn't either.",
     content: "Intraverse enables instant ticket issuance around the clock, removing dependency on supplier availability. Automated workflows ensure faster confirmations, helping you secure bookings immediately and deliver a seamless experience to your customers.",
   },
   {
@@ -32,12 +32,12 @@ const cards: { icon: LucideIcon; headline: string; subheading: string; content: 
     icon: Cog,
     headline: "Automate Your Travel Business. Scale Without Stress.",
     subheading: "Eliminate manual processes and run a smarter operation.",
-    content: "Intraverse automates core travel operations—from ticketing to booking management—reducing errors and manual workload. This allows you to operate faster, scale efficiently, and focus more on growth than administration.",
+    content: "Intraverse automates core travel operations-from ticketing to booking management-reducing errors and manual workload. This allows you to operate faster, scale efficiently, and focus more on growth than administration.",
   },
   {
     icon: RefreshCcw,
-    headline: "Stay in Control—Even After the Ticket is Issued.",
-    subheading: "Manage changes, refunds, and more—without delays.",
+    headline: "Stay in Control-Even After the Ticket is Issued.",
+    subheading: "Manage changes, refunds, and more-without delays.",
     content: "Manage post-ticketing processes with ease, including reissues, refunds, name corrections, and ancillary services. Intraverse gives you the tools to respond quickly to customer needs while maintaining full control over every booking.",
   },
   {

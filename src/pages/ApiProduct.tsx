@@ -23,7 +23,7 @@ const capabilityCards = [
   {
     emoji: "✈️",
     title: "Flight Search & Booking",
-    body: "Search aggregated flight inventory from GDS (Amadeus, Sabre, Travelport), NDC channels, consolidators, and fare aggregators — all through a single endpoint. Book, hold, and ticket programmatically. Manage PNRs, cancellations, and modifications without touching a legacy system.",
+    body: "Search aggregated flight inventory from GDS (Amadeus, Sabre, Travelport), NDC channels, consolidators, and fare aggregators - all through a single endpoint. Book, hold, and ticket programmatically. Manage PNRs, cancellations, and modifications without touching a legacy system.",
   },
   {
     emoji: "🏨",
@@ -43,7 +43,7 @@ const capabilityCards = [
   {
     emoji: "💳",
     title: "Native Payment Integration",
-    body: "Accept payments through multiple channels: cards, bank transfers, mobile money, and Odiopay BNPL — all through the API. Handle multi-currency transactions, split payments, and automated settlement. No separate payment integration required.",
+    body: "Accept payments through multiple channels: cards, bank transfers, mobile money, and Odiopay BNPL - all through the API. Handle multi-currency transactions, split payments, and automated settlement. No separate payment integration required.",
   },
   {
     emoji: "🛡️",
@@ -61,7 +61,7 @@ const differentiators = [
   {
     emoji: "🧪",
     title: "Production-Mirroring Sandbox",
-    body: "Test with real inventory structures, realistic pricing, and production-like response times. The sandbox mirrors production — what works in testing works in production.",
+    body: "Test with real inventory structures, realistic pricing, and production-like response times. The sandbox mirrors production - what works in testing works in production.",
   },
   {
     emoji: "⚡",
@@ -115,14 +115,14 @@ const useCases = [
   {
     emoji: "🏦",
     title: "Fintechs & Neobanks",
-    body: "Add travel booking as a native feature in your banking or fintech app. Offer flights, hotels, and BNPL — directly from your customer's wallet or account.",
+    body: "Add travel booking as a native feature in your banking or fintech app. Offer flights, hotels, and BNPL - directly from your customer's wallet or account.",
     link: "/for/fintechs",
     linkLabel: "Learn more →",
   },
   {
     emoji: "📱",
     title: "Consumer Travel Apps",
-    body: "Build a travel booking app without building travel infrastructure. Access real inventory, process real bookings, and earn real margins — through one API.",
+    body: "Build a travel booking app without building travel infrastructure. Access real inventory, process real bookings, and earn real margins - through one API.",
     link: "/for/startups",
     linkLabel: "Learn more →",
   },
@@ -136,7 +136,7 @@ const useCases = [
   {
     emoji: "🛒",
     title: "Marketplaces & Super-Apps",
-    body: "Add travel as a vertical in your marketplace or super-app. Embed search, booking, and payment — all white-labelled under your brand.",
+    body: "Add travel as a vertical in your marketplace or super-app. Embed search, booking, and payment - all white-labelled under your brand.",
     link: "/contact",
     linkLabel: "Talk to us →",
   },
@@ -205,7 +205,7 @@ export default function ApiProduct() {
                 The Travel API Built for Africa's Next Generation of Products
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-10 leading-relaxed">
-                The Intraverse API gives developers, fintechs, and tech startups programmatic access to aggregated travel inventory — flights from GDS, NDC, consolidators, and aggregators, plus hotels and tours from leading global suppliers. Skip years of supplier negotiations and IATA accreditation. Build travel into your product in weeks, not years.
+                The Intraverse API gives developers, fintechs, and tech startups programmatic access to aggregated travel inventory - flights from GDS, NDC, consolidators, and aggregators, plus hotels and tours from leading global suppliers. Skip years of supplier negotiations and IATA accreditation. Build travel into your product in weeks, not years.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90 shadow-lg" asChild>
@@ -222,7 +222,7 @@ export default function ApiProduct() {
           </div>
         </section>
 
-        {/* ═══ SECTION 1 — WHAT THE API DOES ═══ */}
+        {/* ═══ SECTION 1 - WHAT THE API DOES ═══ */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4" style={{ maxWidth: "900px" }}>
             <RevealBlock>
@@ -230,13 +230,13 @@ export default function ApiProduct() {
                 One Endpoint. Every Travel Product.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto">
-                The Intraverse API is a single integration point for flights, hotels, tours, and payments. Instead of negotiating with dozens of suppliers, building separate integrations for each GDS, and waiting months for IATA accreditation — you connect once. We handle the supplier relationships, the accreditation, and the settlement. You focus on building your product.
+                The Intraverse API is a single integration point for flights, hotels, tours, and payments. Instead of negotiating with dozens of suppliers, building separate integrations for each GDS, and waiting months for IATA accreditation - you connect once. We handle the supplier relationships, the accreditation, and the settlement. You focus on building your product.
               </p>
             </RevealBlock>
           </div>
         </section>
 
-        {/* ═══ SECTION 2 — CORE CAPABILITIES ═══ */}
+        {/* ═══ SECTION 2 - CORE CAPABILITIES ═══ */}
         <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
@@ -262,7 +262,7 @@ export default function ApiProduct() {
           </div>
         </section>
 
-        {/* ═══ SECTION 3 — WHY DEVELOPERS CHOOSE US ═══ */}
+        {/* ═══ SECTION 3 - WHY DEVELOPERS CHOOSE US ═══ */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
@@ -270,7 +270,7 @@ export default function ApiProduct() {
                 API Documentation That Doesn't Make You Cry
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mb-16">
-                We've all been there — staring at a PDF from 2011 that claims to be "developer documentation," trying to decode XML responses that look like they were written by a committee of people who've never used an API. The Intraverse API is different. Modern REST endpoints. JSON everywhere. Documentation that actually has examples. A sandbox that actually works.
+                We've all been there - staring at a PDF from 2011 that claims to be "developer documentation," trying to decode XML responses that look like they were written by a committee of people who've never used an API. The Intraverse API is different. Modern REST endpoints. JSON everywhere. Documentation that actually has examples. A sandbox that actually works.
               </p>
             </RevealBlock>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -287,7 +287,7 @@ export default function ApiProduct() {
           </div>
         </section>
 
-        {/* ═══ SECTION 4 — CODE EXAMPLE ═══ */}
+        {/* ═══ SECTION 4 - CODE EXAMPLE ═══ */}
         <section className="py-16 md:py-24" style={{ backgroundColor: "#0D1B2A" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "900px" }}>
             <RevealBlock>
@@ -308,7 +308,7 @@ export default function ApiProduct() {
                 </pre>
               </div>
               <p className="text-white/50 text-sm mt-6 text-center">
-                This returns aggregated results from Amadeus, Sabre, Travelport, NDC channels, and connected consolidators — all normalised into a single, consistent response format. No XML. No legacy protocols. Just clean JSON.
+                This returns aggregated results from Amadeus, Sabre, Travelport, NDC channels, and connected consolidators - all normalised into a single, consistent response format. No XML. No legacy protocols. Just clean JSON.
               </p>
               <div className="text-center mt-8">
                 <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground">
@@ -319,7 +319,7 @@ export default function ApiProduct() {
           </div>
         </section>
 
-        {/* ═══ SECTION 5 — TECH SPECS ═══ */}
+        {/* ═══ SECTION 5 - TECH SPECS ═══ */}
         <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "900px" }}>
             <RevealBlock>
@@ -340,7 +340,7 @@ export default function ApiProduct() {
           </div>
         </section>
 
-        {/* ═══ SECTION 6 — USE CASES ═══ */}
+        {/* ═══ SECTION 6 - USE CASES ═══ */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
@@ -365,7 +365,7 @@ export default function ApiProduct() {
           </div>
         </section>
 
-        {/* ═══ SECTION 7 — PRICING MODEL ═══ */}
+        {/* ═══ SECTION 7 - PRICING MODEL ═══ */}
         <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
@@ -423,7 +423,7 @@ export default function ApiProduct() {
           </div>
         </section>
 
-        {/* ═══ SECTION 8 — GET STARTED ═══ */}
+        {/* ═══ SECTION 8 - GET STARTED ═══ */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
@@ -450,7 +450,7 @@ export default function ApiProduct() {
           </div>
         </section>
 
-        {/* ═══ SECTION 9 — CO-BUILD PARTNERSHIPS ═══ */}
+        {/* ═══ SECTION 9 - CO-BUILD PARTNERSHIPS ═══ */}
         <section className="py-16 md:py-24" style={{ backgroundColor: "#0D1B2A" }}>
           <div className="container mx-auto px-4 text-center" style={{ maxWidth: "800px" }}>
             <RevealBlock>
@@ -458,7 +458,7 @@ export default function ApiProduct() {
                 Building Something Big? Let's Build It Together.
               </h2>
               <p className="text-white/70 text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-                If you're building a product that could reshape how Africans book, pay for, or experience travel — we want to hear from you. Our partnerships team works with selected startups and enterprises on co-build integrations, custom API extensions, and go-to-market support.
+                If you're building a product that could reshape how Africans book, pay for, or experience travel - we want to hear from you. Our partnerships team works with selected startups and enterprises on co-build integrations, custom API extensions, and go-to-market support.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90">

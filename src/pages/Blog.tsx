@@ -109,7 +109,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Blog — Insights for African Travel Businesses | Intraverse</title>
+        <title>Blog - Insights for African Travel Businesses | Intraverse</title>
         <meta
           name="description"
           content="Product launches, industry analysis, growth strategies, and engineering lessons from the team building Africa's travel infrastructure."
@@ -126,7 +126,7 @@ export default function Blog() {
             Insights, Updates, and Ideas for African Travel Businesses
           </h1>
           <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            The latest from the team building Africa's travel infrastructure — product launches, industry
+            The latest from the team building Africa's travel infrastructure - product launches, industry
             analysis, growth strategies, and the lessons we're learning along the way.
           </p>
 

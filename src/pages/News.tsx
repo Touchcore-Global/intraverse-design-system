@@ -96,7 +96,7 @@ export default function News() {
         <title>News &amp; Press | Intraverse</title>
         <meta
           name="description"
-          content="Press releases, media coverage, events, and milestones from Intraverse — the Africa-first travel technology company building travel infrastructure for the continent."
+          content="Press releases, media coverage, events, and milestones from Intraverse - the Africa-first travel technology company building travel infrastructure for the continent."
         />
         <link rel="canonical" href="https://intraverse.africa/news" />
       </Helmet>
