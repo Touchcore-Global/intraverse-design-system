@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Plane, Building2, Users, Code2, Briefcase, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
+import audienceAgents from "@/assets/v3/audience-agents.jpg";
+import audienceFintechs from "@/assets/v3/audience-fintechs.jpg";
+import audienceIndependents from "@/assets/v3/audience-independents.jpg";
+import audienceDevelopers from "@/assets/v3/audience-developers.jpg";
+import audienceCorporates from "@/assets/v3/audience-corporates.jpg";
+import audienceStartups from "@/assets/v3/audience-startups.jpg";
 
 type Slide = {
   tag: string;
@@ -8,6 +14,7 @@ type Slide = {
   description: string;
   icon: React.ElementType;
   accent: string;
+  image: string;
 };
 
 const slides: Slide[] = [
@@ -18,6 +25,7 @@ const slides: Slide[] = [
       "Quote, book, and collect payment for flights, hotels, and tours from a single dashboard built for African travel pros.",
     icon: Plane,
     accent: "from-primary/20 to-primary/5",
+    image: audienceAgents,
   },
   {
     tag: "For Fintechs",
@@ -26,6 +34,7 @@ const slides: Slide[] = [
       "Add bookings, BNPL, and rewards to your app with our APIs — no airline contracts or GDS integrations required.",
     icon: Building2,
     accent: "from-accent/20 to-accent/5",
+    image: audienceFintechs,
   },
   {
     tag: "For Independents",
@@ -34,6 +43,7 @@ const slides: Slide[] = [
       "Share Travel Links on WhatsApp and social, earn commission on every booking, and track everything in real time.",
     icon: Users,
     accent: "from-primary/20 to-primary/5",
+    image: audienceIndependents,
   },
   {
     tag: "For Developers",
@@ -42,6 +52,7 @@ const slides: Slide[] = [
       "Modern REST endpoints, sandbox environment, and SDKs that let you ship travel features in days, not quarters.",
     icon: Code2,
     accent: "from-accent/20 to-accent/5",
+    image: audienceDevelopers,
   },
   {
     tag: "For Corporates",
@@ -50,6 +61,7 @@ const slides: Slide[] = [
       "Policy-aware booking, consolidated invoicing, and approval flows that keep finance and travelers happy.",
     icon: Briefcase,
     accent: "from-primary/20 to-primary/5",
+    image: audienceCorporates,
   },
   {
     tag: "For Startups",
@@ -58,6 +70,7 @@ const slides: Slide[] = [
       "White-label storefronts, payments, and supplier inventory so you can focus on growth, not infrastructure.",
     icon: Rocket,
     accent: "from-accent/20 to-accent/5",
+    image: audienceStartups,
   },
 ];
 
@@ -152,30 +165,15 @@ export const SliderSectionV3 = () => {
 
               {/* Right: visual */}
               <div className="relative hidden lg:flex items-center justify-center">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  {(() => {
-                    const Icon = slides[active].icon;
-                    return (
-                      <Icon
-                        className="w-64 h-64 text-primary/15"
-                        strokeWidth={1}
-                      />
-                    );
-                  })()}
-                </div>
-                <div className="relative grid grid-cols-2 gap-4 max-w-sm">
-                  {[0, 1, 2, 3].map((n) => (
-                    <div
-                      key={n}
-                      className="aspect-square bg-background/60 backdrop-blur border border-border/50 p-4 flex flex-col justify-between"
-                    >
-                      <div className="w-8 h-8 bg-primary/10" />
-                      <div className="space-y-1">
-                        <div className="h-1.5 bg-foreground/20 w-full" />
-                        <div className="h-1.5 bg-foreground/10 w-2/3" />
-                      </div>
-                    </div>
-                  ))}
+                <div className="relative w-full h-full min-h-[380px] overflow-hidden rounded-lg border border-border/50 shadow-lg">
+                  <img
+                    src={slides[active].image}
+                    alt={slides[active].tag}
+                    loading="lazy"
+                    width={1280}
+                    height={960}
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+                  />
                 </div>
               </div>
             </div>
