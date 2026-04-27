@@ -67,12 +67,17 @@ export function MegaMenuV3({
           {/* By Use Case — horizontal image card grid */}
           {useCases && (
             <div className={`p-5 lg:p-6 ${audiences ? "border-b border-border" : ""}`}>
-              <p
-                className="text-[11px] uppercase tracking-[0.08em] font-bold mb-3"
-                style={{ color: "#94A3B8" }}
-              >
-                {useCases.header}
-              </p>
+              <div className="mb-4">
+                <p
+                  className="text-[11px] uppercase tracking-[0.08em] font-bold"
+                  style={{ color: "#94A3B8" }}
+                >
+                  {useCases.header}
+                </p>
+                <p className="text-[13px] text-muted-foreground mt-1 max-w-xl">
+                  Discover the most common ways teams put Intraverse to work — from selling flights online to embedding travel in your own product.
+                </p>
+              </div>
               {(() => {
                 const featuredCases = useCases.items.slice(0, 3);
                 const moreCases = useCases.items.slice(3);
@@ -154,12 +159,17 @@ export function MegaMenuV3({
           {/* By Audience — horizontal chip row (rendered after use cases) */}
           {audiences && (
             <div className="p-5 lg:p-6">
-              <p
-                className="text-[11px] uppercase tracking-[0.08em] font-bold mb-3"
-                style={{ color: "#94A3B8" }}
-              >
-                {audiences.header}
-              </p>
+              <div className="mb-4">
+                <p
+                  className="text-[11px] uppercase tracking-[0.08em] font-bold"
+                  style={{ color: "#94A3B8" }}
+                >
+                  {audiences.header}
+                </p>
+                <p className="text-[13px] text-muted-foreground mt-1 max-w-xl">
+                  Built for the people who move travel forward — pick the audience that fits you to see tailored solutions.
+                </p>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {audiences.items.map((item) => {
                   const Icon = item.icon;
