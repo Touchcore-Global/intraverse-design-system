@@ -66,7 +66,7 @@ export function MegaMenuV3({
 
           {/* By Use Case — horizontal image card grid */}
           {useCases && (
-            <div className="p-5 lg:p-6">
+            <div className={`p-5 lg:p-6 ${audiences ? "border-b border-border" : ""}`}>
               <p
                 className="text-[11px] uppercase tracking-[0.08em] font-bold mb-3"
                 style={{ color: "#94A3B8" }}
