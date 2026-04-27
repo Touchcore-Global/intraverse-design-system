@@ -73,12 +73,12 @@ export const solutionSections: NavSection[] = [
   {
     header: "BY USE CASE",
     items: [
-      { label: "Sell Flights Online", href: "/for/travel-agents", icon: Plane, description: "Launch an online flight booking business" },
-      { label: "Embed Travel in Your App", href: "/for/developers", icon: Plug, description: "Add booking to any fintech or super-app" },
-      { label: "Manage Corporate Travel", href: "/for/corporates", icon: Building2, description: "Policy-controlled business travel" },
-      { label: "Earn as an Independent", href: "/for/independents", icon: Rocket, description: "Start a travel side-hustle with zero setup" },
-      { label: "Offer BNPL for Travel", href: "/for/fintechs", icon: Wallet, description: "Let customers pay in instalments" },
-      { label: "Browse All Use Cases", href: "/use-cases", icon: ClipboardList, description: "Explore how teams use Intraverse" },
+      { label: "Sell Flights Online", href: "/for/travel-agents", icon: Plane, description: "Launch an online flight booking business", image: usecaseFlights },
+      { label: "Embed Travel in Your App", href: "/for/developers", icon: Plug, description: "Add booking to any fintech or super-app", image: usecaseEmbed },
+      { label: "Manage Corporate Travel", href: "/for/corporates", icon: Building2, description: "Policy-controlled business travel", image: usecaseCorporate },
+      { label: "Earn as an Independent", href: "/for/independents", icon: Rocket, description: "Start a travel side-hustle with zero setup", image: usecaseIndependent },
+      { label: "Offer BNPL for Travel", href: "/for/fintechs", icon: Wallet, description: "Let customers pay in instalments", image: usecaseBnpl },
+      { label: "Browse All Use Cases", href: "/use-cases", icon: ClipboardList, description: "Explore how teams use Intraverse", image: usecaseAll },
     ],
   },
 ];
