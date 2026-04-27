@@ -19,6 +19,8 @@ export interface NavItem {
   popular?: boolean;
   comingSoon?: boolean;
   isNew?: boolean;
+  /** Optional thumbnail image (used by image-based mega menu sections like Solutions use cases). */
+  image?: string;
   /** Stable analytics id. When set, clicks fire `nav_product_cta_click`. */
   trackingId?: string;
 }
