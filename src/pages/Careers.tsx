@@ -177,12 +177,14 @@ function OpenRolesSection() {
             <p className="text-muted-foreground max-w-xl mx-auto mb-6">
               We're not actively hiring at the moment, but we're always interested in meeting exceptional people. Send us a note and we'll reach out when something opens up that fits.
             </p>
-            <Link to="/contact">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Briefcase className="h-4 w-4 mr-2" />
-                Send a General Application
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              onClick={() => setApplicationOpen(true)}
+            >
+              <Briefcase className="h-4 w-4 mr-2" />
+              Send a General Application
+            </Button>
           </div>
         ) : (
           <>
