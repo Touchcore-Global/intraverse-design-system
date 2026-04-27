@@ -239,7 +239,7 @@ export default function Products() {
               <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button variant="outline" size="xl" className="rounded-none" asChild>
-              <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Start Free</a>
+<a href="https://intraverse.app" target="_blank" rel="noopener noreferrer">Start Free</a>
             </Button>
           </div>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
@@ -422,7 +422,7 @@ export default function Products() {
                 <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
               </Button>
               <Button variant="outline" size="xl" className="rounded-none bg-background text-foreground border-background hover:bg-foreground hover:text-background font-semibold" asChild>
-                <a href="https://www.intraverse.app/register" target="_blank" rel="noopener noreferrer">Start Free</a>
+                <a href="https://intraverse.app" target="_blank" rel="noopener noreferrer">Start Free</a>
               </Button>
             </div>
           </RevealBlock>

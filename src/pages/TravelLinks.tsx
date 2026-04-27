@@ -382,7 +382,7 @@ const TravelLinks = () => {
               Every Travel Link is a sale that doesn't need a website, an app, or a sales call. Just a link, a customer, and a click. Try Travel Links free with your Starter account, or upgrade to unlock unlimited links and full commission earnings.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="/contact">
+              <a href="https://intraverse.app" target="_blank" rel="noopener noreferrer">
                 <Button size="xl" className="cta-responsive min-h-[48px] bg-white text-foreground hover:bg-white/90 font-semibold">
                   Start Free
                 </Button>

@@ -189,8 +189,8 @@ export default function Tools() {
                 Intraverse isn't just a booking platform. It's a complete toolkit for running and growing your travel business. Whether you're an agent, an independent, or a business, every tool below is included in your plan - no premium add-ons, no upgrade traps, no hidden fees.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-                  Start Free
+                <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+                  <a href="https://intraverse.app" target="_blank" rel="noopener noreferrer">Start Free</a>
                 </Button>
                 <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-foreground text-foreground hover:bg-accent" asChild>
                   <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
@@ -367,8 +367,8 @@ export default function Tools() {
                 Most travel businesses use 4–6 different tools to do what Intraverse does in one. Stop paying for separate software, stop copying data between systems, stop losing time to manual workflows. Try Intraverse free and see every tool in action.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-background text-foreground border-background hover:bg-background/90 rounded-none font-semibold">
-                  Start Free
+                <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] bg-background text-foreground border-background hover:bg-background/90 rounded-none font-semibold" asChild>
+                  <a href="https://intraverse.app" target="_blank" rel="noopener noreferrer">Start Free</a>
                 </Button>
                 <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none bg-background text-foreground border-background hover:bg-foreground hover:text-background font-semibold" asChild>
                   <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
