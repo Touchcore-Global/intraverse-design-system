@@ -62,6 +62,8 @@ const tiers = [
       "Access to knowledge base",
     ],
     cta: "Start Free",
+    ctaHref: "https://intraverse.app/?view=register",
+    ctaTarget: "_blank",
     ctaVariant: "outline" as const,
     note: null,
     popular: false,
@@ -90,6 +92,8 @@ const tiers = [
       "Branded invoices & receipts",
     ],
     cta: "Start 14-Day Free Trial",
+    ctaHref: "https://intraverse.app/?view=register",
+    ctaTarget: "_blank",
     ctaVariant: "default" as const,
     note: "No credit card required",
     popular: true,
@@ -118,6 +122,8 @@ const tiers = [
       "Direct product team access",
     ],
     cta: "Talk to Enterprise Sales",
+    ctaHref: "/contact",
+    ctaTarget: undefined,
     ctaVariant: "outline" as const,
     note: null,
     popular: false,
@@ -281,12 +287,28 @@ export default function Pricing() {
                   )}
                 </div>
 
-                <Button
-                  variant={tier.ctaVariant === "default" ? "hero" : "outline"}
-                  className="w-full min-h-[48px]"
-                >
-                  {tier.cta}
-                </Button>
+                {tier.ctaHref ? (
+                  <a
+                    href={tier.ctaHref}
+                    target={tier.ctaTarget}
+                    rel={tier.ctaTarget === "_blank" ? "noopener noreferrer" : undefined}
+                    className="w-full block"
+                  >
+                    <Button
+                      variant={tier.ctaVariant === "default" ? "hero" : "outline"}
+                      className="w-full min-h-[48px]"
+                    >
+                      {tier.cta}
+                    </Button>
+                  </a>
+                ) : (
+                  <Button
+                    variant={tier.ctaVariant === "default" ? "hero" : "outline"}
+                    className="w-full min-h-[48px]"
+                  >
+                    {tier.cta}
+                  </Button>
+                )}
                 {tier.note && (
                   <p className="text-xs text-muted-foreground text-center mt-2">{tier.note}</p>
                 )}
