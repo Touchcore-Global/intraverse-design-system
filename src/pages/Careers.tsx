@@ -32,21 +32,6 @@ const perks = [
   { icon: GraduationCap, label: "Conference Stipend" },
 ];
 
-interface Role {
-  title: string;
-  team: string;
-  location: string;
-  type: string;
-}
-
-const openRoles: Role[] = [
-  { title: "Senior Frontend Engineer", team: "Engineering", location: "Lagos / Remote", type: "Full-time" },
-  { title: "Backend Engineer (Node / Go)", team: "Engineering", location: "Lagos / Remote", type: "Full-time" },
-  { title: "Product Designer", team: "Product", location: "Lagos / Remote", type: "Full-time" },
-  { title: "Growth Marketing Lead", team: "Marketing", location: "Lagos", type: "Full-time" },
-  { title: "Customer Success Manager", team: "Operations", location: "Lagos", type: "Full-time" },
-];
-
 /* ---------- COMPONENTS ---------- */
 
 function HeroSection() {
