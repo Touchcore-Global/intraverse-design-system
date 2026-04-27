@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import travelLinkBookingPreview from "@/assets/travel-link-booking-preview.svg";
 import {
   Link2,
   Smartphone,
