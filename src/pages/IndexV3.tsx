@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroSectionV2 } from "@/components/v2/HeroSectionV2";
 import { FeatureGridV3 } from "@/components/v3/FeatureGridV3";
+import { SliderSectionV3 } from "@/components/v3/SliderSectionV3";
 import { ProofSectionV3 } from "@/components/v3/ProofSectionV3";
 import { Testimonials } from "@/components/Testimonials";
 import { FinalCTAV2 } from "@/components/v2/FinalCTAV2";
@@ -16,6 +17,11 @@ const IndexV3 = () => {
 
       {/* Hero — bold AI/SaaS-style above the fold (logos strip already inside hero) */}
       <HeroSectionV2 />
+
+      {/* Slider — Jasper-style use-case carousel */}
+      <RevealSection variant="fade-up">
+        <SliderSectionV3 />
+      </RevealSection>
 
       {/* Feature grid — Jasper-style "everything in one platform" */}
       <RevealSection variant="fade-up">
