@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { supabase } from "@/integrations/supabase/client";
+import { formatSalary, type JobPosting } from "@/lib/jobs/types";
 import {
   Rocket, Users, Heart, Globe, Zap, MapPin, Briefcase,
-  ArrowRight, Clock, GraduationCap, Coffee, Plane,
+  ArrowRight, Clock, GraduationCap, Coffee, Plane, Inbox,
 } from "lucide-react";
 
 /* ---------- DATA ---------- */
