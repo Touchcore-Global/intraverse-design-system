@@ -129,7 +129,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
         />
       </div>
 
-      {/* Mobile bottom buttons — tightened for short screens (≤568px tall) */}
+      {/* Mobile bottom buttons - tightened for short screens (≤568px tall) */}
       <div
         className="shrink-0 px-4 pt-3 pb-3 sm:px-6 sm:pt-4 sm:pb-6 border-t border-border bg-background"
         style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}

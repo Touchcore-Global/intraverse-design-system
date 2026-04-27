@@ -62,7 +62,7 @@ const features = [
   {
     icon: Plug,
     title: "Embedded Travel API",
-    body: "Plug Intraverse's REST API directly into your existing app. Offer flight, hotel, and tour booking inside your fintech experience without sending users to a third-party site. Aggregated inventory from GDS, NDC, consolidators, and aggregators — accessible through one clean API.",
+    body: "Plug Intraverse's REST API directly into your existing app. Offer flight, hotel, and tour booking inside your fintech experience without sending users to a third-party site. Aggregated inventory from GDS, NDC, consolidators, and aggregators - accessible through one clean API.",
   },
   {
     icon: CreditCard,
@@ -77,7 +77,7 @@ const features = [
   {
     icon: BarChart3,
     title: "Revenue Sharing Model",
-    body: "You earn on every flight, hotel, and tour booked through your platform. Custom commercial structures available — flat commission, revenue share, or hybrid models depending on volume and integration depth.",
+    body: "You earn on every flight, hotel, and tour booked through your platform. Custom commercial structures available - flat commission, revenue share, or hybrid models depending on volume and integration depth.",
   },
   {
     icon: Zap,
@@ -96,7 +96,7 @@ const benefits = [
   { icon: Zap, title: "Speed to Market", body: "Launch travel as a feature in 6–12 weeks instead of 18–24 months." },
   { icon: DollarSign, title: "Capital Efficiency", body: "No upfront capital for IATA, GDS contracts, or supplier deposits. Pay as you scale." },
   { icon: Wrench, title: "Engineering Simplicity", body: "One clean REST API. Sandbox environment for testing. SDKs for Node, Python, and PHP. Webhook support for real-time booking events." },
-  { icon: Shield, title: "Compliance Built In", body: "IATA accreditation, BSP settlement, NDPR compliance, and PCI-compliant payment handling — all included. Your compliance team will love it." },
+  { icon: Shield, title: "Compliance Built In", body: "IATA accreditation, BSP settlement, NDPR compliance, and PCI-compliant payment handling - all included. Your compliance team will love it." },
   { icon: Handshake, title: "Co-Build Partnerships", body: "For high-volume integrations, our team works directly with yours on custom integrations, branded checkout flows, and joint go-to-market." },
 ];
 
@@ -284,7 +284,7 @@ const FintechsAudience = () => {
               Your Users Are Already Spending on Travel. Capture That Revenue.
             </h1>
             <p className="mt-8 text-base sm:text-lg md:text-xl font-normal max-w-3xl mx-auto leading-relaxed text-white/70">
-              Your users are buying flights, booking hotels, and paying for travel every day — and every Naira goes to your competitors. Intraverse gives Nigerian fintechs, neobanks, super-apps, and digital wallets a turnkey way to add travel booking as a native revenue stream. Aggregated flight, hotel, and tour inventory through one API. Native BNPL via Odiopay. Launch in months, not years.
+              Your users are buying flights, booking hotels, and paying for travel every day - and every Naira goes to your competitors. Intraverse gives Nigerian fintechs, neobanks, super-apps, and digital wallets a turnkey way to add travel booking as a native revenue stream. Aggregated flight, hotel, and tour inventory through one API. Native BNPL via Odiopay. Launch in months, not years.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="#partnership-form">
@@ -340,7 +340,7 @@ const FintechsAudience = () => {
             </h2>
             <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                Your fintech has millions of users. Every month, those users spend billions of Naira on travel — flights to Dubai, hotels in Lagos, tours in Cape Town, school runs to the UK. Every transaction is a revenue opportunity you're losing to legacy travel platforms, banks, and OTAs.
+                Your fintech has millions of users. Every month, those users spend billions of Naira on travel - flights to Dubai, hotels in Lagos, tours in Cape Town, school runs to the UK. Every transaction is a revenue opportunity you're losing to legacy travel platforms, banks, and OTAs.
               </p>
               <p>
                 Building travel infrastructure in-house is brutal. IATA accreditation alone takes months and capital. GDS contracts require legal teams and minimum volume commitments. Hotel supplier negotiations take a year. BSP settlement setup is its own engineering project. And by the time you've cleared all of that, your competitors have already launched.

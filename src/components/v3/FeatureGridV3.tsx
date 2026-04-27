@@ -15,7 +15,7 @@ const features = [
   {
     icon: Map,
     title: "Tours & Activities",
-    desc: "Curated experiences in 200+ destinations — from city tours to multi-day expeditions.",
+    desc: "Curated experiences in 200+ destinations - from city tours to multi-day expeditions.",
   },
   {
     icon: Package,
@@ -35,7 +35,7 @@ const features = [
   {
     icon: Globe,
     title: "Branded Storefront",
-    desc: "Launch your own booking website under your brand — no developers, no code.",
+    desc: "Launch your own booking website under your brand - no developers, no code.",
   },
   {
     icon: Zap,

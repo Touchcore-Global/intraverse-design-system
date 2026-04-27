@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 
 const bulletPoints = [
-  "Runs an agency of any size — from solo operators to multi-branch businesses",
+  "Runs an agency of any size - from solo operators to multi-branch businesses",
   "Is tired of juggling multiple GDS terminals and supplier portals",
   "Wants access to fares from NDC, consolidators, and aggregators",
   "Is looking to add hotels and tours to your offering",
@@ -28,7 +28,7 @@ const solutions = [
   {
     icon: Monitor,
     title: "Agent Selling Platform",
-    body: "Aggregated flight inventory from GDS (Amadeus, Sabre, Galileo), NDC connections, consolidators, and aggregators — plus hotels and tours from leading global suppliers. All searchable from one dashboard.",
+    body: "Aggregated flight inventory from GDS (Amadeus, Sabre, Galileo), NDC connections, consolidators, and aggregators - plus hotels and tours from leading global suppliers. All searchable from one dashboard.",
     link: "/agent-platform",
     linkText: "Learn more about Agent Selling Platform",
   },
@@ -49,7 +49,7 @@ const solutions = [
   {
     icon: Link2,
     title: "Travel Links",
-    body: "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp or email — your customer clicks, books, and pays. No website needed.",
+    body: "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp or email - your customer clicks, books, and pays. No website needed.",
     link: "/products/travel-links",
     linkText: "Learn more about Travel Links",
   },
@@ -121,7 +121,7 @@ const TravelAgents = () => {
               className="mt-8 text-base sm:text-lg md:text-xl font-normal max-w-3xl mx-auto"
               style={{ color: "rgb(116, 113, 122)" }}
             >
-              Whether you're a two-person agency in Lagos or a multi-branch operation across the country, Intraverse gives you the technology to compete with the biggest players in travel. Aggregated flight inventory, global hotel and tour suppliers, white-label website, and a wallet system — all in one platform.
+              Whether you're a two-person agency in Lagos or a multi-branch operation across the country, Intraverse gives you the technology to compete with the biggest players in travel. Aggregated flight inventory, global hotel and tour suppliers, white-label website, and a wallet system - all in one platform.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
@@ -177,7 +177,7 @@ const TravelAgents = () => {
                 Every day, you're juggling multiple GDS terminals, copying PNRs between systems, calling consolidators for better fares, and manually tracking payments. Your margins are getting squeezed, and you're spending more time on admin than on selling.
               </p>
               <p>
-                You don't have access to negotiated fares from NDC or consolidator channels — so you're competing on the same inventory as everyone else. You have no website, no online presence, and no way to let your customers self-serve.
+                You don't have access to negotiated fares from NDC or consolidator channels - so you're competing on the same inventory as everyone else. You have no website, no online presence, and no way to let your customers self-serve.
               </p>
               <p className="font-semibold text-foreground text-base md:text-lg">
                 It doesn't have to be this way.
@@ -252,7 +252,7 @@ const TravelAgents = () => {
                 "Since switching to Intraverse, we've cut our booking time in half and added hotels and tours to our offering without any extra overhead. It's the single best investment we've made in our agency."
               </blockquote>
               <p className="text-sm text-muted-foreground font-medium">
-                — Adebayo O., Coastline Travels, Lagos
+                - Adebayo O., Coastline Travels, Lagos
               </p>
             </div>
           </RevealBlock>

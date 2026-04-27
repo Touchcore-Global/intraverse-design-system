@@ -27,7 +27,7 @@ const products = [
   {
     icon: Building2,
     title: "Take Control of Your Company's Travel Spend",
-    body: "Approval workflows, policy enforcement, consolidated billing, and full reporting — built for corporates managing employee travel.",
+    body: "Approval workflows, policy enforcement, consolidated billing, and full reporting - built for corporates managing employee travel.",
     cta: "Book a Demo →",
     label: "CoopX",
     href: "/coopx",
@@ -43,7 +43,7 @@ const products = [
   {
     icon: Link2,
     title: "Sell Travel Without a Website. Just Share a Link.",
-    body: "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, social media, or email. Your customer clicks, books, and pays — and you earn the commission. No website, no app, no tech skills required.",
+    body: "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, social media, or email. Your customer clicks, books, and pays - and you earn the commission. No website, no app, no tech skills required.",
     cta: "Learn About Travel Links →",
     label: "Travel Links",
     href: "/products/travel-links",

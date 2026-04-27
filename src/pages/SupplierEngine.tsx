@@ -26,7 +26,7 @@ import { WHATSAPP_URL } from "@/lib/constants";
 const steps = [
   { icon: Link2, title: "Share OIDs", desc: "Agents opt in to share their Amadeus Office IDs as supply partners within the network." },
   { icon: DollarSign, title: "Access Better Fares", desc: "The system searches across all shared OIDs simultaneously, surfacing the best available pricing." },
-  { icon: Handshake, title: "Everyone Benefits", desc: "Collective buying power means better fares for all — without competitive disadvantage." },
+  { icon: Handshake, title: "Everyone Benefits", desc: "Collective buying power means better fares for all - without competitive disadvantage." },
   { icon: Lock, title: "Built Into Dashboard", desc: "No separate portal. Supplier Engine works inside the Intraverse platform you already use." },
 ];
 
@@ -37,10 +37,10 @@ const stats = [
 ];
 
 const faqs = [
-  { q: "What is a multi-OID fare aggregation system?", a: "It's a system that searches for fares across multiple Amadeus Office IDs simultaneously. Instead of seeing prices from just your single OID, you see the best available fares from dozens of OIDs — including negotiated and special deal fares." },
+  { q: "What is a multi-OID fare aggregation system?", a: "It's a system that searches for fares across multiple Amadeus Office IDs simultaneously. Instead of seeing prices from just your single OID, you see the best available fares from dozens of OIDs - including negotiated and special deal fares." },
   { q: "Do I lose control of my OID?", a: "No. You retain full ownership and control of your OID. You're simply opting in to share fare access with the network, and in return you gain access to fares from every other shared OID." },
   { q: "Is there an additional cost?", a: "Pricing details will be announced at launch. Join the waitlist to be the first to know about launch pricing and any early-adopter benefits." },
-  { q: "Can competitors see my negotiated fares?", a: "The system surfaces the best fare for a given route — it doesn't expose which OID it came from or the details of your negotiated agreements. Your commercial relationships remain private." },
+  { q: "Can competitors see my negotiated fares?", a: "The system surfaces the best fare for a given route - it doesn't expose which OID it came from or the details of your negotiated agreements. Your commercial relationships remain private." },
   { q: "When does it launch?", a: "We're targeting launch in Q3 2026. Waitlist members will get early access and priority onboarding." },
 ];
 
@@ -87,7 +87,7 @@ const SupplierEngine = () => {
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
             Large agencies have negotiated fares you can't access. They search dozens of Amadeus OIDs
             to find the best pricing on every route. You're searching one. That means you're quoting
-            higher fares, losing bookings, and competing at a structural disadvantage — no matter how
+            higher fares, losing bookings, and competing at a structural disadvantage - no matter how
             good your service is. Supplier Engine levels the playing field.
           </p>
         </div>

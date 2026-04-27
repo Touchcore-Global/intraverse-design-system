@@ -31,7 +31,7 @@ const slides: Slide[] = [
     tag: "For Fintechs",
     title: "Embed travel into your financial product",
     description:
-      "Add bookings, BNPL, and rewards to your app with our APIs — no airline contracts or GDS integrations required.",
+      "Add bookings, BNPL, and rewards to your app with our APIs - no airline contracts or GDS integrations required.",
     icon: Building2,
     accent: "from-accent/20 to-accent/5",
     image: audienceFintechs,

@@ -25,7 +25,7 @@ const toolCards = [
     emoji: "🗺️",
     title: "Create & Manage Trips",
     tagline: "Build complete trips in minutes, not hours.",
-    body: "Bundle flights, hotels, tours, and transfers into a single trip. Manage everything — dates, pricing, passengers, documents — from one clean workspace. No spreadsheets, no sticky notes, no chaos.",
+    body: "Bundle flights, hotels, tours, and transfers into a single trip. Manage everything - dates, pricing, passengers, documents - from one clean workspace. No spreadsheets, no sticky notes, no chaos.",
     bullets: [
       "Multi-segment trip builder (flights + hotels + tours)",
       "Real-time pricing from aggregated suppliers",
@@ -48,7 +48,7 @@ const toolCards = [
   {
     emoji: "💳",
     title: "Get Paid Securely",
-    tagline: "Accept card payments and virtual account transfers — instantly.",
+    tagline: "Accept card payments and virtual account transfers - instantly.",
     body: "Built-in payment processing via card and virtual account. Your customers pay you directly. Funds hit your wallet in real time. Zero payment headaches, zero reconciliation nightmares.",
     bullets: [
       "Accept cards, bank transfers, and mobile money",
@@ -61,7 +61,7 @@ const toolCards = [
     emoji: "📊",
     title: "Grow With Real Insights",
     tagline: "Know what's working. Double down on it.",
-    body: "Real-time dashboards showing your bookings, revenue, top destinations, customer retention, and conversion rates. Data that actually helps you grow — not vanity metrics that look nice.",
+    body: "Real-time dashboards showing your bookings, revenue, top destinations, customer retention, and conversion rates. Data that actually helps you grow - not vanity metrics that look nice.",
     bullets: [
       "Revenue and booking volume tracking",
       "Top destinations and route analysis",
@@ -73,7 +73,7 @@ const toolCards = [
     emoji: "📦",
     title: "Create & Sell Your Own Packages",
     tagline: "Turn every customer into a bigger sale.",
-    body: "Design custom travel packages — flights + hotels + tours — under your brand. Price them your way. Sell them directly through your Travel Links or website. Higher margins, happier customers.",
+    body: "Design custom travel packages - flights + hotels + tours - under your brand. Price them your way. Sell them directly through your Travel Links or website. Higher margins, happier customers.",
     bullets: [
       "Bundle any combination of flights, hotels, and tours",
       "Set your own markup and pricing structure",
@@ -98,7 +98,7 @@ const toolCards = [
     emoji: "🏢",
     title: "Setup Workspace",
     tagline: "Your agency's digital HQ.",
-    body: "Customise your workspace with your branding, booking preferences, policies, and supplier settings. One place to run everything — built exactly the way you work.",
+    body: "Customise your workspace with your branding, booking preferences, policies, and supplier settings. One place to run everything - built exactly the way you work.",
     bullets: [
       "Custom branding (logo, colours, agency name)",
       "Booking policies and approval workflows",
@@ -130,7 +130,7 @@ const audienceCards = [
   {
     emoji: "✈️",
     title: "For Travel Agents",
-    body: "Run your entire agency from one platform. Book, manage, invoice, and grow — without switching between tools.",
+    body: "Run your entire agency from one platform. Book, manage, invoice, and grow - without switching between tools.",
     link: "/for/travel-agents",
   },
   {
@@ -183,10 +183,10 @@ export default function Tools() {
           <div className="container relative mx-auto px-4 py-24 lg:py-32 text-center" style={{ maxWidth: "960px" }}>
             <RevealBlock>
               <h1 className="text-foreground mb-8">
-                Every Tool You Need to Sell Travel Like a Pro — Included
+                Every Tool You Need to Sell Travel Like a Pro - Included
               </h1>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-10">
-                Intraverse isn't just a booking platform. It's a complete toolkit for running and growing your travel business. Whether you're an agent, an independent, or a business, every tool below is included in your plan — no premium add-ons, no upgrade traps, no hidden fees.
+                Intraverse isn't just a booking platform. It's a complete toolkit for running and growing your travel business. Whether you're an agent, an independent, or a business, every tool below is included in your plan - no premium add-ons, no upgrade traps, no hidden fees.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
@@ -200,7 +200,7 @@ export default function Tools() {
           </div>
         </section>
 
-        {/* ═══ SECTION 1 — WHAT YOU GET ═══ */}
+        {/* ═══ SECTION 1 - WHAT YOU GET ═══ */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4" style={{ maxWidth: "900px" }}>
             <RevealBlock>
@@ -208,7 +208,7 @@ export default function Tools() {
                 Built to Make Travel Selling Effortless
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">
-                Most travel businesses stitch together 4–6 different tools to handle booking, invoicing, payments, team management, and marketing. That means multiple logins, multiple subscriptions, and hours lost to manual data entry. Intraverse replaces all of it with one integrated platform — and every tool is included from day one.
+                Most travel businesses stitch together 4–6 different tools to handle booking, invoicing, payments, team management, and marketing. That means multiple logins, multiple subscriptions, and hours lost to manual data entry. Intraverse replaces all of it with one integrated platform - and every tool is included from day one.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 {[
@@ -230,7 +230,7 @@ export default function Tools() {
           </div>
         </section>
 
-        {/* ═══ SECTION 2 — THE TOOLS ═══ */}
+        {/* ═══ SECTION 2 - THE TOOLS ═══ */}
         <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
@@ -275,7 +275,7 @@ export default function Tools() {
           </div>
         </section>
 
-        {/* ═══ SECTION 3 — HOW THEY WORK TOGETHER ═══ */}
+        {/* ═══ SECTION 3 - HOW THEY WORK TOGETHER ═══ */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4" style={{ maxWidth: "900px" }}>
             <RevealBlock>
@@ -283,7 +283,7 @@ export default function Tools() {
                 Tools That Talk to Each Other
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto mb-16">
-                Every tool in Intraverse is connected. Build a trip, generate a Travel Link, collect payment, track it in your dashboard, and manage your team's performance — all in one continuous workflow. No copy-pasting. No switching tabs. No lost data.
+                Every tool in Intraverse is connected. Build a trip, generate a Travel Link, collect payment, track it in your dashboard, and manage your team's performance - all in one continuous workflow. No copy-pasting. No switching tabs. No lost data.
               </p>
             </RevealBlock>
             <RevealBlock>
@@ -306,7 +306,7 @@ export default function Tools() {
           </div>
         </section>
 
-        {/* ═══ SECTION 4 — BUILT FOR EVERY AUDIENCE ═══ */}
+        {/* ═══ SECTION 4 - BUILT FOR EVERY AUDIENCE ═══ */}
         <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
           <div className="container mx-auto px-4" style={{ maxWidth: "1100px" }}>
             <RevealBlock>
@@ -339,7 +339,7 @@ export default function Tools() {
           </div>
         </section>
 
-        {/* ═══ SECTION 5 — PRICING REASSURANCE ═══ */}
+        {/* ═══ SECTION 5 - PRICING REASSURANCE ═══ */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 text-center" style={{ maxWidth: "700px" }}>
             <RevealBlock>
@@ -347,7 +347,7 @@ export default function Tools() {
                 Every Tool. Every Plan. No Upgrades Required.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-10">
-                We don't believe in gating features behind premium tiers. Every tool on this page is included in every Intraverse plan — from the free sandbox all the way to enterprise. The only thing that changes is volume and support level.
+                We don't believe in gating features behind premium tiers. Every tool on this page is included in every Intraverse plan - from the free sandbox all the way to enterprise. The only thing that changes is volume and support level.
               </p>
               <Button variant="outline" size="xl" className="cta-responsive min-h-[48px] rounded-none border-foreground text-foreground hover:bg-accent" asChild>
                 <Link to="/pricing">See Pricing Plans →</Link>

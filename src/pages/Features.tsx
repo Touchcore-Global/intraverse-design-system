@@ -100,7 +100,7 @@ const sections: FeatureSection[] = [
         icon: Inbox,
         title: "Queue Management",
         benefit: "Never miss a deadline or action item",
-        description: "Automated queue system surfaces tasks that need attention — ticketing deadlines, payment reminders, schedule changes, and customer follow-ups.",
+        description: "Automated queue system surfaces tasks that need attention - ticketing deadlines, payment reminders, schedule changes, and customer follow-ups.",
         bullets: ["Priority-based task queues", "Automated deadline alerts", "Team assignment and escalation", "Schedule change notifications", "Batch processing for bulk actions"],
       },
     ],
@@ -135,7 +135,7 @@ const sections: FeatureSection[] = [
         icon: BadgeDollarSign,
         title: "Odiopay BNPL",
         benefit: "Let customers pay in instalments",
-        description: "Offer Buy Now Pay Later and Fare Lock options to your customers. You get paid upfront — Odiopay handles the rest.",
+        description: "Offer Buy Now Pay Later and Fare Lock options to your customers. You get paid upfront - Odiopay handles the rest.",
         bullets: ["Buy Now Pay Later for travellers", "Fare Lock to hold prices", "Agent gets paid immediately", "Seamless checkout integration", "Risk managed by Odiopay"],
       },
     ],
@@ -212,7 +212,7 @@ const sections: FeatureSection[] = [
         icon: PieChart,
         title: "Financial Reports",
         benefit: "Reconciliation made simple",
-        description: "Complete financial visibility — revenue, costs, commissions, wallet movements, and outstanding balances in structured reports.",
+        description: "Complete financial visibility - revenue, costs, commissions, wallet movements, and outstanding balances in structured reports.",
         bullets: ["Revenue vs. cost breakdown", "Commission reconciliation", "Wallet transaction reports", "Outstanding balance tracking"],
       },
       {
@@ -233,7 +233,7 @@ const sections: FeatureSection[] = [
         icon: Globe2,
         title: "Travx Branded Websites",
         benefit: "A professional booking website with your name on it",
-        description: "Launch a fully branded travel website powered by Intraverse. Your domain, your logo, your colours — our search, booking, and payment engine.",
+        description: "Launch a fully branded travel website powered by Intraverse. Your domain, your logo, your colours - our search, booking, and payment engine.",
         bullets: ["Custom domain support", "Brand colours and logo", "Full booking engine", "Mobile responsive", "SEO optimised"],
       },
       {
@@ -275,7 +275,7 @@ const sections: FeatureSection[] = [
         icon: Lock,
         title: "PCI-DSS",
         benefit: "Payment security you can trust",
-        description: "All payment processing meets PCI-DSS standards. Card data is tokenised and encrypted end-to-end — never stored in plain text.",
+        description: "All payment processing meets PCI-DSS standards. Card data is tokenised and encrypted end-to-end - never stored in plain text.",
         bullets: ["PCI-DSS Level 1 compliant", "End-to-end encryption", "Tokenised card storage", "Regular penetration testing"],
       },
       {
@@ -296,21 +296,21 @@ const sections: FeatureSection[] = [
         icon: Headphones,
         title: "WhatsApp Support",
         benefit: "Chat with a human in under 2 minutes",
-        description: "Our primary support channel is WhatsApp — because that's where agents already are. Fast, personal, and no ticket numbers.",
+        description: "Our primary support channel is WhatsApp - because that's where agents already are. Fast, personal, and no ticket numbers.",
         bullets: ["Under 2-minute response time", "Human agents, not bots", "Available during business hours", "Escalation to specialists"],
       },
       {
         icon: Phone,
         title: "Phone & Email",
         benefit: "Multiple ways to reach us",
-        description: "For complex issues, urgent matters, or detailed requests — phone and email support are always available.",
+        description: "For complex issues, urgent matters, or detailed requests - phone and email support are always available.",
         bullets: ["Dedicated support phone line", "Email with 4-hour SLA", "Priority support for enterprise", "Ticket tracking"],
       },
       {
         icon: GraduationCap,
         title: "Onboarding & Training",
         benefit: "Get productive in 48 hours or less",
-        description: "Every new agent gets personalised onboarding — platform walkthrough, configuration, and training. Most agents are fully operational within 48 hours.",
+        description: "Every new agent gets personalised onboarding - platform walkthrough, configuration, and training. Most agents are fully operational within 48 hours.",
         bullets: ["Personalised onboarding calls", "Platform configuration assistance", "Team training sessions", "48-hour setup guarantee"],
       },
       {
@@ -460,7 +460,7 @@ export default function Features() {
                   </span>
                 </h2>
                 <p className="text-primary-foreground/80 mb-8 text-lg">
-                  Book a 20-minute demo and we'll walk you through the entire platform — live.
+                  Book a 20-minute demo and we'll walk you through the entire platform - live.
                 </p>
                 <Button
                   variant="outline"

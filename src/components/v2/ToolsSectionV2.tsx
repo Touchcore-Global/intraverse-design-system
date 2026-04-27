@@ -17,7 +17,7 @@ const tools = [
     emoji: "🗺️",
     title: "Create & Manage Trips",
     tagline: "Build complete trips in minutes, not hours.",
-    body: "Bundle flights, hotels, tours, and transfers into a single trip. Manage everything — dates, pricing, passengers, documents — from one clean workspace.",
+    body: "Bundle flights, hotels, tours, and transfers into a single trip. Manage everything - dates, pricing, passengers, documents - from one clean workspace.",
     image: toolTrips,
     gradient: "linear-gradient(135deg, hsl(220 95% 60%), hsl(190 90% 55%))",
   },
@@ -33,7 +33,7 @@ const tools = [
   {
     emoji: "💳",
     title: "Get Paid Securely",
-    tagline: "Accept card payments and virtual account transfers — instantly.",
+    tagline: "Accept card payments and virtual account transfers - instantly.",
     body: "Built-in payment processing via card and virtual account. Your customers pay you directly. Funds hit your wallet in real time. Zero payment headaches.",
     image: toolPayments,
     gradient: "linear-gradient(135deg, hsl(160 75% 45%), hsl(190 85% 50%))",
@@ -50,7 +50,7 @@ const tools = [
     emoji: "📦",
     title: "Create & Sell Your Own Packages",
     tagline: "Turn every customer into a bigger sale.",
-    body: "Design custom travel packages — flights + hotels + tours — under your brand. Price them your way. Sell them directly through your Travel Links or website.",
+    body: "Design custom travel packages - flights + hotels + tours - under your brand. Price them your way. Sell them directly through your Travel Links or website.",
     image: toolPackages,
     gradient: "linear-gradient(135deg, hsl(330 85% 60%), hsl(280 80% 60%))",
   },
@@ -66,7 +66,7 @@ const tools = [
     emoji: "🏢",
     title: "Setup Workspace",
     tagline: "Your agency's digital HQ.",
-    body: "Customise your workspace with your branding, booking preferences, policies, and supplier settings. One place to run everything — built exactly the way you work.",
+    body: "Customise your workspace with your branding, booking preferences, policies, and supplier settings. One place to run everything - built exactly the way you work.",
     image: toolWorkspace,
     gradient: "linear-gradient(135deg, hsl(200 90% 50%), hsl(260 80% 60%))",
   },
@@ -147,7 +147,7 @@ export const ToolsSectionV2 = () => {
         <p className="text-center text-muted-foreground text-lg max-w-[720px] mx-auto mb-12">
           Intraverse isn't just a booking platform. It's a complete toolkit for running and growing
           your travel business. Whether you're an agent, an independent, or a business, every tool
-          below is included in your plan — no hidden upgrades, no premium tiers, no extra fees.
+          below is included in your plan - no hidden upgrades, no premium tiers, no extra fees.
         </p>
 
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6">

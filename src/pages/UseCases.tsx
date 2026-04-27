@@ -24,8 +24,8 @@ const useCases: UseCase[] = [
   {
     number: "01",
     title: "Fintechs Adding Travel as a Revenue Stream",
-    problem: "You're a Nigerian fintech, neobank, or super-app with millions of users. Your customers spend on flights, hotels, and travel — but every Naira goes to competitors. You want to capture that revenue, but building travel infrastructure means 2+ years of IATA accreditation, GDS contracts, supplier negotiations, and BSP settlement setup. By the time you launch, your customers are already booking elsewhere.",
-    solution: "Plug Intraverse's API directly into your fintech app. Offer in-app flight, hotel, and tour booking powered by aggregated GDS, NDC, and consolidator inventory. Activate Odiopay BNPL natively so users can book travel and pay in instalments — directly from their existing wallet or card on file. Launch in months, not years.",
+    problem: "You're a Nigerian fintech, neobank, or super-app with millions of users. Your customers spend on flights, hotels, and travel - but every Naira goes to competitors. You want to capture that revenue, but building travel infrastructure means 2+ years of IATA accreditation, GDS contracts, supplier negotiations, and BSP settlement setup. By the time you launch, your customers are already booking elsewhere.",
+    solution: "Plug Intraverse's API directly into your fintech app. Offer in-app flight, hotel, and tour booking powered by aggregated GDS, NDC, and consolidator inventory. Activate Odiopay BNPL natively so users can book travel and pay in instalments - directly from their existing wallet or card on file. Launch in months, not years.",
     products: ["Intraverse API", "Odiopay BNPL", "Partnership Programme"],
     link: "/for/developers",
     categories: ["All", "Fintechs", "Tech/Developers"],
@@ -33,7 +33,7 @@ const useCases: UseCase[] = [
   {
     number: "02",
     title: "Faith-Based & Pilgrimage Travel",
-    problem: "Organising group travel for Hajj, Umrah, Jerusalem pilgrimages, and church missions means juggling 50+ passengers, group fares, hotel blocks, and visa coordination — usually on spreadsheets.",
+    problem: "Organising group travel for Hajj, Umrah, Jerusalem pilgrimages, and church missions means juggling 50+ passengers, group fares, hotel blocks, and visa coordination - usually on spreadsheets.",
     solution: "Search group fares across multiple suppliers, manage passenger manifests, share live itineraries with the whole group, and process bulk payments via virtual accounts.",
     products: ["Agent Selling Platform", "Travel Links", "Manage Team"],
     link: "/for/travel-agents",
@@ -51,7 +51,7 @@ const useCases: UseCase[] = [
   {
     number: "04",
     title: "Medical Tourism",
-    problem: "Coordinating international medical trips means flights, accommodation near hospitals, transfers, and family logistics — all needing to be perfect.",
+    problem: "Coordinating international medical trips means flights, accommodation near hospitals, transfers, and family logistics - all needing to be perfect.",
     solution: "Bundle complete medical travel packages with flights, hospital-area hotels, and ground transfers. Share live itineraries with patients and families.",
     products: ["Create & Manage Trips", "Share Live Itineraries", "Travx"],
     link: "/for/travel-agents",
@@ -106,7 +106,7 @@ const useCases: UseCase[] = [
     number: "10",
     title: "Adding BNPL to Close More Sales",
     problem: "Customers love your fares but don't have the full amount upfront. You're losing bookings.",
-    solution: "Activate Odiopay BNPL — Fare Lock holds today's price while customers pay in instalments. Pay Later enables post-ticketing repayment. Close every sale.",
+    solution: "Activate Odiopay BNPL - Fare Lock holds today's price while customers pay in instalments. Pay Later enables post-ticketing repayment. Close every sale.",
     products: ["Odiopay", "Agent Selling Platform"],
     link: "/products/odiopay",
     categories: ["All", "Travel Agents"],
@@ -115,7 +115,7 @@ const useCases: UseCase[] = [
     number: "11",
     title: "Going From WhatsApp-Only to Full Online Agency",
     problem: "You run your business on WhatsApp. You're invisible on Google. Custom websites cost thousands and take months.",
-    solution: "Get a Travx white-label website at $50/month — fully branded, booking-enabled, live in days. Customers find you, book, and pay online.",
+    solution: "Get a Travx white-label website at $50/month - fully branded, booking-enabled, live in days. Customers find you, book, and pay online.",
     products: ["Travx"],
     link: "/for/travel-agents",
     categories: ["All", "Travel Agents"],
@@ -206,7 +206,7 @@ export default function UseCases() {
     <>
       <Navbar />
       <main className="pt-16">
-        {/* SEO Meta via Helmet-style — handled in head for SSR, here for SPA */}
+        {/* SEO Meta via Helmet-style - handled in head for SSR, here for SPA */}
         {/* Hero */}
         <section className="relative overflow-hidden bg-accent py-20 md:py-28">
           {/* Grid pattern background */}
@@ -219,10 +219,10 @@ export default function UseCases() {
 
           <div ref={heroRef} className={`container mx-auto px-4 relative z-10 text-center transition-all duration-700 ease-out ${heroReveal}`}>
             <h1 className="font-[660] tracking-[-2px] text-foreground mb-6">
-              However You Sell Travel — We've Built It For You
+              However You Sell Travel - We've Built It For You
             </h1>
             <p className="max-w-3xl mx-auto text-muted-foreground text-base md:text-lg leading-relaxed mb-10">
-              From fintech integrations to faith-based pilgrimages, from solo side hustlers to multi-branch agencies — Intraverse powers every kind of travel business in Nigeria. Find the use case that matches yours.
+              From fintech integrations to faith-based pilgrimages, from solo side hustlers to multi-branch agencies - Intraverse powers every kind of travel business in Nigeria. Find the use case that matches yours.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
@@ -331,10 +331,10 @@ function SetPageMeta() {
       }
       el.setAttribute("content", content);
     };
-    setMeta("description", "From fintech integrations to faith-based pilgrimages, from corporate travel to side hustlers — see 13 ways travel businesses across Nigeria use Intraverse.");
+    setMeta("description", "From fintech integrations to faith-based pilgrimages, from corporate travel to side hustlers - see 13 ways travel businesses across Nigeria use Intraverse.");
     setMeta("og:title", "13 Ways Travel Businesses Use Intraverse");
-    setMeta("og:description", "Fintechs, agents, corporates, independents, and developers — see how each one uses Intraverse to power travel in Nigeria.");
-    return () => { document.title = "Intraverse — B2B Travel Technology"; };
+    setMeta("og:description", "Fintechs, agents, corporates, independents, and developers - see how each one uses Intraverse to power travel in Nigeria.");
+    return () => { document.title = "Intraverse - B2B Travel Technology"; };
   }, []);
   return null;
 }

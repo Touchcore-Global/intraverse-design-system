@@ -37,19 +37,19 @@ const whyPartner = [
     icon: Plug,
     title: "Technology That Works",
     description:
-      "Our platform is built for real African infrastructure — low-bandwidth environments, multi-currency payments, complex supplier integrations. You're plugging into technology that's been battle-tested, not theoretical.",
+      "Our platform is built for real African infrastructure - low-bandwidth environments, multi-currency payments, complex supplier integrations. You're plugging into technology that's been battle-tested, not theoretical.",
   },
   {
     icon: Zap,
     title: "A Team That Moves",
     description:
-      "We ship fast, communicate clearly, and make decisions quickly. Partnerships with Intraverse don't get stuck in committee — you'll work with people who have the authority and urgency to move.",
+      "We ship fast, communicate clearly, and make decisions quickly. Partnerships with Intraverse don't get stuck in committee - you'll work with people who have the authority and urgency to move.",
   },
   {
     icon: Handshake,
     title: "Long-Term Thinking",
     description:
-      "We're not looking for quick logo placements or co-marketing that goes nowhere. We want partners who are building something real — and we'll invest the time and resources to make the partnership work over years, not quarters.",
+      "We're not looking for quick logo placements or co-marketing that goes nowhere. We want partners who are building something real - and we'll invest the time and resources to make the partnership work over years, not quarters.",
   },
 ];
 
@@ -58,7 +58,7 @@ const partnershipTypes = [
     icon: Landmark,
     title: "Fintech & Embedded Travel Partnerships",
     description:
-      "If you're a fintech, neobank, or digital wallet and want to offer travel as a native feature — booking, payments, BNPL — Intraverse provides the infrastructure. We handle the travel complexity; you own the customer experience.",
+      "If you're a fintech, neobank, or digital wallet and want to offer travel as a native feature - booking, payments, BNPL - Intraverse provides the infrastructure. We handle the travel complexity; you own the customer experience.",
     cta: "Explore Fintech Partnerships",
     href: "/for/fintechs",
   },
@@ -66,7 +66,7 @@ const partnershipTypes = [
     icon: Code,
     title: "Tech Startup & API Partnerships",
     description:
-      "If you're building a product that touches travel — or could — our API gives you access to flights, hotels, and travel infrastructure without building from scratch. We work with startups at every stage, from MVP to scale.",
+      "If you're building a product that touches travel - or could - our API gives you access to flights, hotels, and travel infrastructure without building from scratch. We work with startups at every stage, from MVP to scale.",
     cta: "Explore API Partnerships",
     href: "/for/startups",
   },
@@ -97,7 +97,7 @@ const processSteps = [
   {
     num: 2,
     title: "Mutual Discovery",
-    description: "We explore alignment — technical, commercial, and strategic.",
+    description: "We explore alignment - technical, commercial, and strategic.",
   },
   {
     num: 3,
@@ -117,19 +117,19 @@ const processSteps = [
 ];
 
 const goodFit = [
-  "You're building something that genuinely touches travel — booking, payments, logistics, or distribution.",
+  "You're building something that genuinely touches travel - booking, payments, logistics, or distribution.",
   "You have a product or platform with real users (or a clear path to them).",
-  "You're willing to invest time in proper integration — not just surface-level co-branding.",
+  "You're willing to invest time in proper integration - not just surface-level co-branding.",
   "Your team moves quickly and communicates openly.",
-  "You think in years, not just quarters — long-term alignment matters to you.",
+  "You think in years, not just quarters - long-term alignment matters to you.",
 ];
 
 const notFit = [
   "You're looking for a logo swap or co-marketing arrangement without product integration.",
-  "You don't have a product or platform yet — you're still at the idea stage.",
+  "You don't have a product or platform yet - you're still at the idea stage.",
   "You're looking for white-label resale without adding value to the chain.",
   "Your primary interest is extracting data or leads rather than building something together.",
-  "You need a partner who will move slowly through months of approvals — we won't.",
+  "You need a partner who will move slowly through months of approvals - we won't.",
 ];
 
 /* ───────── COMPONENT ───────── */
@@ -165,7 +165,7 @@ const Partnerships = () => {
     partnershipType: "",
     message: "",
   });
-  // Honeypot — must remain empty. Bots tend to fill every field.
+  // Honeypot - must remain empty. Bots tend to fill every field.
   const [website, setWebsite] = useState("");
   const mountedAtRef = useRef<number>(Date.now());
   const [submitting, setSubmitting] = useState(false);
@@ -192,7 +192,7 @@ const Partnerships = () => {
     );
     setMeta(
       "og:title",
-      "Partnerships at Intraverse — Build African Travel Together"
+      "Partnerships at Intraverse - Build African Travel Together"
     );
     setMeta(
       "og:description",
@@ -211,7 +211,7 @@ const Partnerships = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Honeypot trip — pretend success silently
+    // Honeypot trip - pretend success silently
     if (website.trim() !== "") {
       toast({
         title: "Partnership inquiry sent!",
@@ -245,7 +245,7 @@ const Partnerships = () => {
         return;
       }
     } catch {
-      // localStorage unavailable — proceed
+      // localStorage unavailable - proceed
     }
 
     const parsed = partnerSchema.safeParse(formData);
@@ -356,12 +356,12 @@ const Partnerships = () => {
             PARTNERSHIPS AT INTRAVERSE
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-white">
-            Build the Future of African Travel — Together
+            Build the Future of African Travel - Together
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed">
             Intraverse partners with fintechs, tech startups, suppliers, distribution partners, and
             ecosystem players to power travel businesses across the continent. If you're building
-            something that touches travel — or want to add travel to what you're already building —
+            something that touches travel - or want to add travel to what you're already building -
             let's talk about how we can build it together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -394,7 +394,7 @@ const Partnerships = () => {
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
               We don't treat partnerships as a marketing channel. For Intraverse, partnerships are
               how we extend our infrastructure into new markets, new verticals, and new use cases.
-              Every major platform company in the world was built on partnerships — and we're
+              Every major platform company in the world was built on partnerships - and we're
               building ours the same way.
             </p>
           </div>
@@ -552,14 +552,14 @@ const Partnerships = () => {
               Ready to Build Together?
             </h2>
             <p className="text-base md:text-lg opacity-80 max-w-2xl mx-auto leading-relaxed">
-              If you're building something where Intraverse could be a partner — fintech, tech
-              startup, supplier, distribution, or ecosystem — we want to hear from you. Tell us
+              If you're building something where Intraverse could be a partner - fintech, tech
+              startup, supplier, distribution, or ecosystem - we want to hear from you. Tell us
               what you're building and we'll get back within 5 business days.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {/* Honeypot — hidden from users, visible to bots */}
+            {/* Honeypot - hidden from users, visible to bots */}
             <div
               aria-hidden="true"
               className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden sm:col-span-2"

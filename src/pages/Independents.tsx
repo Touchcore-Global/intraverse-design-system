@@ -31,7 +31,7 @@ const features = [
     icon: Plane,
     title: "Sell Flights From Every Source",
     description:
-      "Access the same flight inventory that professional agencies use — GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC direct connections, and consolidator fares. You're not reselling someone else's markup. You're selling real inventory at real prices.",
+      "Access the same flight inventory that professional agencies use - GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC direct connections, and consolidator fares. You're not reselling someone else's markup. You're selling real inventory at real prices.",
     bullets: [
       "GDS, NDC, and consolidator inventory",
       "Domestic and international flights",
@@ -43,7 +43,7 @@ const features = [
     icon: Hotel,
     title: "Sell Hotels",
     description:
-      "Access hotel inventory from leading global suppliers. Search, compare, and book accommodation for your customers — from budget stays to premium properties.",
+      "Access hotel inventory from leading global suppliers. Search, compare, and book accommodation for your customers - from budget stays to premium properties.",
     bullets: [
       "Global hotel supplier connections",
       "Rate comparison across providers",
@@ -55,7 +55,7 @@ const features = [
     icon: Globe,
     title: "Sell Tours & Packages",
     description:
-      "Bundle flights, hotels, and experiences into packages — the products with the highest margins. Tour packages let you earn more per booking and give your customers more value.",
+      "Bundle flights, hotels, and experiences into packages - the products with the highest margins. Tour packages let you earn more per booking and give your customers more value.",
     bullets: [
       "Pre-built tour packages available",
       "Create custom bundles for clients",
@@ -67,7 +67,7 @@ const features = [
     icon: Wallet,
     title: "Earn on Every Booking",
     description:
-      "You earn a commission on every booking you make. No monthly fees eating into your income. Your earnings scale with your effort and volume — the more you sell, the more you keep.",
+      "You earn a commission on every booking you make. No monthly fees eating into your income. Your earnings scale with your effort and volume - the more you sell, the more you keep.",
     bullets: [
       "Commission on flights, hotels, and tours",
       "Transparent commission structure",
@@ -79,7 +79,7 @@ const features = [
     icon: ShieldCheck,
     title: "IATA-Backed Infrastructure",
     description:
-      "You're selling on a platform used by 200+ professional travel agencies with IATA accreditation. This is real travel infrastructure — not a WhatsApp group or a PDF course.",
+      "You're selling on a platform used by 200+ professional travel agencies with IATA accreditation. This is real travel infrastructure - not a WhatsApp group or a PDF course.",
     bullets: [
       "IATA-accredited platform",
       "BSP settlement for airline ticketing",
@@ -102,7 +102,7 @@ const features = [
 ];
 
 const trustPoints = [
-  "You earn money from actual travel bookings — not from recruiting other people.",
+  "You earn money from actual travel bookings - not from recruiting other people.",
   "The platform is IATA-accredited. You can verify this independently.",
   "There is no upline, downline, or multi-level structure. You sell travel. You earn commissions.",
   "200+ professional travel agencies use the same Intraverse technology you'll be using.",
@@ -114,7 +114,7 @@ const steps = [
     step: "01",
     title: "Join",
     description:
-      "Sign up for the Independents Programme. Complete your profile and get verified. No IATA accreditation needed — you operate under ours.",
+      "Sign up for the Independents Programme. Complete your profile and get verified. No IATA accreditation needed - you operate under ours.",
   },
   {
     step: "02",
@@ -146,7 +146,7 @@ const faqs = [
   {
     question: "Is this an MLM or network marketing scheme?",
     answer:
-      "No. There is no recruitment component. You do not earn money by signing up other people. There is no upline, downline, or multi-level structure of any kind. You earn commissions by selling travel — flights, hotels, and tours — to real customers. That's it. If you don't sell, you don't earn. If you sell a lot, you earn a lot. It's straightforward.",
+      "No. There is no recruitment component. You do not earn money by signing up other people. There is no upline, downline, or multi-level structure of any kind. You earn commissions by selling travel - flights, hotels, and tours - to real customers. That's it. If you don't sell, you don't earn. If you sell a lot, you earn a lot. It's straightforward.",
   },
   {
     question: "Do I need IATA accreditation or a travel agency licence?",
@@ -156,12 +156,12 @@ const faqs = [
   {
     question: "How much does it cost to join?",
     answer:
-      "There is a monthly subscription fee that gives you access to the platform, inventory, training materials, and support. You are never asked to buy \"packages,\" \"levels,\" or pay for recruitment positions. The fee covers your tools — the same way a barber pays for clippers or a designer pays for software.",
+      "There is a monthly subscription fee that gives you access to the platform, inventory, training materials, and support. You are never asked to buy \"packages,\" \"levels,\" or pay for recruitment positions. The fee covers your tools - the same way a barber pays for clippers or a designer pays for software.",
   },
   {
     question: "How much can I realistically earn?",
     answer:
-      "Your earnings depend entirely on how many bookings you make. Commissions vary by product — flights, hotels, and tour packages each have different rates. Some Independents earn a supplementary income on the side; others build it into a full-time business. We will never promise you a specific income figure because it depends on your effort, network, and sales ability.",
+      "Your earnings depend entirely on how many bookings you make. Commissions vary by product - flights, hotels, and tour packages each have different rates. Some Independents earn a supplementary income on the side; others build it into a full-time business. We will never promise you a specific income figure because it depends on your effort, network, and sales ability.",
   },
   {
     question: "What training and support do I get?",
@@ -171,7 +171,7 @@ const faqs = [
   {
     question: "Can I do this part-time alongside my current job?",
     answer:
-      "Yes. Many Independents start part-time. The platform is available 24/7, so you can search inventory and make bookings on your own schedule — evenings, weekends, whenever works for you. There are no minimum booking requirements or mandatory hours.",
+      "Yes. Many Independents start part-time. The platform is available 24/7, so you can search inventory and make bookings on your own schedule - evenings, weekends, whenever works for you. There are no minimum booking requirements or mandatory hours.",
   },
 ];
 
@@ -241,7 +241,7 @@ const Independents = () => {
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
             And then there's the noise. "Pay $50 to unlock Diamond Level."
             "Recruit 5 people to earn." You've seen enough "travel business
-            opportunities" to be skeptical — and you should be. Most of them
+            opportunities" to be skeptical - and you should be. Most of them
             are selling the dream, not the tools. The Independents Programme is
             different. We give you legitimate travel technology and real
             inventory. What you do with it is up to you.
@@ -291,7 +291,7 @@ const Independents = () => {
                 </h3>
               </div>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                We know you've heard promises before. Here's exactly how this works — and how it doesn't:
+                We know you've heard promises before. Here's exactly how this works - and how it doesn't:
               </p>
               <ul className="space-y-4">
                 {trustPoints.map((point, i) => (
@@ -337,10 +337,10 @@ const Independents = () => {
               🆕 New
             </span>
             <h3 className="h3-global text-foreground mb-4">
-              Sell Travel Without a Website — Just Share a Link
+              Sell Travel Without a Website - Just Share a Link
             </h3>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">
-              With Travel Links, you can generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, post it on Instagram, or email it to your network. Your customer clicks, books, and pays — and you earn the commission.
+              With Travel Links, you can generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, post it on Instagram, or email it to your network. Your customer clicks, books, and pays - and you earn the commission.
             </p>
             <a href="/products/travel-links">
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
@@ -359,12 +359,12 @@ const Independents = () => {
               <Quote className="h-10 w-10 text-primary/20 mb-6" />
               <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium mb-8">
                 "I graduated in 2024 with no clear plan. A friend told me about
-                the Independents Programme. I was skeptical — I'd seen too many
+                the Independents Programme. I was skeptical - I'd seen too many
                 'business opportunities' that turned out to be recruitment
                 schemes. But this was different. I got real booking tools, real
                 flight inventory, and I made my first commission in my second
-                week. It's not easy money — you have to find customers and
-                learn the platform — but it's real."
+                week. It's not easy money - you have to find customers and
+                learn the platform - but it's real."
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
@@ -373,7 +373,7 @@ const Independents = () => {
                 <div>
                   <p className="font-semibold text-foreground">Chidera N.</p>
                   <p className="text-sm text-muted-foreground">
-                    Independent — Enugu
+                    Independent - Enugu
                   </p>
                 </div>
               </div>

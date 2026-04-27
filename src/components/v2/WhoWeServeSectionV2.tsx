@@ -13,7 +13,7 @@ const audiences = [
     icon: Plane,
     title: "Travel Agents",
     headline: "Sell more flights, hotels, and tours from one platform.",
-    body: "From two-person agencies to multi-branch operations — Intraverse gives you aggregated flight inventory from GDS, NDC, consolidators, and aggregators, plus hotels and tours from leading global suppliers.",
+    body: "From two-person agencies to multi-branch operations - Intraverse gives you aggregated flight inventory from GDS, NDC, consolidators, and aggregators, plus hotels and tours from leading global suppliers.",
     products: "Agent Selling Platform • Travx • Odiopay",
     cta: "Explore for Travel Agents",
     href: "/for/travel-agents",
@@ -37,7 +37,7 @@ const audiences = [
     icon: Landmark,
     title: "Corporates",
     headline: "Enterprise-grade travel management for African companies.",
-    body: "For large corporates with complex travel needs — multi-department approvals, policy enforcement, consolidated billing, and full reporting. Built to handle scale, governance, and compliance.",
+    body: "For large corporates with complex travel needs - multi-department approvals, policy enforcement, consolidated billing, and full reporting. Built to handle scale, governance, and compliance.",
     products: "CoopX Enterprise",
     cta: "Explore for Corporates",
     href: "/for/corporates",
@@ -49,7 +49,7 @@ const audiences = [
     icon: Rocket,
     title: "Travel Independents",
     headline: "Earn from travel. No agency required. No experience needed.",
-    body: "Graduates, side hustlers, and aspiring entrepreneurs — sell flights, hotels, and tours using IATA-backed technology and earn real commissions on every booking. Start with zero overhead.",
+    body: "Graduates, side hustlers, and aspiring entrepreneurs - sell flights, hotels, and tours using IATA-backed technology and earn real commissions on every booking. Start with zero overhead.",
     products: "Independents Programme",
     cta: "Start Earning Today",
     href: "/for/independents",
@@ -72,7 +72,7 @@ const audiences = [
   {
     icon: Landmark,
     title: "Fintechs",
-    headline: "Add travel as a revenue stream — natively, in weeks.",
+    headline: "Add travel as a revenue stream - natively, in weeks.",
     body: "Neobanks, super-apps, and digital wallets use our API to embed travel booking inside their apps. Capture the revenue your users are already spending on flights, hotels, and tours.",
     products: "Intraverse API + Odiopay BNPL + Partnership Programme",
     cta: "Explore Fintech Partnerships",
@@ -84,7 +84,7 @@ const audiences = [
   {
     icon: CodeXml,
     title: "Developers",
-    headline: "The travel API that just works — backed by real inventory.",
+    headline: "The travel API that just works - backed by real inventory.",
     body: "RESTful API access to aggregated flights, hotels, and tours from global suppliers. Comprehensive documentation, sandbox environment, and dedicated technical support.",
     products: "Intraverse API",
     cta: "View API Docs",
@@ -180,7 +180,7 @@ export const WhoWeServeSectionV2 = () => {
           One travel platform for everyone
         </h2>
         <p className="text-center text-base md:text-lg max-w-[700px] mx-auto mb-10 md:mb-14 text-muted-foreground">
-          From established travel agencies to corporate finance teams, from individuals starting out to developers building the next big travel product — Intraverse powers them all. Find the path that fits your business.
+          From established travel agencies to corporate finance teams, from individuals starting out to developers building the next big travel product - Intraverse powers them all. Find the path that fits your business.
         </p>
 
         <Carousel opts={{ align: "start", loop: false }} className="w-full">

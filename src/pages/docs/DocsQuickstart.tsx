@@ -9,10 +9,10 @@ const SANDBOX = "https://dev.intraversewebservices.com/api";
 
 const toc = [
   { id: "prerequisites", label: "Prerequisites" },
-  { id: "step-1", label: "Step 1 — Create Account" },
-  { id: "step-2", label: "Step 2 — API Key & Token" },
-  { id: "step-3", label: "Step 3 — Search Flights" },
-  { id: "step-4", label: "Step 4 — Book a Flight" },
+  { id: "step-1", label: "Step 1 - Create Account" },
+  { id: "step-2", label: "Step 2 - API Key & Token" },
+  { id: "step-3", label: "Step 3 - Search Flights" },
+  { id: "step-4", label: "Step 4 - Book a Flight" },
   { id: "next", label: "What's Next" },
   { id: "troubleshooting", label: "Troubleshooting" },
 ];
@@ -22,7 +22,7 @@ export default function DocsQuickstart() {
     <DocsLayout
       slug="quickstart"
       title="From Zero to First API Call in Under 10 Minutes"
-      subtitle="This guide walks you through creating an account, authenticating, and making your first flight search — the entire process, with nothing skipped."
+      subtitle="This guide walks you through creating an account, authenticating, and making your first flight search - the entire process, with nothing skipped."
       toc={toc}
     >
       <DocsSection id="prerequisites" title="Prerequisites">
@@ -45,10 +45,10 @@ export default function DocsQuickstart() {
         </p>
       </DocsSection>
 
-      <DocsSection id="step-1" title="Step 1 — Create a Developer Account">
+      <DocsSection id="step-1" title="Step 1 - Create a Developer Account">
         <p>
           Sign up at <a href="https://www.intraverse.app/register" className="text-[hsl(var(--brand-blue))] hover:underline">intraverse.app/register</a>.
-          Once registered, sign in to obtain your account access token — you'll
+          Once registered, sign in to obtain your account access token - you'll
           use it to create your first API key in Step 2.
         </p>
         <Callout variant="warning" title="Keep your secrets safe">
@@ -56,14 +56,14 @@ export default function DocsQuickstart() {
         </Callout>
       </DocsSection>
 
-      <DocsSection id="step-2" title="Step 2 — Create an API Key & Get a Token">
+      <DocsSection id="step-2" title="Step 2 - Create an API Key & Get a Token">
         <p>
           Authentication is a two-step process: first, create a long-lived API
           key (one-time setup), then exchange it for a short-lived access token
           on each session.
         </p>
 
-        <h3 className="text-lg font-semibold mt-6 mb-2">Step 2a — Create an API Key</h3>
+        <h3 className="text-lg font-semibold mt-6 mb-2">Step 2a - Create an API Key</h3>
         <p>
           Use your account access token to create an API key. Choose{" "}
           <InlineCode>"Full"</InlineCode> for read + write or{" "}
@@ -83,11 +83,11 @@ export default function DocsQuickstart() {
         />
         <p>
           The response returns a <InlineCode>clientId</InlineCode> and{" "}
-          <InlineCode>clientSecret</InlineCode>. Store both securely — the
+          <InlineCode>clientSecret</InlineCode>. Store both securely - the
           secret is shown only once.
         </p>
 
-        <h3 className="text-lg font-semibold mt-6 mb-2">Step 2b — Get an Access Token</h3>
+        <h3 className="text-lg font-semibold mt-6 mb-2">Step 2b - Get an Access Token</h3>
         <p>Exchange your API key credentials for a bearer token. No auth header is required for this endpoint.</p>
         <MultiLangCodeBlock
           samples={buildHttpSamples({
@@ -113,9 +113,9 @@ export default function DocsQuickstart() {
         </p>
       </DocsSection>
 
-      <DocsSection id="step-3" title="Step 3 — Search for Flights">
+      <DocsSection id="step-3" title="Step 3 - Search for Flights">
         <p>
-          The v2 search endpoint queries every available source automatically —
+          The v2 search endpoint queries every available source automatically -
           you don't need to specify suppliers. Use the legacy v1 endpoint
           (<InlineCode>/product/v1/flight/search</InlineCode>) when you need
           fine-grained control over which inventory sources to query.
@@ -151,7 +151,7 @@ export default function DocsQuickstart() {
         </Callout>
       </DocsSection>
 
-      <DocsSection id="step-4" title="Step 4 — Book a Flight">
+      <DocsSection id="step-4" title="Step 4 - Book a Flight">
         <p>
           Take the <InlineCode>supplier</InlineCode> string and one of the{" "}
           <InlineCode>offers</InlineCode> from your search response and
@@ -218,17 +218,17 @@ export default function DocsQuickstart() {
       <DocsSection id="troubleshooting" title="Troubleshooting">
         <ul className="list-none space-y-3">
           <li>
-            <InlineCode>401 Unauthorized</InlineCode> — Token missing,
+            <InlineCode>401 Unauthorized</InlineCode> - Token missing,
             malformed, or expired. Re-issue a token via{" "}
             <InlineCode>/main/v1/apikey/token</InlineCode>.
           </li>
           <li>
-            <InlineCode>422 Unprocessable Entity</InlineCode> — Validation
+            <InlineCode>422 Unprocessable Entity</InlineCode> - Validation
             failed. Check the error message in the response body for the
             offending field.
           </li>
           <li>
-            <InlineCode>429 Too Many Requests</InlineCode> — Rate limit
+            <InlineCode>429 Too Many Requests</InlineCode> - Rate limit
             exceeded. Back off and retry after a brief delay.
           </li>
         </ul>

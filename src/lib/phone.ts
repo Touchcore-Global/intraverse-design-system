@@ -74,7 +74,7 @@ export function formatNigeriaPhoneInput(raw: string): string {
   }
 
   if (!hasCountry) {
-    // Not recognizably Nigerian — leave it alone so international numbers work.
+    // Not recognizably Nigerian - leave it alone so international numbers work.
     return raw;
   }
 

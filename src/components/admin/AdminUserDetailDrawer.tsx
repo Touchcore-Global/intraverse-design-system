@@ -59,7 +59,7 @@ interface Props {
 }
 
 function fmt(iso?: string | null) {
-  if (!iso) return "—";
+  if (!iso) return "-";
   return new Date(iso).toLocaleString("en-US", {
     year: "numeric",
     month: "short",
@@ -143,11 +143,11 @@ export function AdminUserDetailDrawer({ userId, open, onOpenChange }: Props) {
               </h3>
               <dl className="grid grid-cols-[140px_1fr] gap-y-2 gap-x-3 text-sm">
                 <dt className="text-muted-foreground">Display name</dt>
-                <dd className="text-foreground">{detail.profile?.display_name ?? "—"}</dd>
+                <dd className="text-foreground">{detail.profile?.display_name ?? "-"}</dd>
 
                 <dt className="text-muted-foreground">Bio</dt>
                 <dd className="text-foreground whitespace-pre-line">
-                  {detail.profile?.bio ?? <span className="text-muted-foreground">—</span>}
+                  {detail.profile?.bio ?? <span className="text-muted-foreground">-</span>}
                 </dd>
 
                 <dt className="text-muted-foreground">Avatar</dt>
@@ -162,7 +162,7 @@ export function AdminUserDetailDrawer({ userId, open, onOpenChange }: Props) {
                       View <ExternalLink className="h-3 w-3" />
                     </a>
                   ) : (
-                    <span className="text-muted-foreground">—</span>
+                    <span className="text-muted-foreground">-</span>
                   )}
                 </dd>
 

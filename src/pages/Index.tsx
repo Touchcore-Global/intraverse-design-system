@@ -25,7 +25,7 @@ const Index = () => {
       {/* Mobile-only redesigned homepage */}
       <MobileHome />
 
-      {/* Desktop / tablet (≥md) homepage — unchanged */}
+      {/* Desktop / tablet (≥md) homepage - unchanged */}
       <div className="hidden md:block">
         <HeroSection />
         <HomeTrustBar />

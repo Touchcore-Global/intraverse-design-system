@@ -39,7 +39,7 @@ const sellingProducts: ProductCard[] = [
     title: "Agent Selling Platform",
     tagline: "Your command centre for travel bookings",
     description:
-      "Search, compare, and book flights, hotels, visas, and packages from 100+ suppliers — all from a single dashboard. Built for speed, accuracy, and margin control.",
+      "Search, compare, and book flights, hotels, visas, and packages from 100+ suppliers - all from a single dashboard. Built for speed, accuracy, and margin control.",
     features: [
       "Multi-supplier search with real-time pricing",
       "Integrated PNR management & ticketing",
@@ -54,7 +54,7 @@ const sellingProducts: ProductCard[] = [
     title: "Travx (White-Label Websites)",
     tagline: "Your brand. Your website. Fully bookable.",
     description:
-      "Launch a professional, fully bookable travel website under your own brand — with flights, hotels, and packages built in. No developers needed.",
+      "Launch a professional, fully bookable travel website under your own brand - with flights, hotels, and packages built in. No developers needed.",
     features: [
       "Custom domain and branding",
       "Built-in booking engine",
@@ -69,7 +69,7 @@ const sellingProducts: ProductCard[] = [
     title: "CoopX (Corporate Travel)",
     tagline: "Managed travel for modern businesses",
     description:
-      "Give your organisation full control over corporate travel — from policy enforcement and approval workflows to consolidated billing and travel analytics.",
+      "Give your organisation full control over corporate travel - from policy enforcement and approval workflows to consolidated billing and travel analytics.",
     features: [
       "Travel policy enforcement",
       "Multi-level approval workflows",
@@ -82,7 +82,7 @@ const sellingProducts: ProductCard[] = [
   {
     icon: Rocket,
     title: "Independents Programme",
-    tagline: "Start earning in travel — no agency required",
+    tagline: "Start earning in travel - no agency required",
     description:
       "Whether you're a side-hustler, freelancer, or aspiring travel entrepreneur, the Independents Programme gives you access to Intraverse's full inventory with zero upfront cost.",
     features: [
@@ -99,7 +99,7 @@ const sellingProducts: ProductCard[] = [
     title: "Travel Links",
     tagline: "Sell travel with a link. No website needed.",
     description:
-      "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, social media, or email. Your customer clicks, books, and pays — and you earn the commission.",
+      "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, social media, or email. Your customer clicks, books, and pays - and you earn the commission.",
     features: [
       "One-click link generation",
       "Share via WhatsApp, email, or social",
@@ -232,7 +232,7 @@ export default function Products() {
             One Platform. Every Tool You Need to Sell Travel.
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-            From the booking platform that powers 200+ Nigerian travel agencies to the BNPL that closes deals other agents lose — Intraverse builds the tools that make selling, managing, and growing a travel business effortless. Explore the full product family below.
+            From the booking platform that powers 200+ Nigerian travel agencies to the BNPL that closes deals other agents lose - Intraverse builds the tools that make selling, managing, and growing a travel business effortless. Explore the full product family below.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button variant="hero" size="xl" asChild>
@@ -252,13 +252,13 @@ export default function Products() {
         </div>
       </section>
 
-      {/* SECTION 1 — Product Family Overview */}
+      {/* SECTION 1 - Product Family Overview */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-5xl">
           <RevealBlock className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">8 Products. One Mission.</h2>
             <p className="text-muted-foreground max-w-3xl mx-auto text-base md:text-lg">
-              Intraverse isn't a single product — it's a connected suite of tools designed to cover every stage of the travel selling journey. Whether you're searching fares, building a website, managing corporate bookings, or offering pay-later options, there's an Intraverse product built for it.
+              Intraverse isn't a single product - it's a connected suite of tools designed to cover every stage of the travel selling journey. Whether you're searching fares, building a website, managing corporate bookings, or offering pay-later options, there's an Intraverse product built for it.
             </p>
           </RevealBlock>
           <RevealBlock>
@@ -280,13 +280,13 @@ export default function Products() {
         </div>
       </section>
 
-      {/* SECTION 2 — Selling & Booking */}
+      {/* SECTION 2 - Selling & Booking */}
       <section id="selling-booking" className="py-16 md:py-24 bg-accent">
         <div className="container mx-auto px-4 max-w-6xl">
           <RevealBlock className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">Selling &amp; Booking</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to search, sell, and close travel deals — whether you're a licensed agent, independent seller, or corporate buyer.
+              Everything you need to search, sell, and close travel deals - whether you're a licensed agent, independent seller, or corporate buyer.
             </p>
           </RevealBlock>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -299,7 +299,7 @@ export default function Products() {
         </div>
       </section>
 
-      {/* SECTION 3 — Payments & Infrastructure */}
+      {/* SECTION 3 - Payments & Infrastructure */}
       <section id="payments-infrastructure" className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-6xl">
           <RevealBlock className="text-center mb-12">
@@ -318,7 +318,7 @@ export default function Products() {
         </div>
       </section>
 
-      {/* SECTION 4 — How They Work Together */}
+      {/* SECTION 4 - How They Work Together */}
       <section id="how-they-work" className="py-16 md:py-24 bg-accent">
         <div className="container mx-auto px-4 max-w-5xl">
           <RevealBlock className="text-center mb-12">
@@ -326,7 +326,7 @@ export default function Products() {
               Each Product Is Powerful Alone. Together, They're a Complete Travel Business.
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto text-base md:text-lg">
-              Intraverse products are designed to work independently — but when you combine them, they create a seamless end-to-end travel business. Search on the Agent Platform, share via Travel Links, let customers pay with Odiopay, and host everything on your Travx website.
+              Intraverse products are designed to work independently - but when you combine them, they create a seamless end-to-end travel business. Search on the Agent Platform, share via Travel Links, let customers pay with Odiopay, and host everything on your Travx website.
             </p>
           </RevealBlock>
           <RevealBlock>
@@ -361,7 +361,7 @@ export default function Products() {
         </div>
       </section>
 
-      {/* SECTION 5 — Choose Your Starting Point */}
+      {/* SECTION 5 - Choose Your Starting Point */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-5xl">
           <RevealBlock className="text-center mb-12">
@@ -392,7 +392,7 @@ export default function Products() {
         </div>
       </section>
 
-      {/* SECTION 6 — Pricing CTA */}
+      {/* SECTION 6 - Pricing CTA */}
       <section className="py-16 md:py-24 bg-accent">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <RevealBlock>
@@ -400,7 +400,7 @@ export default function Products() {
               Every Product. Every Plan. Transparent Pricing.
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              No hidden fees, no surprise charges. See exactly what's included in every Intraverse plan — from our free Starter tier to the full Agency suite.
+              No hidden fees, no surprise charges. See exactly what's included in every Intraverse plan - from our free Starter tier to the full Agency suite.
             </p>
             <Button variant="outline" size="xl" className="rounded-none" asChild>
               <Link to="/pricing">See Pricing →</Link>
@@ -415,7 +415,7 @@ export default function Products() {
           <RevealBlock>
             <h2 className="text-2xl md:text-4xl font-bold mb-4">Ready to See Intraverse in Action?</h2>
             <p className="text-background/70 mb-8 max-w-2xl mx-auto">
-              Book a 15-minute demo and we'll walk you through the full product suite — and help you figure out which tools fit your business best. No commitment, no pressure, no hard sell.
+              Book a 15-minute demo and we'll walk you through the full product suite - and help you figure out which tools fit your business best. No commitment, no pressure, no hard sell.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="xl" className="bg-background text-foreground hover:bg-background/90 rounded-none font-semibold" asChild>

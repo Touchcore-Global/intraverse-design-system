@@ -74,7 +74,7 @@ const audiences = [
   {
     icon: Rocket,
     title: "Travel Independents",
-    description: "You don't have a website or an agency. Travel Links let you sell real travel inventory to your network — friends, family, colleagues, social media followers — with zero setup.",
+    description: "You don't have a website or an agency. Travel Links let you sell real travel inventory to your network - friends, family, colleagues, social media followers - with zero setup.",
   },
   {
     icon: Plane,
@@ -84,7 +84,7 @@ const audiences = [
   {
     icon: Smartphone,
     title: "Social Media Sellers",
-    description: "You have an audience on Instagram, TikTok, or Twitter that loves travel content. Travel Links turn your audience into paying customers — one click at a time.",
+    description: "You have an audience on Instagram, TikTok, or Twitter that loves travel content. Travel Links turn your audience into paying customers - one click at a time.",
   },
   {
     icon: Users,
@@ -97,7 +97,7 @@ const features = [
   "Full flight, hotel, or tour itinerary with pricing",
   "Your branding and agency name",
   "Secure online payment (card or bank transfer)",
-  "Real-time availability — no stale pricing",
+  "Real-time availability - no stale pricing",
   "Mobile-optimised booking experience",
   "Automatic booking confirmation and receipt",
 ];
@@ -106,12 +106,12 @@ const scenarios = [
   {
     icon: Share2,
     title: "The WhatsApp Deal Drop",
-    description: "You spot a Lagos-to-London fare at a great price. You generate a Travel Link, post it in your WhatsApp status with a caption: 'London return from $850 — book now before it's gone.' Three people book by evening. You earned commission on all three.",
+    description: "You spot a Lagos-to-London fare at a great price. You generate a Travel Link, post it in your WhatsApp status with a caption: 'London return from $850 - book now before it's gone.' Three people book by evening. You earned commission on all three.",
   },
   {
     icon: ShoppingCart,
     title: "The Instagram Package Post",
-    description: "You create a 'Dubai Shopping Trip' package — flights + hotel + desert safari. You generate a Travel Link and post it on your Instagram with a clean graphic. Your followers click, book, and pay. No DMs. No back-and-forth. Just sales.",
+    description: "You create a 'Dubai Shopping Trip' package - flights + hotel + desert safari. You generate a Travel Link and post it on your Instagram with a clean graphic. Your followers click, book, and pay. No DMs. No back-and-forth. Just sales.",
   },
   {
     icon: Gift,
@@ -160,7 +160,7 @@ const TravelLinks = () => {
         </div>
       </section>
 
-      {/* SECTION 1 — WHAT ARE TRAVEL LINKS */}
+      {/* SECTION 1 - WHAT ARE TRAVEL LINKS */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
@@ -168,7 +168,7 @@ const TravelLinks = () => {
               The Simplest Way to Sell Travel Online
             </h2>
             <p className="text-center text-muted-foreground text-base md:text-lg max-w-3xl mx-auto mb-16 leading-relaxed">
-              A Travel Link is a unique, shareable URL that lets anyone book and pay for a specific flight, hotel, or travel package — directly from their phone or computer. You generate the link. You share it. Your customer clicks, books, and pays. You earn. That's it.
+              A Travel Link is a unique, shareable URL that lets anyone book and pay for a specific flight, hotel, or travel package - directly from their phone or computer. You generate the link. You share it. Your customer clicks, books, and pays. You earn. That's it.
             </p>
           </RevealBlock>
 
@@ -198,7 +198,7 @@ const TravelLinks = () => {
         </div>
       </section>
 
-      {/* SECTION 2 — HOW IT WORKS */}
+      {/* SECTION 2 - HOW IT WORKS */}
       <section id="how-it-works" className="py-16 md:py-24 bg-[hsl(216,60%,97%)]">
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
@@ -223,7 +223,7 @@ const TravelLinks = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — WHY TRAVEL LINKS WORK */}
+      {/* SECTION 3 - WHY TRAVEL LINKS WORK */}
       <section className="py-16 md:py-24" style={{ backgroundColor: "#F0F5FC" }}>
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
@@ -251,7 +251,7 @@ const TravelLinks = () => {
         </div>
       </section>
 
-      {/* SECTION 4 — WHO TRAVEL LINKS ARE FOR */}
+      {/* SECTION 4 - WHO TRAVEL LINKS ARE FOR */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
@@ -279,7 +279,7 @@ const TravelLinks = () => {
         </div>
       </section>
 
-      {/* SECTION 5 — WHAT'S INSIDE A TRAVEL LINK */}
+      {/* SECTION 5 - WHAT'S INSIDE A TRAVEL LINK */}
       <section className="py-16 md:py-24 bg-[hsl(216,60%,97%)]">
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
@@ -292,7 +292,7 @@ const TravelLinks = () => {
             <div className="flex-1">
               <RevealBlock>
                 <p className="text-muted-foreground text-base leading-relaxed mb-8">
-                  When your customer clicks a Travel Link, they don't see a basic form or a generic page. They see a fully branded, mobile-optimised booking page with everything they need to make a decision and pay — instantly.
+                  When your customer clicks a Travel Link, they don't see a basic form or a generic page. They see a fully branded, mobile-optimised booking page with everything they need to make a decision and pay - instantly.
                 </p>
                 <div className="space-y-4">
                   {features.map((feature) => (
@@ -323,7 +323,7 @@ const TravelLinks = () => {
         </div>
       </section>
 
-      {/* SECTION 6 — USE CASES */}
+      {/* SECTION 6 - USE CASES */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
@@ -351,7 +351,7 @@ const TravelLinks = () => {
         </div>
       </section>
 
-      {/* SECTION 7 — PRICING */}
+      {/* SECTION 7 - PRICING */}
       <section className="py-16 md:py-24 bg-[hsl(216,60%,97%)]">
         <div className="container mx-auto px-4 text-center" style={{ maxWidth: "800px" }}>
           <RevealBlock>
@@ -359,7 +359,7 @@ const TravelLinks = () => {
               Included in Every Intraverse Plan
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8">
-              Travel Links are included in every Intraverse plan — from Starter to Agency. There are no per-link fees, no hidden charges, and no limits on how many links you can generate. If you have an Intraverse account, you can create and share Travel Links today.
+              Travel Links are included in every Intraverse plan - from Starter to Agency. There are no per-link fees, no hidden charges, and no limits on how many links you can generate. If you have an Intraverse account, you can create and share Travel Links today.
             </p>
             <a href="/pricing">
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">

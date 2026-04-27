@@ -42,19 +42,19 @@ const audiences = [
 
 const features = [
   { icon: Plane, title: "Sell Real Flights", body: "Access flight inventory from GDS systems (Amadeus, Sabre, Galileo), NDC connections, consolidators, and aggregators." },
-  { icon: Hotel, title: "Sell Real Hotels", body: "Hotels from leading global travel suppliers — the rooms used by professional travel platforms worldwide." },
+  { icon: Hotel, title: "Sell Real Hotels", body: "Hotels from leading global travel suppliers - the rooms used by professional travel platforms worldwide." },
   { icon: Globe, title: "Sell Real Tours", body: "Tours and travel packages from international suppliers. Bundle for higher commissions." },
   { icon: Coins, title: "Earn Real Commissions", body: "Every booking earns you a commission. Not a referral fee. Not a sign-up bonus." },
   { icon: ShieldCheck, title: "IATA-Backed", body: "You're using the same IATA-accredited platform that powers 200+ professional travel agencies." },
 ];
 
 const trustPoints = [
-  "You earn commissions on real bookings — not on recruiting other people",
+  "You earn commissions on real bookings - not on recruiting other people",
   "There is no upline, no downline, no pyramid structure",
-  "The technology is IATA-accredited — you can verify this independently",
+  "The technology is IATA-accredited - you can verify this independently",
   "All flight transactions are settled through proper BSP channels",
   "200+ professional travel agencies use the exact same platform",
-  "We don't make income guarantees — your earnings depend on what you sell",
+  "We don't make income guarantees - your earnings depend on what you sell",
   "There are no 'levels' to unlock or memberships to upgrade",
 ];
 
@@ -65,7 +65,7 @@ const earningsStats = [
 ];
 
 const steps = [
-  { number: "1", title: "Join the Programme", body: "Sign up and get access to the platform. Free to join — start at $0 upfront." },
+  { number: "1", title: "Join the Programme", body: "Sign up and get access to the platform. Free to join - start at $0 upfront." },
   { number: "2", title: "Complete Training", body: "We walk you through how to search inventory, create bookings, and manage customers. Most Independents are ready to sell within hours." },
   { number: "3", title: "Start Selling", body: "Share deals with your network, book travel for customers, earn commissions on every completed booking." },
 ];
@@ -73,11 +73,11 @@ const steps = [
 const faqs = [
   {
     q: "Is this an MLM or pyramid scheme?",
-    a: "No. You earn commissions only on bookings you make — not on recruiting other people. There is no upline, no downline, and no multi-level structure. It's a straightforward sales model: you sell travel, you earn a commission.",
+    a: "No. You earn commissions only on bookings you make - not on recruiting other people. There is no upline, no downline, and no multi-level structure. It's a straightforward sales model: you sell travel, you earn a commission.",
   },
   {
     q: "Do I need travel experience?",
-    a: "Not at all. The platform handles the complexity — GDS connections, ticketing, supplier management. We provide training to get you selling within hours. If you can use a smartphone, you can use Intraverse.",
+    a: "Not at all. The platform handles the complexity - GDS connections, ticketing, supplier management. We provide training to get you selling within hours. If you can use a smartphone, you can use Intraverse.",
   },
   {
     q: "How much does it cost to join?",
@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     q: "Can I do this part-time?",
-    a: "Absolutely. Many of our most successful Independents started part-time — selling to friends, family, and their social network alongside their day job or studies. You set your own pace.",
+    a: "Absolutely. Many of our most successful Independents started part-time - selling to friends, family, and their social network alongside their day job or studies. You set your own pace.",
   },
 ];
 
@@ -158,7 +158,7 @@ const IndependentsAudience = () => {
                 Turn Your Network Into a Travel Business. Starting Today.
               </h1>
               <p className="mt-6 text-base sm:text-lg font-normal leading-relaxed" style={{ color: "rgb(116, 113, 122)" }}>
-                Whether you're a graduate looking for income, a side hustler stacking revenue streams, a stay-at-home parent with a strong network, or someone with a community ready to book travel — the Intraverse Independents Programme gives you the tools, the inventory, and the IATA-backed infrastructure to start earning. No agency required. No experience needed. No capital upfront.
+                Whether you're a graduate looking for income, a side hustler stacking revenue streams, a stay-at-home parent with a strong network, or someone with a community ready to book travel - the Intraverse Independents Programme gives you the tools, the inventory, and the IATA-backed infrastructure to start earning. No agency required. No experience needed. No capital upfront.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
@@ -221,7 +221,7 @@ const IndependentsAudience = () => {
             </h2>
             <div className="max-w-3xl mx-auto space-y-5 text-muted-foreground text-sm md:text-base leading-relaxed">
               <p>
-                Starting a travel business the traditional way requires IATA accreditation — which means millions in capital, years of industry experience, and corporate guarantees most people can't provide. Access to GDS systems like Amadeus or Sabre? That requires contracts, training, and ongoing fees.
+                Starting a travel business the traditional way requires IATA accreditation - which means millions in capital, years of industry experience, and corporate guarantees most people can't provide. Access to GDS systems like Amadeus or Sabre? That requires contracts, training, and ongoing fees.
               </p>
               <p>
                 So what are the alternatives? You've probably seen the ads: "Make money from travel!", "Earn while you sleep!", "Join our travel network!" Most of them are referral schemes, MLM structures, or programmes that earn more from recruiting you than from actual travel bookings.
@@ -276,7 +276,7 @@ const IndependentsAudience = () => {
                 </h2>
               </div>
               <p className="text-primary-foreground/80 text-sm md:text-base leading-relaxed mb-8 max-w-3xl">
-                We know what you're thinking. You've seen "make money from travel" ads. You've been pitched MLM schemes. You've heard the stories. You're skeptical — and you should be.
+                We know what you're thinking. You've seen "make money from travel" ads. You've been pitched MLM schemes. You've heard the stories. You're skeptical - and you should be.
               </p>
               <p className="text-primary-foreground font-semibold text-base md:text-lg mb-6">
                 Here's how the Independents Programme is different:
@@ -343,10 +343,10 @@ const IndependentsAudience = () => {
                 />
               </div>
               <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
-                "I was skeptical at first — I'd seen too many 'travel business' schemes. But within my first week I booked three flights for people in my network and earned real commissions. No tricks, no levels, just a proper platform. I wish I'd started sooner."
+                "I was skeptical at first - I'd seen too many 'travel business' schemes. But within my first week I booked three flights for people in my network and earned real commissions. No tricks, no levels, just a proper platform. I wish I'd started sooner."
               </blockquote>
               <p className="text-sm text-muted-foreground font-medium">
-                — Chioma A., Independent, Abuja
+                - Chioma A., Independent, Abuja
               </p>
             </div>
           </RevealBlock>

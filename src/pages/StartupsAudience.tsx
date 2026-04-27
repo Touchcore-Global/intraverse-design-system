@@ -35,7 +35,7 @@ const useCases = [
 const features = [
   { icon: Link2, title: "Full API Access", body: "RESTful API with search, booking, and ticketing endpoints. Aggregated flight, hotel, and tour inventory from GDS, NDC, consolidators, and global suppliers." },
   { icon: Handshake, title: "Co-Build Partnerships", body: "Custom integrations, co-marketing, and revenue-share arrangements for strong-fit startups. We invest in partners who share our vision." },
-  { icon: Zap, title: "Skip the Years", body: "No IATA application. No GDS contracts. No supplier negotiations. We've done all that work — you just build on top of it." },
+  { icon: Zap, title: "Skip the Years", body: "No IATA application. No GDS contracts. No supplier negotiations. We've done all that work - you just build on top of it." },
   { icon: MapPin, title: "Built for African Markets", body: "Naira pricing, local payment methods, infrastructure designed for Nigeria and West Africa. Not a Western product with a currency converter." },
   { icon: BadgeDollarSign, title: "Pricing That Scales", body: "Start small with developer-friendly pricing. Custom enterprise pricing for high-volume partners. No upfront commitments required." },
 ];
@@ -98,7 +98,7 @@ const Startups = () => {
               Skip Years of Travel Infrastructure. Build on Intraverse Instead.
             </h1>
             <p className="mt-8 text-base sm:text-lg md:text-xl font-normal max-w-3xl mx-auto leading-relaxed text-white/60">
-              Building a travel app, fintech with travel features, super-app, or marketplace? Don't spend three years negotiating with airlines, hotels, and IATA. Plug into Intraverse's aggregated travel inventory through our API — and explore co-build partnerships with our team. Launch in months, not years.
+              Building a travel app, fintech with travel features, super-app, or marketplace? Don't spend three years negotiating with airlines, hotels, and IATA. Plug into Intraverse's aggregated travel inventory through our API - and explore co-build partnerships with our team. Launch in months, not years.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold">
@@ -153,7 +153,7 @@ const Startups = () => {
             </h2>
             <div className="max-w-3xl mx-auto space-y-5 text-muted-foreground text-sm md:text-base leading-relaxed">
               <p>
-                Want to sell flights in your app? You'll need IATA accreditation — that's millions in capital, corporate guarantees, and 6-12 months of process. Then GDS contracts with Amadeus, Sabre, and Travelport — each with separate negotiations, technical integrations, and ongoing fees.
+                Want to sell flights in your app? You'll need IATA accreditation - that's millions in capital, corporate guarantees, and 6-12 months of process. Then GDS contracts with Amadeus, Sabre, and Travelport - each with separate negotiations, technical integrations, and ongoing fees.
               </p>
               <p>
                 Hotels require supplier agreements. Tours require aggregator contracts. BSP settlement requires banking infrastructure. Each piece takes months. The total setup time? Years. The cost? Tens of millions. And every month you're not live, your competitors are.
@@ -193,7 +193,7 @@ const Startups = () => {
         </div>
       </section>
 
-      {/* Use Cases — hidden
+      {/* Use Cases - hidden
       <section className="py-20 md:py-28 bg-[hsl(216,60%,97%)]">
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <RevealBlock>
@@ -201,7 +201,7 @@ const Startups = () => {
               Startups Already Building With Intraverse
             </h2>
             <p className="text-center text-xs text-muted-foreground/60 uppercase tracking-widest mb-14">
-              [Placeholder — replace with real partnership case studies]
+              [Placeholder - replace with real partnership case studies]
             </p>
           </RevealBlock>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -258,7 +258,7 @@ const Startups = () => {
                 Let's Build Something Together
               </h2>
               <p className="text-primary-foreground/80 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
-                Tell us what you're building and we'll figure out the best way to partner — from API access to full co-build arrangements.
+                Tell us what you're building and we'll figure out the best way to partner - from API access to full co-build arrangements.
               </p>
               <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px] font-semibold mb-4">
                 Talk to Our Partnerships Team

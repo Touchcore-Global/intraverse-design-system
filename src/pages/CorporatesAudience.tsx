@@ -27,12 +27,12 @@ const bulletPoints = [
 ];
 
 const features = [
-  { icon: Building2, title: "Multi-Level Approvals", body: "Configurable approval chains that mirror your organisational hierarchy. Route bookings through line managers, department heads, and finance — with full audit trails at every step." },
+  { icon: Building2, title: "Multi-Level Approvals", body: "Configurable approval chains that mirror your organisational hierarchy. Route bookings through line managers, department heads, and finance - with full audit trails at every step." },
   { icon: BarChart3, title: "Enterprise Reporting", body: "Real-time dashboards and exportable reports by department, cost centre, destination, or traveller. Built for the data your CFO and procurement team actually need." },
   { icon: ShieldCheck, title: "Policy & Compliance", body: "Enforce cabin class rules, hotel budgets, advance booking windows, and preferred supplier policies automatically. Every exception is logged and flagged." },
-  { icon: Coins, title: "Negotiated Rates", body: "Access preferential rates through Intraverse's aggregated buying power — plus the ability to load your own negotiated corporate rates into the platform." },
+  { icon: Coins, title: "Negotiated Rates", body: "Access preferential rates through Intraverse's aggregated buying power - plus the ability to load your own negotiated corporate rates into the platform." },
   { icon: UserCog, title: "Dedicated Account Management", body: "A named account manager who understands your organisation, your travel patterns, and your compliance requirements. Not a chatbot. Not a ticket queue." },
-  { icon: MapPin, title: "Built for Africa", body: "Naira-denominated pricing. Lagos-based support team in your time zone. Designed around the realities of African corporate travel — not retrofitted from a Western TMC." },
+  { icon: MapPin, title: "Built for Africa", body: "Naira-denominated pricing. Lagos-based support team in your time zone. Designed around the realities of African corporate travel - not retrofitted from a Western TMC." },
 ];
 
 const stats = [
@@ -43,7 +43,7 @@ const stats = [
 
 const timeline = [
   { step: "1", title: "Discovery Call", body: "We learn about your organisation, travel volumes, approval structures, and compliance requirements." },
-  { step: "2", title: "Custom Proposal", body: "A tailored implementation plan with pricing, timeline, and integration scope — specific to your business." },
+  { step: "2", title: "Custom Proposal", body: "A tailored implementation plan with pricing, timeline, and integration scope - specific to your business." },
   { step: "3", title: "Pilot Deployment", body: "We deploy CoopX Enterprise to a single department or business unit. Real bookings, real data, real feedback." },
   { step: "4", title: "Full Rollout", body: "Once validated, we roll out across the organisation with training, change management support, and policy configuration." },
   { step: "5", title: "Ongoing Partnership", body: "Quarterly business reviews, continuous optimisation, and a dedicated account team that grows with you." },
@@ -90,7 +90,7 @@ const Corporates = () => {
               Enterprise Travel Management Built for African Corporates
             </h1>
             <p className="mt-8 text-base sm:text-lg md:text-xl font-normal max-w-3xl mx-auto leading-relaxed text-white/70">
-              For large corporates with complex travel programmes, multi-department approval requirements, and serious governance and compliance needs. CoopX Enterprise scales to your organisation — with the controls, reporting, and dedicated support you expect from enterprise software, built for the realities of the African market.
+              For large corporates with complex travel programmes, multi-department approval requirements, and serious governance and compliance needs. CoopX Enterprise scales to your organisation - with the controls, reporting, and dedicated support you expect from enterprise software, built for the realities of the African market.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold">
@@ -137,7 +137,7 @@ const Corporates = () => {
             </h2>
             <div className="max-w-3xl mx-auto space-y-5 text-muted-foreground text-sm md:text-base leading-relaxed">
               <p>
-                International TMCs offer polished enterprise solutions — but they're expensive, slow to implement, and built for markets that don't match African business realities. Pricing in dollars. Support in another time zone. Workflows designed for corporate structures that don't reflect how African organisations actually operate.
+                International TMCs offer polished enterprise solutions - but they're expensive, slow to implement, and built for markets that don't match African business realities. Pricing in dollars. Support in another time zone. Workflows designed for corporate structures that don't reflect how African organisations actually operate.
               </p>
               <p>
                 Local alternatives often lack the compliance rigour, reporting depth, and approval chain complexity that large corporates require. You end up with a tool that handles bookings but can't handle governance.

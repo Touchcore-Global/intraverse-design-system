@@ -22,7 +22,7 @@ const featured = {
     image: navProducts,
     eyebrow: "Featured product",
     title: "Travel Links",
-    description: "Sell travel with a shareable link — no website, no setup.",
+    description: "Sell travel with a shareable link - no website, no setup.",
     href: "/products/travel-links",
     cta: "Explore Travel Links",
   },

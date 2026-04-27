@@ -17,7 +17,7 @@ const features = [
     title: "Aggregated Flight Search",
     description: "Search across GDS systems, NDC connections, consolidators, and aggregators simultaneously. One query returns every available fare from every source.",
     bullets: [
-      "Amadeus, Sabre, Galileo by Travelport — all in one search",
+      "Amadeus, Sabre, Galileo by Travelport - all in one search",
       "NDC direct connections for better fares",
       "Consolidator and aggregator inventory included",
       "Compare prices across all sources instantly",
@@ -92,15 +92,15 @@ const stats = [
 const faqs = [
   {
     question: "What flight sources does the platform aggregate?",
-    answer: "The Agent Selling Platform connects to all major GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC direct connections with airlines, consolidator inventory, and other aggregator feeds. This means every search returns fares from every available source — so you never miss a better price or route option.",
+    answer: "The Agent Selling Platform connects to all major GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC direct connections with airlines, consolidator inventory, and other aggregator feeds. This means every search returns fares from every available source - so you never miss a better price or route option.",
   },
   {
     question: "Can I book hotels and tours alongside flights?",
-    answer: "Yes. The platform integrates hotel inventory from multiple global suppliers and tour/experience packages from leading operators. You can search, compare, and book flights, hotels, and tours from the same dashboard — or bundle them into complete packages for your customers.",
+    answer: "Yes. The platform integrates hotel inventory from multiple global suppliers and tour/experience packages from leading operators. You can search, compare, and book flights, hotels, and tours from the same dashboard - or bundle them into complete packages for your customers.",
   },
   {
     question: "How does this compare to using a GDS directly?",
-    answer: "A standalone GDS only gives you access to its own inventory. The Agent Selling Platform layers multiple GDS systems, NDC connections, consolidators, and aggregators into a single search. You see more options, find better fares, and book faster — all without switching between systems or learning multiple interfaces.",
+    answer: "A standalone GDS only gives you access to its own inventory. The Agent Selling Platform layers multiple GDS systems, NDC connections, consolidators, and aggregators into a single search. You see more options, find better fares, and book faster - all without switching between systems or learning multiple interfaces.",
   },
   {
     question: "How long does setup take?",
@@ -108,7 +108,7 @@ const faqs = [
   },
   {
     question: "What does the platform cost?",
-    answer: "Pricing is tailored to your agency's size and booking volume. We offer flexible plans with no long-term contracts. Book a free demo to discuss your needs and get a custom quote — there's no commitment required.",
+    answer: "Pricing is tailored to your agency's size and booking volume. We offer flexible plans with no long-term contracts. Book a free demo to discuss your needs and get a custom quote - there's no commitment required.",
   },
 ];
 
@@ -135,10 +135,10 @@ const AgentPlatform = () => {
 
         <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
           <h1 className="max-w-5xl mx-auto">
-            Every Flight, Hotel, and Tour — From Every Source — On One Screen
+            Every Flight, Hotel, and Tour - From Every Source - On One Screen
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            Intraverse's Agent Selling Platform aggregates flight inventory from GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC connections, consolidators, and other aggregators — plus hotels and tours from leading global suppliers. Search, compare, book, and issue from a single dashboard. IATA-accredited.
+            Intraverse's Agent Selling Platform aggregates flight inventory from GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC connections, consolidators, and other aggregators - plus hotels and tours from leading global suppliers. Search, compare, book, and issue from a single dashboard. IATA-accredited.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
@@ -165,7 +165,7 @@ const AgentPlatform = () => {
             You open Amadeus for one airline, Sabre for another, check an NDC portal for a better fare, call your consolidator for group pricing, then log into a hotel platform to add accommodation. Five systems. Five logins. Five chances to make an error. And your customer is already shopping somewhere else.
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            Meanwhile, tour packages and curated experiences — the products with the highest margins — are left on the table because there's no time to search yet another platform. Your agents are spending more time toggling between tabs than actually selling travel.
+            Meanwhile, tour packages and curated experiences - the products with the highest margins - are left on the table because there's no time to search yet another platform. Your agents are spending more time toggling between tabs than actually selling travel.
           </p>
         </div>
       </section>
@@ -221,7 +221,7 @@ const AgentPlatform = () => {
             <div className="border border-border rounded-xl p-8 md:p-12 bg-card">
               <Quote className="h-10 w-10 text-primary/20 mb-6" />
               <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium mb-8">
-                "Before Intraverse, I had four browser tabs open just to search for a single client's flight. Now I run one search and see fares from every source — GDS, NDC, consolidators — side by side. I book faster, I find better prices, and my clients think I'm a genius."
+                "Before Intraverse, I had four browser tabs open just to search for a single client's flight. Now I run one search and see fares from every source - GDS, NDC, consolidators - side by side. I book faster, I find better prices, and my clients think I'm a genius."
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
@@ -229,7 +229,7 @@ const AgentPlatform = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">Adaeze O.</p>
-                  <p className="text-sm text-muted-foreground">Skyline Travels — Lagos</p>
+                  <p className="text-sm text-muted-foreground">Skyline Travels - Lagos</p>
                 </div>
               </div>
             </div>
@@ -265,7 +265,7 @@ const AgentPlatform = () => {
             Ready to Sell More From One Screen?
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            See how the Agent Selling Platform can replace your fragmented workflow with a single, powerful dashboard. Book a free 15-minute demo — no commitment required.
+            See how the Agent Selling Platform can replace your fragmented workflow with a single, powerful dashboard. Book a free 15-minute demo - no commitment required.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button

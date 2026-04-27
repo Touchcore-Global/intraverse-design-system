@@ -48,8 +48,8 @@ export const productSections: NavSection[] = [
       { label: "Agent Selling Platform", href: "/products/agent-platform", icon: Plane, description: "Search, book and manage all travel from one dashboard", trackingId: "agent_platform" },
       { label: "Travx (White-Label Websites)", href: "/products/travx", icon: Globe, description: "Your branded, booking-enabled travel website", trackingId: "travx" },
       { label: "CoopX (Corporate Travel)", href: "/products/coopx", icon: Building2, description: "Corporate travel management with policy controls", trackingId: "coopx" },
-      { label: "Independents Programme", href: "/products/independents", icon: Rocket, description: "Start earning in travel — no agency required", trackingId: "independents" },
-      { label: "Travel Links", href: "/products/travel-links", icon: Link2, description: "Sell travel with a shareable link — no website needed", isNew: true },
+      { label: "Independents Programme", href: "/products/independents", icon: Rocket, description: "Start earning in travel - no agency required", trackingId: "independents" },
+      { label: "Travel Links", href: "/products/travel-links", icon: Link2, description: "Sell travel with a shareable link - no website needed", isNew: true },
     ],
   },
   {
@@ -68,7 +68,7 @@ export const solutionSections: NavSection[] = [
     header: "BY AUDIENCE",
     items: [
       { label: "Travel Agents", href: "/for/travel-agents", icon: Plane, description: "Tools built for professional travel agencies" },
-      { label: "Travel Independents", href: "/for/independents", icon: Rocket, description: "Start earning in travel — no agency required", popular: true },
+      { label: "Travel Independents", href: "/for/independents", icon: Rocket, description: "Start earning in travel - no agency required", popular: true },
       { label: "Businesses", href: "/for/businesses", icon: Building2, description: "Manage business travel spend efficiently" },
       { label: "Corporates", href: "/for/corporates", icon: Landmark, description: "Enterprise travel with policy & approval controls" },
       { label: "Fintechs", href: "/for/fintechs", icon: Landmark, description: "Embed travel as a native revenue stream" },

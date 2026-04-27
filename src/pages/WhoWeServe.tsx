@@ -24,7 +24,7 @@ const audiences = [
     icon: Plane,
     title: "Travel Agents",
     description:
-      "If you run a travel agency — large or small — Intraverse is your operating system. Aggregate flight inventory from every major source, sell hotels and tours from global suppliers, and manage your entire business from one dashboard.",
+      "If you run a travel agency - large or small - Intraverse is your operating system. Aggregate flight inventory from every major source, sell hotels and tours from global suppliers, and manage your entire business from one dashboard.",
     benefits: [
       "Aggregated flights from GDS + NDC + consolidators + aggregators",
       "Hotels and tours from leading global suppliers",
@@ -66,7 +66,7 @@ const audiences = [
     icon: Rocket,
     title: "Travel Independents",
     description:
-      "You don't need to own an agency to earn in travel. The Independents Programme gives you real IATA-backed technology to sell flights, hotels, and tours — and earn commissions on every booking.",
+      "You don't need to own an agency to earn in travel. The Independents Programme gives you real IATA-backed technology to sell flights, hotels, and tours - and earn commissions on every booking.",
     benefits: [
       "Sell from real GDS, NDC, and consolidator inventory",
       "Earn commissions on every booking",
@@ -80,7 +80,7 @@ const audiences = [
     icon: Lightbulb,
     title: "Tech Startups",
     description:
-      "Building a travel product? Skip the years of supplier negotiations and infrastructure. Build on Intraverse's aggregated inventory through our API — and explore co-build partnerships with our team.",
+      "Building a travel product? Skip the years of supplier negotiations and infrastructure. Build on Intraverse's aggregated inventory through our API - and explore co-build partnerships with our team.",
     benefits: [
       "API access to aggregated flights, hotels, tours",
       "Co-build partnership opportunities",
@@ -94,7 +94,7 @@ const audiences = [
     icon: Landmark,
     title: "Fintechs",
     description:
-      "Your users are already spending on travel. Intraverse gives Nigerian fintechs, neobanks, super-apps, and digital wallets a turnkey way to add travel booking as a native revenue stream through one API — with native BNPL via Odiopay.",
+      "Your users are already spending on travel. Intraverse gives Nigerian fintechs, neobanks, super-apps, and digital wallets a turnkey way to add travel booking as a native revenue stream through one API - with native BNPL via Odiopay.",
     benefits: [
       "Embedded travel API for flights, hotels, and tours",
       "Native BNPL via Odiopay",
@@ -306,7 +306,7 @@ const WhoWeServe = () => {
             </h2>
             <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto mb-10 leading-relaxed">
               Talk to our team. We'll help you figure out which Intraverse
-              product or programme fits your situation — in 15 minutes, with no
+              product or programme fits your situation - in 15 minutes, with no
               commitment.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

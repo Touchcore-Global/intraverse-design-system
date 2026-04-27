@@ -29,7 +29,7 @@ export default function DocsFlights() {
     <DocsLayout
       slug="flights"
       title="Aggregated Flight Inventory, One API"
-      subtitle="Search, book, ticket, modify, and cancel flights across GDS (Amadeus, Sabre, Galileo), NDC connections, consolidators, and aggregators — all through a single unified API."
+      subtitle="Search, book, ticket, modify, and cancel flights across GDS (Amadeus, Sabre, Galileo), NDC connections, consolidators, and aggregators - all through a single unified API."
       toc={toc}
     >
       <DocsSection id="overview" title="Overview">
@@ -37,7 +37,7 @@ export default function DocsFlights() {
           The Flights API aggregates inventory from GDS, NDC, consolidators,
           and direct supplier connections into a single, normalised response
           format. You don't need to negotiate with each source separately or
-          learn each schema — Intraverse abstracts the heterogeneity behind
+          learn each schema - Intraverse abstracts the heterogeneity behind
           one consistent contract.
         </p>
         <p>
@@ -50,14 +50,14 @@ export default function DocsFlights() {
         <EndpointHeading method="POST" path="/product/v2/flight/search" id="ep-search-v2" />
         <p>
           The recommended search endpoint. Queries every available source
-          automatically — no need to specify suppliers.
+          automatically - no need to specify suppliers.
         </p>
         <ParamsTable
           params={[
             { name: "originDestinations", type: "object[]", required: true, description: "Array of legs. Each: { from (IATA), to (IATA), departure: { date: YYYY-MM-DD } }" },
             { name: "passengers", type: "object", required: true, description: "{ adult, child, infant } counts" },
             { name: "cabinClass", type: "string[]", required: true, description: 'Any of "Economy", "PremiumEconomy", "Business", "First"' },
-            { name: "maxSolutions", type: "integer", description: "Optional — cap the number of returned offers" },
+            { name: "maxSolutions", type: "integer", description: "Optional - cap the number of returned offers" },
           ]}
         />
         <MultiLangCodeBlock
@@ -79,7 +79,7 @@ export default function DocsFlights() {
         <p>
           Legacy v1 search. Same body as v2 but{" "}
           <strong>requires a <InlineCode>supplier</InlineCode> array</strong>{" "}
-          specifying which inventory sources to query — useful when you want
+          specifying which inventory sources to query - useful when you want
           fine-grained control.
         </p>
         <CodeBlock
@@ -209,17 +209,17 @@ export default function DocsFlights() {
         <CodeBlock label="JSON" code={`{ "flightBookingId": "...", "acceptPriceChange": true }`} />
       </DocsSection>
 
-      <DocsSection id="manage" title="Manage Booking — Post-Booking Modifications">
+      <DocsSection id="manage" title="Manage Booking - Post-Booking Modifications">
         <p>All endpoints below are <InlineCode>PATCH</InlineCode> requests under <InlineCode>/product/v1/updateBooking/</InlineCode>.</p>
         <ul className="list-disc list-inside space-y-1.5">
-          <li><InlineCode>/addSeat</InlineCode> — add a seat selection</li>
-          <li><InlineCode>/addSSR</InlineCode> — add a Special Service Request</li>
-          <li><InlineCode>/addDocuments</InlineCode> — attach passport / ID documents</li>
-          <li><InlineCode>/addFrequentFlyer</InlineCode> — attach a frequent flyer number</li>
-          <li><InlineCode>/travelerInfo</InlineCode> — update traveler details</li>
-          <li><InlineCode>/addRemark</InlineCode> — add a free-form remark to the PNR</li>
-          <li><InlineCode>/queuePnr</InlineCode> — queue the PNR for an agent</li>
-          <li><InlineCode>/transferPnr</InlineCode> — transfer the PNR to another office</li>
+          <li><InlineCode>/addSeat</InlineCode> - add a seat selection</li>
+          <li><InlineCode>/addSSR</InlineCode> - add a Special Service Request</li>
+          <li><InlineCode>/addDocuments</InlineCode> - attach passport / ID documents</li>
+          <li><InlineCode>/addFrequentFlyer</InlineCode> - attach a frequent flyer number</li>
+          <li><InlineCode>/travelerInfo</InlineCode> - update traveler details</li>
+          <li><InlineCode>/addRemark</InlineCode> - add a free-form remark to the PNR</li>
+          <li><InlineCode>/queuePnr</InlineCode> - queue the PNR for an agent</li>
+          <li><InlineCode>/transferPnr</InlineCode> - transfer the PNR to another office</li>
         </ul>
       </DocsSection>
 

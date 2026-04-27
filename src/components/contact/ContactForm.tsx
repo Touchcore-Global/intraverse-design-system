@@ -42,7 +42,7 @@ export const ContactForm = () => {
     reason: "",
     message: "",
   });
-  // Honeypot — must remain empty. Bots tend to fill every field.
+  // Honeypot - must remain empty. Bots tend to fill every field.
   const [website, setWebsite] = useState("");
   const mountedAtRef = useRef<number>(Date.now());
   const [submitting, setSubmitting] = useState(false);
@@ -83,7 +83,7 @@ export const ContactForm = () => {
         return;
       }
     } catch {
-      // localStorage unavailable — proceed
+      // localStorage unavailable - proceed
     }
 
     const parsed = contactSchema.safeParse(formData);
@@ -177,7 +177,7 @@ export const ContactForm = () => {
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
-        {/* Honeypot — hidden from users, visible to bots */}
+        {/* Honeypot - hidden from users, visible to bots */}
         <div
           aria-hidden="true"
           className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"

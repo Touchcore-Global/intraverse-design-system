@@ -29,7 +29,7 @@ export function PressKitSection() {
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Press Kit</h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Logos, brand guidelines, fact sheets, and high-resolution screenshots — everything journalists and
+            Logos, brand guidelines, fact sheets, and high-resolution screenshots - everything journalists and
             partners need to write about Intraverse.
           </p>
         </div>
