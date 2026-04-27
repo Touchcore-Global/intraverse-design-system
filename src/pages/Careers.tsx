@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { supabase } from "@/integrations/supabase/client";
 import { formatSalary, type JobPosting } from "@/lib/jobs/types";
+import { GeneralApplicationDialog } from "@/components/careers/GeneralApplicationDialog";
 import {
   Rocket, Users, Heart, Globe, Zap, MapPin, Briefcase,
   ArrowRight, Clock, GraduationCap, Coffee, Plane, Inbox,
@@ -134,6 +135,7 @@ function OpenRolesSection() {
   const { ref, revealClass } = useScrollReveal();
   const [roles, setRoles] = useState<JobPosting[]>([]);
   const [loading, setLoading] = useState(true);
+  const [applicationOpen, setApplicationOpen] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -175,12 +177,14 @@ function OpenRolesSection() {
             <p className="text-muted-foreground max-w-xl mx-auto mb-6">
               We're not actively hiring at the moment, but we're always interested in meeting exceptional people. Send us a note and we'll reach out when something opens up that fits.
             </p>
-            <Link to="/contact">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Briefcase className="h-4 w-4 mr-2" />
-                Send a General Application
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              onClick={() => setApplicationOpen(true)}
+            >
+              <Briefcase className="h-4 w-4 mr-2" />
+              Send a General Application
+            </Button>
           </div>
         ) : (
           <>
@@ -208,16 +212,20 @@ function OpenRolesSection() {
 
             <div className="text-center mt-12">
               <p className="text-muted-foreground mb-4">Don't see a fit? We'd still love to hear from you.</p>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-foreground text-foreground hover:bg-accent">
-                  <Briefcase className="h-4 w-4 mr-2" />
-                  Send a General Application
-                </Button>
-              </Link>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-foreground text-foreground hover:bg-accent"
+                onClick={() => setApplicationOpen(true)}
+              >
+                <Briefcase className="h-4 w-4 mr-2" />
+                Send a General Application
+              </Button>
             </div>
           </>
         )}
       </div>
+      <GeneralApplicationDialog open={applicationOpen} onOpenChange={setApplicationOpen} />
     </section>
   );
 }

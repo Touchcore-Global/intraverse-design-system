@@ -15,6 +15,7 @@ import { template as partnerConfirmation } from './partner-confirmation.tsx'
 import { template as partnerNotification } from './partner-notification.tsx'
 import { template as independentsInterestConfirmation } from './independents-interest-confirmation.tsx'
 import { template as independentsInterestNotification } from './independents-interest-notification.tsx'
+import { template as generalApplicationNotification } from './general-application-notification.tsx'
 
 export const TEMPLATES: Record<string, TemplateEntry> = {
   'contact-confirmation': contactConfirmation,
@@ -23,4 +24,5 @@ export const TEMPLATES: Record<string, TemplateEntry> = {
   'partner-notification': partnerNotification,
   'independents-interest-confirmation': independentsInterestConfirmation,
   'independents-interest-notification': independentsInterestNotification,
+  'general-application-notification': generalApplicationNotification,
 }
