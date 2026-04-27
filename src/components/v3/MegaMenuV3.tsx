@@ -159,12 +159,17 @@ export function MegaMenuV3({
           {/* By Audience — horizontal chip row (rendered after use cases) */}
           {audiences && (
             <div className="p-5 lg:p-6">
-              <p
-                className="text-[11px] uppercase tracking-[0.08em] font-bold mb-3"
-                style={{ color: "#94A3B8" }}
-              >
-                {audiences.header}
-              </p>
+              <div className="mb-4">
+                <p
+                  className="text-[11px] uppercase tracking-[0.08em] font-bold"
+                  style={{ color: "#94A3B8" }}
+                >
+                  {audiences.header}
+                </p>
+                <p className="text-[13px] text-muted-foreground mt-1 max-w-xl">
+                  Built for the people who move travel forward — pick the audience that fits you to see tailored solutions.
+                </p>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {audiences.items.map((item) => {
                   const Icon = item.icon;
