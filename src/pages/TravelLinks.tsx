@@ -310,13 +310,13 @@ const TravelLinks = () => {
 
             <div className="flex-1">
               <RevealBlock>
-                <div className="bg-card rounded-2xl border border-border p-8 shadow-lg">
-                  <div className="bg-muted/30 rounded-xl p-6 flex items-center justify-center min-h-[300px]">
-                    <div className="text-center text-muted-foreground">
-                      <Link2 className="w-16 h-16 mx-auto mb-4 opacity-20" />
-                      <p className="text-sm">Travel Link booking page preview</p>
-                    </div>
-                  </div>
+                <div className="bg-card rounded-2xl border border-border p-4 md:p-6 shadow-lg">
+                  <img
+                    src={travelLinkBookingPreview}
+                    alt="Travel Link booking page preview"
+                    loading="lazy"
+                    className="w-full h-auto rounded-xl"
+                  />
                 </div>
               </RevealBlock>
             </div>
