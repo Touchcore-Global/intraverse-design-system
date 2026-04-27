@@ -17,6 +17,8 @@ interface MegaMenuV3Props {
   align?: "left" | "center" | "right";
   footerLink?: { label: string; href: string };
   trackingLocation?: string;
+  /** Layout variant. "default" = featured card + 2-col link grid. "solutions" = horizontal sections with image cards for use cases. */
+  variant?: "default" | "solutions";
 }
 
 export function MegaMenuV3({
@@ -25,6 +27,7 @@ export function MegaMenuV3({
   align = "center",
   footerLink,
   trackingLocation = "navbar_mega_menu",
+  variant = "default",
 }: MegaMenuV3Props) {
   const alignmentClass =
     align === "left"
@@ -33,6 +36,124 @@ export function MegaMenuV3({
         ? "right-0"
         : "left-1/2 -translate-x-1/2";
 
+  const track = (item: { trackingId?: string; label: string; href: string }, sectionHeader: string) => {
+    if (item.trackingId) {
+      trackEvent(CTA_EVENTS.navProductClick, {
+        cta: item.trackingId,
+        label: item.label,
+        href: item.href,
+        location: trackingLocation,
+        section: sectionHeader,
+      });
+    }
+  };
+
+  // ---------- SOLUTIONS VARIANT (horizontal, image-rich) ----------
+  if (variant === "solutions") {
+    const audiences = sections.find((s) => /audience/i.test(s.header));
+    const useCases = sections.find((s) => /use ?case/i.test(s.header));
+
+    return (
+      <div
+        className={`absolute top-full ${alignmentClass} pt-3 animate-fade-in z-50`}
+        style={{ width: "min(1080px, calc(100vw - 2rem))", minWidth: "780px" }}
+      >
+        <div
+          className="bg-popover border border-border rounded-2xl overflow-hidden"
+          style={{ boxShadow: "0 20px 50px -10px rgba(13,27,42,0.15)" }}
+        >
+          {/* By Audience — horizontal chip row */}
+          {audiences && (
+            <div className="p-5 lg:p-6 border-b border-border">
+              <p
+                className="text-[11px] uppercase tracking-[0.08em] font-bold mb-3"
+                style={{ color: "#94A3B8" }}
+              >
+                {audiences.header}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {audiences.items.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => track(item, audiences.header)}
+                      className="group inline-flex items-center gap-2 px-3 py-2 rounded-full border border-border bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                    >
+                      <Icon className="w-3.5 h-3.5 text-primary group-hover:text-primary-foreground transition-colors" />
+                      <span className="text-[13px] font-semibold leading-none">{item.label}</span>
+                      {item.popular && (
+                        <Star className="w-3 h-3 fill-primary text-primary group-hover:fill-primary-foreground group-hover:text-primary-foreground" />
+                      )}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* By Use Case — horizontal image card grid */}
+          {useCases && (
+            <div className="p-5 lg:p-6">
+              <p
+                className="text-[11px] uppercase tracking-[0.08em] font-bold mb-3"
+                style={{ color: "#94A3B8" }}
+              >
+                {useCases.header}
+              </p>
+              <div className="grid grid-cols-3 gap-3">
+                {useCases.items.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => track(item, useCases.header)}
+                    className="group rounded-xl overflow-hidden border border-border hover:border-primary/40 hover:shadow-md transition-all bg-background"
+                  >
+                    <div className="aspect-[16/9] w-full overflow-hidden bg-muted">
+                      {item.image ? (
+                        <img
+                          src={item.image}
+                          alt=""
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5" />
+                      )}
+                    </div>
+                    <div className="p-3">
+                      <p className="text-[13px] font-semibold leading-tight text-foreground group-hover:text-primary transition-colors">
+                        {item.label}
+                      </p>
+                      {item.description && (
+                        <p className="text-[12px] text-muted-foreground leading-snug mt-1 line-clamp-2">
+                          {item.description}
+                        </p>
+                      )}
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {footerLink && (
+                <div className="pt-4 mt-4 border-t border-border">
+                  <a
+                    href={footerLink.href}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all"
+                  >
+                    {footerLink.label} <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // ---------- DEFAULT VARIANT (featured card + 2-col link grid) ----------
   return (
     <div
       className={`absolute top-full ${alignmentClass} pt-3 animate-fade-in z-50`}
@@ -47,7 +168,6 @@ export function MegaMenuV3({
           href={featured.href}
           className="col-span-5 xl:col-span-4 relative group min-h-[320px] lg:min-h-[340px] text-white overflow-hidden bg-[#0D1B2A]"
         >
-          {/* Background image (right-anchored so portrait subjects stay visible) */}
           <div
             className="absolute inset-0 bg-no-repeat bg-cover"
             style={{
@@ -55,7 +175,6 @@ export function MegaMenuV3({
               backgroundPosition: "right center",
             }}
           />
-          {/* Left-to-right gradient keeps text legible while preserving the subject on the right */}
           <div
             className="absolute inset-0"
             style={{
@@ -79,7 +198,6 @@ export function MegaMenuV3({
 
         {/* Right: link sections */}
         <div className="col-span-7 xl:col-span-8 p-5 lg:p-6 grid grid-cols-2 gap-x-5 lg:gap-x-6 gap-y-4">
-
           {sections.map((section) => (
             <div key={section.header} className="min-w-0">
               <p
@@ -97,17 +215,7 @@ export function MegaMenuV3({
                       href={item.href}
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      onClick={() => {
-                        if (item.trackingId) {
-                          trackEvent(CTA_EVENTS.navProductClick, {
-                            cta: item.trackingId,
-                            label: item.label,
-                            href: item.href,
-                            location: trackingLocation,
-                            section: section.header,
-                          });
-                        }
-                      }}
+                      onClick={() => track(item, section.header)}
                       className="group flex items-start gap-3 rounded-lg p-2 -mx-2 transition-colors hover:bg-muted/60"
                     >
                       <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary/15 transition-colors">
