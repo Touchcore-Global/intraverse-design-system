@@ -67,24 +67,24 @@ export function MegaMenuV3({
           {/* By Use Case — horizontal image card grid */}
           {useCases && (
             <div className={`p-5 lg:p-6 ${audiences ? "border-b border-border" : ""}`}>
-              <div className="mb-4">
-                <p
-                  className="text-[11px] uppercase tracking-[0.08em] font-bold"
-                  style={{ color: "#94A3B8" }}
-                >
-                  {useCases.header}
-                </p>
-                <p className="text-[13px] text-muted-foreground mt-1 max-w-xl">
-                  Discover the most common ways teams put Intraverse to work — from selling flights online to embedding travel in your own product.
-                </p>
-              </div>
               {(() => {
                 const featuredCases = useCases.items.slice(0, 3);
                 const moreCases = useCases.items.slice(3);
                 return (
                   <>
-                    {/* Top: 3 image cards */}
-                    <div className="grid grid-cols-3 gap-3">
+                    {/* Row: header column + 3 image cards = 4 columns */}
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="flex flex-col justify-center pr-2">
+                        <p
+                          className="text-[11px] uppercase tracking-[0.08em] font-bold"
+                          style={{ color: "#94A3B8" }}
+                        >
+                          {useCases.header}
+                        </p>
+                        <p className="text-[13px] text-muted-foreground mt-2 leading-snug">
+                          Discover the most common ways teams put Intraverse to work — from selling flights online to embedding travel in your own product.
+                        </p>
+                      </div>
                       {featuredCases.map((item) => (
                         <a
                           key={item.label}
