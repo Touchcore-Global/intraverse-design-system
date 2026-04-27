@@ -16,6 +16,8 @@ import usecaseCorporate from "@/assets/nav/usecase-corporate.jpg";
 import usecaseIndependent from "@/assets/nav/usecase-independent.jpg";
 import usecaseBnpl from "@/assets/nav/usecase-bnpl.jpg";
 import usecaseAll from "@/assets/nav/usecase-all.jpg";
+import sectionSelling from "@/assets/nav/section-selling.jpg";
+import sectionPayments from "@/assets/nav/section-payments.jpg";
 
 export interface NavItem {
   label: string;
@@ -34,6 +36,8 @@ export interface NavItem {
 export interface NavSection {
   header: string;
   items: NavItem[];
+  /** Optional banner image rendered above the section's items in the default mega menu. */
+  image?: string;
 }
 
 export const productSections: NavSection[] = [
