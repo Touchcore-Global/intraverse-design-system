@@ -269,7 +269,7 @@ export function MegaMenuV3({
               <p className="text-[11px] uppercase tracking-[0.12em] font-bold opacity-80">
                 {featured.eyebrow}
               </p>
-              <h3 className="text-lg lg:text-xl font-bold mt-3 leading-tight">{featured.title}</h3>
+              <h3 className="text-lg lg:text-xl font-bold mt-3 leading-tight text-white">{featured.title}</h3>
               <p className="text-[13px] lg:text-sm opacity-85 mt-2 leading-snug">{featured.description}</p>
             </div>
             <span className="inline-flex items-center gap-1.5 text-sm font-semibold mt-4 group-hover:gap-2.5 transition-all">
