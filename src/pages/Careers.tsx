@@ -132,6 +132,22 @@ function PerksSection() {
 
 function OpenRolesSection() {
   const { ref, revealClass } = useScrollReveal();
+  const [roles, setRoles] = useState<JobPosting[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await supabase
+        .from("job_postings")
+        .select("*")
+        .eq("status", "open")
+        .order("is_featured", { ascending: false })
+        .order("display_order", { ascending: true })
+        .order("published_at", { ascending: false });
+      setRoles((data ?? []) as JobPosting[]);
+      setLoading(false);
+    })();
+  }, []);
 
   return (
     <section id="open-roles" className="py-20 bg-background">
@@ -148,33 +164,59 @@ function OpenRolesSection() {
           </p>
         </div>
 
-        <div className="space-y-4">
-          {openRoles.map((role, i) => (
-            <a
-              key={i}
-              href="/contact"
-              className="flex items-center justify-between p-5 brand-card rounded-xl hover:shadow-lg transition-all group"
-            >
-              <div>
-                <h3 className="h3-global text-foreground group-hover:text-primary transition-colors">{role.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {role.team} · {role.location} · {role.type}
-                </p>
-              </div>
-              <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-            </a>
-          ))}
-        </div>
+        {loading ? (
+          <div className="text-center py-12 text-muted-foreground">Loading open roles...</div>
+        ) : roles.length === 0 ? (
+          <div className="brand-card rounded-2xl p-10 md:p-14 text-center">
+            <div className="mx-auto w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+              <Inbox className="h-7 w-7 text-primary" />
+            </div>
+            <h3 className="text-2xl font-bold text-foreground mb-3">No open roles right now</h3>
+            <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+              We're not actively hiring at the moment, but we're always interested in meeting exceptional people. Send us a note and we'll reach out when something opens up that fits.
+            </p>
+            <Link to="/contact">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Briefcase className="h-4 w-4 mr-2" />
+                Send a General Application
+              </Button>
+            </Link>
+          </div>
+        ) : (
+          <>
+            <div className="space-y-4">
+              {roles.map((role) => {
+                const salary = formatSalary(role.salary_min, role.salary_max, role.salary_currency);
+                return (
+                  <Link
+                    key={role.id}
+                    to={`/careers/${role.slug}`}
+                    className="flex items-center justify-between p-5 brand-card rounded-xl hover:shadow-lg transition-all group"
+                  >
+                    <div>
+                      <h3 className="h3-global text-foreground group-hover:text-primary transition-colors">{role.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {role.team} · {role.location} · {role.employment_type}
+                        {salary ? ` · ${salary}` : ""}
+                      </p>
+                    </div>
+                    <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                  </Link>
+                );
+              })}
+            </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">Don't see a fit? We'd still love to hear from you.</p>
-          <a href="/contact">
-            <Button variant="outline" size="lg" className="border-foreground text-foreground hover:bg-accent">
-              <Briefcase className="h-4 w-4 mr-2" />
-              Send a General Application
-            </Button>
-          </a>
-        </div>
+            <div className="text-center mt-12">
+              <p className="text-muted-foreground mb-4">Don't see a fit? We'd still love to hear from you.</p>
+              <Link to="/contact">
+                <Button variant="outline" size="lg" className="border-foreground text-foreground hover:bg-accent">
+                  <Briefcase className="h-4 w-4 mr-2" />
+                  Send a General Application
+                </Button>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
