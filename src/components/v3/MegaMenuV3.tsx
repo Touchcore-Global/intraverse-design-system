@@ -36,16 +36,16 @@ export function MegaMenuV3({
   return (
     <div
       className={`absolute top-full ${alignmentClass} pt-3 animate-fade-in z-50`}
-      style={{ width: "min(960px, calc(100vw - 2rem))" }}
+      style={{ width: "min(960px, calc(100vw - 2rem))", minWidth: "720px" }}
     >
       <div
         className="bg-popover border border-border rounded-2xl overflow-hidden grid grid-cols-12"
         style={{ boxShadow: "0 20px 50px -10px rgba(13,27,42,0.15)" }}
       >
-        {/* Left: featured visual card */}
+        {/* Left: featured visual card — fixed proportions so portrait stays framed */}
         <a
           href={featured.href}
-          className="col-span-4 relative group min-h-[340px] text-white overflow-hidden bg-[#0D1B2A]"
+          className="col-span-5 xl:col-span-4 relative group min-h-[320px] lg:min-h-[340px] text-white overflow-hidden bg-[#0D1B2A]"
         >
           {/* Background image (right-anchored so portrait subjects stay visible) */}
           <div
@@ -60,26 +60,26 @@ export function MegaMenuV3({
             className="absolute inset-0"
             style={{
               backgroundImage:
-                "linear-gradient(90deg, rgba(13,27,42,0.95) 0%, rgba(13,27,42,0.75) 45%, rgba(13,27,42,0.15) 100%)",
+                "linear-gradient(90deg, rgba(13,27,42,0.95) 0%, rgba(13,27,42,0.78) 50%, rgba(13,27,42,0.2) 100%)",
             }}
           />
-          <div className="relative h-full p-6 flex flex-col justify-between">
-
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.12em] font-bold opacity-80">
-              {featured.eyebrow}
-            </p>
-            <h3 className="text-xl font-bold mt-3 leading-tight">{featured.title}</h3>
-            <p className="text-sm opacity-85 mt-2 leading-snug">{featured.description}</p>
-          </div>
-          <span className="inline-flex items-center gap-1.5 text-sm font-semibold mt-4 group-hover:gap-2.5 transition-all">
-            {featured.cta} <ArrowRight className="w-4 h-4" />
-          </span>
+          <div className="relative h-full p-5 lg:p-6 flex flex-col justify-between max-w-[88%]">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.12em] font-bold opacity-80">
+                {featured.eyebrow}
+              </p>
+              <h3 className="text-lg lg:text-xl font-bold mt-3 leading-tight">{featured.title}</h3>
+              <p className="text-[13px] lg:text-sm opacity-85 mt-2 leading-snug">{featured.description}</p>
+            </div>
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold mt-4 group-hover:gap-2.5 transition-all">
+              {featured.cta} <ArrowRight className="w-4 h-4" />
+            </span>
           </div>
         </a>
 
         {/* Right: link sections */}
-        <div className="col-span-8 p-6 grid grid-cols-2 gap-x-6 gap-y-4">
+        <div className="col-span-7 xl:col-span-8 p-5 lg:p-6 grid grid-cols-2 gap-x-5 lg:gap-x-6 gap-y-4">
+
           {sections.map((section) => (
             <div key={section.header} className="min-w-0">
               <p
