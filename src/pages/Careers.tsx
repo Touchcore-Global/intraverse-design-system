@@ -135,6 +135,7 @@ function OpenRolesSection() {
   const { ref, revealClass } = useScrollReveal();
   const [roles, setRoles] = useState<JobPosting[]>([]);
   const [loading, setLoading] = useState(true);
+  const [applicationOpen, setApplicationOpen] = useState(false);
 
   useEffect(() => {
     (async () => {
