@@ -75,6 +75,7 @@ export function MegaMenuV3({
           <span className="inline-flex items-center gap-1.5 text-sm font-semibold mt-4 group-hover:gap-2.5 transition-all">
             {featured.cta} <ArrowRight className="w-4 h-4" />
           </span>
+          </div>
         </a>
 
         {/* Right: link sections */}
