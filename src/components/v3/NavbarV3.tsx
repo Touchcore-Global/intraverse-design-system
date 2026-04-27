@@ -155,7 +155,7 @@ export function NavbarV3() {
           </a>
 
           <div className="hidden lg:flex items-center gap-0.5">
-            {renderDropdownButton("Products", "products", "left", {
+            {renderDropdownButton("Platform", "products", "left", {
               label: "View all products",
               href: "/products",
             })}
