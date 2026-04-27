@@ -18,14 +18,14 @@ const IndexV3 = () => {
       {/* Hero — bold AI/SaaS-style above the fold (logos strip already inside hero) */}
       <HeroSectionV2 />
 
-      {/* Slider — Jasper-style use-case carousel */}
-      <RevealSection variant="fade-up">
-        <SliderSectionV3 />
-      </RevealSection>
-
       {/* Feature grid — Jasper-style "everything in one platform" */}
       <RevealSection variant="fade-up">
         <FeatureGridV3 />
+      </RevealSection>
+
+      {/* Slider — Jasper-style use-case carousel */}
+      <RevealSection variant="fade-up">
+        <SliderSectionV3 />
       </RevealSection>
 
       {/* Social proof — big stats on dark band */}
