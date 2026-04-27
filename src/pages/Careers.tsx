@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { supabase } from "@/integrations/supabase/client";
 import { formatSalary, type JobPosting } from "@/lib/jobs/types";
+import { GeneralApplicationDialog } from "@/components/careers/GeneralApplicationDialog";
 import {
   Rocket, Users, Heart, Globe, Zap, MapPin, Briefcase,
   ArrowRight, Clock, GraduationCap, Coffee, Plane, Inbox,
