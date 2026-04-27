@@ -45,13 +45,26 @@ export function MegaMenuV3({
         {/* Left: featured visual card */}
         <a
           href={featured.href}
-          className="col-span-4 relative group p-6 flex flex-col justify-between min-h-[340px] text-white overflow-hidden"
-          style={{
-            backgroundImage: `linear-gradient(180deg, rgba(13,27,42,0.55) 0%, rgba(13,27,42,0.92) 100%), url(${featured.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="col-span-4 relative group min-h-[340px] text-white overflow-hidden bg-[#0D1B2A]"
         >
+          {/* Background image (right-anchored so portrait subjects stay visible) */}
+          <div
+            className="absolute inset-0 bg-no-repeat bg-cover"
+            style={{
+              backgroundImage: `url(${featured.image})`,
+              backgroundPosition: "right center",
+            }}
+          />
+          {/* Left-to-right gradient keeps text legible while preserving the subject on the right */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, rgba(13,27,42,0.95) 0%, rgba(13,27,42,0.75) 45%, rgba(13,27,42,0.15) 100%)",
+            }}
+          />
+          <div className="relative h-full p-6 flex flex-col justify-between">
+
           <div>
             <p className="text-[11px] uppercase tracking-[0.12em] font-bold opacity-80">
               {featured.eyebrow}
