@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/intraverse-logo.svg";
 import navProducts from "@/assets/nav/nav-products.jpg";
-import navSolutions from "@/assets/nav/nav-solutions.jpg";
+import navSolutions from "@/assets/nav/nav-solutions-portrait.png";
 import navResources from "@/assets/nav/nav-resources.jpg";
 import navCompany from "@/assets/nav/nav-company.jpg";
 import {
