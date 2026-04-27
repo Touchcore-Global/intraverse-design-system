@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Plane, Building2, Users, Code2, Briefcase, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
-import audienceAgents from "@/assets/v3/audience-agents.jpg";
+import audienceAgents from "@/assets/v3/audience-agents.png";
 import audienceFintechs from "@/assets/v3/audience-fintechs.jpg";
 import audienceIndependents from "@/assets/v3/audience-independents.jpg";
 import audienceDevelopers from "@/assets/v3/audience-developers.jpg";
