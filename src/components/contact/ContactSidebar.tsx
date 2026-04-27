@@ -50,7 +50,7 @@ export const ContactSidebar = () => (
 
     {/* Book a demo CTA */}
     <div className="bg-foreground text-background rounded-2xl p-6">
-      <h3 className="h3-global mb-2">Want a Live Demo?</h3>
+      <h3 className="h3-global mb-2 text-background">Want a Live Demo?</h3>
       <p className="text-sm text-background/70 mb-4">
         See Intraverse in action. We'll walk you through the platform tailored to your business needs.
       </p>
