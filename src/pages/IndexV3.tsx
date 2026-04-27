@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/Navbar";
+import { NavbarV3 } from "@/components/v3/NavbarV3";
 import { HeroSectionV2 } from "@/components/v2/HeroSectionV2";
 import { FeatureGridV3 } from "@/components/v3/FeatureGridV3";
 import { SliderSectionV3 } from "@/components/v3/SliderSectionV3";
@@ -12,7 +12,7 @@ import { RevealSection } from "@/components/RevealSection";
 const IndexV3 = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <Navbar />
+      <NavbarV3 />
       <div className="h-16" />
 
       {/* Hero — bold AI/SaaS-style above the fold (logos strip already inside hero) */}
