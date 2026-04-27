@@ -150,6 +150,37 @@ export function MegaMenuV3({
               )}
             </div>
           )}
+
+          {/* By Audience — horizontal chip row (rendered after use cases) */}
+          {audiences && (
+            <div className="p-5 lg:p-6">
+              <p
+                className="text-[11px] uppercase tracking-[0.08em] font-bold mb-3"
+                style={{ color: "#94A3B8" }}
+              >
+                {audiences.header}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {audiences.items.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => track(item, audiences.header)}
+                      className="group inline-flex items-center gap-2 px-3 py-2 rounded-full border border-border bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                    >
+                      <Icon className="w-3.5 h-3.5 text-primary group-hover:text-primary-foreground transition-colors" />
+                      <span className="text-[13px] font-semibold leading-none">{item.label}</span>
+                      {item.popular && (
+                        <Star className="w-3 h-3 fill-primary text-primary group-hover:fill-primary-foreground group-hover:text-primary-foreground" />
+                      )}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );
