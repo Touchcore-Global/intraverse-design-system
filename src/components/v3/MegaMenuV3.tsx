@@ -67,24 +67,24 @@ export function MegaMenuV3({
           {/* By Use Case — horizontal image card grid */}
           {useCases && (
             <div className={`p-5 lg:p-6 ${audiences ? "border-b border-border" : ""}`}>
-              <div className="mb-4">
-                <p
-                  className="text-[11px] uppercase tracking-[0.08em] font-bold"
-                  style={{ color: "#94A3B8" }}
-                >
-                  {useCases.header}
-                </p>
-                <p className="text-[13px] text-muted-foreground mt-1 max-w-xl">
-                  Discover the most common ways teams put Intraverse to work — from selling flights online to embedding travel in your own product.
-                </p>
-              </div>
               {(() => {
                 const featuredCases = useCases.items.slice(0, 3);
                 const moreCases = useCases.items.slice(3);
                 return (
                   <>
-                    {/* Top: 3 image cards */}
-                    <div className="grid grid-cols-3 gap-3">
+                    {/* Row: header column + 3 image cards = 4 columns */}
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="flex flex-col justify-center pr-2">
+                        <p
+                          className="text-[11px] uppercase tracking-[0.08em] font-bold"
+                          style={{ color: "#94A3B8" }}
+                        >
+                          {useCases.header}
+                        </p>
+                        <p className="text-[13px] text-muted-foreground mt-2 leading-snug">
+                          Discover the most common ways teams put Intraverse to work — from selling flights online to embedding travel in your own product.
+                        </p>
+                      </div>
                       {featuredCases.map((item) => (
                         <a
                           key={item.label}
@@ -159,36 +159,78 @@ export function MegaMenuV3({
           {/* By Audience — horizontal chip row (rendered after use cases) */}
           {audiences && (
             <div className="p-5 lg:p-6">
-              <div className="mb-4">
-                <p
-                  className="text-[11px] uppercase tracking-[0.08em] font-bold"
-                  style={{ color: "#94A3B8" }}
-                >
-                  {audiences.header}
-                </p>
-                <p className="text-[13px] text-muted-foreground mt-1 max-w-xl">
-                  Built for the people who move travel forward — pick the audience that fits you to see tailored solutions.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {audiences.items.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => track(item, audiences.header)}
-                      className="group inline-flex items-center gap-2 px-3 py-2 rounded-full border border-border bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
-                    >
-                      <Icon className="w-3.5 h-3.5 text-primary group-hover:text-primary-foreground transition-colors" />
-                      <span className="text-[13px] font-semibold leading-none">{item.label}</span>
-                      {item.popular && (
-                        <Star className="w-3 h-3 fill-primary text-primary group-hover:fill-primary-foreground group-hover:text-primary-foreground" />
-                      )}
-                    </a>
-                  );
-                })}
-              </div>
+              {(() => {
+                const featuredAud = audiences.items.slice(0, 3);
+                const moreAud = audiences.items.slice(3);
+                return (
+                  <>
+                    {/* Row: header column + 3 audience cards = 4 columns */}
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="flex flex-col justify-center pr-2">
+                        <p
+                          className="text-[11px] uppercase tracking-[0.08em] font-bold"
+                          style={{ color: "#94A3B8" }}
+                        >
+                          {audiences.header}
+                        </p>
+                        <p className="text-[13px] text-muted-foreground mt-2 leading-snug">
+                          Built for the people who move travel forward — pick the audience that fits you to see tailored solutions.
+                        </p>
+                      </div>
+                      {featuredAud.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <a
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => track(item, audiences.header)}
+                            className="group rounded-xl p-4 border border-border bg-background hover:border-primary/40 hover:shadow-md transition-all flex flex-col"
+                          >
+                            <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/15 transition-colors">
+                              <Icon className="w-4.5 h-4.5 text-primary" />
+                            </div>
+                            <div className="flex items-center gap-1.5">
+                              <p className="text-[13px] font-semibold leading-tight text-foreground group-hover:text-primary transition-colors">
+                                {item.label}
+                              </p>
+                              {item.popular && (
+                                <Star className="w-3 h-3 fill-primary text-primary" />
+                              )}
+                            </div>
+                            {item.description && (
+                              <p className="text-[12px] text-muted-foreground leading-snug mt-1 line-clamp-2">
+                                {item.description}
+                              </p>
+                            )}
+                          </a>
+                        );
+                      })}
+                    </div>
+
+                    {/* Bottom: remaining audiences as compact text list */}
+                    {moreAud.length > 0 && (
+                      <div className="mt-4 pt-4 border-t border-border grid grid-cols-4 gap-x-4 gap-y-1">
+                        {moreAud.map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              onClick={() => track(item, audiences.header)}
+                              className="group flex items-center gap-2 py-1.5 rounded-md transition-colors"
+                            >
+                              <Icon className="w-3.5 h-3.5 text-primary shrink-0" />
+                              <span className="text-[13px] font-medium text-foreground group-hover:text-primary transition-colors truncate">
+                                {item.label}
+                              </span>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           )}
         </div>
