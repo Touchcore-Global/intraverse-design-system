@@ -89,6 +89,12 @@ export default function AdminUsers() {
             Articles
           </Link>
           <Link
+            to="/admin/jobs"
+            className="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted"
+          >
+            Jobs
+          </Link>
+          <Link
             to="/admin/independents-interest"
             className="px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted"
           >
