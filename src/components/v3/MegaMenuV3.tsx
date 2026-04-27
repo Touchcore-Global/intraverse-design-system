@@ -150,17 +150,6 @@ export function MegaMenuV3({
                   </>
                 );
               })()}
-
-              {footerLink && (
-                <div className="pt-4 mt-4 border-t border-border">
-                  <a
-                    href={footerLink.href}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all"
-                  >
-                    {footerLink.label} <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              )}
             </div>
           )}
 
