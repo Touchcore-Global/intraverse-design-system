@@ -302,6 +302,72 @@ export type Database = {
         }
         Relationships: []
       }
+      job_postings: {
+        Row: {
+          apply_url: string | null
+          created_at: string
+          description: string
+          display_order: number
+          employment_type: string
+          id: string
+          is_featured: boolean
+          location: string
+          published_at: string | null
+          requirements: string
+          responsibilities: string
+          salary_currency: string | null
+          salary_max: number | null
+          salary_min: number | null
+          slug: string
+          status: Database["public"]["Enums"]["job_status"]
+          team: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          apply_url?: string | null
+          created_at?: string
+          description?: string
+          display_order?: number
+          employment_type?: string
+          id?: string
+          is_featured?: boolean
+          location: string
+          published_at?: string | null
+          requirements?: string
+          responsibilities?: string
+          salary_currency?: string | null
+          salary_max?: number | null
+          salary_min?: number | null
+          slug: string
+          status?: Database["public"]["Enums"]["job_status"]
+          team: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          apply_url?: string | null
+          created_at?: string
+          description?: string
+          display_order?: number
+          employment_type?: string
+          id?: string
+          is_featured?: boolean
+          location?: string
+          published_at?: string | null
+          requirements?: string
+          responsibilities?: string
+          salary_currency?: string | null
+          salary_max?: number | null
+          salary_min?: number | null
+          slug?: string
+          status?: Database["public"]["Enums"]["job_status"]
+          team?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       news_events: {
         Row: {
           created_at: string
@@ -565,6 +631,7 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "editor" | "user"
+      job_status: "draft" | "open" | "closed"
       news_category:
         | "press-releases"
         | "media-coverage"
@@ -699,6 +766,7 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "editor", "user"],
+      job_status: ["draft", "open", "closed"],
       news_category: [
         "press-releases",
         "media-coverage",

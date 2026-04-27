@@ -62,6 +62,9 @@ import News from "./pages/News.tsx";
 import NewsArticle from "./pages/NewsArticle.tsx";
 import AdminNewsList from "./pages/admin/AdminNewsList.tsx";
 import AdminNewsEditor from "./pages/admin/AdminNewsEditor.tsx";
+import AdminJobsList from "./pages/admin/AdminJobsList.tsx";
+import AdminJobsEditor from "./pages/admin/AdminJobsEditor.tsx";
+import JobDetail from "./pages/JobDetail.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
@@ -107,6 +110,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/about/built-in-lagos" element={<BuiltInLagos />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:slug" element={<JobDetail />} />
           <Route path="/partnerships" element={<Partnerships />} />
           <Route path="/features" element={<Features />} />
           <Route path="/use-cases" element={<UseCases />} />
@@ -143,6 +147,9 @@ const App = () => (
           <Route path="/admin/news" element={<AdminNewsList />} />
           <Route path="/admin/news/new" element={<AdminNewsEditor />} />
           <Route path="/admin/news/:id" element={<AdminNewsEditor />} />
+          <Route path="/admin/jobs" element={<AdminJobsList />} />
+          <Route path="/admin/jobs/new" element={<AdminJobsEditor />} />
+          <Route path="/admin/jobs/:id" element={<AdminJobsEditor />} />
           <Route path="/admin/users" element={<AdminUsers />} />
           <Route path="/admin/independents-interest" element={<AdminIndependentsInterest />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
