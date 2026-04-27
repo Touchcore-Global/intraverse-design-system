@@ -123,6 +123,7 @@ const tiers = [
     ],
     cta: "Talk to Enterprise Sales",
     ctaHref: "/contact",
+    ctaTarget: undefined,
     ctaVariant: "outline" as const,
     note: null,
     popular: false,
