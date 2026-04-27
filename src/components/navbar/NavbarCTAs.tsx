@@ -101,7 +101,9 @@ export function NavbarCTAs({
           )}
 
           <a
-            href="/login"
+            href="https://intraverse.app"
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn("block", disabled && "pointer-events-none opacity-50")}
             aria-disabled={disabled || undefined}
             tabIndex={disabled ? -1 : undefined}
@@ -119,7 +121,9 @@ export function NavbarCTAs({
         </>
       ) : (
         <a
-          href="/login"
+          href="https://intraverse.app"
+          target="_blank"
+          rel="noopener noreferrer"
           className={cn(disabled && "pointer-events-none opacity-50")}
           aria-disabled={disabled || undefined}
           tabIndex={disabled ? -1 : undefined}
