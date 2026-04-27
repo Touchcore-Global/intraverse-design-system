@@ -102,39 +102,70 @@ export function MegaMenuV3({
               >
                 {useCases.header}
               </p>
-              <div className="grid grid-cols-3 gap-3">
-                {useCases.items.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => track(item, useCases.header)}
-                    className="group rounded-xl overflow-hidden border border-border hover:border-primary/40 hover:shadow-md transition-all bg-background"
-                  >
-                    <div className="aspect-[16/9] w-full overflow-hidden bg-muted">
-                      {item.image ? (
-                        <img
-                          src={item.image}
-                          alt=""
-                          loading="lazy"
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5" />
-                      )}
+              {(() => {
+                const featuredCases = useCases.items.slice(0, 3);
+                const moreCases = useCases.items.slice(3);
+                return (
+                  <>
+                    {/* Top: 3 image cards */}
+                    <div className="grid grid-cols-3 gap-3">
+                      {featuredCases.map((item) => (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          onClick={() => track(item, useCases.header)}
+                          className="group rounded-xl overflow-hidden border border-border hover:border-primary/40 hover:shadow-md transition-all bg-background"
+                        >
+                          <div className="aspect-[16/9] w-full overflow-hidden bg-muted">
+                            {item.image ? (
+                              <img
+                                src={item.image}
+                                alt=""
+                                loading="lazy"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5" />
+                            )}
+                          </div>
+                          <div className="p-3">
+                            <p className="text-[13px] font-semibold leading-tight text-foreground group-hover:text-primary transition-colors">
+                              {item.label}
+                            </p>
+                            {item.description && (
+                              <p className="text-[12px] text-muted-foreground leading-snug mt-1 line-clamp-2">
+                                {item.description}
+                              </p>
+                            )}
+                          </div>
+                        </a>
+                      ))}
                     </div>
-                    <div className="p-3">
-                      <p className="text-[13px] font-semibold leading-tight text-foreground group-hover:text-primary transition-colors">
-                        {item.label}
-                      </p>
-                      {item.description && (
-                        <p className="text-[12px] text-muted-foreground leading-snug mt-1 line-clamp-2">
-                          {item.description}
-                        </p>
-                      )}
-                    </div>
-                  </a>
-                ))}
-              </div>
+
+                    {/* Bottom: remaining use cases as compact text list */}
+                    {moreCases.length > 0 && (
+                      <div className="mt-4 pt-4 border-t border-border grid grid-cols-3 gap-x-4 gap-y-1">
+                        {moreCases.map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              onClick={() => track(item, useCases.header)}
+                              className="group flex items-center gap-2 py-1.5 rounded-md transition-colors"
+                            >
+                              <Icon className="w-3.5 h-3.5 text-primary shrink-0" />
+                              <span className="text-[13px] font-medium text-foreground group-hover:text-primary transition-colors truncate">
+                                {item.label}
+                              </span>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
 
               {footerLink && (
                 <div className="pt-4 mt-4 border-t border-border">
