@@ -102,8 +102,8 @@ def render(filename: str, label: str, title: str, tagline: str) -> None:
 # (filename, category label, title, tagline)
 IMAGES = [
     # Default / brand
-    ("default.png", "Intraverse",
-     "B2B Travel Technology for Africa",
+    ("default.png", "B2B Travel Tech",
+     "Build the future of African travel.",
      "SaaS tools for travel agencies, cooperatives, and independent operators."),
 
     # Home
