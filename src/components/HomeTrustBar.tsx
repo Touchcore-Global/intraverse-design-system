@@ -126,7 +126,7 @@ export const HomeTrustBar = () => {
             lineHeight: 1.2,
           }}
         >
-          Trusted by 200+ travel agents selling flights, hotels, tours &amp; packages
+          Join the 200+ travel agents already using Intraverse
         </p>
         <div className="flex justify-center md:justify-start mb-10">
           <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
