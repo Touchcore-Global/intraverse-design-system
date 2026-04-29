@@ -130,12 +130,12 @@ export const HeroSectionV2 = () => {
         {/* Video */}
         <div className="mt-14 lg:mt-16 max-w-4xl mx-auto">
           <div
-            className="relative rounded-2xl overflow-hidden p-[2px]"
+            className="relative aspect-video rounded-2xl overflow-hidden p-[2px]"
             style={{
               background:
                 "linear-gradient(135deg, hsl(280 90% 60%), hsl(220 95% 55%), hsl(190 95% 50%), hsl(330 90% 60%))",
-              height: "calc(56.25vw - 20px)",
-              maxHeight: "calc((100vw - 2rem) * 9 / 16 - 20px)",
+              height: "calc(min(100%, 56rem) * 9 / 16 - 20px)",
+              aspectRatio: "auto",
             }}
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden bg-foreground/90">
