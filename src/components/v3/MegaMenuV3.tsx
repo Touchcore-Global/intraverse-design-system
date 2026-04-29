@@ -17,8 +17,8 @@ interface MegaMenuV3Props {
   align?: "left" | "center" | "right";
   footerLink?: { label: string; href: string };
   trackingLocation?: string;
-  /** Layout variant. "default" = featured card + 2-col link grid. "solutions" = horizontal sections with image cards for use cases. */
-  variant?: "default" | "solutions";
+  /** Layout variant. "default" = featured card + 2-col link grid. "solutions" = horizontal sections with image cards for use cases. "compact" = narrower link-only menu (no featured card). */
+  variant?: "default" | "solutions" | "compact";
 }
 
 export function MegaMenuV3({
