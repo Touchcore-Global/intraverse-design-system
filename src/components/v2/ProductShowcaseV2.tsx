@@ -187,7 +187,15 @@ export const ProductShowcaseV2 = () => {
     >
       <div className="container mx-auto px-4 md:pl-[100px]">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 md:mb-12">
-          <h2 className="text-left max-w-4xl text-black">
+          <h2
+            className="text-left max-w-4xl text-black"
+            style={{
+              fontSize: "clamp(2rem, 9vw, 6rem)",
+              fontWeight: 660,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.0416666667,
+            }}
+          >
             Every tool you need to sell travel easily
           </h2>
 
