@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { LayoutDashboard, Globe, Building2, Rocket, Wallet, Link2, ChevronLeft, ChevronRight, LucideIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
 
