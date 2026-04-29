@@ -141,13 +141,13 @@ export const HomeTrustBar = () => {
           {containers.map((c, i) => (
             <div
               key={i}
-              className={`grid grid-cols-1 lg:grid-cols-10 gap-6 md:gap-8 p-6 md:p-12 transition-all duration-500 ease-in-out ${
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 p-6 md:p-12 transition-all duration-500 ease-in-out ${
                 i === active
                   ? "relative opacity-100 translate-y-0"
                   : "absolute inset-0 opacity-0 translate-y-6 pointer-events-none"
               }`}
             >
-              <div className="lg:col-span-7 lg:mr-5 lg:pr-[200px]">
+              <div>
                 <h3
                   className="h3-global mb-4"
                   style={{
@@ -173,7 +173,7 @@ export const HomeTrustBar = () => {
                   {c.p2}
                 </p>
               </div>
-              <div className="lg:col-span-3 w-full rounded-xl bg-black min-h-[190px] h-full overflow-hidden flex items-center justify-center lg:scale-[1.771875]">
+              <div className="w-full rounded-xl bg-black min-h-[190px] h-full overflow-hidden flex items-center justify-center">
                 <img
                   src={c.image}
                   alt={c.title}
