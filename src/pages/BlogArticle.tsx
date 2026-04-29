@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft, Linkedin, Twitter } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -121,27 +121,29 @@ export default function BlogArticle() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{article.title} | Intraverse Blog</title>
-        <meta name="description" content={article.excerpt} />
-        <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.excerpt} />
-        <meta property="og:type" content="article" />
-        {article.cover_image_url && <meta property="og:image" content={article.cover_image_url} />}
-        <link rel="canonical" href={`https://intraverse.africa/blog/${article.slug}`} />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: article.title,
-            description: article.excerpt,
-            datePublished: article.published_at,
-            dateModified: article.updated_at,
-            author: { "@type": "Person", name: article.author?.name ?? "Intraverse" },
-            image: article.cover_image_url,
-          })}
-        </script>
-      </Helmet>
+      <SEO
+        title={`${article.title} | Intraverse Blog`}
+        description={article.excerpt}
+        canonicalPath={`/blog/${article.slug}`}
+        image={article.cover_image_url || "/og/blog.png"}
+        type="article"
+        article={{
+          publishedTime: article.published_at ?? undefined,
+          modifiedTime: article.updated_at,
+          author: article.author?.name,
+          section: article.category?.name,
+        }}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: article.title,
+          description: article.excerpt,
+          datePublished: article.published_at,
+          dateModified: article.updated_at,
+          author: { "@type": "Person", name: article.author?.name ?? "Intraverse" },
+          image: article.cover_image_url,
+        }}
+      />
       <Navbar />
 
       <article className="pt-24 pb-16">
