@@ -147,6 +147,31 @@ ${entries.map(urlEntry).join("\n")}
   await fs.mkdir(PUBLIC_DIR, { recursive: true });
   await fs.writeFile(path.join(PUBLIC_DIR, "sitemap.xml"), xml, "utf8");
 
+  const aiBots = [
+    "GPTBot",
+    "ChatGPT-User",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "Claude-Web",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Applebot",
+    "Applebot-Extended",
+    "Bingbot",
+    "CCBot",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Bytespider",
+    "Amazonbot",
+    "DuckAssistBot",
+    "cohere-ai",
+    "YouBot",
+    "MistralAI-User",
+  ];
+  const aiBotBlock = aiBots.map((b) => `User-agent: ${b}\nAllow: /\n`).join("\n");
   const robots = `User-agent: *
 Allow: /
 Disallow: /admin
@@ -155,6 +180,8 @@ Disallow: /verify-email
 Disallow: /forgot-password
 Disallow: /unsubscribe
 
+# AI crawlers — explicitly allowed
+${aiBotBlock}
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
   await fs.writeFile(path.join(PUBLIC_DIR, "robots.txt"), robots, "utf8");
