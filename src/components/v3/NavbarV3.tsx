@@ -135,7 +135,7 @@ export function NavbarV3() {
             align={align}
             footerLink={footerLink}
             trackingLocation={`navbar_v3_${key}`}
-            variant={key === "solutions" ? "solutions" : "default"}
+            variant={key === "solutions" ? "solutions" : key === "company" ? "compact" : "default"}
           />
         )}
       </div>
