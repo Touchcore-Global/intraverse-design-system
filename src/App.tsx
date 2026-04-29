@@ -66,7 +66,6 @@ import AdminJobsList from "./pages/admin/AdminJobsList.tsx";
 import AdminJobsEditor from "./pages/admin/AdminJobsEditor.tsx";
 import JobDetail from "./pages/JobDetail.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
-import { RouteSEO } from "./components/RouteSEO.tsx";
 
 const queryClient = new QueryClient();
 
@@ -77,7 +76,6 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <RouteSEO />
         <Routes>
           <Route path="/" element={<IndexV2 />} />
           <Route path="/v1" element={<Index />} />
