@@ -4,7 +4,6 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import { useIsMobile } from "@/hooks/use-mobile";
 
 type Product = {
-  icon: LucideIcon;
   title: string;
   body: string;
   cta: string;
