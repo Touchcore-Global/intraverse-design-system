@@ -59,9 +59,8 @@ export default function JobDetail() {
               <SEO
                 title={`${job.title} · Careers`}
                 description={job.description.slice(0, 160) || `${job.title} - ${job.team} - ${job.location}`}
-                canonicalPath={`/careers/${job.slug}`}
-                image="/og/careers.png"
-                type="article"
+                canonical={`https://intraverse.africa/careers/${job.slug}`}
+                ogType="article"
                 jsonLd={{
                   "@context": "https://schema.org",
                   "@type": "JobPosting",
