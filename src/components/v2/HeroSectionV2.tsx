@@ -85,7 +85,7 @@ export const HeroSectionV2 = () => {
       <div className="container relative mx-auto px-4 pt-16 md:pt-[100px] text-center">
 
         <h1
-          className="max-w-5xl mx-auto text-black font-ubuntu"
+          className="max-w-5xl mx-auto text-white font-ubuntu"
           style={{
             fontSize: "clamp(2.25rem, 10vw, 6rem)",
             fontWeight: 660,
@@ -99,9 +99,8 @@ export const HeroSectionV2 = () => {
         </h1>
 
         <p
-          className="mt-6 lg:mt-8 font-normal max-w-3xl mx-auto px-2"
+          className="mt-6 lg:mt-8 font-normal max-w-3xl mx-auto px-2 text-white"
           style={{
-            color: "#74717a",
             fontSize: "clamp(1rem, 3.5vw, 2rem)",
             fontWeight: 400,
             letterSpacing: "-0.02em",
@@ -114,7 +113,7 @@ export const HeroSectionV2 = () => {
         <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="xl"
-            className="cta-responsive min-h-[48px] bg-black hover:bg-black/90 text-white border-0 rounded-none font-semibold shadow-lg hover:shadow-xl transition-shadow"
+            className="cta-responsive min-h-[48px] bg-white hover:bg-white/90 text-black border-0 rounded-none font-semibold shadow-lg hover:shadow-xl transition-shadow"
             asChild
           >
             <a href="https://intraverse.app/register?view=register" target="_blank" rel="noopener noreferrer">Start Now</a>
@@ -122,7 +121,7 @@ export const HeroSectionV2 = () => {
           <Button
             size="xl"
             variant="outline"
-            className="cta-responsive min-h-[48px] border-black text-black hover:bg-black hover:text-white rounded-none font-semibold"
+            className="cta-responsive min-h-[48px] border-white text-white bg-transparent hover:bg-white hover:text-black rounded-none font-semibold"
             asChild
           >
             <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">Book a Demo</a>
