@@ -78,7 +78,8 @@ export const HeroSectionV2 = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white"
+      className="relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${heroGradient})` }}
     >
 
       <div className="container relative mx-auto px-4 pt-16 md:pt-[100px] text-center">
