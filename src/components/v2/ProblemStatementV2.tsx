@@ -119,6 +119,9 @@ export const ProblemStatementV2 = () => {
         >
           Start. Manage. Scale your travel business
         </h2>
+        <p className="text-center md:text-left mb-8 md:mb-12 px-4 md:px-0 md:pl-[100px] text-base md:text-lg text-muted-foreground max-w-3xl">
+          Intraverse is the easiest way for anyone to launch and run a travel business in Africa.
+        </p>
 
         <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full">
           <CarouselContent className="ml-0 pl-4 pr-4 md:pl-[var(--carousel-gutter-md)] md:pr-[var(--carousel-gutter-md)]">
