@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft, ExternalLink, Linkedin, Twitter, Link2, MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -135,29 +135,33 @@ export default function NewsArticle() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{item.title} | News | Intraverse</title>
-        <meta name="description" content={item.excerpt} />
-        <meta property="og:title" content={item.title} />
-        <meta property="og:description" content={item.excerpt} />
-        <meta property="og:type" content="article" />
-        {item.featured_image && <meta property="og:image" content={item.featured_image} />}
-        <link rel="canonical" href={`https://intraverse.africa/news/${item.slug}`} />
-        {item.category === "press-releases" && (
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "NewsArticle",
-              headline: item.title,
-              description: item.excerpt,
-              datePublished: item.published_at,
-              dateModified: item.updated_at,
-              image: item.featured_image,
-              publisher: { "@type": "Organization", name: "Intraverse" },
-            })}
-          </script>
-        )}
-      </Helmet>
+      <SEO
+        title={`${item.title} | News`}
+        description={item.excerpt}
+        canonicalPath={`/news/${item.slug}`}
+        image={item.featured_image || "/og/news.png"}
+        type="article"
+        article={{
+          publishedTime: item.published_at ?? undefined,
+          modifiedTime: item.updated_at,
+          section: item.category,
+          tags: item.tags,
+        }}
+        jsonLd={
+          item.category === "press-releases"
+            ? {
+                "@context": "https://schema.org",
+                "@type": "NewsArticle",
+                headline: item.title,
+                description: item.excerpt,
+                datePublished: item.published_at,
+                dateModified: item.updated_at,
+                image: item.featured_image,
+                publisher: { "@type": "Organization", name: "Intraverse" },
+              }
+            : undefined
+        }
+      />
       <Navbar />
 
       <article className="pt-24 pb-16">

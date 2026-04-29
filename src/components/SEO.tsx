@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 export const SITE_URL = "https://intraverse.africa";
 export const SITE_NAME = "Intraverse";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/favicon.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og/default.png`;
 
 export interface SEOProps {
   title: string;
