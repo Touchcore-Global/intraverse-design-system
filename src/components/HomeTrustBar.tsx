@@ -129,7 +129,7 @@ export const HomeTrustBar = () => {
           Join the 200+ travel agents already using Intraverse
         </p>
         <div className="flex justify-center md:justify-start mb-10">
-          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+          <Button variant="hero" size="xl" className="cta-responsive min-h-[48px] bg-black text-white hover:bg-black/90" asChild>
             <a href="https://intraverse.app" target="_blank" rel="noopener noreferrer">
               Try for Free
             </a>
