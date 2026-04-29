@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+
 import { Loader2 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -98,14 +98,6 @@ export default function News() {
         description="Latest news, press releases, and media coverage about Intraverse. Product launches, partnerships, and industry recognition in African travel technology."
         canonical="https://intraverse.africa/news"
       />
-      <Helmet>
-        <title>News &amp; Press | Intraverse</title>
-        <meta
-          name="description"
-          content="Press releases, media coverage, events, and milestones from Intraverse - the Africa-first travel technology company building travel infrastructure for the continent."
-        />
-        <link rel="canonical" href="https://intraverse.africa/news" />
-      </Helmet>
       <Navbar />
 
       {/* Hero */}
