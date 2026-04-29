@@ -235,6 +235,70 @@ export function MegaMenuV3({
     );
   }
 
+  // ---------- COMPACT VARIANT (link-only, narrow) ----------
+  if (variant === "compact") {
+    return (
+      <div
+        className={`absolute top-full ${alignmentClass} pt-3 animate-fade-in z-50`}
+        style={{ width: `min(${Math.max(280, sections.length * 220)}px, calc(100vw - 2rem))` }}
+      >
+        <div
+          className="bg-popover border border-border rounded-2xl overflow-hidden p-5 lg:p-6"
+          style={{ boxShadow: "0 20px 50px -10px rgba(13,27,42,0.15)" }}
+        >
+          <div
+            className="grid gap-x-6 gap-y-4"
+            style={{ gridTemplateColumns: `repeat(${sections.length}, minmax(0, 1fr))` }}
+          >
+            {sections.map((section) => (
+              <div key={section.header} className="min-w-0">
+                <p
+                  className="text-[11px] uppercase tracking-[0.08em] font-bold mb-2"
+                  style={{ color: "#94A3B8" }}
+                >
+                  {section.header}
+                </p>
+                <div className="flex flex-col">
+                  {section.items.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      onClick={() => track(item, section.header)}
+                      className="group flex items-start rounded-lg p-2 -mx-2 transition-colors hover:bg-muted/60"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[13px] font-semibold leading-tight text-foreground group-hover:text-primary transition-colors">
+                          {item.label}
+                        </p>
+                        {item.description && (
+                          <p className="text-[12px] text-muted-foreground leading-snug mt-0.5 line-clamp-2">
+                            {item.description}
+                          </p>
+                        )}
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          {footerLink && (
+            <div className="pt-3 mt-3 border-t border-border">
+              <a
+                href={footerLink.href}
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all"
+              >
+                {footerLink.label} <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   // ---------- DEFAULT VARIANT (featured card + 2-col link grid) ----------
   return (
     <div
