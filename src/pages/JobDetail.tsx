@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft, Briefcase, MapPin, Clock, DollarSign } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -56,10 +56,43 @@ export default function JobDetail() {
             </div>
           ) : (
             <>
-              <Helmet>
-                <title>{job.title} · Careers · Intraverse</title>
-                <meta name="description" content={job.description.slice(0, 160) || `${job.title} - ${job.team} - ${job.location}`} />
-              </Helmet>
+              <SEO
+                title={`${job.title} · Careers`}
+                description={job.description.slice(0, 160) || `${job.title} - ${job.team} - ${job.location}`}
+                canonicalPath={`/careers/${job.slug}`}
+                type="article"
+                jsonLd={{
+                  "@context": "https://schema.org",
+                  "@type": "JobPosting",
+                  title: job.title,
+                  description: job.description,
+                  datePosted: job.published_at ?? job.created_at,
+                  employmentType: job.employment_type,
+                  hiringOrganization: {
+                    "@type": "Organization",
+                    name: "Intraverse",
+                    sameAs: "https://intraverse.africa",
+                  },
+                  jobLocation: {
+                    "@type": "Place",
+                    address: { "@type": "PostalAddress", addressLocality: job.location },
+                  },
+                  ...(job.salary_min && job.salary_max
+                    ? {
+                        baseSalary: {
+                          "@type": "MonetaryAmount",
+                          currency: job.salary_currency ?? "USD",
+                          value: {
+                            "@type": "QuantitativeValue",
+                            minValue: Number(job.salary_min),
+                            maxValue: Number(job.salary_max),
+                            unitText: "YEAR",
+                          },
+                        },
+                      }
+                    : {}),
+                }}
+              />
 
               <div className="mb-8">
                 <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-primary mb-3">
