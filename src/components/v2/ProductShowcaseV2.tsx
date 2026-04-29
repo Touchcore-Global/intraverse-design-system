@@ -124,12 +124,6 @@ export const ProductShowcaseV2 = () => {
               🆕 New
             </span>
           )}
-          <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 shadow-md"
-            style={{ background: product.gradient }}
-          >
-            <Icon className="w-6 h-6 text-white" />
-          </div>
           <span className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: product.accent }}>
             {product.label}
           </span>
