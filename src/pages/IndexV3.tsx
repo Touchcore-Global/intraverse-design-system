@@ -8,10 +8,16 @@ import { FinalCTAV2 } from "@/components/v2/FinalCTAV2";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { RevealSection } from "@/components/RevealSection";
+import { SEO } from "@/components/SEO";
 
 const IndexV3 = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <SEO
+        title="Intraverse — B2B Travel Technology Platform"
+        description="Africa's B2B travel technology platform."
+        noindex={true}
+      />
       <NavbarV3 />
       <div className="h-16" />
 

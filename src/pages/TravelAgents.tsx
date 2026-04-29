@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const bulletPoints = [
   "Runs an agency of any size - from solo operators to multi-branch businesses",
@@ -91,6 +92,11 @@ function RevealBlock({ children, className = "" }: { children: React.ReactNode; 
 const TravelAgents = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="For Travel Agents — Booking Platform & GDS Access | Intraverse"
+        description="Access Amadeus, Sabre, and Galileo GDS through one platform. Manage bookings, issue tickets, collect payments, and run your agency with professional technology."
+        canonical="https://intraverse.africa/for/travel-agents"
+      />
       <Navbar />
       <div className="h-16" />
 

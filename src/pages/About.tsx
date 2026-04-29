@@ -36,6 +36,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const stats = [
   { value: "200+", label: "Active Agents", icon: Users },
@@ -203,6 +204,11 @@ const faqs = [
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="About Intraverse — Africa's Travel Technology Company"
+        description="Intraverse is a Lagos-based B2B travel technology company building the infrastructure for Africa's next generation of travel businesses. IATA accredited, serving 200+ agents."
+        canonical="https://intraverse.africa/about"
+      />
       <Navbar />
 
       {/* Hero */}

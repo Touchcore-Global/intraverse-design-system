@@ -18,6 +18,7 @@ import {
   fetchPopularArticles,
 } from "@/lib/blog/queries";
 import type { BlogArticle, BlogCategory } from "@/lib/blog/types";
+import { SEO } from "@/components/SEO";
 
 const PAGE_SIZE = 9;
 
@@ -108,6 +109,11 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Blog — Travel Industry Insights & Product Updates | Intraverse"
+        description="Insights for African travel businesses. Industry analysis, product updates, agent success stories, and practical guides for growing your travel business in Nigeria."
+        canonical="https://intraverse.africa/blog"
+      />
       <Helmet>
         <title>Blog - Insights for African Travel Businesses | Intraverse</title>
         <meta

@@ -7,6 +7,7 @@ import { Globe, Wallet, Handshake, Shield, Landmark, Globe2, Wrench, Zap, Search
 import { useEffect } from "react";
 import lagosSkyline from "@/assets/lagos-skyline.png";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ─── Reusable animated wrapper ─── */
 function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -139,11 +140,6 @@ const commitmentBlocks = [
 ];
 
 export default function BuiltInLagos() {
-  useEffect(() => {
-    document.title = "Built in Lagos, Built for Africa | Our Story | Intraverse";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Intraverse is an Africa-first travel technology company headquartered in Lagos. We build infrastructure for travel businesses across the continent - starting where the hardest version of the problem lives.");
-  }, []);
 
   const scrollToOrigin = () => {
     document.getElementById("origin")?.scrollIntoView({ behavior: "smooth" });
@@ -151,6 +147,11 @@ export default function BuiltInLagos() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Built in Lagos — Africa's Travel Tech Innovation Hub | Intraverse"
+        description="Intraverse is proudly built in Lagos, Nigeria. Our engineering, product, and support teams are based in Africa, building travel technology for African businesses."
+        canonical="https://intraverse.africa/about/built-in-lagos"
+      />
       <Navbar />
 
       {/* ═══ HERO ═══ */}

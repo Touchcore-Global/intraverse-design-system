@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const bulletPoints = [
   "A growing SME with 10–100 employees who travel regularly?",
@@ -50,6 +51,11 @@ function RevealBlock({ children, className = "" }: { children: React.ReactNode; 
 const Businesses = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="For Businesses — Streamline Corporate Travel & Expenses | Intraverse"
+        description="Simplify business travel for your team. Book flights and hotels, track spending, and manage approvals in one platform. Built for African businesses of all sizes."
+        canonical="https://intraverse.africa/for/businesses"
+      />
       <Navbar />
       <div className="h-16" />
 

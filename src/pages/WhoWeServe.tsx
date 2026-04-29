@@ -17,6 +17,7 @@ import {
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 
 const audiences = [
@@ -139,20 +140,14 @@ function RevealBlock({
 }
 
 const WhoWeServe = () => {
-  useEffect(() => {
-    document.title =
-      "Who We Serve | Travel Agents, Businesses, Corporates, Independents, Startups & Developers | Intraverse";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute(
-        "content",
-        "Intraverse powers travel agents, businesses, corporates, independent travel entrepreneurs, tech startups, and developers. Find the path built for you."
-      );
-    }
-  }, []);
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Who We Serve — Travel Agents, Corporates, Startups & Developers | Intraverse"
+        description="Intraverse serves travel agents, aspiring independents, corporate travel managers, startups, developers, and fintechs. Find the right solution for your business."
+        canonical="https://intraverse.africa/who-we-serve"
+      />
       <Navbar />
       <div className="h-16" />
 

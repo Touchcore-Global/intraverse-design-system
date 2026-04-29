@@ -4,6 +4,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import travelLinkBookingPreview from "@/assets/travel-link-booking-preview.svg";
+import { SEO } from "@/components/SEO";
 import {
   Link2,
   Smartphone,
@@ -124,6 +125,11 @@ const scenarios = [
 const TravelLinks = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Travel Links — Shareable Booking Links for Travel Agents | Intraverse"
+        description="Create branded, shareable booking links for your travel customers. Send flight and hotel quotes via WhatsApp, email, or social media. Customers book and pay online."
+        canonical="https://intraverse.africa/products/travel-links"
+      />
       <Navbar />
       <div className="h-16" />
 

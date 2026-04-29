@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Home, Plane, Users, DollarSign, HelpCircle, MessageCircle, ArrowRight, Navigation } from "lucide-react";
 import { WHATSAPP_URL, whatsappUrl } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const quickLinks = [
   { icon: Home, title: "Homepage", desc: "Back to the main page", href: "/" },
@@ -21,24 +22,6 @@ const NotFound = () => {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-    document.title = "Page Not Found | Intraverse";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "The page you're looking for doesn't exist. Find your way back to Intraverse's homepage, products, or Help Centre.");
-    
-    let robots = document.querySelector('meta[name="robots"]');
-    if (!robots) {
-      robots = document.createElement("meta");
-      robots.setAttribute("name", "robots");
-      document.head.appendChild(robots);
-    }
-    robots.setAttribute("content", "noindex");
-
-    return () => {
-      robots?.setAttribute("content", "index, follow");
-    };
-  }, [location.pathname]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +32,11 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO
+        title="Page Not Found | Intraverse"
+        description="This page doesn't exist. Head back to Intraverse to explore our travel technology platform."
+        noindex={true}
+      />
       <Navbar />
 
       {/* Hero */}

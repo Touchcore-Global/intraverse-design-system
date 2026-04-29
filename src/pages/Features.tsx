@@ -16,6 +16,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ───── types ───── */
 interface FeatureCard {
@@ -377,6 +378,11 @@ export default function Features() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO
+        title="Features — Complete Travel Technology Platform | Intraverse"
+        description="Explore every feature of Intraverse: GDS integration, white-label storefronts, itinerary sharing, multi-currency payments, team management, analytics, and more."
+        canonical="https://intraverse.africa/features"
+      />
       <Navbar />
 
       {/* HERO */}

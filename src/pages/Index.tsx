@@ -14,10 +14,16 @@ import { SecuritySection } from "@/components/SecuritySection";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { MobileHome } from "@/components/mobile/MobileHome";
+import { SEO } from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Intraverse — B2B Travel Technology Platform"
+        description="Africa's B2B travel technology platform."
+        noindex={true}
+      />
       <Navbar />
       {/* Spacer for fixed nav */}
       <div className="h-16" />

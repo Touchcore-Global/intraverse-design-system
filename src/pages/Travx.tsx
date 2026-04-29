@@ -25,6 +25,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const features = [
   {
@@ -158,6 +159,21 @@ const afterItems = [
 const Travx = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="TravX — White-Label Travel Booking Platform for Agents | Intraverse"
+        description="Launch your branded travel booking website. White-label platform with 900+ airlines, hotel booking, payment processing, and customer management. From ₦75,000/month."
+        canonical="https://intraverse.africa/travx"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "TravX",
+          applicationCategory: "TravelApplication",
+          operatingSystem: "Web",
+          description: "White-label travel booking platform for travel agents",
+          offers: { "@type": "Offer", price: "75000", priceCurrency: "NGN", priceValidUntil: "2026-12-31" },
+          provider: { "@type": "Organization", name: "Intraverse", url: "https://intraverse.africa" },
+        }}
+      />
       <Navbar />
       <div className="h-16" />
 

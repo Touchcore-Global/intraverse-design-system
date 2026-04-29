@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Check, ArrowRight } from "lucide-react";
 import { DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ──────── Reveal wrapper ──────── */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -158,16 +159,14 @@ const flowSteps = [
 /* ──────── COMPONENT ──────── */
 
 export default function Tools() {
-  useEffect(() => {
-    document.title = "Tools | The Complete Toolkit for Selling Travel | Intraverse";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "8 built-in tools to sell travel like a pro: trip builder, live itineraries, secure payments, insights, packages, Travel Links, workspace, and team management. All included.");
-    }
-  }, []);
 
   return (
     <>
+      <SEO
+        title="Agent Tools — Booking Engine, Itineraries & Payments | Intraverse"
+        description="Professional tools for travel agents: booking engine, itinerary builder, payment collection, customer management, and business analytics. All included in your plan."
+        canonical="https://intraverse.africa/tools"
+      />
       <Navbar />
       <main className="pt-16">
         {/* ═══ HERO ═══ */}

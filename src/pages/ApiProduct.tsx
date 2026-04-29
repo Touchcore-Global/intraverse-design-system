@@ -6,6 +6,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { SEO } from "@/components/SEO";
 
 /* ──────── Reusable reveal wrapper ──────── */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -176,16 +177,14 @@ const steps = [
 /* ──────── COMPONENT ──────── */
 
 export default function ApiProduct() {
-  useEffect(() => {
-    document.title = "Intraverse API | Travel Inventory API for Africa | Flights, Hotels, Tours";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "Build travel into your product. Aggregated flight, hotel, and tour inventory through one REST API. OAuth 2.0, free sandbox, comprehensive docs. Built by developers, for developers.");
-    }
-  }, []);
 
   return (
     <>
+      <SEO
+        title="Travel API — Flights, Hotels & Tours API for Developers | Intraverse"
+        description="Build travel into your product with Intraverse's REST API. Access flights, hotels, tours, and payments. Full documentation, sandbox environment, and developer support."
+        canonical="https://intraverse.africa/products/api"
+      />
       <Navbar />
       <main className="pt-16">
         {/* ═══ HERO ═══ */}

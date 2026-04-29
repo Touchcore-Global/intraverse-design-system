@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const bulletPoints = [
   "A large corporate with 100+ employees who travel for work?",
@@ -67,6 +68,11 @@ const Corporates = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="For Corporate Travel Managers — Travel Management Platform | Intraverse"
+        description="Manage your company's travel spend, enforce booking policies, and automate expense reporting. CoopX by Intraverse is built for Nigerian and African corporate travel."
+        canonical="https://intraverse.africa/for/corporates"
+      />
       <Navbar />
       <div className="h-16" />
 

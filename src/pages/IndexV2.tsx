@@ -13,10 +13,30 @@ import { SecuritySectionV2 } from "@/components/v2/SecuritySectionV2";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { RevealSection } from "@/components/RevealSection";
+import { SEO } from "@/components/SEO";
 
 const IndexV2 = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <SEO
+        title="Intraverse — B2B Travel Technology Platform"
+        description="Africa's B2B travel technology platform. Access GDS, NDC, and 900+ airlines through one API. White-label booking engine, agent tools, and corporate travel management."
+        canonical="https://intraverse.africa"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Intraverse",
+          url: "https://intraverse.africa",
+          logo: "https://intraverse.africa/images/intraverse-logo.svg",
+          description: "Africa's B2B travel technology platform",
+          address: { "@type": "PostalAddress", addressLocality: "Lagos", addressCountry: "NG" },
+          sameAs: [
+            "https://www.linkedin.com/company/intraverse.africa",
+            "https://twitter.com/intraverseHQ",
+            "https://www.instagram.com/intraverse.africa",
+          ],
+        }}
+      />
       <Navbar />
       <div className="h-16" />
 

@@ -21,6 +21,7 @@ import {
   Globe,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ------------------------------------------------------------------ */
 /*  Currency helpers                                                    */
@@ -172,14 +173,14 @@ export default function Pricing() {
   const [annual, setAnnual] = useState(false);
   const [currency, setCurrency] = useState<Currency>("USD");
 
-  useEffect(() => {
-    document.title = "Pricing | Simple Plans for Every Travel Business | Intraverse";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Start free, upgrade when ready. Transparent pricing for travel agents, independents, agencies, and enterprises. No hidden fees. 14-day free trial.");
-  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
+      <SEO
+        title="Pricing — Travel Agent Software Plans from ₦75,000/month | Intraverse"
+        description="Transparent pricing for Africa's B2B travel platform. Agent, Business, and Enterprise plans. No hidden fees, no setup costs. Compare plans and start today."
+        canonical="https://intraverse.africa/pricing"
+      />
       <Navbar />
 
       {/* ── Hero ── */}

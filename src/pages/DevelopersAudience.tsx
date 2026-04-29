@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { SEO } from "@/components/SEO";
 import {
   Check,
   Plane,
@@ -88,6 +89,11 @@ function RevealBlock({ children, className = "" }: { children: React.ReactNode; 
 const Developers = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="For Developers — Travel API Documentation & SDKs | Intraverse"
+        description="RESTful travel API with flights, hotels, tours, and payments. Full documentation, Postman collections, webhook support, and a dedicated sandbox environment."
+        canonical="https://intraverse.africa/for/developers"
+      />
       <Navbar />
       <div className="h-16" />
 

@@ -24,6 +24,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const features = [
   {
@@ -144,6 +145,20 @@ const faqs = [
 const CoopX = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="CoopX — Corporate Travel Management Platform Nigeria | Intraverse"
+        description="Simplify corporate travel in Africa. Manage bookings, control spend, enforce travel policy, and automate expense reporting. Built for Nigerian and African enterprises."
+        canonical="https://intraverse.africa/coopx"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "CoopX",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          description: "Corporate travel management platform for African businesses",
+          provider: { "@type": "Organization", name: "Intraverse", url: "https://intraverse.africa" },
+        }}
+      />
       <Navbar />
       <div className="h-16" />
 
