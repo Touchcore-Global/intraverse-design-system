@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { DEMO_URL } from "@/lib/constants";
+import heroGradient from "@/assets/hero-gradient.svg";
 import whogoflyLogo from "@/assets/partners/whogofly.png";
 import tzopalLogo from "@/assets/partners/tzopal.png";
 import nesoLogo from "@/assets/partners/neso.png";
