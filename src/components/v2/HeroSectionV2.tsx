@@ -146,7 +146,7 @@ export const HeroSectionV2 = () => {
                 playsInline
                 preload="metadata"
               >
-                <source src="https://res.cloudinary.com/demzrmxhz/video/upload/v1777429454/intraverseflightsearch.mov" type="video/mp4" />
+                <source src="https://res.cloudinary.com/demzrmxhz/video/upload/v1777459152/Intraverse%20Website%20Video.mov" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               {!isPlaying && (
