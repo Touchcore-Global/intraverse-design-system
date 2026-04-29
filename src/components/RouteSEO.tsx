@@ -11,6 +11,8 @@ export interface RouteSEOEntry {
   keywords?: string;
   type?: string;
   noindex?: boolean;
+  /** Path under /og (e.g. "/og/home.png"). Falls back to /og/default.png. */
+  image?: string;
 }
 
 export const ROUTE_SEO: Record<string, RouteSEOEntry> = {
