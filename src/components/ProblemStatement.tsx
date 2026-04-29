@@ -73,7 +73,7 @@ export const ProblemStatement = () => {
     <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background">
       <div ref={ref} className={`container mx-auto px-4 md:pl-[100px] transition-all duration-700 ease-out ${revealClass}`}>
         <h2 className="text-center md:text-left mb-12">
-          Built to Meet Industry's Demands
+          Start. Manage. Scale your travel business
         </h2>
 
         {isMobile ? (

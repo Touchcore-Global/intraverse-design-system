@@ -117,7 +117,7 @@ export const ProblemStatementV2 = () => {
             lineHeight: 1.0416666667,
           }}
         >
-          Built to Meet Industry's<br />Demands
+          Start. Manage. Scale your travel business
         </h2>
 
         <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full">
