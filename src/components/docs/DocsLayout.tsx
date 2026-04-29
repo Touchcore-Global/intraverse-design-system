@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronRight, Menu, X, ThumbsUp, ThumbsDown, ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { docCategories, getNeighbors } from "./docsNav";
