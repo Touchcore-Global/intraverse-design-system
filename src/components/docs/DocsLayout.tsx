@@ -67,6 +67,11 @@ export function DocsLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO
+        title={metaTitle ?? `${current?.title ?? "Docs"} | API Docs | Intraverse`}
+        description={metaDescription ?? subtitle}
+        canonical={`https://intraverse.africa/docs/${slug}`}
+      />
       <Navbar />
       <main className="flex-1 pt-16">
         <div className="container mx-auto px-4 lg:px-8 py-8 lg:py-12">
