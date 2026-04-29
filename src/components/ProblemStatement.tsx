@@ -72,9 +72,12 @@ export const ProblemStatement = () => {
   return (
     <section className="pt-10 pb-7 md:pt-20 md:pb-14 bg-background">
       <div ref={ref} className={`container mx-auto px-4 md:pl-[100px] transition-all duration-700 ease-out ${revealClass}`}>
-        <h2 className="text-center md:text-left mb-12">
+        <h2 className="text-center md:text-left mb-4">
           Start. Manage. Scale your travel business
         </h2>
+        <p className="text-center md:text-left mb-12 text-base md:text-lg text-muted-foreground max-w-3xl">
+          Intraverse is the easiest way for anyone to launch and run a travel business in Africa.
+        </p>
 
         {isMobile ? (
           <Carousel opts={{ align: "start", loop: true }} className="w-full">
