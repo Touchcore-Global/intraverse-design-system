@@ -134,9 +134,8 @@ export const HeroSectionV2 = () => {
             style={{
               background:
                 "linear-gradient(135deg, hsl(280 90% 60%), hsl(220 95% 55%), hsl(190 95% 50%), hsl(330 90% 60%))",
-              height: "calc((100% * 9 / 16) - 20px)",
-              aspectRatio: "auto",
-              paddingBottom: "calc(56.25% - 20px)",
+              height: "calc(56.25vw - 20px)",
+              maxHeight: "calc((100vw - 2rem) * 9 / 16 - 20px)",
             }}
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden bg-foreground/90">
