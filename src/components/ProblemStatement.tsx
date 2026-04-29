@@ -76,7 +76,7 @@ export const ProblemStatement = () => {
           Start. Manage.<br />Scale your travel<br />business
         </h2>
         <p className="text-center md:text-left mb-12 text-base md:text-lg text-muted-foreground max-w-3xl">
-          Intraverse is the easiest way for anyone to launch and run a travel business in Africa.
+          Intraverse is the easiest way for anyone to launch and run a travel business in Africa with zero upfront cost. Sell using your own branding, access global flights, hotels, tours and packages, and earn revenue - no industry experience required
         </p>
 
         {isMobile ? (
