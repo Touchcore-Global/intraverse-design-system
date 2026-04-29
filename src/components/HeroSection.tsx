@@ -79,7 +79,7 @@ export const HeroSection = () => {
               preload="metadata"
               poster=""
             >
-              <source src="https://res.cloudinary.com/demzrmxhz/video/upload/v1762167461/Travx-video_fmbarv.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/demzrmxhz/video/upload/v1777429454/intraverseflightsearch.mov" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
