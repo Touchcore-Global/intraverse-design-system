@@ -1,10 +1,9 @@
 import { useRef, useState, useEffect } from "react";
-import { LayoutDashboard, Globe, Building2, Rocket, Wallet, Link2, ChevronLeft, ChevronRight, LucideIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 type Product = {
-  icon: LucideIcon;
   title: string;
   body: string;
   cta: string;
@@ -17,7 +16,6 @@ type Product = {
 
 const products: Product[] = [
   {
-    icon: LayoutDashboard,
     title: "Every Flight. Every Hotel. Every Tour. One Dashboard.",
     body: "Aggregated flight inventory from GDS, NDC, consolidators, and aggregators. Hotels and tours from leading global suppliers. Compare prices across every source and book in minutes.",
     cta: "Book a Demo →",
@@ -27,7 +25,6 @@ const products: Product[] = [
     accent: "hsl(220 95% 55%)",
   },
   {
-    icon: Globe,
     title: "Your Brand. Your Website. Bookings While You Sleep.",
     body: "A fully branded, booking-enabled website for your agency at $50/month. No developer needed. Your customers search, book, and pay directly.",
     cta: "See Travx →",
@@ -37,7 +34,6 @@ const products: Product[] = [
     accent: "hsl(190 95% 45%)",
   },
   {
-    icon: Building2,
     title: "Take Control of Your Company's Travel Spend",
     body: "Approval workflows, policy enforcement, consolidated billing, and full reporting - built for corporates managing employee travel.",
     cta: "Book a Demo →",
@@ -47,7 +43,6 @@ const products: Product[] = [
     accent: "hsl(150 80% 40%)",
   },
   {
-    icon: Rocket,
     title: "Start Earning in Travel. No Agency Required.",
     body: "Access real IATA-backed technology. Sell flights, hotels, and tours from global suppliers. Earn commissions on every booking. No experience needed.",
     cta: "Join the Programme →",
@@ -57,7 +52,6 @@ const products: Product[] = [
     accent: "hsl(15 95% 55%)",
   },
   {
-    icon: Link2,
     title: "Sell Travel Without a Website. Just Share a Link.",
     body: "Generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, social media, or email. Your customer clicks, books, and pays - and you earn the commission. No website, no app, no tech skills required.",
     cta: "Learn About Travel Links →",
@@ -68,7 +62,6 @@ const products: Product[] = [
     accent: "hsl(330 90% 55%)",
   },
   {
-    icon: Wallet,
     title: "Close the Sale. Even When Your Customer Doesn't Have the Full Amount.",
     body: "Fare Lock and Pay Later options let your customers secure today's fare and pay in instalments. You close the deal. They get their trip.",
     cta: "Learn About Odiopay →",
@@ -108,7 +101,7 @@ export const ProductShowcaseV2 = () => {
   };
 
   const renderCard = (product: Product) => {
-    const Icon = product.icon;
+
     return (
       <div
         key={product.label}
