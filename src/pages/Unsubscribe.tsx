@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { SEO } from "@/components/SEO";
 
 type State =
   | { kind: "loading" }
@@ -79,6 +80,11 @@ const Unsubscribe = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO
+        title="Unsubscribe | Intraverse"
+        description="Manage your Intraverse email preferences."
+        noindex={true}
+      />
       <Navbar />
       <main className="flex-1 flex items-center justify-center px-4 py-24">
         <div className="w-full max-w-md bg-accent rounded-2xl p-8 text-center">

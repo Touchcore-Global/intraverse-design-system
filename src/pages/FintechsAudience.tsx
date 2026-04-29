@@ -33,6 +33,7 @@ import { WHATSAPP_URL } from "@/lib/constants";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { SEO } from "@/components/SEO";
 
 const fintechPartnerSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -250,16 +251,14 @@ const FintechsAudience = () => {
     }
   };
 
-  useEffect(() => {
-    document.title = "For Fintechs | Embed Travel as a Revenue Stream | Intraverse API";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "Nigerian fintechs, neobanks, and super-apps use Intraverse to add flight, hotel & tour booking as a native revenue stream. API + BNPL. Launch in weeks.");
-    }
-  }, []);
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="For Fintechs — Add Travel to Your Financial Platform | Intraverse"
+        description="Integrate travel booking into your fintech product. Offer flight and hotel booking inside your banking, payments, or BNPL app with Intraverse's white-label API."
+        canonical="https://intraverse.africa/for/fintechs"
+      />
       <Navbar />
       <div className="h-16" />
 

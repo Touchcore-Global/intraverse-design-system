@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+
 import { Loader2 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -17,6 +17,7 @@ import {
   fetchUpcomingEvents,
 } from "@/lib/news/queries";
 import { NEWS_CATEGORIES, type NewsCategory, type NewsEvent, type NewsItem } from "@/lib/news/types";
+import { SEO } from "@/components/SEO";
 
 const PAGE_SIZE = 9;
 
@@ -92,14 +93,11 @@ export default function News() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>News &amp; Press | Intraverse</title>
-        <meta
-          name="description"
-          content="Press releases, media coverage, events, and milestones from Intraverse - the Africa-first travel technology company building travel infrastructure for the continent."
-        />
-        <link rel="canonical" href="https://intraverse.africa/news" />
-      </Helmet>
+      <SEO
+        title="News & Press — Intraverse in the Media"
+        description="Latest news, press releases, and media coverage about Intraverse. Product launches, partnerships, and industry recognition in African travel technology."
+        canonical="https://intraverse.africa/news"
+      />
       <Navbar />
 
       {/* Hero */}

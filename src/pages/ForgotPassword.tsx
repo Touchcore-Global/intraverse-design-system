@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import { forgotPassword, recoverPassword, resendRecoverOtp } from "@/lib/api/auth";
 import { Mail, KeyRound, CheckCircle2, RefreshCw, ArrowLeft } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 type Step = "email" | "otp" | "success";
 const OTP_LENGTH = 6;
@@ -140,6 +141,11 @@ export default function ForgotPassword() {
 
   return (
     <>
+      <SEO
+        title="Reset Password | Intraverse"
+        description="Reset your Intraverse account password."
+        noindex={true}
+      />
       <Navbar />
       <main className="min-h-screen pt-24 pb-16 flex items-start justify-center bg-accent">
         <div className="w-full max-w-md mx-4">

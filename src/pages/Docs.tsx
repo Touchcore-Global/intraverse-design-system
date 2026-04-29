@@ -7,6 +7,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Copy, Check, ExternalLink, ArrowRight } from "lucide-react";
 import { whatsappUrl } from "@/lib/constants";
 import { POSTMAN_COLLECTION_URL } from "@/components/docs/DocsPostmanLink";
+import { SEO } from "@/components/SEO";
 
 /* ---------- scroll-reveal helper ---------- */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -191,20 +192,14 @@ function CopyButton({ text }: { text: string }) {
 export default function Docs() {
   const [activeTab, setActiveTab] = useState("cURL");
 
-  useEffect(() => {
-    document.title = "API Documentation | Build Travel Into Your Product | Intraverse";
-    const meta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[property="${name}"], meta[name="${name}"]`);
-      if (!el) { el = document.createElement("meta"); el.setAttribute(name.startsWith("og:") ? "property" : "name", name); document.head.appendChild(el); }
-      el.setAttribute("content", content);
-    };
-    meta("description", "Comprehensive API documentation for developers building on Intraverse. REST API, OAuth 2.0, free sandbox, SDKs for Node, Python, and PHP. Start building in 5 minutes.");
-    meta("og:title", "Intraverse API Documentation - Build Travel Into Your Product");
-    meta("og:description", "Aggregated travel inventory through one REST API. Free sandbox, modern docs, official SDKs, and dedicated developer support. Get started in minutes.");
-  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO
+        title="API Documentation — Developer Docs | Intraverse"
+        description="Complete API documentation for the Intraverse travel platform. Authentication, flights, hotels, tours, payments, and webhooks. Quickstart guide and API reference."
+        canonical="https://intraverse.africa/docs"
+      />
       <Navbar />
       <main className="flex-1 pt-16">
 

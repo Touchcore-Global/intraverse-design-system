@@ -138,15 +138,9 @@ export default function NewsArticle() {
       <SEO
         title={`${item.title} | News`}
         description={item.excerpt}
-        canonicalPath={`/news/${item.slug}`}
-        image={item.featured_image || "/og/news.png"}
-        type="article"
-        article={{
-          publishedTime: item.published_at ?? undefined,
-          modifiedTime: item.updated_at,
-          section: item.category,
-          tags: item.tags,
-        }}
+        canonical={`https://intraverse.africa/news/${item.slug}`}
+        ogImage={item.featured_image || "https://intraverse.africa/og-default.png"}
+        ogType="article"
         jsonLd={
           item.category === "press-releases"
             ? {
@@ -158,6 +152,7 @@ export default function NewsArticle() {
                 dateModified: item.updated_at,
                 image: item.featured_image,
                 publisher: { "@type": "Organization", name: "Intraverse" },
+                mainEntityOfPage: `https://intraverse.africa/news/${item.slug}`,
               }
             : undefined
         }

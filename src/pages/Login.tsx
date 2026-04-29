@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import { login, signUp, getGoogleAuthUrl, storeAuthToken } from "@/lib/api/auth";
+import { SEO } from "@/components/SEO";
 
 type TabKey = "signin" | "create";
 
@@ -111,6 +112,11 @@ export default function Login() {
 
   return (
     <>
+      <SEO
+        title="Login | Intraverse"
+        description="Sign in to your Intraverse account."
+        noindex={true}
+      />
       <Navbar />
       <main className="min-h-screen pt-24 pb-16 flex items-start justify-center bg-accent">
         <div className="w-full max-w-md mx-4">

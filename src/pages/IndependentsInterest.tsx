@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { CheckCircle2, MessageCircle } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import {
   formatNigeriaPhoneInput,
   isValidNigeriaPhone,
@@ -190,6 +191,11 @@ const IndependentsInterest = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO
+        title="Express Interest — Independents Programme | Intraverse"
+        description="Join the Intraverse Independents Programme. Register your interest to get access to travel booking tools, supplier connections, and training for new travel agents."
+        canonical="https://intraverse.africa/for/independents/interest"
+      />
       <Navbar />
 
       <main className="flex-1 py-16 md:py-24">

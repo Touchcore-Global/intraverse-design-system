@@ -9,6 +9,7 @@ import {
   ArrowRight, Quote, ShieldCheck, Plane, TrendingUp, AlertTriangle,
 } from "lucide-react";
 import { DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ───── fade-in on scroll ───── */
 function FadeIn({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -287,6 +288,11 @@ export default function Proof() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO
+        title="Trusted by 200+ Travel Agents Across Africa | Intraverse"
+        description="See why 200+ travel agents across Nigeria and Africa trust Intraverse. Real testimonials, case studies, and results from travel businesses using our platform."
+        canonical="https://intraverse.africa/proof"
+      />
       <Navbar />
 
       {/* HERO */}

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { whatsappUrl, DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 type FilterCategory = "All" | "Travel Agents" | "Independents" | "Businesses" | "Fintechs" | "Tech/Developers";
 
@@ -204,6 +205,11 @@ export default function UseCases() {
 
   return (
     <>
+      <SEO
+        title="Use Cases — How Travel Businesses Use Intraverse"
+        description="See how travel agencies, independent agents, corporate travel managers, fintechs, and startups use Intraverse to sell travel, manage bookings, and grow revenue."
+        canonical="https://intraverse.africa/use-cases"
+      />
       <Navbar />
       <main className="pt-16">
         {/* SEO Meta via Helmet-style - handled in head for SSR, here for SPA */}
@@ -319,22 +325,5 @@ export default function UseCases() {
 }
 
 function SetPageMeta() {
-  useEffect(() => {
-    document.title = "Use Cases | How Travel Businesses Use Intraverse | Nigeria";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement("meta");
-        if (name.startsWith("og:")) el.setAttribute("property", name);
-        else el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta("description", "From fintech integrations to faith-based pilgrimages, from corporate travel to side hustlers - see 13 ways travel businesses across Nigeria use Intraverse.");
-    setMeta("og:title", "13 Ways Travel Businesses Use Intraverse");
-    setMeta("og:description", "Fintechs, agents, corporates, independents, and developers - see how each one uses Intraverse to power travel in Nigeria.");
-    return () => { document.title = "Intraverse - B2B Travel Technology"; };
-  }, []);
   return null;
 }

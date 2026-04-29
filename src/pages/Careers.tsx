@@ -8,6 +8,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { supabase } from "@/integrations/supabase/client";
 import { formatSalary, type JobPosting } from "@/lib/jobs/types";
 import { GeneralApplicationDialog } from "@/components/careers/GeneralApplicationDialog";
+import { SEO } from "@/components/SEO";
 import {
   Rocket, Users, Heart, Globe, Zap, MapPin, Briefcase,
   ArrowRight, Clock, GraduationCap, Coffee, Plane, Inbox,
@@ -233,19 +234,14 @@ function OpenRolesSection() {
 /* ---------- PAGE ---------- */
 
 export default function Careers() {
-  useEffect(() => {
-    document.title = "Careers | Build Africa's Travel Infrastructure | Intraverse";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[property="${name}"]`) || document.querySelector(`meta[name="${name}"]`);
-      if (!el) { el = document.createElement("meta"); (el as HTMLMetaElement).setAttribute(name.startsWith("og:") ? "property" : "name", name); document.head.appendChild(el); }
-      (el as HTMLMetaElement).setAttribute("content", content);
-    };
-    setMeta("description", "Join Intraverse - the Africa-first travel technology company building infrastructure for agents, independents, corporates, and developers across the continent.");
-    setMeta("og:title", "Careers at Intraverse - Join the Team Building Africa's Travel Infrastructure");
-  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Careers at Intraverse — Join Africa's Travel Tech Team"
+        description="Join Intraverse and help build Africa's travel technology infrastructure. Engineering, product, sales, and operations roles in Lagos. Remote-friendly."
+        canonical="https://intraverse.africa/careers"
+      />
       <Navbar />
       <main className="flex-1">
         <HeroSection />

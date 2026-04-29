@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const features = [
   {
@@ -115,6 +116,11 @@ const faqs = [
 const AgentPlatform = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Agent Platform — Professional Travel Booking System | Intraverse"
+        description="All-in-one booking system for travel agents. Search, book, and manage flights, hotels, and tours from Amadeus, Sabre, Galileo, and NDC — all in one dashboard."
+        canonical="https://intraverse.africa/products/agent-platform"
+      />
       <Navbar />
       <div className="h-16" />
 

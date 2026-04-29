@@ -13,6 +13,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ── scroll-reveal helper ── */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -117,14 +118,14 @@ const faqs = [
 /* ── PAGE ── */
 
 export default function OdiopayProduct() {
-  useEffect(() => {
-    document.title = "Odiopay BNPL | Buy Now, Pay Later for Travel | Intraverse";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Close more travel sales with Odiopay BNPL. Two flexible options - Fare Lock and Pay Later - integrated into your Intraverse dashboard. Earn full commission. Zero credit risk.");
-  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
+      <SEO
+        title="Odiopay — Buy Now Pay Later for Travel | Intraverse"
+        description="Let your customers split travel payments into affordable installments. Odiopay BNPL integrates into your booking flow. Agents get paid upfront, travelers pay over time."
+        canonical="https://intraverse.africa/products/odiopay"
+      />
       <Navbar />
 
       {/* ── HERO ── */}

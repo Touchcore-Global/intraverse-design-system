@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ── scroll-reveal helper ── */
 function RevealBlock({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -222,6 +223,11 @@ const valueProps = [
 export default function Products() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Products — Travel Agent Platform, Corporate Travel & APIs | Intraverse"
+        description="Explore Intraverse's product suite: TravX white-label booking, CoopX corporate travel, Supplier Engine, Travel Links, API access, and Odiopay BNPL for travel."
+        canonical="https://intraverse.africa/products"
+      />
       <Navbar />
 
       {/* HERO */}

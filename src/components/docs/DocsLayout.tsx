@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronRight, Menu, X, ThumbsUp, ThumbsDown, ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { docCategories, getNeighbors } from "./docsNav";
@@ -58,19 +59,7 @@ export function DocsLayout({
     return () => observer.disconnect();
   }, [toc, slug]);
 
-  useEffect(() => {
-    document.title = metaTitle ?? `${current?.title ?? "Docs"} | API Docs | Intraverse`;
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta("description", metaDescription ?? subtitle);
-  }, [slug, title, subtitle, metaTitle, metaDescription, current?.title]);
+  // Note: per-doc SEO meta is handled via the <SEO /> component on each Docs page.
 
   useEffect(() => {
     setMobileNavOpen(false);
@@ -78,6 +67,11 @@ export function DocsLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO
+        title={metaTitle ?? `${current?.title ?? "Docs"} | API Docs | Intraverse`}
+        description={metaDescription ?? subtitle}
+        canonical={`https://intraverse.africa/docs/${slug}`}
+      />
       <Navbar />
       <main className="flex-1 pt-16">
         <div className="container mx-auto px-4 lg:px-8 py-8 lg:py-12">

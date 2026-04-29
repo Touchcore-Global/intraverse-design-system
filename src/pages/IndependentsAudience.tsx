@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -133,6 +134,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 const IndependentsAudience = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="For Aspiring Travel Agents — Start Your Travel Business | Intraverse"
+        description="Become a travel agent without IATA accreditation. Intraverse gives you booking technology, supplier access, and training to launch your travel business in Nigeria."
+        canonical="https://intraverse.africa/for/independents"
+      />
       <Navbar />
       <div className="h-16" />
 

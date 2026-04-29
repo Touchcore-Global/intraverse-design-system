@@ -23,6 +23,7 @@ import {
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ───────── DATA ───────── */
 
@@ -170,36 +171,6 @@ const Partnerships = () => {
   const mountedAtRef = useRef<number>(Date.now());
   const [submitting, setSubmitting] = useState(false);
 
-  useEffect(() => {
-    document.title = "Partnerships | Build African Travel Together | Intraverse";
-    const setMeta = (attr: string, value: string) => {
-      const selector = attr.startsWith("og:")
-        ? `meta[property="${attr}"]`
-        : `meta[name="${attr}"]`;
-      let el = document.querySelector(selector);
-      if (!el) {
-        el = document.createElement("meta");
-        attr.startsWith("og:")
-          ? el.setAttribute("property", attr)
-          : el.setAttribute("name", attr);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", value);
-    };
-    setMeta(
-      "description",
-      "Intraverse partners with fintechs, tech startups, suppliers, and ecosystem players to power travel businesses across Africa. Explore partnership opportunities."
-    );
-    setMeta(
-      "og:title",
-      "Partnerships at Intraverse - Build African Travel Together"
-    );
-    setMeta(
-      "og:description",
-      "Fintech embedded travel, API partnerships, supplier integration, and distribution partnerships. If you're building for African travel, let's build together."
-    );
-    window.scrollTo(0, 0);
-  }, []);
 
   const hero = useScrollReveal();
   const whySection = useScrollReveal();
@@ -342,6 +313,11 @@ const Partnerships = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO
+        title="Partner With Intraverse — Technology & Distribution Partnerships"
+        description="Partner with Intraverse to distribute travel inventory, integrate technology, or co-build solutions for the African travel market. Airlines, hotels, and tech partners welcome."
+        canonical="https://intraverse.africa/partnerships"
+      />
       <Navbar />
 
       {/* ─── HERO ─── */}

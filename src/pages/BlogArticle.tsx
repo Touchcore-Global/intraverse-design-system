@@ -124,15 +124,9 @@ export default function BlogArticle() {
       <SEO
         title={`${article.title} | Intraverse Blog`}
         description={article.excerpt}
-        canonicalPath={`/blog/${article.slug}`}
-        image={article.cover_image_url || "/og/blog.png"}
-        type="article"
-        article={{
-          publishedTime: article.published_at ?? undefined,
-          modifiedTime: article.updated_at,
-          author: article.author?.name,
-          section: article.category?.name,
-        }}
+        canonical={`https://intraverse.africa/blog/${article.slug}`}
+        ogImage={article.cover_image_url || "https://intraverse.africa/og-default.png"}
+        ogType="article"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
@@ -142,6 +136,7 @@ export default function BlogArticle() {
           dateModified: article.updated_at,
           author: { "@type": "Person", name: article.author?.name ?? "Intraverse" },
           image: article.cover_image_url,
+          mainEntityOfPage: `https://intraverse.africa/blog/${article.slug}`,
         }}
       />
       <Navbar />

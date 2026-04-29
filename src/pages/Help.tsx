@@ -11,6 +11,7 @@ import {
   Users, Settings, LinkIcon, BarChart3, Play, ArrowRight, Clock,
 } from "lucide-react";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 /* ───────────────── DATA ───────────────── */
 
@@ -48,18 +49,6 @@ const videos = [
 export default function Help() {
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    document.title = "Help Centre | Get Support, Browse Guides | Intraverse";
-    const setMeta = (name: string, content: string) => {
-      const attr = name.startsWith("og:") ? "property" : "name";
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
-      el.setAttribute("content", content);
-    };
-    setMeta("description", "Find help articles, video tutorials, and direct support for Intraverse. Search our knowledge base or chat with our Lagos-based support team on WhatsApp.");
-    setMeta("og:title", "Intraverse Help Centre");
-    setMeta("og:description", "Self-serve guides, video tutorials, and human support - all in one place. Fast answers from a real team based in Lagos.");
-  }, []);
 
   const hero = useScrollReveal();
   const catSection = useScrollReveal();
@@ -74,6 +63,11 @@ export default function Help() {
 
   return (
     <>
+      <SEO
+        title="Help Centre — Support & Documentation | Intraverse"
+        description="Find help articles, video tutorials, and direct support for Intraverse. Search our knowledge base or chat with our Lagos-based support team on WhatsApp."
+        canonical="https://intraverse.africa/help"
+      />
       <Navbar />
       <main className="pt-16">
         {/* ── HERO ── */}

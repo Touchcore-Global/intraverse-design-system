@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+
 import { Search, Linkedin, Loader2 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -18,6 +18,7 @@ import {
   fetchPopularArticles,
 } from "@/lib/blog/queries";
 import type { BlogArticle, BlogCategory } from "@/lib/blog/types";
+import { SEO } from "@/components/SEO";
 
 const PAGE_SIZE = 9;
 
@@ -108,14 +109,11 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Blog - Insights for African Travel Businesses | Intraverse</title>
-        <meta
-          name="description"
-          content="Product launches, industry analysis, growth strategies, and engineering lessons from the team building Africa's travel infrastructure."
-        />
-        <link rel="canonical" href="https://intraverse.africa/blog" />
-      </Helmet>
+      <SEO
+        title="Blog — Travel Industry Insights & Product Updates | Intraverse"
+        description="Insights for African travel businesses. Industry analysis, product updates, agent success stories, and practical guides for growing your travel business in Nigeria."
+        canonical="https://intraverse.africa/blog"
+      />
       <Navbar />
 
       {/* Hero */}

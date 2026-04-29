@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import { verifyEmail, resendVerificationOtp, storeAuthToken } from "@/lib/api/auth";
 import { Mail, CheckCircle2, RefreshCw } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const OTP_LENGTH = 6;
 const REDIRECT_URL = "https://www.intraverse.app/";
@@ -131,6 +132,11 @@ export default function VerifyEmail() {
 
   return (
     <>
+      <SEO
+        title="Verify Email | Intraverse"
+        description="Verify your email address for Intraverse."
+        noindex={true}
+      />
       <Navbar />
       <main className="min-h-screen pt-24 pb-16 flex items-start justify-center bg-accent">
         <div className="w-full max-w-md mx-4">

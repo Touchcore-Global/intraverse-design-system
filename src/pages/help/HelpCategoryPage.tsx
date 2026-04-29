@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
@@ -22,16 +23,6 @@ export default function HelpCategoryPage() {
   const ctaSection = useScrollReveal();
 
   useEffect(() => {
-    if (!category) return;
-    document.title = `${category.title} | Help Centre | Intraverse`;
-    const setMeta = (name: string, content: string) => {
-      const attr = name.startsWith("og:") ? "property" : "name";
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
-      el.setAttribute("content", content);
-    };
-    setMeta("description", `${category.heroSub.split(".")[0]}. Browse articles, watch tutorials, and get support from our Lagos-based team.`);
-    setMeta("og:title", `${category.title} - Intraverse Help Centre`);
     window.scrollTo(0, 0);
   }, [category]);
 
@@ -46,6 +37,11 @@ export default function HelpCategoryPage() {
 
   return (
     <>
+      <SEO
+        title={`${category.title} | Help Centre | Intraverse`}
+        description={`${category.heroSub.split(".")[0]}. Browse articles, watch tutorials, and get support from our Lagos-based team.`}
+        canonical={`https://intraverse.africa/help/${category.slug}`}
+      />
       <Navbar />
       <main className="pt-16">
         {/* ── HERO ── */}

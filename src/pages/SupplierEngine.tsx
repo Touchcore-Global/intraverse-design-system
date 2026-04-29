@@ -22,6 +22,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const steps = [
   { icon: Link2, title: "Share OIDs", desc: "Agents opt in to share their Amadeus Office IDs as supply partners within the network." },
@@ -47,6 +48,11 @@ const faqs = [
 const SupplierEngine = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Supplier Engine — GDS, NDC & Hotel Aggregation | Intraverse"
+        description="Access Amadeus, Sabre, Galileo, NDC, and HotelBeds through one integration. Intraverse aggregates 900+ airlines and 1M+ hotel properties for travel agents."
+        canonical="https://intraverse.africa/supplier-engine"
+      />
       <Navbar />
 
       {/* HERO */}

@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { SEO } from "@/components/SEO";
 
 const useCases = [
   { icon: Plane, text: "Consumer travel apps and marketplaces" },
@@ -72,6 +73,11 @@ const Startups = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="For Startups — Embed Travel Into Your Product via API | Intraverse"
+        description="Add flight booking, hotel search, and travel payments to your app with Intraverse's API. Pre-built components, sandbox testing, and developer-first documentation."
+        canonical="https://intraverse.africa/for/startups"
+      />
       <Navbar />
       <div className="h-16" />
 
