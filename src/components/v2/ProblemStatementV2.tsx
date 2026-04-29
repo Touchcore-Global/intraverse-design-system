@@ -117,7 +117,7 @@ export const ProblemStatementV2 = () => {
             lineHeight: 1.0416666667,
           }}
         >
-          Start. Manage. Scale your travel business
+          Start. Manage.<br />Scale your travel<br />business
         </h2>
         <p className="text-center md:text-left mb-8 md:mb-12 px-4 md:px-0 md:pl-[100px] text-base md:text-lg text-muted-foreground max-w-3xl">
           Intraverse is the easiest way for anyone to launch and run a travel business in Africa.
