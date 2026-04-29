@@ -58,19 +58,7 @@ export function DocsLayout({
     return () => observer.disconnect();
   }, [toc, slug]);
 
-  useEffect(() => {
-    document.title = metaTitle ?? `${current?.title ?? "Docs"} | API Docs | Intraverse`;
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta("description", metaDescription ?? subtitle);
-  }, [slug, title, subtitle, metaTitle, metaDescription, current?.title]);
+  // Note: per-doc SEO meta is handled via the <SEO /> component on each Docs page.
 
   useEffect(() => {
     setMobileNavOpen(false);

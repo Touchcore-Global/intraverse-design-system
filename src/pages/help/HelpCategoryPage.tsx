@@ -37,6 +37,11 @@ export default function HelpCategoryPage() {
 
   return (
     <>
+      <SEO
+        title={`${category.title} | Help Centre | Intraverse`}
+        description={`${category.heroSub.split(".")[0]}. Browse articles, watch tutorials, and get support from our Lagos-based team.`}
+        canonical={`https://intraverse.africa/help/${category.slug}`}
+      />
       <Navbar />
       <main className="pt-16">
         {/* ── HERO ── */}
