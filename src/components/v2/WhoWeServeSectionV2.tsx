@@ -163,13 +163,7 @@ export const WhoWeServeSectionV2 = () => {
 
   return (
     <section
-      className="py-16 md:py-24 relative overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(135deg, hsl(220 95% 96%) 0%, hsl(280 85% 96%) 35%, hsl(330 85% 96%) 65%, hsl(35 95% 95%) 100%)",
-        backgroundSize: "200% 200%",
-        animation: "gradient-shift 14s ease infinite",
-      }}
+      className="py-16 md:py-24 relative overflow-hidden bg-white"
     >
       <div
         ref={ref}
