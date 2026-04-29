@@ -440,10 +440,11 @@ export default function FAQ() {
 
   return (
     <>
-      {/* JSON-LD FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema()) }}
+      <SEO
+        title="FAQ — Frequently Asked Questions | Intraverse Travel Technology"
+        description="Answers to common questions about Intraverse's travel agent platform, IATA accreditation, pricing, GDS access, white-label setup, and corporate travel tools."
+        canonical="https://intraverse.africa/faq"
+        jsonLd={buildFaqSchema()}
       />
 
       <Navbar />
