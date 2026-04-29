@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAdminAuth } from "@/hooks/use-admin";
@@ -130,9 +130,7 @@ export default function AdminJobsEditor() {
 
   return (
     <div className="min-h-screen bg-muted/30">
-      <Helmet>
-        <title>{isNew ? "New Job" : `Edit · ${form.title || "Job"}`}</title>
-      </Helmet>
+      <SEO title="Jobs Editor | Intraverse Admin" description="Internal Intraverse admin tool." noindex />
       <header className="bg-background border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Button variant="ghost" size="sm" asChild>

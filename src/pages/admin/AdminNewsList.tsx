@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/SEO";
 import { Plus, Pencil, Trash2, ExternalLink, LogOut } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAdminAuth } from "@/hooks/use-admin";
@@ -44,9 +44,7 @@ export default function AdminNewsList() {
 
   return (
     <div className="min-h-screen bg-muted/30">
-      <Helmet>
-        <title>Admin · News</title>
-      </Helmet>
+      <SEO title="News Admin | Intraverse Admin" description="Internal Intraverse admin tool." noindex />
       <header className="bg-background border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div>
