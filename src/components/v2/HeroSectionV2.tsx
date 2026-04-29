@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { DEMO_URL } from "@/lib/constants";
-import heroGradient from "@/assets/hero-gradient.svg";
+
 import whogoflyLogo from "@/assets/partners/whogofly.png";
 import tzopalLogo from "@/assets/partners/tzopal.png";
 import nesoLogo from "@/assets/partners/neso.png";
@@ -78,8 +78,11 @@ export const HeroSectionV2 = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${heroGradient})` }}
+      className="relative overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(ellipse 163.68% 100% at 50% 100%, #F2F2F2 0%, #F2F2F2 56.21%, #CFCBF4 61.04%, #9A8AE6 68.40%, #6E63C7 75.44%, #2F3FA3 86.46%, #0A1A44 96.54%)",
+      }}
     >
 
       <div className="container relative mx-auto px-4 pt-16 md:pt-[100px] text-center">
