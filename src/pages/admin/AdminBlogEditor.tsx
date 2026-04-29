@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAdminAuth } from "@/hooks/use-admin";
@@ -128,9 +128,7 @@ export default function AdminBlogEditor() {
 
   return (
     <div className="min-h-screen bg-muted/30">
-      <Helmet>
-        <title>{isNew ? "New Article" : "Edit Article"} · Admin</title>
-      </Helmet>
+      <SEO title="Blog Editor | Intraverse Admin" description="Internal Intraverse admin tool." noindex />
       <header className="bg-background border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <Link to="/admin/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">

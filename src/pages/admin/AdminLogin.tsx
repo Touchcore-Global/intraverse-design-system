@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "@/components/SEO";
 import { supabase } from "@/integrations/supabase/client";
 import { useAdminAuth } from "@/hooks/use-admin";
 import { Button } from "@/components/ui/button";
@@ -89,9 +89,7 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-screen bg-muted/30 flex items-center justify-center p-4">
-      <Helmet>
-        <title>Admin · Intraverse Blog</title>
-      </Helmet>
+      <SEO title="Admin Login | Intraverse Admin" description="Internal Intraverse admin tool." noindex />
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Blog Admin</CardTitle>
