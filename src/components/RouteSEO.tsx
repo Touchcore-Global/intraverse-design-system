@@ -254,6 +254,58 @@ export const ROUTE_SEO: Record<string, RouteSEOEntry> = {
   },
 };
 
+/**
+ * Maps a route path to its branded OG image in /public/og.
+ * Falls back to /og/default.png. All images are 1200x630 PNG.
+ */
+const IMAGE_MAP: Array<[RegExp, string]> = [
+  [/^\/$/, "/og/home.png"],
+  [/^\/products$/, "/og/products.png"],
+  [/^\/(products\/)?agent-platform$/, "/og/agent-platform.png"],
+  [/^\/(products\/)?travx$/, "/og/travx.png"],
+  [/^\/(products\/)?coopx$/, "/og/coopx.png"],
+  [/^\/(products\/)?independents$/, "/og/independents.png"],
+  [/^\/(products\/)?supplier-engine$/, "/og/supplier-engine.png"],
+  [/^\/products\/travel-links$/, "/og/travel-links.png"],
+  [/^\/products\/api$/, "/og/api.png"],
+  [/^\/products\/odiopay$/, "/og/odiopay.png"],
+  [/^\/tools$/, "/og/tools.png"],
+  [/^\/for\/travel-agents$/, "/og/for-agents.png"],
+  [/^\/for\/independents/, "/og/for-independents.png"],
+  [/^\/who-we-serve$/, "/og/who-we-serve.png"],
+  [/^\/for\/businesses$/, "/og/for-businesses.png"],
+  [/^\/for\/corporates$/, "/og/for-corporates.png"],
+  [/^\/for\/startups$/, "/og/for-startups.png"],
+  [/^\/for\/developers$/, "/og/for-developers.png"],
+  [/^\/for\/fintechs$/, "/og/for-fintechs.png"],
+  [/^\/about\/built-in-lagos$/, "/og/built-in-lagos.png"],
+  [/^\/about$/, "/og/about.png"],
+  [/^\/careers/, "/og/careers.png"],
+  [/^\/partnerships$/, "/og/partnerships.png"],
+  [/^\/contact$/, "/og/contact.png"],
+  [/^\/pricing$/, "/og/pricing.png"],
+  [/^\/blog/, "/og/blog.png"],
+  [/^\/news/, "/og/news.png"],
+  [/^\/docs/, "/og/docs.png"],
+  [/^\/help/, "/og/help.png"],
+  [/^\/features$/, "/og/features.png"],
+  [/^\/use-cases$/, "/og/use-cases.png"],
+  [/^\/proof$/, "/og/proof.png"],
+  [/^\/faq$/, "/og/faq.png"],
+];
+
+/**
+ * Pick the best OG image for a path. Explicit `entry.image` wins;
+ * otherwise we match against IMAGE_MAP; otherwise default.png.
+ */
+export function pickRouteImage(pathname: string, explicit?: string): string {
+  if (explicit) return explicit;
+  for (const [pattern, image] of IMAGE_MAP) {
+    if (pattern.test(pathname)) return image;
+  }
+  return "/og/default.png";
+}
+
 /** Routes for which this component should NOT render (admin + dynamic content). */
 const SKIP_PREFIXES = ["/admin"];
 const DYNAMIC_PATTERNS = ["/blog/:slug", "/news/:slug", "/careers/:slug"];
@@ -291,11 +343,14 @@ export function RouteSEO() {
   }
 
   const isHome = pathname === "/";
+  const image = pickRouteImage(pathname, entry.image);
 
   return (
     <SEO
       {...entry}
+      image={image}
       jsonLd={isHome ? [ORGANIZATION_JSON_LD, WEBSITE_JSON_LD] : ORGANIZATION_JSON_LD}
     />
   );
 }
+
