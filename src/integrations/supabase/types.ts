@@ -527,6 +527,33 @@ export type Database = {
         }
         Relationships: []
       }
+      supplier_engine_waitlist: {
+        Row: {
+          agency_name: string
+          created_at: string
+          id: string
+          name: string
+          oid: string | null
+          phone_number: string
+        }
+        Insert: {
+          agency_name: string
+          created_at?: string
+          id?: string
+          name: string
+          oid?: string | null
+          phone_number: string
+        }
+        Update: {
+          agency_name?: string
+          created_at?: string
+          id?: string
+          name?: string
+          oid?: string | null
+          phone_number?: string
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
