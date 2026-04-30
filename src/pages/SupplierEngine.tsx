@@ -9,7 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { CheckCircle2 } from "lucide-react";
 import {
   Link2,
   DollarSign,
@@ -19,6 +18,7 @@ import {
   Users,
   Hash,
   TrendingUp,
+  CheckCircle2,
 } from "lucide-react";
 import {
   Accordion,
