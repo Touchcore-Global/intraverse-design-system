@@ -320,7 +320,7 @@ const SupplierEngine = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               size="xl"
-              className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none font-semibold"
+              className="cta-responsive min-h-[48px] bg-black text-white hover:bg-black/90 hover:text-white rounded-none font-semibold"
               asChild
             >
               <a href="#waitlist">Join the Waitlist</a>
