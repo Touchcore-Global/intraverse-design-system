@@ -321,8 +321,9 @@ const SupplierEngine = () => {
             <Button
               size="xl"
               className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none font-semibold"
+              asChild
             >
-              Join the Waitlist
+              <a href="#waitlist">Join the Waitlist</a>
             </Button>
             <Button
               variant="whatsapp"
