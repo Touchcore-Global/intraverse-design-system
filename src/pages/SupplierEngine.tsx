@@ -202,7 +202,7 @@ const SupplierEngine = () => {
       </section>
 
       {/* WAITLIST FORM */}
-      <section className="py-20 bg-accent">
+      <section id="waitlist" className="py-20 bg-accent scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto bg-card rounded-xl p-8 md:p-10 shadow-sm border border-border">
             {submitted ? (
