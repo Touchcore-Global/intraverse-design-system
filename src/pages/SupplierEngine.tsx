@@ -136,7 +136,7 @@ const SupplierEngine = () => {
             deals, and pricing that no single agency could unlock on its own.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="xl" className="cta-responsive min-h-[48px] rounded-none font-semibold" asChild>
+            <Button size="xl" className="cta-responsive min-h-[48px] rounded-none font-semibold bg-black text-white hover:bg-black/90 hover:text-white" asChild>
               <a href="#waitlist">Join the Waitlist</a>
             </Button>
             <Button
@@ -279,7 +279,7 @@ const SupplierEngine = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full min-h-[48px] rounded-none font-semibold"
+                    className="w-full min-h-[48px] rounded-none font-semibold bg-black text-white hover:bg-black/90 hover:text-white"
                     disabled={submitting}
                   >
                     {submitting ? "Submitting..." : "Join the Waitlist"}
@@ -320,7 +320,7 @@ const SupplierEngine = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               size="xl"
-              className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none font-semibold"
+              className="cta-responsive min-h-[48px] bg-black text-white hover:bg-black/90 hover:text-white rounded-none font-semibold"
               asChild
             >
               <a href="#waitlist">Join the Waitlist</a>
