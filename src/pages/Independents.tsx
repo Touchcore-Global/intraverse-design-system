@@ -214,8 +214,8 @@ const Independents = () => {
             commissions on every booking. No agency required.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
-              Join the Independents Programme
+            <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
+              <a href="/for/independents/interest">Join the Independents Programme</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
@@ -443,8 +443,9 @@ const Independents = () => {
               variant="outline"
               size="xl"
               className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none font-semibold"
+              asChild
             >
-              Join the Independents Programme
+              <a href="/for/independents/interest">Join the Independents Programme</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
