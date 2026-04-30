@@ -204,35 +204,88 @@ const SupplierEngine = () => {
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto bg-card rounded-xl p-8 md:p-10 shadow-sm border border-border">
-            <h2 className="text-2xl font-bold text-center mb-2 text-foreground">
-              Join the Waitlist
-            </h2>
-            <p className="text-muted-foreground text-center text-sm mb-8">
-              We'll notify you first when Supplier Engine launches.
-            </p>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <Label htmlFor="wl-name" className="text-sm text-foreground">Name</Label>
-                <Input id="wl-name" placeholder="Your full name" className="mt-1" />
+            {submitted ? (
+              <div className="text-center py-6">
+                <CheckCircle2 className="h-14 w-14 mx-auto text-primary mb-4" />
+                <h2 className="text-2xl font-bold mb-2 text-foreground">
+                  You're on the list
+                </h2>
+                <p className="text-muted-foreground text-sm">
+                  Thanks for joining the Supplier Engine waitlist. We'll be in touch with launch details and early-access pricing.
+                </p>
               </div>
-              <div>
-                <Label htmlFor="wl-agency" className="text-sm text-foreground">Agency Name</Label>
-                <Input id="wl-agency" placeholder="Your agency or company" className="mt-1" />
-              </div>
-              <div>
-                <Label htmlFor="wl-phone" className="text-sm text-foreground">Phone (WhatsApp)</Label>
-                <Input id="wl-phone" type="tel" placeholder="+234..." className="mt-1" />
-              </div>
-              <div>
-                <Label htmlFor="wl-oid" className="text-sm text-foreground">
-                  Current OID <span className="text-muted-foreground">(optional)</span>
-                </Label>
-                <Input id="wl-oid" placeholder="e.g. LOSXX1234" className="mt-1" />
-              </div>
-              <Button type="submit" className="w-full min-h-[48px] rounded-none font-semibold">
-                Join the Waitlist
-              </Button>
-            </form>
+            ) : (
+              <>
+                <h2 className="text-2xl font-bold text-center mb-2 text-foreground">
+                  Join the Waitlist
+                </h2>
+                <p className="text-muted-foreground text-center text-sm mb-8">
+                  We'll notify you first when Supplier Engine launches.
+                </p>
+                <form className="space-y-4" onSubmit={handleWaitlistSubmit} noValidate>
+                  <div>
+                    <Label htmlFor="wl-name" className="text-sm text-foreground">Name</Label>
+                    <Input
+                      id="wl-name"
+                      placeholder="Your full name"
+                      className="mt-1"
+                      value={form.name}
+                      onChange={(e) => handleChange("name", e.target.value)}
+                      maxLength={200}
+                      required
+                    />
+                    {errors.name && <p className="text-sm text-destructive mt-1">{errors.name}</p>}
+                  </div>
+                  <div>
+                    <Label htmlFor="wl-agency" className="text-sm text-foreground">Agency Name</Label>
+                    <Input
+                      id="wl-agency"
+                      placeholder="Your agency or company"
+                      className="mt-1"
+                      value={form.agency_name}
+                      onChange={(e) => handleChange("agency_name", e.target.value)}
+                      maxLength={200}
+                      required
+                    />
+                    {errors.agency_name && <p className="text-sm text-destructive mt-1">{errors.agency_name}</p>}
+                  </div>
+                  <div>
+                    <Label htmlFor="wl-phone" className="text-sm text-foreground">Phone (WhatsApp)</Label>
+                    <Input
+                      id="wl-phone"
+                      type="tel"
+                      placeholder="+234..."
+                      className="mt-1"
+                      value={form.phone_number}
+                      onChange={(e) => handleChange("phone_number", e.target.value)}
+                      maxLength={50}
+                      required
+                    />
+                    {errors.phone_number && <p className="text-sm text-destructive mt-1">{errors.phone_number}</p>}
+                  </div>
+                  <div>
+                    <Label htmlFor="wl-oid" className="text-sm text-foreground">
+                      Current OID <span className="text-muted-foreground">(optional)</span>
+                    </Label>
+                    <Input
+                      id="wl-oid"
+                      placeholder="e.g. LOSXX1234"
+                      className="mt-1"
+                      value={form.oid}
+                      onChange={(e) => handleChange("oid", e.target.value)}
+                      maxLength={50}
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    className="w-full min-h-[48px] rounded-none font-semibold"
+                    disabled={submitting}
+                  >
+                    {submitting ? "Submitting..." : "Join the Waitlist"}
+                  </Button>
+                </form>
+              </>
+            )}
           </div>
         </div>
       </section>
