@@ -50,7 +50,68 @@ const faqs = [
   { q: "When does it launch?", a: "We're targeting launch in Q3 2026. Waitlist members will get early access and priority onboarding." },
 ];
 
+const waitlistSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(200),
+  agency_name: z.string().trim().min(1, "Agency name is required").max(200),
+  phone_number: z.string().trim().min(5, "Phone number is required").max(50),
+  oid: z.string().trim().max(50).optional(),
+});
+
 const SupplierEngine = () => {
+  const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    agency_name: "",
+    phone_number: "",
+    oid: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const handleChange = (field: keyof typeof form, value: string) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleWaitlistSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrors({});
+
+    const parsed = waitlistSchema.safeParse(form);
+    if (!parsed.success) {
+      const fieldErrors: Record<string, string> = {};
+      parsed.error.issues.forEach((issue) => {
+        if (issue.path[0]) fieldErrors[issue.path[0] as string] = issue.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
+    setSubmitting(true);
+    const { error } = await supabase.from("supplier_engine_waitlist").insert({
+      name: parsed.data.name,
+      agency_name: parsed.data.agency_name,
+      phone_number: parsed.data.phone_number,
+      oid: parsed.data.oid && parsed.data.oid.length > 0 ? parsed.data.oid : null,
+    });
+    setSubmitting(false);
+
+    if (error) {
+      toast({
+        title: "Submission failed",
+        description: "Please try again in a moment.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setSubmitted(true);
+    toast({
+      title: "You're on the list!",
+      description: "We'll notify you when Supplier Engine launches.",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
