@@ -18,7 +18,7 @@ const buttonVariants = cva(
         link: "text-foreground underline-offset-4 hover:underline",
         // Intraverse custom variants
         // Hero: black text on light bg, invert to white on hover (dark bg)
-        hero: "bg-white text-foreground hover:bg-foreground hover:text-white rounded-none font-semibold shadow-lg hover:shadow-xl transition-all",
+        hero: "bg-black text-white hover:bg-black/90 hover:text-white rounded-none font-semibold shadow-lg hover:shadow-xl transition-all",
         whatsapp: "bg-background text-foreground border-2 border-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))] hover:text-white rounded-none font-semibold transition-all",
       },
       size: {
