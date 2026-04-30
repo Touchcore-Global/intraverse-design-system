@@ -181,7 +181,7 @@ export const HeroSectionV2 = () => {
               {[...partners, ...partners].map((partner, i) => (
                 <div
                   key={`${partner.name}-${i}`}
-                  className="flex-shrink-0 flex items-center justify-center h-20 sm:h-24 lg:h-28 w-36 sm:w-44 lg:w-52 px-3"
+                  className="flex-shrink-0 flex items-center justify-center h-36 sm:h-44 lg:h-52 w-64 sm:w-80 lg:w-96 px-3"
                 >
                   <img
                     src={partner.logo}
