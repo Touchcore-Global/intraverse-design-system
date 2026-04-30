@@ -136,15 +136,16 @@ const SupplierEngine = () => {
             deals, and pricing that no single agency could unlock on its own.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="xl" className="cta-responsive min-h-[48px] rounded-none font-semibold">
-              Join the Waitlist
+            <Button size="xl" className="cta-responsive min-h-[48px] rounded-none font-semibold" asChild>
+              <a href="#waitlist">Join the Waitlist</a>
             </Button>
             <Button
               variant="outline"
               size="xl"
               className="cta-responsive min-h-[48px] rounded-none font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              asChild
             >
-              Get Notified When It Launches
+              <a href="#waitlist">Get Notified When It Launches</a>
             </Button>
           </div>
         </div>
@@ -201,7 +202,7 @@ const SupplierEngine = () => {
       </section>
 
       {/* WAITLIST FORM */}
-      <section className="py-20 bg-accent">
+      <section id="waitlist" className="py-20 bg-accent scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto bg-card rounded-xl p-8 md:p-10 shadow-sm border border-border">
             {submitted ? (
@@ -320,8 +321,9 @@ const SupplierEngine = () => {
             <Button
               size="xl"
               className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none font-semibold"
+              asChild
             >
-              Join the Waitlist
+              <a href="#waitlist">Join the Waitlist</a>
             </Button>
             <Button
               variant="whatsapp"
