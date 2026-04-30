@@ -279,7 +279,7 @@ const SupplierEngine = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full min-h-[48px] rounded-none font-semibold"
+                    className="w-full min-h-[48px] rounded-none font-semibold bg-black text-white hover:bg-black/90 hover:text-white"
                     disabled={submitting}
                   >
                     {submitting ? "Submitting..." : "Join the Waitlist"}
