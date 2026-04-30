@@ -136,15 +136,16 @@ const SupplierEngine = () => {
             deals, and pricing that no single agency could unlock on its own.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="xl" className="cta-responsive min-h-[48px] rounded-none font-semibold">
-              Join the Waitlist
+            <Button size="xl" className="cta-responsive min-h-[48px] rounded-none font-semibold" asChild>
+              <a href="#waitlist">Join the Waitlist</a>
             </Button>
             <Button
               variant="outline"
               size="xl"
               className="cta-responsive min-h-[48px] rounded-none font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              asChild
             >
-              Get Notified When It Launches
+              <a href="#waitlist">Get Notified When It Launches</a>
             </Button>
           </div>
         </div>
