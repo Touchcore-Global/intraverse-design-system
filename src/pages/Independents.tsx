@@ -234,7 +234,9 @@ const Independents = () => {
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4 lg:pl-[100px]">
           <h2 className="max-w-4xl">
-            You Want to Earn in Travel. But Where Do You Start?
+            You Want to Earn in Travel.
+            <br />
+            The Barriers Are Real.
           </h2>
           <p className="mt-8 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
             You know there's money in travel. You see agencies posting on
