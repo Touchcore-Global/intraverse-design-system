@@ -179,7 +179,7 @@ export default function BuiltInLagos() {
               </Button>
               <a href="/about">
                 <Button variant="outline" size="xl" className="rounded-none border-foreground text-foreground">
-                  Meet the Team
+                  Learn More
                 </Button>
               </a>
             </div>
@@ -274,7 +274,7 @@ export default function BuiltInLagos() {
             <div className="mt-10">
               <a href="/about">
                 <Button variant="outline" size="lg" className="rounded-none border-foreground text-foreground">
-                  Meet the Team →
+                  Learn More →
                 </Button>
               </a>
             </div>
