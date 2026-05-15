@@ -39,6 +39,15 @@ export function SEO({
       {noindex && <meta name="robots" content="noindex, nofollow" />}
       {canonical && <link rel="canonical" href={canonical} />}
 
+      {/* Geo targeting: Nigeria */}
+      <meta name="geo.region" content="NG" />
+      <meta name="geo.placename" content="Lagos, Nigeria" />
+
+      {/* hreflang alternates — primary audience Nigeria */}
+      {canonical && <link rel="alternate" hrefLang="en-NG" href={canonical} />}
+      {canonical && <link rel="alternate" hrefLang="en" href={canonical} />}
+      {canonical && <link rel="alternate" hrefLang="x-default" href={canonical} />}
+
       <meta property="og:title" content={finalOgTitle} />
       <meta property="og:description" content={finalOgDescription} />
       <meta property="og:type" content={ogType} />
