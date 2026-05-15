@@ -76,5 +76,3 @@ Allow: /
 
 User-agent: MistralAI-User
 Allow: /
-
-Sitemap: https://intraverse.africa/sitemap.xml
