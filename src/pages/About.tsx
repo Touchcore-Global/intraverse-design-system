@@ -205,8 +205,8 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="About Intraverse — Africa's Travel Technology Company"
-        description="Intraverse is a Lagos-based B2B travel technology company building the infrastructure for Africa's next generation of travel businesses. IATA accredited, serving 200+ agents."
+        title="About Intraverse — B2B Travel Technology Built in Lagos, Nigeria"
+        description="Lagos-headquartered B2B travel technology company powering Nigeria's next generation of travel businesses. IATA accredited, serving 200+ agents across Africa."
         canonical="https://intraverse.africa/about"
       />
       <Navbar />
