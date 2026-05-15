@@ -95,6 +95,9 @@ function escapeXml(str) {
 
 function urlEntry({ loc, lastmod, changefreq, priority }) {
   const lines = [`  <url>`, `    <loc>${escapeXml(loc)}</loc>`];
+  lines.push(`    <xhtml:link rel="alternate" hreflang="en-NG" href="${escapeXml(loc)}" />`);
+  lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(loc)}" />`);
+  lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(loc)}" />`);
   if (lastmod) lines.push(`    <lastmod>${new Date(lastmod).toISOString()}</lastmod>`);
   if (changefreq) lines.push(`    <changefreq>${changefreq}</changefreq>`);
   if (priority != null) lines.push(`    <priority>${priority.toFixed(1)}</priority>`);
@@ -139,7 +142,7 @@ async function main() {
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${entries.map(urlEntry).join("\n")}
 </urlset>
 `;
