@@ -289,8 +289,8 @@ export default function Proof() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Trusted by 200+ Travel Agents Across Africa | Intraverse"
-        description="See why 200+ travel agents across Nigeria and Africa trust Intraverse. Real testimonials, case studies, and results from travel businesses using our platform."
+        title="Trusted by 200+ Travel Agents in Nigeria & Africa | Intraverse"
+        description="200+ travel agents across Lagos, Abuja, and Africa trust Intraverse. Real Nigerian testimonials, case studies, and results from agencies using our B2B travel platform."
         canonical="https://intraverse.africa/proof"
       />
       <Navbar />
