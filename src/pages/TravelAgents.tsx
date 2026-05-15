@@ -93,8 +93,8 @@ const TravelAgents = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="For Travel Agents — Booking Platform & GDS Access | Intraverse"
-        description="Access Amadeus, Sabre, and Galileo GDS through one platform. Manage bookings, issue tickets, collect payments, and run your agency with professional technology."
+        title="For Travel Agents in Nigeria — Booking Platform & GDS Access | Intraverse"
+        description="Nigerian travel agents: access Amadeus, Sabre, and Galileo GDS through one platform. Issue tickets, collect NGN payments, and run your Lagos agency on modern tech."
         canonical="https://intraverse.africa/for/travel-agents"
       />
       <Navbar />
