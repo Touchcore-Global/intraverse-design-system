@@ -1,3 +1,7 @@
+# Sitemap discovery (hoisted to top — non-group directive, applies to all UAs)
+Sitemap: https://intraverse.africa/sitemap.xml
+Host: intraverse.africa
+
 User-agent: *
 Allow: /
 Disallow: /admin
