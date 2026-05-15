@@ -175,7 +175,11 @@ ${entries.map(urlEntry).join("\n")}
     "MistralAI-User",
   ];
   const aiBotBlock = aiBots.map((b) => `User-agent: ${b}\nAllow: /\n`).join("\n");
-  const robots = `User-agent: *
+  const robots = `# Sitemap discovery (hoisted to top — non-group directive, applies to all UAs)
+Sitemap: ${SITE_URL}/sitemap.xml
+Host: ${new URL(SITE_URL).host}
+
+User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /login
@@ -184,9 +188,7 @@ Disallow: /forgot-password
 Disallow: /unsubscribe
 
 # AI crawlers — explicitly allowed
-${aiBotBlock}
-Sitemap: ${SITE_URL}/sitemap.xml
-`;
+${aiBotBlock}`;
   await fs.writeFile(path.join(PUBLIC_DIR, "robots.txt"), robots, "utf8");
 
   console.log(
