@@ -379,8 +379,8 @@ export default function Features() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Features — Complete Travel Technology Platform | Intraverse"
-        description="Explore every feature of Intraverse: GDS integration, white-label storefronts, itinerary sharing, multi-currency payments, team management, analytics, and more."
+        title="Features — Travel Agency Software for Nigeria | Intraverse"
+        description="Travel agency software built for Nigeria: GDS & NDC integration, white-label storefronts, NGN multi-currency payments, WhatsApp itinerary sharing, team & analytics tools."
         canonical="https://intraverse.africa/features"
       />
       <Navbar />

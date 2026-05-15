@@ -122,8 +122,8 @@ export default function OdiopayProduct() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <SEO
-        title="Odiopay — Buy Now Pay Later for Travel | Intraverse"
-        description="Let your customers split travel payments into affordable installments. Odiopay BNPL integrates into your booking flow. Agents get paid upfront, travelers pay over time."
+        title="Odiopay — Buy Now Pay Later for Travel in Nigeria | Intraverse"
+        description="Let Nigerian customers split flight and hotel payments into installments. Odiopay BNPL plugs into your booking flow — agents get paid upfront, travelers pay over time."
         canonical="https://intraverse.africa/products/odiopay"
       />
       <Navbar />

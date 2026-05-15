@@ -115,8 +115,8 @@ const SupplierEngine = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Supplier Engine — GDS, NDC & Hotel Aggregation | Intraverse"
-        description="Access Amadeus, Sabre, Galileo, NDC, and HotelBeds through one integration. Intraverse aggregates 900+ airlines and 1M+ hotel properties for travel agents."
+        title="Supplier Engine — GDS, NDC & Hotel API Nigeria | Intraverse"
+        description="One integration for Nigerian travel agencies: Amadeus, Sabre, Galileo, NDC, and HotelBeds. Aggregate 900+ airlines and 1M+ hotels through Intraverse's Supplier Engine."
         canonical="https://intraverse.africa/supplier-engine"
       />
       <Navbar />

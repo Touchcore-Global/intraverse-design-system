@@ -117,8 +117,8 @@ const AgentPlatform = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Agent Platform — Professional Travel Booking System | Intraverse"
-        description="All-in-one booking system for travel agents. Search, book, and manage flights, hotels, and tours from Amadeus, Sabre, Galileo, and NDC — all in one dashboard."
+        title="Agent Platform — Travel Booking System Nigeria | Intraverse"
+        description="All-in-one booking system for Nigerian travel agents. Search and book flights, hotels, and tours from Amadeus, Sabre, Galileo, and NDC in one Lagos-built dashboard."
         canonical="https://intraverse.africa/products/agent-platform"
       />
       <Navbar />

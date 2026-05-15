@@ -224,8 +224,8 @@ export default function Products() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Products — Travel Agent Platform, Corporate Travel & APIs | Intraverse"
-        description="Explore Intraverse's product suite: TravX white-label booking, CoopX corporate travel, Supplier Engine, Travel Links, API access, and Odiopay BNPL for travel."
+        title="Travel Tech Products for Nigerian Agents & Businesses | Intraverse"
+        description="Nigeria's B2B travel product suite: TravX white-label booking, CoopX corporate travel, Supplier Engine (GDS/NDC), Travel Links, Travel API, and Odiopay BNPL. Built in Lagos."
         canonical="https://intraverse.africa/products"
       />
       <Navbar />

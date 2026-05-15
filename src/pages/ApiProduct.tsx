@@ -181,8 +181,8 @@ export default function ApiProduct() {
   return (
     <>
       <SEO
-        title="Travel API — Flights, Hotels & Tours API for Developers | Intraverse"
-        description="Build travel into your product with Intraverse's REST API. Access flights, hotels, tours, and payments. Full documentation, sandbox environment, and developer support."
+        title="Travel API Nigeria — Flights, Hotels & Payments | Intraverse"
+        description="Nigeria's travel API for developers and fintechs. Flights, hotels, tours, NDC, and NGN payments via one REST API. Sandbox, docs, and Lagos-based developer support."
         canonical="https://intraverse.africa/products/api"
       />
       <Navbar />

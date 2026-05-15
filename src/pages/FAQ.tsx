@@ -442,8 +442,8 @@ export default function FAQ() {
   return (
     <>
       <SEO
-        title="FAQ — Frequently Asked Questions | Intraverse Travel Technology"
-        description="Answers to common questions about Intraverse's travel agent platform, IATA accreditation, pricing, GDS access, white-label setup, and corporate travel tools."
+        title="FAQ — Travel Agent Platform Nigeria | Intraverse"
+        description="Answers for Nigerian travel agents: IATA accreditation, NGN pricing, GDS/NDC access, white-label setup, corporate travel, payments, and onboarding from Lagos."
         canonical="https://intraverse.africa/faq"
         jsonLd={buildFaqSchema()}
       />

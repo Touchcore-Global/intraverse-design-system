@@ -126,8 +126,8 @@ const TravelLinks = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Travel Links — Shareable Booking Links for Travel Agents | Intraverse"
-        description="Create branded, shareable booking links for your travel customers. Send flight and hotel quotes via WhatsApp, email, or social media. Customers book and pay online."
+        title="Travel Links — WhatsApp Booking Links for Nigerian Agents | Intraverse"
+        description="Send branded flight and hotel quotes via WhatsApp, email, or Instagram. Customers in Nigeria book and pay online in NGN. Built for Lagos-based travel agents."
         canonical="https://intraverse.africa/products/travel-links"
       />
       <Navbar />
