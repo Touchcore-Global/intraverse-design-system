@@ -95,6 +95,9 @@ function escapeXml(str) {
 
 function urlEntry({ loc, lastmod, changefreq, priority }) {
   const lines = [`  <url>`, `    <loc>${escapeXml(loc)}</loc>`];
+  lines.push(`    <xhtml:link rel="alternate" hreflang="en-NG" href="${escapeXml(loc)}" />`);
+  lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(loc)}" />`);
+  lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(loc)}" />`);
   if (lastmod) lines.push(`    <lastmod>${new Date(lastmod).toISOString()}</lastmod>`);
   if (changefreq) lines.push(`    <changefreq>${changefreq}</changefreq>`);
   if (priority != null) lines.push(`    <priority>${priority.toFixed(1)}</priority>`);
