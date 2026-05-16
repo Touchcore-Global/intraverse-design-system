@@ -22,6 +22,9 @@ const IndexV2 = () => {
         title="Intraverse — B2B Travel Technology Platform"
         description="Africa's B2B travel technology platform. Access GDS, NDC, and 900+ airlines through one API. White-label booking engine, agent tools, and corporate travel management."
         canonical="https://intraverse.africa"
+        ogTitle="Intraverse"
+        ogDescription="Sell flights, hotels, tours and travel services with Intraverse."
+        ogImage="https://intraverse.africa/og-image.jpg"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",
