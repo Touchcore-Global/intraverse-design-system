@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { SEO } from "@/components/SEO";
 import { DocsPostmanLink } from "@/components/docs/DocsPostmanLink";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { Callout } from "@/components/docs/Callout";
@@ -23,7 +24,13 @@ const toc = [
 
 export default function DocsPayments() {
   return (
-    <DocsLayout
+    <>
+      <SEO
+        title="Payments API | Intraverse Docs"
+        description="Wallet management, ticket payment, payouts, saved cards, and virtual accounts — built for the realities of African payment rails."
+        canonical="https://intraverse.africa/docs/payments"
+      />
+      <DocsLayout
       slug="payments"
       title="Process Payments and Settle Travel"
       subtitle="Wallet management, ticket payment, payouts, saved cards, and virtual accounts - built for the realities of African payment rails."
@@ -201,5 +208,6 @@ export default function DocsPayments() {
         </Callout>
       </DocsSection>
     </DocsLayout>
+    </>
   );
 }

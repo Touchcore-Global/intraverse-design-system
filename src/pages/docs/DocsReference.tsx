@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { SEO } from "@/components/SEO";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { Callout } from "@/components/docs/Callout";
 import { MethodBadge } from "@/components/docs/MethodBadge";
@@ -122,7 +123,13 @@ const errorCodes: [string, string, string][] = [
 
 export default function DocsReference() {
   return (
-    <DocsLayout
+    <>
+      <SEO
+        title="API Reference | Intraverse Docs"
+        description="Complete Intraverse API reference. Every endpoint, parameter, and response field documented with examples and live testing."
+        canonical="https://intraverse.africa/docs/reference"
+      />
+      <DocsLayout
       slug="reference"
       title="Complete Endpoint Reference"
       subtitle="Every endpoint, every parameter, every response field - documented with examples and live testing."
@@ -303,5 +310,6 @@ export default function DocsReference() {
         </div>
       </DocsSection>
     </DocsLayout>
+    </>
   );
 }

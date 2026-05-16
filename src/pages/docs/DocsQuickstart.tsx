@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { ArrowRight } from "lucide-react";
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
@@ -19,7 +20,13 @@ const toc = [
 
 export default function DocsQuickstart() {
   return (
-    <DocsLayout
+    <>
+      <SEO
+        title="Quickstart | Intraverse Docs"
+        description="From zero to your first Intraverse API call in under 10 minutes. Create an account, authenticate, and run your first flight search end-to-end."
+        canonical="https://intraverse.africa/docs/quickstart"
+      />
+      <DocsLayout
       slug="quickstart"
       title="From Zero to First API Call in Under 10 Minutes"
       subtitle="This guide walks you through creating an account, authenticating, and making your first flight search - the entire process, with nothing skipped."
@@ -234,5 +241,6 @@ export default function DocsQuickstart() {
         </ul>
       </DocsSection>
     </DocsLayout>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { SEO } from "@/components/SEO";
 import { DocsPostmanLink } from "@/components/docs/DocsPostmanLink";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { Callout } from "@/components/docs/Callout";
@@ -26,7 +27,13 @@ const knownEvents: [string, string][] = [
 
 export default function DocsWebhooks() {
   return (
-    <DocsLayout
+    <>
+      <SEO
+        title="Webhooks | Intraverse Docs"
+        description="Receive real-time notifications when Intraverse bookings are confirmed or cancelled. Build event-driven systems without polling."
+        canonical="https://intraverse.africa/docs/webhooks"
+      />
+      <DocsLayout
       slug="webhooks"
       title="Real-Time Events, Delivered to You"
       subtitle="Receive instant notifications when bookings are confirmed or cancelled. Build event-driven systems without polling."
@@ -154,5 +161,6 @@ export default function DocsWebhooks() {
         </ul>
       </DocsSection>
     </DocsLayout>
+    </>
   );
 }

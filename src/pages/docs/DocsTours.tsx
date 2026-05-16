@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { SEO } from "@/components/SEO";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
 import { ParamsTable } from "@/components/docs/ParamsTable";
@@ -20,7 +21,13 @@ const categories = [
 
 export default function DocsTours() {
   return (
-    <DocsLayout
+    <>
+      <SEO
+        title="Tours & Activities API | Intraverse Docs"
+        description="Access curated tours, activities, and experiences from international suppliers. Search by destination, category, and date — book standalone or bundled."
+        canonical="https://intraverse.africa/docs/tours"
+      />
+      <DocsLayout
       slug="tours"
       title="Tours, Activities, and Experiences"
       subtitle="Access curated tour and activity inventory from international suppliers. Search by destination, category, and date. Book standalone or bundle with flights and hotels for complete travel packages."
@@ -150,5 +157,6 @@ export default function DocsTours() {
         </ul>
       </DocsSection>
     </DocsLayout>
+    </>
   );
 }

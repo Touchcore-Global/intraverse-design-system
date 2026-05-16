@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { SEO } from "@/components/SEO";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { Callout } from "@/components/docs/Callout";
@@ -25,7 +26,13 @@ const scopes: [string, string][] = [
 
 export default function DocsAuthentication() {
   return (
-    <DocsLayout
+    <>
+      <SEO
+        title="API Authentication | Intraverse Docs"
+        description="Authenticate with the Intraverse API using API keys and short-lived bearer tokens. Create keys, request tokens, and manage refresh in production."
+        canonical="https://intraverse.africa/docs/authentication"
+      />
+      <DocsLayout
       slug="authentication"
       title="Secure, Standard, Simple"
       subtitle="The Intraverse API uses API Key authentication with short-lived bearer tokens. This guide covers everything from creating your first API key to managing token refresh in production."
@@ -199,5 +206,6 @@ export default function DocsAuthentication() {
         </ul>
       </DocsSection>
     </DocsLayout>
+    </>
   );
 }
