@@ -94,9 +94,7 @@ export function SEO({
       const sel = hreflang
         ? `link[rel="${rel}"][hreflang="${hreflang}"]`
         : `link[rel="${rel}"]`;
-      head.querySelectorAll(sel).forEach((el) => {
-        if (!el.hasAttribute("data-rh")) el.remove();
-      });
+      head.querySelectorAll(sel).forEach((el) => el.remove());
       const l = document.createElement("link");
       l.setAttribute("rel", rel);
       l.setAttribute("href", href);
