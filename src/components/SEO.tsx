@@ -58,8 +58,8 @@ export function SEO({
     } catch {
       path = raw.startsWith("/") ? raw : "/" + raw;
     }
-    if (path.length > 1 && path.endsWith("/")) path = path.replace(/\/+$/, "");
-    return `${APEX}${path === "" ? "/" : path}`;
+    if (path.endsWith("/")) path = path.replace(/\/+$/, "");
+    return `${APEX}${path}`;
   };
   const finalCanonical = normalizeCanonical(canonical);
 

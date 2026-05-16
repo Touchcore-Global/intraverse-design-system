@@ -20,12 +20,13 @@ export default function DocsHotels() {
     <>
       <SEO
         title="Hotels API | Intraverse Docs"
-        description="Search and book hotel inventory from leading global suppliers via one API. Consistent responses, real-time availability, instant confirmation."
+        description="Search and book hotel inventory from global suppliers via one API. Real-time availability and instant confirmation."
         canonical="https://intraverse.africa/docs/hotels"
       />
       <DocsLayout
       slug="hotels"
       title="Hotels From Leading Global Suppliers"
+      metaDescription="Search and book hotel inventory from global suppliers via one API. Real-time availability and instant confirmation."
       subtitle="Search, compare, and book hotel inventory from multiple global suppliers through a single API. Consistent response format, real-time availability, and instant confirmation."
       toc={toc}
     >

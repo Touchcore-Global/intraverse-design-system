@@ -225,7 +225,7 @@ export default function Products() {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Travel Tech Products for Nigerian Agents & Businesses | Intraverse"
-        description="Nigeria's B2B travel product suite: TravX white-label booking, CoopX corporate travel, Supplier Engine (GDS/NDC), Travel Links, Travel API, and Odiopay BNPL. Built in Lagos."
+        description="Nigeria's B2B travel product suite: TravX, CoopX, Supplier Engine (GDS/NDC), Travel Links, Travel API, and Odiopay BNPL."
         canonical="https://intraverse.africa/products"
       />
       <Navbar />

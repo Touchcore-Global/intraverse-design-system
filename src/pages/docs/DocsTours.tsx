@@ -24,12 +24,13 @@ export default function DocsTours() {
     <>
       <SEO
         title="Tours & Activities API | Intraverse Docs"
-        description="Access curated tours, activities, and experiences from international suppliers. Search by destination, category, and date — book standalone or bundled."
+        description="Access curated tours, activities, and experiences from global suppliers. Search by destination, category, and date."
         canonical="https://intraverse.africa/docs/tours"
       />
       <DocsLayout
       slug="tours"
       title="Tours, Activities, and Experiences"
+      metaDescription="Access curated tours, activities, and experiences from global suppliers. Search by destination, category, and date."
       subtitle="Access curated tour and activity inventory from international suppliers. Search by destination, category, and date. Book standalone or bundle with flights and hotels for complete travel packages."
       toc={toc}
     >
