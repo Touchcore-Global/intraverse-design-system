@@ -5,43 +5,20 @@
     <link rel="icon" href="/favicon.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!--
+      Per-route SEO (title, description, canonical, hreflang, og:*, twitter:*)
+      is owned by react-helmet-async via src/components/SEO.tsx. During
+      react-snap prerendering, src/main.tsx's snapSaveState waits for
+      Helmet to flush and then removes any colliding static tags.
+
+      Only sitewide identity tags remain here so social crawlers that
+      don't execute JS still get something usable on un-prerendered
+      routes. These are intentionally minimal: no canonical, no
+      hreflang, no per-route og:url.
+    -->
     <title>Intraverse — B2B Travel Technology Platform Nigeria</title>
     <meta name="description" content="Nigeria's B2B travel technology platform. Access GDS, NDC, and 900+ airlines through one API. White-label booking engine, agent tools, and corporate travel management built in Lagos." />
-
-    <!-- Geo targeting: Nigeria -->
-    <meta name="geo.region" content="NG" />
-    <meta name="geo.placename" content="Lagos, Nigeria" />
-    <meta name="geo.position" content="6.5244;3.3792" />
-    <meta name="ICBM" content="6.5244, 3.3792" />
-
-    <!-- Per-route canonical & hreflang are owned by Helmet (src/components/SEO.tsx) to avoid duplicate <link> tags. -->
     <meta name="author" content="Intraverse" />
-
-    <meta property="og:title" content="Intraverse — B2B Travel Technology Platform Nigeria" />
-    <meta property="og:description" content="Nigeria's B2B travel technology platform. Access GDS, NDC, and 900+ airlines. White-label booking, agent tools, and corporate travel management built in Lagos." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://intraverse.africa" />
-    <meta property="og:image" content="https://intraverse.africa/og-default.png" />
-    <meta property="og:image:alt" content="Intraverse — B2B travel technology platform built in Lagos, Nigeria" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_NG" />
-    <meta property="og:locale:alternate" content="en_GB" />
-    <meta property="og:locale:alternate" content="en_US" />
-    <meta property="og:country-name" content="Nigeria" />
-    <meta property="og:region" content="Lagos" />
-    <meta property="og:site_name" content="Intraverse" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@intraverseHQ" />
-    <meta name="twitter:creator" content="@intraverseHQ" />
-    <meta name="twitter:domain" content="intraverse.africa" />
-    <meta name="twitter:title" content="Intraverse — B2B Travel Technology Platform Nigeria" />
-    <meta name="twitter:description" content="Nigeria's B2B travel technology platform. Built in Lagos for African travel businesses." />
-    <meta name="twitter:image" content="https://intraverse.africa/og-default.png" />
-    <meta name="twitter:image:alt" content="Intraverse — B2B travel technology platform built in Lagos, Nigeria" />
-
-    <!-- canonical handled per-route by Helmet -->
   </head>
 
   <body>

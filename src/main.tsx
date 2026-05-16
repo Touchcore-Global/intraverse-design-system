@@ -46,18 +46,18 @@ if (rootElement.hasChildNodes()) {
  */
 declare global {
   interface Window {
-    snapSaveState?: () => Record<string, unknown>;
+    snapSaveState?: () => Record<string, unknown> | Promise<Record<string, unknown>>;
   }
 }
 
 if (typeof window !== "undefined") {
+  // react-snap calls snapSaveState synchronously inside puppeteer right
+  // before serializing document.documentElement.outerHTML. We rely on
+  // reactSnap.waitFor (package.json) to give react-helmet-async time to
+  // mutate document.head, then dedupe any static index.html tags that
+  // collide with Helmet-owned slots so each route's snapshot carries
+  // exactly one canonical / og:* / twitter:* / hreflang.
   window.snapSaveState = () => {
-    // On the client, react-helmet-async mutates document.head directly and
-    // marks its tags with data-rh="true". We can't read helmetContext here
-    // (only populated during server rendering), so we dedupe by walking
-    // the data-rh tags and removing any static index.html tag that targets
-    // the same head slot. This guarantees exactly one of each per-route
-    // SEO tag in the snapshot.
     const head = document.head;
     const helmetTags = Array.from(
       head.querySelectorAll<HTMLElement>("[data-rh]")
@@ -78,21 +78,19 @@ if (typeof window !== "undefined") {
       if (tag === "link") {
         const rel = (el.getAttribute("rel") || "").toLowerCase();
         const hreflang = el.getAttribute("hreflang");
-        // hreflang alternates are keyed by language so each one is its own slot
-        if (rel === "alternate" && hreflang) return `link:alternate:${hreflang.toLowerCase()}`;
+        if (rel === "alternate" && hreflang)
+          return `link:alternate:${hreflang.toLowerCase()}`;
         return `link:${rel}`;
       }
       return null;
     };
 
-    // Collect every slot Helmet owns on this route
     const helmetSlots = new Set<string>();
     for (const el of helmetTags) {
       const key = slotKey(el);
       if (key) helmetSlots.add(key);
     }
 
-    // Remove non-Helmet (static) tags from index.html that collide
     const candidates = head.querySelectorAll<HTMLElement>(
       "title, meta, link[rel='canonical'], link[rel='alternate']"
     );
@@ -105,4 +103,7 @@ if (typeof window !== "undefined") {
     return {};
   };
 }
+
+
+
 
