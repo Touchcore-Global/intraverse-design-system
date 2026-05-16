@@ -69,10 +69,14 @@
       "/news"
     ],
     "skipThirdPartyRequests": true,
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
     "inlineCss": false,
     "removeBlobs": true,
-    "fixWebpackChunksIssue": "CRA2"
+    "fixWebpackChunksIssue": "CRA2",
+    "waitFor": 5000
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
