@@ -20,11 +20,17 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { seoCheckConfig, compileRules, matches } from "./seo-check.config.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "..", "dist");
-const SITE_URL = process.env.SITE_URL || "https://intraverse.africa";
+const SITE_URL = seoCheckConfig.siteUrl;
 const HOST = new URL(SITE_URL).host;
+
+const denylist = compileRules(seoCheckConfig.denylist);
+const allowlist = compileRules(seoCheckConfig.allowlist);
+const noindexRules = compileRules(seoCheckConfig.noindexRoutes);
+const hasAllowlist = seoCheckConfig.allowlist.length > 0;
 
 if (!fs.existsSync(DIST)) {
   console.error("[verify-seo-meta] dist/ not found — run `vite build` first.");
@@ -48,7 +54,9 @@ if (htmlFiles.length === 0) {
 }
 
 const failures = [];
+const skipped = [];
 let passed = 0;
+let noindexChecked = 0;
 
 const META = {
   description: /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i,
@@ -67,8 +75,35 @@ function countMatches(html, re) {
 
 for (const file of htmlFiles) {
   const route = "/" + path.relative(DIST, path.dirname(file)).replace(/\\/g, "/");
+  const normalized = route === "/." ? "/" : route.replace(/\/$/, "") || "/";
+
+  // 1. Denylist: skip entirely.
+  if (matches(normalized, denylist)) {
+    skipped.push({ route: normalized, reason: "denylist" });
+    continue;
+  }
+  // 2. Allowlist (if non-empty): skip routes not in it.
+  if (hasAllowlist && !matches(normalized, allowlist)) {
+    skipped.push({ route: normalized, reason: "not in allowlist" });
+    continue;
+  }
+
   const html = fs.readFileSync(file, "utf8");
   const errs = [];
+
+  // 3. Noindex routes: REQUIRE the noindex tag and skip positive checks.
+  if (matches(normalized, noindexRules)) {
+    const robotsMatch = html.match(META.robots);
+    if (!robotsMatch || !/noindex/i.test(robotsMatch[1])) {
+      failures.push({
+        route: normalized,
+        errs: [`expected <meta name="robots" content="noindex"> but found: ${robotsMatch?.[1] ?? "(none)"}`],
+      });
+    } else {
+      noindexChecked++;
+    }
+    continue;
+  }
 
   // Title
   const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
@@ -87,8 +122,10 @@ for (const file of htmlFiles) {
   if (!descMatch) errs.push("missing meta description");
   else {
     const d = descMatch[1];
-    if (d.length < 50) errs.push(`description too short (${d.length} chars)`);
-    if (d.length > 170) errs.push(`description too long (${d.length} chars)`);
+    if (d.length < seoCheckConfig.descriptionMin)
+      errs.push(`description too short (${d.length} chars, min ${seoCheckConfig.descriptionMin})`);
+    if (d.length > seoCheckConfig.descriptionMax)
+      errs.push(`description too long (${d.length} chars, max ${seoCheckConfig.descriptionMax})`);
     if (descCount > 1) errs.push(`${descCount} description tags (expected 1)`);
   }
 
@@ -108,7 +145,7 @@ for (const file of htmlFiles) {
   }
 
   // hreflang alternates
-  for (const lang of ["en-NG", "en", "x-default"]) {
+  for (const lang of seoCheckConfig.hreflangs) {
     const re = new RegExp(
       `<link\\s+rel=["']alternate["']\\s+hre[fF]Lang=["']${lang}["']`,
       "i",
@@ -135,14 +172,16 @@ for (const file of htmlFiles) {
   if (!META.twitterCard.test(html)) errs.push("missing twitter:card");
 
   if (errs.length) {
-    failures.push({ route, errs });
+    failures.push({ route: normalized, errs });
   } else {
     passed++;
   }
 }
 
 console.log(`\n[verify-seo-meta] Scanned ${htmlFiles.length} pages.`);
-console.log(`  ✓ ${passed} passed`);
+console.log(`  ✓ ${passed} passed full meta checks`);
+console.log(`  ✓ ${noindexChecked} verified as noindex`);
+console.log(`  ↷ ${skipped.length} skipped (denylist / not in allowlist)`);
 console.log(`  ✗ ${failures.length} failed`);
 
 if (failures.length) {
