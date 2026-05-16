@@ -236,7 +236,7 @@ export default function Docs() {
             <RevealBlock>
               <div className="mt-14 grid md:grid-cols-3 gap-8">
                 {[
-                  { num: 1, title: "Sign Up", desc: "Create a free Intraverse account. No credit card required. You'll get sandbox API credentials immediately.", cta: "Create Account", href: "https://www.intraverse.app/register" },
+                  { num: 1, title: "Sign Up", desc: "Create a free Intraverse account. No credit card required. You'll get sandbox API credentials immediately.", cta: "Start now", href: "https://www.intraverse.app/register" },
                   { num: 2, title: "Authenticate", desc: "Use your API key with OAuth 2.0 Bearer tokens. Every request is authenticated and encrypted end-to-end.", cta: "Read Auth Guide", href: "/docs/authentication" },
                   { num: 3, title: "Make Your First Call", desc: "Search flights, hotels, or tours. Get real responses from aggregated inventory. Test in sandbox - go live when you're ready.", cta: "Try It Now", href: "/docs/quickstart" },
                 ].map((s) => (
