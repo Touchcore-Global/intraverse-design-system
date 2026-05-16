@@ -36,6 +36,7 @@ export default function DocsAuthentication() {
       slug="authentication"
       title="Secure, Standard, Simple"
       subtitle="The Intraverse API uses API Key authentication with short-lived bearer tokens. This guide covers everything from creating your first API key to managing token refresh in production."
+      metaDescription="Authenticate with the Intraverse API using API keys and short-lived bearer tokens. Create keys, request tokens, and manage refresh in production."
       toc={toc}
     >
       <DocsSection id="overview" title="Overview">
