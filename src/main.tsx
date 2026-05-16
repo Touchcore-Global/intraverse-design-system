@@ -1,5 +1,12 @@
 import { createRoot, hydrateRoot } from "react-dom/client";
-import { HelmetProvider, type FilledContext } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet-async";
+
+type HelmetState = {
+  title: { toString(): string };
+  meta: { toString(): string };
+  link: { toString(): string };
+  script: { toString(): string };
+};
 import App from "./App.tsx";
 import "./index.css";
 import { installWhatsAppClickTracking } from "./lib/whatsapp-tracking";
