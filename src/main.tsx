@@ -51,13 +51,26 @@ declare global {
 }
 
 if (typeof window !== "undefined") {
-  window.snapSaveState = () => {
-    // On the client, react-helmet-async mutates document.head directly and
-    // marks its tags with data-rh="true". We can't read helmetContext here
-    // (only populated during server rendering), so we dedupe by walking
-    // the data-rh tags and removing any static index.html tag that targets
-    // the same head slot. This guarantees exactly one of each per-route
-    // SEO tag in the snapshot.
+  // Wait until react-helmet-async has flushed at least a canonical link
+  // (the last tag SEO.tsx emits) into document.head, then dedupe static
+  // index.html tags that collide with Helmet-owned slots. Returns when
+  // the head is ready or after a hard timeout.
+  const waitForHelmet = (): Promise<void> =>
+    new Promise((resolve) => {
+      const deadline = Date.now() + 8000;
+      const tick = () => {
+        const ready = document.head.querySelector(
+          'link[rel="canonical"][data-rh="true"]'
+        );
+        if (ready || Date.now() > deadline) return resolve();
+        setTimeout(tick, 50);
+      };
+      tick();
+    });
+
+  window.snapSaveState = async () => {
+    await waitForHelmet();
+
     const head = document.head;
     const helmetTags = Array.from(
       head.querySelectorAll<HTMLElement>("[data-rh]")
@@ -78,21 +91,19 @@ if (typeof window !== "undefined") {
       if (tag === "link") {
         const rel = (el.getAttribute("rel") || "").toLowerCase();
         const hreflang = el.getAttribute("hreflang");
-        // hreflang alternates are keyed by language so each one is its own slot
-        if (rel === "alternate" && hreflang) return `link:alternate:${hreflang.toLowerCase()}`;
+        if (rel === "alternate" && hreflang)
+          return `link:alternate:${hreflang.toLowerCase()}`;
         return `link:${rel}`;
       }
       return null;
     };
 
-    // Collect every slot Helmet owns on this route
     const helmetSlots = new Set<string>();
     for (const el of helmetTags) {
       const key = slotKey(el);
       if (key) helmetSlots.add(key);
     }
 
-    // Remove non-Helmet (static) tags from index.html that collide
     const candidates = head.querySelectorAll<HTMLElement>(
       "title, meta, link[rel='canonical'], link[rel='alternate']"
     );
@@ -105,4 +116,5 @@ if (typeof window !== "undefined") {
     return {};
   };
 }
+
 
