@@ -52,7 +52,7 @@ declare global {
 
 if (typeof window !== "undefined") {
   window.snapSaveState = () => {
-    const helmet = helmetContext.helmet;
+    const helmet = helmetContext.helmet as HelmetState | undefined;
     if (!helmet) return {};
 
     const head = document.head;
