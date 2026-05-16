@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { useLocation } from "react-router-dom";
 
 const features = [
   {
@@ -157,12 +158,13 @@ const afterItems = [
 ];
 
 const Travx = () => {
+  const { pathname } = useLocation();
   return (
     <div className="min-h-screen">
       <SEO
         title="TravX — White-Label Travel Booking Platform Nigeria | Intraverse"
         description="Launch your branded travel agency website in Nigeria. White-label booking with 900+ airlines, hotels, NGN payments, and customer management. From ₦75,000/month."
-        canonical="https://intraverse.africa/products/travx"
+        canonical={pathname}
         ogImage="https://intraverse.africa/og/travx.jpg"
         jsonLd={{
           "@context": "https://schema.org",

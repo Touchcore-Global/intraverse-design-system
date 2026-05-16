@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { useLocation } from "react-router-dom";
 
 const features = [
   {
@@ -177,12 +178,13 @@ const faqs = [
 ];
 
 const Independents = () => {
+  const { pathname } = useLocation();
   return (
     <div className="min-h-screen">
       <SEO
         title="Start a Travel Business in Nigeria — Independents Programme | Intraverse"
         description="Become a travel agent with zero IATA accreditation. Access flights, hotels, and tours through Intraverse. Earn commissions on every booking. No experience needed."
-        canonical="https://intraverse.africa/independents"
+        canonical={pathname}
       />
       <Navbar />
       <div className="h-16" />

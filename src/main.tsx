@@ -1,11 +1,12 @@
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 
+type HelmetDatum = { toString(): string };
 type HelmetState = {
-  title: { toString(): string };
-  meta: { toString(): string };
-  link: { toString(): string };
-  script: { toString(): string };
+  title: HelmetDatum;
+  meta: HelmetDatum;
+  link: HelmetDatum;
+  script: HelmetDatum;
 };
 import App from "./App.tsx";
 import "./index.css";
@@ -19,6 +20,9 @@ const rootElement = document.getElementById("root")!;
 // react-snap prerendering and inject it into document.head before the
 // snapshot is captured.
 const helmetContext: Record<string, unknown> = {};
+if (typeof window !== "undefined") {
+  (window as unknown as { __helmetContext: typeof helmetContext }).__helmetContext = helmetContext;
+}
 
 const tree = (
   <HelmetProvider context={helmetContext}>
@@ -51,17 +55,9 @@ declare global {
 }
 
 if (typeof window !== "undefined") {
-  // react-snap calls snapSaveState synchronously inside puppeteer right
-  // before serializing document.documentElement.outerHTML. We rely on
-  // reactSnap.waitFor (package.json) to give react-helmet-async time to
-  // mutate document.head, then dedupe any static index.html tags that
-  // collide with Helmet-owned slots so each route's snapshot carries
-  // exactly one canonical / og:* / twitter:* / hreflang.
   window.snapSaveState = () => {
     const head = document.head;
-    const helmetTags = Array.from(
-      head.querySelectorAll<HTMLElement>("[data-rh]")
-    );
+    const helmetTags = Array.from(head.querySelectorAll<HTMLElement>("[data-rh]"));
 
     const slotKey = (el: HTMLElement): string | null => {
       const tag = el.tagName.toLowerCase();
@@ -78,8 +74,7 @@ if (typeof window !== "undefined") {
       if (tag === "link") {
         const rel = (el.getAttribute("rel") || "").toLowerCase();
         const hreflang = el.getAttribute("hreflang");
-        if (rel === "alternate" && hreflang)
-          return `link:alternate:${hreflang.toLowerCase()}`;
+        if (rel === "alternate" && hreflang) return `link:alternate:${hreflang.toLowerCase()}`;
         return `link:${rel}`;
       }
       return null;
@@ -91,10 +86,9 @@ if (typeof window !== "undefined") {
       if (key) helmetSlots.add(key);
     }
 
-    const candidates = head.querySelectorAll<HTMLElement>(
+    head.querySelectorAll<HTMLElement>(
       "title, meta, link[rel='canonical'], link[rel='alternate']"
-    );
-    candidates.forEach((el) => {
+    ).forEach((el) => {
       if (el.hasAttribute("data-rh")) return;
       const key = slotKey(el);
       if (key && helmetSlots.has(key)) el.remove();
