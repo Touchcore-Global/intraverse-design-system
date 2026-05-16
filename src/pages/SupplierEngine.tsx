@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { useLocation } from "react-router-dom";
 
 const steps = [
   { icon: Link2, title: "Share OIDs", desc: "Agents opt in to share their Amadeus Office IDs as supply partners within the network." },

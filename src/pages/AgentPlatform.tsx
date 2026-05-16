@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { useLocation } from "react-router-dom";
 
 const features = [
   {
@@ -114,12 +115,13 @@ const faqs = [
 ];
 
 const AgentPlatform = () => {
+  const { pathname } = useLocation();
   return (
     <div className="min-h-screen">
       <SEO
         title="Agent Platform — Travel Booking System Nigeria | Intraverse"
         description="All-in-one booking system for Nigerian travel agents. Search and book flights, hotels, and tours from Amadeus, Sabre, Galileo, and NDC in one Lagos-built dashboard."
-        canonical="https://intraverse.africa/products/agent-platform"
+        canonical={pathname}
         ogImage="https://intraverse.africa/og/agent-platform.jpg"
       />
       <Navbar />

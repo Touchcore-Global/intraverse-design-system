@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
+import { useLocation } from "react-router-dom";
 
 const features = [
   {
@@ -143,12 +144,13 @@ const faqs = [
 ];
 
 const CoopX = () => {
+  const { pathname } = useLocation();
   return (
     <div className="min-h-screen">
       <SEO
         title="CoopX — Corporate Travel Management Platform Nigeria | Intraverse"
         description="Simplify corporate travel in Africa. Manage bookings, control spend, enforce travel policy, and automate expense reporting. Built for Nigerian and African enterprises."
-        canonical="https://intraverse.africa/products/coopx"
+        canonical={pathname}
         ogImage="https://intraverse.africa/og/coopx.jpg"
         jsonLd={{
           "@context": "https://schema.org",
