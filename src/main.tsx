@@ -55,68 +55,37 @@ declare global {
 }
 
 if (typeof window !== "undefined") {
-  // react-snap calls snapSaveState synchronously inside puppeteer right
-  // before serializing document.documentElement.outerHTML. We proactively
-  // flush react-helmet-async's rendered state into document.head (instead
-  // of relying on its rAF-deferred dispatcher) so every prerendered route
-  // ships per-route <title>, canonical, hreflang, OG, and Twitter tags.
-  const slotKey = (el: Element): string | null => {
-    const tag = el.tagName.toLowerCase();
-    if (tag === "title") return "title";
-    if (tag === "meta") {
-      const name = el.getAttribute("name");
-      const prop = el.getAttribute("property");
-      const httpEquiv = el.getAttribute("http-equiv");
-      if (name) return `meta:name:${name.toLowerCase()}`;
-      if (prop) return `meta:property:${prop.toLowerCase()}`;
-      if (httpEquiv) return `meta:http-equiv:${httpEquiv.toLowerCase()}`;
-      return null;
-    }
-    if (tag === "link") {
-      const rel = (el.getAttribute("rel") || "").toLowerCase();
-      const hreflang = el.getAttribute("hreflang");
-      if (rel === "alternate" && hreflang) return `link:alternate:${hreflang.toLowerCase()}`;
-      return `link:${rel}`;
-    }
-    return null;
-  };
-
   window.snapSaveState = () => {
     const head = document.head;
-    const ctx = (window as unknown as { __helmetContext?: { helmet?: HelmetState } }).__helmetContext;
-    const helmet = ctx?.helmet;
+    const helmetTags = Array.from(head.querySelectorAll<HTMLElement>("[data-rh]"));
 
-    // Parse Helmet's rendered HTML strings into a template so we get real
-    // DOM elements we can append. This bypasses the rAF dispatcher entirely.
-    const tpl = document.createElement("template");
-    if (helmet) {
-      tpl.innerHTML = [
-        helmet.title?.toString() || "",
-        helmet.meta?.toString() || "",
-        helmet.link?.toString() || "",
-        helmet.script?.toString() || "",
-      ].join("");
-    }
-
-    const helmetEls: HTMLElement[] = [];
-    Array.from(tpl.content.childNodes).forEach((node) => {
-      if (node.nodeType === 1) {
-        const el = node as HTMLElement;
-        el.setAttribute("data-rh", "true");
-        helmetEls.push(el);
+    const slotKey = (el: HTMLElement): string | null => {
+      const tag = el.tagName.toLowerCase();
+      if (tag === "title") return "title";
+      if (tag === "meta") {
+        const name = el.getAttribute("name");
+        const prop = el.getAttribute("property");
+        const httpEquiv = el.getAttribute("http-equiv");
+        if (name) return `meta:name:${name.toLowerCase()}`;
+        if (prop) return `meta:property:${prop.toLowerCase()}`;
+        if (httpEquiv) return `meta:http-equiv:${httpEquiv.toLowerCase()}`;
+        return null;
       }
-    });
+      if (tag === "link") {
+        const rel = (el.getAttribute("rel") || "").toLowerCase();
+        const hreflang = el.getAttribute("hreflang");
+        if (rel === "alternate" && hreflang) return `link:alternate:${hreflang.toLowerCase()}`;
+        return `link:${rel}`;
+      }
+      return null;
+    };
 
-    // If Helmet's own dispatcher already ran, those tags are already in
-    // <head> with data-rh="true" — collect their slots so we don't double up.
-    const existingHelmet = Array.from(head.querySelectorAll<HTMLElement>("[data-rh]"));
     const helmetSlots = new Set<string>();
-    for (const el of [...helmetEls, ...existingHelmet]) {
+    for (const el of helmetTags) {
       const key = slotKey(el);
       if (key) helmetSlots.add(key);
     }
 
-    // Remove static index.html tags that collide with Helmet-owned slots.
     head.querySelectorAll<HTMLElement>(
       "title, meta, link[rel='canonical'], link[rel='alternate']"
     ).forEach((el) => {
@@ -124,19 +93,6 @@ if (typeof window !== "undefined") {
       const key = slotKey(el);
       if (key && helmetSlots.has(key)) el.remove();
     });
-
-    // Append our freshly-parsed Helmet tags only for slots not already
-    // populated by Helmet's own dispatcher (avoids duplicates).
-    const existingSlots = new Set<string>();
-    for (const el of existingHelmet) {
-      const key = slotKey(el);
-      if (key) existingSlots.add(key);
-    }
-    for (const el of helmetEls) {
-      const key = slotKey(el);
-      if (key && existingSlots.has(key)) continue;
-      head.appendChild(el);
-    }
 
     return {};
   };
