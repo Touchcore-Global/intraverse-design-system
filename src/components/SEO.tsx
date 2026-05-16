@@ -78,12 +78,11 @@ export function SEO({
       key: string,
       content: string,
     ) => {
-      // Remove colliding static tags from index.html so we don't double up.
+      // Remove any colliding tags (static from index.html or Helmet-rendered)
+      // — our direct injection is authoritative for the snapshot.
       head
         .querySelectorAll(`meta[${attr}="${key}"]`)
-        .forEach((el) => {
-          if (!el.hasAttribute("data-rh")) el.remove();
-        });
+        .forEach((el) => el.remove());
       const m = document.createElement("meta");
       m.setAttribute(attr, key);
       m.setAttribute("content", content);
