@@ -167,10 +167,10 @@ const hostXRobotsRules = loadHostXRobotsRules();
  * then host-level X-Robots-Tag rules from vercel.json / _headers.
  */
 function getRobotsDirective(html, route) {
-  const m1 = html.match(META.robots);
-  if (m1) return { value: m1[1], source: 'meta name="robots"' };
-  const m2 = html.match(META.xRobotsTagMeta);
-  if (m2) return { value: m2[1], source: 'meta http-equiv="X-Robots-Tag"' };
+  const robots = META.robots(html)[0];
+  if (robots) return { value: robots.content, source: 'meta name="robots"' };
+  const xRobots = META.xRobotsTagMeta(html)[0];
+  if (xRobots) return { value: xRobots.content, source: 'meta http-equiv="X-Robots-Tag"' };
   const host = hostXRobotsRules.find((r) => r.match(route));
   if (host) return { value: host.value, source: host.source };
   return null;
@@ -225,16 +225,15 @@ for (const file of htmlFiles) {
   }
 
   // Description
-  const descMatch = html.match(META.description);
-  const descCount = countMatches(html, META.description);
-  if (!descMatch) errs.push("missing meta description");
+  const descriptions = META.description(html);
+  if (descriptions.length === 0) errs.push("missing meta description");
   else {
-    const d = descMatch[1];
+    const d = descriptions[0].content ?? "";
     if (d.length < seoCheckConfig.descriptionMin)
       errs.push(`description too short (${d.length} chars, min ${seoCheckConfig.descriptionMin})`);
     if (d.length > seoCheckConfig.descriptionMax)
       errs.push(`description too long (${d.length} chars, max ${seoCheckConfig.descriptionMax})`);
-    if (descCount > 1) errs.push(`${descCount} description tags (expected 1)`);
+    if (descriptions.length > 1) errs.push(`${descriptions.length} description tags (expected 1)`);
   }
 
   // Expected absolute URL for this route: siteUrl + path (no trailing slash
@@ -242,22 +241,20 @@ for (const file of htmlFiles) {
   const expectedUrl = normalized === "/" ? SITE_URL : `${SITE_URL}${normalized}`;
 
   // Canonical — must exactly equal expectedUrl
-  const canonicalMatches = [
-    ...html.matchAll(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/gi),
-  ];
+  const canonicalMatches = getLink(html, "canonical");
   if (canonicalMatches.length === 0) errs.push("missing canonical");
   else if (canonicalMatches.length > 1)
     errs.push(`${canonicalMatches.length} canonical tags (expected 1)`);
   else {
-    const c = canonicalMatches[0][1];
+    const c = canonicalMatches[0].href;
     if (c !== expectedUrl)
       errs.push(`canonical mismatch: got "${c}", expected "${expectedUrl}"`);
   }
 
   // og:url — must exactly equal expectedUrl
-  const ogUrlMatch = html.match(META.ogUrl);
-  if (ogUrlMatch && ogUrlMatch[1] !== expectedUrl)
-    errs.push(`og:url mismatch: got "${ogUrlMatch[1]}", expected "${expectedUrl}"`);
+  const ogUrl = META.ogUrl(html)[0];
+  if (ogUrl && ogUrl.content !== expectedUrl)
+    errs.push(`og:url mismatch: got "${ogUrl.content}", expected "${expectedUrl}"`);
 
   // hreflang alternates — present AND pointing at expectedUrl
   for (const lang of seoCheckConfig.hreflangs) {
