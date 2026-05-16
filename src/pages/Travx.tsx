@@ -340,7 +340,7 @@ const Travx = () => {
                   size="xl"
                   className="cta-responsive min-h-[48px]"
                 >
-                  Get Started with Travx
+                  Start now
                 </Button>
                 <Button
                   variant="whatsapp"
