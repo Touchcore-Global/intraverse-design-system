@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { SEO } from "@/components/SEO";
 import { DocsPostmanLink } from "@/components/docs/DocsPostmanLink";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
@@ -26,7 +27,13 @@ const toc = [
 
 export default function DocsFlights() {
   return (
-    <DocsLayout
+    <>
+      <SEO
+        title="Flights API | Intraverse Docs"
+        description="Search, book, ticket, modify, and cancel flights across GDS (Amadeus, Sabre, Galileo), NDC, consolidators, and aggregators through one unified API."
+        canonical="https://intraverse.africa/docs/flights"
+      />
+      <DocsLayout
       slug="flights"
       title="Aggregated Flight Inventory, One API"
       subtitle="Search, book, ticket, modify, and cancel flights across GDS (Amadeus, Sabre, Galileo), NDC connections, consolidators, and aggregators - all through a single unified API."
@@ -277,5 +284,6 @@ export default function DocsFlights() {
         </Callout>
       </DocsSection>
     </DocsLayout>
+    </>
   );
 }

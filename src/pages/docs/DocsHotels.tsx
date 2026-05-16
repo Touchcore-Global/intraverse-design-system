@@ -1,4 +1,5 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
+import { SEO } from "@/components/SEO";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
@@ -16,7 +17,13 @@ const toc = [
 
 export default function DocsHotels() {
   return (
-    <DocsLayout
+    <>
+      <SEO
+        title="Hotels API | Intraverse Docs"
+        description="Search and book hotel inventory from leading global suppliers via one API. Consistent responses, real-time availability, instant confirmation."
+        canonical="https://intraverse.africa/docs/hotels"
+      />
+      <DocsLayout
       slug="hotels"
       title="Hotels From Leading Global Suppliers"
       subtitle="Search, compare, and book hotel inventory from multiple global suppliers through a single API. Consistent response format, real-time availability, and instant confirmation."
@@ -165,5 +172,6 @@ export default function DocsHotels() {
         </ul>
       </DocsSection>
     </DocsLayout>
+    </>
   );
 }
