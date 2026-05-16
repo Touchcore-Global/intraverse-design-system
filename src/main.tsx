@@ -51,29 +51,18 @@ declare global {
 }
 
 if (typeof window !== "undefined") {
-  // Wait until react-helmet-async has flushed at least a canonical link
-  // (the last tag SEO.tsx emits) into document.head, then dedupe static
-  // index.html tags that collide with Helmet-owned slots. Returns when
-  // the head is ready or after a hard timeout.
-  const waitForHelmet = (): Promise<void> =>
-    new Promise((resolve) => {
-      const deadline = Date.now() + 8000;
-      const tick = () => {
-        const ready = document.head.querySelector(
-          'link[rel="canonical"][data-rh="true"]'
-        );
-        if (ready || Date.now() > deadline) return resolve();
-        setTimeout(tick, 50);
-      };
-      tick();
-    });
-
-  window.snapSaveState = async () => {
-    await waitForHelmet();
-
+  window.snapSaveState = () => {
     const head = document.head;
     const helmetTags = Array.from(
       head.querySelectorAll<HTMLElement>("[data-rh]")
+    );
+
+    // Debug marker: leaves a tiny comment in the snapshot so we can grep
+    // whether snapSaveState ran and how many Helmet tags it saw.
+    head.appendChild(
+      document.createComment(
+        `snap-save-state rh=${helmetTags.length} t=${Date.now()}`
+      )
     );
 
     const slotKey = (el: HTMLElement): string | null => {
@@ -113,8 +102,9 @@ if (typeof window !== "undefined") {
       if (key && helmetSlots.has(key)) el.remove();
     });
 
-    return {};
+    return { __snap: 1 };
   };
 }
+
 
 
