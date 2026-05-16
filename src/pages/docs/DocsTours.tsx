@@ -30,6 +30,7 @@ export default function DocsTours() {
       <DocsLayout
       slug="tours"
       title="Tours, Activities, and Experiences"
+      metaDescription="Access curated tours, activities, and experiences from global suppliers. Search by destination, category, and date."
       subtitle="Access curated tour and activity inventory from international suppliers. Search by destination, category, and date. Book standalone or bundle with flights and hotels for complete travel packages."
       toc={toc}
     >
