@@ -60,6 +60,17 @@ if (fs.existsSync(robotsPath)) {
     if (!txt.includes(`${SITE_URL}/sitemap.xml`))
       throw new Error(`missing Sitemap: ${SITE_URL}/sitemap.xml`);
   });
+  check("robots.txt does not block all crawlers", () => {
+    // Look for `User-agent: *` block followed by `Disallow: /` (with nothing after the slash).
+    const m = txt.match(/User-agent:\s*\*[\s\S]*?(?=\nUser-agent:|\n*$)/i);
+    if (m && /\nDisallow:\s*\/\s*(?:\n|$)/.test(m[0]))
+      throw new Error("User-agent: * has `Disallow: /` (blocks entire site)");
+  });
+  check("robots.txt allows global crawling", () => {
+    const m = txt.match(/User-agent:\s*\*[\s\S]*?(?=\nUser-agent:|\n*$)/i);
+    if (!m || !/\nAllow:\s*\//.test(m[0]))
+      throw new Error("User-agent: * is missing `Allow: /`");
+  });
 }
 
 console.log("\n[verify-seo-files] Build artifacts:");
