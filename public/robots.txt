@@ -4,11 +4,6 @@ Host: intraverse.africa
 
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /login
-Disallow: /verify-email
-Disallow: /forgot-password
-Disallow: /unsubscribe
 
 # AI crawlers — explicitly allowed
 User-agent: GPTBot
