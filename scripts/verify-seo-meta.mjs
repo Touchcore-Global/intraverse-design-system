@@ -172,14 +172,16 @@ for (const file of htmlFiles) {
   if (!META.twitterCard.test(html)) errs.push("missing twitter:card");
 
   if (errs.length) {
-    failures.push({ route, errs });
+    failures.push({ route: normalized, errs });
   } else {
     passed++;
   }
 }
 
 console.log(`\n[verify-seo-meta] Scanned ${htmlFiles.length} pages.`);
-console.log(`  ✓ ${passed} passed`);
+console.log(`  ✓ ${passed} passed full meta checks`);
+console.log(`  ✓ ${noindexChecked} verified as noindex`);
+console.log(`  ↷ ${skipped.length} skipped (denylist / not in allowlist)`);
 console.log(`  ✗ ${failures.length} failed`);
 
 if (failures.length) {
