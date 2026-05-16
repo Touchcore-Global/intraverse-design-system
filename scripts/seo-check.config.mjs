@@ -36,21 +36,39 @@ export function getReactSnapInclude() {
 
 export const seoCheckConfig = {
   // Hard-block routes from validation. They should be noindex anyway.
-  // Matches BEFORE allowlist, so admin/auth pages never run meta checks.
+  // Matches BEFORE allowlist, so these never run meta checks even if
+  // accidentally pre-rendered. Keep aligned with routes in src/App.tsx
+  // that are NOT in reactSnap.include (auth, admin, dynamic, legacy).
   denylist: [
-    "/admin",
-    { pattern: "^/admin/" },
+    // Auth / account flow (intentionally noindex, not pre-rendered)
     "/login",
     "/verify-email",
     "/forgot-password",
     "/unsubscribe",
+
+    // Admin (entire subtree)
+    "/admin",
+    { pattern: "^/admin(/|$)" },
+
+    // Legacy / experimental homepage variants — not in reactSnap.include
+    "/v1",
+    "/v3",
+
+    // Dynamic detail routes — pre-rendering the parent listing is enough
+    { pattern: "^/blog/[^/]+$" },
+    { pattern: "^/news/[^/]+$" },
+    { pattern: "^/careers/[^/]+$" },
+    { pattern: "^/help/[^/]+$" },
+
+    // 404 + lovable internals
     "/not-found",
-    { pattern: "^/lovable" },
+    { pattern: "^/lovable(/|$)" },
   ],
 
-  // If non-empty, ONLY these routes are validated. Defaults to whatever is
-  // pre-rendered via react-snap so the validator can't drift from the
-  // crawl manifest. Set to [] to validate every HTML file found.
+  // If non-empty, ONLY these routes are validated. Sourced directly from
+  // package.json -> reactSnap.include so the validator's coverage tracks
+  // the pre-render manifest 1:1 — add a route there and it's checked here,
+  // remove it and it's skipped here. Set to [] to validate every HTML file.
   allowlist: getReactSnapInclude(),
 
   // Routes that intentionally serve <meta name="robots" content="noindex">.
