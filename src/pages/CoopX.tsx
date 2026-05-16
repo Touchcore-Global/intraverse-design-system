@@ -148,7 +148,8 @@ const CoopX = () => {
       <SEO
         title="CoopX — Corporate Travel Management Platform Nigeria | Intraverse"
         description="Simplify corporate travel in Africa. Manage bookings, control spend, enforce travel policy, and automate expense reporting. Built for Nigerian and African enterprises."
-        canonical="https://intraverse.africa/coopx"
+        canonical="https://intraverse.africa/products/coopx"
+        ogImage="https://intraverse.africa/og/coopx.jpg"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
