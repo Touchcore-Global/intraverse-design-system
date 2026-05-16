@@ -22,7 +22,7 @@ export const ROUTE_SEO = {
   "/": {
     title: "Intraverse — B2B Travel Technology Platform Nigeria",
     description:
-      "Nigeria's B2B travel technology platform. Access GDS, NDC, and 900+ airlines through one API. White-label booking engine, agent tools, and corporate travel management built in Lagos.",
+      "Nigeria's B2B travel platform. Access GDS, NDC, and 900+ airlines via one API. White-label booking, agent tools, and corporate travel built in Lagos.",
   },
 
   // Products
