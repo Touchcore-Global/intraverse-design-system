@@ -20,11 +20,17 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { seoCheckConfig, compileRules, matches } from "./seo-check.config.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "..", "dist");
-const SITE_URL = process.env.SITE_URL || "https://intraverse.africa";
+const SITE_URL = seoCheckConfig.siteUrl;
 const HOST = new URL(SITE_URL).host;
+
+const denylist = compileRules(seoCheckConfig.denylist);
+const allowlist = compileRules(seoCheckConfig.allowlist);
+const noindexRules = compileRules(seoCheckConfig.noindexRoutes);
+const hasAllowlist = seoCheckConfig.allowlist.length > 0;
 
 if (!fs.existsSync(DIST)) {
   console.error("[verify-seo-meta] dist/ not found — run `vite build` first.");
