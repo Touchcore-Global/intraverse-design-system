@@ -165,13 +165,18 @@ for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");
   const errs = [];
 
-  // 3. Noindex routes: REQUIRE the noindex tag and skip positive checks.
+  // 3. Noindex routes: REQUIRE a noindex signal (meta robots, meta
+  //    http-equiv X-Robots-Tag, or host-level X-Robots-Tag header).
   if (matches(normalized, noindexRules)) {
-    const robotsMatch = html.match(META.robots);
-    if (!robotsMatch || !/noindex/i.test(robotsMatch[1])) {
+    const directive = getRobotsDirective(html, normalized);
+    if (!directive || !/noindex/i.test(directive.value)) {
       failures.push({
         route: normalized,
-        errs: [`expected <meta name="robots" content="noindex"> but found: ${robotsMatch?.[1] ?? "(none)"}`],
+        errs: [
+          `expected noindex via <meta robots>, <meta http-equiv="X-Robots-Tag">, or host X-Robots-Tag header; found: ${
+            directive ? `"${directive.value}" (${directive.source})` : "(none)"
+          }`,
+        ],
       });
     } else {
       noindexChecked++;
@@ -237,10 +242,10 @@ for (const file of htmlFiles) {
       errs.push(`hreflang="${lang}" href mismatch: got "${m[1]}", expected "${expectedUrl}"`);
   }
 
-  // Robots: should not be noindex on indexable routes
-  const robotsMatch = html.match(META.robots);
-  if (robotsMatch && /noindex/i.test(robotsMatch[1]))
-    errs.push(`noindex on indexable route: "${robotsMatch[1]}"`);
+  // Robots: should not be noindex on indexable routes (check all 3 sources).
+  const directive = getRobotsDirective(html, normalized);
+  if (directive && /noindex/i.test(directive.value))
+    errs.push(`noindex on indexable route via ${directive.source}: "${directive.value}"`);
 
   // Open Graph
   for (const [key, re] of Object.entries({
