@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 export interface SEOProps {
@@ -17,10 +18,13 @@ export interface SEOProps {
  * Standardized per-page SEO. Renders title, description, canonical, robots,
  * Open Graph + Twitter cards (Nigeria-targeted), and optional JSON-LD.
  *
- * Nigeria-first defaults:
- * - og:locale = en_NG (primary), en_GB + en_US as alternates
- * - twitter:domain = intraverse.africa, twitter:creator = @intraverseHQ
- * - geo.region = NG, geo.placename = Lagos, Nigeria
+ * Implementation note: we use BOTH react-helmet-async (for runtime updates
+ * & nested component composition) AND a direct synchronous document.head
+ * mutation in a layout effect. The direct mutation guarantees tags are in
+ * the DOM before react-snap's Puppeteer snapshot fires, even on routes
+ * where Helmet's async dispatcher hasn't flushed yet (e.g. /about, /blog,
+ * /contact). Each tag is tagged with data-seo="1" so snapSaveState in
+ * src/main.tsx treats them the same as Helmet's data-rh tags.
  */
 export function SEO({
   title,
@@ -58,6 +62,101 @@ export function SEO({
     return `${APEX}${path === "" ? "/" : path}`;
   };
   const finalCanonical = normalizeCanonical(canonical);
+
+  // Synchronous head mutation — runs in both browsers AND inside react-snap's
+  // Puppeteer page. Guarantees per-route tags exist in document.head before
+  // the snapshot is captured, independent of Helmet's async dispatcher.
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const head = document.head;
+
+    // Remove any prior SEO-managed tags from a previous route render.
+    head.querySelectorAll('[data-seo="1"]').forEach((el) => el.remove());
+
+    const upsertMeta = (
+      attr: "name" | "property" | "http-equiv",
+      key: string,
+      content: string,
+    ) => {
+      // Remove any colliding tags (static from index.html or Helmet-rendered)
+      // — our direct injection is authoritative for the snapshot.
+      head
+        .querySelectorAll(`meta[${attr}="${key}"]`)
+        .forEach((el) => el.remove());
+      const m = document.createElement("meta");
+      m.setAttribute(attr, key);
+      m.setAttribute("content", content);
+      m.setAttribute("data-seo", "1");
+      head.appendChild(m);
+    };
+
+    const upsertLink = (rel: string, href: string, hreflang?: string) => {
+      const sel = hreflang
+        ? `link[rel="${rel}"][hreflang="${hreflang}"]`
+        : `link[rel="${rel}"]`;
+      head.querySelectorAll(sel).forEach((el) => el.remove());
+      const l = document.createElement("link");
+      l.setAttribute("rel", rel);
+      l.setAttribute("href", href);
+      if (hreflang) l.setAttribute("hreflang", hreflang);
+      l.setAttribute("data-seo", "1");
+      head.appendChild(l);
+    };
+
+    // Title
+    document.title = fullTitle;
+
+    // Core
+    upsertMeta("name", "description", description);
+    if (noindex) upsertMeta("name", "robots", "noindex, nofollow");
+    if (finalCanonical) upsertLink("canonical", finalCanonical);
+
+    // Geo
+    upsertMeta("name", "geo.region", "NG");
+    upsertMeta("name", "geo.placename", "Lagos, Nigeria");
+    upsertMeta("name", "geo.position", "6.5244;3.3792");
+    upsertMeta("name", "ICBM", "6.5244, 3.3792");
+
+    // hreflang
+    if (finalCanonical) {
+      upsertLink("alternate", finalCanonical, "en-NG");
+      upsertLink("alternate", finalCanonical, "en");
+      upsertLink("alternate", finalCanonical, "x-default");
+    }
+
+    // Open Graph
+    upsertMeta("property", "og:title", finalOgTitle);
+    upsertMeta("property", "og:description", finalOgDescription);
+    upsertMeta("property", "og:type", ogType);
+    upsertMeta("property", "og:image", ogImage);
+    upsertMeta("property", "og:image:alt", ogImageAlt);
+    upsertMeta("property", "og:image:width", "1200");
+    upsertMeta("property", "og:image:height", "630");
+    upsertMeta("property", "og:site_name", "Intraverse");
+    upsertMeta("property", "og:locale", "en_NG");
+    upsertMeta("property", "og:country-name", "Nigeria");
+    upsertMeta("property", "og:region", "Lagos");
+    if (finalCanonical) upsertMeta("property", "og:url", finalCanonical);
+
+    // Twitter
+    upsertMeta("name", "twitter:card", "summary_large_image");
+    upsertMeta("name", "twitter:site", "@intraverseHQ");
+    upsertMeta("name", "twitter:creator", "@intraverseHQ");
+    upsertMeta("name", "twitter:domain", "intraverse.africa");
+    upsertMeta("name", "twitter:title", finalOgTitle);
+    upsertMeta("name", "twitter:description", finalOgDescription);
+    upsertMeta("name", "twitter:image", ogImage);
+    upsertMeta("name", "twitter:image:alt", ogImageAlt);
+
+    // JSON-LD
+    jsonLdArray.forEach((data) => {
+      const s = document.createElement("script");
+      s.setAttribute("type", "application/ld+json");
+      s.setAttribute("data-seo", "1");
+      s.textContent = JSON.stringify(data);
+      head.appendChild(s);
+    });
+  });
 
   return (
     <Helmet>
