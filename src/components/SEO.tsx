@@ -39,6 +39,26 @@ export function SEO({
   const finalOgDescription = ogDescription || description;
   const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
+  // Normalize canonical to https://intraverse.africa (apex, https, no www, no trailing slash except root)
+  const normalizeCanonical = (raw?: string): string | undefined => {
+    if (!raw) return undefined;
+    const APEX = "https://intraverse.africa";
+    let path = raw;
+    try {
+      if (/^https?:\/\//i.test(raw)) {
+        const u = new URL(raw);
+        path = u.pathname + u.search + u.hash;
+      } else if (!raw.startsWith("/")) {
+        path = "/" + raw;
+      }
+    } catch {
+      path = raw.startsWith("/") ? raw : "/" + raw;
+    }
+    if (path.length > 1 && path.endsWith("/")) path = path.replace(/\/+$/, "");
+    return `${APEX}${path === "" ? "/" : path}`;
+  };
+  const finalCanonical = normalizeCanonical(canonical);
+
   return (
     <Helmet>
       <title>{fullTitle}</title>
