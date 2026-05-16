@@ -61,6 +61,8 @@ let noindexChecked = 0;
 const META = {
   description: /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i,
   robots: /<meta\s+name=["']robots["']\s+content=["']([^"']*)["']/i,
+  xRobotsTagMeta:
+    /<meta\s+http-equiv=["']x-robots-tag["']\s+content=["']([^"']*)["']/i,
   ogTitle: /<meta\s+property=["']og:title["']\s+content=["']([^"']*)["']/i,
   ogDescription: /<meta\s+property=["']og:description["']\s+content=["']([^"']*)["']/i,
   ogImage: /<meta\s+property=["']og:image["']\s+content=["']([^"']*)["']/i,
@@ -71,6 +73,78 @@ const META = {
 function countMatches(html, re) {
   const g = new RegExp(re.source, "gi");
   return (html.match(g) || []).length;
+}
+
+/**
+ * Parse host-level X-Robots-Tag declarations so we can treat them the
+ * same as <meta name="robots"> when validating each route.
+ *
+ * Sources:
+ *   - vercel.json `headers` array → entries with key "X-Robots-Tag"
+ *   - public/_headers (Netlify / Cloudflare Pages) → "X-Robots-Tag: …" lines
+ *
+ * Returns an array of { match: (route) => boolean, value: string }.
+ */
+function loadHostXRobotsRules() {
+  const rules = [];
+  const vercel = path.resolve(__dirname, "..", "vercel.json");
+  if (fs.existsSync(vercel)) {
+    try {
+      const cfg = JSON.parse(fs.readFileSync(vercel, "utf8"));
+      for (const entry of cfg.headers ?? []) {
+        const xrt = (entry.headers ?? []).find(
+          (h) => h.key?.toLowerCase() === "x-robots-tag",
+        );
+        if (!xrt) continue;
+        const re = new RegExp("^" + entry.source.replace(/\/$/, "") + "/?$");
+        rules.push({ source: `vercel.json ${entry.source}`, match: (r) => re.test(r), value: xrt.value });
+      }
+    } catch (e) {
+      console.warn(`[verify-seo-meta] vercel.json parse error: ${e.message}`);
+    }
+  }
+  const netlify = path.resolve(__dirname, "..", "public", "_headers");
+  if (fs.existsSync(netlify)) {
+    const txt = fs.readFileSync(netlify, "utf8");
+    let currentSource = null;
+    for (const raw of txt.split("\n")) {
+      const line = raw.replace(/#.*/, "").trimEnd();
+      if (!line.trim()) { currentSource = null; continue; }
+      if (!line.startsWith(" ") && !line.startsWith("\t")) {
+        currentSource = line.trim();
+      } else if (currentSource) {
+        const m = line.trim().match(/^x-robots-tag:\s*(.+)$/i);
+        if (m) {
+          const pattern = currentSource.replace(/\*/g, ".*").replace(/\/$/, "");
+          const re = new RegExp("^" + pattern + "/?$");
+          rules.push({
+            source: `_headers ${currentSource}`,
+            match: (r) => re.test(r),
+            value: m[1],
+          });
+        }
+      }
+    }
+  }
+  return rules;
+}
+
+const hostXRobotsRules = loadHostXRobotsRules();
+
+/**
+ * Returns the directive string (e.g. "noindex, nofollow") for a route if
+ * ANY robots signal is present, or null if the page is indexable.
+ * Checks (in order): <meta name="robots">, <meta http-equiv="X-Robots-Tag">,
+ * then host-level X-Robots-Tag rules from vercel.json / _headers.
+ */
+function getRobotsDirective(html, route) {
+  const m1 = html.match(META.robots);
+  if (m1) return { value: m1[1], source: 'meta name="robots"' };
+  const m2 = html.match(META.xRobotsTagMeta);
+  if (m2) return { value: m2[1], source: 'meta http-equiv="X-Robots-Tag"' };
+  const host = hostXRobotsRules.find((r) => r.match(route));
+  if (host) return { value: host.value, source: host.source };
+  return null;
 }
 
 for (const file of htmlFiles) {
