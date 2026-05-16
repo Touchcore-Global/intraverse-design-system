@@ -52,47 +52,57 @@ declare global {
 
 if (typeof window !== "undefined") {
   window.snapSaveState = () => {
-    const helmet = helmetContext.helmet as HelmetState | undefined;
-    if (!helmet) return {};
-
+    // On the client, react-helmet-async mutates document.head directly and
+    // marks its tags with data-rh="true". We can't read helmetContext here
+    // (only populated during server rendering), so we dedupe by walking
+    // the data-rh tags and removing any static index.html tag that targets
+    // the same head slot. This guarantees exactly one of each per-route
+    // SEO tag in the snapshot.
     const head = document.head;
+    const helmetTags = Array.from(
+      head.querySelectorAll<HTMLElement>("[data-rh]")
+    );
 
-    // 1) Replace <title> with Helmet's version (parse from helmet.title.toString()).
-    const titleHtml = helmet.title.toString();
-    const titleMatch = titleHtml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-    if (titleMatch) {
-      document.title = titleMatch[1].replace(/&amp;/g, "&");
+    const slotKey = (el: HTMLElement): string | null => {
+      const tag = el.tagName.toLowerCase();
+      if (tag === "title") return "title";
+      if (tag === "meta") {
+        const name = el.getAttribute("name");
+        const prop = el.getAttribute("property");
+        const httpEquiv = el.getAttribute("http-equiv");
+        if (name) return `meta:name:${name.toLowerCase()}`;
+        if (prop) return `meta:property:${prop.toLowerCase()}`;
+        if (httpEquiv) return `meta:http-equiv:${httpEquiv.toLowerCase()}`;
+        return null;
+      }
+      if (tag === "link") {
+        const rel = (el.getAttribute("rel") || "").toLowerCase();
+        const hreflang = el.getAttribute("hreflang");
+        // hreflang alternates are keyed by language so each one is its own slot
+        if (rel === "alternate" && hreflang) return `link:alternate:${hreflang.toLowerCase()}`;
+        return `link:${rel}`;
+      }
+      return null;
+    };
+
+    // Collect every slot Helmet owns on this route
+    const helmetSlots = new Set<string>();
+    for (const el of helmetTags) {
+      const key = slotKey(el);
+      if (key) helmetSlots.add(key);
     }
 
-    // 2) Remove conflicting static tags that Helmet owns per-route so we
-    //    end up with exactly one of each in the prerendered HTML.
-    const removeSelectors = [
-      'meta[name="description"]',
-      'meta[name="robots"]',
-      'link[rel="canonical"]',
-      'link[rel="alternate"][hreflang]',
-      'meta[property^="og:"]',
-      'meta[name^="twitter:"]',
-      'script[type="application/ld+json"]',
-    ];
-    removeSelectors.forEach((sel) => {
-      head.querySelectorAll(sel).forEach((el) => el.remove());
+    // Remove non-Helmet (static) tags from index.html that collide
+    const candidates = head.querySelectorAll<HTMLElement>(
+      "title, meta, link[rel='canonical'], link[rel='alternate']"
+    );
+    candidates.forEach((el) => {
+      if (el.hasAttribute("data-rh")) return;
+      const key = slotKey(el);
+      if (key && helmetSlots.has(key)) el.remove();
     });
-
-    // 3) Append Helmet's rendered tags (meta, link, script) into <head>.
-    const fragments = [
-      helmet.meta.toString(),
-      helmet.link.toString(),
-      helmet.script.toString(),
-    ].join("");
-    if (fragments.trim()) {
-      const tmp = document.createElement("template");
-      tmp.innerHTML = fragments;
-      Array.from(tmp.content.childNodes).forEach((node) => {
-        head.appendChild(node);
-      });
-    }
 
     return {};
   };
 }
+
