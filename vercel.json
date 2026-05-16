@@ -5,6 +5,31 @@
       "destination": "/index.html"
     }
   ],
+  "redirects": [
+    { "source": "/flight", "destination": "/products/travx", "statusCode": 301 },
+    { "source": "/flights", "destination": "/products/travx", "statusCode": 301 },
+    { "source": "/tours", "destination": "/products/travx", "statusCode": 301 },
+    { "source": "/accommodations", "destination": "/products/travx", "statusCode": 301 },
+    { "source": "/accommodation", "destination": "/products/travx", "statusCode": 301 },
+    { "source": "/hotels", "destination": "/products/travx", "statusCode": 301 },
+    { "source": "/sidehustle", "destination": "/for/independents", "statusCode": 301 },
+    { "source": "/side-hustle", "destination": "/for/independents", "statusCode": 301 },
+    { "source": "/developer", "destination": "/for/developers", "statusCode": 301 },
+    { "source": "/developers", "destination": "/for/developers", "statusCode": 301 },
+    { "source": "/getstarted", "destination": "/", "statusCode": 301 },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "getstarted.intraverse.africa" }],
+      "destination": "https://intraverse.africa/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.intraverse.africa" }],
+      "destination": "https://intraverse.africa/:path*",
+      "statusCode": 301
+    }
+  ],
   "headers": [
     {
       "source": "/sitemap.xml",
