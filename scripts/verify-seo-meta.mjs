@@ -258,14 +258,10 @@ for (const file of htmlFiles) {
 
   // hreflang alternates — present AND pointing at expectedUrl
   for (const lang of seoCheckConfig.hreflangs) {
-    const re = new RegExp(
-      `<link\\s+rel=["']alternate["']\\s+hre[fF]Lang=["']${lang}["']\\s+href=["']([^"']+)["']`,
-      "i",
-    );
-    const m = html.match(re);
+    const m = getLink(html, "alternate", (tag) => tag.hreflang?.toLowerCase() === lang.toLowerCase())[0];
     if (!m) errs.push(`missing hreflang="${lang}"`);
-    else if (m[1] !== expectedUrl)
-      errs.push(`hreflang="${lang}" href mismatch: got "${m[1]}", expected "${expectedUrl}"`);
+    else if (m.href !== expectedUrl)
+      errs.push(`hreflang="${lang}" href mismatch: got "${m.href}", expected "${expectedUrl}"`);
   }
 
   // Robots: should not be noindex on indexable routes (check all 3 sources).
@@ -280,11 +276,11 @@ for (const file of htmlFiles) {
     "og:image": META.ogImage,
     "og:url": META.ogUrl,
   })) {
-    if (!re.test(html)) errs.push(`missing ${key}`);
+    if (re(html).length === 0) errs.push(`missing ${key}`);
   }
 
   // Twitter card
-  if (!META.twitterCard.test(html)) errs.push("missing twitter:card");
+  if (META.twitterCard(html).length === 0) errs.push("missing twitter:card");
 
   if (errs.length) {
     failures.push({ route: normalized, errs });
