@@ -138,7 +138,7 @@ const comparisonRows = [
   { feature: "Multi-branch reporting", starter: false, agency: true, enterprise: true },
   { feature: "Travx website", starter: false, agency: "Add-on", enterprise: "Add-on" },
   { feature: "Odiopay BNPL", starter: false, agency: true, enterprise: true },
-  { feature: "API access", starter: false, agency: "Read-only", enterprise: "Full" },
+  { feature: "API access", starter: false, agency: false, enterprise: "Full" },
   { feature: "Support level", starter: "Community", agency: "Phone & WhatsApp", enterprise: "Dedicated" },
   { feature: "Account manager", starter: false, agency: true, enterprise: true },
 ];
