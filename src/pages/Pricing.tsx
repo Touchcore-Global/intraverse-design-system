@@ -86,7 +86,6 @@ const tiers = [
       "Role-based access control",
       "Dedicated account manager",
       "Phone & WhatsApp support",
-      "API access (read-only)",
       "Advanced analytics dashboard",
       "Commission tracking dashboard",
       "Odiopay BNPL integration",
