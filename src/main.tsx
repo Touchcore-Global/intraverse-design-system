@@ -51,18 +51,16 @@ declare global {
 }
 
 if (typeof window !== "undefined") {
+  // react-snap calls snapSaveState synchronously inside puppeteer right
+  // before serializing document.documentElement.outerHTML. We rely on
+  // reactSnap.waitFor (package.json) to give react-helmet-async time to
+  // mutate document.head, then dedupe any static index.html tags that
+  // collide with Helmet-owned slots so each route's snapshot carries
+  // exactly one canonical / og:* / twitter:* / hreflang.
   window.snapSaveState = () => {
     const head = document.head;
     const helmetTags = Array.from(
       head.querySelectorAll<HTMLElement>("[data-rh]")
-    );
-
-    // Debug marker: leaves a tiny comment in the snapshot so we can grep
-    // whether snapSaveState ran and how many Helmet tags it saw.
-    head.appendChild(
-      document.createComment(
-        `snap-save-state rh=${helmetTags.length} t=${Date.now()}`
-      )
     );
 
     const slotKey = (el: HTMLElement): string | null => {
@@ -102,9 +100,10 @@ if (typeof window !== "undefined") {
       if (key && helmetSlots.has(key)) el.remove();
     });
 
-    return { __snap: 1 };
+    return {};
   };
 }
+
 
 
 
