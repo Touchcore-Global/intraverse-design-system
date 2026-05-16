@@ -195,6 +195,7 @@ const IndependentsInterest = () => {
         title="Express Interest — Independents Programme | Intraverse"
         description="Join the Intraverse Independents Programme. Register your interest to get access to travel booking tools, supplier connections, and training for new travel agents."
         canonical="https://intraverse.africa/for/independents/interest"
+        noindex={true}
       />
       <Navbar />
 
