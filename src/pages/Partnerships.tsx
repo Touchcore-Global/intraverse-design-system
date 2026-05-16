@@ -315,7 +315,7 @@ const Partnerships = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
         title="Partner With Intraverse — Technology & Distribution Partnerships"
-        description="Partner with Intraverse to distribute travel inventory, integrate technology, or co-build solutions for the African travel market. Airlines, hotels, and tech partners welcome."
+        description="Partner with Intraverse to distribute travel inventory, integrate technology, or co-build solutions for the African travel market."
         canonical="https://intraverse.africa/partnerships"
       />
       <Navbar />
