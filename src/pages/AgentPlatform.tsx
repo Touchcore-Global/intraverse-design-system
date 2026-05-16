@@ -120,6 +120,7 @@ const AgentPlatform = () => {
         title="Agent Platform — Travel Booking System Nigeria | Intraverse"
         description="All-in-one booking system for Nigerian travel agents. Search and book flights, hotels, and tours from Amadeus, Sabre, Galileo, and NDC in one Lagos-built dashboard."
         canonical="https://intraverse.africa/products/agent-platform"
+        ogImage="https://intraverse.africa/og/agent-platform.jpg"
       />
       <Navbar />
       <div className="h-16" />

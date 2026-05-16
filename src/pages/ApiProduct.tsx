@@ -184,6 +184,7 @@ export default function ApiProduct() {
         title="Travel API Nigeria — Flights, Hotels & Payments | Intraverse"
         description="Nigeria's travel API for developers and fintechs. Flights, hotels, tours, NDC, and NGN payments via one REST API. Sandbox, docs, and Lagos-based developer support."
         canonical="https://intraverse.africa/products/api"
+        ogImage="https://intraverse.africa/og/api.jpg"
       />
       <Navbar />
       <main className="pt-16">
