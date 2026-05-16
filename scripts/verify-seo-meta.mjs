@@ -58,22 +58,56 @@ const skipped = [];
 let passed = 0;
 let noindexChecked = 0;
 
-const META = {
-  description: /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i,
-  robots: /<meta\s+name=["']robots["']\s+content=["']([^"']*)["']/i,
-  xRobotsTagMeta:
-    /<meta\s+http-equiv=["']x-robots-tag["']\s+content=["']([^"']*)["']/i,
-  ogTitle: /<meta\s+property=["']og:title["']\s+content=["']([^"']*)["']/i,
-  ogDescription: /<meta\s+property=["']og:description["']\s+content=["']([^"']*)["']/i,
-  ogImage: /<meta\s+property=["']og:image["']\s+content=["']([^"']*)["']/i,
-  ogUrl: /<meta\s+property=["']og:url["']\s+content=["']([^"']*)["']/i,
-  twitterCard: /<meta\s+name=["']twitter:card["']\s+content=["']([^"']*)["']/i,
-};
+const attrName = "[A-Za-z_:][-A-Za-z0-9_:.]*";
+const attrRe = new RegExp(`(${attrName})(?:\\s*=\\s*("[^"]*"|'[^']*'|[^\\s"'=<>` + "`" + `]+))?`, "g");
+
+function decodeHtml(value = "") {
+  return value
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
+function getTags(html, tagName) {
+  return [...html.matchAll(new RegExp(`<${tagName}\\s+([^>]*)>`, "gi"))].map(([, raw]) => {
+    const attrs = {};
+    for (const match of raw.matchAll(attrRe)) {
+      const key = match[1].toLowerCase();
+      let value = match[2] ?? "";
+      if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+        value = value.slice(1, -1);
+      }
+      attrs[key] = decodeHtml(value);
+    }
+    return attrs;
+  });
+}
+
+function getMeta(html, attr, value) {
+  return getTags(html, "meta").filter((tag) => tag[attr]?.toLowerCase() === value.toLowerCase());
+}
+
+function getLink(html, rel, extra = () => true) {
+  return getTags(html, "link").filter((tag) => tag.rel?.toLowerCase() === rel.toLowerCase() && extra(tag));
+}
 
 function countMatches(html, re) {
   const g = new RegExp(re.source, "gi");
   return (html.match(g) || []).length;
 }
+
+const META = {
+  description: (html) => getMeta(html, "name", "description"),
+  robots: (html) => getMeta(html, "name", "robots"),
+  xRobotsTagMeta: (html) => getMeta(html, "http-equiv", "x-robots-tag"),
+  ogTitle: (html) => getMeta(html, "property", "og:title"),
+  ogDescription: (html) => getMeta(html, "property", "og:description"),
+  ogImage: (html) => getMeta(html, "property", "og:image"),
+  ogUrl: (html) => getMeta(html, "property", "og:url"),
+  twitterCard: (html) => getMeta(html, "name", "twitter:card"),
+};
 
 /**
  * Parse host-level X-Robots-Tag declarations so we can treat them the
@@ -138,10 +172,10 @@ const hostXRobotsRules = loadHostXRobotsRules();
  * then host-level X-Robots-Tag rules from vercel.json / _headers.
  */
 function getRobotsDirective(html, route) {
-  const m1 = html.match(META.robots);
-  if (m1) return { value: m1[1], source: 'meta name="robots"' };
-  const m2 = html.match(META.xRobotsTagMeta);
-  if (m2) return { value: m2[1], source: 'meta http-equiv="X-Robots-Tag"' };
+  const robots = META.robots(html)[0];
+  if (robots) return { value: robots.content, source: 'meta name="robots"' };
+  const xRobots = META.xRobotsTagMeta(html)[0];
+  if (xRobots) return { value: xRobots.content, source: 'meta http-equiv="X-Robots-Tag"' };
   const host = hostXRobotsRules.find((r) => r.match(route));
   if (host) return { value: host.value, source: host.source };
   return null;
@@ -196,16 +230,15 @@ for (const file of htmlFiles) {
   }
 
   // Description
-  const descMatch = html.match(META.description);
-  const descCount = countMatches(html, META.description);
-  if (!descMatch) errs.push("missing meta description");
+  const descriptions = META.description(html);
+  if (descriptions.length === 0) errs.push("missing meta description");
   else {
-    const d = descMatch[1];
+    const d = descriptions[0].content ?? "";
     if (d.length < seoCheckConfig.descriptionMin)
       errs.push(`description too short (${d.length} chars, min ${seoCheckConfig.descriptionMin})`);
     if (d.length > seoCheckConfig.descriptionMax)
       errs.push(`description too long (${d.length} chars, max ${seoCheckConfig.descriptionMax})`);
-    if (descCount > 1) errs.push(`${descCount} description tags (expected 1)`);
+    if (descriptions.length > 1) errs.push(`${descriptions.length} description tags (expected 1)`);
   }
 
   // Expected absolute URL for this route: siteUrl + path (no trailing slash
@@ -213,33 +246,27 @@ for (const file of htmlFiles) {
   const expectedUrl = normalized === "/" ? SITE_URL : `${SITE_URL}${normalized}`;
 
   // Canonical — must exactly equal expectedUrl
-  const canonicalMatches = [
-    ...html.matchAll(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/gi),
-  ];
+  const canonicalMatches = getLink(html, "canonical");
   if (canonicalMatches.length === 0) errs.push("missing canonical");
   else if (canonicalMatches.length > 1)
     errs.push(`${canonicalMatches.length} canonical tags (expected 1)`);
   else {
-    const c = canonicalMatches[0][1];
+    const c = canonicalMatches[0].href;
     if (c !== expectedUrl)
       errs.push(`canonical mismatch: got "${c}", expected "${expectedUrl}"`);
   }
 
   // og:url — must exactly equal expectedUrl
-  const ogUrlMatch = html.match(META.ogUrl);
-  if (ogUrlMatch && ogUrlMatch[1] !== expectedUrl)
-    errs.push(`og:url mismatch: got "${ogUrlMatch[1]}", expected "${expectedUrl}"`);
+  const ogUrl = META.ogUrl(html)[0];
+  if (ogUrl && ogUrl.content !== expectedUrl)
+    errs.push(`og:url mismatch: got "${ogUrl.content}", expected "${expectedUrl}"`);
 
   // hreflang alternates — present AND pointing at expectedUrl
   for (const lang of seoCheckConfig.hreflangs) {
-    const re = new RegExp(
-      `<link\\s+rel=["']alternate["']\\s+hre[fF]Lang=["']${lang}["']\\s+href=["']([^"']+)["']`,
-      "i",
-    );
-    const m = html.match(re);
+    const m = getLink(html, "alternate", (tag) => tag.hreflang?.toLowerCase() === lang.toLowerCase())[0];
     if (!m) errs.push(`missing hreflang="${lang}"`);
-    else if (m[1] !== expectedUrl)
-      errs.push(`hreflang="${lang}" href mismatch: got "${m[1]}", expected "${expectedUrl}"`);
+    else if (m.href !== expectedUrl)
+      errs.push(`hreflang="${lang}" href mismatch: got "${m.href}", expected "${expectedUrl}"`);
   }
 
   // Robots: should not be noindex on indexable routes (check all 3 sources).
@@ -254,11 +281,11 @@ for (const file of htmlFiles) {
     "og:image": META.ogImage,
     "og:url": META.ogUrl,
   })) {
-    if (!re.test(html)) errs.push(`missing ${key}`);
+    if (re(html).length === 0) errs.push(`missing ${key}`);
   }
 
   // Twitter card
-  if (!META.twitterCard.test(html)) errs.push("missing twitter:card");
+  if (META.twitterCard(html).length === 0) errs.push("missing twitter:card");
 
   if (errs.length) {
     failures.push({ route: normalized, errs });
