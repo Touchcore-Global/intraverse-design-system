@@ -76,7 +76,7 @@
     "inlineCss": false,
     "removeBlobs": true,
     "fixWebpackChunksIssue": "CRA2",
-    "waitFor": 1500
+    "waitFor": 5000
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
