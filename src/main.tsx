@@ -18,7 +18,7 @@ const rootElement = document.getElementById("root")!;
 // Shared Helmet context so we can read the rendered head state during
 // react-snap prerendering and inject it into document.head before the
 // snapshot is captured.
-const helmetContext: { helmet?: HelmetState } = {};
+const helmetContext: Record<string, unknown> = {};
 
 const tree = (
   <HelmetProvider context={helmetContext}>
