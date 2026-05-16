@@ -129,7 +129,11 @@ for (const file of htmlFiles) {
     if (descCount > 1) errs.push(`${descCount} description tags (expected 1)`);
   }
 
-  // Canonical
+  // Expected absolute URL for this route: siteUrl + path (no trailing slash
+  // except on root). Canonical, og:url, and every hreflang href must match.
+  const expectedUrl = normalized === "/" ? SITE_URL : `${SITE_URL}${normalized}`;
+
+  // Canonical — must exactly equal expectedUrl
   const canonicalMatches = [
     ...html.matchAll(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/gi),
   ];
@@ -138,19 +142,25 @@ for (const file of htmlFiles) {
     errs.push(`${canonicalMatches.length} canonical tags (expected 1)`);
   else {
     const c = canonicalMatches[0][1];
-    if (!c.startsWith(SITE_URL))
-      errs.push(`canonical host mismatch: ${c} (expected ${SITE_URL})`);
-    if (c.endsWith("/") && c !== SITE_URL + "/" && c !== SITE_URL)
-      errs.push(`canonical has trailing slash: ${c}`);
+    if (c !== expectedUrl)
+      errs.push(`canonical mismatch: got "${c}", expected "${expectedUrl}"`);
   }
 
-  // hreflang alternates
+  // og:url — must exactly equal expectedUrl
+  const ogUrlMatch = html.match(META.ogUrl);
+  if (ogUrlMatch && ogUrlMatch[1] !== expectedUrl)
+    errs.push(`og:url mismatch: got "${ogUrlMatch[1]}", expected "${expectedUrl}"`);
+
+  // hreflang alternates — present AND pointing at expectedUrl
   for (const lang of seoCheckConfig.hreflangs) {
     const re = new RegExp(
-      `<link\\s+rel=["']alternate["']\\s+hre[fF]Lang=["']${lang}["']`,
+      `<link\\s+rel=["']alternate["']\\s+hre[fF]Lang=["']${lang}["']\\s+href=["']([^"']+)["']`,
       "i",
     );
-    if (!re.test(html)) errs.push(`missing hreflang="${lang}"`);
+    const m = html.match(re);
+    if (!m) errs.push(`missing hreflang="${lang}"`);
+    else if (m[1] !== expectedUrl)
+      errs.push(`hreflang="${lang}" href mismatch: got "${m[1]}", expected "${expectedUrl}"`);
   }
 
   // Robots: should not be noindex on indexable routes
