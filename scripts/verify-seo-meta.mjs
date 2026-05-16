@@ -93,6 +93,11 @@ function getLink(html, rel, extra = () => true) {
   return getTags(html, "link").filter((tag) => tag.rel?.toLowerCase() === rel.toLowerCase() && extra(tag));
 }
 
+function countMatches(html, re) {
+  const g = new RegExp(re.source, "gi");
+  return (html.match(g) || []).length;
+}
+
 const META = {
   description: (html) => getMeta(html, "name", "description"),
   robots: (html) => getMeta(html, "name", "robots"),
