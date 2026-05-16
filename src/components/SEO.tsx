@@ -64,7 +64,7 @@ export function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
-      {canonical && <link rel="canonical" href={canonical} />}
+      {finalCanonical && <link rel="canonical" href={finalCanonical} />}
 
       {/* Geo targeting: Nigeria */}
       <meta name="geo.region" content="NG" />
@@ -73,9 +73,9 @@ export function SEO({
       <meta name="ICBM" content="6.5244, 3.3792" />
 
       {/* hreflang alternates — primary audience Nigeria */}
-      {canonical && <link rel="alternate" hrefLang="en-NG" href={canonical} />}
-      {canonical && <link rel="alternate" hrefLang="en" href={canonical} />}
-      {canonical && <link rel="alternate" hrefLang="x-default" href={canonical} />}
+      {finalCanonical && <link rel="alternate" hrefLang="en-NG" href={finalCanonical} />}
+      {finalCanonical && <link rel="alternate" hrefLang="en" href={finalCanonical} />}
+      {finalCanonical && <link rel="alternate" hrefLang="x-default" href={finalCanonical} />}
 
       {/* Open Graph — Nigeria-first locale */}
       <meta property="og:title" content={finalOgTitle} />
@@ -91,7 +91,7 @@ export function SEO({
       <meta property="og:locale:alternate" content="en_US" />
       <meta property="og:country-name" content="Nigeria" />
       <meta property="og:region" content="Lagos" />
-      {canonical && <meta property="og:url" content={canonical} />}
+      {finalCanonical && <meta property="og:url" content={finalCanonical} />}
 
       {/* Twitter card — NG-tuned */}
       <meta name="twitter:card" content="summary_large_image" />
