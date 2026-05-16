@@ -59,6 +59,7 @@ const waitlistSchema = z.object({
 });
 
 const SupplierEngine = () => {
+  const { pathname } = useLocation();
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -118,7 +119,7 @@ const SupplierEngine = () => {
       <SEO
         title="Supplier Engine — GDS, NDC & Hotel API Nigeria | Intraverse"
         description="One integration for Nigerian travel agencies: Amadeus, Sabre, Galileo, NDC, and HotelBeds. Aggregate 900+ airlines and 1M+ hotels through Intraverse's Supplier Engine."
-        canonical="https://intraverse.africa/supplier-engine"
+        canonical={pathname}
       />
       <Navbar />
 
