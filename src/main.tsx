@@ -46,7 +46,7 @@ if (rootElement.hasChildNodes()) {
  */
 declare global {
   interface Window {
-    snapSaveState?: () => Record<string, unknown>;
+    snapSaveState?: () => Record<string, unknown> | Promise<Record<string, unknown>>;
   }
 }
 
