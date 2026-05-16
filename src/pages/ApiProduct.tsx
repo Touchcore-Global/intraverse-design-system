@@ -502,13 +502,29 @@ export default function ApiProduct() {
 
 /* ──────── Simple syntax highlighting ──────── */
 function formatCode(code: string): string {
-  return code
-    // Comments
-    .replace(/(\/\/.*)/g, '<span style="color:#6A9955">$1</span>')
-    // Strings (single and double quotes)
-    .replace(/('(?:[^'\\]|\\.)*')/g, '<span style="color:#CE9178">$1</span>')
-    // Keys before colons
-    .replace(/(\b\w+)(?=\s*:)/g, '<span style="color:#9CDCFE">$1</span>')
-    // Keywords
-    .replace(/\b(const|await|fetch|method|headers|body)\b/g, '<span style="color:#569CD6">$1</span>');
+  const escape = (s: string) =>
+    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const wrap = (color: string, text: string) =>
+    `<span style="color:${color}">${escape(text)}</span>`;
+
+  // Single-pass tokenizer so we never re-scan already-emitted markup.
+  const KEYWORDS = new Set(["const", "await", "fetch", "method", "headers", "body"]);
+  const re =
+    /(\/\/[^\n]*)|('(?:[^'\\]|\\.)*')|("(?:[^"\\]|\\.)*")|(\b\w+\b)(?=\s*:)|(\b\w+\b)/g;
+
+  let out = "";
+  let last = 0;
+  for (let m: RegExpExecArray | null; (m = re.exec(code)); ) {
+    out += escape(code.slice(last, m.index));
+    const [, comment, sQ, dQ, key, word] = m;
+    if (comment) out += wrap("#6A9955", comment);
+    else if (sQ) out += wrap("#CE9178", sQ);
+    else if (dQ) out += wrap("#CE9178", dQ);
+    else if (key) out += wrap("#9CDCFE", key);
+    else if (word && KEYWORDS.has(word)) out += wrap("#569CD6", word);
+    else out += escape(m[0]);
+    last = m.index + m[0].length;
+  }
+  out += escape(code.slice(last));
+  return out;
 }
