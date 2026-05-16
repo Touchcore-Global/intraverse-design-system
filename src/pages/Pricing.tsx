@@ -115,6 +115,7 @@ const tiers = [
       { icon: Handshake, label: "Custom Integrations" },
     ],
     extras: [
+      "Full API access (read & write)",
       "Custom contract terms & SLAs",
       "Dedicated engineering support",
       "99.9 % uptime guarantee",
