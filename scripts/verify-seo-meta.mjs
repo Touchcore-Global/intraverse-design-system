@@ -58,22 +58,51 @@ const skipped = [];
 let passed = 0;
 let noindexChecked = 0;
 
-const META = {
-  description: /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i,
-  robots: /<meta\s+name=["']robots["']\s+content=["']([^"']*)["']/i,
-  xRobotsTagMeta:
-    /<meta\s+http-equiv=["']x-robots-tag["']\s+content=["']([^"']*)["']/i,
-  ogTitle: /<meta\s+property=["']og:title["']\s+content=["']([^"']*)["']/i,
-  ogDescription: /<meta\s+property=["']og:description["']\s+content=["']([^"']*)["']/i,
-  ogImage: /<meta\s+property=["']og:image["']\s+content=["']([^"']*)["']/i,
-  ogUrl: /<meta\s+property=["']og:url["']\s+content=["']([^"']*)["']/i,
-  twitterCard: /<meta\s+name=["']twitter:card["']\s+content=["']([^"']*)["']/i,
-};
+const attrName = "[A-Za-z_:][-A-Za-z0-9_:.]*";
+const attrRe = new RegExp(`(${attrName})(?:\\s*=\\s*("[^"]*"|'[^']*'|[^\\s"'=<>` + "`" + `]+))?`, "g");
 
-function countMatches(html, re) {
-  const g = new RegExp(re.source, "gi");
-  return (html.match(g) || []).length;
+function decodeHtml(value = "") {
+  return value
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
 }
+
+function getTags(html, tagName) {
+  return [...html.matchAll(new RegExp(`<${tagName}\\s+([^>]*)>`, "gi"))].map(([, raw]) => {
+    const attrs = {};
+    for (const match of raw.matchAll(attrRe)) {
+      const key = match[1].toLowerCase();
+      let value = match[2] ?? "";
+      if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+        value = value.slice(1, -1);
+      }
+      attrs[key] = decodeHtml(value);
+    }
+    return attrs;
+  });
+}
+
+function getMeta(html, attr, value) {
+  return getTags(html, "meta").filter((tag) => tag[attr]?.toLowerCase() === value.toLowerCase());
+}
+
+function getLink(html, rel, extra = () => true) {
+  return getTags(html, "link").filter((tag) => tag.rel?.toLowerCase() === rel.toLowerCase() && extra(tag));
+}
+
+const META = {
+  description: (html) => getMeta(html, "name", "description"),
+  robots: (html) => getMeta(html, "name", "robots"),
+  xRobotsTagMeta: (html) => getMeta(html, "http-equiv", "x-robots-tag"),
+  ogTitle: (html) => getMeta(html, "property", "og:title"),
+  ogDescription: (html) => getMeta(html, "property", "og:description"),
+  ogImage: (html) => getMeta(html, "property", "og:image"),
+  ogUrl: (html) => getMeta(html, "property", "og:url"),
+  twitterCard: (html) => getMeta(html, "name", "twitter:card"),
+};
 
 /**
  * Parse host-level X-Robots-Tag declarations so we can treat them the
