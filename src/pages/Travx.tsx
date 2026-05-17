@@ -24,7 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
 import { useLocation } from "react-router-dom";
 import iataLogo from "@/assets/iata-logo.png";
@@ -258,8 +258,11 @@ const Travx = () => {
               variant="hero"
               size="xl"
               className="cta-responsive min-h-[48px]"
+              asChild
             >
-              See Travx in Action
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
+                See Travx in Action
+              </a>
             </Button>
             <Button
               variant="whatsapp"
