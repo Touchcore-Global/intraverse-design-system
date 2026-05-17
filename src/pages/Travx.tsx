@@ -537,8 +537,7 @@ const Travx = () => {
             Your Customers Are Searching Online. Are You There?
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Launch your branded, booking-enabled website for $50/month.
-            No developers. No delays. Just revenue.
+            Launch your branded, booking-enabled website for ₦75,000/month. GDS access included. No developers. No delays. Just revenue.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
