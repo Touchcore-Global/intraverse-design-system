@@ -33,7 +33,7 @@ const features = [
     icon: Palette,
     title: "Your Brand, Your Domain",
     description:
-      "Fully white-labelled with your agency's logo, colours, and custom domain. Your customers see your brand - not ours. It's your website, powered by Intraverse behind the scenes.",
+      "Fully white-labelled with your agency's logo, colours, and custom domain. Your customers see your brand — not ours. When they visit book.youragency.com, it looks and feels like your own platform.",
     bullets: [
       "Custom domain (e.g. book.youragency.com)",
       "Your logo, brand colours, and fonts",
@@ -43,21 +43,45 @@ const features = [
   },
   {
     icon: Plane,
-    title: "Integrated Booking Engine",
+    title: "GDS + NDC Booking Engine",
     description:
-      "Connected directly to Intraverse's aggregated inventory. Your customers search real-time flights, hotels, and tours - and book instantly. No copy-paste. No manual processing.",
+      "Connected to Amadeus, Sabre, Galileo, NDC, and LCC inventory. Your customers search real-time flights across 900+ airlines, compare fares, and book instantly. No manual fare searches. No copy-pasting PNRs.",
     bullets: [
-      "Real-time flight search from GDS + NDC + consolidators",
-      "Hotel and tour inventory included",
-      "Instant booking confirmation",
-      "Automated ticket issuance",
+      "Amadeus, Sabre, Galileo GDS content",
+      "NDC and low-cost carrier fares",
+      "1M+ hotel properties via HotelBeds",
+      "Instant booking confirmation and e-ticket issuance",
+    ],
+  },
+  {
+    icon: CreditCard,
+    title: "Nigerian Payment Methods",
+    description:
+      "Accept payments directly on your website in Naira. Customers pay with cards, bank transfers, or USSD — no more chasing payments over WhatsApp or waiting for bank alerts to confirm.",
+    bullets: [
+      "Card payments (Visa, Mastercard, Verve)",
+      "Bank transfer and USSD support",
+      "Naira pricing for your customers",
+      "Automatic payment reconciliation",
+    ],
+  },
+  {
+    icon: TrendingUp,
+    title: "Markup and Commission Control",
+    description:
+      "Set your own markup on every fare. You decide how much profit you make on each booking — not us. See your earnings in real time and track which routes and products generate the most revenue.",
+    bullets: [
+      "Set custom markup per booking type",
+      "Real-time earnings dashboard",
+      "Revenue analytics by route and product",
+      "Full control over your pricing to customers",
     ],
   },
   {
     icon: Smartphone,
-    title: "Mobile-Responsive",
+    title: "Built for Nigerian Mobile",
     description:
-      "Built mobile-first for how customers actually browse. Over 80% of your visitors will come from phones - Travx looks and works beautifully on every screen size.",
+      "Over 80% of your customers will visit from their phones on 3G or 4G. TravX is mobile-first — fast loading, touch-optimised, and designed for how Nigerians actually browse and book.",
     bullets: [
       "Mobile-first responsive design",
       "Fast load times on 3G/4G networks",
@@ -66,39 +90,15 @@ const features = [
     ],
   },
   {
-    icon: CreditCard,
-    title: "Online Payments",
-    description:
-      "Accept payments directly on your website. Customers pay with cards, bank transfers, or USSD - no more chasing payments over WhatsApp or waiting for bank alerts.",
-    bullets: [
-      "Card payments (Visa, Mastercard)",
-      "Bank transfer and USSD support",
-      "Secure payment processing",
-      "Automatic payment reconciliation",
-    ],
-  },
-  {
     icon: Clock,
     title: "Live in Days, Not Months",
     description:
-      "No developers needed. No months of back-and-forth. Choose a template, add your branding, and go live. Most agencies launch their Travx site within a week.",
+      "No developers needed. No months of back-and-forth. Choose a template, add your branding, and go live. Most agencies launch their TravX site within a week.",
     bullets: [
-      "Template-based setup - no coding required",
+      "Template-based setup — no coding required",
       "Guided onboarding process",
       "Content upload assistance available",
       "Live within 5-7 business days",
-    ],
-  },
-  {
-    icon: TrendingUp,
-    title: "SEO-Ready",
-    description:
-      "Clean code, fast page loads, and search-engine-optimised structure. When customers Google 'flights to Dubai from Lagos,' your agency can actually show up.",
-    bullets: [
-      "SEO-optimised page structure",
-      "Fast loading speeds (Core Web Vitals)",
-      "Meta tags and schema markup included",
-      "Google Analytics integration ready",
     ],
   },
 ];
@@ -106,38 +106,71 @@ const features = [
 const includedItems = [
   "Fully branded, booking-enabled website",
   "Custom domain setup and hosting",
-  "Real-time flight, hotel, and tour search",
-  "Online payment integration",
+  "GDS access: Amadeus, Sabre, Galileo",
+  "NDC and LCC fare content",
+  "1M+ hotel properties",
+  "Online payment integration (Naira)",
   "Mobile-responsive design",
-  "SEO optimisation and analytics",
+  "Markup and commission control",
   "Ongoing platform updates and support",
+];
+
+const trustStats = [
+  { value: "900+", label: "Airlines" },
+  { value: "1M+", label: "Hotel Properties" },
+  { value: "200+", label: "Active Agents" },
 ];
 
 const faqs = [
   {
-    question: "Do I need any technical skills to use Travx?",
+    question: "Do I need IATA accreditation to use TravX?",
     answer:
-      "Not at all. Travx is designed for travel agents, not developers. You choose a template, upload your logo and brand details, and we handle the rest. If you can use WhatsApp, you can manage your Travx website.",
+      "No. TravX operates under Intraverse's IATA accreditation. You get full GDS access — Amadeus, Sabre, Galileo — and the ability to issue tickets without needing your own IATA licence. This saves you the ₦30M+ share capital requirement and years of application process.",
+  },
+  {
+    question: "What airlines and hotels can my customers access?",
+    answer:
+      "Over 900 airlines including major carriers (Emirates, British Airways, Ethiopian Airlines, Air Peace, etc.) and low-cost carriers through GDS, NDC, and consolidator content. For hotels, you get access to 1M+ properties worldwide through HotelBeds and other aggregators. Tours and experiences are also included.",
+  },
+  {
+    question: "Can I add my own markup to bookings?",
+    answer:
+      "Yes — full markup control is built in. You set the profit margin on every fare. When a customer books on your TravX website, they see your price (base fare + your markup). You keep the markup as profit. There's no cap on how much you can add.",
   },
   {
     question: "Can my customers actually book and pay on the website?",
     answer:
-      "Yes - that's the whole point. Unlike most agency websites that are just digital brochures, Travx connects to Intraverse's live inventory. Your customers search real flights, hotels, and tours, book instantly, and pay online. You get notified and the booking is processed automatically.",
+      "Yes — that's the whole point. Unlike most agency websites that are just digital brochures, TravX connects to live inventory. Your customers search real flights, hotels, and tours, book instantly, and pay online in Naira using cards, bank transfer, or USSD. You get notified and the booking is processed automatically.",
   },
   {
-    question: "What's included in the plan?",
+    question: "How is TravX different from Wakanow or Travelstart?",
     answer:
-      "Everything. Hosting, custom domain, booking engine, payment integration, mobile-responsive design, SEO optimisation, platform updates, and support. There are no hidden fees or setup costs.",
-  },
-  {
-    question: "Can I use my own domain name?",
-    answer:
-      "Absolutely. You can connect your existing domain (e.g. www.youragency.com) or set up a subdomain (e.g. book.youragency.com). We'll help you configure the DNS settings.",
+      "Wakanow and Travelstart are B2C OTAs — they sell travel directly to consumers under their own brand. TravX is a B2B white-label platform — it gives YOU a branded website that sells travel under YOUR brand. Your customers see your agency name, your domain, your logo. You control the pricing, the relationship, and the customer data.",
   },
   {
     question: "How long does it take to go live?",
     answer:
-      "Most agencies launch within 5-7 business days. Once you sign up, you'll go through a guided setup process - choose your template, upload your branding, and review your site. We handle the technical deployment.",
+      "Most agencies launch within 5-7 business days. Once you sign up, you go through a guided setup process — choose your template, upload your branding, and review your site. We handle the technical deployment and domain configuration.",
+  },
+  {
+    question: "Do I need any technical skills?",
+    answer:
+      "Not at all. TravX is designed for travel agents, not developers. You choose a template, upload your logo and brand details, and we handle the rest. If you can use WhatsApp, you can manage your TravX website.",
+  },
+  {
+    question: "Can I use my own domain name?",
+    answer:
+      "Absolutely. You can connect your existing domain (e.g. www.youragency.com) or set up a subdomain (e.g. book.youragency.com). We help you configure the DNS settings during onboarding.",
+  },
+  {
+    question: "What does ₦75,000/month include?",
+    answer:
+      "Everything: hosting, custom domain, GDS booking engine (Amadeus, Sabre, Galileo), NDC and LCC content, hotel and tour inventory, payment integration, mobile-responsive design, markup control, analytics, platform updates, and support. No hidden fees. No setup costs.",
+  },
+  {
+    question: "Is there a contract or can I cancel anytime?",
+    answer:
+      "Month-to-month billing. No long-term contracts. You can cancel anytime. We believe TravX should earn your subscription every month — if it's not generating more revenue than it costs, you shouldn't be paying for it.",
   },
 ];
 
