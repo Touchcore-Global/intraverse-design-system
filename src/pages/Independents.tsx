@@ -17,6 +17,7 @@ import {
   Users,
   Megaphone,
   Rocket,
+  Check,
 } from "lucide-react";
 import {
   Accordion,
@@ -33,7 +34,7 @@ const features = [
     icon: Plane,
     title: "Sell Flights From Every Source",
     description:
-      "Access the same flight inventory that professional agencies use - GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC direct connections, and consolidator fares. You're not reselling someone else's markup. You're selling real inventory at real prices.",
+      "Access the same flight inventory that professional IATA-accredited agencies use — GDS systems (Amadeus, Sabre, Galileo), NDC direct connections, and consolidator fares. You're not reselling someone else's markup. You're searching and booking real inventory at competitive prices, just like a licensed agency would.",
     bullets: [
       "GDS, NDC, and consolidator inventory",
       "Domestic and international flights",
@@ -69,7 +70,7 @@ const features = [
     icon: Wallet,
     title: "Earn on Every Booking",
     description:
-      "You earn a commission on every booking you make. No monthly fees eating into your income. Your earnings scale with your effort and volume - the more you sell, the more you keep.",
+      "You earn a commission on every booking you make — flights, hotels, and tour packages. A single Lagos-to-London return booking can earn you ₦15,000-₦40,000 in commission depending on the fare and class. Your earnings scale with your effort and volume — the more you sell, the more you keep. No caps on what you can earn.",
     bullets: [
       "Commission on flights, hotels, and tours",
       "Transparent commission structure",
@@ -98,7 +99,7 @@ const features = [
       "Full platform access on mobile",
       "No office or physical location needed",
       "Manage your business on your schedule",
-      "Built for how young Africans work",
+      "Built for how Nigerians actually work — mobile-first",
     ],
   },
 ];
@@ -114,21 +115,21 @@ const trustPoints = [
 const steps = [
   {
     step: "01",
-    title: "Join",
+    title: "Apply & Get Verified",
     description:
-      "Sign up for the Independents Programme. Complete your profile and get verified. No IATA accreditation needed - you operate under ours.",
+      "Submit your application through the interest form. Complete your profile verification. Once approved, you get full platform access — booking engine, inventory search, and training materials. No IATA accreditation needed.",
   },
   {
     step: "02",
-    title: "Learn",
+    title: "Learn the Platform",
     description:
-      "Access training materials on how to use the platform, search inventory, create bookings, and find customers. Learn at your own pace.",
+      "Complete the self-paced training: how to search flights across GDS and NDC, how to compare fares, how to create bookings, and how to find your first customers. Most Independents complete training within a week.",
   },
   {
     step: "03",
-    title: "Start Selling",
+    title: "Start Selling Travel",
     description:
-      "Search flights, hotels, and tours. Make bookings for your customers. Earn commissions on every completed booking. Grow at your own speed.",
+      "Search flights, hotels, and tours. Create bookings for your customers. Send payment links via WhatsApp using Travel Links. Earn commissions on every completed booking. Grow at your own pace.",
   },
 ];
 
@@ -136,12 +137,23 @@ const earningsStats = [
   { value: "50+", label: "Active Independents" },
 ];
 
+const investmentChecklist = [
+  "Full platform access — booking engine, fare search, ticketing",
+  "GDS inventory: Amadeus, Sabre, Galileo",
+  "NDC and consolidator fares",
+  "Hotel and tour booking",
+  "Training materials and onboarding",
+  "Travel Links — sell via WhatsApp",
+  "Ongoing platform updates and support",
+];
+
 const whoItsFor = [
+  { icon: Rocket, text: "Aspiring entrepreneurs who want to start a travel business without ₦30 million in capital" },
+  { icon: Briefcase, text: "Working professionals who want a legitimate side business they can run from their phone" },
+  { icon: Users, text: "Stay-at-home parents with a network of family and friends who travel" },
+  { icon: Megaphone, text: "Social media creators and influencers with an audience that books travel" },
   { icon: GraduationCap, text: "Recent graduates looking for income while building a career" },
-  { icon: Briefcase, text: "Side hustlers who want a legitimate business they can grow" },
-  { icon: Users, text: "Stay-at-home parents with a network and time to earn" },
-  { icon: Megaphone, text: "Social media creators with an audience that travels" },
-  { icon: Rocket, text: "Aspiring entrepreneurs who want to start a travel business without significant capital" },
+  { icon: Globe, text: "People in hospitality, events, or tourism who already have travel-adjacent networks" },
 ];
 
 const faqs = [
@@ -158,7 +170,7 @@ const faqs = [
   {
     question: "How much does it cost to join?",
     answer:
-      "There is a monthly subscription fee that gives you access to the platform, inventory, training materials, and support. You are never asked to buy \"packages,\" \"levels,\" or pay for recruitment positions. The fee covers your tools - the same way a barber pays for clippers or a designer pays for software.",
+      "The Independents Programme costs ₦150,000/month. That subscription gives you access to the platform, GDS and NDC inventory, training materials, Travel Links, and ongoing support. You are never asked to buy \"packages,\" \"levels,\" or pay for recruitment positions. The fee covers your tools - the same way a barber pays for clippers or a designer pays for software.",
   },
   {
     question: "How much can I realistically earn?",
@@ -174,6 +186,26 @@ const faqs = [
     question: "Can I do this part-time alongside my current job?",
     answer:
       "Yes. Many Independents start part-time. The platform is available 24/7, so you can search inventory and make bookings on your own schedule - evenings, weekends, whenever works for you. There are no minimum booking requirements or mandatory hours.",
+  },
+  {
+    question: "How is this different from a travel affiliate programme?",
+    answer:
+      "Most travel affiliate programmes give you a referral link to someone else's website. You don't control pricing, branding, or the customer relationship. With the Independents Programme, you get your own booking tools — you search inventory, set your markup, create bookings, and manage your customers directly. You're running a business, not sharing a link.",
+  },
+  {
+    question: "How much can I earn per booking?",
+    answer:
+      "It varies by product and route. A domestic flight might earn you ₦3,000-₦8,000 in commission. An international return flight can earn ₦15,000-₦40,000 or more depending on the fare class and route. Hotel bookings and tour packages typically have higher percentage margins. Your monthly income depends entirely on how many bookings you make — there are no caps.",
+  },
+  {
+    question: "Do I get my own website?",
+    answer:
+      "The Independents Programme gives you access to the booking platform and Travel Links (shareable booking links for WhatsApp). If you want a fully branded website with your own domain, you can upgrade to TravX — our white-label booking website product. Many Independents start with Travel Links and upgrade to TravX as their business grows.",
+  },
+  {
+    question: "What if I have no experience in the travel industry?",
+    answer:
+      "Most Independents start with zero travel industry experience. The programme includes training on how to use the platform, how to search and compare fares, how to create bookings, and how to find customers. Your biggest asset isn't travel knowledge — it's your network. If you know people who travel, you can sell to them.",
   },
 ];
 
@@ -215,18 +247,14 @@ const Independents = () => {
 
         <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
           <h1 className="max-w-5xl mx-auto">
-            Start Earning in Travel. No Agency. No Experience. No Gatekeepers.
+            Start Your Travel Business in Nigeria — No IATA Needed
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            The Independents Programme gives you access to the same
-            IATA-accredited travel technology used by 200+ professional
-            agencies. Sell flights from GDS, NDC, and consolidator inventory,
-            plus hotels and tours from leading global suppliers. Earn real
-            commissions on every booking. No agency required.
+            The Independents Programme gives you access to the same IATA-accredited travel technology used by 200+ professional agencies — without needing ₦30 million in share capital or your own IATA accreditation. Sell flights across 900+ airlines via Amadeus, Sabre, and Galileo. Sell hotels and tours from global suppliers. Earn real commissions on every booking. Start with just your phone and an internet connection.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
-              <a href="/for/independents/interest">Join the Independents Programme</a>
+              <a href="/for/independents/interest">Apply to Join the Programme</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
@@ -236,7 +264,7 @@ const Independents = () => {
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            Real tools • Real inventory • Real commissions
+            IATA accredited • No ₦30M capital needed • Real commissions • Start part-time
           </p>
         </div>
       </section>
@@ -245,16 +273,11 @@ const Independents = () => {
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4 lg:pl-[100px]">
           <h2 className="max-w-4xl">
-            <span className="block">You Want to Earn in Travel.</span>
-            <span className="block">The Barriers Are Real.</span>
+            <span className="block">You Want to Start a Travel Business.</span>
+            <span className="block">The System Makes It Nearly Impossible.</span>
           </h2>
           <p className="mt-8 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            You know there's money in travel. You see agencies posting on
-            Instagram. You hear about people earning commissions. But when you
-            look into it, the barriers are real: IATA accreditation costs
-            millions. GDS access requires contracts and deposits. Starting an
-            agency demands capital, an office, and industry connections you
-            don't have.
+            Starting a travel agency in Nigeria the traditional way requires ₦30 million in CAC share capital, NANTA membership, NCAA registration, and your own IATA accreditation — which means a BSP bond, a physical office, and 12-24 months of process. The total investment? ₦5-10 million before you sell a single ticket. For most Nigerians, that's not a barrier — it's a wall.
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
             And then there's the noise. "Pay $50 to unlock Diamond Level."
@@ -347,6 +370,38 @@ const Independents = () => {
       </section>
 
 
+      {/* INVESTMENT */}
+      <section className="py-20 bg-accent">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="mb-6">Your Investment</h2>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              The Independents Programme isn't free — and we're upfront about that. You're paying for access to professional travel technology, IATA-accredited booking infrastructure, and real inventory from 900+ airlines. This is the same technology that established agencies pay significantly more for.
+            </p>
+          </div>
+          <div className="max-w-lg mx-auto brand-card border-2 border-primary p-8 bg-card">
+            <p className="text-4xl md:text-5xl font-bold text-foreground text-center">₦150,000<span className="text-xl text-muted-foreground font-normal">/month</span></p>
+            <p className="mt-2 text-sm text-muted-foreground text-center mb-8">
+              Everything you need to start selling travel
+            </p>
+            <ul className="space-y-3 mb-8">
+              {investmentChecklist.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <Button variant="hero" size="xl" className="w-full cta-responsive min-h-[48px]" asChild>
+              <a href="/for/independents/interest">Apply to Join the Programme</a>
+            </Button>
+          </div>
+          <p className="mt-6 text-xs text-muted-foreground text-center max-w-2xl mx-auto">
+            No recruitment fees. No "levels" to unlock. No hidden charges. Your subscription pays for tools. Your commissions come from selling travel.
+          </p>
+        </div>
+      </section>
+
       {/* TRAVEL LINKS CALLOUT */}
       <section className="py-16 md:py-20" style={{ backgroundColor: "#F0F5FC" }}>
         <div className="container mx-auto px-4">
@@ -358,7 +413,7 @@ const Independents = () => {
               Sell Travel Without a Website - Just Share a Link
             </h3>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">
-              With Travel Links, you can generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, post it on Instagram, or email it to your network. Your customer clicks, books, and pays - and you earn the commission.
+              With Travel Links, you can generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, post it on Instagram, or email it to your network. Your customer clicks, books, and pays — and you earn the commission. No website needed. No technical skills required. Just share and earn.
             </p>
             <a href="/products/travel-links">
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
@@ -389,7 +444,7 @@ const Independents = () => {
                   C
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Chidera N.</p>
+                  <p className="font-semibold text-foreground">Chidera Nwosu</p>
                   <p className="text-sm text-muted-foreground">
                     Independent - Enugu
                   </p>
@@ -444,11 +499,10 @@ const Independents = () => {
       <section className="py-20 md:py-28 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="max-w-4xl mx-auto text-primary-foreground">
-            Ready to Start Earning in Travel?
+            Your Travel Business Starts Here
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Real tools. Real inventory. Real commissions. Join the Independents
-            Programme and start building your travel business today.
+            You don't need ₦30 million. You don't need IATA accreditation. You don't need an office. You need a platform that gives you real tools, real inventory, and a real way to earn. Apply to join the Independents Programme today.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
@@ -457,7 +511,7 @@ const Independents = () => {
               className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none font-semibold"
               asChild
             >
-              <a href="/for/independents/interest">Join the Independents Programme</a>
+              <a href="/for/independents/interest">Apply to Join the Programme</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
