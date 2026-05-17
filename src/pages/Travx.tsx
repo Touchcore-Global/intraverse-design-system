@@ -248,14 +248,10 @@ const Travx = () => {
 
         <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
           <h1 className="max-w-5xl mx-auto">
-            Get a Website That Books Flights, Hotels &amp; Tours
+            Your Own Travel Booking Website — Live in Days, Not Months
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            Travx gives your travel agency a fully branded, booking-enabled
-            website - without hiring a developer or waiting months for delivery.
-            Your customers search flights, hotels, and tours, book directly, and
-            pay online. You get a professional digital presence that generates
-            revenue 24/7.
+            TravX gives your travel agency a fully branded, booking-enabled website connected to 900+ airlines via Amadeus, Sabre, Galileo, and NDC. Your customers search, book, and pay online. You control the markup and keep the customer. From ₦75,000/month.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
@@ -277,8 +273,40 @@ const Travx = () => {
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            No setup fees • Cancel anytime • Live in days
+            IATA accredited • No setup fees • Cancel anytime • Live in 5-7 days
           </p>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section className="py-6 md:py-8 bg-muted/30 border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8 max-w-6xl mx-auto md:max-h-[120px]">
+            <div className="grid grid-cols-3 gap-4 md:gap-8">
+              {trustStats.map((s) => (
+                <div key={s.label} className="text-center md:text-left">
+                  <p className="text-xl md:text-2xl font-bold text-foreground">{s.value}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">{s.label}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-center md:justify-end gap-6 md:gap-10 flex-wrap">
+              {[
+                { name: "IATA", logo: iataLogo },
+                { name: "Amadeus", logo: amadeusLogo },
+                { name: "Sabre", logo: sabreLogo },
+                { name: "Travelport", logo: travelportLogo },
+              ].map((p) => (
+                <img
+                  key={p.name}
+                  src={p.logo}
+                  alt={`${p.name} logo`}
+                  className="h-6 md:h-8 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
