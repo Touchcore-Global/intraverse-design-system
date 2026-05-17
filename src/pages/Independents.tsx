@@ -17,6 +17,7 @@ import {
   Users,
   Megaphone,
   Rocket,
+  Check,
 } from "lucide-react";
 import {
   Accordion,
