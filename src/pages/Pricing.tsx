@@ -180,6 +180,15 @@ export default function Pricing() {
         title="Pricing — Travel Agent Software Plans from ₦75,000/month | Intraverse"
         description="Transparent pricing for Africa's B2B travel platform. Agent, Business, and Enterprise plans. No hidden fees, no setup costs. Compare plans and start today."
         canonical="https://intraverse.africa/pricing"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }}
       />
       <Navbar />
 
