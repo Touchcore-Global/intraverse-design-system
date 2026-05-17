@@ -138,6 +138,15 @@ const IndependentsAudience = () => {
         title="For Aspiring Travel Agents — Start Your Travel Business | Intraverse"
         description="Become a travel agent without IATA accreditation. Intraverse gives you booking technology, supplier access, and training to launch your travel business in Nigeria."
         canonical="https://intraverse.africa/for/independents"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }}
       />
       <Navbar />
       <div className="h-16" />
