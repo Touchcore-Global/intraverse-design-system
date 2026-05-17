@@ -63,6 +63,22 @@ export function SEO({
   };
   const finalCanonical = normalizeCanonical(canonical);
 
+  // Append UTM params to og:url / twitter URL so social-share clicks are
+  // attributable in analytics. Canonical stays clean to avoid SEO issues.
+  const withUtm = (url?: string): string | undefined => {
+    if (!url) return undefined;
+    try {
+      const u = new URL(url);
+      u.searchParams.set("utm_source", "social");
+      u.searchParams.set("utm_medium", "og");
+      u.searchParams.set("utm_campaign", "og_share");
+      return u.toString();
+    } catch {
+      return url;
+    }
+  };
+  const ogUrl = withUtm(finalCanonical);
+
   // Synchronous head mutation — runs in both browsers AND inside react-snap's
   // Puppeteer page. Guarantees per-route tags exist in document.head before
   // the snapshot is captured, independent of Helmet's async dispatcher.
