@@ -370,6 +370,38 @@ const Independents = () => {
       </section>
 
 
+      {/* INVESTMENT */}
+      <section className="py-20 bg-accent">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="mb-6">Your Investment</h2>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              The Independents Programme isn't free — and we're upfront about that. You're paying for access to professional travel technology, IATA-accredited booking infrastructure, and real inventory from 900+ airlines. This is the same technology that established agencies pay significantly more for.
+            </p>
+          </div>
+          <div className="max-w-lg mx-auto brand-card border-2 border-primary p-8 bg-card">
+            <p className="text-4xl md:text-5xl font-bold text-foreground text-center">₦150,000<span className="text-xl text-muted-foreground font-normal">/month</span></p>
+            <p className="mt-2 text-sm text-muted-foreground text-center mb-8">
+              Everything you need to start selling travel
+            </p>
+            <ul className="space-y-3 mb-8">
+              {investmentChecklist.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <Button variant="hero" size="xl" className="w-full cta-responsive min-h-[48px]" asChild>
+              <a href="/for/independents/interest">Apply to Join the Programme</a>
+            </Button>
+          </div>
+          <p className="mt-6 text-xs text-muted-foreground text-center max-w-2xl mx-auto">
+            No recruitment fees. No "levels" to unlock. No hidden charges. Your subscription pays for tools. Your commissions come from selling travel.
+          </p>
+        </div>
+      </section>
+
       {/* TRAVEL LINKS CALLOUT */}
       <section className="py-16 md:py-20" style={{ backgroundColor: "#F0F5FC" }}>
         <div className="container mx-auto px-4">
@@ -381,7 +413,7 @@ const Independents = () => {
               Sell Travel Without a Website - Just Share a Link
             </h3>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">
-              With Travel Links, you can generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, post it on Instagram, or email it to your network. Your customer clicks, books, and pays - and you earn the commission.
+              With Travel Links, you can generate a shareable booking link for any flight, hotel, or package. Send it on WhatsApp, post it on Instagram, or email it to your network. Your customer clicks, books, and pays — and you earn the commission. No website needed. No technical skills required. Just share and earn.
             </p>
             <a href="/products/travel-links">
               <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]">
