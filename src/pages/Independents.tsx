@@ -170,7 +170,7 @@ const faqs = [
   {
     question: "How much does it cost to join?",
     answer:
-      "There is a monthly subscription fee that gives you access to the platform, inventory, training materials, and support. You are never asked to buy \"packages,\" \"levels,\" or pay for recruitment positions. The fee covers your tools - the same way a barber pays for clippers or a designer pays for software.",
+      "The Independents Programme costs ₦150,000/month. That subscription gives you access to the platform, GDS and NDC inventory, training materials, Travel Links, and ongoing support. You are never asked to buy \"packages,\" \"levels,\" or pay for recruitment positions. The fee covers your tools - the same way a barber pays for clippers or a designer pays for software.",
   },
   {
     question: "How much can I realistically earn?",
@@ -186,6 +186,26 @@ const faqs = [
     question: "Can I do this part-time alongside my current job?",
     answer:
       "Yes. Many Independents start part-time. The platform is available 24/7, so you can search inventory and make bookings on your own schedule - evenings, weekends, whenever works for you. There are no minimum booking requirements or mandatory hours.",
+  },
+  {
+    question: "How is this different from a travel affiliate programme?",
+    answer:
+      "Most travel affiliate programmes give you a referral link to someone else's website. You don't control pricing, branding, or the customer relationship. With the Independents Programme, you get your own booking tools — you search inventory, set your markup, create bookings, and manage your customers directly. You're running a business, not sharing a link.",
+  },
+  {
+    question: "How much can I earn per booking?",
+    answer:
+      "It varies by product and route. A domestic flight might earn you ₦3,000-₦8,000 in commission. An international return flight can earn ₦15,000-₦40,000 or more depending on the fare class and route. Hotel bookings and tour packages typically have higher percentage margins. Your monthly income depends entirely on how many bookings you make — there are no caps.",
+  },
+  {
+    question: "Do I get my own website?",
+    answer:
+      "The Independents Programme gives you access to the booking platform and Travel Links (shareable booking links for WhatsApp). If you want a fully branded website with your own domain, you can upgrade to TravX — our white-label booking website product. Many Independents start with Travel Links and upgrade to TravX as their business grows.",
+  },
+  {
+    question: "What if I have no experience in the travel industry?",
+    answer:
+      "Most Independents start with zero travel industry experience. The programme includes training on how to use the platform, how to search and compare fares, how to create bookings, and how to find customers. Your biggest asset isn't travel knowledge — it's your network. If you know people who travel, you can sell to them.",
   },
 ];
 
