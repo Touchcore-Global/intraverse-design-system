@@ -16,6 +16,8 @@ import {
   UserCog,
   Briefcase,
   Building,
+  Check,
+  X,
 } from "lucide-react";
 import {
   Accordion,
@@ -32,7 +34,7 @@ const features = [
     icon: CheckSquare,
     title: "Approval Workflows",
     description:
-      "Configurable approval chains that match your org structure. Every trip request goes through the right people before a single dollar is spent. No more surprise bookings.",
+      "Configurable approval chains that match your org structure. Every trip request goes through the right people before a single naira is spent. No more surprise bookings.",
     bullets: [
       "Multi-level approval chains (manager → finance → exec)",
       "Policy gates that auto-reject out-of-policy requests",
@@ -54,25 +56,26 @@ const features = [
   },
   {
     icon: Wallet,
-    title: "Consolidated Billing",
+    title: "Consolidated Naira Billing",
     description:
-      "One invoice for all company travel. Full breakdown by department, project, cost centre, or employee. No more chasing receipts from 50 different bookings.",
+      "One invoice for all company travel, billed in Naira. Full breakdown by department, project, cost centre, or employee. No more chasing receipts from dozens of separate bookings or reconciling dollar-denominated expenses.",
     bullets: [
       "Single monthly invoice for all travel spend",
       "Breakdown by department, project, or cost centre",
       "Automated reconciliation with your finance system",
       "Downloadable reports for audits and tax filing",
+      "Naira billing — no currency conversion headaches",
     ],
   },
   {
     icon: Plane,
     title: "Best Available Fares",
     description:
-      "Powered by Intraverse's aggregated inventory - GDS, NDC, consolidators, and more. Your employees get the best prices without you negotiating airline-by-airline.",
+      "Powered by Intraverse's aggregated inventory — Amadeus, Sabre, Galileo, NDC, and consolidators. Your employees get the best prices across 900+ airlines without you negotiating carrier by carrier.",
     bullets: [
-      "Multi-source fare comparison for every search",
+      "Multi-source fare comparison (GDS + NDC + LCC)",
       "Automatic lowest-fare recommendations",
-      "Negotiated corporate rates where available",
+      "Strong coverage on intra-Africa routes",
       "Hotels and ground transport included",
     ],
   },
@@ -92,7 +95,7 @@ const features = [
     icon: BarChart3,
     title: "Real-Time Spend Visibility",
     description:
-      "Live dashboards showing exactly what your company is spending on travel - right now. No waiting until month-end to discover budget overruns.",
+      "Live dashboards showing exactly what your company is spending on travel - right now. No waiting until month-end to discover budget overruns. When the CEO asks for a travel report, you have it in seconds.",
     bullets: [
       "Live spend tracking by department and employee",
       "Budget vs. actual dashboards",
@@ -104,32 +107,95 @@ const features = [
 
 const whoItsFor = [
   { icon: Building2, text: "Companies with 20+ employees making regular business trips" },
-  { icon: Calculator, text: "Finance teams tired of chasing receipts and reconciling travel expenses manually" },
+  { icon: Calculator, text: "Finance teams tired of chasing receipts and reconciling travel expenses in spreadsheets" },
   { icon: UserCog, text: "HR and admin managers handling travel logistics alongside their actual job" },
   { icon: Briefcase, text: "Dedicated travel managers who need better tools and visibility" },
-  { icon: Building, text: "Any business that wants to stop losing money on unmanaged travel" },
+  { icon: Building, text: "Any Nigerian or African business that wants to stop losing money on unmanaged travel" },
 ];
 
-const stats = [
+const trustStats = [
   { value: "30%", label: "Average Cost Reduction" },
-  { value: "2+hrs", label: "Admin Time Saved Monthly" },
+  { value: "900+", label: "Airlines via GDS" },
+  { value: "24/7", label: "Booking Availability" },
+];
+
+const howItWorksSteps = [
+  {
+    number: "1",
+    title: "Set Your Travel Policy",
+    description:
+      "Define cabin class limits, hotel rate caps, advance booking rules, and per diem budgets. Set approval chains by department and spend threshold. Do this once — CoopX enforces it automatically on every booking.",
+  },
+  {
+    number: "2",
+    title: "Employees Book Within Policy",
+    description:
+      "Your team searches flights, hotels, and transport through a simple booking interface. Only policy-compliant options are shown. Out-of-policy requests are flagged and routed for approval — no exceptions slip through.",
+  },
+  {
+    number: "3",
+    title: "Finance Gets Real-Time Visibility",
+    description:
+      "Live dashboards show exactly what your company is spending on travel — by department, project, or employee. One consolidated invoice per month. No more chasing receipts or month-end surprises.",
+  },
+];
+
+const globalAssumptions = [
+  "Stable currency and international card payments",
+  "Standardised expense reporting systems",
+  "Direct flights on major carrier networks",
+  "Local support in your timezone",
+  "Per diem and travel policy norms matching Western standards",
+];
+
+const coopxUnderstands = [
+  "Naira billing with local payment methods",
+  "Nigerian tax and audit requirements",
+  "Intra-Africa routing through connecting hubs",
+  "Lagos-based support team on WhatsApp and phone",
+  "Per diem culture and approval hierarchies unique to Nigerian corporates",
 ];
 
 const faqs = [
+  {
+    question: "How is CoopX different from TravelPerk or Navan?",
+    answer:
+      "TravelPerk and Navan are excellent platforms built for European and American businesses. CoopX is built specifically for African corporate travel. That means Naira billing, local payment methods, Lagos-based support, strong intra-Africa route coverage, and an understanding of Nigerian approval hierarchies and per diem culture. If your business operates in Nigeria or across Africa, CoopX is built for your reality.",
+  },
   {
     question: "How does CoopX enforce our travel policy?",
     answer:
       "You configure your travel policy rules in the platform - cabin class limits by employee level, hotel rate caps by city, advance booking requirements, preferred suppliers, and per-diem budgets. When an employee searches for travel, only policy-compliant options are shown by default. Out-of-policy requests can be blocked entirely or routed through an exception approval workflow with a full audit trail.",
   },
   {
-    question: "Can we customise the approval workflow for different departments?",
+    question: "How much does CoopX cost?",
+    answer:
+      "CoopX pricing is based on your company size and travel volume. We offer flexible plans that scale with your needs — you only pay for what you use. Book a demo and we'll provide a custom quote based on your specific requirements. There are no hidden fees or long-term lock-in contracts.",
+  },
+  {
+    question: "How long does implementation take?",
+    answer:
+      "Most companies are live within 2-4 weeks. Implementation includes: configuring your travel policy, setting up approval workflows, adding employee profiles, and a training session for your team. We handle the technical setup — your admin team focuses on policy decisions.",
+  },
+  {
+    question: "Can we customise approval workflows for different departments?",
     answer:
       "Yes. Approval chains are fully configurable by department, trip type, or spend threshold. A domestic trip might need only a line manager's approval, while an international business-class booking might require department head, finance, and executive sign-off. You set the rules - the platform enforces them.",
   },
   {
-    question: "How does billing and invoicing work?",
+    question: "Does CoopX handle Naira billing?",
     answer:
-      "All company travel is consolidated into a single monthly invoice with full line-item detail. You can break down spend by department, project, cost centre, or individual employee. Reports are downloadable in formats compatible with most accounting systems, and our team can help with custom integrations.",
+      "Yes — this is one of our key differentiators. All billing is in Naira. Your consolidated monthly invoice is denominated in NGN, so there's no currency conversion reconciliation. This matters for Nigerian companies dealing with CBN forex restrictions and fluctuating exchange rates.",
+  },
+  {
+    question: "What size of company is CoopX designed for?",
+    answer:
+      "CoopX is built for companies with 20 or more employees making regular business trips. Whether you're a mid-size Nigerian firm with a small admin team handling travel or a large enterprise with a dedicated travel manager, the platform scales to your needs. Pricing is based on usage, so you only pay for what you need.",
+  },
+  {
+    question: "Does CoopX integrate with our accounting system?",
+    answer:
+      "CoopX generates reports in formats compatible with most Nigerian accounting systems. Spend data is exportable by department, project, cost centre, or employee. For enterprise clients, we offer custom integrations with ERP and finance systems. Discuss your specific requirements during the demo.",
   },
   {
     question: "Do employees need training to use the platform?",
@@ -137,9 +203,9 @@ const faqs = [
       "The booking interface is designed for people who are not travel professionals. If your employees can book a flight on a consumer website, they can use CoopX. We provide onboarding sessions and support materials, but most users are self-sufficient after their first booking.",
   },
   {
-    question: "What size of company is CoopX designed for?",
+    question: "What happens if an employee has a travel emergency?",
     answer:
-      "CoopX is built for companies with 20 or more employees making regular business trips. Whether you're a mid-size firm with a small admin team handling travel or a large enterprise with a dedicated travel manager, the platform scales to your needs. Pricing is based on usage, so you only pay for what you need.",
+      "CoopX includes duty-of-care features — you can see where your travelling employees are at any time. For booking changes and emergencies, our Lagos-based support team is available on WhatsApp and phone. Your employees aren't waiting for a chatbot in a different timezone.",
   },
 ];
 
@@ -181,13 +247,13 @@ const CoopX = () => {
 
         <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
           <h1 className="max-w-5xl mx-auto">
-            Your Company's Travel. Managed Properly. Finally.
+            Corporate Travel Management Built for African Businesses
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            CoopX gives your company a complete travel management platform -
+            CoopX gives your company a complete travel management platform —
             booking, approvals, policy enforcement, consolidated billing, and
-            full reporting. Built for African corporates that are done managing
-            employee travel on spreadsheets and WhatsApp.
+            real-time spend visibility. Built in Lagos for businesses that are
+            done managing employee travel on spreadsheets and WhatsApp.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
@@ -201,7 +267,24 @@ const CoopX = () => {
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            15-minute demo • No commitment • Built for African corporates
+            15-minute demo • No commitment • Built in Lagos for African businesses
+          </p>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section className="py-8 bg-muted/30 border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {trustStats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
+                <p className="mt-1 text-xs md:text-sm text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-center text-xs text-muted-foreground max-w-2xl mx-auto">
+            Powered by Amadeus, Sabre, Galileo, and NDC — accessed through Intraverse's IATA accreditation
           </p>
         </div>
       </section>
@@ -210,27 +293,48 @@ const CoopX = () => {
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4 lg:pl-[100px]">
           <h2 className="max-w-4xl">
-            Your Company Is Bleeding Money on Unmanaged Travel
+            Your Company Is Losing Money on Unmanaged Travel
           </h2>
           <p className="mt-8 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            There's no approval workflow - so anyone books anything. There's no
-            policy enforcement - so economy becomes business class. There's no
-            visibility - so finance discovers the damage at month-end. Your admin
-            team spends days chasing receipts, reconciling expenses, and
+            There's no approval workflow — so anyone books anything. There's no
+            policy enforcement — so economy becomes business class. There's no
+            visibility — so finance discovers the damage at month-end. Your admin
+            team spends hours chasing receipts, reconciling expenses, and
             explaining overruns that could have been prevented.
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            Meanwhile, the company is paying above-market rates because nobody
-            has time to compare fares properly. The CEO wants a travel report and
-            gets a cobbled-together spreadsheet three weeks later. Every
-            stakeholder is frustrated - finance, HR, the travellers themselves,
-            and leadership. There has to be a better way.
+            This isn't just a Nigerian problem — a recent Skift report found that
+            Africa recorded over $10 billion in business travel spending in 2025,
+            growing at 28% annually. But most companies still manage travel
+            through WhatsApp groups, email chains, and spreadsheets. Global
+            platforms like TravelPerk and Navan weren't built for Naira billing,
+            intra-Africa routing, or Nigerian corporate travel culture. CoopX was.
           </p>
         </div>
       </section>
 
-      {/* FEATURES */}
+      {/* HOW IT WORKS */}
       <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="max-w-4xl mx-auto mb-12">Three Steps to Managed Travel</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {howItWorksSteps.map((step) => (
+              <div key={step.number} className="flex flex-col items-center">
+                <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4">
+                  {step.number}
+                </div>
+                <h3 className="h3-global text-foreground mb-3">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section className="py-20 bg-accent">
         <div className="container mx-auto px-4 lg:pl-[100px]">
           <h2 className="max-w-4xl mb-16">
             Control, Visibility, and Savings - Built In
@@ -262,7 +366,7 @@ const CoopX = () => {
       </section>
 
       {/* WHO IT'S FOR */}
-      <section className="py-20 bg-accent">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4 lg:pl-[100px]">
           <h2 className="max-w-4xl mb-12">Who CoopX Is Built For</h2>
           <div className="max-w-3xl space-y-5">
@@ -280,7 +384,52 @@ const CoopX = () => {
         </div>
       </section>
 
-      {/* STATS - removed */}
+      {/* COMPETITOR */}
+      <section className="py-20 bg-background border-t border-border">
+        <div className="container mx-auto px-4 lg:pl-[100px]">
+          <h2 className="max-w-4xl mb-6">Built for Africa, Not Adapted for It</h2>
+          <p className="text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed mb-12">
+            Global corporate travel platforms like TravelPerk, Navan, and SAP
+            Concur are built for European and American companies. They work well
+            in markets with established TMC infrastructure, stable currencies,
+            and standardised expense systems. But Nigerian and African
+            businesses face different realities.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
+            <div className="brand-card border border-border">
+              <h3 className="h3-global mb-5">What global platforms assume</h3>
+              <ul className="space-y-3">
+                {globalAssumptions.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="w-5 h-5 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <X className="h-3 w-3 text-destructive" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="brand-card border border-border">
+              <h3 className="h3-global mb-5">What CoopX understands</h3>
+              <ul className="space-y-3">
+                {coopxUnderstands.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-primary" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="mt-10 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
+            CoopX isn't a global platform with an Africa add-on. It's a corporate
+            travel platform built from the ground up for how African businesses
+            actually operate.
+          </p>
+        </div>
+      </section>
 
       {/* TESTIMONIAL */}
       <section className="py-20 bg-background">
@@ -293,14 +442,15 @@ const CoopX = () => {
                 the month - by then the damage was done. With CoopX, I see
                 exactly what we're spending in real time. Approvals are
                 automatic, policy is enforced before booking, and our quarterly
-                travel costs dropped by 30%. I wish we'd started sooner."
+                travel costs dropped by 30%. The Naira billing alone saved us
+                hours of reconciliation every month. I wish we'd started sooner."
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
                   O
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Olumide K.</p>
+                  <p className="font-semibold text-foreground">Olumide Kadri</p>
                   <p className="text-sm text-muted-foreground">
                     CFO, Meridian Industries - Lagos
                   </p>
@@ -336,12 +486,12 @@ const CoopX = () => {
       <section className="py-20 md:py-28 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="max-w-4xl mx-auto text-primary-foreground">
-            Take Control of Your Company's Travel Spend
+            Stop Losing Money on Unmanaged Travel
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            See how CoopX gives your finance team visibility, your employees
-            self-service, and your company real savings. Book a free demo -
-            no commitment required.
+            See how CoopX gives your finance team real-time visibility, your
+            employees self-service booking, and your company measurable savings.
+            Book a 15-minute demo — no commitment, no payment details required.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
