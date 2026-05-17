@@ -115,21 +115,21 @@ const trustPoints = [
 const steps = [
   {
     step: "01",
-    title: "Join",
+    title: "Apply & Get Verified",
     description:
-      "Sign up for the Independents Programme. Complete your profile and get verified. No IATA accreditation needed - you operate under ours.",
+      "Submit your application through the interest form. Complete your profile verification. Once approved, you get full platform access — booking engine, inventory search, and training materials. No IATA accreditation needed.",
   },
   {
     step: "02",
-    title: "Learn",
+    title: "Learn the Platform",
     description:
-      "Access training materials on how to use the platform, search inventory, create bookings, and find customers. Learn at your own pace.",
+      "Complete the self-paced training: how to search flights across GDS and NDC, how to compare fares, how to create bookings, and how to find your first customers. Most Independents complete training within a week.",
   },
   {
     step: "03",
-    title: "Start Selling",
+    title: "Start Selling Travel",
     description:
-      "Search flights, hotels, and tours. Make bookings for your customers. Earn commissions on every completed booking. Grow at your own speed.",
+      "Search flights, hotels, and tours. Create bookings for your customers. Send payment links via WhatsApp using Travel Links. Earn commissions on every completed booking. Grow at your own pace.",
   },
 ];
 
@@ -137,12 +137,23 @@ const earningsStats = [
   { value: "50+", label: "Active Independents" },
 ];
 
+const investmentChecklist = [
+  "Full platform access — booking engine, fare search, ticketing",
+  "GDS inventory: Amadeus, Sabre, Galileo",
+  "NDC and consolidator fares",
+  "Hotel and tour booking",
+  "Training materials and onboarding",
+  "Travel Links — sell via WhatsApp",
+  "Ongoing platform updates and support",
+];
+
 const whoItsFor = [
+  { icon: Rocket, text: "Aspiring entrepreneurs who want to start a travel business without ₦30 million in capital" },
+  { icon: Briefcase, text: "Working professionals who want a legitimate side business they can run from their phone" },
+  { icon: Users, text: "Stay-at-home parents with a network of family and friends who travel" },
+  { icon: Megaphone, text: "Social media creators and influencers with an audience that books travel" },
   { icon: GraduationCap, text: "Recent graduates looking for income while building a career" },
-  { icon: Briefcase, text: "Side hustlers who want a legitimate business they can grow" },
-  { icon: Users, text: "Stay-at-home parents with a network and time to earn" },
-  { icon: Megaphone, text: "Social media creators with an audience that travels" },
-  { icon: Rocket, text: "Aspiring entrepreneurs who want to start a travel business without significant capital" },
+  { icon: Globe, text: "People in hospitality, events, or tourism who already have travel-adjacent networks" },
 ];
 
 const faqs = [
