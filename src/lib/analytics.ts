@@ -36,9 +36,10 @@ export function trackEvent(eventName: string, params: EventParams = {}) {
   }
 }
 
-// Canonical event names for the homepage final CTA area.
+// Canonical event names for CTAs.
 export const CTA_EVENTS = {
   demoClick: "cta_book_demo_click",
   whatsappClick: "cta_whatsapp_click",
   navProductClick: "nav_product_cta_click",
+  travxDemoClick: "cta_travx_demo_click",
 } as const;

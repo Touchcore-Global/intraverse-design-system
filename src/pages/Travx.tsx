@@ -25,6 +25,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
+import { trackEvent, CTA_EVENTS } from "@/lib/analytics";
 import { SEO } from "@/components/SEO";
 import { useLocation } from "react-router-dom";
 import iataLogo from "@/assets/iata-logo.png";
@@ -260,7 +261,14 @@ const Travx = () => {
               className="cta-responsive min-h-[48px]"
               asChild
             >
-              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
+              <a
+                href={DEMO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent(CTA_EVENTS.travxDemoClick, { page: "travx" })
+                }
+              >
                 See Travx in Action
               </a>
             </Button>
