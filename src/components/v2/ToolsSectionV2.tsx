@@ -2,15 +2,15 @@ import { useState, useRef, useCallback } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 
-import toolTrips from "@/assets/tool-trips-web.png";
-import toolItinerariesMobile from "@/assets/tool-itineraries-web.png";
-import toolItinerariesDesktop from "@/assets/tool-itineraries-desktop.png";
-import toolPayments from "@/assets/tool-payments-web.png";
+import toolTrips from "@/assets/tool-trips-web.webp";
+import toolItinerariesMobile from "@/assets/tool-itineraries-web.webp";
+import toolItinerariesDesktop from "@/assets/tool-itineraries-desktop.webp";
+import toolPayments from "@/assets/tool-payments-web.webp";
 import toolInsights from "@/assets/tool-insights-web.svg";
-import toolPackages from "@/assets/tool-packages-web.png";
-import toolLinks from "@/assets/tool-links-web.png";
+import toolPackages from "@/assets/tool-packages-web.webp";
+import toolLinks from "@/assets/tool-links-web.webp";
 import toolWorkspace from "@/assets/tool-workspace-web.svg";
-import toolTeam from "@/assets/tool-team-web.svg";
+import toolTeam from "@/assets/tool-team.webp";
 
 const tools = [
   {
