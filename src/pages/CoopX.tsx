@@ -219,12 +219,25 @@ const CoopX = () => {
         canonical={pathname}
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          name: "CoopX",
-          applicationCategory: "BusinessApplication",
-          operatingSystem: "Web",
-          description: "Corporate travel management platform for African businesses",
-          provider: { "@type": "Organization", name: "Intraverse", url: "https://intraverse.africa" },
+          "@graph": [
+            {
+              "@type": "SoftwareApplication",
+              name: "CoopX",
+              applicationCategory: "BusinessApplication",
+              operatingSystem: "Web",
+              description: "Corporate travel management platform for African businesses",
+              url: "https://intraverse.africa/products/coopx",
+              publisher: { "@type": "Organization", name: "Intraverse", url: "https://intraverse.africa" },
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+              })),
+            },
+          ],
         }}
       />
       <Navbar />
