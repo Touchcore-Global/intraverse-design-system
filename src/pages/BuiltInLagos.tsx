@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Globe, Wallet, Handshake, Shield, Landmark, Globe2, Wrench, Zap, Search, MapPin, Phone, MessageCircle, Clock } from "lucide-react";
 import { useEffect } from "react";
-import lagosSkyline from "@/assets/lagos-skyline.png";
+import lagosSkyline from "@/assets/lagos-skyline.webp";
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
 

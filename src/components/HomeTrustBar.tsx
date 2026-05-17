@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import dashboardBooking from "@/assets/features-hero.svg";
-import dashboardBackoffice from "@/assets/home-trust-backoffice.png";
-import dashboardStorefront from "@/assets/home-trust-storefront.png";
+import dashboardBooking from "@/assets/features-hero.webp";
+import dashboardBackoffice from "@/assets/home-trust-backoffice.webp";
+import dashboardStorefront from "@/assets/home-trust-storefront.webp";
 import dashboardAnalytics from "@/assets/home-trust-analytics.png";
-import homeTrustPhone from "@/assets/home-trust-phone.png";
-import homeTrustShareItinerary from "@/assets/home-trust-share-itinerary.png";
+import homeTrustPhone from "@/assets/home-trust-phone.webp";
+import homeTrustShareItinerary from "@/assets/home-trust-share-itinerary.webp";
 import backofficeNew from "@/assets/home-trust-backoffice-2.png";
 
 const containers = [
