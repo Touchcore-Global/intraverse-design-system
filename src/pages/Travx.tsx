@@ -253,11 +253,11 @@ const Travx = () => {
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
             TravX gives your{" "}
-            <Link to="/for/travel-agents" className="text-primary underline underline-offset-2 hover:text-primary/80">
+            <Link to="/for/travel-agents">
               travel agency
             </Link>{" "}
             a fully branded, booking-enabled website connected to 900+ airlines via Amadeus, Sabre, Galileo, and NDC. Your customers search, book, and pay online. You control the markup and keep the customer.{" "}
-            <Link to="/pricing" className="text-primary underline underline-offset-2 hover:text-primary/80">
+            <Link to="/pricing">
               From ₦75,000/month
             </Link>.
           </p>
