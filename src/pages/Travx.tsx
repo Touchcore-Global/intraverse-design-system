@@ -199,8 +199,8 @@ const Travx = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="TravX — White-Label Travel Booking Platform Nigeria | Intraverse"
-        description="Launch your branded travel agency website in Nigeria. White-label booking with 900+ airlines, hotels, NGN payments, and customer management. From ₦75,000/month."
+        title="TravX — White-Label Travel Booking Platform for Agents | Intraverse"
+        description="White-label travel booking platform for travel agents. Branded website with GDS access (Amadeus, Sabre, Galileo), 900+ airlines, hotels, and NGN payments. From ₦75,000/month."
         canonical={pathname}
         jsonLd={{
           "@context": "https://schema.org",
