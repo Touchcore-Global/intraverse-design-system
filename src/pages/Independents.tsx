@@ -444,7 +444,7 @@ const Independents = () => {
                   C
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Chidera N.</p>
+                  <p className="font-semibold text-foreground">Chidera Nwosu</p>
                   <p className="text-sm text-muted-foreground">
                     Independent - Enugu
                   </p>
