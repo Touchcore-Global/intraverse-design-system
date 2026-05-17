@@ -252,7 +252,14 @@ const Travx = () => {
             Your Own Travel Booking Website — Live in Days, Not Months
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            TravX gives your travel agency a fully branded, booking-enabled website connected to 900+ airlines via Amadeus, Sabre, Galileo, and NDC. Your customers search, book, and pay online. You control the markup and keep the customer. From ₦75,000/month.
+            TravX gives your{" "}
+            <Link to="/for/travel-agents" className="text-primary underline underline-offset-2 hover:text-primary/80">
+              travel agency
+            </Link>{" "}
+            a fully branded, booking-enabled website connected to 900+ airlines via Amadeus, Sabre, Galileo, and NDC. Your customers search, book, and pay online. You control the markup and keep the customer.{" "}
+            <Link to="/pricing" className="text-primary underline underline-offset-2 hover:text-primary/80">
+              From ₦75,000/month
+            </Link>.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
