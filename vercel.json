@@ -1,43 +1,13 @@
 {
-  "rewrites": [
-    {
-      "source": "/((?!sitemap\\.xml|robots\\.txt|og/|.*\\.(?:xml|txt|png|jpg|jpeg|svg|webp|ico|json|js|css|woff|woff2|ttf|map)).*)",
-      "destination": "/index.html"
-    }
-  ],
   "redirects": [
-    { "source": "/flight", "destination": "/products/travx", "statusCode": 301 },
-    { "source": "/flights", "destination": "/products/travx", "statusCode": 301 },
-    { "source": "/tours", "destination": "/products/travx", "statusCode": 301 },
-    { "source": "/accommodations", "destination": "/products/travx", "statusCode": 301 },
-    { "source": "/accommodation", "destination": "/products/travx", "statusCode": 301 },
-    { "source": "/hotels", "destination": "/products/travx", "statusCode": 301 },
-    { "source": "/sidehustle", "destination": "/for/independents", "statusCode": 301 },
-    { "source": "/side-hustle", "destination": "/for/independents", "statusCode": 301 },
-    { "source": "/developer", "destination": "/for/developers", "statusCode": 301 },
-    { "source": "/developers", "destination": "/for/developers", "statusCode": 301 },
-    { "source": "/getstarted", "destination": "/", "statusCode": 301 },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "getstarted.intraverse.africa" }],
-      "destination": "https://intraverse.africa/:path*",
-      "statusCode": 301
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.intraverse.africa" }],
-      "destination": "https://intraverse.africa/:path*",
-      "statusCode": 301
-    }
-  ],
-  "headers": [
-    {
-      "source": "/sitemap.xml",
-      "headers": [{ "key": "Content-Type", "value": "application/xml; charset=utf-8" }]
-    },
-    {
-      "source": "/robots.txt",
-      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
-    }
+    { "source": "/flight", "destination": "/products/agent-platform", "permanent": true },
+    { "source": "/accommodations", "destination": "/products/agent-platform", "permanent": true },
+    { "source": "/tours", "destination": "/products/agent-platform", "permanent": true },
+    { "source": "/insurance", "destination": "/products/agent-platform", "permanent": true },
+    { "source": "/customer", "destination": "/travx", "permanent": true },
+    { "source": "/sidehustle", "destination": "/independents", "permanent": true },
+    { "source": "/travelagent", "destination": "/for/travel-agents", "permanent": true },
+    { "source": "/fintech", "destination": "/for/fintechs", "permanent": true },
+    { "source": "/developer", "destination": "/docs", "permanent": true }
   ]
 }
