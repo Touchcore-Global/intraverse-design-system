@@ -273,16 +273,11 @@ const Independents = () => {
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4 lg:pl-[100px]">
           <h2 className="max-w-4xl">
-            <span className="block">You Want to Earn in Travel.</span>
-            <span className="block">The Barriers Are Real.</span>
+            <span className="block">You Want to Start a Travel Business.</span>
+            <span className="block">The System Makes It Nearly Impossible.</span>
           </h2>
           <p className="mt-8 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            You know there's money in travel. You see agencies posting on
-            Instagram. You hear about people earning commissions. But when you
-            look into it, the barriers are real: IATA accreditation costs
-            millions. GDS access requires contracts and deposits. Starting an
-            agency demands capital, an office, and industry connections you
-            don't have.
+            Starting a travel agency in Nigeria the traditional way requires ₦30 million in CAC share capital, NANTA membership, NCAA registration, and your own IATA accreditation — which means a BSP bond, a physical office, and 12-24 months of process. The total investment? ₦5-10 million before you sell a single ticket. For most Nigerians, that's not a barrier — it's a wall.
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
             And then there's the noise. "Pay $50 to unlock Diamond Level."
