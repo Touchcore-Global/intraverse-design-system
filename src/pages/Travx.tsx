@@ -393,7 +393,11 @@ const Travx = () => {
                 ))}
               </div>
 
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <p className="mt-4 text-xs text-muted-foreground text-center">
+                One-time setup fee applies
+              </p>
+
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
                   variant="hero"
                   size="xl"
