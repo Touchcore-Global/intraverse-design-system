@@ -152,6 +152,16 @@ const App = () => (
           <Route path="/admin/jobs/:id" element={<AdminJobsEditor />} />
           <Route path="/admin/users" element={<AdminUsers />} />
           <Route path="/admin/independents-interest" element={<AdminIndependentsInterest />} />
+          {/* Legacy redirects */}
+          <Route path="/flight" element={<Navigate to="/products/agent-platform" replace />} />
+          <Route path="/accommodations" element={<Navigate to="/products/agent-platform" replace />} />
+          <Route path="/tours" element={<Navigate to="/products/agent-platform" replace />} />
+          <Route path="/insurance" element={<Navigate to="/products/agent-platform" replace />} />
+          <Route path="/customer" element={<Navigate to="/travx" replace />} />
+          <Route path="/sidehustle" element={<Navigate to="/independents" replace />} />
+          <Route path="/travelagent" element={<Navigate to="/for/travel-agents" replace />} />
+          <Route path="/fintech" element={<Navigate to="/for/fintechs" replace />} />
+          <Route path="/developer" element={<Navigate to="/docs" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
