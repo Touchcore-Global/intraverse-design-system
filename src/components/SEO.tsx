@@ -206,7 +206,7 @@ export function SEO({
       <meta property="og:locale:alternate" content="en_US" />
       <meta property="og:country-name" content="Nigeria" />
       <meta property="og:region" content="Lagos" />
-      {finalCanonical && <meta property="og:url" content={finalCanonical} />}
+      {ogUrl && <meta property="og:url" content={ogUrl} />}
 
       {/* Twitter card — NG-tuned */}
       <meta name="twitter:card" content="summary_large_image" />
