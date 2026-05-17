@@ -24,7 +24,6 @@ const IndexV2 = () => {
         canonical="https://intraverse.africa"
         ogTitle="Intraverse"
         ogDescription="Sell flights, hotels, tours and travel services with Intraverse."
-        ogImage="https://intraverse.africa/og-image.jpg"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",

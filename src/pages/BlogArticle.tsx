@@ -125,7 +125,6 @@ export default function BlogArticle() {
         title={`${article.title} | Intraverse Blog`}
         description={article.excerpt}
         canonical={`https://intraverse.africa/blog/${article.slug}`}
-        ogImage={article.cover_image_url || "https://intraverse.africa/og-default.png"}
         ogType="article"
         jsonLd={{
           "@context": "https://schema.org",

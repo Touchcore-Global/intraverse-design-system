@@ -151,7 +151,6 @@ const CoopX = () => {
         title="CoopX — Corporate Travel Management Platform Nigeria | Intraverse"
         description="Simplify corporate travel in Africa. Manage bookings, control spend, enforce travel policy, and automate expense reporting. Built for Nigerian and African enterprises."
         canonical={pathname}
-        ogImage="https://intraverse.africa/og/coopx.jpg"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",

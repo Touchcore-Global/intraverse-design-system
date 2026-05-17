@@ -139,7 +139,6 @@ export default function NewsArticle() {
         title={`${item.title} | News`}
         description={item.excerpt}
         canonical={`https://intraverse.africa/news/${item.slug}`}
-        ogImage={item.featured_image || "https://intraverse.africa/og-default.png"}
         ogType="article"
         jsonLd={
           item.category === "press-releases"
