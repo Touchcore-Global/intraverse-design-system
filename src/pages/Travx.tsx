@@ -24,7 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
 import { useLocation } from "react-router-dom";
 import iataLogo from "@/assets/iata-logo.png";
