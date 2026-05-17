@@ -338,7 +338,10 @@ const Travx = () => {
             Right now, when a potential customer searches "flights to London from Lagos," they find agencies with websites — not yours. You're relying on WhatsApp forwards and word-of-mouth while competitors with an online presence capture bookings around the clock, even while they sleep.
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            Building a custom booking website costs ₦3-10 million and takes months of back-and-forth with developers. And most agency websites end up as digital brochures — they can't search live inventory, process bookings, or accept payments. You pay for a site that still requires you to do everything manually. TravX is the alternative: a fully branded, booking-enabled website connected to GDS and NDC content, live in days for ₦75,000/month.
+            Building a custom booking website costs ₦3-10 million and takes months of back-and-forth with developers. And most agency websites end up as digital brochures — they can't search live inventory, process bookings, or accept payments. You pay for a site that still requires you to do everything manually. TravX is the alternative: a fully branded, booking-enabled website connected to{" "}
+            <Link to="/products/agent-platform" className="text-primary underline underline-offset-2 hover:text-primary/80">
+              GDS and NDC content
+            </Link>, live in days for ₦75,000/month.
           </p>
         </div>
       </section>
