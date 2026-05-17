@@ -152,7 +152,7 @@ export function SEO({
     upsertMeta("property", "og:locale", "en_NG");
     upsertMeta("property", "og:country-name", "Nigeria");
     upsertMeta("property", "og:region", "Lagos");
-    if (finalCanonical) upsertMeta("property", "og:url", finalCanonical);
+    if (ogUrl) upsertMeta("property", "og:url", ogUrl);
 
     // Twitter
     upsertMeta("name", "twitter:card", "summary_large_image");
