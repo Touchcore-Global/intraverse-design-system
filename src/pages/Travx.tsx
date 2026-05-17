@@ -261,7 +261,14 @@ const Travx = () => {
               className="cta-responsive min-h-[48px]"
               asChild
             >
-              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
+              <a
+                href={DEMO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent(CTA_EVENTS.travxDemoClick, { page: "travx" })
+                }
+              >
                 See Travx in Action
               </a>
             </Button>
