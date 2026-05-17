@@ -143,8 +143,8 @@ const IndependentsAudience = () => {
           "@type": "FAQPage",
           mainEntity: faqs.map((faq) => ({
             "@type": "Question",
-            name: faq.question,
-            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            name: faq.q,
+            acceptedAnswer: { "@type": "Answer", text: faq.a },
           })),
         }}
       />
