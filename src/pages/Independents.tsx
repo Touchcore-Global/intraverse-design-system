@@ -34,7 +34,7 @@ const features = [
     icon: Plane,
     title: "Sell Flights From Every Source",
     description:
-      "Access the same flight inventory that professional agencies use - GDS systems (Amadeus, Sabre, Galileo by Travelport), NDC direct connections, and consolidator fares. You're not reselling someone else's markup. You're selling real inventory at real prices.",
+      "Access the same flight inventory that professional IATA-accredited agencies use — GDS systems (Amadeus, Sabre, Galileo), NDC direct connections, and consolidator fares. You're not reselling someone else's markup. You're searching and booking real inventory at competitive prices, just like a licensed agency would.",
     bullets: [
       "GDS, NDC, and consolidator inventory",
       "Domestic and international flights",
@@ -70,7 +70,7 @@ const features = [
     icon: Wallet,
     title: "Earn on Every Booking",
     description:
-      "You earn a commission on every booking you make. No monthly fees eating into your income. Your earnings scale with your effort and volume - the more you sell, the more you keep.",
+      "You earn a commission on every booking you make — flights, hotels, and tour packages. A single Lagos-to-London return booking can earn you ₦15,000-₦40,000 in commission depending on the fare and class. Your earnings scale with your effort and volume — the more you sell, the more you keep. No caps on what you can earn.",
     bullets: [
       "Commission on flights, hotels, and tours",
       "Transparent commission structure",
@@ -99,7 +99,7 @@ const features = [
       "Full platform access on mobile",
       "No office or physical location needed",
       "Manage your business on your schedule",
-      "Built for how young Africans work",
+      "Built for how Nigerians actually work — mobile-first",
     ],
   },
 ];
