@@ -258,8 +258,11 @@ const Travx = () => {
               variant="hero"
               size="xl"
               className="cta-responsive min-h-[48px]"
+              asChild
             >
-              See Travx in Action
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
+                See Travx in Action
+              </a>
             </Button>
             <Button
               variant="whatsapp"
