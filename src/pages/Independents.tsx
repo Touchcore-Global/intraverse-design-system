@@ -247,18 +247,14 @@ const Independents = () => {
 
         <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
           <h1 className="max-w-5xl mx-auto">
-            Start Earning in Travel. No Agency. No Experience. No Gatekeepers.
+            Start Your Travel Business in Nigeria — No IATA Needed
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            The Independents Programme gives you access to the same
-            IATA-accredited travel technology used by 200+ professional
-            agencies. Sell flights from GDS, NDC, and consolidator inventory,
-            plus hotels and tours from leading global suppliers. Earn real
-            commissions on every booking. No agency required.
+            The Independents Programme gives you access to the same IATA-accredited travel technology used by 200+ professional agencies — without needing ₦30 million in share capital or your own IATA accreditation. Sell flights across 900+ airlines via Amadeus, Sabre, and Galileo. Sell hotels and tours from global suppliers. Earn real commissions on every booking. Start with just your phone and an internet connection.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
-              <a href="/for/independents/interest">Join the Independents Programme</a>
+              <a href="/for/independents/interest">Apply to Join the Programme</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
@@ -268,7 +264,7 @@ const Independents = () => {
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            Real tools • Real inventory • Real commissions
+            IATA accredited • No ₦30M capital needed • Real commissions • Start part-time
           </p>
         </div>
       </section>
