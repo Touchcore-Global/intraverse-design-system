@@ -27,7 +27,7 @@ import {
 import { WHATSAPP_URL, DEMO_URL } from "@/lib/constants";
 import { trackEvent, CTA_EVENTS } from "@/lib/analytics";
 import { SEO } from "@/components/SEO";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import iataLogo from "@/assets/iata-logo.png";
 import amadeusLogo from "@/assets/amadeus-logo.png";
 import sabreLogo from "@/assets/sabre-logo.png";
@@ -252,7 +252,14 @@ const Travx = () => {
             Your Own Travel Booking Website — Live in Days, Not Months
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            TravX gives your travel agency a fully branded, booking-enabled website connected to 900+ airlines via Amadeus, Sabre, Galileo, and NDC. Your customers search, book, and pay online. You control the markup and keep the customer. From ₦75,000/month.
+            TravX gives your{" "}
+            <Link to="/for/travel-agents" className="text-primary underline underline-offset-2 hover:text-primary/80">
+              travel agency
+            </Link>{" "}
+            a fully branded, booking-enabled website connected to 900+ airlines via Amadeus, Sabre, Galileo, and NDC. Your customers search, book, and pay online. You control the markup and keep the customer.{" "}
+            <Link to="/pricing" className="text-primary underline underline-offset-2 hover:text-primary/80">
+              From ₦75,000/month
+            </Link>.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
@@ -331,7 +338,10 @@ const Travx = () => {
             Right now, when a potential customer searches "flights to London from Lagos," they find agencies with websites — not yours. You're relying on WhatsApp forwards and word-of-mouth while competitors with an online presence capture bookings around the clock, even while they sleep.
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            Building a custom booking website costs ₦3-10 million and takes months of back-and-forth with developers. And most agency websites end up as digital brochures — they can't search live inventory, process bookings, or accept payments. You pay for a site that still requires you to do everything manually. TravX is the alternative: a fully branded, booking-enabled website connected to GDS and NDC content, live in days for ₦75,000/month.
+            Building a custom booking website costs ₦3-10 million and takes months of back-and-forth with developers. And most agency websites end up as digital brochures — they can't search live inventory, process bookings, or accept payments. You pay for a site that still requires you to do everything manually. TravX is the alternative: a fully branded, booking-enabled website connected to{" "}
+            <Link to="/products/agent-platform" className="text-primary underline underline-offset-2 hover:text-primary/80">
+              GDS and NDC content
+            </Link>, live in days for ₦75,000/month.
           </p>
         </div>
       </section>
@@ -433,7 +443,10 @@ const Travx = () => {
               <strong className="text-foreground">
                 What it costs you NOT to have a website:
               </strong>{" "}
-              Every day without a booking-enabled site, potential customers find your competitors instead. At just 2–3 lost bookings per month, the revenue you're missing far exceeds ₦75,000. TravX doesn't cost you money — it makes you money.
+              Every day without a booking-enabled site, potential customers find your competitors instead. At just 2–3 lost bookings per month, the revenue you're missing far exceeds ₦75,000. TravX doesn't cost you money — it makes you money.{" "}
+              <Link to="/independents" className="text-primary underline underline-offset-2 hover:text-primary/80">
+                Independent agents can get started too
+              </Link>.
             </p>
           </div>
         </div>
