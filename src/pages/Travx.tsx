@@ -27,6 +27,10 @@ import {
 import { WHATSAPP_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
 import { useLocation } from "react-router-dom";
+import iataLogo from "@/assets/iata-logo.png";
+import amadeusLogo from "@/assets/amadeus-logo.png";
+import sabreLogo from "@/assets/sabre-logo.png";
+import travelportLogo from "@/assets/travelport-logo.png";
 
 const features = [
   {
