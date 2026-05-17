@@ -418,10 +418,7 @@ const Travx = () => {
               <strong className="text-foreground">
                 What it costs you NOT to have a website:
               </strong>{" "}
-              Every day without a booking-enabled site, potential customers find
-              your competitors instead. At just 2–3 lost bookings per month, the
-              revenue you're missing far exceeds $50. Travx doesn't cost
-              you money - it makes you money.
+              Every day without a booking-enabled site, potential customers find your competitors instead. At just 2–3 lost bookings per month, the revenue you're missing far exceeds ₦75,000. TravX doesn't cost you money — it makes you money.
             </p>
           </div>
         </div>
