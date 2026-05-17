@@ -27,13 +27,17 @@ import {
 import { WHATSAPP_URL } from "@/lib/constants";
 import { SEO } from "@/components/SEO";
 import { useLocation } from "react-router-dom";
+import iataLogo from "@/assets/iata-logo.png";
+import amadeusLogo from "@/assets/amadeus-logo.png";
+import sabreLogo from "@/assets/sabre-logo.png";
+import travelportLogo from "@/assets/travelport-logo.png";
 
 const features = [
   {
     icon: Palette,
     title: "Your Brand, Your Domain",
     description:
-      "Fully white-labelled with your agency's logo, colours, and custom domain. Your customers see your brand - not ours. It's your website, powered by Intraverse behind the scenes.",
+      "Fully white-labelled with your agency's logo, colours, and custom domain. Your customers see your brand — not ours. When they visit book.youragency.com, it looks and feels like your own platform.",
     bullets: [
       "Custom domain (e.g. book.youragency.com)",
       "Your logo, brand colours, and fonts",
@@ -43,21 +47,45 @@ const features = [
   },
   {
     icon: Plane,
-    title: "Integrated Booking Engine",
+    title: "GDS + NDC Booking Engine",
     description:
-      "Connected directly to Intraverse's aggregated inventory. Your customers search real-time flights, hotels, and tours - and book instantly. No copy-paste. No manual processing.",
+      "Connected to Amadeus, Sabre, Galileo, NDC, and LCC inventory. Your customers search real-time flights across 900+ airlines, compare fares, and book instantly. No manual fare searches. No copy-pasting PNRs.",
     bullets: [
-      "Real-time flight search from GDS + NDC + consolidators",
-      "Hotel and tour inventory included",
-      "Instant booking confirmation",
-      "Automated ticket issuance",
+      "Amadeus, Sabre, Galileo GDS content",
+      "NDC and low-cost carrier fares",
+      "1M+ hotel properties via HotelBeds",
+      "Instant booking confirmation and e-ticket issuance",
+    ],
+  },
+  {
+    icon: CreditCard,
+    title: "Nigerian Payment Methods",
+    description:
+      "Accept payments directly on your website in Naira. Customers pay with cards, bank transfers, or USSD — no more chasing payments over WhatsApp or waiting for bank alerts to confirm.",
+    bullets: [
+      "Card payments (Visa, Mastercard, Verve)",
+      "Bank transfer and USSD support",
+      "Naira pricing for your customers",
+      "Automatic payment reconciliation",
+    ],
+  },
+  {
+    icon: TrendingUp,
+    title: "Markup and Commission Control",
+    description:
+      "Set your own markup on every fare. You decide how much profit you make on each booking — not us. See your earnings in real time and track which routes and products generate the most revenue.",
+    bullets: [
+      "Set custom markup per booking type",
+      "Real-time earnings dashboard",
+      "Revenue analytics by route and product",
+      "Full control over your pricing to customers",
     ],
   },
   {
     icon: Smartphone,
-    title: "Mobile-Responsive",
+    title: "Built for Nigerian Mobile",
     description:
-      "Built mobile-first for how customers actually browse. Over 80% of your visitors will come from phones - Travx looks and works beautifully on every screen size.",
+      "Over 80% of your customers will visit from their phones on 3G or 4G. TravX is mobile-first — fast loading, touch-optimised, and designed for how Nigerians actually browse and book.",
     bullets: [
       "Mobile-first responsive design",
       "Fast load times on 3G/4G networks",
@@ -66,39 +94,15 @@ const features = [
     ],
   },
   {
-    icon: CreditCard,
-    title: "Online Payments",
-    description:
-      "Accept payments directly on your website. Customers pay with cards, bank transfers, or USSD - no more chasing payments over WhatsApp or waiting for bank alerts.",
-    bullets: [
-      "Card payments (Visa, Mastercard)",
-      "Bank transfer and USSD support",
-      "Secure payment processing",
-      "Automatic payment reconciliation",
-    ],
-  },
-  {
     icon: Clock,
     title: "Live in Days, Not Months",
     description:
-      "No developers needed. No months of back-and-forth. Choose a template, add your branding, and go live. Most agencies launch their Travx site within a week.",
+      "No developers needed. No months of back-and-forth. Choose a template, add your branding, and go live. Most agencies launch their TravX site within a week.",
     bullets: [
-      "Template-based setup - no coding required",
+      "Template-based setup — no coding required",
       "Guided onboarding process",
       "Content upload assistance available",
       "Live within 5-7 business days",
-    ],
-  },
-  {
-    icon: TrendingUp,
-    title: "SEO-Ready",
-    description:
-      "Clean code, fast page loads, and search-engine-optimised structure. When customers Google 'flights to Dubai from Lagos,' your agency can actually show up.",
-    bullets: [
-      "SEO-optimised page structure",
-      "Fast loading speeds (Core Web Vitals)",
-      "Meta tags and schema markup included",
-      "Google Analytics integration ready",
     ],
   },
 ];
@@ -106,38 +110,71 @@ const features = [
 const includedItems = [
   "Fully branded, booking-enabled website",
   "Custom domain setup and hosting",
-  "Real-time flight, hotel, and tour search",
-  "Online payment integration",
+  "GDS access: Amadeus, Sabre, Galileo",
+  "NDC and LCC fare content",
+  "1M+ hotel properties",
+  "Online payment integration (Naira)",
   "Mobile-responsive design",
-  "SEO optimisation and analytics",
+  "Markup and commission control",
   "Ongoing platform updates and support",
+];
+
+const trustStats = [
+  { value: "900+", label: "Airlines" },
+  { value: "1M+", label: "Hotel Properties" },
+  { value: "200+", label: "Active Agents" },
 ];
 
 const faqs = [
   {
-    question: "Do I need any technical skills to use Travx?",
+    question: "Do I need IATA accreditation to use TravX?",
     answer:
-      "Not at all. Travx is designed for travel agents, not developers. You choose a template, upload your logo and brand details, and we handle the rest. If you can use WhatsApp, you can manage your Travx website.",
+      "No. TravX operates under Intraverse's IATA accreditation. You get full GDS access — Amadeus, Sabre, Galileo — and the ability to issue tickets without needing your own IATA licence. This saves you the ₦30M+ share capital requirement and years of application process.",
+  },
+  {
+    question: "What airlines and hotels can my customers access?",
+    answer:
+      "Over 900 airlines including major carriers (Emirates, British Airways, Ethiopian Airlines, Air Peace, etc.) and low-cost carriers through GDS, NDC, and consolidator content. For hotels, you get access to 1M+ properties worldwide through HotelBeds and other aggregators. Tours and experiences are also included.",
+  },
+  {
+    question: "Can I add my own markup to bookings?",
+    answer:
+      "Yes — full markup control is built in. You set the profit margin on every fare. When a customer books on your TravX website, they see your price (base fare + your markup). You keep the markup as profit. There's no cap on how much you can add.",
   },
   {
     question: "Can my customers actually book and pay on the website?",
     answer:
-      "Yes - that's the whole point. Unlike most agency websites that are just digital brochures, Travx connects to Intraverse's live inventory. Your customers search real flights, hotels, and tours, book instantly, and pay online. You get notified and the booking is processed automatically.",
+      "Yes — that's the whole point. Unlike most agency websites that are just digital brochures, TravX connects to live inventory. Your customers search real flights, hotels, and tours, book instantly, and pay online in Naira using cards, bank transfer, or USSD. You get notified and the booking is processed automatically.",
   },
   {
-    question: "What's included in the plan?",
+    question: "How is TravX different from Wakanow or Travelstart?",
     answer:
-      "Everything. Hosting, custom domain, booking engine, payment integration, mobile-responsive design, SEO optimisation, platform updates, and support. There are no hidden fees or setup costs.",
-  },
-  {
-    question: "Can I use my own domain name?",
-    answer:
-      "Absolutely. You can connect your existing domain (e.g. www.youragency.com) or set up a subdomain (e.g. book.youragency.com). We'll help you configure the DNS settings.",
+      "Wakanow and Travelstart are B2C OTAs — they sell travel directly to consumers under their own brand. TravX is a B2B white-label platform — it gives YOU a branded website that sells travel under YOUR brand. Your customers see your agency name, your domain, your logo. You control the pricing, the relationship, and the customer data.",
   },
   {
     question: "How long does it take to go live?",
     answer:
-      "Most agencies launch within 5-7 business days. Once you sign up, you'll go through a guided setup process - choose your template, upload your branding, and review your site. We handle the technical deployment.",
+      "Most agencies launch within 5-7 business days. Once you sign up, you go through a guided setup process — choose your template, upload your branding, and review your site. We handle the technical deployment and domain configuration.",
+  },
+  {
+    question: "Do I need any technical skills?",
+    answer:
+      "Not at all. TravX is designed for travel agents, not developers. You choose a template, upload your logo and brand details, and we handle the rest. If you can use WhatsApp, you can manage your TravX website.",
+  },
+  {
+    question: "Can I use my own domain name?",
+    answer:
+      "Absolutely. You can connect your existing domain (e.g. www.youragency.com) or set up a subdomain (e.g. book.youragency.com). We help you configure the DNS settings during onboarding.",
+  },
+  {
+    question: "What does ₦75,000/month include?",
+    answer:
+      "Everything: hosting, custom domain, GDS booking engine (Amadeus, Sabre, Galileo), NDC and LCC content, hotel and tour inventory, payment integration, mobile-responsive design, markup control, analytics, platform updates, and support. No hidden fees. No setup costs.",
+  },
+  {
+    question: "Is there a contract or can I cancel anytime?",
+    answer:
+      "Month-to-month billing. No long-term contracts. You can cancel anytime. We believe TravX should earn your subscription every month — if it's not generating more revenue than it costs, you shouldn't be paying for it.",
   },
 ];
 
@@ -211,14 +248,10 @@ const Travx = () => {
 
         <div className="container relative mx-auto px-4 py-20 lg:py-32 text-center">
           <h1 className="max-w-5xl mx-auto">
-            Get a Website That Books Flights, Hotels &amp; Tours
+            Your Own Travel Booking Website — Live in Days, Not Months
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            Travx gives your travel agency a fully branded, booking-enabled
-            website - without hiring a developer or waiting months for delivery.
-            Your customers search flights, hotels, and tours, book directly, and
-            pay online. You get a professional digital presence that generates
-            revenue 24/7.
+            TravX gives your travel agency a fully branded, booking-enabled website connected to 900+ airlines via Amadeus, Sabre, Galileo, and NDC. Your customers search, book, and pay online. You control the markup and keep the customer. From ₦75,000/month.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
@@ -240,8 +273,40 @@ const Travx = () => {
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            No setup fees • Cancel anytime • Live in days
+            IATA accredited • No setup fees • Cancel anytime • Live in 5-7 days
           </p>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section className="py-6 md:py-8 bg-muted/30 border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8 max-w-6xl mx-auto md:max-h-[120px]">
+            <div className="grid grid-cols-3 gap-4 md:gap-8">
+              {trustStats.map((s) => (
+                <div key={s.label} className="text-center md:text-left">
+                  <p className="text-xl md:text-2xl font-bold text-foreground">{s.value}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">{s.label}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-center md:justify-end gap-6 md:gap-10 flex-wrap">
+              {[
+                { name: "IATA", logo: iataLogo },
+                { name: "Amadeus", logo: amadeusLogo },
+                { name: "Sabre", logo: sabreLogo },
+                { name: "Travelport", logo: travelportLogo },
+              ].map((p) => (
+                <img
+                  key={p.name}
+                  src={p.logo}
+                  alt={`${p.name} logo`}
+                  className="h-6 md:h-8 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -252,18 +317,10 @@ const Travx = () => {
             Your Agency Deserves More Than a WhatsApp Business Profile
           </h2>
           <p className="mt-8 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            Right now, your agency is invisible online. When a potential customer
-            searches "flights to London from Lagos," they find your competitors -
-            the ones with websites. You're relying on word-of-mouth and WhatsApp
-            forwards while agencies with an online presence capture bookings
-            around the clock.
+            Right now, when a potential customer searches "flights to London from Lagos," they find agencies with websites — not yours. You're relying on WhatsApp forwards and word-of-mouth while competitors with an online presence capture bookings around the clock, even while they sleep.
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
-            Building a custom website costs a lot and takes months of
-            back-and-forth with developers. And most agency websites are just
-            digital brochures - they can't actually search inventory, process
-            bookings, or accept payments. You end up paying for a site that still
-            requires you to do everything manually.
+            Building a custom booking website costs ₦3-10 million and takes months of back-and-forth with developers. And most agency websites end up as digital brochures — they can't search live inventory, process bookings, or accept payments. You pay for a site that still requires you to do everything manually. TravX is the alternative: a fully branded, booking-enabled website connected to GDS and NDC content, live in days for ₦75,000/month.
           </p>
         </div>
       </section>
@@ -315,13 +372,13 @@ const Travx = () => {
             </p>
             <div className="brand-card border-2 border-primary p-8 md:p-12">
               <p className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground tracking-tight">
-                $50
+                ₦75,000
                 <span className="text-2xl sm:text-3xl text-muted-foreground font-normal">
                   /month
                 </span>
               </p>
               <p className="mt-4 text-lg text-muted-foreground">
-                Less than one week of developer costs. Includes everything.
+                Less than the cost of one round-trip Lagos-London commission. Includes everything.
               </p>
 
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-lg mx-auto">
@@ -361,10 +418,7 @@ const Travx = () => {
               <strong className="text-foreground">
                 What it costs you NOT to have a website:
               </strong>{" "}
-              Every day without a booking-enabled site, potential customers find
-              your competitors instead. At just 2–3 lost bookings per month, the
-              revenue you're missing far exceeds $50. Travx doesn't cost
-              you money - it makes you money.
+              Every day without a booking-enabled site, potential customers find your competitors instead. At just 2–3 lost bookings per month, the revenue you're missing far exceeds ₦75,000. TravX doesn't cost you money — it makes you money.
             </p>
           </div>
         </div>
@@ -433,17 +487,14 @@ const Travx = () => {
             <div className="border border-border rounded-xl p-8 md:p-12 bg-card">
               <Quote className="h-10 w-10 text-primary/20 mb-6" />
               <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium mb-8">
-                "We went from only getting enquiries through WhatsApp to having
-                customers book and pay directly on our website. In the first
-                month, we processed 15 online bookings we would have never
-                received before. Travx paid for itself in the first week."
+                "We went from only getting enquiries through WhatsApp to having customers book and pay directly on our website. In the first month, we processed 15 online bookings we would have never received before. The GDS access alone — being able to offer Amadeus and Sabre fares on our own website — changed how our customers see us. TravX paid for itself in the first week."
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
                   T
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Tunde A.</p>
+                  <p className="font-semibold text-foreground">Tunde Adeyemi</p>
                   <p className="text-sm text-muted-foreground">
                     Royal Wings Travel - Ibadan
                   </p>
@@ -486,8 +537,7 @@ const Travx = () => {
             Your Customers Are Searching Online. Are You There?
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Launch your branded, booking-enabled website for $50/month.
-            No developers. No delays. Just revenue.
+            Launch your branded, booking-enabled website for ₦75,000/month. GDS access included. No developers. No delays. Just revenue.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
