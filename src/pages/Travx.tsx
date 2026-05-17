@@ -50,7 +50,7 @@ const features = [
     icon: Plane,
     title: "GDS + NDC Booking Engine",
     description:
-      "Connected to Amadeus, Sabre, Galileo, NDC, and LCC inventory. Your customers search real-time flights across 900+ airlines, compare fares, and book instantly. No manual fare searches. No copy-pasting PNRs. Also available through our Agent Selling Platform.",
+      "Connected to Amadeus, Sabre, Galileo, NDC, and LCC inventory. Your customers search real-time flights across 900+ airlines, compare fares, and book instantly. No manual fare searches. No copy-pasting PNRs.",
     bullets: [
       "Amadeus, Sabre, Galileo GDS content",
       "NDC and low-cost carrier fares",
