@@ -253,11 +253,11 @@ const Travx = () => {
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
             TravX gives your{" "}
-            <Link to="/for/travel-agents" className="text-primary underline underline-offset-2 hover:text-primary/80">
+            <Link to="/for/travel-agents">
               travel agency
             </Link>{" "}
             a fully branded, booking-enabled website connected to 900+ airlines via Amadeus, Sabre, Galileo, and NDC. Your customers search, book, and pay online. You control the markup and keep the customer.{" "}
-            <Link to="/pricing" className="text-primary underline underline-offset-2 hover:text-primary/80">
+            <Link to="/pricing">
               From ₦75,000/month
             </Link>.
           </p>
@@ -339,7 +339,7 @@ const Travx = () => {
           </p>
           <p className="mt-6 text-base sm:text-lg max-w-3xl text-muted-foreground leading-relaxed">
             Building a custom booking website costs ₦3-10 million and takes months of back-and-forth with developers. And most agency websites end up as digital brochures — they can't search live inventory, process bookings, or accept payments. You pay for a site that still requires you to do everything manually. TravX is the alternative: a fully branded, booking-enabled website connected to{" "}
-            <Link to="/products/agent-platform" className="text-primary underline underline-offset-2 hover:text-primary/80">
+            <Link to="/products/agent-platform">
               GDS and NDC content
             </Link>, live in days for ₦75,000/month.
           </p>
@@ -444,7 +444,7 @@ const Travx = () => {
                 What it costs you NOT to have a website:
               </strong>{" "}
               Every day without a booking-enabled site, potential customers find your competitors instead. At just 2–3 lost bookings per month, the revenue you're missing far exceeds ₦75,000. TravX doesn't cost you money — it makes you money.{" "}
-              <Link to="/independents" className="text-primary underline underline-offset-2 hover:text-primary/80">
+              <Link to="/independents">
                 Independent agents can get started too
               </Link>.
             </p>
