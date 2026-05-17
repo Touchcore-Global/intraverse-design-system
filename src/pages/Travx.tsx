@@ -203,16 +203,30 @@ const Travx = () => {
         title="TravX — White-Label Travel Booking Platform for Agents | Intraverse"
         description="White-label travel booking platform for travel agents. Branded website with GDS access (Amadeus, Sabre, Galileo), 900+ airlines, hotels, and NGN payments. From ₦75,000/month."
         canonical={pathname}
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          name: "TravX",
-          applicationCategory: "TravelApplication",
-          operatingSystem: "Web",
-          description: "White-label travel booking platform for travel agents",
-          offers: { "@type": "Offer", price: "75000", priceCurrency: "NGN", priceValidUntil: "2026-12-31" },
-          provider: { "@type": "Organization", name: "Intraverse", url: "https://intraverse.africa" },
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "TravX",
+            applicationCategory: "TravelApplication",
+            operatingSystem: "Web",
+            description: "White-label travel booking platform for travel agents",
+            offers: { "@type": "Offer", price: "75000", priceCurrency: "NGN", priceValidUntil: "2026-12-31" },
+            provider: { "@type": "Organization", name: "Intraverse", url: "https://intraverse.africa" },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          },
+        ]}
       />
       <Navbar />
       <div className="h-16" />
