@@ -77,6 +77,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <PageViewTracker />
         <Routes>
           <Route path="/" element={<IndexV2 />} />
           <Route path="/v1" element={<Index />} />
