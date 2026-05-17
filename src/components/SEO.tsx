@@ -63,6 +63,22 @@ export function SEO({
   };
   const finalCanonical = normalizeCanonical(canonical);
 
+  // Append UTM params to og:url / twitter URL so social-share clicks are
+  // attributable in analytics. Canonical stays clean to avoid SEO issues.
+  const withUtm = (url?: string): string | undefined => {
+    if (!url) return undefined;
+    try {
+      const u = new URL(url);
+      u.searchParams.set("utm_source", "social");
+      u.searchParams.set("utm_medium", "og");
+      u.searchParams.set("utm_campaign", "og_share");
+      return u.toString();
+    } catch {
+      return url;
+    }
+  };
+  const ogUrl = withUtm(finalCanonical);
+
   // Synchronous head mutation — runs in both browsers AND inside react-snap's
   // Puppeteer page. Guarantees per-route tags exist in document.head before
   // the snapshot is captured, independent of Helmet's async dispatcher.
@@ -136,7 +152,7 @@ export function SEO({
     upsertMeta("property", "og:locale", "en_NG");
     upsertMeta("property", "og:country-name", "Nigeria");
     upsertMeta("property", "og:region", "Lagos");
-    if (finalCanonical) upsertMeta("property", "og:url", finalCanonical);
+    if (ogUrl) upsertMeta("property", "og:url", ogUrl);
 
     // Twitter
     upsertMeta("name", "twitter:card", "summary_large_image");
@@ -190,7 +206,7 @@ export function SEO({
       <meta property="og:locale:alternate" content="en_US" />
       <meta property="og:country-name" content="Nigeria" />
       <meta property="og:region" content="Lagos" />
-      {finalCanonical && <meta property="og:url" content={finalCanonical} />}
+      {ogUrl && <meta property="og:url" content={ogUrl} />}
 
       {/* Twitter card — NG-tuned */}
       <meta name="twitter:card" content="summary_large_image" />
