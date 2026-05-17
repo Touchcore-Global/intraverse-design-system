@@ -487,17 +487,14 @@ const Travx = () => {
             <div className="border border-border rounded-xl p-8 md:p-12 bg-card">
               <Quote className="h-10 w-10 text-primary/20 mb-6" />
               <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium mb-8">
-                "We went from only getting enquiries through WhatsApp to having
-                customers book and pay directly on our website. In the first
-                month, we processed 15 online bookings we would have never
-                received before. Travx paid for itself in the first week."
+                "We went from only getting enquiries through WhatsApp to having customers book and pay directly on our website. In the first month, we processed 15 online bookings we would have never received before. The GDS access alone — being able to offer Amadeus and Sabre fares on our own website — changed how our customers see us. TravX paid for itself in the first week."
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
                   T
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Tunde A.</p>
+                  <p className="font-semibold text-foreground">Tunde Adeyemi</p>
                   <p className="text-sm text-muted-foreground">
                     Royal Wings Travel - Ibadan
                   </p>
