@@ -9,7 +9,7 @@ import toolInsights from "@/assets/tool-insights.jpg";
 import toolPackages from "@/assets/tool-packages.jpg";
 import toolLinks from "@/assets/tool-links.jpg";
 import toolWorkspace from "@/assets/tool-workspace.jpg";
-import toolTeam from "@/assets/tool-team.jpg";
+import toolTeam from "@/assets/tool-team.webp";
 
 const tools = [
   {
