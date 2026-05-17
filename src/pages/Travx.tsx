@@ -372,13 +372,13 @@ const Travx = () => {
             </p>
             <div className="brand-card border-2 border-primary p-8 md:p-12">
               <p className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground tracking-tight">
-                $50
+                ₦75,000
                 <span className="text-2xl sm:text-3xl text-muted-foreground font-normal">
                   /month
                 </span>
               </p>
               <p className="mt-4 text-lg text-muted-foreground">
-                Less than one week of developer costs. Includes everything.
+                Less than the cost of one round-trip Lagos-London commission. Includes everything.
               </p>
 
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-lg mx-auto">
