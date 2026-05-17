@@ -499,11 +499,10 @@ const Independents = () => {
       <section className="py-20 md:py-28 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="max-w-4xl mx-auto text-primary-foreground">
-            Ready to Start Earning in Travel?
+            Your Travel Business Starts Here
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Real tools. Real inventory. Real commissions. Join the Independents
-            Programme and start building your travel business today.
+            You don't need ₦30 million. You don't need IATA accreditation. You don't need an office. You need a platform that gives you real tools, real inventory, and a real way to earn. Apply to join the Independents Programme today.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
@@ -512,7 +511,7 @@ const Independents = () => {
               className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none font-semibold"
               asChild
             >
-              <a href="/for/independents/interest">Join the Independents Programme</a>
+              <a href="/for/independents/interest">Apply to Join the Programme</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
