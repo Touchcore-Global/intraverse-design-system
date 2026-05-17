@@ -27,7 +27,7 @@ export const ROUTE_SEO = {
 
   // Products
   "/products": {
-    title: "Products | Intraverse",
+    title: "Travel Tech Products — Agent, Corporate & API | Intraverse",
     description:
       "Explore the Intraverse product suite: agent platform, white-label booking engine, supplier APIs, payments, and corporate travel tools built in Lagos.",
   },
@@ -72,17 +72,17 @@ export const ROUTE_SEO = {
       "Become an Intraverse Independent: sell flights, hotels, and tours under your own brand with our tools, training, and supplier inventory behind you.",
   },
   "/products/supplier-engine": {
-    title: "Supplier Engine | Intraverse",
+    title: "Supplier Engine — GDS, NDC & LCC Aggregator | Intraverse",
     description:
       "Supplier Engine aggregates GDS, NDC, LCC, and direct-connect inventory into one normalized API for African travel sellers and fintechs.",
   },
   "/supplier-engine": {
-    title: "Supplier Engine | Intraverse",
+    title: "Supplier Engine — GDS, NDC & LCC Aggregator | Intraverse",
     description:
       "Supplier Engine aggregates GDS, NDC, LCC, and direct-connect inventory into one normalized API for African travel sellers and fintechs.",
   },
   "/products/travel-links": {
-    title: "Travel Links | Intraverse",
+    title: "Travel Links — Sell Travel on WhatsApp & Social | Intraverse",
     description:
       "Travel Links: shareable booking links for agents and influencers. Sell flights and hotels through WhatsApp, Instagram, and any social channel.",
   },
@@ -97,7 +97,7 @@ export const ROUTE_SEO = {
       "Odiopay buy-now-pay-later for travel. Offer travelers flexible installments at checkout while you get paid up front through Intraverse.",
   },
   "/tools": {
-    title: "Travel Tools | Intraverse",
+    title: "Free Travel Tools — Visa, Fares & Routes | Intraverse",
     description:
       "Free travel tools: visa lookup, fare calendar, route planner, and currency converter built for African travel sellers and corporate buyers.",
   },
@@ -114,12 +114,12 @@ export const ROUTE_SEO = {
       "Sell travel as an independent under the Intraverse umbrella. Get supplier access, payment rails, training, and back-office support from day one.",
   },
   "/for/independents/interest": {
-    title: "Independents Interest | Intraverse",
+    title: "Join the Independents Program — Apply | Intraverse",
     description:
       "Express interest in the Intraverse Independents program. We'll get back to you with onboarding details, requirements, and the next intake date.",
   },
   "/who-we-serve": {
-    title: "Who We Serve | Intraverse",
+    title: "Who We Serve — Agents, Corporates & Fintechs | Intraverse",
     description:
       "Intraverse serves travel agencies, corporates, cooperatives, fintechs, developers, and startups across Africa with one B2B travel platform.",
   },
@@ -151,64 +151,64 @@ export const ROUTE_SEO = {
 
   // Core
   "/about": {
-    title: "About | Intraverse",
+    title: "About Intraverse — B2B Travel Tech Built in Lagos",
     description:
       "Intraverse is building the B2B travel technology platform for Africa. Learn about our mission, team, and the products we ship from Lagos to the continent.",
   },
   "/about/built-in-lagos": {
-    title: "Built in Lagos | Intraverse",
+    title: "Built in Lagos — Engineering for African Travel | Intraverse",
     description:
       "Intraverse is built in Lagos, Nigeria. Read how our Lagos engineering and travel teams design products for the realities of African travel.",
   },
   "/careers": {
-    title: "Careers | Intraverse",
+    title: "Careers — Build African Travel Tech | Intraverse",
     description:
       "Join Intraverse and help build the B2B travel platform for Africa. Engineering, product, design, and operations roles based in Lagos and remote.",
   },
   "/partnerships": {
-    title: "Partnerships | Intraverse",
+    title: "Partnerships — Airlines, Hotels & Fintechs | Intraverse",
     description:
       "Partner with Intraverse: airlines, hotels, banks, fintechs, and resellers. Reach African travel buyers through our platform and distribution.",
   },
   "/features": {
-    title: "Features | Intraverse",
+    title: "Platform Features — Booking, Payments & API | Intraverse",
     description:
       "Every Intraverse feature in one place: search, booking, ticketing, payments, reporting, white-label, API, and corporate travel controls.",
   },
   "/use-cases": {
-    title: "Use Cases | Intraverse",
+    title: "Use Cases — How African Businesses Use Intraverse",
     description:
       "See how agencies, corporates, fintechs, and startups use Intraverse to sell travel, manage spend, and ship new travel products faster in Africa.",
   },
   "/proof": {
-    title: "Proof & Results | Intraverse",
+    title: "Proof & Results — Customer Stories & Uptime | Intraverse",
     description:
       "Proof Intraverse delivers: customer stories, ticketing volumes, uptime metrics, and case studies from African travel businesses on our platform.",
   },
   "/faq": {
-    title: "FAQ | Intraverse",
+    title: "FAQ — Pricing, Onboarding & Support | Intraverse",
     description:
       "Answers to the most common Intraverse questions: pricing, onboarding, supported airlines and hotels, payments, support, and how to get started.",
   },
   "/contact": {
-    title: "Contact | Intraverse",
+    title: "Contact Intraverse — Sales, Support & Lagos HQ",
     description:
       "Get in touch with Intraverse. Talk to sales, partnerships, or support — or visit our Lagos HQ. We typically respond within one business day.",
   },
   "/pricing": {
-    title: "Pricing | Intraverse",
+    title: "Pricing — Pay-as-you-go & Subscriptions | Intraverse",
     description:
       "Transparent Intraverse pricing for agents, businesses, and developers. Pay-as-you-go and subscription plans with no surprise fees, USD-based.",
   },
 
   // Help / Docs
   "/help": {
-    title: "Help Center | Intraverse",
+    title: "Help Center — Guides & Troubleshooting | Intraverse",
     description:
       "Intraverse Help Center: guides, troubleshooting, account help, billing, and how-tos for agents, businesses, and developers using the platform.",
   },
   "/docs": {
-    title: "Developer Docs | Intraverse",
+    title: "Developer Docs — Travel API Reference | Intraverse",
     description:
       "Intraverse developer documentation. Start with quickstart, authentication, flights, hotels, tours, payments, webhooks, and the full API reference.",
   },
@@ -255,12 +255,12 @@ export const ROUTE_SEO = {
 
   // Content
   "/blog": {
-    title: "Blog | Intraverse",
+    title: "Blog — African Travel Industry Insights | Intraverse",
     description:
       "The Intraverse blog: African travel industry insights, product updates, engineering deep-dives, and stories from agents, corporates, and fintechs.",
   },
   "/news": {
-    title: "News & Press | Intraverse",
+    title: "News & Press — Announcements & Media | Intraverse",
     description:
       "Intraverse news and press: company announcements, product launches, partnership reveals, and media coverage from Lagos and across Africa.",
   },
