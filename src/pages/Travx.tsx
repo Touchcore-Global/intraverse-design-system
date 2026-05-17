@@ -210,9 +210,16 @@ const Travx = () => {
             name: "TravX",
             applicationCategory: "TravelApplication",
             operatingSystem: "Web",
+            url: "https://intraverse.africa/products/travx",
             description: "White-label travel booking platform for travel agents",
-            offers: { "@type": "Offer", price: "75000", priceCurrency: "NGN", priceValidUntil: "2026-12-31" },
-            provider: { "@type": "Organization", name: "Intraverse", url: "https://intraverse.africa" },
+            offers: {
+              "@type": "Offer",
+              price: "75000",
+              priceCurrency: "NGN",
+              availability: "https://schema.org/InStock",
+              url: "https://intraverse.africa/pricing",
+            },
+            publisher: { "@type": "Organization", name: "Intraverse", url: "https://intraverse.africa" },
           },
           {
             "@context": "https://schema.org",
