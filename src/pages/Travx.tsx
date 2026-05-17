@@ -165,7 +165,6 @@ const Travx = () => {
         title="TravX — White-Label Travel Booking Platform Nigeria | Intraverse"
         description="Launch your branded travel agency website in Nigeria. White-label booking with 900+ airlines, hotels, NGN payments, and customer management. From ₦75,000/month."
         canonical={pathname}
-        ogImage="https://intraverse.africa/og/travx.jpg"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
