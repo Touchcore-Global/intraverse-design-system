@@ -28,23 +28,23 @@ const partners = [
 
 const heroCards = [
   {
-    badge: "v3.0",
-    title: "What's new in Intraverse",
-    body: "AI-powered fare search, faster NDC booking flows and Travel Links 2.0.",
+    badge: "Travx",
+    title: "Travx OS for Agencies",
+    body: "The operating system for modern travel agencies — search, book, ticket, reissue and reconcile from one workspace.",
     icon: Sparkles,
-    href: "/products",
+    href: "/travx",
   },
   {
-    title: "Intraverse AI",
-    body: "AI co-pilot across search, booking, ticketing and post-sale support.",
+    title: "B2B Dashboard",
+    body: "Manage your team, wallets, sub-agents and bookings with role-based access, approvals and real-time reporting.",
     icon: Bot,
     href: "/agent-platform",
   },
   {
-    title: "Security built in",
-    body: "PCI-DSS-aligned payments, role-based access and full audit trails.",
+    title: "Intraverse API",
+    body: "One API for flights, hotels, tours and payments. Real inventory, typed schemas, sandbox keys, Postman ready.",
     icon: ShieldCheck,
-    href: "/products",
+    href: "/api",
   },
 ];
 
