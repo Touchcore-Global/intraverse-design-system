@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import IndexV2 from "./pages/IndexV2.tsx";
 import IndexV3 from "./pages/IndexV3.tsx";
+import IndexV4 from "./pages/IndexV4.tsx";
 import AgentPlatform from "./pages/AgentPlatform.tsx";
 import Travx from "./pages/Travx.tsx";
 import CoopX from "./pages/CoopX.tsx";
@@ -82,6 +83,7 @@ const App = () => (
           <Route path="/" element={<IndexV2 />} />
           <Route path="/v1" element={<Index />} />
           <Route path="/v3" element={<IndexV3 />} />
+          <Route path="/v4" element={<IndexV4 />} />
           {/* Product routes - support both old and new paths */}
           <Route path="/products" element={<Products />} />
           <Route path="/agent-platform" element={<AgentPlatform />} />
