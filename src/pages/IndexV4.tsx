@@ -131,7 +131,6 @@ export default function IndexV4() {
         <div className="mx-auto max-w-7xl px-4 pt-20 pb-16 md:pt-28 md:pb-24">
           <h1
             className="text-center font-bold tracking-tight text-foreground mx-auto max-w-5xl"
-            style={{ fontSize: "clamp(2.75rem, 7vw, 6rem)", lineHeight: 1.02 }}
           >
             Sell travel faster. With trust.
           </h1>
@@ -211,7 +210,6 @@ export default function IndexV4() {
           <div className="max-w-3xl">
             <h2
               className="font-bold tracking-tight text-foreground"
-              style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)", lineHeight: 1.05 }}
             >
               Built for how you sell.
             </h2>
@@ -243,7 +241,6 @@ export default function IndexV4() {
                     </p>
                     <h3
                       className="font-bold tracking-tight text-foreground"
-                      style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", lineHeight: 1.1 }}
                     >
                       {row.title}
                     </h3>
@@ -279,7 +276,6 @@ export default function IndexV4() {
           <div className="max-w-3xl">
             <h2
               className="font-bold tracking-tight text-foreground"
-              style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)", lineHeight: 1.05 }}
             >
               Built to meet your business's demands.
             </h2>
@@ -312,7 +308,6 @@ export default function IndexV4() {
           <Quote className="h-10 w-10 text-primary mb-6" />
           <blockquote
             className="font-semibold tracking-tight text-foreground"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", lineHeight: 1.25 }}
           >
             "The faster booking and ticketing Intraverse enables directly contributes to our growth. Customers choose us because we can quote and confirm at the speed their plans demand."
           </blockquote>
@@ -333,7 +328,6 @@ export default function IndexV4() {
         <div className="mx-auto max-w-7xl px-4">
           <h2
             className="font-bold tracking-tight"
-            style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)", lineHeight: 1.05 }}
           >
             One platform for teams of every size.
           </h2>
@@ -359,7 +353,6 @@ export default function IndexV4() {
         <div className="mx-auto max-w-5xl px-4 py-24 md:py-32 text-center">
           <h2
             className="font-bold tracking-tight text-foreground"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", lineHeight: 1.02 }}
           >
             Start selling faster today.
           </h2>
