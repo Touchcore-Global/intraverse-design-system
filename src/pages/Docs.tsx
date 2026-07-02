@@ -239,7 +239,7 @@ function CopyButton({ text }: { text: string }) {
 
 /* ========== MAIN PAGE ========== */
 export default function Docs() {
-  const [activeTab, setActiveTab] = useState("cURL");
+  const [activeTab, setActiveTab] = useState("Flight Search");
 
 
   return (
