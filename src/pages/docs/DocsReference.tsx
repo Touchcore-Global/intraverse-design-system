@@ -321,7 +321,9 @@ export default function DocsReference() {
             </div>
           ))}
         </div>
-        <p className="text-sm text-muted-foreground">Total: 35 endpoints.</p>
+        <p className="text-sm text-muted-foreground">
+          Total: {groups.reduce((n, g) => n + g.endpoints.length, 0)} endpoints across {groups.length} groups.
+        </p>
       </DocsSection>
 
       <DocsSection id="pagination" title="Pagination">
