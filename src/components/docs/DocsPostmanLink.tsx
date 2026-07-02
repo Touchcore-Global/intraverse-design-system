@@ -1,6 +1,6 @@
 import { ExternalLink } from "lucide-react";
 
-export const POSTMAN_COLLECTION_URL = "https://documenter.getpostman.com/view/17671608/2s9Yyqhgtj";
+export const POSTMAN_COLLECTION_URL = "https://documenter.getpostman.com/view/21013764/2sBXwyFS4K";
 
 export function DocsPostmanLink({ children }: { children: React.ReactNode }) {
   return (
