@@ -245,9 +245,11 @@ export default function Docs() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="API Documentation — Developer Docs | Intraverse"
-        description="Complete API documentation for the Intraverse travel platform. Authentication, flights, hotels, tours, payments, and webhooks. Quickstart guide and API reference."
+        title="API Documentation | Flights, Hotels, Tours, Insurance & Packages | Intraverse"
+        description="Comprehensive API documentation for developers building on Intraverse. Search and book flights, hotels, tours, insurance. Create and sell custom packages. Free sandbox access."
         canonical="https://intraverse.africa/docs"
+        ogTitle="Intraverse API Documentation — Build Travel Into Your Product"
+        ogDescription="Flights, hotels, tours, insurance, and custom packages through one REST API. Free sandbox, modern docs, official SDKs, and dedicated developer support."
       />
       <Navbar />
       <main className="flex-1 pt-16">
