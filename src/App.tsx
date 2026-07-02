@@ -48,6 +48,8 @@ import DocsAuthentication from "./pages/docs/DocsAuthentication.tsx";
 import DocsFlights from "./pages/docs/DocsFlights.tsx";
 import DocsHotels from "./pages/docs/DocsHotels.tsx";
 import DocsTours from "./pages/docs/DocsTours.tsx";
+import DocsInsurance from "./pages/docs/DocsInsurance.tsx";
+import DocsPackages from "./pages/docs/DocsPackages.tsx";
 import DocsWebhooks from "./pages/docs/DocsWebhooks.tsx";
 import DocsPayments from "./pages/docs/DocsPayments.tsx";
 import DocsReference from "./pages/docs/DocsReference.tsx";
@@ -135,6 +137,8 @@ const App = () => (
           <Route path="/docs/flights" element={<DocsFlights />} />
           <Route path="/docs/hotels" element={<DocsHotels />} />
           <Route path="/docs/tours" element={<DocsTours />} />
+          <Route path="/docs/insurance" element={<DocsInsurance />} />
+          <Route path="/docs/packages" element={<DocsPackages />} />
           <Route path="/docs/webhooks" element={<DocsWebhooks />} />
           <Route path="/docs/payments" element={<DocsPayments />} />
           <Route path="/docs/reference" element={<DocsReference />} />
