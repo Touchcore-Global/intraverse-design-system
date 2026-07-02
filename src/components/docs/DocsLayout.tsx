@@ -135,7 +135,12 @@ export function DocsLayout({
                         }`}
                       >
                         <span>{c.emoji}</span>
-                        {c.title}
+                        <span className="flex-1">{c.title}</span>
+                        {c.isNew && (
+                          <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${active ? "bg-white/20 text-white" : "bg-teal-500 text-white"}`}>
+                            New
+                          </span>
+                        )}
                       </Link>
                     );
                   })}
