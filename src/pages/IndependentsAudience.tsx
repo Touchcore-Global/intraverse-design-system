@@ -394,6 +394,23 @@ const IndependentsAudience = () => {
         </div>
       </section>
 
+      {/* ── PRICING CALLOUT ── */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4" style={{ maxWidth: "900px" }}>
+          <RevealBlock>
+            <div className="border-l-4 border-primary bg-card rounded-r-xl p-8 md:p-10 shadow-sm">
+              <h3 className="text-2xl md:text-3xl font-[660] tracking-[-1px] mb-4" style={{ color: "rgb(13, 27, 42)" }}>
+                Completely Free to Start
+              </h3>
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                The Independents Programme uses the Starter plan, which is free forever. You get everything you need to start selling — flight and hotel booking, automated ticket operations, wallet, and customer management. When you're ready to grow, the <a href="/pricing" className="font-semibold">Growth plan at ₦30,000/month</a> unlocks unlimited quotations, payment links, package builder, and business insights.
+              </p>
+            </div>
+          </RevealBlock>
+        </div>
+      </section>
+
+
       {/* ── FAQ ── */}
       <section className="py-16 md:py-24 bg-[hsl(216,60%,97%)]">
         <div className="container mx-auto px-4" style={{ maxWidth: "800px" }}>
@@ -422,8 +439,8 @@ const IndependentsAudience = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-primary hover:bg-white/90 cta-responsive min-h-[48px]" asChild>
-                <a href="/for/independents/interest" target="_blank" rel="noopener noreferrer">
-                  Join the Independents Programme
+                <a href="/register">
+                  Join Free
                 </a>
               </Button>
               <Button size="xl" variant="whatsapp" className="cta-responsive min-h-[48px]" asChild>

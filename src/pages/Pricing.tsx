@@ -240,7 +240,7 @@ const tiers: Tier[] = [
     name: "Starter",
     monthly: { price: "Free", period: "Forever" },
     annual: { price: "Free", period: "Forever" },
-    tagline: "Perfect for individuals and new travel businesses getting started.",
+    tagline: "Perfect for Travel Independents and new travel businesses getting started.",
     features: [
       "Flight & hotel booking",
       "Wallet",
