@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import IndexV2 from "./pages/IndexV2.tsx";
 import IndexV3 from "./pages/IndexV3.tsx";
 import IndexV4 from "./pages/IndexV4.tsx";
+import IndexV5 from "./pages/IndexV5.tsx";
 import AgentPlatform from "./pages/AgentPlatform.tsx";
 import Travx from "./pages/Travx.tsx";
 import CoopX from "./pages/CoopX.tsx";
@@ -84,6 +85,7 @@ const App = () => (
           <Route path="/v1" element={<Index />} />
           <Route path="/v3" element={<IndexV3 />} />
           <Route path="/v4" element={<IndexV4 />} />
+          <Route path="/v5" element={<IndexV5 />} />
           {/* Product routes - support both old and new paths */}
           <Route path="/products" element={<Products />} />
           <Route path="/agent-platform" element={<AgentPlatform />} />
