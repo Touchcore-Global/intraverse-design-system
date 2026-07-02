@@ -66,7 +66,7 @@ const earningsStats = [
 ];
 
 const steps = [
-  { number: "1", title: "Join the Programme", body: "Sign up and get access to the platform. Free to join - start at $0 upfront." },
+  { number: "1", title: "Join the Programme", body: "Sign up for a free Starter account and get instant access to the platform. No payment required. No credit card needed." },
   { number: "2", title: "Complete Training", body: "We walk you through how to search inventory, create bookings, and manage customers. Most Independents are ready to sell within hours." },
   { number: "3", title: "Start Selling", body: "Share deals with your network, book travel for customers, earn commissions on every completed booking." },
 ];
@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "How much does it cost to join?",
-    a: "Joining the Independents Programme is free. You only need a device with internet access. There are no hidden fees, no monthly subscriptions to unlock features, and no 'levels' to pay into.",
+    a: "Nothing. The Independents Programme runs on the free Starter plan. No subscription fees. No joining fees. No hidden charges. You sign up, you sell, you earn. If you want to upgrade later for more features, the Growth plan starts at ₦30,000/month — but many Independents earn their first commissions long before they ever need to upgrade.",
   },
   {
     q: "How do I get paid?",

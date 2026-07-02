@@ -170,7 +170,7 @@ const faqs = [
   {
     question: "How much does it cost to join?",
     answer:
-      "The Independents Programme costs ₦150,000/month. That subscription gives you access to the platform, GDS and NDC inventory, training materials, Travel Links, and ongoing support. You are never asked to buy \"packages,\" \"levels,\" or pay for recruitment positions. The fee covers your tools - the same way a barber pays for clippers or a designer pays for software.",
+      "Nothing. The Independents Programme uses the free Starter plan. There are no subscription fees, no joining fees, and no monthly charges. You sign up, get access to the platform, and start selling. When your business grows and you need unlimited quotations, payment links, package builder, or team access, you can upgrade to the Growth plan at ₦30,000/month — but there's no pressure and no timeline.",
   },
   {
     question: "How much can I realistically earn?",
@@ -250,21 +250,18 @@ const Independents = () => {
             Start Your Travel Business in Nigeria — No IATA Needed
           </h1>
           <p className="mt-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            The Independents Programme gives you access to the same IATA-accredited travel technology used by 200+ professional agencies — without needing ₦30 million in share capital or your own IATA accreditation. Sell flights across 900+ airlines via Amadeus, Sabre, and Galileo. Sell hotels and tours from global suppliers. Earn real commissions on every booking. Start with just your phone and an internet connection.
+            The Independents Programme gives you access to the same IATA-accredited travel technology used by 200+ professional agencies — without needing ₦30 million in share capital or your own IATA accreditation. Sell flights across 900+ airlines via Amadeus, Sabre, and Galileo. Sell hotels and tours from global suppliers. Earn real commissions on every booking. No agency required. No experience needed. Free to join.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
-              <a href="/for/independents/interest">Apply to Join the Programme</a>
+              <a href="/register">Join Free</a>
             </Button>
-            <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-5 w-5" />
-                Chat on WhatsApp
-              </a>
+            <Button variant="outline" size="xl" className="cta-responsive min-h-[48px]" asChild>
+              <a href="#how-it-works">See How It Works</a>
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            IATA accredited • No ₦30M capital needed • Real commissions • Start part-time
+            Free Starter plan • IATA accredited • Real commissions • Start part-time
           </p>
         </div>
       </section>
@@ -350,7 +347,7 @@ const Independents = () => {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-20 bg-background">
+      <section id="how-it-works" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-center max-w-4xl mx-auto mb-16">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -370,17 +367,17 @@ const Independents = () => {
       </section>
 
 
-      {/* INVESTMENT */}
+      {/* PRICING CLARIFICATION */}
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="mb-6">Your Investment</h2>
+          <div className="max-w-4xl mx-auto text-center mb-10">
+            <h2 className="mb-6">Free to Join. Free to Sell. Free to Earn.</h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              The Independents Programme isn't free — and we're upfront about that. You're paying for access to professional travel technology, IATA-accredited booking infrastructure, and real inventory from 900+ airlines. This is the same technology that established agencies pay significantly more for.
+              The Independents Programme runs on the Starter plan — which is free. Forever. No subscription fee. No monthly charges. No hidden costs. You get flight and hotel booking, automated ticket operations, wallet, customer database, and up to 10 quotations per month. Start earning commissions from day one without paying a single Naira to get started.
             </p>
           </div>
           <div className="max-w-lg mx-auto brand-card border-2 border-primary p-8 bg-card">
-            <p className="text-4xl md:text-5xl font-bold text-foreground text-center">₦150,000<span className="text-xl text-muted-foreground font-normal">/month</span></p>
+            <p className="text-4xl md:text-5xl font-bold text-foreground text-center">Free<span className="text-xl text-muted-foreground font-normal"> forever</span></p>
             <p className="mt-2 text-sm text-muted-foreground text-center mb-8">
               Everything you need to start selling travel
             </p>
@@ -393,11 +390,11 @@ const Independents = () => {
               ))}
             </ul>
             <Button variant="hero" size="xl" className="w-full cta-responsive min-h-[48px]" asChild>
-              <a href="/for/independents/interest">Apply to Join the Programme</a>
+              <a href="/register">Join Free</a>
             </Button>
           </div>
           <p className="mt-6 text-xs text-muted-foreground text-center max-w-2xl mx-auto">
-            No recruitment fees. No "levels" to unlock. No hidden charges. Your subscription pays for tools. Your commissions come from selling travel.
+            No recruitment fees. No "levels" to unlock. No hidden charges. Upgrade to the Growth plan (₦30,000/month) only when you're ready for more.
           </p>
         </div>
       </section>
@@ -511,7 +508,7 @@ const Independents = () => {
               className="cta-responsive min-h-[48px] bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none font-semibold"
               asChild
             >
-              <a href="/for/independents/interest">Apply to Join the Programme</a>
+              <a href="/register">Join Free</a>
             </Button>
             <Button variant="whatsapp" size="xl" className="cta-responsive min-h-[48px]" asChild>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
