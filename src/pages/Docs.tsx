@@ -19,19 +19,20 @@ function RevealBlock({ children, className = "" }: { children: React.ReactNode; 
   );
 }
 
-/* ---------- code samples ---------- */
+/* ---------- code samples (per product) ---------- */
 const codeSamples: Record<string, { request: string; response: string }> = {
-  cURL: {
-    request: `curl -X POST https://api.intraverse.app/v1/flights/search \\
-  -H "Authorization: Bearer YOUR_API_KEY" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "origin": "LOS",
-    "destination": "LHR",
-    "departure_date": "2026-06-15",
-    "adults": 1,
-    "cabin_class": "economy"
-  }'`,
+  "Flight Search": {
+    request: `POST https://dev.intraversewebservices.com/api/product/v1/flight/search
+Authorization: Bearer YOUR_ACCESS_TOKEN
+Content-Type: application/json
+
+{
+  "origin": "LOS",
+  "destination": "LHR",
+  "departure_date": "2026-06-15",
+  "adults": 1,
+  "cabin_class": "economy"
+}`,
     response: `{
   "status": "success",
   "data": {
@@ -50,117 +51,164 @@ const codeSamples: Record<string, { request: string; response: string }> = {
   }
 }`,
   },
-  "Node.js": {
-    request: `import Intraverse from '@intraverse/node';
+  "Hotel Search": {
+    request: `POST https://dev.intraversewebservices.com/api/product/v1/hotel/search
+Authorization: Bearer YOUR_ACCESS_TOKEN
+Content-Type: application/json
 
-const client = new Intraverse({ apiKey: 'YOUR_API_KEY' });
-
-const results = await client.flights.search({
-  origin: 'LOS',
-  destination: 'LHR',
-  departureDate: '2026-06-15',
-  adults: 1,
-  cabinClass: 'economy',
-});`,
-    response: `// results
 {
-  searchId: 'srch_9f8a7b6c5d4e3f2a',
-  resultsCount: 24,
-  results: [
+  "latitude": 51.5072178,
+  "longitude": -0.1275862,
+  "range": 10,
+  "limit": 10,
+  "start_date": "2026-09-17",
+  "end_date": "2026-09-18",
+  "rooms": [
     {
-      offerId: 'ofr_1a2b3c4d5e6f',
-      airline: 'Ethiopian Airlines',
-      price: { amount: 485000, currency: 'NGN' },
-      departure: '2026-06-15T08:30:00Z',
-      arrival: '2026-06-15T16:45:00Z',
-      stops: 0,
-    },
-  ],
+      "adults": 1,
+      "children": [],
+      "infants": 0,
+      "units": 1
+    }
+  ]
 }`,
-  },
-  Python: {
-    request: `from intraverse import Intraverse
-
-client = Intraverse(api_key="YOUR_API_KEY")
-
-results = client.flights.search(
-    origin="LOS",
-    destination="LHR",
-    departure_date="2026-06-15",
-    adults=1,
-    cabin_class="economy",
-)`,
-    response: `# results
-{
-    "search_id": "srch_9f8a7b6c5d4e3f2a",
-    "results_count": 24,
-    "results": [
-        {
-            "offer_id": "ofr_1a2b3c4d5e6f",
-            "airline": "Ethiopian Airlines",
-            "price": {"amount": 485000, "currency": "NGN"},
-            "departure": "2026-06-15T08:30:00Z",
-            "arrival": "2026-06-15T16:45:00Z",
-            "stops": 0
-        }
+    response: `{
+  "status": "success",
+  "data": {
+    "results_count": 42,
+    "hotels": [
+      {
+        "hotel_id": "htl_a1b2c3d4",
+        "name": "The Langham, London",
+        "star_rating": 5,
+        "price_from": { "amount": 425000, "currency": "NGN" },
+        "distance_km": 1.2
+      }
     ]
+  }
 }`,
   },
-  PHP: {
-    request: `<?php
-use Intraverse\\IntraverseClient;
+  "Tour Search": {
+    request: `POST https://dev.intraversewebservices.com/api/product/v1/package/search-by-destination
+Authorization: Bearer YOUR_ACCESS_TOKEN
+Content-Type: application/json
 
-$client = new IntraverseClient('YOUR_API_KEY');
+{
+  "destinationId": "66f941431e951df6140bc378",
+  "destinationName": "Abuja",
+  "suppliers": ["TourX1"],
+  "populate": false,
+  "limit": 10
+}`,
+    response: `{
+  "status": "success",
+  "data": {
+    "results_count": 18,
+    "tours": [
+      {
+        "tour_id": "tour_9x8y7z6w",
+        "title": "Abuja City Highlights Day Tour",
+        "duration_hours": 6,
+        "price_from": { "amount": 45000, "currency": "NGN" },
+        "supplier": "TourX1"
+      }
+    ]
+  }
+}`,
+  },
+  "Insurance Quote": {
+    request: `POST https://dev.intraversewebservices.com/api/product/v1/insurance/flight-policies
+Authorization: Bearer YOUR_ACCESS_TOKEN
+Content-Type: application/json
 
-$results = $client->flights->search([
-    'origin' => 'LOS',
-    'destination' => 'LHR',
-    'departure_date' => '2026-06-15',
-    'adults' => 1,
-    'cabin_class' => 'economy',
-]);`,
-    response: `// $results
-[
-    "search_id" => "srch_9f8a7b6c5d4e3f2a",
-    "results_count" => 24,
-    "results" => [
-        [
-            "offer_id" => "ofr_1a2b3c4d5e6f",
-            "airline" => "Ethiopian Airlines",
-            "price" => ["amount" => 485000, "currency" => "NGN"],
-            "departure" => "2026-06-15T08:30:00Z",
-            "arrival" => "2026-06-15T16:45:00Z",
-            "stops" => 0,
-        ],
-    ],
-]`,
+{
+  "personInfo": {
+    "birthDate": "1990-10-20",
+    "firstName": "Chinedu",
+    "lastName": "Doe",
+    "email": "customer@example.com",
+    "phone": "08012345678",
+    "gender": "Male",
+    "title": "Mr",
+    "city": "Lagos",
+    "state": "Lagos",
+    "passportNumber": "A12345678"
+  },
+  "destinationCountry": "South Africa",
+  "startDate": "2026-02-20",
+  "endDate": "2026-02-25",
+  "purposeOfTravel": "Leisure",
+  "isRoundTrip": false,
+  "numberOfAdults": 1
+}`,
+    response: `{
+  "status": "success",
+  "data": {
+    "quotes": [
+      {
+        "policy_id": "pol_a1b2c3d4",
+        "provider": "AXA Mansard",
+        "coverage": "Comprehensive",
+        "premium": { "amount": 18500, "currency": "NGN" },
+        "max_benefit": { "amount": 25000000, "currency": "NGN" }
+      }
+    ]
+  }
+}`,
   },
 };
 
 const languages = Object.keys(codeSamples);
 
-/* ---------- doc categories ---------- */
+/* ---------- doc categories (12) ---------- */
 const docCategories = [
-  { emoji: "🚀", title: "Quick Start", desc: "Get up and running in 5 minutes", href: "/docs/quickstart" },
-  { emoji: "🔐", title: "Authentication", desc: "OAuth 2.0 setup and API key management", href: "/docs/authentication" },
-  { emoji: "✈️", title: "Flight APIs", desc: "Search, book, and ticket flight inventory", href: "/docs/flights" },
-  { emoji: "🏨", title: "Hotel APIs", desc: "Search and book hotel accommodation", href: "/docs/hotels" },
-  { emoji: "🌍", title: "Tour APIs", desc: "Browse and book tours and experiences", href: "/docs/tours" },
-  { emoji: "📡", title: "Webhooks", desc: "Real-time event notifications", href: "/docs/webhooks" },
-  { emoji: "💳", title: "Payments", desc: "Wallet, settlements, and transactions", href: "/docs/payments" },
-  { emoji: "📖", title: "API Reference", desc: "Complete endpoint reference documentation", href: "/docs/reference" },
+  { emoji: "🚀", title: "Quick Start", desc: "Set up your account, authenticate, and make your first API call in under 10 minutes.", href: "/docs/quickstart" },
+  { emoji: "🔐", title: "Authentication", desc: "API key authentication, token management, scopes, and security best practices.", href: "/docs/authentication" },
+  { emoji: "✈️", title: "Flight APIs", desc: "Search, book, ticket, modify, and cancel flights across GDS, NDC, consolidators, and aggregators.", href: "/docs/flights" },
+  { emoji: "🏨", title: "Hotel APIs", desc: "Search hotels by location or name, check availability, book, modify, and cancel reservations.", href: "/docs/hotels" },
+  { emoji: "🌍", title: "Tour & Activity APIs", desc: "Search tours and activities by destination, check availability, hold, confirm, and manage bookings.", href: "/docs/tours" },
+  { emoji: "🛡️", title: "Insurance APIs", desc: "Get travel insurance quotes, purchase policies, and manage cancellations for flight travellers.", href: "/docs/insurance", isNew: true },
+  { emoji: "📦", title: "PackagePro APIs", desc: "Create, price, and sell your own travel packages and protocol services on the Intraverse marketplace.", href: "/docs/packages", isNew: true },
+  { emoji: "📡", title: "Webhooks", desc: "Real-time event notifications for bookings, payments, schedule changes, and cancellations.", href: "/docs/webhooks" },
+  { emoji: "💳", title: "Payments", desc: "Wallet management, payment processing, and transaction handling across all product types.", href: "/docs/payments" },
+  { emoji: "🏷️", title: "Price Adjustments", desc: "Configure markups, markdowns, and commission rules for flights, hotels, and packages.", href: "/docs/pricing-api", isNew: true },
+  { emoji: "📊", title: "Reports", desc: "Revenue trends, flight analytics, wallet activity, and whitelabel performance reports.", href: "/docs/reports", isNew: true },
+  { emoji: "📖", title: "API Reference", desc: "Complete endpoint reference with request/response schemas and live examples.", href: "/docs/reference" },
 ];
 
-/* ---------- SDKs ---------- */
+/* ---------- SDKs / Postman ---------- */
+const FLIGHTS_POSTMAN_URL = "https://documenter.getpostman.com/view/21013764/2sA3XPChtq";
+
 const sdks = [
   { emoji: "🟢", name: "Node.js SDK", install: "npm install @intraverse/node", version: "v1.0.0 • MIT", github: "#", docs: "/docs/quickstart" },
   { emoji: "🐍", name: "Python SDK", install: "pip install intraverse", version: "v1.0.0 • MIT", github: "#", docs: "/docs/quickstart" },
   { emoji: "🐘", name: "PHP SDK", install: "composer require intraverse/api", version: "v1.0.0 • MIT", github: "#", docs: "/docs/quickstart" },
-  { emoji: "📦", name: "Postman Collection", install: "Open in Postman →", version: "Updated weekly", github: POSTMAN_COLLECTION_URL, docs: POSTMAN_COLLECTION_URL },
+];
+
+const postmanCollections = [
+  {
+    emoji: "📦",
+    name: "Postman Collection",
+    desc: "Complete live documentation covering flights, hotels, tours, insurance, and PackagePro. Every endpoint pre-configured with example requests.",
+    cta: "Open Postman Collection →",
+    href: POSTMAN_COLLECTION_URL,
+    badge: "RECOMMENDED",
+    meta: "Updated weekly",
+  },
+  {
+    emoji: "📦",
+    name: "Flights & Core Services Collection",
+    desc: "Flights, bookings, authentication, webhooks, payments, and account management.",
+    cta: "Open Collection →",
+    href: FLIGHTS_POSTMAN_URL,
+    badge: null as string | null,
+    meta: "Legacy collection",
+  },
 ];
 
 /* ---------- additional resources ---------- */
 const resources = [
+  { emoji: "🗺️", title: "API Namespace Guide", desc: "Understand how the API is organised across service namespaces: /main/v1/, /product/v1/, /payment/v1/, and /notification/v1/.", href: "/docs/reference" },
   { emoji: "📋", title: "OpenAPI Specification", desc: "Download the full OpenAPI 3.0 spec (YAML or JSON) for code generation, client validation, and internal tooling. Generated from the live Postman collection.", href: "/openapi.yaml" },
   { emoji: "🧪", title: "Sandbox Environment", desc: "A full-featured sandbox that mirrors production - real endpoints, realistic responses, and test booking flows. No real tickets issued, no real money moved.", href: "#" },
   { emoji: "📝", title: "Changelog", desc: "Every API change, deprecation, and new feature - documented in one place. Subscribe via webhook to get notified of changes that affect your integration.", href: "#" },
@@ -168,6 +216,7 @@ const resources = [
   { emoji: "📊", title: "Rate Limits", desc: "Current rate limits by endpoint tier, how to check remaining quota via headers, and how to request higher limits for production workloads.", href: "#" },
   { emoji: "🔄", title: "Versioning & Deprecation", desc: "How we version the API, our deprecation policy (minimum 6 months notice), and how to migrate between versions safely.", href: "#" },
 ];
+
 
 /* ---------- Copy button ---------- */
 function CopyButton({ text }: { text: string }) {
