@@ -240,7 +240,7 @@ const tiers: Tier[] = [
     name: "Starter",
     monthly: { price: "Free", period: "Forever" },
     annual: { price: "Free", period: "Forever" },
-    tagline: "Perfect for individuals and new travel businesses getting started.",
+    tagline: "Perfect for Travel Independents and new travel businesses getting started.",
     features: [
       "Flight & hotel booking",
       "Wallet",
@@ -475,6 +475,11 @@ export default function Pricing() {
               </div>
             );
           })}
+        </div>
+
+        {/* Independents callout */}
+        <div className="mt-8 rounded-xl border border-primary/30 bg-primary/5 p-5 text-sm text-foreground">
+          💡 <span className="font-semibold">Perfect for Independents</span> — The Starter plan gives you everything you need to <a href="/for/independents" className="underline font-semibold">join the Independents Programme</a> and start earning commissions. Free forever.
         </div>
       </section>
 
