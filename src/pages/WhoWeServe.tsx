@@ -67,7 +67,7 @@ const audiences = [
     icon: Rocket,
     title: "Travel Independents",
     description:
-      "You don't need to own an agency to earn in travel. The Independents Programme gives you real IATA-backed technology to sell flights, hotels, and tours - and earn commissions on every booking.",
+      "You don't need to own an agency to earn in travel. The Independents Programme gives you real IATA-backed technology to sell flights, hotels, and tours - and earn commissions on every booking. Join on the free Starter plan and start earning commissions immediately. No subscription fee. No joining fee.",
     benefits: [
       "Sell from real GDS, NDC, and consolidator inventory",
       "Earn commissions on every booking",

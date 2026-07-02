@@ -49,7 +49,7 @@ const audiences = [
     icon: Rocket,
     title: "Travel Independents",
     headline: "Earn from travel. No agency required. No experience needed.",
-    body: "Graduates, side hustlers, and aspiring entrepreneurs - sell flights, hotels, and tours using IATA-backed technology and earn real commissions on every booking. Start with zero overhead.",
+    body: "Graduates, side hustlers, and aspiring entrepreneurs - sell flights, hotels, and tours using IATA-backed technology and earn real commissions on every booking. Free to join. Start earning immediately.",
     products: "Independents Programme",
     cta: "Start Earning Today",
     href: "/for/independents",

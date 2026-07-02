@@ -274,7 +274,7 @@ const categories: FAQCategory[] = [
       },
       {
         q: "How much does the Independents Programme cost?",
-        a: "There is a one-time onboarding fee that covers setup, training, and platform access. Contact our team for current pricing. There are no recurring subscription fees - you earn commissions on every booking you make.",
+        a: "The Independents Programme is free. It runs on the Starter plan, which costs nothing — no subscription fees, no joining fees, no monthly charges, ever. You sign up, access the platform, and start earning commissions on every booking. If you outgrow the Starter plan and want features like unlimited quotations, payment links, or the package builder, you can upgrade to the Growth plan at ₦30,000/month.",
       },
       {
         q: "How does the wallet system work?",

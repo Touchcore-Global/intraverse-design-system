@@ -62,7 +62,7 @@ const useCases: UseCase[] = [
     number: "05",
     title: "Side Hustlers Starting From Zero",
     problem: "You want to earn from travel but have no agency, no IATA, and no capital.",
-    solution: "Join the Independents Programme, get IATA-backed inventory access, and start selling flights, hotels, and tours to your network. Earn commissions on every booking.",
+    solution: "Join the Independents Programme for free, get IATA-backed inventory access, and start selling flights, hotels, and tours to your network. Earn commissions on every booking.",
     products: ["Independents Programme"],
     link: "/for/independents",
     categories: ["All", "Independents"],
