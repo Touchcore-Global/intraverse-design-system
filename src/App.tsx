@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import IndexV2 from "./pages/IndexV2.tsx";
 import IndexV3 from "./pages/IndexV3.tsx";
 import IndexV4 from "./pages/IndexV4.tsx";
+import IndexV5 from "./pages/IndexV5.tsx";
 import AgentPlatform from "./pages/AgentPlatform.tsx";
 import Travx from "./pages/Travx.tsx";
 import CoopX from "./pages/CoopX.tsx";
