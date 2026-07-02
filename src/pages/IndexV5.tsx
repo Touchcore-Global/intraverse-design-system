@@ -46,7 +46,7 @@ const IndexV5 = () => {
       <RevealSection variant="fade-up">
         <section className="py-20 md:py-28 bg-foreground text-background">
           <div className="container mx-auto px-4 text-center max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl md:text-[64px] md:leading-[1.1] font-[660] tracking-[-1.5px] mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-[64px] md:leading-[1.1] font-[660] tracking-[-1.5px] mb-6 text-white">
               See Why 200+ Travel Agents Chose Intraverse
             </h2>
             <p className="text-base md:text-lg text-background/70 mb-10">
