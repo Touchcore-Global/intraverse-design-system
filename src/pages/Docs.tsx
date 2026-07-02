@@ -395,7 +395,7 @@ export default function Docs() {
               </p>
             </RevealBlock>
             <RevealBlock>
-              <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {sdks.map((sdk) => (
                   <div key={sdk.name} className="border border-border rounded-xl p-6 hover:border-[hsl(var(--brand-blue))] transition-colors">
                     <span className="text-3xl">{sdk.emoji}</span>
@@ -408,7 +408,7 @@ export default function Docs() {
                         {...(sdk.github.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                         className="text-xs font-medium text-[hsl(var(--brand-blue))] hover:underline flex items-center gap-1"
                       >
-                        {sdk.github === POSTMAN_COLLECTION_URL ? "Open" : "GitHub"} <ExternalLink className="w-3 h-3" />
+                        GitHub <ExternalLink className="w-3 h-3" />
                       </a>
                       <a
                         href={sdk.docs}
@@ -418,6 +418,33 @@ export default function Docs() {
                         Docs
                       </a>
                     </div>
+                  </div>
+                ))}
+              </div>
+            </RevealBlock>
+
+            {/* Postman collections */}
+            <RevealBlock>
+              <div className="mt-8 grid md:grid-cols-2 gap-6">
+                {postmanCollections.map((p) => (
+                  <div key={p.name} className="relative border border-border rounded-xl p-6 hover:border-[hsl(var(--brand-blue))] transition-colors bg-background">
+                    {p.badge && (
+                      <span className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wider bg-teal-500 text-white px-2 py-0.5 rounded">
+                        {p.badge}
+                      </span>
+                    )}
+                    <span className="text-3xl">{p.emoji}</span>
+                    <h3 className="h3-global mt-3 text-foreground">{p.name}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                    <p className="mt-3 text-xs text-muted-foreground">{p.meta}</p>
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[hsl(var(--brand-blue))] hover:underline"
+                    >
+                      {p.cta}
+                    </a>
                   </div>
                 ))}
               </div>
