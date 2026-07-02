@@ -374,7 +374,7 @@ export default function Docs() {
               </div>
 
               <p className="mt-8 text-white/40 text-sm text-center max-w-2xl mx-auto">
-                The response returns aggregated results from multiple sources - GDS, NDC, and consolidator inventory - normalised into a clean, consistent JSON structure.
+                Pick a product, hit the endpoint, get structured results. Full documentation for each product type is one click away.
               </p>
               <div className="mt-6 text-center">
                 <Button size="xl" variant="outline" className="bg-white border-white text-foreground hover:bg-foreground hover:text-white hover:border-foreground cta-responsive min-h-[48px] rounded-none" asChild>
