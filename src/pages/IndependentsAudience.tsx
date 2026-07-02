@@ -173,7 +173,7 @@ const IndependentsAudience = () => {
                 Turn Your Network Into a Travel Business. Starting Today.
               </h1>
               <p className="mt-6 text-base sm:text-lg font-normal leading-relaxed" style={{ color: "rgb(116, 113, 122)" }}>
-                Whether you're a graduate looking for income, a side hustler stacking revenue streams, a stay-at-home parent with a strong network, or someone with a community ready to book travel - the Intraverse Independents Programme gives you the tools, the inventory, and the IATA-backed infrastructure to start earning. No agency required. No experience needed. No capital upfront.
+                Whether you're a graduate looking for income, a side hustler stacking revenue streams, a stay-at-home parent with a strong network, or someone with a community ready to book travel - the Intraverse Independents Programme gives you the tools, the inventory, and the IATA-backed infrastructure to start earning. No agency required. No experience needed. Free to join.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
