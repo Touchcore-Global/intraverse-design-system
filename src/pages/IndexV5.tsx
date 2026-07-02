@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { HeroSectionV2 } from "@/components/v2/HeroSectionV2";
 import { HomeTrustBar } from "@/components/HomeTrustBar";
@@ -63,7 +62,7 @@ const IndexV5 = () => {
                 className="cta-responsive min-h-[48px] bg-transparent border-background text-background hover:bg-background hover:text-foreground"
                 asChild
               >
-                <Link to="/register">Start Free</Link>
+                <a href="https://www.intraverse.app" target="_blank" rel="noopener noreferrer">Start Free</a>
               </Button>
             </div>
           </div>
