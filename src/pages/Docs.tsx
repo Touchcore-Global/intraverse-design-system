@@ -261,7 +261,7 @@ export default function Docs() {
             <p className="text-sm font-semibold tracking-widest text-[hsl(var(--brand-blue))] mb-4">API DOCUMENTATION</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Build Travel Into Your Product</h1>
             <p className="mt-6 text-base md:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-              Comprehensive API documentation for developers building on Intraverse. Search, book, and settle travel through a RESTful API backed by aggregated inventory from GDS, NDC, consolidators, and leading global suppliers.
+              Comprehensive API documentation for developers building on Intraverse. Search and book flights, hotels, tours, and insurance. Create and sell your own packages. Process payments and manage webhooks. All through a unified RESTful API.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold rounded-none" asChild>
@@ -271,7 +271,7 @@ export default function Docs() {
                 <a href="/docs/quickstart">Quick Start Guide</a>
               </Button>
             </div>
-            <p className="mt-6 font-mono text-xs text-white/40 tracking-wide">v1.0 &nbsp;•&nbsp; REST + JSON &nbsp;•&nbsp; OAuth 2.0 &nbsp;•&nbsp; Free sandbox</p>
+            <p className="mt-6 font-mono text-xs text-white/40 tracking-wide">v1.0 &nbsp;•&nbsp; REST + JSON &nbsp;•&nbsp; API Key Auth &nbsp;•&nbsp; Flights &nbsp;•&nbsp; Hotels &nbsp;•&nbsp; Tours &nbsp;•&nbsp; Insurance &nbsp;•&nbsp; PackagePro &nbsp;•&nbsp; Free sandbox</p>
           </div>
         </section>
 
