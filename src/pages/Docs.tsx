@@ -340,7 +340,7 @@ export default function Docs() {
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-white text-center">See It in Action</h2>
               <p className="mt-4 text-white/50 text-center max-w-2xl mx-auto">
-                A real flight search request and response. Copy it, paste it, run it. That's it - you're searching aggregated inventory from GDS, NDC, and consolidator sources.
+                Real requests across every product type. Copy, paste, run — you're calling the live sandbox.
               </p>
             </RevealBlock>
             <RevealBlock>
