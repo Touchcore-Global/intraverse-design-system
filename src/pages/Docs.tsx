@@ -315,9 +315,14 @@ export default function Docs() {
               </p>
             </RevealBlock>
             <RevealBlock>
-              <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
                 {docCategories.map((c) => (
-                  <a key={c.title} href={c.href} className="group bg-background rounded-xl p-6 border border-border hover:border-[hsl(var(--brand-blue))] hover:-translate-y-0.5 transition-all">
+                  <a key={c.title} href={c.href} className="group relative bg-background rounded-xl p-6 border border-border hover:border-[hsl(var(--brand-blue))] hover:-translate-y-0.5 transition-all">
+                    {c.isNew && (
+                      <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider bg-teal-500 text-white px-2 py-0.5 rounded">
+                        New
+                      </span>
+                    )}
                     <span className="text-3xl">{c.emoji}</span>
                     <h3 className="h3-global mt-3 text-foreground group-hover:text-[hsl(var(--brand-blue))] transition-colors">{c.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{c.desc}</p>
