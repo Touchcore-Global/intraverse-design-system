@@ -11,6 +11,8 @@ export const docCategories: DocCategory[] = [
   { slug: "flights", title: "Flights", emoji: "✈️", href: "/docs/flights" },
   { slug: "hotels", title: "Hotels", emoji: "🏨", href: "/docs/hotels" },
   { slug: "tours", title: "Tours", emoji: "🌍", href: "/docs/tours" },
+  { slug: "insurance", title: "Insurance", emoji: "🛡️", href: "/docs/insurance" },
+  { slug: "packages", title: "PackagePro", emoji: "📦", href: "/docs/packages" },
   { slug: "webhooks", title: "Webhooks", emoji: "📡", href: "/docs/webhooks" },
   { slug: "payments", title: "Payments", emoji: "💳", href: "/docs/payments" },
   { slug: "reference", title: "API Reference", emoji: "📖", href: "/docs/reference" },

@@ -18,7 +18,7 @@ const toc = [
   { id: "openapi", label: "OpenAPI Spec" },
 ];
 
-type Method = "GET" | "POST" | "PATCH" | "DELETE";
+type Method = "GET" | "POST" | "PATCH" | "DELETE" | "PUT";
 type Endpoint = { method: Method; path: string; desc: string };
 type Group = { title: string; endpoints: Endpoint[] };
 
@@ -30,59 +30,168 @@ const groups: Group[] = [
   {
     title: "Flights",
     endpoints: [
-      { method: "POST", path: "/v1/flights/search", desc: "Search flight inventory" },
-      { method: "GET", path: "/v1/flights/offers/{offer_id}", desc: "Get offer details" },
-      { method: "GET", path: "/v1/flights/offers/{offer_id}/rules", desc: "Get fare rules" },
-    ],
-  },
-  {
-    title: "Bookings",
-    endpoints: [
-      { method: "POST", path: "/v1/bookings", desc: "Create a flight booking" },
-      { method: "POST", path: "/v1/bookings/{booking_id}/issue", desc: "Issue ticket" },
-      { method: "GET", path: "/v1/bookings/{booking_id}", desc: "Get booking" },
-      { method: "POST", path: "/v1/bookings/{booking_id}/modify", desc: "Modify booking" },
-      { method: "POST", path: "/v1/bookings/{booking_id}/cancel", desc: "Cancel booking" },
+      { method: "POST", path: "/product/v2/flight/search", desc: "Search flight inventory (recommended)" },
+      { method: "POST", path: "/product/v1/flight/pricing", desc: "Re-price an offer" },
+      { method: "POST", path: "/product/v1/book", desc: "Create a flight booking" },
+      { method: "PATCH", path: "/product/v1/book/selfTicket/:id", desc: "Issue ticket" },
+      { method: "PATCH", path: "/product/v1/book/cancelBooking", desc: "Cancel booking" },
+      { method: "POST", path: "/product/v1/refund/booking", desc: "Refund booking" },
     ],
   },
   {
     title: "Hotels",
     endpoints: [
-      { method: "POST", path: "/v1/hotels/search", desc: "Search hotel inventory" },
-      { method: "GET", path: "/v1/hotels/{hotel_id}", desc: "Hotel details" },
-      { method: "GET", path: "/v1/hotels/{hotel_id}/rooms", desc: "Room availability" },
-      { method: "POST", path: "/v1/hotels/bookings", desc: "Create hotel booking" },
-      { method: "GET", path: "/v1/hotels/bookings/{booking_id}", desc: "Get hotel booking" },
-      { method: "POST", path: "/v1/hotels/bookings/{booking_id}/cancel", desc: "Cancel hotel booking" },
+      { method: "GET", path: "/product/v1/hotel/google-places", desc: "Location autocomplete" },
+      { method: "GET", path: "/product/v1/hotel/google-place-detail/:placeId", desc: "Location detail" },
+      { method: "POST", path: "/product/v1/hotel/search", desc: "Search hotels by coordinates" },
+      { method: "POST", path: "/product/v1/hotel/by-name", desc: "Search hotels by name" },
+      { method: "POST", path: "/product/v1/hotel/select-by-name", desc: "Availability from name search" },
+      { method: "POST", path: "/product/v1/hotel/availability", desc: "Room availability" },
+      { method: "POST", path: "/product/v1/hotel/book", desc: "Book hotel" },
+      { method: "GET", path: "/product/v1/hotel/:id", desc: "Get single booking" },
+      { method: "GET", path: "/product/v1/hotel", desc: "List bookings" },
+      { method: "POST", path: "/product/v1/hotel/cancel-booking/:id", desc: "Cancel unpaid booking" },
+      { method: "POST", path: "/product/v1/hotel/cancel-confirmed/:id", desc: "Cancel paid booking" },
+      { method: "POST", path: "/product/v1/hotel/process-change-booking/:id", desc: "Change quote" },
+      { method: "POST", path: "/product/v1/hotel/change-booking/:id", desc: "Finalize change" },
     ],
   },
   {
     title: "Tours",
     endpoints: [
-      { method: "POST", path: "/v1/tours/search", desc: "Search tour inventory" },
-      { method: "GET", path: "/v1/tours/{tour_id}", desc: "Tour details" },
-      { method: "GET", path: "/v1/tours/{tour_id}/availability", desc: "Tour availability" },
-      { method: "POST", path: "/v1/tours/bookings", desc: "Create tour booking" },
-      { method: "GET", path: "/v1/tours/bookings/{booking_id}", desc: "Get tour booking" },
-      { method: "POST", path: "/v1/tours/bookings/{booking_id}/cancel", desc: "Cancel tour booking" },
+      { method: "GET", path: "/product/v1/package/auto-complete", desc: "Destination autocomplete" },
+      { method: "POST", path: "/product/v1/package/search-by-destination", desc: "Search tours by destination" },
+      { method: "POST", path: "/product/v1/package/get-single", desc: "Get single tour" },
+      { method: "POST", path: "/product/v1/package/product-reviews", desc: "Tour reviews" },
+      { method: "POST", path: "/product/v1/package/availability", desc: "Availability" },
+      { method: "POST", path: "/product/v1/package/hold-booking", desc: "Hold booking" },
+      { method: "GET", path: "/product/v1/package/:_id", desc: "Get single booking" },
+      { method: "GET", path: "/product/v1/package", desc: "List bookings" },
+      { method: "POST", path: "/product/v1/package/confirm-booking/:id", desc: "Confirm booking" },
+      { method: "POST", path: "/product/v1/package/cancel-booking/:id", desc: "Cancel booking" },
+      { method: "POST", path: "/product/v1/package/cancel-quote", desc: "Cancel quote" },
+      { method: "POST", path: "/product/v1/package/cancel-confirmed-booking", desc: "Cancel confirmed" },
     ],
   },
   {
-    title: "Payments",
+    title: "Insurance",
     endpoints: [
-      { method: "GET", path: "/v1/wallet/balance", desc: "Wallet balance" },
-      { method: "POST", path: "/v1/wallet/fund", desc: "Fund wallet" },
-      { method: "POST", path: "/v1/payments", desc: "Charge payment" },
-      { method: "GET", path: "/v1/payments/{payment_id}", desc: "Get payment" },
-      { method: "POST", path: "/v1/payments/{payment_id}/refund", desc: "Refund payment" },
-      { method: "GET", path: "/v1/refunds/{refund_id}", desc: "Get refund" },
+      { method: "POST", path: "/product/v1/insurance/flight-policies", desc: "Get flight policies" },
+      { method: "POST", path: "/product/v1/insurance/flight-purchase", desc: "Purchase policy" },
+      { method: "GET", path: "/product/v1/insurance/:id", desc: "Get single purchase" },
+      { method: "GET", path: "/product/v1/insurance", desc: "List purchases" },
+      { method: "POST", path: "/product/v1/insurance/cancel-purchase/:id", desc: "Cancel purchase" },
     ],
   },
   {
-    title: "BNPL",
+    title: "PackagePro · Packages",
     endpoints: [
-      { method: "POST", path: "/v1/payments/bnpl/eligibility", desc: "Check BNPL eligibility" },
-      { method: "POST", path: "/v1/payments/bnpl/create", desc: "Create BNPL order" },
+      { method: "GET", path: "/product/v1/nobiPackage/categories", desc: "Get categories" },
+      { method: "POST", path: "/product/v1/nobiPackage/packages", desc: "Create package" },
+      { method: "GET", path: "/product/v1/nobiPackage/packages", desc: "List packages" },
+      { method: "PATCH", path: "/product/v1/nobiPackage/packages/:id", desc: "Update package" },
+      { method: "DELETE", path: "/product/v1/nobiPackage/packages/:id", desc: "Delete package" },
+      { method: "POST", path: "/product/v1/nobiPackage/packages/add-availability", desc: "Add availability" },
+      { method: "POST", path: "/product/v1/nobiPackage/packages/pre-package/images/:id", desc: "Add gallery images" },
+      { method: "DELETE", path: "/product/v1/nobiPackage/packages/gallery-image/:id", desc: "Delete gallery image" },
+      { method: "POST", path: "/product/v1/nobiPackage/packages/pre-package", desc: "Create pre-package" },
+      { method: "GET", path: "/product/v1/nobiPackage/packages/pre-package", desc: "List pre-packages" },
+      { method: "GET", path: "/product/v1/nobiPackage/packages/pre-package/:id", desc: "Get pre-package" },
+      { method: "DELETE", path: "/product/v1/nobiPackage/packages/pre-package/:id", desc: "Delete pre-package" },
+    ],
+  },
+  {
+    title: "PackagePro · Options",
+    endpoints: [
+      { method: "POST", path: "/product/v1/nobiPackage/options", desc: "Create option" },
+      { method: "GET", path: "/product/v1/nobiPackage/options", desc: "List options" },
+      { method: "GET", path: "/product/v1/nobiPackage/options/:packageId", desc: "Options by package" },
+      { method: "PUT", path: "/product/v1/nobiPackage/options/:optionId", desc: "Update option" },
+      { method: "DELETE", path: "/product/v1/nobiPackage/options/:optionId", desc: "Delete option" },
+    ],
+  },
+  {
+    title: "PackagePro · Protocol Services",
+    endpoints: [
+      { method: "POST", path: "/product/v1/nobiPackage/protocol-services", desc: "Create service" },
+      { method: "GET", path: "/product/v1/nobiPackage/protocol-services/all", desc: "List all" },
+      { method: "GET", path: "/product/v1/nobiPackage/protocol-services/:id", desc: "Get service" },
+      { method: "PATCH", path: "/product/v1/nobiPackage/protocol-services/:id", desc: "Update service" },
+      { method: "DELETE", path: "/product/v1/nobiPackage/protocol-services/:id", desc: "Delete service" },
+      { method: "PATCH", path: "/product/v1/nobiPackage/protocol-services/approve/:id", desc: "Approve" },
+      { method: "PATCH", path: "/product/v1/nobiPackage/protocol-services/reject/:id", desc: "Reject" },
+    ],
+  },
+  {
+    title: "PackagePro · Payouts & Reports",
+    endpoints: [
+      { method: "GET", path: "/product/v1/nobiPackage/payouts/wallet", desc: "Gross wallet" },
+      { method: "GET", path: "/product/v1/nobiPackage/payouts/get-my-payouts", desc: "My payouts" },
+      { method: "GET", path: "/product/v1/nobiPackage/reports/package-statistics", desc: "Package stats" },
+      { method: "GET", path: "/product/v1/nobiPackage/reports/protocol-service-statistics", desc: "Protocol stats" },
+      { method: "GET", path: "/product/v1/nobiPackage/reports/transaction-reports", desc: "Transactions" },
+      { method: "POST", path: "/product/v1/nobiPackage/settings/platform-fee", desc: "Set platform fee" },
+      { method: "GET", path: "/product/v1/nobiPackage/settings/platform-fee", desc: "Get platform fee" },
+      { method: "PUT", path: "/product/v1/nobiPackage/settings/platform-fee/change-settings", desc: "Change platform fee" },
+      { method: "DELETE", path: "/product/v1/nobiPackage/settings/platform-fee/disable-settings", desc: "Disable platform fee" },
+    ],
+  },
+  {
+    title: "PackagePro · Marketplace",
+    endpoints: [
+      { method: "GET", path: "/product/v1/nobiPackage/search-packages", desc: "Search marketplace" },
+      { method: "GET", path: "/product/v1/nobiPackage/packages/:id", desc: "Get single package" },
+      { method: "POST", path: "/product/v1/nobiPackage/package/availability", desc: "Package availability" },
+      { method: "GET", path: "/product/v1/nobiPackage/packages/by-availability", desc: "Browse by availability" },
+      { method: "GET", path: "/product/v1/nobiPackage/protocol-services/search", desc: "Search protocol services" },
+    ],
+  },
+  {
+    title: "PackagePro · Booking",
+    endpoints: [
+      { method: "POST", path: "/product/v1/nobiPackage/booking", desc: "Book package" },
+      { method: "GET", path: "/product/v1/nobiPackage/booking", desc: "List bookings" },
+      { method: "GET", path: "/product/v1/nobiPackage/booking/:id", desc: "Get booking" },
+      { method: "POST", path: "/product/v1/nobiPackage/booking/cancel/:id", desc: "Cancel booking" },
+      { method: "POST", path: "/product/v1/nobiPackage/booking/:id/reschedule/quote", desc: "Reschedule quote" },
+      { method: "POST", path: "/product/v1/nobiPackage/booking/:id/cancellation/quote", desc: "Cancellation quote" },
+      { method: "POST", path: "/product/v1/nobiPackage/protocol-services/booking", desc: "Create protocol booking" },
+      { method: "GET", path: "/product/v1/nobiPackage/protocol-services/booking", desc: "List protocol bookings" },
+      { method: "GET", path: "/product/v1/nobiPackage/protocol-services/booking/:id", desc: "Get protocol booking" },
+      { method: "GET", path: "/product/v1/nobiPackage/booking/my-packages", desc: "My package stats" },
+      { method: "GET", path: "/product/v1/nobiPackage/booking/transactions", desc: "My transactions" },
+      { method: "POST", path: "/product/v1/nobiPackage/booking/:id/ticket-used", desc: "Set ticket used" },
+    ],
+  },
+  {
+    title: "Payments — Hotels",
+    endpoints: [
+      { method: "POST", path: "/payment/v1/payment/hotel", desc: "Hotel payment" },
+      { method: "POST", path: "/payment/v1/payment/hotel-change-reconcilation", desc: "Change reconciliation" },
+      { method: "POST", path: "/payment/v1/payment/cancel-paid-hotel", desc: "Cancel paid hotel" },
+    ],
+  },
+  {
+    title: "Payments — Tours",
+    endpoints: [
+      { method: "POST", path: "/payment/v1/payment/package", desc: "Tour payment" },
+    ],
+  },
+  {
+    title: "Payments — Insurance",
+    endpoints: [
+      { method: "POST", path: "/payment/v1/payment/insurance", desc: "Insurance payment" },
+    ],
+  },
+  {
+    title: "Payments — PackagePro",
+    endpoints: [
+      { method: "POST", path: "/payment/v1/payment/nobi-package", desc: "Package payment" },
+      { method: "POST", path: "/payment/v1/payment/nobi-package-reschedule", desc: "Reschedule payment" },
+      { method: "POST", path: "/payment/v1/payment/nobi-package/:id/cancellation-refund", desc: "Cancel & refund" },
+      { method: "POST", path: "/payment/v1/payment/nobi-protocol", desc: "Protocol payment" },
+      { method: "POST", path: "/payment/v1/payment/nobi/payout-quote", desc: "Payout quote" },
+      { method: "POST", path: "/payment/v1/payment/nobi/payout-to-intraverse-wallet", desc: "Payout to wallet" },
     ],
   },
   {
@@ -94,14 +203,8 @@ const groups: Group[] = [
       { method: "DELETE", path: "/v1/webhooks/{webhook_id}", desc: "Delete webhook" },
     ],
   },
-  {
-    title: "Packages",
-    endpoints: [
-      { method: "POST", path: "/v1/packages/create", desc: "Create a multi-component package" },
-      { method: "GET", path: "/v1/packages/{package_id}", desc: "Get package details" },
-    ],
-  },
 ];
+
 
 const errorCodes: [string, string, string][] = [
   ["AUTH_INVALID", "Token missing, malformed, or expired", "Re-issue a token"],
@@ -218,7 +321,9 @@ export default function DocsReference() {
             </div>
           ))}
         </div>
-        <p className="text-sm text-muted-foreground">Total: 35 endpoints.</p>
+        <p className="text-sm text-muted-foreground">
+          Total: {groups.reduce((n, g) => n + g.endpoints.length, 0)} endpoints across {groups.length} groups.
+        </p>
       </DocsSection>
 
       <DocsSection id="pagination" title="Pagination">

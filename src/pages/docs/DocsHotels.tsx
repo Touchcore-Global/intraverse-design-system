@@ -1,178 +1,237 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
-import { SEO } from "@/components/SEO";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
-import { MultiLangCodeBlock, buildHttpSamples } from "@/components/docs/MultiLangCodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
 import { ParamsTable } from "@/components/docs/ParamsTable";
 import { Callout } from "@/components/docs/Callout";
+import { DocsPostmanLink } from "@/components/docs/DocsPostmanLink";
+import { DocsBofu } from "@/components/docs/DocsBofu";
+import { ArrowRight } from "lucide-react";
+
+const SANDBOX = "https://dev.intraversewebservices.com/api";
 
 const toc = [
   { id: "overview", label: "Overview" },
-  { id: "endpoints", label: "Endpoints" },
-  { id: "response-format", label: "Response Format" },
-  { id: "cancellation", label: "Cancellation Policies" },
-  { id: "best-practices", label: "Best Practices" },
+  { id: "location", label: "Location Search" },
+  { id: "search", label: "Hotel Search" },
+  { id: "availability", label: "Availability" },
+  { id: "booking", label: "Booking" },
+  { id: "payment", label: "Payment" },
+  { id: "modify", label: "Modify Booking" },
+  { id: "cancel", label: "Cancellation" },
+  { id: "flow", label: "Booking Flow" },
   { id: "errors", label: "Common Errors" },
 ];
 
+function Flow({ steps }: { steps: string[] }) {
+  return (
+    <div className="not-prose flex items-center flex-wrap gap-3 my-6 p-5 rounded-lg bg-[#F0F5FC] border border-border">
+      {steps.map((s, i) => (
+        <div key={s} className="flex items-center gap-3">
+          <div className="px-3 py-2 rounded-md bg-white border border-border text-sm font-medium text-foreground">
+            {s}
+          </div>
+          {i < steps.length - 1 && <ArrowRight className="w-4 h-4 text-muted-foreground" />}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function DocsHotels() {
   return (
-    <>
-      <SEO
-        title="Hotels API | Intraverse Docs"
-        description="Search and book hotel inventory from global suppliers via one API. Real-time availability and instant confirmation."
-        canonical="https://intraverse.africa/docs/hotels"
-      />
-      <DocsLayout
+    <DocsLayout
       slug="hotels"
-      title="Hotels From Leading Global Suppliers"
-      metaDescription="Search and book hotel inventory from global suppliers via one API. Real-time availability and instant confirmation."
-      subtitle="Search, compare, and book hotel inventory from multiple global suppliers through a single API. Consistent response format, real-time availability, and instant confirmation."
+      title="Search, Book, and Manage Hotel Reservations"
+      metaTitle="Hotel APIs | Search & Book Hotels | Intraverse API Docs"
+      metaDescription="Search hotels by location or name, check real-time room availability, book, modify, and cancel — all through a unified API backed by global hotel suppliers."
+      subtitle="Search hotels by location or name, check real-time room availability, book, modify, and cancel — all through a unified API backed by global hotel suppliers."
       toc={toc}
     >
-      <Callout variant="warning" title="Coming Soon - Hotels API">
-        The Hotels API is currently under development and not yet available
-        in the public Postman collection. Hotel inventory is accessible
-        through the Intraverse dashboard UI today, but programmatic API
-        access is coming soon. The endpoints below describe the{" "}
-        <strong>planned</strong> contract - actual paths, parameters, and
-        response shapes will be confirmed when the API launches.
-      </Callout>
       <DocsSection id="overview" title="Overview">
         <p>
-          The Hotels API queries multiple global suppliers in parallel, deduplicates results by property, and returns the best rate per
-          property along with all alternative rates. You see one row per hotel, not the same hotel five times from five sources.
+          The Hotel API provides programmatic access to global hotel inventory. Search by geographic coordinates
+          with radius filtering, or search directly by hotel name. The API supports the full booking lifecycle —
+          from search to availability check to booking to modification to cancellation and refund.
         </p>
         <p>
-          All availability is real-time. Prices are guaranteed at the time of booking and confirmation is instant for the vast majority of
-          properties.
+          All endpoints are relative to the sandbox base URL <InlineCode>{SANDBOX}</InlineCode>.
         </p>
+        <Callout variant="info">
+          Explore these endpoints interactively in our <DocsPostmanLink>Postman collection →</DocsPostmanLink>
+        </Callout>
       </DocsSection>
 
-      <DocsSection id="endpoints" title="Endpoints">
-        <EndpointHeading method="POST" path="/v1/hotels/search" />
-        <p>Search hotel inventory across all configured suppliers.</p>
-        <ParamsTable
-          params={[
-            { name: "destination", type: "string", required: true, description: "City name, IATA code, or { lat, lng }" },
-            { name: "check_in", type: "string", required: true, description: "ISO date (YYYY-MM-DD)" },
-            { name: "check_out", type: "string", required: true, description: "ISO date (YYYY-MM-DD)" },
-            { name: "guests", type: "object", required: true, description: "{ adults, children }" },
-            { name: "rooms", type: "integer", required: true, description: "Number of rooms" },
-            { name: "star_rating", type: "integer[]", description: "Filter by star rating (e.g. [4, 5])" },
-            { name: "max_price", type: "integer", description: "Maximum nightly price in smallest currency unit" },
-            { name: "amenities", type: "string[]", description: "wifi, pool, gym, parking, breakfast" },
-            { name: "sort_by", type: "string", description: "price | rating | distance" },
-            { name: "radius_km", type: "number", description: "Search radius from coordinate centre" },
-          ]}
-        />
-        <MultiLangCodeBlock
-          samples={buildHttpSamples({
-            method: "POST",
-            url: "https://sandbox.api.intraverse.com/v1/hotels/search",
-            body: {
-              destination: "Lagos",
-              check_in: "2026-07-01",
-              check_out: "2026-07-04",
-              guests: { adults: 2 },
-              rooms: 1,
-            },
-          })}
-        />
+      <DocsSection id="location" title="Location Search">
+        <EndpointHeading method="GET" path="/product/v1/hotel/google-places" />
+        <p>Search for hotel destinations using Google Places autocomplete. Returns location suggestions with coordinates you can use for the main hotel search.</p>
+        <ParamsTable params={[
+          { name: "q", type: "string", required: true, description: "Search term (city name, area, landmark)" },
+        ]} />
+        <CodeBlock label="Example" language="bash" code={`GET ${SANDBOX}/product/v1/hotel/google-places?q=london`} />
 
-        <EndpointHeading method="GET" path="/v1/hotels/{hotel_id}" />
-        <p>Get full hotel details: photos, amenities, location, descriptions, policies.</p>
-
-        <EndpointHeading method="GET" path="/v1/hotels/{hotel_id}/rooms" />
-        <p>Get all available room types and rates for a specific hotel.</p>
-        <ParamsTable
-          params={[
-            { name: "check_in", type: "string", required: true, description: "ISO date" },
-            { name: "check_out", type: "string", required: true, description: "ISO date" },
-            { name: "guests", type: "object", required: true, description: "{ adults, children }" },
-          ]}
-        />
-
-        <EndpointHeading method="POST" path="/v1/hotels/bookings" />
-        <p>Create a hotel booking from a selected room rate.</p>
-        <CodeBlock
-          label="JSON"
-          code={`{
-  "rate_id": "rate_h_abc",
-  "guests": [
-    { "first_name": "Aisha", "last_name": "Bello" }
-  ],
-  "contact": { "email": "guest@example.com", "phone": "+2348012345678" },
-  "special_requests": "Late check-in"
-}`}
-        />
-
-        <EndpointHeading method="GET" path="/v1/hotels/bookings/{booking_id}" />
-        <p>Retrieve a hotel booking by ID.</p>
-
-        <EndpointHeading method="POST" path="/v1/hotels/bookings/{booking_id}/cancel" />
-        <p>Cancel a hotel booking. Subject to the property's cancellation policy.</p>
+        <EndpointHeading method="GET" path="/product/v1/hotel/google-place-detail/:placeId" />
+        <p>Get detailed location information including coordinates for a specific Google Place ID returned from the location search.</p>
+        <ParamsTable params={[
+          { name: "placeId", type: "string", required: true, description: "Google Place ID from the location search" },
+        ]} />
       </DocsSection>
 
-      <DocsSection id="response-format" title="Response Format">
-        <CodeBlock
-          label="JSON"
-          code={`{
-  "hotel_id": "htl_lagos_xyz",
-  "name": "Eko Hotel & Suites",
-  "star_rating": 5,
-  "address": "1415 Adetokunbo Ademola St, Victoria Island, Lagos",
-  "coordinates": { "lat": 6.4281, "lng": 3.4219 },
-  "best_rate": {
-    "rate_id": "rate_h_abc",
-    "room_type": "Deluxe King",
-    "board": "room_only",
-    "nightly_price": 95000,
-    "total_price": 285000,
-    "currency": "NGN",
-    "refundable": true,
-    "free_cancellation_until": "2026-06-29T23:59:00+01:00"
-  },
-  "amenities": ["wifi", "pool", "gym", "parking"],
-  "thumbnail": "https://cdn.intraverse.com/hotels/eko/thumb.jpg"
-}`}
-        />
-      </DocsSection>
-
-      <DocsSection id="cancellation" title="Cancellation Policies">
-        <p>Each rate carries a structured cancellation policy:</p>
-        <CodeBlock
-          label="JSON"
-          code={`"cancellation_policy": {
-  "type": "free_until_date",
-  "free_cancellation_until": "2026-06-29T23:59:00+01:00",
-  "penalties": [
-    { "from": "2026-06-30T00:00:00+01:00", "amount": 95000, "currency": "NGN" },
-    { "from": "2026-07-01T00:00:00+01:00", "amount": 285000, "currency": "NGN" }
+      <DocsSection id="search" title="Hotel Search">
+        <EndpointHeading method="POST" path="/product/v1/hotel/search" />
+        <p>Search for available hotels by geographic coordinates. Returns hotels within the specified radius with pricing, ratings, and basic information.</p>
+        <ParamsTable params={[
+          { name: "latitude", type: "number", required: true, description: "Latitude of search location" },
+          { name: "longitude", type: "number", required: true, description: "Longitude of search location" },
+          { name: "range", type: "number", required: true, description: "Search radius in km" },
+          { name: "limit", type: "number", required: true, description: "Maximum results to return — important for speed" },
+          { name: "start_date", type: "string", required: true, description: "Check-in date (YYYY-MM-DD)" },
+          { name: "end_date", type: "string", required: true, description: "Check-out date (YYYY-MM-DD)" },
+          { name: "rooms", type: "array", required: true, description: "Room configuration (adults, children ages, infants, units)" },
+        ]} />
+        <CodeBlock label="JSON" language="json" code={`{
+  "latitude": 51.5072178,
+  "longitude": -0.1275862,
+  "range": 10,
+  "limit": 10,
+  "start_date": "2026-09-17",
+  "end_date": "2026-09-18",
+  "rooms": [
+    {
+      "adults": 1,
+      "children": [10],
+      "infants": 0,
+      "units": 1
+    }
   ]
-}`}
-        />
+}`} />
+        <Callout variant="info" title="Keep it fast">
+          Keep <InlineCode>limit</InlineCode> low (10–20) for faster response times. Increase only when you need comprehensive results.
+        </Callout>
+
+        <EndpointHeading method="POST" path="/product/v1/hotel/by-name" />
+        <p>Search for hotels by name directly. Useful when the customer knows which hotel they want.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "q": "Thistle London Marble Arch"
+}`} />
+
+        <EndpointHeading method="POST" path="/product/v1/hotel/select-by-name" />
+        <p>Get room availability and pricing for a specific hotel found via name search.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "code": "6557",
+  "name": "Thistle London Marble Arch",
+  "start_date": "2026-09-22",
+  "end_date": "2026-09-23",
+  "rooms": [
+    {
+      "adults": 1,
+      "children": [],
+      "infants": 0,
+      "units": 1
+    }
+  ],
+  "supplier": "StayX2"
+}`} />
       </DocsSection>
 
-      <DocsSection id="best-practices" title="Search Best Practices">
-        <ul className="list-disc list-inside space-y-2">
-          <li>Use coordinate-based search ({"{ lat, lng }"}) for nearby-hotels UX.</li>
-          <li>Apply filters server-side via the search params, not client-side after the fact.</li>
-          <li>Cache search results by destination + dates for up to 10 minutes.</li>
-          <li>Validate that <InlineCode>check_out</InlineCode> is strictly after <InlineCode>check_in</InlineCode> before sending.</li>
-          <li>Refresh rate availability with <InlineCode>/rooms</InlineCode> immediately before booking.</li>
-        </ul>
+      <DocsSection id="availability" title="Room Availability">
+        <EndpointHeading method="POST" path="/product/v1/hotel/availability" />
+        <p>Get detailed room availability, pricing, and booking conditions for a specific hotel from search results. This is the step between search and booking — it returns the exact rates and room types available.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "codeContext": "GLOBAL",
+  "code": "6547",
+  "name": "The Royal Horseguards Hotel London",
+  "cityCode": "LONDON",
+  "chainCode": "THIS",
+  "chainName": "Clermont Hotel Group (GLH)",
+  "areaId": "SW1A 2EJ",
+  "categoryCode": "5EST",
+  "address": "Whitehall Court, Westminster, 2",
+  "city": "LONDON",
+  "countryCode": "UK",
+  "start_date": "2026-09-26",
+  "end_date": "2026-09-27",
+  "units": 1,
+  "nights": 1
+}`} />
+        <Callout variant="info">
+          Pass the hotel object returned from search results directly into this endpoint. The fields
+          (<InlineCode>code</InlineCode>, <InlineCode>codeContext</InlineCode>, <InlineCode>chainCode</InlineCode>, etc.)
+          come from the search response.
+        </Callout>
+      </DocsSection>
+
+      <DocsSection id="booking" title="Booking">
+        <EndpointHeading method="POST" path="/product/v1/hotel/book" />
+        <p>Create a hotel booking. Pass the full hotel and room details from the availability response along with guest information.</p>
+        <Callout variant="info">
+          The request body includes the hotel details from search/availability plus room selection and guest information.
+          See the <DocsPostmanLink>Postman collection</DocsPostmanLink> for the complete request schema.
+        </Callout>
+
+        <EndpointHeading method="GET" path="/product/v1/hotel/:id" />
+        <p>Retrieve details for a specific hotel booking by ID.</p>
+
+        <EndpointHeading method="GET" path="/product/v1/hotel" />
+        <p>List all hotel bookings for the authenticated account.</p>
+      </DocsSection>
+
+      <DocsSection id="payment" title="Payment">
+        <EndpointHeading method="POST" path="/payment/v1/payment/hotel" />
+        <p>Initialize payment for a hotel booking. Supported payment modes: <InlineCode>Wallet</InlineCode>, <InlineCode>Card</InlineCode>.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "hotelBookingId": "692db12757d388e520c9cab7",
+  "paymentMode": "Card",
+  "callbackUrl": "http://your-app.com/callback"
+}`} />
+      </DocsSection>
+
+      <DocsSection id="modify" title="Modify Booking">
+        <EndpointHeading method="POST" path="/product/v1/hotel/process-change-booking/:id" />
+        <p>Get a change quote for modifying a hotel booking — new dates, different room type. Returns the price difference before committing.</p>
+
+        <EndpointHeading method="POST" path="/payment/v1/payment/hotel-change-reconcilation" />
+        <p>Process payment for a hotel booking modification. Handles the price difference from the change quote.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "hotelBookingId": "booking_id",
+  "paymentMode": "Wallet",
+  "callbackUrl": "http://your-app.com/callback"
+}`} />
+
+        <EndpointHeading method="POST" path="/product/v1/hotel/change-booking/:id" />
+        <p>Finalize a hotel booking modification after payment reconciliation is complete.</p>
+      </DocsSection>
+
+      <DocsSection id="cancel" title="Cancellation">
+        <EndpointHeading method="POST" path="/product/v1/hotel/cancel-booking/:id" />
+        <p>Cancel a hotel booking before payment. Returns cancellation status.</p>
+
+        <EndpointHeading method="POST" path="/product/v1/hotel/cancel-confirmed/:id" />
+        <p>Cancel a confirmed (paid) hotel booking and initiate refund processing.</p>
+
+        <EndpointHeading method="POST" path="/payment/v1/payment/cancel-paid-hotel" />
+        <p>Cancel a paid hotel booking before the supplier has confirmed. Initiates automatic refund. Pass <InlineCode>?bookingId=&#123;bookingId&#125;</InlineCode> as a query parameter.</p>
+      </DocsSection>
+
+      <DocsSection id="flow" title="Flows">
+        <h3 className="h3-global text-foreground mb-2" style={{ fontSize: "14px" }}>Booking</h3>
+        <Flow steps={["Location Search", "Hotel Search", "Room Availability", "Book", "Payment", "Confirmation"]} />
+        <h3 className="h3-global text-foreground mb-2 mt-6" style={{ fontSize: "14px" }}>Modification</h3>
+        <Flow steps={["Process Change (quote)", "Payment Reconciliation", "Finalize Change"]} />
+        <h3 className="h3-global text-foreground mb-2 mt-6" style={{ fontSize: "14px" }}>Cancellation</h3>
+        <Flow steps={["Cancel Booking (unpaid)", "OR Cancel Confirmed (paid)", "OR Cancel Paid (before supplier)"]} />
       </DocsSection>
 
       <DocsSection id="errors" title="Common Errors">
-        <ul className="space-y-3">
-          <li><InlineCode>NO_AVAILABILITY</InlineCode> - No rooms available for the requested dates and guest config.</li>
-          <li><InlineCode>RATE_EXPIRED</InlineCode> - Rate is no longer bookable. Re-fetch rooms.</li>
-          <li><InlineCode>GUEST_DATA_INVALID</InlineCode> - Guest details failed validation.</li>
-          <li><InlineCode>CANCELLATION_NOT_ALLOWED</InlineCode> - Cancellation window has passed or rate is non-refundable.</li>
+        <ul className="space-y-2">
+          <li><InlineCode>NO_AVAILABILITY</InlineCode> — No rooms available for selected dates.</li>
+          <li><InlineCode>RATE_EXPIRED</InlineCode> — Room rate has changed since availability check.</li>
+          <li><InlineCode>BOOKING_NOT_FOUND</InlineCode> — Invalid booking ID.</li>
+          <li><InlineCode>CANCELLATION_NOT_ALLOWED</InlineCode> — Booking is past the cancellation window.</li>
+          <li><InlineCode>PAYMENT_FAILED</InlineCode> — Payment processing error.</li>
         </ul>
       </DocsSection>
+
+      <DocsBofu />
     </DocsLayout>
-    </>
   );
 }

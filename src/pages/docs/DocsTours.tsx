@@ -1,163 +1,218 @@
 import { DocsLayout, DocsSection } from "@/components/docs/DocsLayout";
-import { SEO } from "@/components/SEO";
 import { CodeBlock, InlineCode } from "@/components/docs/CodeBlock";
 import { EndpointHeading } from "@/components/docs/MethodBadge";
 import { ParamsTable } from "@/components/docs/ParamsTable";
 import { Callout } from "@/components/docs/Callout";
+import { DocsPostmanLink } from "@/components/docs/DocsPostmanLink";
+import { DocsBofu } from "@/components/docs/DocsBofu";
+import { ArrowRight } from "lucide-react";
+
+const SANDBOX = "https://dev.intraversewebservices.com/api";
 
 const toc = [
   { id: "overview", label: "Overview" },
-  { id: "endpoints", label: "Endpoints" },
-  { id: "response-format", label: "Response Format" },
-  { id: "categories", label: "Tour Categories" },
-  { id: "bundling", label: "Bundling" },
-  { id: "errors", label: "Common Errors" },
+  { id: "search", label: "Search" },
+  { id: "details", label: "Details & Reviews" },
+  { id: "availability", label: "Availability" },
+  { id: "booking", label: "Booking" },
+  { id: "payment", label: "Payment" },
+  { id: "manage", label: "Manage Bookings" },
+  { id: "cancel", label: "Cancellation" },
+  { id: "flow", label: "Flows" },
 ];
 
-const categories = [
-  "sightseeing", "adventure", "cultural", "food", "nature",
-  "transfer", "water_sports", "nightlife", "wellness", "workshop",
-];
+function Flow({ steps }: { steps: string[] }) {
+  return (
+    <div className="not-prose flex items-center flex-wrap gap-3 my-6 p-5 rounded-lg bg-[#F0F5FC] border border-border">
+      {steps.map((s, i) => (
+        <div key={s} className="flex items-center gap-3">
+          <div className="px-3 py-2 rounded-md bg-white border border-border text-sm font-medium text-foreground">
+            {s}
+          </div>
+          {i < steps.length - 1 && <ArrowRight className="w-4 h-4 text-muted-foreground" />}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function DocsTours() {
   return (
-    <>
-      <SEO
-        title="Tours & Activities API | Intraverse Docs"
-        description="Access curated tours, activities, and experiences from global suppliers. Search by destination, category, and date."
-        canonical="https://intraverse.africa/docs/tours"
-      />
-      <DocsLayout
+    <DocsLayout
       slug="tours"
       title="Tours, Activities, and Experiences"
-      metaDescription="Access curated tours, activities, and experiences from global suppliers. Search by destination, category, and date."
-      subtitle="Access curated tour and activity inventory from international suppliers. Search by destination, category, and date. Book standalone or bundle with flights and hotels for complete travel packages."
+      metaTitle="Tour & Activity APIs | Search & Book Experiences | Intraverse API Docs"
+      metaDescription="Search tours and activities by destination, check availability, hold bookings, confirm, and manage cancellations. Powered by global tour suppliers."
+      subtitle="Search tours and activities by destination, check availability, hold bookings, confirm, and manage cancellations. Powered by global tour suppliers."
       toc={toc}
     >
-      <Callout variant="warning" title="Coming Soon - Tours API">
-        The Tours API is currently under development and not yet available
-        in the public Postman collection. Tour inventory is accessible
-        through the Intraverse dashboard UI today, but programmatic API
-        access is coming soon. The endpoints below describe the{" "}
-        <strong>planned</strong> contract - actual paths, parameters, and
-        response shapes will be confirmed when the API launches.
-      </Callout>
       <DocsSection id="overview" title="Overview">
         <p>
-          The Tours API exposes inventory from leading global activity providers - from city walking tours to multi-day adventures - all
-          through one consistent contract. Tours can be booked standalone or composed into packages with flights and hotels via the
-          Packages API.
+          The Package API (Tours) provides access to tours, activities, and experiences from international suppliers.
+          Search by destination, check real-time availability for specific dates and group sizes, hold bookings,
+          confirm after payment, and manage cancellations. Tours are referred to as "packages" in the API namespace
+          but represent standalone bookable tours and activities.
         </p>
+        <Callout variant="warning" title="Namespace note">
+          In the API, tours and activities use the <InlineCode>/product/v1/package/</InlineCode> namespace. This is
+          separate from Nobi PackagePro (custom packages you create yourself) which uses{" "}
+          <InlineCode>/product/v1/nobiPackage/</InlineCode>.
+        </Callout>
+        <p>All endpoints are relative to <InlineCode>{SANDBOX}</InlineCode>.</p>
+        <Callout variant="info">
+          Explore these endpoints interactively in our <DocsPostmanLink>Postman collection →</DocsPostmanLink>
+        </Callout>
       </DocsSection>
 
-      <DocsSection id="endpoints" title="Endpoints">
-        <EndpointHeading method="POST" path="/v1/tours/search" />
-        <p>Search tours by destination and date.</p>
-        <ParamsTable
-          params={[
-            { name: "destination", type: "string", required: true, description: "City name or destination ID" },
-            { name: "date", type: "string", required: true, description: "ISO date (YYYY-MM-DD)" },
-            { name: "category", type: "string", description: "See Tour Categories" },
-            { name: "max_price", type: "integer", description: "Maximum price per participant (smallest unit)" },
-            { name: "duration_hours", type: "object", description: "{ min, max } hours" },
-            { name: "language", type: "string", description: "ISO language code (en, fr, ar)" },
-            { name: "group_size", type: "integer", description: "Expected number of participants" },
-          ]}
-        />
+      <DocsSection id="search" title="Search">
+        <EndpointHeading method="GET" path="/product/v1/package/auto-complete" />
+        <p>Search for tour destinations and activities by keyword. Returns matching destinations and tour suggestions.</p>
+        <ParamsTable params={[
+          { name: "q", type: "string", required: true, description: "Search term" },
+        ]} />
+        <CodeBlock label="Example" language="bash" code={`GET ${SANDBOX}/product/v1/package/auto-complete?q=northern historic site circuit`} />
 
-        <EndpointHeading method="GET" path="/v1/tours/{tour_id}" />
-        <p>Full tour details: itinerary, inclusions, exclusions, meeting point, photos.</p>
+        <EndpointHeading method="POST" path="/product/v1/package/search-by-destination" />
+        <p>Search for available tours and activities at a specific destination.</p>
+        <ParamsTable params={[
+          { name: "destinationId", type: "string", required: true, description: "Destination ID from auto-complete results" },
+          { name: "destinationName", type: "string", required: true, description: "Destination name" },
+          { name: "suppliers", type: "string[]", required: true, description: "Tour supplier codes (e.g. \"TourX1\")" },
+          { name: "populate", type: "boolean", description: "Include full details — set false for speed" },
+          { name: "limit", type: "number", description: "Maximum results" },
+        ]} />
+        <CodeBlock label="JSON" language="json" code={`{
+  "destinationId": "66f941431e951df6140bc378",
+  "destinationName": "Abuja",
+  "suppliers": ["TourX1"],
+  "populate": false,
+  "limit": 10
+}`} />
+      </DocsSection>
 
-        <EndpointHeading method="GET" path="/v1/tours/{tour_id}/availability" />
-        <p>Available timeslots and capacity for a given date.</p>
-        <ParamsTable
-          params={[
-            { name: "date", type: "string", required: true, description: "ISO date" },
-            { name: "participants", type: "integer", required: true, description: "Number of participants" },
-          ]}
-        />
+      <DocsSection id="details" title="Details & Reviews">
+        <EndpointHeading method="POST" path="/product/v1/package/get-single" />
+        <p>Get full details for a specific tour or activity.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "productCode": "109060P4",
+  "supplier": "TourX1"
+}`} />
 
-        <EndpointHeading method="POST" path="/v1/tours/bookings" />
-        <p>Create a tour booking.</p>
-        <CodeBlock
-          label="JSON"
-          code={`{
-  "tour_id": "tour_xyz",
-  "timeslot_id": "ts_abc",
-  "participants": [
-    { "first_name": "Tunde", "last_name": "Adeyemi", "age": 32 }
+        <EndpointHeading method="POST" path="/product/v1/package/product-reviews" />
+        <p>Get customer reviews for a specific tour or activity.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "productCode": "20364P1",
+  "skip": 0,
+  "limit": 20,
+  "supplier": "TourX1"
+}`} />
+      </DocsSection>
+
+      <DocsSection id="availability" title="Availability">
+        <EndpointHeading method="POST" path="/product/v1/package/availability" />
+        <p>Check real-time availability for a specific tour on a specific date with a specific group size.</p>
+        <ParamsTable params={[
+          { name: "productCode", type: "string", required: true, description: "Tour product code" },
+          { name: "travelDate", type: "string", required: true, description: "Travel date (YYYY-MM-DD)" },
+          { name: "paxMix", type: "array", required: true, description: "Traveler breakdown by age band (ADULT, CHILD, INFANT, SENIOR, STUDENT)" },
+          { name: "supplier", type: "string", required: true, description: "Supplier code" },
+        ]} />
+        <CodeBlock label="JSON" language="json" code={`{
+  "productCode": "666a052cafe8934123aade80",
+  "travelDate": "2026-07-15",
+  "paxMix": [
+    {
+      "ageBand": "ADULT",
+      "numberOfTravelers": 1
+    }
   ],
-  "contact": { "email": "guest@example.com", "phone": "+2348012345678" }
-}`}
-        />
-
-        <EndpointHeading method="GET" path="/v1/tours/bookings/{booking_id}" />
-        <p>Retrieve a tour booking by ID.</p>
-
-        <EndpointHeading method="POST" path="/v1/tours/bookings/{booking_id}/cancel" />
-        <p>Cancel a tour booking, subject to provider cancellation policy.</p>
+  "supplier": "TourX1"
+}`} />
       </DocsSection>
 
-      <DocsSection id="response-format" title="Response Format">
-        <CodeBlock
-          label="JSON"
-          code={`{
-  "tour_id": "tour_xyz",
-  "title": "Lagos Island Heritage Walking Tour",
-  "category": "cultural",
-  "duration_hours": 3,
-  "language": "en",
-  "price_per_person": 25000,
-  "currency": "NGN",
-  "rating": 4.8,
-  "reviews_count": 312,
-  "thumbnail": "https://cdn.intraverse.com/tours/lagos-walking.jpg",
-  "free_cancellation_until_hours": 24
-}`}
-        />
+      <DocsSection id="booking" title="Booking">
+        <EndpointHeading method="POST" path="/product/v1/package/hold-booking" />
+        <p>Create a temporary hold on a tour booking. Holds the availability while payment is processed.</p>
+        <ParamsTable params={[
+          { name: "items", type: "array", required: true, description: "Array of tour items to book (productCode, productOptionCode, travelDate, startTime, paxMix, bookingQuestionAnswers)" },
+        ]} />
+        <CodeBlock label="JSON" language="json" code={`{
+  "items": [
+    {
+      "productCode": "146604P4",
+      "productOptionCode": "TG1",
+      "travelDate": "2026-08-10",
+      "startTime": "06:30",
+      "paxMix": [
+        {
+          "ageBand": "ADULT",
+          "numberOfTravelers": 1
+        }
+      ],
+      "bookingQuestionAnswers": [
+        {
+          "question": "FULL_NAMES_FIRST",
+          "answer": "Chinedu",
+          "travelerNum": 1
+        }
+      ]
+    }
+  ]
+}`} />
+        <Callout variant="info">
+          <InlineCode>startTime</InlineCode> is required only if the product has multiple start times.
+          <InlineCode>bookingQuestionAnswers</InlineCode> vary by tour — check the product details for required questions.
+        </Callout>
+
+        <EndpointHeading method="POST" path="/product/v1/package/confirm-booking/:id" />
+        <p>Confirm a tour booking after successful payment.</p>
       </DocsSection>
 
-      <DocsSection id="categories" title="Tour Categories">
-        <div className="my-4 flex flex-wrap gap-2 not-prose">
-          {categories.map((c) => (
-            <code
-              key={c}
-              className="px-2.5 py-1 rounded bg-[#F0F2F5] font-mono text-[13px] text-foreground"
-            >
-              {c}
-            </code>
-          ))}
-        </div>
+      <DocsSection id="payment" title="Payment">
+        <EndpointHeading method="POST" path="/payment/v1/payment/package" />
+        <p>Initialize payment for a held tour booking.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "packageBookingId": "678914be10d5dfdc3ff1b5e7",
+  "paymentMode": "Wallet",
+  "callbackUrl": "http://your-app.com/callback"
+}`} />
       </DocsSection>
 
-      <DocsSection id="bundling" title="Bundling With Flights and Hotels">
-        <p>
-          Use <InlineCode>/v1/packages/create</InlineCode> to bundle tours with flights and hotels into a single booking with one payment
-          and one confirmation.
-        </p>
-        <CodeBlock
-          label="JSON"
-          code={`POST /v1/packages/create
-{
-  "components": [
-    { "type": "flight", "offer_id": "offer_xyz789" },
-    { "type": "hotel", "rate_id": "rate_h_abc" },
-    { "type": "tour", "tour_id": "tour_xyz", "timeslot_id": "ts_abc" }
-  ],
-  "passengers": [ /* shared passenger info */ ],
-  "contact": { "email": "...", "phone": "..." }
-}`}
-        />
+      <DocsSection id="manage" title="Manage Bookings">
+        <EndpointHeading method="GET" path="/product/v1/package/:_id" />
+        <p>Get details for a specific tour booking.</p>
+
+        <EndpointHeading method="GET" path="/product/v1/package" />
+        <p>List all tour bookings for the authenticated account.</p>
       </DocsSection>
 
-      <DocsSection id="errors" title="Common Errors">
-        <ul className="space-y-3">
-          <li><InlineCode>TOUR_UNAVAILABLE</InlineCode> - Tour not running on the requested date.</li>
-          <li><InlineCode>TIMESLOT_FULL</InlineCode> - Selected timeslot has no remaining capacity. Choose another.</li>
-          <li><InlineCode>MINIMUM_PARTICIPANTS</InlineCode> - Tour requires more participants than booked.</li>
-        </ul>
+      <DocsSection id="cancel" title="Cancellation">
+        <EndpointHeading method="POST" path="/product/v1/package/cancel-booking/:id" />
+        <p>Cancel a tour booking (before confirmation).</p>
+
+        <EndpointHeading method="POST" path="/product/v1/package/cancel-quote" />
+        <p>Get a cancellation quote showing any applicable fees.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "bookingId": "66830b74ca45c6857aa1af7f"
+}`} />
+
+        <EndpointHeading method="POST" path="/product/v1/package/cancel-confirmed-booking" />
+        <p>Cancel a confirmed tour booking with reason. Returns refund details based on cancellation policy.</p>
+        <CodeBlock label="JSON" language="json" code={`{
+  "supplier": "TourX1",
+  "bookingId": "667d64e36f4f8b38bdccbfcc",
+  "cancelReason": "Customer_Service.Unexpected_medical_circumstances"
+}`} />
       </DocsSection>
+
+      <DocsSection id="flow" title="Flows">
+        <h3 className="h3-global text-foreground mb-2" style={{ fontSize: "14px" }}>Booking</h3>
+        <Flow steps={["Auto-Complete", "Search by Destination", "Get Single Tour", "Availability", "Hold", "Payment", "Confirm"]} />
+        <h3 className="h3-global text-foreground mb-2 mt-6" style={{ fontSize: "14px" }}>Cancellation</h3>
+        <Flow steps={["Cancel Quote", "Cancel Booking OR Cancel Confirmed"]} />
+      </DocsSection>
+
+      <DocsBofu />
     </DocsLayout>
-    </>
   );
 }
