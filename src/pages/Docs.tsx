@@ -509,7 +509,7 @@ export default function Docs() {
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">Building Something Big?</h2>
               <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-                If you're building a product that touches travel - a super-app, a fintech, a corporate platform - we want to talk. Our partnerships team works with companies that are embedding Intraverse at scale.
+                For high-volume integrations — fintechs, super-apps, and consumer travel marketplaces — we offer co-build partnerships with dedicated engineering support, custom commercial terms, and direct access to our product team. Our API now covers flights, hotels, tours, insurance, and custom packages. If you're building something that could change how Africans travel, let's talk.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button variant="hero" size="xl" className="cta-responsive min-h-[48px]" asChild>
