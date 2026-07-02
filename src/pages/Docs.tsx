@@ -281,7 +281,7 @@ export default function Docs() {
             <RevealBlock>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center">Start Building in 5 Minutes</h2>
               <p className="mt-4 text-muted-foreground text-center max-w-2xl mx-auto">
-                Three steps. No sales calls. No waiting for approval. Create an account, authenticate, and make your first API call - all in a single sitting.
+                Three steps to your first API call. Search flights, hotels, tours, or insurance — all from one sandbox.
               </p>
             </RevealBlock>
             <RevealBlock>
