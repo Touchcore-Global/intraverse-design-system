@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { HeroSectionV2 } from "@/components/v2/HeroSectionV2";
 import { HomeTrustBar } from "@/components/HomeTrustBar";
