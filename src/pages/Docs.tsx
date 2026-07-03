@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Copy, Check, ExternalLink, ArrowRight } from "lucide-react";
+import { Copy, Check, ExternalLink, ArrowRight, Search } from "lucide-react";
 import { whatsappUrl } from "@/lib/constants";
 import { POSTMAN_COLLECTION_URL } from "@/components/docs/DocsPostmanLink";
 import { SEO } from "@/components/SEO";
@@ -217,6 +217,37 @@ const resources = [
   { emoji: "🔄", title: "Versioning & Deprecation", desc: "How we version the API, our deprecation policy (minimum 6 months notice), and how to migrate between versions safely.", href: "#" },
 ];
 
+type SearchItem = {
+  title: string;
+  subtitle: string;
+  href: string;
+  category: string;
+};
+
+/* ---------- searchable index (categories, endpoints, resources, SDKs) ---------- */
+const searchIndex: SearchItem[] = [
+  ...docCategories.map((c) => ({ title: c.title, subtitle: c.desc, href: c.href, category: "Docs" })),
+  { title: "Flight Search", subtitle: "POST /api/product/v1/flight/search", href: "/docs/flights", category: "Endpoint" },
+  { title: "Flight Book", subtitle: "POST /api/product/v1/flight/book", href: "/docs/flights", category: "Endpoint" },
+  { title: "Flight Ticket", subtitle: "POST /api/product/v1/flight/ticket", href: "/docs/flights", category: "Endpoint" },
+  { title: "Hotel Search", subtitle: "POST /api/product/v1/hotel/search", href: "/docs/hotels", category: "Endpoint" },
+  { title: "Hotel Book", subtitle: "POST /api/product/v1/hotel/book", href: "/docs/hotels", category: "Endpoint" },
+  { title: "Tour Search", subtitle: "POST /api/product/v1/package/search-by-destination", href: "/docs/tours", category: "Endpoint" },
+  { title: "Tour Hold", subtitle: "POST /api/product/v1/package/hold", href: "/docs/tours", category: "Endpoint" },
+  { title: "Tour Confirm", subtitle: "POST /api/product/v1/package/confirm", href: "/docs/tours", category: "Endpoint" },
+  { title: "Insurance Quote", subtitle: "POST /api/product/v1/insurance/flight-policies", href: "/docs/insurance", category: "Endpoint" },
+  { title: "Insurance Purchase", subtitle: "POST /api/product/v1/insurance/purchase", href: "/docs/insurance", category: "Endpoint" },
+  { title: "PackagePro Create", subtitle: "POST /api/product/v1/package/create", href: "/docs/packages", category: "Endpoint" },
+  { title: "PackagePro Publish", subtitle: "POST /api/product/v1/package/publish", href: "/docs/packages", category: "Endpoint" },
+  { title: "Authentication", subtitle: "POST /api/main/v1/auth/login", href: "/docs/authentication", category: "Endpoint" },
+  { title: "Wallet Balance", subtitle: "GET /api/payment/v1/wallet/balance", href: "/docs/payments", category: "Endpoint" },
+  { title: "Process Payment", subtitle: "POST /api/payment/v1/payment/process", href: "/docs/payments", category: "Endpoint" },
+  { title: "Webhook Events", subtitle: "Real-time booking, payment, and schedule notifications", href: "/docs/webhooks", category: "Endpoint" },
+  ...resources.map((r) => ({ title: r.title, subtitle: r.desc, href: r.href, category: "Resource" })),
+  ...sdks.map((s) => ({ title: s.name, subtitle: s.install, href: s.docs, category: "SDK" })),
+];
+
+
 
 /* ---------- Copy button ---------- */
 function CopyButton({ text }: { text: string }) {
@@ -234,6 +265,137 @@ function CopyButton({ text }: { text: string }) {
     >
       {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
     </button>
+  );
+}
+
+/* ---------- Docs search ---------- */
+function DocsSearch() {
+  const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const normalizedQuery = query.trim().toLowerCase();
+  const results = useMemo(() => {
+    if (!normalizedQuery) return [];
+    return searchIndex
+      .filter(
+        (item) =>
+          item.title.toLowerCase().includes(normalizedQuery) ||
+          item.subtitle.toLowerCase().includes(normalizedQuery) ||
+          item.category.toLowerCase().includes(normalizedQuery)
+      )
+      .slice(0, 8);
+  }, [normalizedQuery]);
+
+  useEffect(() => {
+    setSelectedIndex(0);
+  }, [query]);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function handleEsc(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEsc);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!open) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelectedIndex((i) => (i + 1) % results.length);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelectedIndex((i) => (i - 1 + results.length) % results.length);
+    } else if (e.key === "Enter" && results.length > 0) {
+      e.preventDefault();
+      window.location.href = results[selectedIndex].href;
+    }
+  };
+
+  return (
+    <div ref={containerRef} className="relative w-full max-w-2xl mx-auto mt-8">
+      <div className="relative">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/50" />
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setOpen(true);
+          }}
+          onFocus={() => setOpen(true)}
+          onKeyDown={handleKeyDown}
+          placeholder="Search endpoints, docs, and resources..."
+          className="w-full h-14 pl-12 pr-16 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand-blue))] focus:border-transparent"
+          aria-label="Search documentation"
+          aria-expanded={open}
+          aria-controls="docs-search-results"
+          aria-activedescendant={open && results.length ? `docs-search-result-${selectedIndex}` : undefined}
+        />
+        {query && (
+          <button
+            onClick={() => {
+              setQuery("");
+              setOpen(false);
+            }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white/50 hover:text-white px-2 py-1"
+          >
+            Clear
+          </button>
+        )}
+      </div>
+      {open && results.length > 0 && (
+        <div
+          id="docs-search-results"
+          className="absolute z-50 w-full mt-2 bg-background border border-border rounded-lg shadow-xl overflow-hidden text-left"
+        >
+          <ul className="max-h-[360px] overflow-y-auto py-2">
+            {results.map((item, idx) => (
+              <li key={`${item.title}-${idx}`}>
+                <a
+                  href={item.href}
+                  id={`docs-search-result-${idx}`}
+                  className={`flex items-start gap-3 px-4 py-3 transition-colors ${
+                    idx === selectedIndex ? "bg-[hsl(var(--brand-blue))]/10" : "hover:bg-muted"
+                  }`}
+                  onMouseEnter={() => setSelectedIndex(idx)}
+                >
+                  <span className="text-xs font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-muted text-muted-foreground mt-0.5">
+                    {item.category}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className={`text-sm font-medium ${idx === selectedIndex ? "text-[hsl(var(--brand-blue))]" : "text-foreground"}`}>
+                      {item.title}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">{item.subtitle}</p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground mt-0.5 shrink-0" />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="px-4 py-2 border-t border-border text-xs text-muted-foreground">
+            {results.length} result{results.length === 1 ? "" : "s"} · use ↑↓ to navigate, ↵ to open
+          </div>
+        </div>
+      )}
+      {open && normalizedQuery && results.length === 0 && (
+        <div className="absolute z-50 w-full mt-2 bg-background border border-border rounded-lg shadow-xl p-4 text-sm text-muted-foreground text-left">
+          No results for “{query}”. Try a different term or browse the categories below.
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -263,6 +425,7 @@ export default function Docs() {
             <p className="mt-6 text-base md:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
               Comprehensive API documentation for developers building on Intraverse. Search and book flights, hotels, tours, and insurance. Create and sell your own packages. Process payments and manage webhooks. All through a unified RESTful API.
             </p>
+            <DocsSearch />
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold rounded-none" asChild>
                 <a href="/contact">Get Sandbox Access</a>
