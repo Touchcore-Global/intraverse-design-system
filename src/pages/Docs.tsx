@@ -268,6 +268,137 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
+/* ---------- Docs search ---------- */
+function DocsSearch() {
+  const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const normalizedQuery = query.trim().toLowerCase();
+  const results = useMemo(() => {
+    if (!normalizedQuery) return [];
+    return searchIndex
+      .filter(
+        (item) =>
+          item.title.toLowerCase().includes(normalizedQuery) ||
+          item.subtitle.toLowerCase().includes(normalizedQuery) ||
+          item.category.toLowerCase().includes(normalizedQuery)
+      )
+      .slice(0, 8);
+  }, [normalizedQuery]);
+
+  useEffect(() => {
+    setSelectedIndex(0);
+  }, [query]);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function handleEsc(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEsc);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!open) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelectedIndex((i) => (i + 1) % results.length);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelectedIndex((i) => (i - 1 + results.length) % results.length);
+    } else if (e.key === "Enter" && results.length > 0) {
+      e.preventDefault();
+      window.location.href = results[selectedIndex].href;
+    }
+  };
+
+  return (
+    <div ref={containerRef} className="relative w-full max-w-2xl mx-auto mt-8">
+      <div className="relative">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/50" />
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setOpen(true);
+          }}
+          onFocus={() => setOpen(true)}
+          onKeyDown={handleKeyDown}
+          placeholder="Search endpoints, docs, and resources..."
+          className="w-full h-14 pl-12 pr-16 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand-blue))] focus:border-transparent"
+          aria-label="Search documentation"
+          aria-expanded={open}
+          aria-controls="docs-search-results"
+          aria-activedescendant={open && results.length ? `docs-search-result-${selectedIndex}` : undefined}
+        />
+        {query && (
+          <button
+            onClick={() => {
+              setQuery("");
+              setOpen(false);
+            }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-white/50 hover:text-white px-2 py-1"
+          >
+            Clear
+          </button>
+        )}
+      </div>
+      {open && results.length > 0 && (
+        <div
+          id="docs-search-results"
+          className="absolute z-50 w-full mt-2 bg-background border border-border rounded-lg shadow-xl overflow-hidden text-left"
+        >
+          <ul className="max-h-[360px] overflow-y-auto py-2">
+            {results.map((item, idx) => (
+              <li key={`${item.title}-${idx}`}>
+                <a
+                  href={item.href}
+                  id={`docs-search-result-${idx}`}
+                  className={`flex items-start gap-3 px-4 py-3 transition-colors ${
+                    idx === selectedIndex ? "bg-[hsl(var(--brand-blue))]/10" : "hover:bg-muted"
+                  }`}
+                  onMouseEnter={() => setSelectedIndex(idx)}
+                >
+                  <span className="text-xs font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-muted text-muted-foreground mt-0.5">
+                    {item.category}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className={`text-sm font-medium ${idx === selectedIndex ? "text-[hsl(var(--brand-blue))]" : "text-foreground"}`}>
+                      {item.title}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">{item.subtitle}</p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground mt-0.5 shrink-0" />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="px-4 py-2 border-t border-border text-xs text-muted-foreground">
+            {results.length} result{results.length === 1 ? "" : "s"} · use ↑↓ to navigate, ↵ to open
+          </div>
+        </div>
+      )}
+      {open && normalizedQuery && results.length === 0 && (
+        <div className="absolute z-50 w-full mt-2 bg-background border border-border rounded-lg shadow-xl p-4 text-sm text-muted-foreground text-left">
+          No results for “{query}”. Try a different term or browse the categories below.
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ========== MAIN PAGE ========== */
 export default function Docs() {
   const [activeTab, setActiveTab] = useState("Flight Search");
