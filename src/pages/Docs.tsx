@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Copy, Check, ExternalLink, ArrowRight } from "lucide-react";
+import { Copy, Check, ExternalLink, ArrowRight, Search } from "lucide-react";
 import { whatsappUrl } from "@/lib/constants";
 import { POSTMAN_COLLECTION_URL } from "@/components/docs/DocsPostmanLink";
 import { SEO } from "@/components/SEO";
