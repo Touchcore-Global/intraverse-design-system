@@ -425,6 +425,7 @@ export default function Docs() {
             <p className="mt-6 text-base md:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
               Comprehensive API documentation for developers building on Intraverse. Search and book flights, hotels, tours, and insurance. Create and sell your own packages. Process payments and manage webhooks. All through a unified RESTful API.
             </p>
+            <DocsSearch />
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="xl" className="bg-white text-foreground hover:bg-white/90 cta-responsive min-h-[48px] font-semibold rounded-none" asChild>
                 <a href="/contact">Get Sandbox Access</a>
