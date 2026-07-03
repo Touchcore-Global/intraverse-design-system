@@ -217,6 +217,37 @@ const resources = [
   { emoji: "🔄", title: "Versioning & Deprecation", desc: "How we version the API, our deprecation policy (minimum 6 months notice), and how to migrate between versions safely.", href: "#" },
 ];
 
+type SearchItem = {
+  title: string;
+  subtitle: string;
+  href: string;
+  category: string;
+};
+
+/* ---------- searchable index (categories, endpoints, resources, SDKs) ---------- */
+const searchIndex: SearchItem[] = [
+  ...docCategories.map((c) => ({ title: c.title, subtitle: c.desc, href: c.href, category: "Docs" })),
+  { title: "Flight Search", subtitle: "POST /api/product/v1/flight/search", href: "/docs/flights", category: "Endpoint" },
+  { title: "Flight Book", subtitle: "POST /api/product/v1/flight/book", href: "/docs/flights", category: "Endpoint" },
+  { title: "Flight Ticket", subtitle: "POST /api/product/v1/flight/ticket", href: "/docs/flights", category: "Endpoint" },
+  { title: "Hotel Search", subtitle: "POST /api/product/v1/hotel/search", href: "/docs/hotels", category: "Endpoint" },
+  { title: "Hotel Book", subtitle: "POST /api/product/v1/hotel/book", href: "/docs/hotels", category: "Endpoint" },
+  { title: "Tour Search", subtitle: "POST /api/product/v1/package/search-by-destination", href: "/docs/tours", category: "Endpoint" },
+  { title: "Tour Hold", subtitle: "POST /api/product/v1/package/hold", href: "/docs/tours", category: "Endpoint" },
+  { title: "Tour Confirm", subtitle: "POST /api/product/v1/package/confirm", href: "/docs/tours", category: "Endpoint" },
+  { title: "Insurance Quote", subtitle: "POST /api/product/v1/insurance/flight-policies", href: "/docs/insurance", category: "Endpoint" },
+  { title: "Insurance Purchase", subtitle: "POST /api/product/v1/insurance/purchase", href: "/docs/insurance", category: "Endpoint" },
+  { title: "PackagePro Create", subtitle: "POST /api/product/v1/package/create", href: "/docs/packages", category: "Endpoint" },
+  { title: "PackagePro Publish", subtitle: "POST /api/product/v1/package/publish", href: "/docs/packages", category: "Endpoint" },
+  { title: "Authentication", subtitle: "POST /api/main/v1/auth/login", href: "/docs/authentication", category: "Endpoint" },
+  { title: "Wallet Balance", subtitle: "GET /api/payment/v1/wallet/balance", href: "/docs/payments", category: "Endpoint" },
+  { title: "Process Payment", subtitle: "POST /api/payment/v1/payment/process", href: "/docs/payments", category: "Endpoint" },
+  { title: "Webhook Events", subtitle: "Real-time booking, payment, and schedule notifications", href: "/docs/webhooks", category: "Endpoint" },
+  ...resources.map((r) => ({ title: r.title, subtitle: r.desc, href: r.href, category: "Resource" })),
+  ...sdks.map((s) => ({ title: s.name, subtitle: s.install, href: s.docs, category: "SDK" })),
+];
+
+
 
 /* ---------- Copy button ---------- */
 function CopyButton({ text }: { text: string }) {
